@@ -17,11 +17,18 @@
 function mises_migrate_migrate_api() {
   $api = array(
     'api' => 2,
+    'groups' => array(
+      'mises' => array(
+        'title' => t('Mises'),
+      ),
+    ),
     'migrations' => array(
-      'DailyArticles' => array('class_name' => 'DailyArticlesMigration'),
+      'DailyArticles' => array('class_name' => 'DailyArticlesMigration', 'group_name' => 'mises'),
+      'Document' => array('class_name' => 'DocumentMigration', 'group_name' => 'mises'),
+      'DocumentAuthors' => array('class_name' => 'DocumentAuthorsMigration', 'group_name' => 'mises'),
+      'DocumentSubjects' => array('class_name' => 'DocumentSubjectsMigration', 'group_name' => 'mises'),
     ),
   );
   return $api;
 }
-
 
