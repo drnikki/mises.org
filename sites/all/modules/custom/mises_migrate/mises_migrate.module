@@ -90,8 +90,7 @@ class DocumentAuthorsMigration extends MisesMigration {
   }
 
   public function prepare($row, $node) {
-    dd($row);
-    dd($node);
+
   }
 }
 
@@ -125,8 +124,7 @@ class DocumentSubjectsMigration extends MisesMigration {
     return $row;
   }
   public function prepare($row, $node) {
-    dd($row);
-    dd($node);
+
   }
 }
 
@@ -144,21 +142,40 @@ class DocumentMigration extends MisesMigration {
     );
     $this->addFieldMapping('title', 'Title');
     $this->addFieldMapping('body', 'Description');
+    $this->addFieldMapping('body:format')->defaultValue('full_html');
     $this->addFieldMapping('field_published_date', 'DatePosted');
     $this->addFieldMapping('field_author', 'authors')
+        ->separator('|')
          ->sourceMigration('DocumentAuthors');
-    $this->addFieldMapping('uid', 'accountid')
-         ->sourceMigration('WineUser')
-         ->defaultValue(1);
+    $this->addFieldMapping('field_subject', 'subjects')
+         ->separator('|')
+         ->sourceMigration('DocumentSubjects');
+    $this->addFieldMapping('field_subject:source_type')
+         ->defaultValue('tid');
+    $this->addFieldMapping('uid')->defaultValue(1);
+    $this->addFieldMapping('field_image_attachment', 'image');
+    // Indicate that we want each file to maintain its name, replacing any
+    // previous file of the same name (as opposed to being renamed to avoid
+    // collisions, which is the default).
+    $this->addFieldMapping('field_image_attachment:file_replace')
+         ->defaultValue(FILE_EXISTS_REPLACE);
+    $this->addFieldMapping('field_image_attachment:alt', 'Title');
+    $this->addFieldMapping('field_image_attachment:title', 'Title');
 
   }
   public function prepareRow($row) {
+    $row->subjects = array();
+    $query = $this->db->query("SELECT SubjectID FROM DocumentSubjectLink WHERE DocumentId = $row->DocumentId");
+    while($result = $query->fetch()) {
+      $row->subjects[] = $result->SubjectID;
+    }
+    $row->subjects = implode($row->subjects,'|');
+    $row->image = 'http://mises.org'.$row->CoverImageURL;
     $row->authors = $row->Author1.'|'.$row->Author2;
     //$row->image = 'http://mises.org'.$row->Photo;
     return $row;
   }
   public function prepare($row, $node) {
-    dd($row);
-    dd($node);
+
   }
 }
