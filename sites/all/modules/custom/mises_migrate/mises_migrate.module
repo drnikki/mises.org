@@ -3,3 +3,31 @@
  * @file
  * Drupal needs this blank file.
  */
+function mises_migrate_boot() {
+}
+
+function mises_migrate_init() {
+  $query = Database::getConnection('default', 'for_migration');
+  $result = $query->query("SHOW TABLES");
+  dsm($result->fetch());
+}
+
+class DailyArticlesMigration extends Migration {
+  public function __construct($arguments) {
+    parent::__construct();
+    $this->description = t('Wine producers of the world');
+    $this->dependencies = array();
+    $query = Database::getConnection('default', 'for_migration')
+      ->select('DailyArticles', 'd')
+      ->fields('d');
+    $this->source = new MigrateSourceSQL($query);
+    $this->destination = new MigrateDestinationNode('library_item');
+    $this->map = new MigrateSQLMap($this->machineName, array(
+      'ArticleId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
+      MigrateDestinationNode::getKeySchema()
+    );
+    $this->addFieldMapping('title', 'Title');
+    $this->addFieldMapping('body', 'ArticleText');
+    $this->addFieldMapping('field_published_date', 'DatePosted');
+  }
+}
