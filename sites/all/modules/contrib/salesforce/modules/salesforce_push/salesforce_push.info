@@ -1,0 +1,13 @@
+name = Salesforce Push
+description = Push data to Salesforce when updates are made to Drupal entities.
+package = Salesforce
+core = 7.x
+
+dependencies[] = salesforce_mapping
+
+; Information added by drupal.org packaging script on 2013-04-24
+version = "7.x-3.0-beta4"
+core = "7.x"
+project = "salesforce"
+datestamp = "1366844411"
+

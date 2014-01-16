@@ -128,6 +128,7 @@ class DocumentSubjectsMigration extends MisesMigration {
   }
 }
 
+
 class DocumentMigration extends MisesMigration {
   public function __construct($arguments) {
     parent::__construct($arguments);
@@ -161,8 +162,9 @@ class DocumentMigration extends MisesMigration {
          ->defaultValue(FILE_EXISTS_REPLACE);
     $this->addFieldMapping('field_image_attachment:alt', 'Title');
     $this->addFieldMapping('field_image_attachment:title', 'Title');
-
   }
+
+
   public function prepareRow($row) {
     $row->subjects = array();
     $query = $this->db->query("SELECT SubjectID FROM DocumentSubjectLink WHERE DocumentId = $row->DocumentId");
@@ -179,3 +181,5 @@ class DocumentMigration extends MisesMigration {
 
   }
 }
+
+

@@ -1,0 +1,23 @@
+name = OpenCalais 
+description = "Performs Auto Tagging on Entities"
+package = "OpenCalais"
+core = 7.x
+
+dependencies[] = opencalais_api
+dependencies[] = entity
+dependencies[] = taxonomy
+
+files[] = opencalais.install
+files[] = opencalais.module
+files[] = opencalais.admin.inc
+files[] = opencalais.pages.inc
+files[] = tests/opencalais.test
+
+configure = admin/config/content/opencalais
+
+; Information added by drupal.org packaging script on 2013-10-01
+version = "7.x-1.0-alpha2+22-dev"
+core = "7.x"
+project = "opencalais"
+datestamp = "1380620412"
+
