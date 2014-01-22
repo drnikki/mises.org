@@ -23,8 +23,12 @@ function mises_migrate_migrate_api() {
       ),
     ),
     'migrations' => array(
+      'Biography' => array('class_name' => 'BiographyMigration', 'group_name' => 'mises'),
+      'Review' => array('class_name' => 'ReviewMigration', 'group_name' => 'mises'),
+      'Tags' => array('class_name' => 'TagsMigration', 'group_name' => 'mises'),
       'DailyArticles' => array('class_name' => 'DailyArticlesMigration', 'group_name' => 'mises'),
       'Document' => array('class_name' => 'DocumentMigration', 'group_name' => 'mises'),
+      'DocumentMediaType' => array('class_name' => 'DocumentMediaTypeMigration', 'group_name' => 'mises'),
       'DocumentAuthors' => array('class_name' => 'DocumentAuthorsMigration', 'group_name' => 'mises'),
       'DocumentSubjects' => array('class_name' => 'DocumentSubjectsMigration', 'group_name' => 'mises'),
     ),
