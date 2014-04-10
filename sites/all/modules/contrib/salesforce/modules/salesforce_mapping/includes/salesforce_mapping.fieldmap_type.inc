@@ -133,12 +133,15 @@ function salesforce_mapping_related_entity_fieldmap_push_value($fieldmap, $entit
   else {
     $related_wrapper = $entity_wrapper->$fieldmap['drupal_field']['fieldmap_value'];
   }
-  $mapped_objects = salesforce_mapping_object_load_by_drupal(
-    $related_wrapper->type(),
-    $related_wrapper->getIdentifier()
-  );
-  if ($mapped_objects) {
-    $value = $mapped_objects->salesforce_id;
+  if ($related_entity = $related_wrapper->value()) {
+    list($related_entity_id) = entity_extract_ids($related_wrapper->type(), $related_entity);
+    $mapped_objects = salesforce_mapping_object_load_by_drupal(
+      $related_wrapper->type(),
+      $related_entity_id
+    );
+    if ($mapped_objects) {
+      $value = $mapped_objects->salesforce_id;
+    }
   }
   return $value;
 }
@@ -154,53 +157,61 @@ function salesforce_mapping_related_entity_fieldmap_pull_value($entity_wrapper, 
     return entity_metadata_wrapper($mapped_objects->entity_type, $entity);
   }
   // Handle relations.
-  else {
-    if (module_exists('relation')) {
-      $type = $info['parent']->type();
-      $id = $info['parent']->getIdentifier();
-      $query = relation_query($type, $id);
-      $query->propertyCondition('relation_type', $info['relation_type']);
-      $results = $query->execute();
-      if ($results) {
-        $relations = relation_load_multiple(array_keys($results));
-        $match = TRUE;
-      }
-      else {
-        $match = FALSE;
-      }
+  elseif (module_exists('relation') && isset($info['relation_type'])) {
+    // We cannot create relationships between new items. We are saving them here
+    // to avoid performing a duplicate save for all entities in
+    // salesforce_pull_process_records().
+    if (!$info['parent']->getIdentifier()) {
+      $info['parent']->save();
+    }
 
-      if (isset($relations)) {
-        foreach ($relations as $rid => $relation) {
-          $match = TRUE;
-          // Check if matches existing.
-          $current_endpoints = $relations[$rid]->endpoints;
-          if (
-            ($current_endpoints[LANGUAGE_NONE][0]['entity_type'] != $type) ||
-            ($current_endpoints[LANGUAGE_NONE][0]['entity_id'] != $id) ||
-            ($current_endpoints[LANGUAGE_NONE][1]['entity_type'] != $mapped_objects->entity_type) ||
-            ($current_endpoints[LANGUAGE_NONE][1]['entity_id'] != $mapped_objects->entity_id)
-          ) {
-            $match = FALSE;
-          }
-          // If same type and not a match delete relation.
-          if ($current_endpoints[LANGUAGE_NONE][1]['entity_type'] == $mapped_objects->entity_type && !$match) {
-            relation_delete($rid);
-          }
+    list($parent_entity_id) = entity_extract_ids($info['parent']->type(), $info['parent']->value());
+    $parent_type = $info['parent']->type();
+    $query = relation_query($parent_type, $parent_entity_id);
+    $query->propertyCondition('relation_type', $info['relation_type']);
+    $results = $query->execute();
+    if ($results) {
+      $relations = relation_load_multiple(array_keys($results));
+      $match = TRUE;
+    }
+    else {
+      $match = FALSE;
+    }
+
+    if (isset($relations)) {
+      foreach ($relations as $rid => $relation) {
+        $match = TRUE;
+        // Check if matches existing.
+        $current_endpoints = $relations[$rid]->endpoints;
+        if (
+          ($current_endpoints[LANGUAGE_NONE][0]['entity_type'] != $parent_type) ||
+          ($current_endpoints[LANGUAGE_NONE][0]['entity_id'] != $parent_entity_id) ||
+          ($current_endpoints[LANGUAGE_NONE][1]['entity_type'] != $mapped_objects->entity_type) ||
+          ($current_endpoints[LANGUAGE_NONE][1]['entity_id'] != $mapped_objects->entity_id)
+        ) {
+          $match = FALSE;
+        }
+        // If same type and not a match delete relation.
+        if ($current_endpoints[LANGUAGE_NONE][1]['entity_type'] == $mapped_objects->entity_type && !$match) {
+          relation_delete($rid);
         }
       }
-      // Create new relation and endpoints.
-      if ($mapped_objects && !$match) {
-        $relation_type = $info['relation_type'];
-        $endpoints = array(
-          array('entity_type' => $type, 'entity_id' => $id),
-          array(
-            'entity_type' => $mapped_objects->entity_type,
-            'entity_id' => $mapped_objects->entity_id,
-          ),
-        );
-        $relation_new = relation_create($relation_type, $endpoints);
-        relation_save($relation_new);
-      }
+    }
+    // Create new relation and endpoints.
+    if ($mapped_objects && !$match) {
+      $relation_type = $info['relation_type'];
+      $endpoints = array(
+        array(
+          'entity_type' => $parent_type,
+          'entity_id' => $parent_entity_id,
+        ),
+        array(
+          'entity_type' => $mapped_objects->entity_type,
+          'entity_id' => $mapped_objects->entity_id,
+        ),
+      );
+      $relation_new = relation_create($relation_type, $endpoints);
+      relation_save($relation_new);
     }
   }
 
@@ -218,9 +229,9 @@ function salesforce_mapping_related_entity_fieldmap_pull_value($entity_wrapper, 
  *   if none are found.
  */
 function salesforce_mapping_relation_endpoints_fieldmap_options($entity_type, $entity_bundle) {
-  $properties = salesforce_mapping_property_fieldmap_options($entity_type, $entity_bundle);
+  $properties = entity_get_all_property_info($entity_type);
   if (isset($properties['endpoints'])) {
-    return array('endpoints' => $properties['endpoints']);
+    return array('endpoints' => $properties['endpoints']['label']);
   }
   else {
     return FALSE;
@@ -305,6 +316,7 @@ function salesforce_mapping_property_fieldmap_push_value($fieldmap, $entity_wrap
     }
     $parent = $child_wrapper;
   }
+  $value = NULL;
   try {
     $value = $child_wrapper->value();
   }
@@ -452,7 +464,7 @@ function salesforce_mapping_token_fieldmap_value($fieldmap, $entity_wrapper) {
   $token = $fieldmap['drupal_field']['fieldmap_value'];
   $value = token_replace($token, array(
     $entity_wrapper->type() => $entity_wrapper->value(),
-  ));
+  ), array('clear' => TRUE));
   return $value;
 }
 

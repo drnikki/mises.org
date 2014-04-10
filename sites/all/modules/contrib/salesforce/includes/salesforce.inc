@@ -22,7 +22,7 @@ class Salesforce {
   public function __construct($consumer_key, $consumer_secret = '') {
     $this->consumer_key = $consumer_key;
     $this->consumer_secret = $consumer_secret;
-    $this->login_url = 'https://login.salesforce.com';
+    $this->login_url = variable_get('salesforce_endpoint', 'https://login.salesforce.com');
 
     // @TODO: Does this need to be configurable?
     $this->rest_api_version = array(
@@ -447,6 +447,18 @@ class Salesforce {
     }
     else {
       $object = $this->apiCall("sobjects/{$name}/describe");
+      // Sort field properties, because salesforce API always provides them in a
+      // random order. We sort them so that stored and exported data are
+      // standardized and predictable.
+      foreach($object['fields'] as &$field) {
+        ksort($field);
+        if (!empty($field['picklistValues'])) {
+          foreach($field['picklistValues'] as &$picklist_value) {
+            ksort($picklist_value);
+          }
+        }
+      }
+
       // Allow the cache to clear at any time by not setting an expire time.
       cache_set($name, $object, 'cache_salesforce_object', CACHE_TEMPORARY);
       return $object;
@@ -500,6 +512,11 @@ class Salesforce {
    * @addtogroup salesforce_apicalls
    */
   public function objectUpsert($name, $key, $value, $params) {
+    // If key is set, remove from $params to avoid UPSERT errors.
+    if (isset($params[$key])) {
+      unset($params[$key]);
+    }
+
     $data = $this->apiCall("sobjects/{$name}/{$key}/{$value}", $params, 'PATCH');
     if ($this->response->code == 300) {
       $data['message'] = t('The value provided is not unique.');
@@ -538,6 +555,25 @@ class Salesforce {
    */
   public function objectRead($name, $id) {
     return $this->apiCall("sobjects/{$name}/{$id}", array(), 'GET');
+  }
+
+  /**
+   * Return a full loaded Salesforce object from External ID.
+   *
+   * @param string $name
+   *   Object type name, E.g., Contact, Account.
+   * @param string $field
+   *   Salesforce external id field name.
+   * @param string $value
+   *   Value of external id.
+   *
+   * @return object
+   *   Object of the requested Salesforce object.
+   *
+   * @addtogroup salesforce_apicalls
+   */
+  public function objectReadbyExternalId($name, $field, $value) {
+    return $this->apiCall("sobjects/{$name}/{$field}/{$value}");
   }
 
   /**
