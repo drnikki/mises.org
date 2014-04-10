@@ -18,7 +18,7 @@ function salesforce_help($path, $arg) {
         $output .= '<p>' . t('In order to configure Salesforce Mappings, you must first enable the <a href="/admin/modules">Salesforce Mapping</a> module.') . '</p>';
       }
       if (!variable_get('salesforce_consumer_secret', NULL) || !variable_get('salesforce_consumer_key', NULL) || !variable_get('salesforce_refresh_token', NULL)) {
-        $output .= '<p>' . t('You must !authorize in order to configure Salesforce Mappings.', array('!authorize' => l(t('authorize your account with Salesforce'), 'admin/config/services/salesforce'))) . '</p>';
+        $output .= '<p>' . t('You must !authorize in order to configure Salesforce Mappings.', array('!authorize' => l(t('authorize your account with Salesforce'), 'admin/config/salesforce/authorize'))) . '</p>';
       }
       return $output;
 
@@ -44,7 +44,7 @@ function salesforce_help($path, $arg) {
       $output .= '<li>' . t('In Salesforce go to Your Name > Setup > Create > Apps then create a new Connected App. (Depending on your Salesforce instance, you may need to go to Your Name > Setup > Develop > Remote Access.)') . '</li>';
       $output .= '<li>' . t('Set the callback URL to: !url (SSL is required)', array('!url' => '<code>' . 'https://' . $_SERVER['HTTP_HOST'] . '/salesforce/oauth_callback' . '</code>')) . '</li>';
       $output .= '<li>' . t('Select at least "Perform requests on your behalf at any time" for OAuth Scope
-  as well as the appropriate other scopes for your application. !info.', array('!info' => l(t('Additional information'), 'https://help.salesforce.com/help/doc/en/remoteaccess_about.htm'))) . '</li>';
+  as well as the appropriate other scopes for your application. Note that "Full access" does not include the "Perform requests on your behalf at any time" scope! !info.', array('!info' => l(t('Additional information'), 'https://help.salesforce.com/help/doc/en/remoteaccess_about.htm'))) . '</li>';
       $output .= '<li>' . t('For more help see !salesforce.', array('!salesforce' => l(t('the salesforce.com documentation'), 'https://www.salesforce.com/us/developer/docs/api_rest/Content/quickstart_oauth.htm'))) . '</li>';
       $output .= '</ul>';
       $output .= '<li>' . t('Your site needs to be SSL enabled to authorize the remote application using OAUTH.') . '</li>';
@@ -152,6 +152,7 @@ function salesforce_oauth_form() {
 
   $consumer_key = variable_get('salesforce_consumer_key', FALSE);
   $consumer_secret = variable_get('salesforce_consumer_secret', FALSE);
+  $salesforce_endpoint = variable_get('salesforce_endpoint', 'https://login.salesforce.com');
 
   $form['message'] = array(
     '#type' => 'item',
@@ -171,6 +172,18 @@ function salesforce_oauth_form() {
     '#description' => t('Consumer secret of the Salesforce remote application you want to grant access to'),
     '#required' => TRUE,
     '#default_value' => $consumer_secret,
+  );
+  $form['advanced'] = array(
+    '#title' => t('Advanced'),
+    '#type' => 'fieldset',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  $form['advanced']['salesforce_endpoint'] = array(
+    '#title' => t('Salesforce endpoint'),
+    '#type' => 'textfield',
+    '#description' => t('Enter the URL of your Salesforce environment (for example, <code>https://test.salesforce.com</code>). <strong>Caution:</strong> Note that switching this setting after you have already synchronised data between your Drupal site and Salesforce will render any existing links between Salesforce objects and Drupal objects invalid!'),
+    '#default_value' => $salesforce_endpoint,
   );
   $form['submit'] = array(
     '#value' => t('Authorize'),
@@ -199,7 +212,7 @@ function salesforce_oauth_form() {
       }
     }
     else {
-      salesforce_set_message(t('Salesforce needs to authorized to connect to this website.'));
+      salesforce_set_message(t('Salesforce needs to be authorized to connect to this website.'), 'error');
     }
   }
 
@@ -217,8 +230,10 @@ function salesforce_oauth_form() {
 function salesforce_oauth_form_submit($form, &$form_state) {
   $consumer_key = $form_state['values']['salesforce_consumer_key'];
   $consumer_secret = $form_state['values']['salesforce_consumer_secret'];
+  $salesforce_endpoint = $form_state['values']['salesforce_endpoint'];
   variable_set('salesforce_consumer_key', $consumer_key);
   variable_set('salesforce_consumer_secret', $consumer_secret);
+  variable_set('salesforce_endpoint', $salesforce_endpoint);
 
   $salesforce = new Salesforce($consumer_key, $consumer_secret);
   $salesforce->getAuthorizationCode();
@@ -230,6 +245,10 @@ function salesforce_oauth_form_submit($form, &$form_state) {
  * Exchanges an authorization code for an access token.
  */
 function salesforce_oauth_callback() {
+  // If no code is provided, return access denied.
+  if (!isset($_GET['code'])) {
+    return drupal_access_denied();
+  }
   $salesforce = salesforce_get_api();
   $salesforce->requestToken($_GET['code']);
 
@@ -238,7 +257,7 @@ function salesforce_oauth_callback() {
   // Rebuild the menu so the mappings links are now available.
   menu_rebuild();
 
-  drupal_goto('admin/config/salesforce/salesforce');
+  drupal_goto('admin/config/salesforce/authorize');
 }
 
 /**
@@ -263,5 +282,14 @@ function salesforce_set_message($message = NULL, $type = 'status', $repeat = TRU
   global $user;
   if ($user->uid == 1 || user_access('administer salesforce', $user)) {
     drupal_set_message($message, $type, $repeat);
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function salesforce_ctools_plugin_directory($module, $plugin_type) {
+  if ($module == 'addressfield') {
+    return 'plugins/addressfield/' . $plugin_type;
   }
 }

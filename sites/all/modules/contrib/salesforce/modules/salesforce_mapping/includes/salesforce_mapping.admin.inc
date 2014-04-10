@@ -119,17 +119,26 @@ function salesforce_mapping_form($form, &$form_state, SalesforceMapping $mapping
   );
   if (!empty($salesforce_object_type)) {
     // Check for custom record types.
-    $salesforce_record_type = _salesforce_mapping_get_default_value('salesforce_record_type', $form_state);
+    $salesforce_record_type_default = _salesforce_mapping_get_default_value('salesforce_record_type_default', $form_state);
+    $salesforce_record_types_allowed_default = _salesforce_mapping_get_default_value('salesforce_record_types_allowed', $form_state);
     $salesforce_record_type_options = _salesforce_mapping_get_salesforce_record_type_options($salesforce_object_type, $form_state);
     $record_type_count = count($salesforce_record_type_options) - 1;
     if ($record_type_count > 1) {
       // There are multiple record types for this object type, so the user must
-      // choose one of them.  Provide a select field.
-      $form['salesforce_object']['salesforce_record_type'] = array(
-        '#title' => t('Salesforce record type'),
+      // choose a default and list of allowed types.
+      $form['salesforce_object']['salesforce_record_types_allowed'] = array(
+        '#title' => t('Allowed Record Types'),
+        '#description' => t('Reducing the allowed Record Types can provide significant performance improvements when pulling data from Salesforce.'),
+        '#type' => 'checkboxes',
+        '#options' => $salesforce_record_type_options,
+        '#default_value' => $salesforce_record_types_allowed_default,
+      );
+      unset($form['salesforce_object']['salesforce_record_types_allowed']['#options']['']);
+      $form['salesforce_object']['salesforce_record_type_default'] = array(
+        '#title' => t('Default record type'),
         '#type' => 'select',
-        '#description' => t('Select a Salesforce record type to map.'),
-        '#default_value' => $salesforce_record_type,
+        '#description' => t('If you do not specify a record type in the mappings, new records will be created using this record type.'),
+        '#default_value' => $salesforce_record_type_default,
         '#options' => $salesforce_record_type_options,
         '#required' => TRUE,
       );
@@ -137,9 +146,13 @@ function salesforce_mapping_form($form, &$form_state, SalesforceMapping $mapping
     else {
       // There is only one record type for this object type.  Don't bother the
       // user and just set the single record type by default.
-      $form['salesforce_object']['salesforce_record_type'] = array(
+      $form['salesforce_object']['salesforce_record_type_default'] = array(
         '#type' => 'hidden',
-        '#value' => $salesforce_record_type,
+        '#value' => $salesforce_record_type_default,
+      );
+      $form['salesforce_object']['salesforce_record_types_allowed'] = array(
+        '#type' => 'hidden',
+        '#value' => array($salesforce_record_type_default => $salesforce_record_type_default),
       );
     }
   }
@@ -504,16 +517,15 @@ function salesforce_mapping_form_validate($form, &$form_state) {
   if (strlen($values['name']) > SALESFORCE_MAPPING_NAME_LENGTH) {
     form_set_error('name', t('Name must not exceed @max characters.', array('@max' => SALESFORCE_MAPPING_NAME_LENGTH)));
   }
-
+  if (!in_array($values['salesforce_record_type_default'], $values['salesforce_record_types_allowed'])) {
+    form_set_error('salesforce_record_type_default', t('Default record type must be one of the Allowed Record Types.'));
+  }
   $efq = new EntityFieldQuery();
   $efq
     ->entityCondition('entity_type', 'salesforce_mapping')
     ->propertyCondition('salesforce_object_type', $values['salesforce_object_type'])
     ->propertyCondition('drupal_entity_type', $values['drupal_entity_type'])
     ->propertyCondition('drupal_bundle', $values['drupal_bundle']);
-  if (isset($values['salesforce_record_type'])) {
-    $efq->propertyCondition('salesforce_record_type', $values['salesforce_record_type']);
-  }
   $efq->count();
 
   // Existing mapping, ensure not using any other unique combo.
@@ -628,7 +640,7 @@ function salesforce_mapping_form_submit($form, &$form_state) {
           'drupal_field' => $mapping['drupal_field'],
           'salesforce_field' => $sf_field,
           'key' => $key_delta !== FALSE && $key_delta != ""
-            && ($key === (int) $key_delta),
+          && ($key === (int) $key_delta),
           'direction' => $mapping['direction'],
         );
       }
@@ -644,7 +656,8 @@ function salesforce_mapping_form_submit($form, &$form_state) {
   $params = array(
     'label' => $values['label'],
     'salesforce_object_type' => $values['salesforce_object_type'],
-    'salesforce_record_type' => $values['salesforce_record_type'],
+    'salesforce_record_types_allowed' => $values['salesforce_record_types_allowed'],
+    'salesforce_record_type_default' => $values['salesforce_record_type_default'],
     'drupal_entity_type' => $values['drupal_entity_type'],
     'drupal_bundle' => $values['drupal_bundle'],
     'description' => '',
@@ -672,7 +685,7 @@ function salesforce_mapping_form_submit($form, &$form_state) {
 }
 
 /**
- * Helper to retreive the current value for a given form field.
+ * Helper to retrieve the current value for a given form field.
  *
  * @param string $field
  *   Name of the field who's value to retreive.
@@ -724,7 +737,7 @@ function _salesforce_mapping_get_default_value($field, &$form_state, $delta = NU
     }
 
     // Special case for salesforce record type.
-    if ($field == 'salesforce_record_type') {
+    if ($field == 'salesforce_record_type_default') {
       $salesforce_object_type = _salesforce_mapping_get_default_value('salesforce_object_type', $form_state);
       $salesforce_record_type_options = _salesforce_mapping_get_salesforce_record_type_options($salesforce_object_type, $form_state, FALSE);
       $record_type_count = count($salesforce_record_type_options);
@@ -814,7 +827,7 @@ function _salesforce_mapping_get_default_value($field, &$form_state, $delta = NU
             $value = $delta;
           }
         }
-        elseif ($mapping->field_mappings[$delta][$field] === TRUE) {
+        elseif (isset($mapping->field_mappings[$delta][$field]) && $mapping->field_mappings[$delta][$field] === TRUE) {
           $value = $delta;
         }
         else {
@@ -825,7 +838,7 @@ function _salesforce_mapping_get_default_value($field, &$form_state, $delta = NU
       case 'direction':
         // Set default for direction, which cannot be NULL like the others.
         $value = SALESFORCE_MAPPING_DIRECTION_SYNC;
-        // No break for this case, should carry onto the default case
+        // No break for this case, should carry onto the default case.
       default:
         if (isset($form_state['input']['salesforce_field_mappings'][$delta][$field])) {
           $value = &$form_state['input']['salesforce_field_mappings'][$delta][$field];
@@ -861,7 +874,9 @@ function _salesforce_mapping_get_drupal_entities(&$form_state, $include_select =
   }
   else {
     module_load_include('inc', 'entity', 'entity.info');
-    $property_info = entity_entity_property_info();
+    $property_info = entity_get_property_info();
+    $entity_info = entity_get_info();
+    $property_info = array_merge_recursive($entity_info, $property_info);
     $form_state['sfm_storage']['drupal_entity_property_info'] = $property_info;
   }
 
@@ -870,16 +885,14 @@ function _salesforce_mapping_get_drupal_entities(&$form_state, $include_select =
     $types[''] = '- ' . t('Select Drupal entity') . ' -';
   }
   foreach ($property_info as $type => $properties) {
-    if (!isset($properties['entity_info'])) {
-      $properties['entity_info'] = entity_get_info($type);
+    // Exclude Salesforce Mapping and Salesforce Object Mapping entities as
+    // these will never sync with Salesforce.
+    if (in_array($type, array('salesforce_mapping', 'salesforce_mapping_object'))) {
+      continue;
     }
-    if (!empty($properties['entity_info'])) {
-      // Exclude Salesforce Mapping and Salesforce Object Mapping entities as
-      // these will never sync with Salesforce.
-      if (in_array($type, array('salesforce_mapping', 'salesforce_mapping_object'))) {
-        continue;
-      }
-      $types[$type] = $properties['entity_info']['label'];
+
+    if (!empty($properties['label'])) {
+      $types[$type] = $properties['label'];
     }
   }
 
