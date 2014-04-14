@@ -1,0 +1,17 @@
+name = Audience / Reading Group
+description = Taxonomy terms for Audience / Reading Group
+core = 7.x
+package = Taxonomy
+version = 7.x-1.0
+project = audience_reading_group
+dependencies[] = features
+dependencies[] = taxonomy
+dependencies[] = uuid
+dependencies[] = uuid_features
+features[features_api][] = api:2
+features[taxonomy][] = reading_group
+features[uuid_term][] = 3e0e7890-605d-4bf4-85c6-dbe0d643cfcb
+features[uuid_term][] = 5b691658-3714-490e-aacc-336309d096a4
+features[uuid_term][] = 77a46036-5d3e-472e-bab7-20000bb1e8c9
+features[uuid_term][] = caad2632-f9ab-44a9-b09d-915ce9367368
+project path = sites/all/modules/custom
