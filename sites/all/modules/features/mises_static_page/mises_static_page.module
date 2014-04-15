@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises: Static Page feature.
+ */
+
+include_once 'mises_static_page.features.inc';
