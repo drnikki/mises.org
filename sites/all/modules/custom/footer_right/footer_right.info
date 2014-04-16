@@ -1,0 +1,8 @@
+name = Footer Right
+description = Footer right: Contact Us, to be added social links
+core = 7.x
+package = Blocks
+dependencies[] = fe_block
+features[fe_block_boxes][] = footer_contact
+features[features_api][] = api:2
+project path = sites/all/modules/custom

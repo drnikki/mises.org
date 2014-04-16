@@ -1,0 +1,9 @@
+name = Navbar: Support Mises
+core = 7.x
+package = Blocks
+version = 7.x-1.0
+project = navbar_support_mises
+dependencies[] = fe_block
+features[fe_block_boxes][] = support_mises
+features[features_api][] = api:2
+project path = sites/all/modules/custom
