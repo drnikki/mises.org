@@ -3,19 +3,102 @@
 * 
 */
 
-
 // bootstap/_navbar.scss
 .navbar-header {
+  background: $white;
   @media (min-width: $grid-float-breakpoint) {
     float: none;
   }
 }
+#navbar {
+  &.navbar-static-top {
+    border-width: 0 0 6px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+
+// Override logo alignment
+.logo.navbar-btn {
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+  &.btn-sm {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &.btn-xs {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+
 
 
 /*
 * CUSTOM MISES ELEMENTS
 */
+/* BODY */
+body {
+  @include background-texture($body-bg,'../images/texture.jpg');
+}
+
+/* HEADER */
 #top-bar {
-background-color: $brand-primary;
   height: 100px;
+  background-color: $brand-primary;
+}
+.support-mises {
+  @extend .pull-right;
+  a[href="support"] {
+    @include background-image('../images/support-mises.jpg',57px,258px);
+    margin-top: -7px;
+  }
+}
+/* CONTAINER */
+.main-container {
+  padding-bottom: 35px;
+}
+
+/* MENU FOOTER */
+.menu-footer {
+  padding: 25px 0 35px;
+  border-top: 1px solid $brand-dark;
+  background: $brand-medium;
+  @include background-texture($brand-medium,'../images/menu-footer-texture.jpg');
+  
+  h2 {
+    color: $brand-secondary;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  ul.menu li a {
+    color: $white;
+    padding: 0;
+    display: inline;
+  }
+}
+
+/* FOOTER */
+.footer {
+  padding: 25px 0 35px;
+  margin-top: 0;
+  border-top: 7px solid $brand-dark;
+  background: $brand-medium;
+  color: $white;
+  @include background-texture($gray-darker,'../images/footer-texture.jpg');
+
+  h2 {
+    color: $brand-contrast;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+  ul.menu li a {
+    color: $white;
+    padding: 0;
+    display: inline;
+  }
+
 }
