@@ -47,8 +47,12 @@ body {
 
 /* HEADER */
 #top-bar {
-  height: 100px;
-  background-color: $brand-primary;
+  height: 110px;
+  @include background-texture($brand-primary,'../images/top-bar.jpg');
+  .top-ad {
+    margin: 28px 0 20px;
+    height: 64px;
+  }
 }
 .support-mises {
   @extend .pull-right;
