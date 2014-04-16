@@ -76,12 +76,15 @@ body {
     text-transform: uppercase;
     font-size: 20px;
   }
-  ul.menu li a {
-    color: $white;
-    padding: 0;
-    display: inline;
-    &:hover {
-      background: transparent;
+  ul.menu {
+    @include content-columns(2);
+    li a {
+      color: $white;
+      padding: 0;
+      display: inline;
+      &:hover {
+        background: transparent;
+      }
     }
   }
 }
