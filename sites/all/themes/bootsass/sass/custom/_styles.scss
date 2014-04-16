@@ -1,0 +1,21 @@
+/*
+* Custom Styles
+* 
+*/
+
+
+// bootstap/_navbar.scss
+.navbar-header {
+  @media (min-width: $grid-float-breakpoint) {
+    float: none;
+  }
+}
+
+
+/*
+* CUSTOM MISES ELEMENTS
+*/
+#top-bar {
+background-color: $brand-primary;
+  height: 100px;
+}
