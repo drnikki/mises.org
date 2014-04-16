@@ -5006,7 +5006,7 @@ tbody.collapse.in {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   border: 1px solid transparent;
 }
 /* line 15, ../sass/bootstrap/mixins/_clearfix.scss */
@@ -8693,24 +8693,24 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 * CUSTOM MISES ELEMENTS
 */
 /* BODY */
-/* line 44, ../sass/custom/_styles.scss */
+/* line 41, ../sass/custom/_styles.scss */
 body {
   background: #e0e3e4 url("../images/texture.jpg") center center repeat;
 }
 
 /* HEADER */
-/* line 49, ../sass/custom/_styles.scss */
+/* line 46, ../sass/custom/_styles.scss */
 #top-bar {
   height: 110px;
   background: #00426b url("../images/top-bar.jpg") center center repeat;
 }
-/* line 52, ../sass/custom/_styles.scss */
+/* line 49, ../sass/custom/_styles.scss */
 #top-bar .top-ad {
   margin: 28px 0 20px;
   height: 64px;
 }
 
-/* line 59, ../sass/custom/_styles.scss */
+/* line 56, ../sass/custom/_styles.scss */
 .support-mises a[href="support"] {
   display: block;
   width: 258px;
@@ -8721,34 +8721,39 @@ body {
 }
 
 /* CONTAINER */
-/* line 65, ../sass/custom/_styles.scss */
+/* line 62, ../sass/custom/_styles.scss */
 .main-container {
-  padding-bottom: 35px;
+  background: transparent url("../images/content-texture.jpg") center top no-repeat;
+  padding: 20px 0 35px;
 }
 
 /* MENU FOOTER */
-/* line 70, ../sass/custom/_styles.scss */
+/* line 68, ../sass/custom/_styles.scss */
 .menu-footer {
   padding: 25px 0 35px;
   border-top: 1px solid #123551;
   background: #206093;
   background: #206093 url("../images/menu-footer-texture.jpg") center center repeat;
 }
-/* line 76, ../sass/custom/_styles.scss */
+/* line 74, ../sass/custom/_styles.scss */
 .menu-footer h2 {
   color: #5b8ab5;
   text-transform: uppercase;
   font-size: 20px;
 }
-/* line 81, ../sass/custom/_styles.scss */
+/* line 79, ../sass/custom/_styles.scss */
 .menu-footer ul.menu li a {
   color: white;
   padding: 0;
   display: inline;
 }
+/* line 83, ../sass/custom/_styles.scss */
+.menu-footer ul.menu li a:hover {
+  background: transparent;
+}
 
 /* FOOTER */
-/* line 89, ../sass/custom/_styles.scss */
+/* line 90, ../sass/custom/_styles.scss */
 .footer {
   padding: 25px 0 35px;
   margin-top: 0;
@@ -8757,15 +8762,19 @@ body {
   color: white;
   background: #222222 url("../images/footer-texture.jpg") center center repeat;
 }
-/* line 97, ../sass/custom/_styles.scss */
+/* line 98, ../sass/custom/_styles.scss */
 .footer h2 {
   color: #729949;
   text-transform: uppercase;
   font-size: 15px;
 }
-/* line 102, ../sass/custom/_styles.scss */
+/* line 103, ../sass/custom/_styles.scss */
 .footer ul.menu li a {
   color: white;
   padding: 0;
   display: inline;
+}
+/* line 107, ../sass/custom/_styles.scss */
+.footer ul.menu li a:hover {
+  background: transparent;
 }

@@ -34,9 +34,6 @@
   }
 }
 
-
-
-
 /*
 * CUSTOM MISES ELEMENTS
 */
@@ -63,7 +60,8 @@ body {
 }
 /* CONTAINER */
 .main-container {
-  padding-bottom: 35px;
+  background: transparent url('../images/content-texture.jpg') center top no-repeat;
+  padding: 20px 0 35px;
 }
 
 /* MENU FOOTER */
@@ -82,6 +80,9 @@ body {
     color: $white;
     padding: 0;
     display: inline;
+    &:hover {
+      background: transparent;
+    }
   }
 }
 
@@ -103,6 +104,9 @@ body {
     color: $white;
     padding: 0;
     display: inline;
+    &:hover {
+      background: transparent;
+    }
   }
 
 }
