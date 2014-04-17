@@ -177,18 +177,20 @@
     </div>
   </div>
 </div>
-<div class="menu-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-      <?php print render($page['menu_footer_one']); ?>
-      </div>
-      <div class="col-sm-6">
-      <?php print render($page['menu_footer_two']); ?>
+<?php if (!empty($page['menu_footer_one']) || !empty($page['menu_footer_two'])): ?>
+  <div class="menu-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+        <?php print render($page['menu_footer_one']); ?>
+        </div>
+        <div class="col-sm-6">
+        <?php print render($page['menu_footer_two']); ?>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<?php endif; ?>
 <footer class="footer">
   <div class="container">
     <div class="row">
