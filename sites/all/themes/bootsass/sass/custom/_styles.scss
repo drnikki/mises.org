@@ -45,18 +45,14 @@ body {
 /* HEADER */
 #top-bar {
   height: 110px;
+  padding-top: 28px;
   @include background-texture($brand-primary,'../images/top-bar.jpg');
-  .top-ad {
-    margin: 28px 0 20px;
-    height: 64px;
-  }
 }
-.support-mises {
+#block-boxes-support-mises,
+#block-boxes-support-mises-header {
   @extend .pull-right;
-  a[href="support"] {
-    @include background-image('../images/support-mises.jpg',57px,258px);
-    margin-top: -7px;
-  }
+  height: 50px;
+  margin-top: -7px;
 }
 /* CONTAINER */
 .main-container {

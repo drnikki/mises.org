@@ -1916,7 +1916,8 @@ blockquote .small:before {
 /* line 265, ../sass/bootstrap/_type.scss */
 .blockquote-reverse,
 blockquote.pull-right,
-blockquote.support-mises {
+blockquote#block-boxes-support-mises,
+blockquote#block-boxes-support-mises-header {
   padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid #eeeeee;
@@ -1928,11 +1929,14 @@ blockquote.support-mises {
 .blockquote-reverse small:before,
 .blockquote-reverse .small:before,
 blockquote.pull-right footer:before,
-blockquote.support-mises footer:before,
+blockquote#block-boxes-support-mises footer:before,
+blockquote#block-boxes-support-mises-header footer:before,
 blockquote.pull-right small:before,
-blockquote.support-mises small:before,
+blockquote#block-boxes-support-mises small:before,
+blockquote#block-boxes-support-mises-header small:before,
 blockquote.pull-right .small:before,
-blockquote.support-mises .small:before {
+blockquote#block-boxes-support-mises .small:before,
+blockquote#block-boxes-support-mises-header .small:before {
   content: '';
 }
 /* line 277, ../sass/bootstrap/_type.scss */
@@ -1940,11 +1944,14 @@ blockquote.support-mises .small:before {
 .blockquote-reverse small:after,
 .blockquote-reverse .small:after,
 blockquote.pull-right footer:after,
-blockquote.support-mises footer:after,
+blockquote#block-boxes-support-mises footer:after,
+blockquote#block-boxes-support-mises-header footer:after,
 blockquote.pull-right small:after,
-blockquote.support-mises small:after,
+blockquote#block-boxes-support-mises small:after,
+blockquote#block-boxes-support-mises-header small:after,
 blockquote.pull-right .small:after,
-blockquote.support-mises .small:after {
+blockquote#block-boxes-support-mises .small:after,
+blockquote#block-boxes-support-mises-header .small:after {
   content: '\00A0 \2014';
 }
 
@@ -4301,7 +4308,8 @@ tbody.collapse.in {
   background-clip: padding-box;
 }
 /* line 51, ../sass/bootstrap/_dropdowns.scss */
-.dropdown-menu.pull-right, .dropdown-menu.support-mises {
+.dropdown-menu.pull-right, .dropdown-menu#block-boxes-support-mises,
+.dropdown-menu#block-boxes-support-mises-header {
   right: 0;
   left: auto;
 }
@@ -4393,7 +4401,8 @@ tbody.collapse.in {
 }
 
 /* line 170, ../sass/bootstrap/_dropdowns.scss */
-.pull-right > .dropdown-menu, .support-mises > .dropdown-menu {
+.pull-right > .dropdown-menu, #block-boxes-support-mises > .dropdown-menu,
+#block-boxes-support-mises-header > .dropdown-menu {
   right: 0;
   left: auto;
 }
@@ -6216,7 +6225,8 @@ a.thumbnail.active {
   margin-right: 10px;
 }
 /* line 43, ../sass/bootstrap/_media.scss */
-.media > .pull-right, .media > .support-mises {
+.media > .pull-right, .media > #block-boxes-support-mises,
+.media > #block-boxes-support-mises-header {
   margin-left: 10px;
 }
 
@@ -7526,7 +7536,8 @@ button.close {
 }
 
 /* line 15, ../sass/bootstrap/_utilities.scss */
-.pull-right, .support-mises {
+.pull-right, #block-boxes-support-mises,
+#block-boxes-support-mises-header {
   float: right !important;
 }
 
@@ -8702,46 +8713,39 @@ body {
 /* line 46, ../sass/custom/_styles.scss */
 #top-bar {
   height: 110px;
+  padding-top: 28px;
   background: #00426b url("../images/top-bar.jpg") center center repeat;
 }
-/* line 49, ../sass/custom/_styles.scss */
-#top-bar .top-ad {
-  margin: 28px 0 20px;
-  height: 64px;
-}
 
-/* line 56, ../sass/custom/_styles.scss */
-.support-mises a[href="support"] {
-  display: block;
-  width: 258px;
-  height: 57px;
-  background: url("../images/support-mises.jpg") 0 0 no-repeat;
-  text-indent: -9999em;
+/* line 52, ../sass/custom/_styles.scss */
+#block-boxes-support-mises,
+#block-boxes-support-mises-header {
+  height: 50px;
   margin-top: -7px;
 }
 
 /* CONTAINER */
-/* line 62, ../sass/custom/_styles.scss */
+/* line 58, ../sass/custom/_styles.scss */
 .main-container {
   background: transparent url("../images/content-texture.jpg") center top no-repeat;
   padding: 20px 0 35px;
 }
 
 /* MENU FOOTER */
-/* line 68, ../sass/custom/_styles.scss */
+/* line 64, ../sass/custom/_styles.scss */
 .menu-footer {
   padding: 25px 0 35px;
   border-top: 1px solid #123551;
   background: #206093;
   background: #206093 url("../images/menu-footer-texture.jpg") center center repeat;
 }
-/* line 74, ../sass/custom/_styles.scss */
+/* line 70, ../sass/custom/_styles.scss */
 .menu-footer h2 {
   color: #5b8ab5;
   text-transform: uppercase;
   font-size: 20px;
 }
-/* line 79, ../sass/custom/_styles.scss */
+/* line 75, ../sass/custom/_styles.scss */
 .menu-footer ul.menu {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -8750,19 +8754,19 @@ body {
   -moz-column-gap: 30px;
   column-gap: 30px;
 }
-/* line 81, ../sass/custom/_styles.scss */
+/* line 77, ../sass/custom/_styles.scss */
 .menu-footer ul.menu li a {
   color: white;
   padding: 0;
   display: inline;
 }
-/* line 85, ../sass/custom/_styles.scss */
+/* line 81, ../sass/custom/_styles.scss */
 .menu-footer ul.menu li a:hover {
   background: transparent;
 }
 
 /* FOOTER */
-/* line 93, ../sass/custom/_styles.scss */
+/* line 89, ../sass/custom/_styles.scss */
 .footer {
   padding: 25px 0 35px;
   margin-top: 0;
@@ -8771,19 +8775,19 @@ body {
   color: white;
   background: #222222 url("../images/footer-texture.jpg") center center repeat;
 }
-/* line 101, ../sass/custom/_styles.scss */
+/* line 97, ../sass/custom/_styles.scss */
 .footer h2 {
   color: #729949;
   text-transform: uppercase;
   font-size: 15px;
 }
-/* line 106, ../sass/custom/_styles.scss */
+/* line 102, ../sass/custom/_styles.scss */
 .footer ul.menu li a {
   color: white;
   padding: 0;
   display: inline;
 }
-/* line 110, ../sass/custom/_styles.scss */
+/* line 106, ../sass/custom/_styles.scss */
 .footer ul.menu li a:hover {
   background: transparent;
 }
