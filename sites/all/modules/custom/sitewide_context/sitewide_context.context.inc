@@ -65,11 +65,11 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-4' => array(
-          'module' => 'block',
-          'delta' => '4',
+        'boxes-support_mises_header' => array(
+          'module' => 'boxes',
+          'delta' => 'support_mises_header',
           'region' => 'navigation',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'menu-menu-browse-library' => array(
           'module' => 'menu',
@@ -83,9 +83,9 @@ function sitewide_context_context_default_contexts() {
           'region' => 'footer_center',
           'weight' => '-10',
         ),
-        'block-1' => array(
-          'module' => 'block',
-          'delta' => '1',
+        'boxes-footer_right' => array(
+          'module' => 'boxes',
+          'delta' => 'footer_right',
           'region' => 'footer_right',
           'weight' => '-10',
         ),
@@ -115,15 +115,15 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-2' => array(
-          'module' => 'block',
-          'delta' => '2',
+        'boxes-top_left_ad' => array(
+          'module' => 'boxes',
+          'delta' => 'top_left_ad',
           'region' => 'header_left',
           'weight' => '-10',
         ),
-        'block-3' => array(
-          'module' => 'block',
-          'delta' => '3',
+        'boxes-top_right_ad' => array(
+          'module' => 'boxes',
+          'delta' => 'top_right_ad',
           'region' => 'header_right',
           'weight' => '-10',
         ),

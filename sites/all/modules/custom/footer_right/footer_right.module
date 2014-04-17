@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Footer Right feature.
  */
+
+include_once 'footer_right.features.inc';

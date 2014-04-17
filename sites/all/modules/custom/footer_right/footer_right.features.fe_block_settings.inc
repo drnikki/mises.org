@@ -12,12 +12,12 @@ function footer_right_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-footer_contact'] = array(
-    'cache' => -1,
+  $export['boxes-footer_right'] = array(
+    'cache' => -2,
     'css_class' => '',
     'custom' => 0,
-    'machine_name' => 'footer_contact',
-    'module' => 'block',
+    'delta' => 'footer_right',
+    'module' => 'boxes',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -41,7 +41,7 @@ function footer_right_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Contact Us',
+    'title' => '',
     'visibility' => 0,
   );
 

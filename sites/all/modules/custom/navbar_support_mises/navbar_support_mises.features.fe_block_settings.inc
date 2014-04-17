@@ -12,12 +12,12 @@ function navbar_support_mises_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-support_mises'] = array(
-    'cache' => -1,
-    'css_class' => 'support-mises',
+  $export['boxes-support_mises_header'] = array(
+    'cache' => -2,
+    'css_class' => '',
     'custom' => 0,
-    'machine_name' => 'support_mises',
-    'module' => 'block',
+    'delta' => 'support_mises_header',
+    'module' => 'boxes',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -41,7 +41,7 @@ function navbar_support_mises_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '<none>',
+    'title' => '',
     'visibility' => 0,
   );
 

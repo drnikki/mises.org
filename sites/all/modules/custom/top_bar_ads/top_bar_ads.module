@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Top Bar Ads feature.
  */
+
+include_once 'top_bar_ads.features.inc';

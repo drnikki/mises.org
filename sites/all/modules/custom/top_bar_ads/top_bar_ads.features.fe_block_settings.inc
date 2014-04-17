@@ -12,12 +12,12 @@ function top_bar_ads_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-top_left_ad'] = array(
-    'cache' => -1,
-    'css_class' => 'top-ad',
+  $export['boxes-top_left_ad'] = array(
+    'cache' => -2,
+    'css_class' => '',
     'custom' => 0,
-    'machine_name' => 'top_left_ad',
-    'module' => 'block',
+    'delta' => 'top_left_ad',
+    'module' => 'boxes',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -41,16 +41,16 @@ function top_bar_ads_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '<none>',
+    'title' => '',
     'visibility' => 0,
   );
 
-  $export['block-top_right_ad'] = array(
-    'cache' => -1,
-    'css_class' => 'top-ad',
+  $export['boxes-top_right_ad'] = array(
+    'cache' => -2,
+    'css_class' => '',
     'custom' => 0,
-    'machine_name' => 'top_right_ad',
-    'module' => 'block',
+    'delta' => 'top_right_ad',
+    'module' => 'boxes',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -74,7 +74,7 @@ function top_bar_ads_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '<none>',
+    'title' => '',
     'visibility' => 0,
   );
 

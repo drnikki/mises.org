@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Navbar: Support Mises feature.
  */
+
+include_once 'navbar_support_mises.features.inc';
