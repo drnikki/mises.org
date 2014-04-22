@@ -1,0 +1,111 @@
+/*
+* Custom Styles
+* 
+*/
+
+// bootstap/_navbar.scss
+.navbar-header {
+  background: $white;
+  @media (min-width: $grid-float-breakpoint) {
+    float: none;
+  }
+}
+#navbar {
+  &.navbar-static-top {
+    border-width: 0 0 6px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+
+// Override logo alignment
+.logo.navbar-btn {
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+  &.btn-sm {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &.btn-xs {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+/*
+* CUSTOM MISES ELEMENTS
+*/
+/* BODY */
+body {
+  @include background-texture($body-bg,'../images/texture.jpg');
+}
+
+/* HEADER */
+#top-bar {
+  height: 110px;
+  padding-top: 28px;
+  @include background-texture($brand-primary,'../images/top-bar.jpg');
+}
+#block-boxes-support-mises,
+#block-boxes-support-mises-header {
+  @extend .pull-right;
+  height: 50px;
+  margin-top: -7px;
+}
+/* CONTAINER */
+.main-container {
+  background: transparent url('../images/content-texture.jpg') center top no-repeat;
+  padding: 20px 0 35px;
+}
+
+/* MENU FOOTER */
+.menu-footer {
+  padding: 25px 0 35px;
+  border-top: 1px solid $brand-dark;
+  background: $brand-medium;
+  @include background-texture($brand-medium,'../images/menu-footer-texture.jpg');
+  
+  h2 {
+    color: $brand-secondary;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  ul.menu {
+    @include content-columns(2);
+    li a {
+      color: $white;
+      padding: 0;
+      display: inline;
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+}
+
+/* FOOTER */
+.footer {
+  padding: 25px 0 35px;
+  margin-top: 0;
+  border-top: 7px solid $brand-dark;
+  background: $brand-medium;
+  color: $white;
+  @include background-texture($gray-darker,'../images/footer-texture.jpg');
+
+  h2 {
+    color: $brand-contrast;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+  ul.menu li a {
+    color: $white;
+    padding: 0;
+    display: inline;
+    &:hover {
+      background: transparent;
+    }
+  }
+
+}

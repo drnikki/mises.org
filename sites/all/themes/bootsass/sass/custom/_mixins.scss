@@ -1,0 +1,15 @@
+// CUSTOM MIXINS
+// --------------------------------------------------
+
+// For background images
+@mixin background-image($image, $height, $width) {
+  display: block;
+  width: $width;
+  height: $height;
+  background: url($image) 0 0 no-repeat;
+  text-indent: -9999em;
+}
+
+@mixin background-texture($color,$image) {
+  background: $color url($image) center center repeat;
+}
