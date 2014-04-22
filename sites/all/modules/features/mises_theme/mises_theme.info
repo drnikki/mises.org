@@ -1,0 +1,7 @@
+name = Mises Theme
+description = Support for Mises theme
+core = 7.x
+package = Theme
+dependencies[] = jquery_update
+features[features_api][] = api:2
+project path = sites/all/modules/features
