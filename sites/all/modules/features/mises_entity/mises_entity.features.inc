@@ -42,14 +42,6 @@ function mises_entity_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'library_item' => array(
-      'name' => t('Library Item'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'product' => array(
       'name' => t('Product'),
       'base' => 'node_content',
