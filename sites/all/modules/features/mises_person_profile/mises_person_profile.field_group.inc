@@ -87,8 +87,9 @@ function mises_person_profile_field_group_info() {
     'label' => 'Areas of Expertise',
     'weight' => '9',
     'children' => array(
-      0 => 'field_austrian_school_of_economi',
-      1 => 'field_topics',
+      0 => 'field_topics',
+      1 => 'field_austrian_school',
+      2 => 'field_austrian_school_of_economi',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
