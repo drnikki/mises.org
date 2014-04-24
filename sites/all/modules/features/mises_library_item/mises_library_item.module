@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Library Item feature.
+ */
+
+include_once 'mises_library_item.features.inc';
