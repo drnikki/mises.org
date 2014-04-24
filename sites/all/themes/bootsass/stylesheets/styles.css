@@ -8662,7 +8662,7 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 * Custom styles
 ********************/
 /*
-* Custom Styles
+* Core Custom Styles
 * 
 */
 /* line 7, ../sass/custom/_styles.scss */
@@ -8688,13 +8688,14 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 .logo.navbar-btn {
   margin-top: 40px;
   margin-bottom: 20px;
+  margin-left: 20px;
 }
-/* line 27, ../sass/custom/_styles.scss */
+/* line 28, ../sass/custom/_styles.scss */
 .logo.navbar-btn.btn-sm, .btn-group-sm > .logo.navbar-btn.btn {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 31, ../sass/custom/_styles.scss */
+/* line 32, ../sass/custom/_styles.scss */
 .logo.navbar-btn.btn-xs, .btn-group-xs > .logo.navbar-btn.btn {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -8704,20 +8705,20 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 * CUSTOM MISES ELEMENTS
 */
 /* BODY */
-/* line 41, ../sass/custom/_styles.scss */
+/* line 42, ../sass/custom/_styles.scss */
 body {
   background: #e0e3e4 url("../images/texture.jpg") center center repeat;
 }
 
 /* HEADER */
-/* line 46, ../sass/custom/_styles.scss */
+/* line 47, ../sass/custom/_styles.scss */
 #top-bar {
   height: 110px;
   padding-top: 28px;
   background: #00426b url("../images/top-bar.jpg") center center repeat;
 }
 
-/* line 52, ../sass/custom/_styles.scss */
+/* line 53, ../sass/custom/_styles.scss */
 #block-boxes-support-mises,
 #block-boxes-support-mises-header {
   height: 50px;
@@ -8725,27 +8726,27 @@ body {
 }
 
 /* CONTAINER */
-/* line 58, ../sass/custom/_styles.scss */
+/* line 59, ../sass/custom/_styles.scss */
 .main-container {
   background: transparent url("../images/content-texture.jpg") center top no-repeat;
   padding: 20px 0 35px;
 }
 
 /* MENU FOOTER */
-/* line 64, ../sass/custom/_styles.scss */
+/* line 65, ../sass/custom/_styles.scss */
 .menu-footer {
   padding: 25px 0 35px;
   border-top: 1px solid #123551;
   background: #206093;
   background: #206093 url("../images/menu-footer-texture.jpg") center center repeat;
 }
-/* line 70, ../sass/custom/_styles.scss */
+/* line 71, ../sass/custom/_styles.scss */
 .menu-footer h2 {
   color: #5b8ab5;
   text-transform: uppercase;
   font-size: 20px;
 }
-/* line 75, ../sass/custom/_styles.scss */
+/* line 76, ../sass/custom/_styles.scss */
 .menu-footer ul.menu {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -8754,19 +8755,19 @@ body {
   -moz-column-gap: 30px;
   column-gap: 30px;
 }
-/* line 77, ../sass/custom/_styles.scss */
+/* line 78, ../sass/custom/_styles.scss */
 .menu-footer ul.menu li a {
   color: white;
   padding: 0;
   display: inline;
 }
-/* line 81, ../sass/custom/_styles.scss */
+/* line 82, ../sass/custom/_styles.scss */
 .menu-footer ul.menu li a:hover {
   background: transparent;
 }
 
 /* FOOTER */
-/* line 89, ../sass/custom/_styles.scss */
+/* line 90, ../sass/custom/_styles.scss */
 .footer {
   padding: 25px 0 35px;
   margin-top: 0;
@@ -8775,19 +8776,60 @@ body {
   color: white;
   background: #222222 url("../images/footer-texture.jpg") center center repeat;
 }
-/* line 97, ../sass/custom/_styles.scss */
+/* line 98, ../sass/custom/_styles.scss */
 .footer h2 {
   color: #729949;
   text-transform: uppercase;
   font-size: 15px;
 }
-/* line 102, ../sass/custom/_styles.scss */
+/* line 103, ../sass/custom/_styles.scss */
 .footer ul.menu li a {
   color: white;
   padding: 0;
   display: inline;
 }
-/* line 106, ../sass/custom/_styles.scss */
+/* line 107, ../sass/custom/_styles.scss */
 .footer ul.menu li a:hover {
   background: transparent;
+}
+
+/*
+* Custom Styles of Home and Landing Pages
+* 
+*/
+/* line 5, ../sass/custom/_landing.scss */
+.featured .container {
+  background: white;
+}
+/* line 7, ../sass/custom/_landing.scss */
+.featured .container .col-sm-8, .featured .container .col-sm-4 {
+  padding: 6px;
+}
+
+/* line 12, ../sass/custom/_landing.scss */
+.view-homepage-hero .featured-block {
+  position: relative;
+}
+/* line 14, ../sass/custom/_landing.scss */
+.view-homepage-hero .featured-block a {
+  color: white;
+}
+/* line 19, ../sass/custom/_landing.scss */
+.view-homepage-hero .featured-block .overlay {
+  position: absolute;
+  bottom: 10px;
+  left: -6px;
+  border-left: 6px solid #00426b;
+  background: rgba(80, 129, 156, 0.8);
+  max-width: 75%;
+  padding: 10px 20px 10px 38px;
+  color: white;
+}
+/* line 28, ../sass/custom/_landing.scss */
+.view-homepage-hero .featured-block .overlay h3 {
+  margin-top: 0;
+}
+/* line 31, ../sass/custom/_landing.scss */
+.view-homepage-hero .featured-block .overlay p {
+  color: #eeeeee;
 }

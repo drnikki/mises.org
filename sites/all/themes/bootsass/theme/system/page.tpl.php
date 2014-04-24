@@ -134,6 +134,22 @@
 </header>
 
 <div class="main-container">
+
+  <?php if (!empty($page['featured_left']) && !empty($page['featured_right'])): ?>
+    <div class="featured">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+          <?php print render($page['featured_left']); ?>
+          </div>
+          <div class="col-sm-4">
+          <?php print render($page['featured_right']); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
+
   <div class="container">
 
     <div class="row">
