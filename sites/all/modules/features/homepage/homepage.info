@@ -1,0 +1,16 @@
+name = Mises Homepage
+description = Homepage blocks and layout
+core = 7.x
+package = Theme
+version = 7.x-1.0
+project = homepage
+dependencies[] = context
+dependencies[] = context_ui
+dependencies[] = homepage_hero
+dependencies[] = views
+features[context][] = homepage
+features[ctools][] = context:context:3
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = homepage_hero
+features_exclude[dependencies][ctools] = ctools
