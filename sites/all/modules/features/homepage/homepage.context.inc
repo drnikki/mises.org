@@ -32,11 +32,11 @@ function homepage_context_default_contexts() {
           'region' => 'featured_left',
           'weight' => '-10',
         ),
-        'system-powered-by' => array(
-          'module' => 'system',
-          'delta' => 'powered-by',
+        'boxes-home_new' => array(
+          'module' => 'boxes',
+          'delta' => 'home_new',
           'region' => 'featured_right',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
       ),
     ),

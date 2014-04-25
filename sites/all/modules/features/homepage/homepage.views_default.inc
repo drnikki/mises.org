@@ -47,7 +47,7 @@ function homepage_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Field: Link */
+  /* Field: Field: Image Link */
   $handler->display->display_options['fields']['field_image_link']['id'] = 'field_image_link';
   $handler->display->display_options['fields']['field_image_link']['table'] = 'field_data_field_image_link';
   $handler->display->display_options['fields']['field_image_link']['field'] = 'field_image_link';
@@ -102,7 +102,7 @@ function homepage_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[field_image_link]">
-<div class="image">[field_image]</div>
+<div class="image img-responsive">[field_image]</div>
 <div class="overlay">
 <h3>[title]</h3>
 [field_teaser_text]
@@ -116,7 +116,7 @@ function homepage_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Unlinked Block';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="image">[field_image]</div>
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="image img-responsive">[field_image]</div>
 <div class="overlay">
 <h3>[title]</h3>
 [field_teaser_text]
