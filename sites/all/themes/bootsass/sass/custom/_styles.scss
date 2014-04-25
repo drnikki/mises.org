@@ -60,6 +60,9 @@ body {
   background: transparent url('../images/content-texture.jpg') center top no-repeat;
   padding: 20px 0 35px;
 }
+.main-container > .container {
+  padding-top: 20px;
+}
 
 /* MENU FOOTER */
 .menu-footer {
@@ -91,7 +94,7 @@ body {
 .footer {
   padding: 25px 0 35px;
   margin-top: 0;
-  border-top: 7px solid $brand-dark;
+  border-top: 7px solid $black;
   background: $brand-medium;
   color: $white;
   @include background-texture($gray-darker,'../images/footer-texture.jpg');
@@ -124,3 +127,9 @@ body {
 
 }
 
+/* PRIMARY CONTENT BLOCKS */
+.region-content {
+  background: $white;
+  border-top: 5px solid $brand-secondary;
+  padding: $padding-large-horizontal
+}

@@ -8732,21 +8732,26 @@ body {
   padding: 20px 0 35px;
 }
 
+/* line 63, ../sass/custom/_styles.scss */
+.main-container > .container {
+  padding-top: 20px;
+}
+
 /* MENU FOOTER */
-/* line 65, ../sass/custom/_styles.scss */
+/* line 68, ../sass/custom/_styles.scss */
 .menu-footer {
   padding: 25px 0 35px;
   border-top: 1px solid #123551;
   background: #206093;
   background: #206093 url("../images/menu-footer-texture.jpg") center center repeat;
 }
-/* line 71, ../sass/custom/_styles.scss */
+/* line 74, ../sass/custom/_styles.scss */
 .menu-footer h2 {
   color: #5b8ab5;
   text-transform: uppercase;
   font-size: 20px;
 }
-/* line 76, ../sass/custom/_styles.scss */
+/* line 79, ../sass/custom/_styles.scss */
 .menu-footer ul.menu {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -8755,79 +8760,89 @@ body {
   -moz-column-gap: 30px;
   column-gap: 30px;
 }
-/* line 78, ../sass/custom/_styles.scss */
+/* line 81, ../sass/custom/_styles.scss */
 .menu-footer ul.menu li a {
   color: #e4ebee;
   padding: 0;
   display: inline;
   font-size: 12px;
 }
-/* line 83, ../sass/custom/_styles.scss */
+/* line 86, ../sass/custom/_styles.scss */
 .menu-footer ul.menu li a:hover {
   background: transparent;
 }
 
 /* FOOTER */
-/* line 91, ../sass/custom/_styles.scss */
+/* line 94, ../sass/custom/_styles.scss */
 .footer {
   padding: 25px 0 35px;
   margin-top: 0;
-  border-top: 7px solid #123551;
+  border-top: 7px solid #24292c;
   background: #206093;
   color: white;
   background: #222222 url("../images/footer-texture.jpg") center center repeat;
 }
-/* line 99, ../sass/custom/_styles.scss */
+/* line 102, ../sass/custom/_styles.scss */
 .footer h2 {
   color: #729949;
   text-transform: uppercase;
   font-size: 15px;
 }
-/* line 104, ../sass/custom/_styles.scss */
+/* line 107, ../sass/custom/_styles.scss */
 .footer ul.menu li a {
   color: #e4ebee;
   padding: 0;
   display: inline;
   font-size: 12px;
 }
-/* line 109, ../sass/custom/_styles.scss */
+/* line 112, ../sass/custom/_styles.scss */
 .footer ul.menu li a:hover {
   background: transparent;
 }
-/* line 114, ../sass/custom/_styles.scss */
+/* line 117, ../sass/custom/_styles.scss */
 .footer #block-boxes-footer-right h2 {
   color: #e4ebee;
   font-size: 24px;
 }
-/* line 119, ../sass/custom/_styles.scss */
+/* line 122, ../sass/custom/_styles.scss */
 .footer #boxes-box-footer_right {
   border-top: 1px solid #555555;
   border-bottom: 1px solid #555555;
   padding: 10px 5px;
 }
 
+/* PRIMARY CONTENT BLOCKS */
+/* line 131, ../sass/custom/_styles.scss */
+.region-content {
+  background: white;
+  border-top: 5px solid #5b8ab5;
+  padding: 16px;
+}
+
 /*
 * Custom Styles of Home and Landing Pages
 * 
 */
-/* line 5, ../sass/custom/_landing.scss */
-.featured .container {
+/* line 6, ../sass/custom/_landing.scss */
+.featured .container .row {
   background: white;
+  margin-left: 0;
+  margin-right: 0;
 }
-/* line 7, ../sass/custom/_landing.scss */
+/* line 11, ../sass/custom/_landing.scss */
 .featured .container .col-sm-8, .featured .container .col-sm-4 {
   padding: 6px;
 }
 
-/* line 12, ../sass/custom/_landing.scss */
+/* line 16, ../sass/custom/_landing.scss */
 .view-homepage-hero .featured-block {
   position: relative;
 }
-/* line 14, ../sass/custom/_landing.scss */
+/* line 18, ../sass/custom/_landing.scss */
 .view-homepage-hero .featured-block a {
   color: white;
 }
-/* line 19, ../sass/custom/_landing.scss */
+/* line 23, ../sass/custom/_landing.scss */
 .view-homepage-hero .featured-block .overlay {
   position: absolute;
   bottom: 10px;
@@ -8838,11 +8853,11 @@ body {
   padding: 10px 20px 10px 38px;
   color: white;
 }
-/* line 28, ../sass/custom/_landing.scss */
+/* line 32, ../sass/custom/_landing.scss */
 .view-homepage-hero .featured-block .overlay h3 {
   margin-top: 0;
 }
-/* line 31, ../sass/custom/_landing.scss */
+/* line 35, ../sass/custom/_landing.scss */
 .view-homepage-hero .featured-block .overlay p {
   color: #e4ebee;
 }

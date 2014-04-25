@@ -192,6 +192,36 @@
   
     </div>
   </div>
+
+  <?php if (!empty($page['bottom_one']) || !empty($page['fbottom_two']) || !empty($page['fbottom_three']) || !empty($page['fbottom_four'])): ?>
+    <div class="content-bottom">
+      <div class="container">
+        <div class="row">
+          <?php if (!empty($page['bottom_one'])): ?>
+            <div class="col-sm-3">
+              <?php print render($page['bottom_one']); ?>
+            </div>
+          <?php endif; ?>
+          <?php if (!empty($page['bottom_two'])): ?>
+            <div class="col-sm-3">
+              <?php print render($page['bottom_two']); ?>
+            </div>
+          <?php endif; ?>
+          <?php if (!empty($page['bottom_three'])): ?>
+            <div class="col-sm-3">
+              <?php print render($page['bottom_three']); ?>
+            </div>
+          <?php endif; ?>
+          <?php if (!empty($page['bottom_four'])): ?>
+            <div class="col-sm-3">
+              <?php print render($page['bottom_four']); ?>
+            </div>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
+
 </div>
 <?php if (!empty($page['menu_footer_one']) || !empty($page['menu_footer_two'])): ?>
   <div class="menu-footer">

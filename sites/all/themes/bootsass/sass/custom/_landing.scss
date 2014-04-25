@@ -3,7 +3,11 @@
 * 
 */
 .featured .container {
-  background: $white;
+  .row {
+    background: $white;
+    margin-left: 0;
+    margin-right: 0;
+  }
   .col-sm-8, .col-sm-4 {
     padding: 6px;
   }
