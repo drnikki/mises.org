@@ -76,9 +76,10 @@ body {
   ul.menu {
     @include content-columns(2);
     li a {
-      color: $white;
+      color: $gray-lighter;
       padding: 0;
       display: inline;
+      font-size: $font-size-small;
       &:hover {
         background: transparent;
       }
@@ -101,12 +102,24 @@ body {
     font-size: 15px;
   }
   ul.menu li a {
-    color: $white;
-    padding: 0;
-    display: inline;
+      color: $gray-lighter;
+      padding: 0;
+      display: inline;
+      font-size: $font-size-small;
     &:hover {
       background: transparent;
     }
+  }
+  #block-boxes-footer-right {
+    h2 {
+      color: $gray-lighter;
+      font-size: $font-size-h3;
+    }
+  }
+  #boxes-box-footer_right {
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    padding: $padding-large-vertical $padding-xs-horizontal;
   }
 
 }

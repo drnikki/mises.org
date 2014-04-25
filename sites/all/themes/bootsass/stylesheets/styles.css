@@ -1495,7 +1495,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #e4ebee;
 }
 
 /* line 125, ../sass/bootstrap/_scaffolding.scss */
@@ -1545,7 +1545,7 @@ h6 .small,
 .h6 .small {
   font-weight: normal;
   line-height: 1;
-  color: #999999;
+  color: #c8cdd0;
 }
 
 /* line 26, ../sass/bootstrap/_type.scss */
@@ -1677,7 +1677,7 @@ mark,
 
 /* line 97, ../sass/bootstrap/_type.scss */
 .text-muted {
-  color: #999999;
+  color: #c8cdd0;
 }
 
 /* line 5, ../sass/bootstrap/mixins/_text-emphasis.scss */
@@ -1789,7 +1789,7 @@ a.bg-danger:hover {
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #e4ebee;
 }
 
 /* line 145, ../sass/bootstrap/_type.scss */
@@ -1875,7 +1875,7 @@ dd {
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted #999999;
+  border-bottom: 1px dotted #c8cdd0;
 }
 
 /* line 225, ../sass/bootstrap/_type.scss */
@@ -1889,7 +1889,7 @@ blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
   font-size: 17.5px;
-  border-left: 5px solid #eeeeee;
+  border-left: 5px solid #e4ebee;
 }
 /* line 240, ../sass/bootstrap/_type.scss */
 blockquote p:last-child,
@@ -1904,7 +1904,7 @@ blockquote .small {
   display: block;
   font-size: 80%;
   line-height: 1.42857;
-  color: #999999;
+  color: #c8cdd0;
 }
 /* line 255, ../sass/bootstrap/_type.scss */
 blockquote footer:before,
@@ -1920,7 +1920,7 @@ blockquote#block-boxes-support-mises,
 blockquote#block-boxes-support-mises-header {
   padding-right: 15px;
   padding-left: 0;
-  border-right: 5px solid #eeeeee;
+  border-right: 5px solid #e4ebee;
   border-left: 0;
   text-align: right;
 }
@@ -3511,21 +3511,21 @@ output {
 }
 /* line 102, ../sass/bootstrap/mixins/_vendor-prefixes.scss */
 .form-control::-moz-placeholder {
-  color: #999999;
+  color: #c8cdd0;
   opacity: 1;
 }
 /* line 104, ../sass/bootstrap/mixins/_vendor-prefixes.scss */
 .form-control:-ms-input-placeholder {
-  color: #999999;
+  color: #c8cdd0;
 }
 /* line 105, ../sass/bootstrap/mixins/_vendor-prefixes.scss */
 .form-control::-webkit-input-placeholder {
-  color: #999999;
+  color: #c8cdd0;
 }
 /* line 142, ../sass/bootstrap/_forms.scss */
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
   cursor: not-allowed;
-  background-color: #eeeeee;
+  background-color: #e4ebee;
   opacity: 1;
 }
 
@@ -4175,7 +4175,7 @@ select[multiple].input-lg,
 }
 /* line 113, ../sass/bootstrap/_buttons.scss */
 .btn-link[disabled]:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] .btn-link:focus {
-  color: #999999;
+  color: #c8cdd0;
   text-decoration: none;
 }
 
@@ -4348,7 +4348,7 @@ tbody.collapse.in {
 
 /* line 102, ../sass/bootstrap/_dropdowns.scss */
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
-  color: #999999;
+  color: #c8cdd0;
 }
 
 /* line 109, ../sass/bootstrap/_dropdowns.scss */
@@ -4387,7 +4387,7 @@ tbody.collapse.in {
   padding: 3px 20px;
   font-size: 12px;
   line-height: 1.42857;
-  color: #999999;
+  color: #c8cdd0;
 }
 
 /* line 160, ../sass/bootstrap/_dropdowns.scss */
@@ -4727,7 +4727,7 @@ tbody.collapse.in {
   line-height: 1;
   color: #555555;
   text-align: center;
-  background-color: #eeeeee;
+  background-color: #e4ebee;
   border: 1px solid #cccccc;
   border-radius: 4px;
 }
@@ -4845,22 +4845,22 @@ tbody.collapse.in {
 /* line 24, ../sass/bootstrap/_navs.scss */
 .nav > li > a:hover, .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #e4ebee;
 }
 /* line 31, ../sass/bootstrap/_navs.scss */
 .nav > li.disabled > a {
-  color: #999999;
+  color: #c8cdd0;
 }
 /* line 35, ../sass/bootstrap/_navs.scss */
 .nav > li.disabled > a:hover, .nav > li.disabled > a:focus {
-  color: #999999;
+  color: #c8cdd0;
   text-decoration: none;
   background-color: transparent;
   cursor: not-allowed;
 }
 /* line 48, ../sass/bootstrap/_navs.scss */
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-  background-color: #eeeeee;
+  background-color: #e4ebee;
   border-color: #00426b;
 }
 /* line 59, ../sass/bootstrap/_navs.scss */
@@ -4893,7 +4893,7 @@ tbody.collapse.in {
 }
 /* line 89, ../sass/bootstrap/_navs.scss */
 .nav-tabs > li > a:hover {
-  border-color: #eeeeee #eeeeee #dddddd;
+  border-color: #e4ebee #e4ebee #dddddd;
 }
 /* line 98, ../sass/bootstrap/_navs.scss */
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
@@ -5491,7 +5491,7 @@ tbody.collapse.in {
 }
 /* line 540, ../sass/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-text {
-  color: #999999;
+  color: #c8cdd0;
 }
 /* line 545, ../sass/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-nav > li > a {
@@ -5604,7 +5604,7 @@ tbody.collapse.in {
 }
 /* line 23, ../sass/bootstrap/_breadcrumbs.scss */
 .breadcrumb > .active {
-  color: #999999;
+  color: #c8cdd0;
 }
 
 /* line 4, ../sass/bootstrap/_pagination.scss */
@@ -5649,7 +5649,7 @@ tbody.collapse.in {
 .pagination > li > span:hover,
 .pagination > li > span:focus {
   color: #00131f;
-  background-color: #eeeeee;
+  background-color: #e4ebee;
   border-color: #dddddd;
 }
 /* line 53, ../sass/bootstrap/_pagination.scss */
@@ -5670,7 +5670,7 @@ tbody.collapse.in {
 .pagination > .disabled > a,
 .pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus {
-  color: #999999;
+  color: #c8cdd0;
   background-color: white;
   border-color: #dddddd;
   cursor: not-allowed;
@@ -5747,7 +5747,7 @@ tbody.collapse.in {
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #e4ebee;
 }
 /* line 32, ../sass/bootstrap/_pager.scss */
 .pager .next > a,
@@ -5764,7 +5764,7 @@ tbody.collapse.in {
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
 .pager .disabled > span {
-  color: #999999;
+  color: #c8cdd0;
   background-color: white;
   cursor: not-allowed;
 }
@@ -5801,11 +5801,11 @@ a.label:hover, a.label:focus {
 
 /* line 44, ../sass/bootstrap/_labels.scss */
 .label-default {
-  background-color: #999999;
+  background-color: #c8cdd0;
 }
 /* line 8, ../sass/bootstrap/mixins/_labels.scss */
 .label-default[href]:hover, .label-default[href]:focus {
-  background-color: gray;
+  background-color: #acb4b9;
 }
 
 /* line 48, ../sass/bootstrap/_labels.scss */
@@ -5865,7 +5865,7 @@ a.label:hover, a.label:focus {
   vertical-align: baseline;
   white-space: nowrap;
   text-align: center;
-  background-color: #999999;
+  background-color: #c8cdd0;
   border-radius: 10px;
 }
 /* line 22, ../sass/bootstrap/_badges.scss */
@@ -5904,7 +5904,7 @@ a.badge:hover, a.badge:focus {
   padding: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: #e4ebee;
 }
 /* line 13, ../sass/bootstrap/_jumbotron.scss */
 .jumbotron h1,
@@ -5919,7 +5919,7 @@ a.badge:hover, a.badge:focus {
 }
 /* line 22, ../sass/bootstrap/_jumbotron.scss */
 .jumbotron > hr {
-  border-top-color: #d5d5d5;
+  border-top-color: #c5d4da;
 }
 /* line 26, ../sass/bootstrap/_jumbotron.scss */
 .container .jumbotron {
@@ -6141,7 +6141,7 @@ a.thumbnail.active {
 }
 /* line 61, ../sass/bootstrap/_progress-bars.scss */
 .progress-bar[aria-valuenow="0"] {
-  color: #999999;
+  color: #c8cdd0;
   min-width: 30px;
   background-color: transparent;
   background-image: none;
@@ -6288,8 +6288,8 @@ a.list-group-item:hover, a.list-group-item:focus {
 
 /* line 74, ../sass/bootstrap/_list-group.scss */
 .list-group-item.disabled, .list-group-item.disabled:hover, .list-group-item.disabled:focus {
-  background-color: #eeeeee;
-  color: #999999;
+  background-color: #e4ebee;
+  color: #c8cdd0;
 }
 /* line 79, ../sass/bootstrap/_list-group.scss */
 .list-group-item.disabled .list-group-item-heading, .list-group-item.disabled:hover .list-group-item-heading, .list-group-item.disabled:focus .list-group-item-heading {
@@ -6297,7 +6297,7 @@ a.list-group-item:hover, a.list-group-item:focus {
 }
 /* line 82, ../sass/bootstrap/_list-group.scss */
 .list-group-item.disabled .list-group-item-text, .list-group-item.disabled:hover .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text {
-  color: #999999;
+  color: #c8cdd0;
 }
 /* line 90, ../sass/bootstrap/_list-group.scss */
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
@@ -8757,17 +8757,18 @@ body {
 }
 /* line 78, ../sass/custom/_styles.scss */
 .menu-footer ul.menu li a {
-  color: white;
+  color: #e4ebee;
   padding: 0;
   display: inline;
+  font-size: 12px;
 }
-/* line 82, ../sass/custom/_styles.scss */
+/* line 83, ../sass/custom/_styles.scss */
 .menu-footer ul.menu li a:hover {
   background: transparent;
 }
 
 /* FOOTER */
-/* line 90, ../sass/custom/_styles.scss */
+/* line 91, ../sass/custom/_styles.scss */
 .footer {
   padding: 25px 0 35px;
   margin-top: 0;
@@ -8776,21 +8777,33 @@ body {
   color: white;
   background: #222222 url("../images/footer-texture.jpg") center center repeat;
 }
-/* line 98, ../sass/custom/_styles.scss */
+/* line 99, ../sass/custom/_styles.scss */
 .footer h2 {
   color: #729949;
   text-transform: uppercase;
   font-size: 15px;
 }
-/* line 103, ../sass/custom/_styles.scss */
+/* line 104, ../sass/custom/_styles.scss */
 .footer ul.menu li a {
-  color: white;
+  color: #e4ebee;
   padding: 0;
   display: inline;
+  font-size: 12px;
 }
-/* line 107, ../sass/custom/_styles.scss */
+/* line 109, ../sass/custom/_styles.scss */
 .footer ul.menu li a:hover {
   background: transparent;
+}
+/* line 114, ../sass/custom/_styles.scss */
+.footer #block-boxes-footer-right h2 {
+  color: #e4ebee;
+  font-size: 24px;
+}
+/* line 119, ../sass/custom/_styles.scss */
+.footer #boxes-box-footer_right {
+  border-top: 1px solid #555555;
+  border-bottom: 1px solid #555555;
+  padding: 10px 5px;
 }
 
 /*
@@ -8831,5 +8844,5 @@ body {
 }
 /* line 31, ../sass/custom/_landing.scss */
 .view-homepage-hero .featured-block .overlay p {
-  color: #eeeeee;
+  color: #e4ebee;
 }
