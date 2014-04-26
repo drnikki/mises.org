@@ -1,5 +1,5 @@
 /*
-* Custom Styles
+* Core Custom Styles
 * 
 */
 
@@ -23,6 +23,7 @@
 .logo.navbar-btn {
   margin-top: 40px;
   margin-bottom: 20px;
+  margin-left: 20px;
 
   &.btn-sm {
     margin-top: 10px;
@@ -59,6 +60,9 @@ body {
   background: transparent url('../images/content-texture.jpg') center top no-repeat;
   padding: 20px 0 35px;
 }
+.main-container > .container {
+  padding-top: 20px;
+}
 
 /* MENU FOOTER */
 .menu-footer {
@@ -75,9 +79,10 @@ body {
   ul.menu {
     @include content-columns(2);
     li a {
-      color: $white;
+      color: $gray-lighter;
       padding: 0;
       display: inline;
+      font-size: $font-size-small;
       &:hover {
         background: transparent;
       }
@@ -89,7 +94,7 @@ body {
 .footer {
   padding: 25px 0 35px;
   margin-top: 0;
-  border-top: 7px solid $brand-dark;
+  border-top: 7px solid $black;
   background: $brand-medium;
   color: $white;
   @include background-texture($gray-darker,'../images/footer-texture.jpg');
@@ -100,12 +105,31 @@ body {
     font-size: 15px;
   }
   ul.menu li a {
-    color: $white;
-    padding: 0;
-    display: inline;
+      color: $gray-lighter;
+      padding: 0;
+      display: inline;
+      font-size: $font-size-small;
     &:hover {
       background: transparent;
     }
   }
+  #block-boxes-footer-right {
+    h2 {
+      color: $gray-lighter;
+      font-size: $font-size-h3;
+    }
+  }
+  #boxes-box-footer_right {
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    padding: $padding-large-vertical $padding-xs-horizontal;
+  }
 
+}
+
+/* PRIMARY CONTENT BLOCKS */
+.region-content {
+  background: $white;
+  border-top: 5px solid $brand-secondary;
+  padding: $padding-large-horizontal
 }
