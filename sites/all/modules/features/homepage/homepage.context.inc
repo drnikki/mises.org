@@ -38,6 +38,12 @@ function homepage_context_default_contexts() {
           'region' => 'featured_right',
           'weight' => '-9',
         ),
+        'menu-menu-new-to-mises' => array(
+          'module' => 'menu',
+          'delta' => 'menu-new-to-mises',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
       ),
     ),
   );

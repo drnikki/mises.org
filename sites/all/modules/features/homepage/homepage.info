@@ -9,6 +9,7 @@ dependencies[] = context
 dependencies[] = context_ui
 dependencies[] = ctools
 dependencies[] = homepage_hero
+dependencies[] = menu
 dependencies[] = views
 dependencies[] = views_conditional
 features[box][] = home_new
