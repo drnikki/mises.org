@@ -1,0 +1,15 @@
+name = Display Suite Shared
+description = DS settings that are shared across content types or displays
+core = 7.x
+package = Theme
+version = 7.x-1.0
+project = display_suite_shared
+dependencies[] = ctools
+dependencies[] = ds
+features[ctools][] = ds:ds:1
+features[ds_field_settings][] = node|library_item|teaser
+features[ds_field_settings][] = node|person_profile|author_full_name
+features[ds_fields][] = author_full_name
+features[ds_layout_settings][] = node|person_profile|author_full_name
+features[ds_view_modes][] = block_teaser
+features[features_api][] = api:2
