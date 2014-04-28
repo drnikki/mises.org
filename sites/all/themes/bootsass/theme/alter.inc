@@ -17,6 +17,9 @@ function bootsass_css_alter(&$css) {
   if (!empty($excludes)) {
     $css = array_diff_key($css, drupal_map_assoc($excludes));
   }
+  // Unset Display Suite
+  unset($css['sites/all/modules/contrib/ds/layouts/ds_2col/ds_2col.css']);
+  
 }
 
 /**

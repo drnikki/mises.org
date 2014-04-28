@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Homepage Views feature.
+ */
+
+include_once 'homepage_views.features.inc';
