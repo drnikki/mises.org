@@ -65,7 +65,7 @@ function entity_box_box_with_image_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<a href="[entity_boxes:url]"><img src="[entity_boxes:field_image]"></a>',
+      'value' => '<a href="[entity_boxes:url]"><img class="img-responsive" src="[entity_boxes:field_image]"></a>',
       'format' => 'ds_code',
     ),
     'use_token' => 1,

@@ -59,6 +59,52 @@ function mises_institute_fellowship_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-institute_fellowship-field_award_type'
+  $field_instances['node-institute_fellowship-field_award_type'] = array(
+    'bundle' => 'institute_fellowship',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_award_type',
+    'label' => 'Award Type',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-institute_fellowship-field_image'
   $field_instances['node-institute_fellowship-field_image'] = array(
     'bundle' => 'institute_fellowship',
@@ -164,12 +210,13 @@ function mises_institute_fellowship_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Award Type');
   t('Description');
   t('Image');
   t('Recipients');
