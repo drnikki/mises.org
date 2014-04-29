@@ -91,19 +91,22 @@ function mises_static_page_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 'private',
-          'public' => 'public',
+          'private' => 0,
+          'public' => 0,
+          'youtube' => 'youtube',
         ),
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
-          'image' => 'image',
-          'video' => 0,
+          'image' => 0,
+          'video' => 'video',
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
           'upload' => 0,
+          'youtube' => 'youtube',
         ),
         'progress_indicator' => 'throbber',
       ),
