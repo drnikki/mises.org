@@ -394,7 +394,7 @@ function mises_events_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
         'weight' => 8,
