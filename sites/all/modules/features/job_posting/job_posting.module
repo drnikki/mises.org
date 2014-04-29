@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Job Posting feature.
+ */
+
+include_once 'job_posting.features.inc';
