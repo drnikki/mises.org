@@ -1,0 +1,14 @@
+name = Events: Taxnomy
+core = 7.x
+package = Taxonomy
+version = 7.x-1.0
+project = events_taxnomy
+dependencies[] = features
+dependencies[] = taxonomy
+dependencies[] = uuid
+dependencies[] = uuid_features
+features[features_api][] = api:2
+features[taxonomy][] = events
+features[uuid_term][] = 9c1cdf6a-f791-4b9b-94b6-e930e37e6ca8
+features[uuid_term][] = e48543ca-5bdb-4bf6-a589-52181e7bbdba
+project path = sites/all/modules/features
