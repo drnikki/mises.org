@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Campaign feature.
+ */
+
+include_once 'mises_campaign.features.inc';
