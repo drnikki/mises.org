@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * photo_gallery.strongarm.inc
+ * mises_photo_gallery.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function photo_gallery_strongarm() {
+function mises_photo_gallery_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
