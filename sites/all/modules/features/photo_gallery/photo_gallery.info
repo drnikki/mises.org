@@ -1,4 +1,4 @@
-name = Photo Gallery
+name = Mises Photo Gallery
 core = 7.x
 package = Content Types
 version = 7.x-1.0
