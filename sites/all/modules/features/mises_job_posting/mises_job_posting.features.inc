@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * job_posting.features.inc
+ * mises_job_posting.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function job_posting_ctools_plugin_api($module = NULL, $api = NULL) {
+function mises_job_posting_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -16,7 +16,7 @@ function job_posting_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_node_info().
  */
-function job_posting_node_info() {
+function mises_job_posting_node_info() {
   $items = array(
     'job_posting_' => array(
       'name' => t('Job Posting'),

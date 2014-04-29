@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * job_posting.features.field_instance.inc
+ * mises_job_posting.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function job_posting_field_default_field_instances() {
+function mises_job_posting_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-job_posting_-field_closing_date'
@@ -192,7 +192,7 @@ function job_posting_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'rel_remove' => 'default',
-      'title' => 'optional',
+      'title' => 'none',
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * job_posting.features.field_base.inc
+ * mises_job_posting.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function job_posting_field_default_field_bases() {
+function mises_job_posting_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_closing_date'

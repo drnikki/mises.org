@@ -1,8 +1,8 @@
-name = Job Posting
+name = Mises Job Posting
 core = 7.x
 package = Content Types
 version = 7.x-1.0
-project = job_posting
+project = mises_job_posting
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = features
@@ -41,4 +41,3 @@ features[variable][] = menu_parent_job_posting_
 features[variable][] = node_options_job_posting_
 features[variable][] = node_preview_job_posting_
 features[variable][] = node_submitted_job_posting_
-project path = sites/all/modules/features

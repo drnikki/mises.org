@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * job_posting.strongarm.inc
+ * mises_job_posting.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function job_posting_strongarm() {
+function mises_job_posting_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
