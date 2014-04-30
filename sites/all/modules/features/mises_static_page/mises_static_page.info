@@ -1,5 +1,5 @@
 name = Mises: Static Page
-description = Adds content types
+description = This feature adds the static page content type with support for media from a remote source.
 core = 7.x
 package = Content Types
 version = 7.x-1.0
@@ -10,6 +10,8 @@ dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = image
 dependencies[] = media
+dependencies[] = media_internet
+dependencies[] = media_youtube
 dependencies[] = mediafield
 dependencies[] = text
 features[ctools][] = field_group:field_group:1

@@ -14,7 +14,6 @@ function navbar_support_mises_default_fe_block_settings() {
 
   $export['boxes-support_mises_header'] = array(
     'cache' => -2,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'support_mises_header',
     'module' => 'boxes',

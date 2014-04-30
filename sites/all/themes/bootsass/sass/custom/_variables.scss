@@ -15,16 +15,18 @@ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")
 //
 //## Gray and brand colors for use across Bootstrap.
 
+$black:                  #24292c !default;
 $gray-darker:            lighten(#000, 13.5%) !default; // #222
 $gray-dark:              lighten(#000, 20%) !default;   // #333
 $gray:                   lighten(#000, 33.5%) !default; // #555
-$gray-light:             lighten(#000, 60%) !default;   // #999
-$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+$gray-light:             #c8cdd0 !default;   // lighten(#000, 60%)  #999
+$gray-lighter:           #e4ebee!default; // lighten(#000, 93.5%) #eee
 $white:                 #fff !default;
 
 $brand-primary:         #00426b !default; //dark blue
 $brand-secondary:       #5b8ab5 !default; //light blue
 $brand-medium:          #206093 !default; //medium blue
+$brand-medium-screen:   rgba(80,129,156,0.8) !default; // medium blue screened
 $brand-dark:            #123551 !default; //darkest blue - footer borders
 $brand-contrast:        #729949 !default; //green
 $brand-success:         #5cb85c !default;

@@ -1,0 +1,15 @@
+name = Home: New to Mises
+core = 7.x
+package = Menus
+version = 7.x-1.0
+project = home_new_to_mises
+dependencies[] = features
+dependencies[] = menu
+dependencies[] = menu_html
+features[features_api][] = api:2
+features[menu_custom][] = menu-new-to-mises
+features[menu_links][] = menu-new-to-mises_spani-amspan-a-homeschoooler:taxonomy/term/51
+features[menu_links][] = menu-new-to-mises_spani-amspan-a-journalist:taxonomy/term/17
+features[menu_links][] = menu-new-to-mises_spani-amspan-a-student:search
+features[menu_links][] = menu-new-to-mises_spani-amspan-an-economistresearcher:taxonomy/term/18
+features[menu_links][] = menu-new-to-mises_spani-amspan-new-to-austrian-economics:<front>

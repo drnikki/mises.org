@@ -14,7 +14,6 @@ function footer_right_default_fe_block_settings() {
 
   $export['boxes-footer_right'] = array(
     'cache' => -2,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'footer_right',
     'module' => 'boxes',
