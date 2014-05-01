@@ -10,6 +10,52 @@
 function mises_award_ct_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-award-field_award_type'
+  $field_instances['node-award-field_award_type'] = array(
+    'bundle' => 'award',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_award_type',
+    'label' => 'Award Type',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-award-field_recipients'
   $field_instances['node-award-field_recipients'] = array(
     'bundle' => 'award',
@@ -110,6 +156,7 @@ function mises_award_ct_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Award Type');
   t('Recipients');
   t('Year');
 

@@ -24,7 +24,8 @@ function mises_award_ct_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_year',
-      1 => 'title',
+      1 => 'field_award_type',
+      2 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
