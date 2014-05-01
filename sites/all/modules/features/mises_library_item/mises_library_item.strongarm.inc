@@ -89,6 +89,12 @@ function mises_library_item_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'block_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'author_full_name' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

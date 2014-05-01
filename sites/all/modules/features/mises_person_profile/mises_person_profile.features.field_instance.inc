@@ -19,8 +19,18 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_options' => array(),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
         'weight' => 2,
       ),
       'default' => array(
@@ -69,8 +79,12 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 15,
       ),
       'default' => array(
@@ -121,8 +135,11 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 16,
       ),
       'default' => array(
@@ -167,8 +184,18 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_options' => array(),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
         'weight' => 4,
       ),
       'default' => array(
@@ -216,8 +243,18 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_options' => array(),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
         'weight' => 14,
       ),
       'default' => array(
@@ -265,8 +302,18 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_options' => array(),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
         'weight' => 5,
       ),
       'default' => array(
@@ -314,8 +361,11 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
         'weight' => 13,
       ),
       'default' => array(
@@ -377,8 +427,11 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
         'weight' => 3,
       ),
       'default' => array(
@@ -423,8 +476,18 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_options' => array(),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
         'weight' => 0,
       ),
       'default' => array(
@@ -472,8 +535,15 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'conditions' => array(),
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+        ),
+        'type' => 'field_collection_list',
         'weight' => 2,
       ),
       'default' => array(
@@ -523,8 +593,12 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 8,
       ),
       'default' => array(
@@ -574,8 +648,12 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 10,
       ),
       'default' => array(
@@ -626,8 +704,12 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 9,
       ),
       'default' => array(
@@ -677,8 +759,18 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_options' => array(),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
         'weight' => 11,
       ),
       'default' => array(
@@ -726,8 +818,12 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 7,
       ),
       'default' => array(
@@ -778,8 +874,11 @@ function mises_person_profile_field_default_field_instances() {
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
         'weight' => 12,
       ),
       'default' => array(

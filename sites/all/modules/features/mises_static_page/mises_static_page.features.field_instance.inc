@@ -17,11 +17,38 @@ function mises_static_page_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => 'list_teaser',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'list_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(
+            0 => array(
+              'condition' => '',
+            ),
+          ),
           'image_link' => '',
           'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'single_image' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => 'block_teaser',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -72,6 +99,7 @@ function mises_static_page_field_default_field_instances() {
         'label' => 'above',
         'module' => 'mediafield',
         'settings' => array(
+          'conditions' => array(),
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
@@ -122,7 +150,9 @@ function mises_static_page_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -130,6 +160,7 @@ function mises_static_page_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'conditions' => array(),
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -168,6 +199,7 @@ function mises_static_page_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
+          'conditions' => array(),
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
@@ -211,6 +243,7 @@ function mises_static_page_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
+          'conditions' => array(),
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',

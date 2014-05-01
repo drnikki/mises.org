@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Mises Theme feature.
  */
+
+include_once 'mises_theme.features.inc';

@@ -14,6 +14,7 @@ dependencies[] = list
 dependencies[] = mises_library_item
 dependencies[] = mises_static_page
 dependencies[] = options
+dependencies[] = smart_trim
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
