@@ -1,58 +1,30 @@
 <?php
 /**
  * @file
- * mises_institute_fellowship.field_group.inc
+ * mises_article.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function mises_institute_fellowship_field_group_info() {
+function mises_article_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_award_information|node|institute_fellowship|form';
-  $field_group->group_name = 'group_award_information';
+  $field_group->identifier = 'group_article_information|node|article|form';
+  $field_group->group_name = 'group_article_information';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'institute_fellowship';
+  $field_group->bundle = 'article';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Award Information',
-    'weight' => '1',
-    'children' => array(
-      0 => 'field_recipients',
-      1 => 'field_award_type',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-award-information field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_award_information|node|institute_fellowship|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_fellowship_information|node|institute_fellowship|form';
-  $field_group->group_name = 'group_fellowship_information';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'institute_fellowship';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Fellowship Information',
+    'label' => 'Article Information',
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'field_image',
+      1 => 'field_tags',
       2 => 'title',
     ),
     'format_type' => 'tab',
@@ -60,12 +32,39 @@ function mises_institute_fellowship_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-fellowship-information field-group-tab',
+        'classes' => 'group-article-information field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_fellowship_information|node|institute_fellowship|form'] = $field_group;
+  $export['group_article_information|node|article|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_images|node|article|form';
+  $field_group->group_name = 'group_images';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'article';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Images',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_image',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-images field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_images|node|article|form'] = $field_group;
 
   return $export;
 }

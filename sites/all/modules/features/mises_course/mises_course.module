@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Course feature.
+ */
+
+include_once 'mises_course.features.inc';

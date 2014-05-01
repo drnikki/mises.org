@@ -1,41 +1,44 @@
 <?php
 /**
  * @file
- * mises_causeview_snippet.field_group.inc
+ * mises_product.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function mises_causeview_snippet_field_group_info() {
+function mises_product_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_cone_snippet|node|causeview_snippet|form';
-  $field_group->group_name = 'group_cone_snippet';
+  $field_group->identifier = 'group_product_information|node|product|form';
+  $field_group->group_name = 'group_product_information';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'causeview_snippet';
+  $field_group->bundle = 'product';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Code Snippet',
-    'weight' => '1',
+    'label' => 'Product Information',
+    'weight' => '0',
     'children' => array(
-      0 => 'field_code_snippet',
+      0 => 'body',
+      1 => 'field_austrian_school_of_economi',
+      2 => 'field_current_trends',
+      3 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-cone-snippet field-group-tab',
+        'classes' => 'group-product-information field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_cone_snippet|node|causeview_snippet|form'] = $field_group;
+  $export['group_product_information|node|product|form'] = $field_group;
 
   return $export;
 }
