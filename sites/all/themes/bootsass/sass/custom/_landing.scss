@@ -51,13 +51,18 @@
     padding-bottom: 40px;
   }
   .image {
-    border-top: 5px solid $brand-secondary;
+    border-top: 8px solid $brand-secondary;
     margin-top: 5px;
   }
   .tags {
     margin-top: 5px;
+    font-size: $font-size-xs;
     .tag-label {
       text-transform: uppercase;
+      color: $gray;
+      padding-right: $padding-xs-horizontal;
+    }
+    a {
       color: $gray;
     }
   }

@@ -8658,6 +8658,11 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 /********************
 * Drupal based overrides
 ********************/
+/* line 4, ../sass/drupal/_drupal.scss */
+.img-responsive img {
+  width: 100%;
+}
+
 /********************
 * Custom styles
 ********************/
@@ -8801,32 +8806,31 @@ body {
   margin-top: 0;
   padding: 25px 0 35px;
   border-top: 7px solid #24292c;
-  background: #206093;
   color: white;
 }
-/* line 123, ../sass/custom/_styles.scss */
+/* line 122, ../sass/custom/_styles.scss */
 .footer h2 {
   color: #729949;
   text-transform: uppercase;
   font-size: 15px;
 }
-/* line 128, ../sass/custom/_styles.scss */
+/* line 127, ../sass/custom/_styles.scss */
 .footer ul.menu li a {
   display: inline;
   padding: 0;
   color: #e4ebee;
   font-size: 13px;
 }
-/* line 133, ../sass/custom/_styles.scss */
+/* line 132, ../sass/custom/_styles.scss */
 .footer ul.menu li a:hover {
   background: transparent;
 }
-/* line 138, ../sass/custom/_styles.scss */
+/* line 137, ../sass/custom/_styles.scss */
 .footer #block-boxes-footer-right h2 {
   color: #e4ebee;
   font-size: 23px;
 }
-/* line 143, ../sass/custom/_styles.scss */
+/* line 142, ../sass/custom/_styles.scss */
 .footer #boxes-box-footer_right {
   padding: 16px 5px;
   border-top: 1px solid #788086;
@@ -8834,13 +8838,13 @@ body {
 }
 
 /* PRIMARY CONTENT BLOCKS */
-/* line 152, ../sass/custom/_styles.scss */
+/* line 151, ../sass/custom/_styles.scss */
 .main-content {
-  padding: 16px;
+  padding: 6px 24px;
   border-top: 5px solid #5b8ab5;
   background: white;
 }
-/* line 156, ../sass/custom/_styles.scss */
+/* line 155, ../sass/custom/_styles.scss */
 .front .main-content:after {
   position: absolute;
   top: -5px;
@@ -8851,7 +8855,7 @@ body {
   content: url("../images/shield.png");
 }
 
-/* line 167, ../sass/custom/_styles.scss */
+/* line 166, ../sass/custom/_styles.scss */
 .content-bottom {
   padding-top: 16px;
 }
@@ -8859,27 +8863,33 @@ body {
 /* FONTS AND TYPOGRAPHY 
 * @TODO: CONSIDER SEPARATE STYLESHEET
 */
-/* line 174, ../sass/custom/_styles.scss */
+/* line 173, ../sass/custom/_styles.scss */
+.bold {
+  font-weight: 600;
+}
+
+/* line 176, ../sass/custom/_styles.scss */
 h1, .h1 {
   color: #00426b;
   text-transform: uppercase;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 2px;
 }
 
-/* line 179, ../sass/custom/_styles.scss */
+/* line 182, ../sass/custom/_styles.scss */
 .page-header {
   border-bottom: 0 none;
   padding-left: 100px;
 }
 
-/* line 183, ../sass/custom/_styles.scss */
+/* line 186, ../sass/custom/_styles.scss */
 h2.teaser-title {
   color: #00426b;
   font-size: 23px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 188, ../sass/custom/_styles.scss */
+/* line 191, ../sass/custom/_styles.scss */
 .read-more a {
   color: #788086;
   text-transform: uppercase;
@@ -8939,37 +8949,43 @@ h2.teaser-title {
 }
 /* line 53, ../sass/custom/_landing.scss */
 .landing-list .image {
-  border-top: 5px solid #5b8ab5;
+  border-top: 8px solid #5b8ab5;
   margin-top: 5px;
 }
 /* line 57, ../sass/custom/_landing.scss */
 .landing-list .tags {
   margin-top: 5px;
+  font-size: 11px;
 }
-/* line 59, ../sass/custom/_landing.scss */
+/* line 60, ../sass/custom/_landing.scss */
 .landing-list .tags .tag-label {
   text-transform: uppercase;
   color: #788086;
+  padding-right: 5px;
 }
-/* line 64, ../sass/custom/_landing.scss */
+/* line 65, ../sass/custom/_landing.scss */
+.landing-list .tags a {
+  color: #788086;
+}
+/* line 69, ../sass/custom/_landing.scss */
 .landing-list h2.teaser-title {
   margin-top: 0;
 }
-/* line 68, ../sass/custom/_landing.scss */
+/* line 73, ../sass/custom/_landing.scss */
 .landing-list .group-date-author .date {
   color: #00426b;
   text-transform: uppercase;
 }
-/* line 72, ../sass/custom/_landing.scss */
+/* line 77, ../sass/custom/_landing.scss */
 .landing-list .group-date-author span.author {
   padding-left: 10px;
 }
-/* line 74, ../sass/custom/_landing.scss */
+/* line 79, ../sass/custom/_landing.scss */
 .landing-list .group-date-author span.author div, .landing-list .group-date-author span.author p {
   display: inline;
   color: #00426b;
 }
-/* line 81, ../sass/custom/_landing.scss */
+/* line 86, ../sass/custom/_landing.scss */
 .landing-list .view-footer span.glyphicon {
   width: 22px;
   height: 22px;
@@ -9027,47 +9043,50 @@ h2.teaser-title {
   background-repeat: no-repeat;
 }
 
+/* line 26, ../sass/custom/_blocks.scss */
+span.glyphicon {
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #788086;
+  color: white;
+}
+
+/* NOTE: PLACE HOVER COLORS IN RELEVANT SECTION */
 /* Bootstrap Panel overrides */
-/* line 30, ../sass/custom/_blocks.scss */
+/* line 37, ../sass/custom/_blocks.scss */
 .panel-footer {
   padding: 16px 5px;
   background-color: transparent;
 }
-/* line 33, ../sass/custom/_blocks.scss */
+/* line 40, ../sass/custom/_blocks.scss */
 .panel-footer a {
   color: #788086;
   text-transform: uppercase;
   font-size: 13px;
 }
-/* line 37, ../sass/custom/_blocks.scss */
+/* line 44, ../sass/custom/_blocks.scss */
 .panel-footer a:hover {
   color: #206093;
 }
-/* line 41, ../sass/custom/_blocks.scss */
-.panel-footer span.glyphicon {
-  border-radius: 50%;
-  background-color: #788086;
-  color: white;
-}
-/* line 46, ../sass/custom/_blocks.scss */
+/* line 48, ../sass/custom/_blocks.scss */
 .panel-footer:hover span.glyphicon {
   background-color: #206093;
 }
 
 /* BOTTOM BLOCKS */
-/* line 53, ../sass/custom/_blocks.scss */
+/* line 55, ../sass/custom/_blocks.scss */
 .content-bottom .col-sm-3 .region {
   position: relative;
   background: white;
 }
 
-/* line 59, ../sass/custom/_blocks.scss */
+/* line 61, ../sass/custom/_blocks.scss */
 .block-nodeblock .panel-heading,
 .content-bottom .col-sm-3 .region .panel-heading {
   border-radius: 0;
   background-color: #206093;
 }
-/* line 62, ../sass/custom/_blocks.scss */
+/* line 64, ../sass/custom/_blocks.scss */
 .block-nodeblock .panel-heading .panel-title,
 .content-bottom .col-sm-3 .region .panel-heading .panel-title {
   color: white;
@@ -9075,67 +9094,101 @@ h2.teaser-title {
   font-size: 20px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
-/* line 69, ../sass/custom/_blocks.scss */
+/* line 71, ../sass/custom/_blocks.scss */
 .block-nodeblock .panel-body,
 .content-bottom .col-sm-3 .region .panel-body {
   height: 150px;
 }
-/* line 71, ../sass/custom/_blocks.scss */
+/* line 73, ../sass/custom/_blocks.scss */
 .block-nodeblock .panel-body h4,
 .content-bottom .col-sm-3 .region .panel-body h4 {
   font-size: 15px;
 }
-/* line 73, ../sass/custom/_blocks.scss */
+/* line 75, ../sass/custom/_blocks.scss */
 .block-nodeblock .panel-body h4 a,
 .content-bottom .col-sm-3 .region .panel-body h4 a {
   color: #00426b;
 }
-/* line 77, ../sass/custom/_blocks.scss */
+/* line 79, ../sass/custom/_blocks.scss */
 .block-nodeblock .panel-body p,
 .content-bottom .col-sm-3 .region .panel-body p {
   color: #788086;
   font-size: 13px;
 }
-/* line 82, ../sass/custom/_blocks.scss */
+/* line 84, ../sass/custom/_blocks.scss */
 .block-nodeblock .view-footer,
 .content-bottom .col-sm-3 .region .view-footer {
   margin: 0 16px;
   line-height: 20px;
 }
-/* line 85, ../sass/custom/_blocks.scss */
+/* line 87, ../sass/custom/_blocks.scss */
 .block-nodeblock .view-footer span.glyphicon,
 .content-bottom .col-sm-3 .region .view-footer span.glyphicon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   text-align: center;
-  font-size: 10px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 24px;
 }
 
 /* HOMEPAGE */
-/* line 92, ../sass/custom/_blocks.scss */
+/* line 94, ../sass/custom/_blocks.scss */
 #block-boxes-home-new {
-  padding: 6px 16px;
-  background-color: #658841;
+  padding: 6px 32px 0;
+  background-color: #46763a;
 }
-/* line 95, ../sass/custom/_blocks.scss */
+/* line 97, ../sass/custom/_blocks.scss */
 #block-boxes-home-new h2 {
   margin: 0;
   color: white;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
-/* line 99, ../sass/custom/_blocks.scss */
+/* line 101, ../sass/custom/_blocks.scss */
 #block-boxes-home-new h2 span {
   font-size: 40px;
 }
 
-/* line 105, ../sass/custom/_blocks.scss */
+/* line 107, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises h2 {
   margin: 0;
-  padding: 6px 16px;
+  padding: 9px 32px;
   background-color: #729949;
   color: white;
-  font-size: 19px;
   text-transform: uppercase;
   font-weight: 200;
+  font-size: 19px;
+}
+/* line 116, ../sass/custom/_blocks.scss */
+#block-menu-menu-new-to-mises .nav {
+  padding-top: 16px;
+}
+/* line 118, ../sass/custom/_blocks.scss */
+#block-menu-menu-new-to-mises .nav > li > a {
+  padding: 7px 32px;
+  color: #729949;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+/* line 123, ../sass/custom/_blocks.scss */
+#block-menu-menu-new-to-mises .nav > li > a span {
+  color: #788086;
+}
+/* line 126, ../sass/custom/_blocks.scss */
+#block-menu-menu-new-to-mises .nav > li > a span.glyphicon {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px;
+  color: white;
+  font-weight: 100;
+}
+/* line 131, ../sass/custom/_blocks.scss */
+#block-menu-menu-new-to-mises .nav > li > a:hover {
+  background: transparent;
+  text-decoration: underline;
+}
+/* line 134, ../sass/custom/_blocks.scss */
+#block-menu-menu-new-to-mises .nav > li > a:hover span.glyphicon {
+  background-color: #729949;
 }

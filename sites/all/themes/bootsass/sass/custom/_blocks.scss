@@ -23,6 +23,13 @@
     }
   }
 }
+span.glyphicon {
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: $gray;
+  color: $white;
+}
+/* NOTE: PLACE HOVER COLORS IN RELEVANT SECTION */
 
 
 /* Bootstrap Panel overrides */
@@ -37,11 +44,6 @@
     &:hover {
       color: $brand-medium;
     }
-  }
-  span.glyphicon {
-    border-radius: 50%;
-    background-color: $gray;
-    color: $white;
   }
   &:hover span.glyphicon {
     background-color: $brand-medium;
@@ -83,15 +85,15 @@
     margin: 0 $padding-large-horizontal;
     line-height: 20px;
     span.glyphicon {
-      @include glyph-size(20px);
+      @include glyph-size(24px);
     }
   } 
 }
 
 /* HOMEPAGE */
 #block-boxes-home-new {
-  padding: $padding-base-vertical $padding-large-horizontal;
-  background-color: darken($brand-contrast, 5%);
+  padding: $padding-base-vertical $padding-large-horizontal * 2 0;
+  background-color: $brand-contrast-dark;
   h2 {
     margin: 0;
     color: $white;
@@ -104,11 +106,35 @@
 #block-menu-menu-new-to-mises {
   h2 {
     margin: 0;
-    padding: $padding-base-vertical $padding-large-horizontal;
+    padding: $padding-base-vertical * 1.5 $padding-large-horizontal * 2;
     background-color: $brand-contrast;
     color: $white;
-    font-size: $font-size-h4;
     text-transform: uppercase;
     font-weight: 200;
+    font-size: $font-size-h4;
+  }
+  .nav {
+    padding-top: $padding-large-horizontal;
+    > li > a {
+      padding: $padding-base-vertical + 1 $padding-large-horizontal * 2;
+      color: $brand-contrast;
+      text-transform: uppercase;
+      font-weight: 600;
+      span {
+        color: $gray;
+      }
+      span.glyphicon {
+        @include glyph-size(24px);
+        color: $white;
+        font-weight: 100;
+      }
+      &:hover {
+        background: transparent;
+        text-decoration: underline;
+        span.glyphicon {
+          background-color: $brand-contrast;
+        }
+      }
+    }
   }
 }

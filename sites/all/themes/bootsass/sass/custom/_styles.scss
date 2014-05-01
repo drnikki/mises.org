@@ -117,7 +117,6 @@ body {
   margin-top: 0;
   padding: 25px 0 35px;
   border-top: 7px solid $black;
-  background: $brand-medium;
   color: $white;
 
   h2 {
@@ -150,7 +149,7 @@ body {
 
 /* PRIMARY CONTENT BLOCKS */
 .main-content {
-  padding: $padding-large-horizontal;
+  padding: $padding-base-vertical $padding-large-horizontal * 1.5;
   border-top: 5px solid $brand-secondary;
   background: $white;
   .front &:after {
@@ -171,10 +170,14 @@ body {
 /* FONTS AND TYPOGRAPHY 
 * @TODO: CONSIDER SEPARATE STYLESHEET
 */
+.bold {
+  font-weight: 600;
+}
 h1, .h1 {
   color: $brand-primary;
   text-transform: uppercase;
   font-family: $font-family-serif;
+  letter-spacing: 2px;
 }
 .page-header {
   border-bottom: 0 none;
