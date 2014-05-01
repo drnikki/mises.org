@@ -49,7 +49,7 @@ function mises_award_ct_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -104,7 +104,7 @@ function mises_award_ct_field_default_field_instances() {
         'year_range' => '1900:+1',
       ),
       'type' => 'date_select',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 

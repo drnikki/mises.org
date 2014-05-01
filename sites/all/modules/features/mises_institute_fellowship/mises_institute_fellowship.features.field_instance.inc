@@ -55,7 +55,7 @@ function mises_institute_fellowship_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -101,7 +101,7 @@ function mises_institute_fellowship_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -167,7 +167,7 @@ function mises_institute_fellowship_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -210,7 +210,7 @@ function mises_institute_fellowship_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 

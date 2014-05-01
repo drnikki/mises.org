@@ -1,143 +1,127 @@
 <?php
 /**
  * @file
- * mises_library_item.field_group.inc
+ * mises_job_posting.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function mises_library_item_field_group_info() {
+function mises_job_posting_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_basic|node|library_item|form';
-  $field_group->group_name = 'group_basic';
+  $field_group->identifier = 'group_additional_job_information|node|job_posting_|form';
+  $field_group->group_name = 'group_additional_job_information';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'library_item';
+  $field_group->bundle = 'job_posting_';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Basic Information',
-    'weight' => '0',
-    'children' => array(
-      0 => 'field_subtitle',
-      1 => 'field_id',
-      2 => 'field_published_date',
-      3 => 'field_mises_published_date',
-      4 => 'field_author_1',
-      5 => 'field_author_2',
-      6 => 'title',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-basic field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_basic|node|library_item|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_content|node|library_item|form';
-  $field_group->group_name = 'group_content';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'library_item';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Content',
+    'label' => 'Additional Information',
     'weight' => '3',
     'children' => array(
-      0 => 'body',
-      1 => 'field_teaser_text',
-      2 => 'field_document_attachment',
-      3 => 'field_bibliography_footnote',
-      4 => 'field_citation',
-      5 => 'field_image_collection',
+      0 => 'field_contact_information',
+      1 => 'field_link_to_external_listing_',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-content field-group-tab',
+        'classes' => 'group-additional-job-information field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_content|node|library_item|form'] = $field_group;
+  $export['group_additional_job_information|node|job_posting_|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_secondary|node|library_item|form';
-  $field_group->group_name = 'group_secondary';
+  $field_group->identifier = 'group_job_date_information|node|job_posting_|form';
+  $field_group->group_name = 'group_job_date_information';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'library_item';
+  $field_group->bundle = 'job_posting_';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Secondary Information',
+    'label' => 'Job Date Information',
     'weight' => '1',
     'children' => array(
-      0 => 'field_original_title',
-      1 => 'field_original_publication_link',
-      2 => 'field_copyright_informatio',
-      3 => 'field_editor_s_note',
+      0 => 'field_closing_date',
+      1 => 'field_post_date',
+      2 => 'field_starting_date',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-secondary field-group-tab',
+        'classes' => 'group-job-date-information field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_secondary|node|library_item|form'] = $field_group;
+  $export['group_job_date_information|node|job_posting_|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_tagging|node|library_item|form';
-  $field_group->group_name = 'group_tagging';
+  $field_group->identifier = 'group_job_information|node|job_posting_|form';
+  $field_group->group_name = 'group_job_information';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'library_item';
+  $field_group->bundle = 'job_posting_';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Tagging',
-    'weight' => '4',
+    'label' => 'Job Information',
+    'weight' => '0',
     'children' => array(
-      0 => 'field_featured_content',
-      1 => 'field_timely_content',
-      2 => 'field_mises_today',
-      3 => 'field_austrian_school_of_economi',
-      4 => 'field_audience',
-      5 => 'field_level',
-      6 => 'field_library_item_tree',
-      7 => 'field_topics',
+      0 => 'field_full_description',
+      1 => 'field_teaser',
+      2 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-tagging field-group-tab',
+        'classes' => 'group-job-information field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_tagging|node|library_item|form'] = $field_group;
+  $export['group_job_information|node|job_posting_|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_job_location|node|job_posting_|form';
+  $field_group->group_name = 'group_job_location';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'job_posting_';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Job Location',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_location',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-job-location field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_job_location|node|job_posting_|form'] = $field_group;
 
   return $export;
 }
