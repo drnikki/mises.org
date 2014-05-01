@@ -20,6 +20,7 @@ function mises_static_page_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
+          'conditions' => array(),
           'image_link' => '',
           'image_style' => '',
         ),
@@ -72,6 +73,7 @@ function mises_static_page_field_default_field_instances() {
         'label' => 'above',
         'module' => 'mediafield',
         'settings' => array(
+          'conditions' => array(),
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
@@ -125,7 +127,9 @@ function mises_static_page_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -133,6 +137,7 @@ function mises_static_page_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'conditions' => array(),
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -171,6 +176,7 @@ function mises_static_page_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
+          'conditions' => array(),
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
@@ -214,6 +220,7 @@ function mises_static_page_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
+          'conditions' => array(),
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
