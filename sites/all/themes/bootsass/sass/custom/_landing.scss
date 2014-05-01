@@ -1,7 +1,9 @@
 /*
-* Custom Styles of Home and Landing Pages
+* Custom Styles for Home and Landing Pages
 * 
 */
+
+/* TOP FEATURED REGION */
 .featured .container {
   .row {
     background: $white;
@@ -12,6 +14,7 @@
     padding: 6px;
   }
 }
+/* HOMEPAGE HERO */
 .view-homepage-hero {
   .featured-block {
     position: relative;
@@ -37,5 +40,47 @@
       }
     }
   }
-  
 }
+
+/* HOMEPAGE TOP RIGHT MENU */
+
+
+/* LANDING LISTS */
+.landing-list {
+  .views-row {
+    padding-bottom: 40px;
+  }
+  .image {
+    border-top: 5px solid $brand-secondary;
+    margin-top: 5px;
+  }
+  .tags {
+    margin-top: 5px;
+    .tag-label {
+      text-transform: uppercase;
+      color: $gray;
+    }
+  }
+  h2.teaser-title {
+    margin-top: 0;
+  }
+  .group-date-author {
+    .date {
+      color: $brand-primary;
+      text-transform: uppercase;
+    }
+    span.author {
+      padding-left: 10px;
+      div, p {
+        display: inline;
+        color: $brand-primary;
+      }
+    }
+  }
+  .view-footer {
+    span.glyphicon {
+      @include glyph-size(22px);
+    }
+  }
+}
+
