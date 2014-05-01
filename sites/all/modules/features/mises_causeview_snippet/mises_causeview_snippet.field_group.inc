@@ -24,6 +24,7 @@ function mises_causeview_snippet_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_code_snippet',
+      1 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
