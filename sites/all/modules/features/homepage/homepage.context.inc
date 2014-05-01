@@ -20,6 +20,7 @@ function homepage_context_default_contexts() {
     'path' => array(
       'values' => array(
         '<front>' => '<front>',
+        'homepage' => 'homepage',
       ),
     ),
   );
@@ -41,7 +42,31 @@ function homepage_context_default_contexts() {
         'menu-menu-new-to-mises' => array(
           'module' => 'menu',
           'delta' => 'menu-new-to-mises',
-          'region' => 'sidebar_second',
+          'region' => 'featured_right',
+          'weight' => '-8',
+        ),
+        'views-homepage-press_room' => array(
+          'module' => 'views',
+          'delta' => 'homepage-press_room',
+          'region' => 'bottom_one',
+          'weight' => '-10',
+        ),
+        'views-homepage-online_courses' => array(
+          'module' => 'views',
+          'delta' => 'homepage-online_courses',
+          'region' => 'bottom_two',
+          'weight' => '-10',
+        ),
+        'views-homepage-mises_view' => array(
+          'module' => 'views',
+          'delta' => 'homepage-mises_view',
+          'region' => 'bottom_three',
+          'weight' => '-10',
+        ),
+        'views-homepage-library_block' => array(
+          'module' => 'views',
+          'delta' => 'homepage-library_block',
+          'region' => 'bottom_four',
           'weight' => '-10',
         ),
       ),

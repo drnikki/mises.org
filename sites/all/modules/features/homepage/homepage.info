@@ -8,6 +8,7 @@ dependencies[] = boxes
 dependencies[] = context
 dependencies[] = context_ui
 dependencies[] = ctools
+dependencies[] = display_suite_shared
 dependencies[] = homepage_hero
 dependencies[] = menu
 dependencies[] = views
