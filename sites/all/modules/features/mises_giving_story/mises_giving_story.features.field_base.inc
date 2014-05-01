@@ -45,11 +45,11 @@ function mises_giving_story_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_campaign',
     'foreign keys' => array(
-      'taxonomy_term_data' => array(
+      'node' => array(
         'columns' => array(
-          'target_id' => 'tid',
+          'target_id' => 'nid',
         ),
-        'table' => 'taxonomy_term_data',
+        'table' => 'node',
       ),
     ),
     'indexes' => array(
@@ -70,11 +70,9 @@ function mises_giving_story_field_default_field_bases() {
         'sort' => array(
           'type' => 'none',
         ),
-        'target_bundles' => array(
-          'campaign' => 'campaign',
-        ),
+        'target_bundles' => array(),
       ),
-      'target_type' => 'taxonomy_term',
+      'target_type' => 'node',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
