@@ -81,7 +81,9 @@ function display_suite_shared_ds_field_settings_info() {
         'link' => '1',
         'wrapper' => 'h2',
         'class' => 'teaser-title',
-        'ft' => array(),
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
         'conditions' => array(),
       ),
     ),
@@ -93,13 +95,23 @@ function display_suite_shared_ds_field_settings_info() {
         'link text' => 'Read more',
         'wrapper' => 'p',
         'class' => 'read-more',
-        'ft' => array(),
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
         'conditions' => array(),
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
       ),
     ),
     'field_mises_published_date' => array(
       'formatter_settings' => array(
         'ft' => array(
+          'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => 'date',
@@ -109,21 +121,10 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_teaser_text' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'p',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
     'field_author_1' => array(
       'formatter_settings' => array(
         'ft' => array(
+          'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => 'author',
@@ -136,6 +137,7 @@ function display_suite_shared_ds_field_settings_info() {
     'field_image_collection' => array(
       'formatter_settings' => array(
         'ft' => array(
+          'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'image img-responsive',
@@ -148,6 +150,7 @@ function display_suite_shared_ds_field_settings_info() {
     'field_topics' => array(
       'formatter_settings' => array(
         'ft' => array(
+          'func' => 'theme_ds_field_expert',
           'lb' => 'Tags',
           'lb-el' => 'span',
           'lb-cl' => 'tag-label bold',

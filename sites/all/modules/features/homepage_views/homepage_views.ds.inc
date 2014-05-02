@@ -25,21 +25,23 @@ function homepage_views_ds_layout_settings_info() {
       ),
       'right' => array(
         2 => 'title',
-        3 => 'field_mises_published_date',
-        4 => 'field_author_1',
+        3 => 'group_date_author',
+        4 => 'field_mises_published_date',
         5 => 'field_teaser_text',
         6 => 'body',
-        7 => 'node_link',
+        7 => 'field_author_1',
+        8 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_image_collection' => 'left',
       'field_topics' => 'left',
       'title' => 'right',
+      'group_date_author' => 'right',
       'field_mises_published_date' => 'right',
-      'field_author_1' => 'right',
       'field_teaser_text' => 'right',
       'body' => 'right',
+      'field_author_1' => 'right',
       'node_link' => 'right',
     ),
     'classes' => array(
@@ -47,10 +49,10 @@ function homepage_views_ds_layout_settings_info() {
         'row' => 'row',
       ),
       'left' => array(
-        'col-sm-5' => 'col-sm-5',
+        'col-sm-4' => 'col-sm-4',
       ),
       'right' => array(
-        'col-sm-7' => 'col-sm-7',
+        'col-sm-8' => 'col-sm-8',
       ),
     ),
     'wrappers' => array(

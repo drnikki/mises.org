@@ -62,7 +62,7 @@ function mises_library_item_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(
             0 => array(
@@ -72,9 +72,17 @@ function mises_library_item_field_default_field_instances() {
               ),
             ),
           ),
-          'trim_length' => 600,
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 120,
+          'trim_options' => array(
+            'text' => 0,
+          ),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_summary_or_trimmed',
+        'type' => 'smart_trim_format',
         'weight' => 7,
       ),
     ),
@@ -789,7 +797,7 @@ function mises_library_item_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
-          'view_mode' => 'full',
+          'view_mode' => 'list_teaser',
         ),
         'type' => 'field_collection_fields',
         'weight' => 0,
@@ -984,7 +992,7 @@ function mises_library_item_field_default_field_instances() {
         'module' => 'date',
         'settings' => array(
           'conditions' => array(),
-          'format_type' => 'month_day_year',
+          'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -1369,11 +1377,20 @@ function mises_library_item_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 120,
+          'trim_options' => array(
+            'text' => 0,
+          ),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_default',
+        'type' => 'smart_trim_format',
         'weight' => 6,
       ),
     ),
