@@ -86,6 +86,15 @@ function mises_person_profile_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'author_full_name' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

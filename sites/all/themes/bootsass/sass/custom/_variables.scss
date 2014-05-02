@@ -15,12 +15,12 @@ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$black:                  #24292c !default;
-$gray-darker:            lighten(#000, 13.5%) !default; // #222
-$gray-dark:              lighten(#000, 20%) !default;   // #333
-$gray:                   lighten(#000, 33.5%) !default; // #555
-$gray-light:             #c8cdd0 !default;   // lighten(#000, 60%)  #999
-$gray-lighter:           #e4ebee!default; // lighten(#000, 93.5%) #eee
+$black:                 #24292c !default;
+$gray-darker:           lighten(#000, 13.5%) !default; // #222
+$gray-dark:             lighten(#000, 20%) !default;   // #333
+$gray:                  #788086 !default; // lighten(#000, 33.5%) #555
+$gray-light:            #c8cdd0 !default;   // lighten(#000, 60%)  #999
+$gray-lighter:          #e4ebee!default; // lighten(#000, 93.5%) #eee
 $white:                 #fff !default;
 
 $brand-primary:         #00426b !default; //dark blue
@@ -29,6 +29,7 @@ $brand-medium:          #206093 !default; //medium blue
 $brand-medium-screen:   rgba(80,129,156,0.8) !default; // medium blue screened
 $brand-dark:            #123551 !default; //darkest blue - footer borders
 $brand-contrast:        #729949 !default; //green
+$brand-contrast-dark:   #46763a !default; //dark green
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
@@ -45,7 +46,7 @@ $body-bg:               #e0e3e4;
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
-$link-color:            $brand-primary !default;
+$link-color:            $brand-secondary !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%) !default;
 
@@ -55,29 +56,30 @@ $link-hover-color:      darken($link-color, 15%) !default;
 //## Font, line-height, and color for body text, headings, and more.
 
 //@import "compass/css3/font-face";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:600italic,800italic,400,600,800|Crimson+Text:700);
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,600);
 
-$font-family-sans-serif:  "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  "myriad-pro","Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       "Crimson Text",Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
-$font-size-base:          14px !default;
-$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-base:          15px !default; //adjused to design
+$font-size-large:         ceil(($font-size-base * 1.2)) !default; // ~18px //adjused to design
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~13px //adjused to design
+$font-size-xs:            ceil(($font-size-base * 0.73333)) !default; // ~11px //adjused to design
 
-$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h1:            floor(($font-size-base * 2.13333334)) !default; // ~32px //adjused to design
 $font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
-$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h3:            ceil(($font-size-base * 1.46666667)) !default; // ~22px
 $font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base:        1.428571429 !default; // 20/14
+$line-height-base:        1.66666667 !default; // 15/25 //adjused to design
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~25px
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    inherit !default;
@@ -105,7 +107,7 @@ $icon-font-svg-id:        "glyphicons_halflingsregular" !default;
 $padding-base-vertical:     6px !default;
 $padding-base-horizontal:   12px !default;
 
-$padding-large-vertical:    10px !default;
+$padding-large-vertical:    16px !default;
 $padding-large-horizontal:  16px !default;
 
 $padding-small-vertical:    5px !default;
@@ -315,7 +317,7 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
 //** Number of columns in the grid.
 $grid-columns:              12 !default;
 //** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         30px !default;
+$grid-gutter-width:         20px !default;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 $grid-float-breakpoint:     $screen-sm-min !default;

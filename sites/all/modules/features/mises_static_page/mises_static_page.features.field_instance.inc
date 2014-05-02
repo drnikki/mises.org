@@ -17,12 +17,38 @@ function mises_static_page_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'conditions' => array(),
           'image_link' => '',
+          'image_style' => 'list_teaser',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'list_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(
+            0 => array(
+              'condition' => '',
+            ),
+          ),
+          'image_link' => '',
           'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'single_image' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => 'block_teaser',
         ),
         'type' => 'image',
         'weight' => 0,

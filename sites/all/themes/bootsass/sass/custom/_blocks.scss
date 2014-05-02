@@ -1,0 +1,140 @@
+/*
+* Custom Styles for Blocks
+* 
+*/
+
+/* ICONS */
+.panel-heading {
+  position: relative;
+  padding: 10px 15px 7px 80px;
+  &:before {
+    @include icon-block(61px,10px,-5px);
+    .press-room & {
+      @include icon-image('../images/icons/icon-press.png');
+    }
+    .online-courses & {
+      @include icon-image('../images/icons/icon-online.png');
+    }
+    .mises-view & {
+      @include icon-image('../images/icons/icon-view.png');
+    }
+    .library-block & {
+      @include icon-image('../images/icons/icon-library.png');
+    }
+  }
+}
+span.glyphicon {
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: $gray;
+  color: $white;
+}
+/* NOTE: PLACE HOVER COLORS IN RELEVANT SECTION */
+
+
+/* Bootstrap Panel overrides */
+
+.panel-footer {
+  padding: $padding-large-vertical $padding-xs-horizontal;
+  background-color: transparent;
+  a {
+    color: $gray;
+    text-transform: uppercase;
+  font-size: $font-size-small;
+    &:hover {
+      color: $brand-medium;
+    }
+  }
+  &:hover span.glyphicon {
+    background-color: $brand-medium;
+  }
+
+}
+
+/* BOTTOM BLOCKS */
+.content-bottom .col-sm-3 .region {
+  position: relative;
+  background: $white;
+}  
+.block-nodeblock,  
+.content-bottom .col-sm-3 .region { 
+  .panel-heading {
+    border-radius: 0;
+    background-color: $brand-medium;
+    .panel-title {
+      color: $white;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-family: $font-family-serif;
+    }
+  }
+  .panel-body {
+    height: 150px;
+    h4 {
+      font-size: $font-size-h5;
+      a {
+        color: $brand-primary;
+      }
+    }
+    p {
+      color: $gray;
+      font-size: $font-size-small;
+    }
+  }
+  .view-footer {
+    margin: 0 $padding-large-horizontal;
+    line-height: 20px;
+    span.glyphicon {
+      @include glyph-size(24px);
+    }
+  } 
+}
+
+/* HOMEPAGE */
+#block-boxes-home-new {
+  padding: $padding-base-vertical $padding-large-horizontal * 2 0;
+  background-color: $brand-contrast-dark;
+  h2 {
+    margin: 0;
+    color: $white;
+    font-family: $font-family-serif;
+    span {
+      font-size: 40px;
+    }
+  }
+}
+#block-menu-menu-new-to-mises {
+  h2 {
+    margin: 0;
+    padding: $padding-base-vertical * 1.5 $padding-large-horizontal * 2;
+    background-color: $brand-contrast;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: $font-size-h4;
+  }
+  .nav {
+    padding-top: $padding-large-horizontal;
+    > li > a {
+      padding: $padding-base-vertical + 1 $padding-large-horizontal * 2;
+      color: $brand-contrast;
+      text-transform: uppercase;
+      font-weight: 600;
+      span {
+        color: $gray;
+      }
+      span.glyphicon {
+        @include glyph-size(24px);
+        color: $white;
+        font-weight: 100;
+      }
+      &:hover {
+        background: transparent;
+        text-decoration: underline;
+        span.glyphicon {
+          background-color: $brand-contrast;
+        }
+      }
+    }
+  }
+}

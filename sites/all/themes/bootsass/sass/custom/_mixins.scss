@@ -13,3 +13,29 @@
 @mixin background-texture($color,$image) {
   background: $color url($image) center center repeat;
 }
+
+// Icons and glyphicons
+@mixin icon-block($size,$x,$y) {
+  position: absolute;
+  top: $y;
+  left: $x;
+  display: block;
+  width: $size;
+  height: $size;
+  content: '';
+}
+
+@mixin icon-image($image,$size:cover) {
+  background-image: url($image);
+  background-position: center center;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+
+@mixin glyph-size($size) {
+  width: $size;
+  height: $size;
+  text-align: center;
+  font-size: $size/2;
+  line-height: $size;
+}
