@@ -89,6 +89,12 @@ function sitewide_context_context_default_contexts() {
           'region' => 'footer_right',
           'weight' => '-10',
         ),
+        'widgets-s_socialmedia_profile-default' => array(
+          'module' => 'widgets',
+          'delta' => 's_socialmedia_profile-default',
+          'region' => 'footer_right',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
