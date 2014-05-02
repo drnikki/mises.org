@@ -189,6 +189,20 @@ function file_entity_menu() {
     'type' => MENU_DEFAULT_LOCAL_TASK,
     'weight' => -10,
   );
+  $items['file/add/upload/file'] = array(
+    'title' => 'File',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+  $items['file/add/upload/archive'] = array(
+    'title' => 'Archive',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('file_entity_upload_archive_form'),
+    'access arguments' => array('administer files'),
+    'file' => 'file_entity.pages.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => -5,
+  );
   $items['file/%file'] = array(
     'title callback' => 'entity_label',
     'title arguments' => array('file', 1),
@@ -1878,6 +1892,13 @@ function _file_entity_query_file_entity_access_alter($query, $type) {
           $file_conditions->exists($subquery);
         }
         // Otherwise attach it to the node query itself.
+        elseif ($table == 'file_managed') {
+          // Fix for https://drupal.org/node/2073085
+          $db_or = db_or();
+          $db_or->exists($subquery);
+          $db_or->isNull($falias . '.' . $field);
+          $query->condition($db_or);
+        }
         else {
           $query->exists($subquery);
         }
@@ -2160,48 +2181,15 @@ function image_file_default_displays_alter(&$file_displays) {
     $file_displays['image__default__file_field_file_default']->status = FALSE;
   }
 
-  $file_display = new stdClass();
-  $file_display->api_version = 1;
-  $file_display->name = 'image__default__file_field_image';
-  $file_display->weight = 50;
-  $file_display->status = TRUE;
-  $file_display->settings = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
-  $file_displays['image__default__file_field_image'] = $file_display;
-
   // Image previews should be displayed as image thumbnails by default.
   if (isset($file_displays['image__preview__file_field_file_default'])) {
     $file_displays['image__preview__file_field_file_default']->status = FALSE;
   }
 
-  $file_display = new stdClass();
-  $file_display->api_version = 1;
-  $file_display->name = 'image__preview__file_field_image';
-  $file_display->weight = 50;
-  $file_display->status = TRUE;
-  $file_display->settings = array(
-    'image_style' => 'thumbnail',
-    'image_link' => '',
-  );
-  $file_displays['image__preview__file_field_image'] = $file_display;
-
   // Image teasers should be displayed as medium images by default.
   if (isset($file_displays['image__teaser__file_field_file_default'])) {
     $file_displays['image__teaser__file_field_file_default']->status = FALSE;
   }
-
-  $file_display = new stdClass();
-  $file_display->api_version = 1;
-  $file_display->name = 'image__teaser__file_field_image';
-  $file_display->weight = 50;
-  $file_display->status = TRUE;
-  $file_display->settings = array(
-    'image_style' => 'medium',
-    'image_link' => 'content',
-  );
-  $file_displays['image__teaser__file_field_image'] = $file_display;
 }
 
 /**
@@ -2495,8 +2483,8 @@ function file_entity_admin_menu_map() {
  *   A CSRF token string.
  */
 function file_entity_get_download_token($file) {
-  $identifier = !empty($GLOBALS['user']->uid) ? session_id() : ip_address();
-  return drupal_hmac_base64("file/$file->fid/download", $identifier . drupal_get_private_key() . drupal_get_hash_salt());
+  $identifier = !empty($GLOBALS['user']->uid) ? session_id() : '';
+  return drupal_hmac_base64("file/$file->fid/download" . ':' . filemtime($file->uri) . ':' . $file->filesize, $identifier . drupal_get_private_key() . drupal_get_hash_salt());
 }
 
 /**
