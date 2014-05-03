@@ -18,7 +18,7 @@ function mises_flex_block_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'linked_box_image' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -40,9 +40,16 @@ function mises_flex_block_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_image' => array(
+    'field_display_title' => array(
       'formatter_settings' => array(
-        'ft' => array(),
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'h2',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
       ),
     ),
   );
@@ -67,15 +74,17 @@ function mises_flex_block_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'linked_box_image',
-        1 => 'field_image',
-        2 => 'field_teaser_text',
+        0 => 'field_display_title',
+        1 => 'linked_box_image',
+        2 => 'field_image',
+        3 => 'field_teaser_text',
       ),
       'ds_hidden' => array(
-        3 => 'field_image_link',
+        4 => 'field_image_link',
       ),
     ),
     'fields' => array(
+      'field_display_title' => 'ds_content',
       'linked_box_image' => 'ds_content',
       'field_image' => 'ds_content',
       'field_teaser_text' => 'ds_content',
