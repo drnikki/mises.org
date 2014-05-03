@@ -9,6 +9,7 @@ dependencies[] = context
 dependencies[] = context_ui
 dependencies[] = ctools
 dependencies[] = display_suite_shared
+dependencies[] = flex_block_views
 dependencies[] = homepage_hero
 dependencies[] = homepage_views
 dependencies[] = menu

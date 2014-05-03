@@ -4,6 +4,7 @@ core = 7.x
 package = Blocks
 dependencies[] = boxes
 dependencies[] = fe_block
+dependencies[] = flex_block_views
 dependencies[] = mises_flex_block
 dependencies[] = strongarm
 __drupal_alter_by_ref[][node][flex_block] = flex_block
