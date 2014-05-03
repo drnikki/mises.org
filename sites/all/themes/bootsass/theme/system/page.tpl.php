@@ -75,7 +75,7 @@
 ?>
 <header>
   <?php if (!empty($page['header_left']) || !empty($page['header_right'])): ?>
-    <div role="banner" id="top-bar">
+    <div role="banner" id="top-bar" class="hidden-sm hidden-xs">
       <div class="container">
         <div class="row">
           <div class="col-sm-7">
@@ -249,7 +249,12 @@
         <?php print render($page['footer_center']); ?>
       </div>
       <div class="col-sm-6">
-      <?php print render($page['footer_right']); ?>
+        <?php print render($page['footer_right']); ?>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <?php print render($page['footer_bottom']); ?>
       </div>
     </div>
   </div>

@@ -65,11 +65,11 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'boxes-support_mises_header' => array(
-          'module' => 'boxes',
-          'delta' => 'support_mises_header',
+        'views-flex_blocks-block_4' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_4',
           'region' => 'navigation',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
         'menu-menu-browse-library' => array(
           'module' => 'menu',
@@ -83,9 +83,9 @@ function sitewide_context_context_default_contexts() {
           'region' => 'footer_center',
           'weight' => '-10',
         ),
-        'boxes-footer_right' => array(
-          'module' => 'boxes',
-          'delta' => 'footer_right',
+        'views-flex_blocks-block_2' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_2',
           'region' => 'footer_right',
           'weight' => '-10',
         ),
@@ -94,6 +94,12 @@ function sitewide_context_context_default_contexts() {
           'delta' => 's_socialmedia_profile-default',
           'region' => 'footer_right',
           'weight' => '-9',
+        ),
+        'views-flex_blocks-block_3' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_3',
+          'region' => 'footer_bottom',
+          'weight' => '-10',
         ),
       ),
     ),
@@ -121,15 +127,15 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'boxes-top_left_ad' => array(
-          'module' => 'boxes',
-          'delta' => 'top_left_ad',
+        'views-flex_blocks-block' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block',
           'region' => 'header_left',
           'weight' => '-10',
         ),
-        'boxes-top_right_ad' => array(
-          'module' => 'boxes',
-          'delta' => 'top_right_ad',
+        'views-flex_blocks-block_1' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_1',
           'region' => 'header_right',
           'weight' => '-10',
         ),

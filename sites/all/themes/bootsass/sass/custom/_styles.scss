@@ -55,6 +55,15 @@
     margin-bottom: 10px;
   }
 }
+// Panels
+.panel {
+  margin-bottom: $padding-large-vertical;
+  &, .panel-heading, .panel-footer {
+    @include box-shadow(0 0 0 rgba(0,0,0,0));
+    border: 0 none;
+    border-radius: 0;
+  }
+}
 
 /*
 * CUSTOM MISES ELEMENTS
@@ -70,8 +79,7 @@ body {
   padding-top: 28px;
   height: 110px;
 }
-#block-boxes-support-mises,
-#block-boxes-support-mises-header {
+.region-navigation .block {
   @extend .pull-right;
   margin-top: -7px;
   height: 50px;
@@ -106,6 +114,7 @@ body {
       font-size: $font-size-small;
       &:hover {
         background: transparent;
+        text-decoration: underline;
       }
     }
   }
@@ -115,10 +124,13 @@ body {
 .footer {
   @include background-texture($gray-darker,'../images/footer-texture.jpg');
   margin-top: 0;
-  padding: 25px 0 35px;
+  padding: 25px 0 15px;
   border-top: 7px solid $black;
   color: $white;
 
+  .panel {
+    background: transparent;
+  }
   h2 {
     color: $brand-contrast;
     text-transform: uppercase;
@@ -131,30 +143,40 @@ body {
       font-size: $font-size-small;
     &:hover {
       background: transparent;
+      text-decoration: underline;
     }
   }
-  #block-boxes-footer-right {
-    h2 {
-      color: $gray-lighter;
-      font-size: $font-size-h3;
+  .region-footer-right {
+    .panel {
+      padding: 0 $padding-small-horizontal $padding-large-vertical;
+      border-bottom: 1px solid $gray;
+      h2 {
+        border-bottom: 1px solid $gray;
+        color: $gray-lighter;
+        font-size: $font-size-h3;
+        margin: 0 0 $padding-large-vertical;
+        padding-bottom: $padding-large-vertical;
+      }
+      .logo {
+        @include background-image('../images/footer-logo.png', 60px, 372px);
+        margin-bottom: -7px;
+        margin-left: -7px;
+      }
     }
   }
-  #boxes-box-footer_right {
-    padding: $padding-large-vertical $padding-xs-horizontal;
-    border-top: 1px solid $gray;
-    border-bottom: 1px solid $gray;
+  .region-footer-bottom {
+    padding-top: $padding-large-vertical;
   }
-
 }
 
 /* PRIMARY CONTENT BLOCKS */
 .main-content {
   padding: $padding-base-vertical $padding-large-horizontal * 1.5;
-  border-top: 5px solid $brand-secondary;
+  border-top: 7px solid $brand-secondary;
   background: $white;
   .front &:after {
     position: absolute;
-    top: -5px;
+    top: -7px;
     left: 33px;
     display: block;
     width: 66px;
@@ -173,15 +195,18 @@ body {
 .bold {
   font-weight: 600;
 }
+.italic {
+  font-style: italic;
+}
 h1, .h1 {
   color: $brand-primary;
   text-transform: uppercase;
-  font-family: $font-family-serif;
   letter-spacing: 2px;
+  font-family: $font-family-serif;
 }
 .page-header {
-  border-bottom: 0 none;
   padding-left: 100px;
+  border-bottom: 0 none;
 }
 h2.teaser-title {
   color: $brand-primary;

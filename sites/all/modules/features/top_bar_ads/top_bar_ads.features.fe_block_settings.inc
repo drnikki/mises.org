@@ -12,11 +12,11 @@ function top_bar_ads_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['boxes-top_left_ad'] = array(
-    'cache' => -2,
+  $export['nodeblock-739'] = array(
+    'cache' => 1,
     'custom' => 0,
-    'delta' => 'top_left_ad',
-    'module' => 'boxes',
+    'delta' => 739,
+    'module' => 'nodeblock',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -40,15 +40,15 @@ function top_bar_ads_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
-  $export['boxes-top_right_ad'] = array(
-    'cache' => -2,
+  $export['nodeblock-740'] = array(
+    'cache' => 1,
     'custom' => 0,
-    'delta' => 'top_right_ad',
-    'module' => 'boxes',
+    'delta' => 740,
+    'module' => 'nodeblock',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -72,7 +72,7 @@ function top_bar_ads_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 

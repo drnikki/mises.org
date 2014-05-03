@@ -11,6 +11,7 @@ dependencies[] = footer_right
 dependencies[] = menu
 dependencies[] = navbar_support_mises
 dependencies[] = top_bar_ads
+dependencies[] = views
 dependencies[] = widgets
 features[context][] = non_front
 features[context][] = sitewide
