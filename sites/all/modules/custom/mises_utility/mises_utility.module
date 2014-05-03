@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file mises_utility.module
+ * TODO: Collection of utility functions for the mises project.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function mises_utility_permission() {
+  return array(
+    'administer mises settings' => array(
+      'title' => t('Administer Mises Settings'),
+      'description' => t('Perform administration tasks for the mises project.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function mises_utility_menu() {
+  $items['admin/config/development/mises'] = array(
+    'title' => 'Mises Settings',
+		'description' => t('Collection of editable settings for the mises project'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mises_utility_admin'),
+    'access arguments' => array('administer mises settings'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_admin().
+ */
+function mises_utility_admin() {
+  $form = array();
+
+	$form['mises_utility'] = array(
+		'#type' => 'fieldset', 
+		'#title' => t('Mises Settings'), 
+		'#weight' => 5, 
+		'#collapsible' => TRUE, 
+		'#collapsed' => FALSE,
+	);
+	$form['mises_utility']['markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Ad Settings'),
+		'#markup' => 'The fields below will allow you to make adjustments to the ad settings',
+	);
+
+  $form['mises_utility']['mises_utility_ad_header'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on header ad region'),
+    '#default_value' => variable_get('mises_utility_ad_header', 0),
+    '#description' => t("Turn on the header ad region."),
+  );
+
+  return system_settings_form($form);
+}
