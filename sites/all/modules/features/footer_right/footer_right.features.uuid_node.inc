@@ -47,6 +47,36 @@ Auburn, Alabama 36832-4501</p>
   ),
   'field_image' => array(),
   'field_image_link' => array(),
+  'field_display_title' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'Contact Us',
+        'format' => NULL,
+        'safe_value' => 'Contact Us',
+      ),
+    ),
+  ),
+  'field_region' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'footer_right',
+      ),
+    ),
+  ),
+  'field_section' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'sitewide',
+      ),
+    ),
+  ),
+  'field_weight' => array(
+    'und' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -101,16 +131,6 @@ Auburn, Alabama 36832-4501</p>
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
     ),
-  ),
-  'nodeblock' => array(
-    'nid' => 743,
-    'enabled' => 1,
-    'machine_name' => 743,
-    'block_title' => 'Contact Us',
-    'view_mode' => 'teaser',
-    'node_link' => 0,
-    'comment_link' => 0,
-    'translation_fallback' => 0,
   ),
   'name' => 'aeasterling',
   'picture' => 0,
@@ -146,6 +166,22 @@ Auburn, Alabama 36832-4501</p>
   ),
   'field_image' => array(),
   'field_image_link' => array(),
+  'field_display_title' => array(),
+  'field_region' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'footer_bottom',
+      ),
+    ),
+  ),
+  'field_section' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'sitewide',
+      ),
+    ),
+  ),
+  'field_weight' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -200,16 +236,6 @@ Auburn, Alabama 36832-4501</p>
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
     ),
-  ),
-  'nodeblock' => array(
-    'nid' => 742,
-    'enabled' => 1,
-    'machine_name' => 742,
-    'block_title' => '501(c)3 tagline',
-    'view_mode' => 'teaser',
-    'node_link' => 0,
-    'comment_link' => 0,
-    'translation_fallback' => 0,
   ),
   'name' => 'aeasterling',
   'picture' => 0,

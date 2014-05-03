@@ -65,6 +65,22 @@ function navbar_support_mises_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_display_title' => array(),
+  'field_region' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'nav',
+      ),
+    ),
+  ),
+  'field_section' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'sitewide',
+      ),
+    ),
+  ),
+  'field_weight' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -119,16 +135,6 @@ function navbar_support_mises_uuid_features_default_content() {
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
     ),
-  ),
-  'nodeblock' => array(
-    'nid' => 741,
-    'enabled' => 1,
-    'machine_name' => 741,
-    'block_title' => 'Support Mises nav block',
-    'view_mode' => 'teaser',
-    'node_link' => 0,
-    'comment_link' => 0,
-    'translation_fallback' => 0,
   ),
   'name' => 'aeasterling',
   'picture' => 0,

@@ -65,11 +65,11 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'nodeblock-741' => array(
-          'module' => 'nodeblock',
-          'delta' => '741',
+        'views-flex_blocks-block_4' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_4',
           'region' => 'navigation',
-          'weight' => '-8',
+          'weight' => '-10',
         ),
         'menu-menu-browse-library' => array(
           'module' => 'menu',
@@ -83,9 +83,9 @@ function sitewide_context_context_default_contexts() {
           'region' => 'footer_center',
           'weight' => '-10',
         ),
-        'nodeblock-743' => array(
-          'module' => 'nodeblock',
-          'delta' => '743',
+        'views-flex_blocks-block_2' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_2',
           'region' => 'footer_right',
           'weight' => '-10',
         ),
@@ -93,11 +93,11 @@ function sitewide_context_context_default_contexts() {
           'module' => 'widgets',
           'delta' => 's_socialmedia_profile-default',
           'region' => 'footer_right',
-          'weight' => '-8',
+          'weight' => '-9',
         ),
-        'nodeblock-742' => array(
-          'module' => 'nodeblock',
-          'delta' => '742',
+        'views-flex_blocks-block_3' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_3',
           'region' => 'footer_bottom',
           'weight' => '-10',
         ),
@@ -127,15 +127,15 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'nodeblock-740' => array(
-          'module' => 'nodeblock',
-          'delta' => '740',
+        'views-flex_blocks-block' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block',
           'region' => 'header_left',
           'weight' => '-10',
         ),
-        'nodeblock-739' => array(
-          'module' => 'nodeblock',
-          'delta' => '739',
+        'views-flex_blocks-block_1' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_1',
           'region' => 'header_right',
           'weight' => '-10',
         ),

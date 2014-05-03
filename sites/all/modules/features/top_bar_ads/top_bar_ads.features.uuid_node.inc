@@ -65,6 +65,22 @@ function top_bar_ads_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_display_title' => array(),
+  'field_region' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'top_left',
+      ),
+    ),
+  ),
+  'field_section' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'sitewide',
+      ),
+    ),
+  ),
+  'field_weight' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -119,16 +135,6 @@ function top_bar_ads_uuid_features_default_content() {
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
     ),
-  ),
-  'nodeblock' => array(
-    'nid' => 740,
-    'enabled' => 1,
-    'machine_name' => 740,
-    'block_title' => 'Top Left Ad Block',
-    'view_mode' => 'teaser',
-    'node_link' => 0,
-    'comment_link' => 0,
-    'translation_fallback' => 0,
   ),
   'name' => 'aeasterling',
   'picture' => 0,
@@ -185,11 +191,27 @@ function top_bar_ads_uuid_features_default_content() {
     'und' => array(
       0 => array(
         'url' => 'node/732',
-        'title' => '',
+        'title' => NULL,
         'attributes' => array(),
       ),
     ),
   ),
+  'field_display_title' => array(),
+  'field_region' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'top_right',
+      ),
+    ),
+  ),
+  'field_section' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'sitewide',
+      ),
+    ),
+  ),
+  'field_weight' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -244,16 +266,6 @@ function top_bar_ads_uuid_features_default_content() {
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
     ),
-  ),
-  'nodeblock' => array(
-    'nid' => 739,
-    'enabled' => 1,
-    'machine_name' => 739,
-    'block_title' => 'Top Right Ad block',
-    'view_mode' => 'teaser',
-    'node_link' => 0,
-    'comment_link' => 0,
-    'translation_fallback' => 0,
   ),
   'name' => 'aeasterling',
   'picture' => 0,

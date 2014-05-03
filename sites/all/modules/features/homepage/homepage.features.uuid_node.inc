@@ -65,6 +65,22 @@ function homepage_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_display_title' => array(),
+  'field_region' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'right',
+      ),
+    ),
+  ),
+  'field_section' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'home',
+      ),
+    ),
+  ),
+  'field_weight' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -119,16 +135,6 @@ function homepage_uuid_features_default_content() {
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
     ),
-  ),
-  'nodeblock' => array(
-    'nid' => 738,
-    'enabled' => 1,
-    'machine_name' => 738,
-    'block_title' => 'Summer Ad',
-    'view_mode' => 'teaser',
-    'node_link' => 0,
-    'comment_link' => 0,
-    'translation_fallback' => 0,
   ),
   'name' => 'aeasterling',
   'picture' => 0,
