@@ -95,6 +95,9 @@ function mises_library_item_strongarm() {
       'author_full_name' => array(
         'custom_settings' => FALSE,
       ),
+      'sidebar_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

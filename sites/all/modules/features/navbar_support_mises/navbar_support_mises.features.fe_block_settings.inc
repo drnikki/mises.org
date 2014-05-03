@@ -12,11 +12,11 @@ function navbar_support_mises_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['boxes-support_mises_header'] = array(
-    'cache' => -2,
+  $export['nodeblock-741'] = array(
+    'cache' => 1,
     'custom' => 0,
-    'delta' => 'support_mises_header',
-    'module' => 'boxes',
+    'delta' => 741,
+    'module' => 'nodeblock',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -40,7 +40,7 @@ function navbar_support_mises_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 

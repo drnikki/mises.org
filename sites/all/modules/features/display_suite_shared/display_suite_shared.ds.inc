@@ -12,10 +12,10 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|library_item|block_teaser';
+  $ds_fieldsetting->id = 'node|course|sidebar_teaser';
   $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'library_item';
-  $ds_fieldsetting->view_mode = 'block_teaser';
+  $ds_fieldsetting->bundle = 'course';
+  $ds_fieldsetting->view_mode = 'sidebar_teaser';
   $ds_fieldsetting->settings = array(
     'contextual_block_title_with_icon' => array(
       'weight' => '1',
@@ -34,9 +34,130 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
-    'body' => array(
+    'node_link' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
       'formatter_settings' => array(
+        'link text' => 'Learn More',
+        'wrapper' => 'p',
+        'class' => 'read-more',
         'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['node|course|sidebar_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|course|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'course';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'contextual_block_title_with_icon' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'panel-heading',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'node_link' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Learn More',
+        'wrapper' => 'p',
+        'class' => 'panel-footer',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['node|course|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|flex_block|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'flex_block';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'linked_box_image' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'img-responsive',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(
+          0 => array(
+            'condition' => 'hide_if_empty',
+            'configuration' => array(
+              'target' => 'field_image_link',
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['node|flex_block|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|library_item|block_teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'library_item';
+  $ds_fieldsetting->view_mode = 'block_teaser';
+  $ds_fieldsetting->settings = array(
+    'contextual_block_title_with_icon' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'panel-heading',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => '',
+        'ft' => array(),
+        'conditions' => array(),
       ),
     ),
     'field_teaser_text' => array(
@@ -65,6 +186,45 @@ function display_suite_shared_ds_field_settings_info() {
     ),
   );
   $export['node|library_item|block_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|library_item|sidebar_teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'library_item';
+  $ds_fieldsetting->view_mode = 'sidebar_teaser';
+  $ds_fieldsetting->settings = array(
+    'contextual_block_title_with_icon' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => '',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'node_link' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Learn More',
+        'wrapper' => 'p',
+        'class' => 'read-more',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['node|library_item|sidebar_teaser'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -222,7 +382,7 @@ function display_suite_shared_ds_custom_fields_info() {
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
   $ds_field->field = 'contextual_block_title_with_icon';
-  $ds_field->label = 'Contextual Block Title with Icon';
+  $ds_field->label = 'Contextual Block Title';
   $ds_field->field_type = 5;
   $ds_field->entities = array(
     'node' => 'node',
@@ -231,7 +391,7 @@ function display_suite_shared_ds_custom_fields_info() {
   $ds_field->properties = array(
     'code' => array(
       'value' => '<?php
-//print $entity->view->current_display;
+//dpm($entity);
 $view_name = $entity->view->name;
 $view_display = $entity->view->current_display;
 switch ($view_display) { 
@@ -286,11 +446,17 @@ switch ($view_display) {
   case "lecture": 
     $ctitle = "Lecture"; 
     break;
+  case "learn": 
+    $ctitle = "Learn Austrian Economics"; 
+    break;
+  case "academy_course": 
+    $ctitle = "Take An Academy Course"; 
+    break;
   default: 
     $ctitle = "Add case"; 
 }
 
-print \'<div class="panel-heading"><div class="panel-title">\'  . $ctitle . \'</div></div>\'; 
+print \'<div class="panel-title">\'  . $ctitle . \'</div>\'; 
 
 
 ?>',
@@ -308,6 +474,135 @@ print \'<div class="panel-heading"><div class="panel-title">\'  . $ctitle . \'</
  */
 function display_suite_shared_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|course|sidebar_teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'course';
+  $ds_layout->view_mode = 'sidebar_teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'group_heading',
+        1 => 'contextual_block_title_with_icon',
+        2 => 'title',
+        3 => 'group_teaser',
+        4 => 'body',
+        5 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'group_heading' => 'ds_content',
+      'contextual_block_title_with_icon' => 'ds_content',
+      'title' => 'ds_content',
+      'group_teaser' => 'ds_content',
+      'body' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'panel' => 'panel',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|course|sidebar_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|course|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'course';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'contextual_block_title_with_icon',
+        1 => 'title',
+        2 => 'body',
+        3 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'contextual_block_title_with_icon' => 'ds_content',
+      'title' => 'ds_content',
+      'body' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|course|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|flex_block|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'flex_block';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'linked_box_image',
+        1 => 'field_image',
+        2 => 'field_teaser_text',
+      ),
+      'ds_hidden' => array(
+        3 => 'field_image_link',
+      ),
+    ),
+    'fields' => array(
+      'linked_box_image' => 'ds_content',
+      'field_image' => 'ds_content',
+      'field_teaser_text' => 'ds_content',
+      'field_image_link' => 'ds_hidden',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'panel' => 'panel',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '1',
+    'page_option_title' => '',
+  );
+  $export['node|flex_block|teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -349,8 +644,57 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
   );
   $export['node|library_item|block_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|library_item|sidebar_teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'library_item';
+  $ds_layout->view_mode = 'sidebar_teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'group_heading',
+        1 => 'contextual_block_title_with_icon',
+        2 => 'group_teaser',
+        3 => 'field_teaser_text',
+        4 => 'title',
+        5 => 'body',
+        6 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'group_heading' => 'ds_content',
+      'contextual_block_title_with_icon' => 'ds_content',
+      'group_teaser' => 'ds_content',
+      'field_teaser_text' => 'ds_content',
+      'title' => 'ds_content',
+      'body' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'panel' => 'panel',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|library_item|sidebar_teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -411,6 +755,17 @@ function display_suite_shared_ds_view_modes_info() {
     'field_collection_item' => 'field_collection_item',
   );
   $export['list_teaser'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'sidebar_teaser';
+  $ds_view_mode->label = 'Sidebar Teaser';
+  $ds_view_mode->entities = array(
+    'entity_boxes' => 'entity_boxes',
+    'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $export['sidebar_teaser'] = $ds_view_mode;
 
   return $export;
 }

@@ -45,6 +45,24 @@ function homepage_context_default_contexts() {
           'region' => 'featured_right',
           'weight' => '-8',
         ),
+        'nodeblock-738' => array(
+          'module' => 'nodeblock',
+          'delta' => '738',
+          'region' => 'sidebar_second',
+          'weight' => '-32',
+        ),
+        'views-homepage-learn' => array(
+          'module' => 'views',
+          'delta' => 'homepage-learn',
+          'region' => 'sidebar_second',
+          'weight' => '-31',
+        ),
+        'views-homepage-academy_course' => array(
+          'module' => 'views',
+          'delta' => 'homepage-academy_course',
+          'region' => 'sidebar_second',
+          'weight' => '-30',
+        ),
         'views-homepage-press_room' => array(
           'module' => 'views',
           'delta' => 'homepage-press_room',
