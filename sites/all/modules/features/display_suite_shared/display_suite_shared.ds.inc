@@ -94,39 +94,6 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|flex_block|teaser';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'flex_block';
-  $ds_fieldsetting->view_mode = 'teaser';
-  $ds_fieldsetting->settings = array(
-    'linked_box_image' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'img-responsive',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-        'conditions' => array(
-          0 => array(
-            'condition' => 'hide_if_empty',
-            'configuration' => array(
-              'target' => 'field_image_link',
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
-  $export['node|flex_block|teaser'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|library_item|block_teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'library_item';
@@ -466,6 +433,24 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
   );
   $export['contextual_block_title_with_icon'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'linked_box_image';
+  $ds_field->label = 'Linked Flex Box Image';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<a href="[node:field_image_link:url]"><img class="img-responsive" src="[node:field_image]"></a>',
+      'format' => 'full_html',
+    ),
+    'use_token' => 1,
+  );
+  $export['linked_box_image'] = $ds_field;
+
   return $export;
 }
 
@@ -560,49 +545,6 @@ function display_suite_shared_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['node|course|teaser'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|flex_block|teaser';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'flex_block';
-  $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'linked_box_image',
-        1 => 'field_image',
-        2 => 'field_teaser_text',
-      ),
-      'ds_hidden' => array(
-        3 => 'field_image_link',
-      ),
-    ),
-    'fields' => array(
-      'linked_box_image' => 'ds_content',
-      'field_image' => 'ds_content',
-      'field_teaser_text' => 'ds_content',
-      'field_image_link' => 'ds_hidden',
-    ),
-    'classes' => array(
-      'layout_class' => array(
-        'panel' => 'panel',
-      ),
-    ),
-    'wrappers' => array(
-      'ds_content' => 'div',
-      'ds_hidden' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'hide_page_title' => '1',
-    'page_option_title' => '',
-  );
-  $export['node|flex_block|teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

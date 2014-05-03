@@ -37,3 +37,4 @@ features[variable][] = menu_parent_course
 features[variable][] = node_options_course
 features[variable][] = node_preview_course
 features[variable][] = node_submitted_course
+features_exclude[dependencies][display_suite_shared] = display_suite_shared
