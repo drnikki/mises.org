@@ -92,14 +92,14 @@ span.glyphicon {
 
 /* SIDEBAR BLOCKS */
 .region-sidebar-second {
-  .block-nodeblock {
+  .view-flex-blocks {
     margin-bottom: $grid-gutter-width;
     img {
       @extend .center-block;
       width: auto;
     }
   }
-  .block-views:first-child {
+  #block-views-homepage-learn { // depends on Learn block appearing first
     border-top: 8px solid $brand-contrast;
   }
   .panel {

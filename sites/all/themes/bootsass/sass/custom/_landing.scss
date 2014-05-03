@@ -62,6 +62,9 @@
       color: $gray;
       padding-right: $padding-xs-horizontal;
     }
+    span:not(.tag-label) + span:before {
+      content: ", ";
+    }
     a {
       color: $gray;
     }
