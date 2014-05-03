@@ -3,6 +3,7 @@
 * 
 */
 
+
 /* ICONS */
 .panel-heading {
   position: relative;
@@ -30,7 +31,6 @@ span.glyphicon {
   color: $white;
 }
 /* NOTE: PLACE HOVER COLORS IN RELEVANT SECTION */
-
 
 /* Bootstrap Panel overrides */
 
@@ -89,6 +89,48 @@ span.glyphicon {
     }
   } 
 }
+
+/* SIDEBAR BLOCKS */
+.region-sidebar-second {
+  .block-nodeblock {
+    margin-bottom: $grid-gutter-width;
+    img {
+      @extend .center-block;
+      width: auto;
+    }
+  }
+  .block-views:first-child {
+    border-top: 8px solid $brand-contrast;
+  }
+  .panel {
+    padding: $padding-small-vertical;
+    margin-bottom: 0;
+  }
+  .panel-heading {
+    background: $gray-lighter;
+    &:before {
+      @include icon-block(46px,10px,calc(50% - 23px)); 
+    }
+    &:after {
+      @include vertical-rule(calc(100% - 20px),60px,8px,$gray);
+    }
+    .panel-title {
+      font-size: $font-size-h5;
+      color: $brand-contrast;
+      text-transform: uppercase;
+    }
+    h4 {
+      font-size: $font-size-h5;
+      a {
+        color: $black;
+      }
+    }
+  }
+  .panel-body {
+    font-size: $font-size-small;
+  }
+}
+
 
 /* HOMEPAGE */
 #block-boxes-home-new {

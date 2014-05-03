@@ -39,3 +39,27 @@
   font-size: $size/2;
   line-height: $size;
 }
+
+// Rule
+@mixin vertical-rule($size,$x,$y,$color) {
+  position: absolute;
+  top: $y;
+  left: $x;
+  display: block;
+  width: 1px;
+  height: moz-$size;
+  height: $size;
+  border-left: 1px solid $color;
+  content: '';
+}
+@mixin horizontal-rule($size,$x,$y,$color) {
+  position: absolute;
+  top: $y;
+  left: $x;
+  display: block;
+  width: moz-$size;
+  width: $size;
+  height: 1px;
+  border-top: 1px solid $color;
+  content: '';
+}
