@@ -89,9 +89,9 @@ function sitewide_context_context_default_contexts() {
           'region' => 'footer_right',
           'weight' => '-10',
         ),
-        'widgets-s_socialmedia_profile-default' => array(
-          'module' => 'widgets',
-          'delta' => 's_socialmedia_profile-default',
+        'menu-menu-mises-social-icons' => array(
+          'module' => 'menu',
+          'delta' => 'menu-mises-social-icons',
           'region' => 'footer_right',
           'weight' => '-9',
         ),
