@@ -132,7 +132,7 @@ function mises_contact_us_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -168,6 +168,41 @@ function mises_contact_us_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-contact_us-field_reason_for_contact'
+  $field_instances['entityform-contact_us-field_reason_for_contact'] = array(
+    'bundle' => 'contact_us',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_reason_for_contact',
+    'label' => 'Reason for Contact',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 2,
     ),
   );
@@ -177,6 +212,7 @@ function mises_contact_us_field_default_field_instances() {
   t('Email Address');
   t('Message');
   t('Name');
+  t('Reason for Contact');
 
   return $field_instances;
 }
