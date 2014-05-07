@@ -14,7 +14,8 @@ function mises_wysiwyg_user_default_permissions() {
   $permissions['use text format simplified'] = array(
     'name' => 'use text format simplified',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
+      'Content Manager' => 'Content Manager',
+      'administrator' => 'administrator',
     ),
     'module' => 'filter',
   );
