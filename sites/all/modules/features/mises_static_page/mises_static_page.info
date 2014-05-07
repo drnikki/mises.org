@@ -32,6 +32,7 @@ features[field_instance][] = node-page-field_image_collection
 features[field_instance][] = node-page-field_media_collection
 features[node][] = page
 features[variable][] = comment_page
+features[variable][] = field_bundle_settings_node__page
 features[variable][] = node_options_page
 features[variable][] = node_submitted_page
 features_exclude[field_base][body] = body
