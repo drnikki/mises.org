@@ -137,7 +137,37 @@ function mises_job_posting_field_default_field_instances() {
     'label' => 'Full Description',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'plain_text' => 'plain_text',
+          'simplified' => 'simplified',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 1,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -46,
+            ),
+            'filtered_html' => array(
+              'weight' => -50,
+            ),
+            'full_html' => array(
+              'weight' => -49,
+            ),
+            'plain_text' => array(
+              'weight' => -47,
+            ),
+            'simplified' => array(
+              'weight' => -48,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
