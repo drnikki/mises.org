@@ -8,4 +8,5 @@ dependencies[] = filter
 dependencies[] = wysiwyg
 features[features_api][] = api:2
 features[filter][] = simplified
+features[user_permission][] = use text format simplified
 features[wysiwyg][] = simplified
