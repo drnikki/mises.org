@@ -21,7 +21,7 @@ function mises_utility_permission() {
  * Implements hook_menu().
  */
 function mises_utility_menu() {
-  $items['admin/config/development/mises'] = array(
+  $items['admin/mises'] = array(
     'title' => 'Mises Settings',
 		'description' => t('Collection of editable settings for the mises project'),
     'page callback' => 'drupal_get_form',
