@@ -130,9 +130,10 @@ span.glyphicon {
 
 
 /* HOMEPAGE */
-#block-boxes-home-new {
-  padding: $padding-base-vertical $padding-large-horizontal 0;
+#block-views-flex-blocks-block-7 .panel {
+  padding: $padding-base-vertical $padding-large-horizontal;
   background-color: $brand-contrast-dark;
+  margin-bottom: 0;
   h2 {
     margin: 0;
     color: $white;

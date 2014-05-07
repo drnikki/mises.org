@@ -9266,22 +9266,23 @@ span.glyphicon {
 
 /* HOMEPAGE */
 /* line 133, ../sass/custom/_blocks.scss */
-#block-boxes-home-new {
-  padding: 6px 16px 0;
+#block-views-flex-blocks-block-7 .panel {
+  padding: 6px 16px;
   background-color: #46763a;
+  margin-bottom: 0;
 }
-/* line 136, ../sass/custom/_blocks.scss */
-#block-boxes-home-new h2 {
+/* line 137, ../sass/custom/_blocks.scss */
+#block-views-flex-blocks-block-7 .panel h2 {
   margin: 0;
   color: white;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
-/* line 140, ../sass/custom/_blocks.scss */
-#block-boxes-home-new h2 span {
+/* line 141, ../sass/custom/_blocks.scss */
+#block-views-flex-blocks-block-7 .panel h2 span {
   font-size: 40px;
 }
 
-/* line 146, ../sass/custom/_blocks.scss */
+/* line 147, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises h2 {
   margin: 0;
   padding: 9px 16px;
@@ -9291,22 +9292,22 @@ span.glyphicon {
   font-weight: 200;
   font-size: 19px;
 }
-/* line 155, ../sass/custom/_blocks.scss */
+/* line 156, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav {
   padding-top: 16px;
 }
-/* line 157, ../sass/custom/_blocks.scss */
+/* line 158, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav > li > a {
   padding: 7px 16px;
   color: #729949;
   text-transform: uppercase;
   font-weight: 600;
 }
-/* line 165, ../sass/custom/_blocks.scss */
+/* line 166, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav > li > a span {
   color: #788086;
 }
-/* line 168, ../sass/custom/_blocks.scss */
+/* line 169, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav > li > a span.glyphicon {
   width: 24px;
   height: 24px;
@@ -9316,12 +9317,12 @@ span.glyphicon {
   color: white;
   font-weight: 100;
 }
-/* line 173, ../sass/custom/_blocks.scss */
+/* line 174, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav > li > a:hover {
   background: transparent;
   text-decoration: underline;
 }
-/* line 176, ../sass/custom/_blocks.scss */
+/* line 177, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav > li > a:hover span.glyphicon {
   background-color: #729949;
 }
