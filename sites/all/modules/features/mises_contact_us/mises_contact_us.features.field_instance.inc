@@ -69,7 +69,7 @@ function mises_contact_us_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -172,6 +172,45 @@ function mises_contact_us_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-contact_us-field_phone_number'
+  $field_instances['entityform-contact_us-field_phone_number'] = array(
+    'bundle' => 'contact_us',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'phone',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'phone',
+        'weight' => 4,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_phone_number',
+    'label' => 'Phone Number',
+    'required' => 0,
+    'settings' => array(
+      'ca_phone_parentheses' => 1,
+      'ca_phone_separator' => '-',
+      'phone_country_code' => 1,
+      'phone_default_country_code' => 1,
+      'phone_int_max_length' => 15,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'phone',
+      'settings' => array(),
+      'type' => 'phone_textfield',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'entityform-contact_us-field_reason_for_contact'
   $field_instances['entityform-contact_us-field_reason_for_contact'] = array(
     'bundle' => 'contact_us',
@@ -203,7 +242,7 @@ function mises_contact_us_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -212,6 +251,7 @@ function mises_contact_us_field_default_field_instances() {
   t('Email Address');
   t('Message');
   t('Name');
+  t('Phone Number');
   t('Reason for Contact');
 
   return $field_instances;
