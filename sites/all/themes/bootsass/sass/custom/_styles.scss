@@ -8,17 +8,24 @@
 */
 
 /* LAYOUT */
-@media (min-width: 768px) {
+@media (max-width: $screen-xs - 1){ // adding mid-small breakpoint
+  *[class*="col-"]{
+    float:none;
+    width:auto;
+  }   
+}
+
+@media (min-width: $screen-sm) {
   .container {
     width: 100%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $screen-md) {
   .container {
     width: 100%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg) {
   .container {
     width: 1160px;
   }
@@ -96,11 +103,13 @@ body {
 /* MENU FOOTER */
 .menu-footer {
   @include background-texture($brand-medium,'../images/menu-footer-texture.jpg');
-  padding: 25px 0 35px;
+  padding: 10px 0 35px;
   border-top: 1px solid $brand-dark;
   background: $brand-medium;
   
-  h2 {
+  h2,
+  .block:first-child h2.block-title {
+    margin-top: $padding-large-vertical;
     color: $brand-secondary;
     text-transform: uppercase;
     font-size: 20px;
@@ -124,43 +133,76 @@ body {
 .footer {
   @include background-texture($gray-darker,'../images/footer-texture.jpg');
   margin-top: 0;
-  padding: 25px 0 15px;
+  padding: 10px 0 15px;
   border-top: 7px solid $black;
   color: $white;
 
   .panel {
     background: transparent;
   }
-  h2 {
+  h2,
+  .block:first-child h2.block-title { 
+    margin-top: $padding-large-vertical;
     color: $brand-contrast;
     text-transform: uppercase;
     font-size: 15px;
   }
-  ul.menu li a {
-      display: inline;
-      padding: 0;
-      color: $gray-lighter;
-      font-size: $font-size-small;
-    &:hover {
-      background: transparent;
-      text-decoration: underline;
+  .region-footer-left,
+  .region-footer-center {
+    ul.menu li a {
+        display: inline;
+        padding: 0;
+        color: $gray-lighter;
+        font-size: $font-size-small;
+      &:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
     }
   }
   .region-footer-right {
     .panel {
-      padding: 0 $padding-small-horizontal $padding-large-vertical;
+      padding: $padding-large-vertical 0;
       border-bottom: 1px solid $gray;
       h2 {
+        margin: 0 0 $padding-large-vertical;
+        padding: 0  $padding-xs-horizontal $padding-large-vertical;
         border-bottom: 1px solid $gray;
         color: $gray-lighter;
         font-size: $font-size-h3;
-        margin: 0 0 $padding-large-vertical;
-        padding-bottom: $padding-large-vertical;
+      }
+      p {
+        padding: 0  $padding-xs-horizontal;
       }
       .logo {
-        @include background-image('../images/footer-logo.png', 60px, 372px);
+        @include background-image('../images/footer-logo.png', 60px, 377px);
         margin-bottom: -7px;
         margin-left: -7px;
+        max-width: 100%;
+        background-position: 5px 0;
+        background-size: contain;
+      }
+      a {
+        color: $white;
+      }
+    }
+  }
+  #block-menu-menu-mises-social-icons {
+    ul.menu li {
+      display: inline-block;
+      padding-right: $padding-xs-horizontal;
+      padding-bottom: $padding-large-vertical;
+      a {
+        display: inline-block;
+        padding: 0;
+        width: 45px;
+        height: 45px;
+        text-indent: -9999em;
+        opacity: 0.7;
+        &:hover {
+          background-color: transparent;
+          opacity: 1;
+        }
       }
     }
   }

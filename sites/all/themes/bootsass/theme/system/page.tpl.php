@@ -93,7 +93,7 @@
     <div class="container">
       <?php if ($logo): ?>
       <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        <img class="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
       </a>
       <?php endif; ?>
     
@@ -229,10 +229,10 @@
   <div class="menu-footer">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-xs-6">
         <?php print render($page['menu_footer_one']); ?>
         </div>
-        <div class="col-sm-6">
+        <div class="col-xs-6">
         <?php print render($page['menu_footer_two']); ?>
         </div>
       </div>
@@ -242,11 +242,15 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-sm-3">
-        <?php print render($page['footer_left']); ?>
-      </div>
-      <div class="col-sm-3">
-        <?php print render($page['footer_center']); ?>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-xs-6">
+            <?php print render($page['footer_left']); ?>
+          </div>
+          <div class="col-xs-6">
+            <?php print render($page['footer_center']); ?>
+          </div>
+        </div>
       </div>
       <div class="col-sm-6">
         <?php print render($page['footer_right']); ?>
