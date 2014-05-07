@@ -43,6 +43,7 @@ scripts[] = 'js/bootstrap/popover.js'
 scripts[] = 'js/bootstrap/scrollspy.js'
 scripts[] = 'js/bootstrap/tab.js'
 scripts[] = 'js/bootstrap/transition.js'
+scripts[] = 'js/custom.js'
 
 
 ;;;;;;;;;;;;;;;;;;;;;

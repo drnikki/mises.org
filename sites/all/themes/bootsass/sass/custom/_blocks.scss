@@ -52,12 +52,9 @@ span.glyphicon {
 }
 
 /* BOTTOM BLOCKS */
-.content-bottom .col-sm-3 .region {
+.content-bottom .region {
   position: relative;
   background: $white;
-}  
-.block-nodeblock,  
-.content-bottom .col-sm-3 .region { 
   .panel-heading {
     border-radius: 0;
     background-color: $brand-medium;
@@ -69,7 +66,7 @@ span.glyphicon {
     }
   }
   .panel-body {
-    height: 150px;
+    //height: 150px;
     h4 {
       font-size: $font-size-h5;
       a {
@@ -134,7 +131,7 @@ span.glyphicon {
 
 /* HOMEPAGE */
 #block-boxes-home-new {
-  padding: $padding-base-vertical $padding-large-horizontal * 2 0;
+  padding: $padding-base-vertical $padding-large-horizontal 0;
   background-color: $brand-contrast-dark;
   h2 {
     margin: 0;
@@ -148,7 +145,7 @@ span.glyphicon {
 #block-menu-menu-new-to-mises {
   h2 {
     margin: 0;
-    padding: $padding-base-vertical * 1.5 $padding-large-horizontal * 2;
+    padding: $padding-base-vertical * 1.5 $padding-large-horizontal;
     background-color: $brand-contrast;
     color: $white;
     text-transform: uppercase;
@@ -158,10 +155,13 @@ span.glyphicon {
   .nav {
     padding-top: $padding-large-horizontal;
     > li > a {
-      padding: $padding-base-vertical + 1 $padding-large-horizontal * 2;
+      //padding: $padding-base-vertical + 1 $padding-large-horizontal * 2 $padding-base-vertical + 1 66px;
+      padding: $padding-base-vertical + 1 $padding-large-horizontal;
       color: $brand-contrast;
       text-transform: uppercase;
+      //text-indent: -34px;
       font-weight: 600;
+      
       span {
         color: $gray;
       }

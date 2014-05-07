@@ -26,27 +26,7 @@ function footer_right_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '2ee2df79-7df4-4948-9d74-2165b9cc52e7',
-  'revision_uid' => 18,
-  'field_teaser_text' => array(
-    'und' => array(
-      0 => array(
-        'value' => '<p class="logo">Mises Institute</p>
-<p>518 West Magnolia Avenue<br />
-Auburn, Alabama 36832-4501</p>
-<p>PHONE 334.321.2100  |  FAX 334.321.2119</p>
-<p>contact@mises.org</p>',
-        'format' => 'full_html',
-        'safe_value' => '<p class="logo">Mises Institute</p>
-<p>518 West Magnolia Avenue<br />
-Auburn, Alabama 36832-4501</p>
-<p>PHONE 334.321.2100  |  FAX 334.321.2119</p>
-<p><a href="mailto:contact@mises.org">contact@mises.org</a></p>
-',
-      ),
-    ),
-  ),
-  'field_image' => array(),
-  'field_image_link' => array(),
+  'revision_uid' => 17,
   'field_display_title' => array(
     'und' => array(
       0 => array(
@@ -56,6 +36,8 @@ Auburn, Alabama 36832-4501</p>
       ),
     ),
   ),
+  'field_image' => array(),
+  'field_image_link' => array(),
   'field_region' => array(
     'und' => array(
       0 => array(
@@ -67,6 +49,24 @@ Auburn, Alabama 36832-4501</p>
     'und' => array(
       0 => array(
         'value' => 'sitewide',
+      ),
+    ),
+  ),
+  'field_teaser_text' => array(
+    'und' => array(
+      0 => array(
+        'value' => '<p class="logo">Mises Institute</p>
+<address>518 West Magnolia Avenue<br />
+Auburn, Alabama 36832-4501</address>
+<p>PHONE <a href="tel:1-334-321-2100">334.321.2100</a>  |  FAX 334.321.2119</p>
+<p><a href="/contact">Contact Us</a></p>',
+        'format' => 'full_html',
+        'safe_value' => '<p class="logo">Mises Institute</p>
+<address>518 West Magnolia Avenue<br />
+Auburn, Alabama 36832-4501</address>
+<p>PHONE <a href="tel:1-334-321-2100">334.321.2100</a>  |  FAX 334.321.2119</p>
+<p><a href="/contact">Contact Us</a></p>
+',
       ),
     ),
   ),
@@ -154,19 +154,9 @@ Auburn, Alabama 36832-4501</p>
   'translate' => 0,
   'uuid' => '6fcd0b6e-cbce-4557-926a-9350cf07b9b2',
   'revision_uid' => 18,
-  'field_teaser_text' => array(
-    'und' => array(
-      0 => array(
-        'value' => '<p class="text-center italic">Mises Institute is a tax-exempt 501(c)3 nonprofit organization. Contributions are tax-deductible to the full extent the law allows.</p>',
-        'format' => 'full_html',
-        'safe_value' => '<p class="text-center italic">Mises Institute is a tax-exempt 501(c)3 nonprofit organization. Contributions are tax-deductible to the full extent the law allows.</p>
-',
-      ),
-    ),
-  ),
+  'field_display_title' => array(),
   'field_image' => array(),
   'field_image_link' => array(),
-  'field_display_title' => array(),
   'field_region' => array(
     'und' => array(
       0 => array(
@@ -178,6 +168,16 @@ Auburn, Alabama 36832-4501</p>
     'und' => array(
       0 => array(
         'value' => 'sitewide',
+      ),
+    ),
+  ),
+  'field_teaser_text' => array(
+    'und' => array(
+      0 => array(
+        'value' => '<p class="text-center italic">Mises Institute is a tax-exempt 501(c)3 nonprofit organization. Contributions are tax-deductible to the full extent the law allows.</p>',
+        'format' => 'full_html',
+        'safe_value' => '<p class="text-center italic">Mises Institute is a tax-exempt 501(c)3 nonprofit organization. Contributions are tax-deductible to the full extent the law allows.</p>
+',
       ),
     ),
   ),
