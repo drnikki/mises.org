@@ -26,7 +26,7 @@ function footer_right_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '2ee2df79-7df4-4948-9d74-2165b9cc52e7',
-  'revision_uid' => 17,
+  'revision_uid' => 18,
   'field_display_title' => array(
     'und' => array(
       0 => array(
@@ -59,13 +59,13 @@ function footer_right_uuid_features_default_content() {
 <address>518 West Magnolia Avenue<br />
 Auburn, Alabama 36832-4501</address>
 <p>PHONE <a href="tel:1-334-321-2100">334.321.2100</a>  |  FAX 334.321.2119</p>
-<p><a href="/contact">Contact Us</a></p>',
+<p><a href="/contact">Email Us</a></p>',
         'format' => 'full_html',
         'safe_value' => '<p class="logo">Mises Institute</p>
 <address>518 West Magnolia Avenue<br />
 Auburn, Alabama 36832-4501</address>
 <p>PHONE <a href="tel:1-334-321-2100">334.321.2100</a>  |  FAX 334.321.2119</p>
-<p><a href="/contact">Contact Us</a></p>
+<p><a href="/contact">Email Us</a></p>
 ',
       ),
     ),
@@ -153,7 +153,7 @@ Auburn, Alabama 36832-4501</address>
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '6fcd0b6e-cbce-4557-926a-9350cf07b9b2',
-  'revision_uid' => 18,
+  'revision_uid' => 0,
   'field_display_title' => array(),
   'field_image' => array(),
   'field_image_link' => array(),
