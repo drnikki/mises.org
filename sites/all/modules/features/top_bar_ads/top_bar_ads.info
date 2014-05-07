@@ -3,7 +3,6 @@ core = 7.x
 package = Blocks
 version = 7.x-1.0
 project = top_bar_ads
-dependencies[] = boxes
 dependencies[] = fe_block
 dependencies[] = flex_block_views
 dependencies[] = mises_flex_block

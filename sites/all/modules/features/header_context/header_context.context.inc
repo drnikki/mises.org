@@ -26,15 +26,15 @@ function header_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'boxes-top_left_ad' => array(
-          'module' => 'boxes',
-          'delta' => 'top_left_ad',
+        'views-flex_blocks-block' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block',
           'region' => 'header_left',
           'weight' => '-10',
         ),
-        'boxes-top_right_ad' => array(
-          'module' => 'boxes',
-          'delta' => 'top_right_ad',
+        'views-flex_blocks-block_1' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_1',
           'region' => 'header_right',
           'weight' => '-10',
         ),
