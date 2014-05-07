@@ -19,7 +19,7 @@ function homepage_default_box() {
   $box->description = 'New to Mises?';
   $box->options = array(
     'body' => array(
-      'value' => '<h3>New to Mises Institute?',
+      'value' => '<h2>New to<br /><span>Mises Institute?</span></h2>',
       'format' => 'full_html',
     ),
     'additional_classes' => 'contrast reverse',

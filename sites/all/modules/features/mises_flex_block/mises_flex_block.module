@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Flex Block feature.
+ */
+
+include_once 'mises_flex_block.features.inc';

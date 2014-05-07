@@ -1,17 +1,20 @@
 /*
-* Custom Styles of Home and Landing Pages
+* Custom Styles for Home and Landing Pages
 * 
 */
+
+/* TOP FEATURED REGION */
 .featured .container {
   .row {
-    background: $white;
-    margin-left: 0;
     margin-right: 0;
+    margin-left: 0;
+    background: $white;
   }
   .col-sm-8, .col-sm-4 {
     padding: 6px;
   }
 }
+/* HOMEPAGE HERO */
 .view-homepage-hero {
   .featured-block {
     position: relative;
@@ -21,14 +24,21 @@
     .image {
     }
     .overlay {
-      position: absolute;
-      bottom: 10px;
+      position: relative;
       left: -6px;
+      padding: 10px 20px 10px 38px;
+      width: -moz-calc(100% + 6px);
+      width: calc(100% + 6px);
       border-left: 6px solid $brand-primary;
       background: $brand-medium-screen;
-      max-width: 75%;
-      padding: 10px 20px 10px 38px;
       color: $white;
+      @media (min-width: $screen-md) {
+        & {
+          position: absolute;
+          bottom: 10px;
+          max-width: 75%;
+        }
+      }
       h3 {
         margin-top: 0;
       }
@@ -37,5 +47,55 @@
       }
     }
   }
-  
 }
+
+/* HOMEPAGE TOP RIGHT MENU */
+
+
+/* LANDING LISTS */
+.landing-list {
+  .views-row {
+    padding-bottom: 40px;
+  }
+  .image {
+    margin-top: 5px;
+    border-top: 8px solid $brand-secondary;
+  }
+  .tags {
+    margin-top: 5px;
+    font-size: $font-size-xs;
+    .tag-label {
+      padding-right: $padding-xs-horizontal;
+      color: $gray;
+      text-transform: uppercase;
+    }
+    span:not(.tag-label) + span:before {
+      content: ", ";
+    }
+    a {
+      color: $gray;
+    }
+  }
+  h2.teaser-title {
+    margin-top: 0;
+  }
+  .group-date-author {
+    .date {
+      color: $brand-primary;
+      text-transform: uppercase;
+    }
+    span.author {
+      padding-left: 10px;
+      div, p {
+        display: inline;
+        color: $brand-primary;
+      }
+    }
+  }
+  .view-footer {
+    span.glyphicon {
+      @include glyph-size(22px);
+    }
+  }
+}
+

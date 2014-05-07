@@ -17,6 +17,13 @@ function mises_library_item_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function mises_library_item_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function mises_library_item_node_info() {

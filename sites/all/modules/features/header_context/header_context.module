@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Header Context feature.
+ */
+
+include_once 'header_context.features.inc';

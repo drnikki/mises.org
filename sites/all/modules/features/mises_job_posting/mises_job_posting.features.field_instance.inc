@@ -61,7 +61,7 @@ function mises_job_posting_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 0,
+      'weight' => 4,
     ),
   );
 
@@ -104,7 +104,7 @@ function mises_job_posting_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -137,7 +137,37 @@ function mises_job_posting_field_default_field_instances() {
     'label' => 'Full Description',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'plain_text' => 'plain_text',
+          'simplified' => 'simplified',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 1,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -46,
+            ),
+            'filtered_html' => array(
+              'weight' => -50,
+            ),
+            'full_html' => array(
+              'weight' => -49,
+            ),
+            'plain_text' => array(
+              'weight' => -47,
+            ),
+            'simplified' => array(
+              'weight' => -48,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -147,7 +177,7 @@ function mises_job_posting_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => -3,
+      'weight' => 3,
     ),
   );
 
@@ -204,7 +234,7 @@ function mises_job_posting_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -247,7 +277,7 @@ function mises_job_posting_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -302,7 +332,7 @@ function mises_job_posting_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => -1,
+      'weight' => 3,
     ),
   );
 
@@ -357,7 +387,7 @@ function mises_job_posting_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => -2,
+      'weight' => 2,
     ),
   );
 
@@ -400,7 +430,7 @@ function mises_job_posting_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => -4,
+      'weight' => 2,
     ),
   );
 

@@ -52,7 +52,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 7,
     ),
   );
 
@@ -98,7 +98,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 5,
     ),
   );
 
@@ -144,7 +144,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 3,
     ),
   );
 
@@ -187,7 +187,7 @@ function mises_events_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -242,7 +242,7 @@ function mises_events_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 1,
+      'weight' => 4,
     ),
   );
 
@@ -288,7 +288,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -334,7 +334,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 6,
     ),
   );
 
@@ -378,7 +378,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -429,7 +429,7 @@ function mises_events_field_default_field_instances() {
         ),
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 2,
     ),
   );
 
@@ -486,7 +486,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 3,
     ),
   );
 
@@ -532,7 +532,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 4,
     ),
   );
 

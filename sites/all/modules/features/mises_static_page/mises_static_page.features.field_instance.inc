@@ -17,11 +17,38 @@ function mises_static_page_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => 'list_teaser',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'list_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(
+            0 => array(
+              'condition' => '',
+            ),
+          ),
           'image_link' => '',
           'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'single_image' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => 'block_teaser',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -72,6 +99,7 @@ function mises_static_page_field_default_field_instances() {
         'label' => 'above',
         'module' => 'mediafield',
         'settings' => array(
+          'conditions' => array(),
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
@@ -125,7 +153,9 @@ function mises_static_page_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -133,22 +163,55 @@ function mises_static_page_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'conditions' => array(),
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'plain_text' => 'plain_text',
+          'simplified' => 'simplified',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 1,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -46,
+            ),
+            'filtered_html' => array(
+              'weight' => -50,
+            ),
+            'full_html' => array(
+              'weight' => -49,
+            ),
+            'plain_text' => array(
+              'weight' => -47,
+            ),
+            'simplified' => array(
+              'weight' => -48,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -171,6 +234,7 @@ function mises_static_page_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
+          'conditions' => array(),
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
@@ -214,6 +278,7 @@ function mises_static_page_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
+          'conditions' => array(),
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',

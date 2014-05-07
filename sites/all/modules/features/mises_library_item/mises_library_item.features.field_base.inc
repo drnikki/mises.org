@@ -13,7 +13,7 @@ function mises_library_item_field_default_field_bases() {
   // Exported field_base: 'field_audience'
   $field_bases['field_audience'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_audience',
@@ -370,7 +370,7 @@ function mises_library_item_field_default_field_bases() {
   // Exported field_base: 'field_level'
   $field_bases['field_level'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_level',
@@ -670,7 +670,7 @@ function mises_library_item_field_default_field_bases() {
   // Exported field_base: 'field_topics'
   $field_bases['field_topics'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_topics',

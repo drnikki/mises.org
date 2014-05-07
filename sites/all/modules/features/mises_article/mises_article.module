@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises_Article feature.
+ */
+
+include_once 'mises_article.features.inc';

@@ -1,0 +1,183 @@
+/*
+* Custom Styles for Blocks
+* 
+*/
+
+
+/* ICONS */
+.panel-heading {
+  position: relative;
+  padding: 10px 15px 7px 80px;
+  &:before {
+    @include icon-block(61px,10px,-5px);
+    .press-room & {
+      @include icon-image('../images/icons/icon-press.png');
+    }
+    .online-courses & {
+      @include icon-image('../images/icons/icon-online.png');
+    }
+    .mises-view & {
+      @include icon-image('../images/icons/icon-view.png');
+    }
+    .library-block & {
+      @include icon-image('../images/icons/icon-library.png');
+    }
+  }
+}
+span.glyphicon {
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: $gray;
+  color: $white;
+}
+/* NOTE: PLACE HOVER COLORS IN RELEVANT SECTION */
+
+/* Bootstrap Panel overrides */
+
+.panel-footer {
+  padding: $padding-large-vertical $padding-xs-horizontal;
+  background-color: transparent;
+  a {
+    color: $gray;
+    text-transform: uppercase;
+  font-size: $font-size-small;
+    &:hover {
+      color: $brand-medium;
+    }
+  }
+  &:hover span.glyphicon {
+    background-color: $brand-medium;
+  }
+
+}
+
+/* BOTTOM BLOCKS */
+.content-bottom .region {
+  position: relative;
+  background: $white;
+  .panel-heading {
+    border-radius: 0;
+    background-color: $brand-medium;
+    .panel-title {
+      color: $white;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-family: $font-family-serif;
+    }
+  }
+  .panel-body {
+    //height: 150px;
+    h4 {
+      font-size: $font-size-h5;
+      a {
+        color: $brand-primary;
+      }
+    }
+    p {
+      color: $gray;
+      font-size: $font-size-small;
+    }
+  }
+  .view-footer {
+    margin: 0 $padding-large-horizontal;
+    line-height: 20px;
+    span.glyphicon {
+      @include glyph-size(24px);
+    }
+  } 
+}
+
+/* SIDEBAR BLOCKS */
+.region-sidebar-second {
+  .view-flex-blocks {
+    margin-bottom: $grid-gutter-width;
+    img {
+      @extend .center-block;
+      width: auto;
+    }
+  }
+  #block-views-homepage-learn { // depends on Learn block appearing first
+    border-top: 8px solid $brand-contrast;
+  }
+  .panel {
+    padding: $padding-small-vertical;
+    margin-bottom: 0;
+  }
+  .panel-heading {
+    background: $gray-lighter;
+    &:before {
+      @include icon-block(46px,10px,calc(50% - 23px)); 
+    }
+    &:after {
+      @include vertical-rule(calc(100% - 20px),60px,8px,$gray);
+    }
+    .panel-title {
+      font-size: $font-size-h5;
+      color: $brand-contrast;
+      text-transform: uppercase;
+    }
+    h4 {
+      font-size: $font-size-h5;
+      a {
+        color: $black;
+      }
+    }
+  }
+  .panel-body {
+    font-size: $font-size-small;
+  }
+}
+
+
+/* HOMEPAGE */
+#block-views-flex-blocks-block-7 .panel {
+  padding: $padding-base-vertical $padding-large-horizontal;
+  background-color: $brand-contrast-dark;
+  margin-bottom: 0;
+  h2 {
+    margin: 0;
+    color: $white;
+    font-family: $font-family-serif;
+    span {
+      font-size: 40px;
+    }
+  }
+}
+#block-menu-menu-new-to-mises {
+  h2 {
+    margin: 0;
+    padding: $padding-base-vertical * 1.5 $padding-large-horizontal;
+    background-color: $brand-contrast;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: $font-size-h4;
+  }
+  .nav {
+    padding-top: $padding-large-horizontal;
+    > li > a {
+      //padding: $padding-base-vertical + 1 $padding-large-horizontal * 2 $padding-base-vertical + 1 66px;
+      padding: $padding-base-vertical + 1 $padding-large-horizontal;
+      color: $brand-contrast;
+      text-transform: uppercase;
+      //text-indent: -34px;
+      font-weight: 600;
+      
+      span {
+        color: $gray;
+      }
+      span.glyphicon {
+        @include glyph-size(24px);
+        color: $white;
+        font-weight: 100;
+      }
+      &:hover {
+        background: transparent;
+        text-decoration: underline;
+        span.glyphicon {
+          background-color: $brand-contrast;
+        }
+      }
+    }
+  }
+}

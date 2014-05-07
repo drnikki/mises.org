@@ -12,11 +12,43 @@ function footer_right_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['boxes-footer_right'] = array(
-    'cache' => -2,
+  $export['nodeblock-742'] = array(
+    'cache' => 1,
     'custom' => 0,
-    'delta' => 'footer_right',
-    'module' => 'boxes',
+    'delta' => 742,
+    'module' => 'nodeblock',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootsass' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootsass',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['nodeblock-743'] = array(
+    'cache' => 1,
+    'custom' => 0,
+    'delta' => 743,
+    'module' => 'nodeblock',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),

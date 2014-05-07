@@ -75,7 +75,7 @@
 ?>
 <header>
   <?php if (!empty($page['header_left']) || !empty($page['header_right'])): ?>
-    <div role="banner" id="top-bar">
+    <div role="banner" id="top-bar" class="hidden-sm hidden-xs">
       <div class="container">
         <div class="row">
           <div class="col-sm-7">
@@ -93,7 +93,7 @@
     <div class="container">
       <?php if ($logo): ?>
       <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        <img class="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
       </a>
       <?php endif; ?>
     
@@ -164,24 +164,26 @@
         <?php if (!empty($page['highlighted'])): ?>
           <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
         <?php endif; ?>
-        <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-        <a id="main-content"></a>
-        <?php print render($title_prefix); ?>
-        <?php if (!empty($title)): ?>
-          <h1 class="page-header"><?php print $title; ?></h1>
-        <?php endif; ?>
-        <?php print render($title_suffix); ?>
-        <?php print $messages; ?>
-        <?php if (!empty($tabs)): ?>
-          <?php print render($tabs); ?>
-        <?php endif; ?>
-        <?php if (!empty($page['help'])): ?>
-          <?php print render($page['help']); ?>
-        <?php endif; ?>
-        <?php if (!empty($action_links)): ?>
-          <ul class="action-links"><?php print render($action_links); ?></ul>
-        <?php endif; ?>
-        <?php print render($page['content']); ?>
+        <div class="main-content">
+          <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+          <a id="main-content"></a>
+          <?php print render($title_prefix); ?>
+          <?php if (!empty($title)): ?>
+            <h1 class="page-header"><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
+          <?php print $messages; ?>
+          <?php if (!empty($tabs)): ?>
+            <?php print render($tabs); ?>
+          <?php endif; ?>
+          <?php if (!empty($page['help'])): ?>
+            <?php print render($page['help']); ?>
+          <?php endif; ?>
+          <?php if (!empty($action_links)): ?>
+            <ul class="action-links"><?php print render($action_links); ?></ul>
+          <?php endif; ?>
+          <?php print render($page['content']); ?>
+        </div>
       </section>
   
       <?php if (!empty($page['sidebar_second'])): ?>
@@ -198,22 +200,22 @@
       <div class="container">
         <div class="row">
           <?php if (!empty($page['bottom_one'])): ?>
-            <div class="col-sm-3">
+            <div class="col-sm-3 col-xs-6">
               <?php print render($page['bottom_one']); ?>
             </div>
           <?php endif; ?>
           <?php if (!empty($page['bottom_two'])): ?>
-            <div class="col-sm-3">
+            <div class="col-sm-3 col-xs-6">
               <?php print render($page['bottom_two']); ?>
             </div>
           <?php endif; ?>
           <?php if (!empty($page['bottom_three'])): ?>
-            <div class="col-sm-3">
+            <div class="col-sm-3 col-xs-6">
               <?php print render($page['bottom_three']); ?>
             </div>
           <?php endif; ?>
           <?php if (!empty($page['bottom_four'])): ?>
-            <div class="col-sm-3">
+            <div class="col-sm-3 col-xs-6">
               <?php print render($page['bottom_four']); ?>
             </div>
           <?php endif; ?>
@@ -227,10 +229,10 @@
   <div class="menu-footer">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-xs-6">
         <?php print render($page['menu_footer_one']); ?>
         </div>
-        <div class="col-sm-6">
+        <div class="col-xs-6">
         <?php print render($page['menu_footer_two']); ?>
         </div>
       </div>
@@ -240,14 +242,23 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-sm-3">
-        <?php print render($page['footer_left']); ?>
-      </div>
-      <div class="col-sm-3">
-        <?php print render($page['footer_center']); ?>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-xs-6">
+            <?php print render($page['footer_left']); ?>
+          </div>
+          <div class="col-xs-6">
+            <?php print render($page['footer_center']); ?>
+          </div>
+        </div>
       </div>
       <div class="col-sm-6">
-      <?php print render($page['footer_right']); ?>
+        <?php print render($page['footer_right']); ?>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <?php print render($page['footer_bottom']); ?>
       </div>
     </div>
   </div>

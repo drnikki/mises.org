@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Flex Block Views feature.
+ */
+
+include_once 'flex_block_views.features.inc';

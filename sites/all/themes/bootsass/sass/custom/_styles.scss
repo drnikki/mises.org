@@ -3,6 +3,34 @@
 * 
 */
 
+/*
+* OVERRIDE BOOTSTRAP
+*/
+
+/* LAYOUT */
+@media (max-width: $screen-xs - 1){ // adding mid-small breakpoint
+  *[class*="col-"]{
+    float:none;
+    width:auto;
+  }   
+}
+
+@media (min-width: $screen-sm) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: $screen-md) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: $screen-lg) {
+  .container {
+    width: 1160px;
+  }
+}
+
 // bootstap/_navbar.scss
 .navbar-header {
   background: $white;
@@ -34,6 +62,15 @@
     margin-bottom: 10px;
   }
 }
+// Panels
+.panel {
+  margin-bottom: $padding-large-vertical;
+  &, .panel-heading, .panel-footer {
+    @include box-shadow(0 0 0 rgba(0,0,0,0));
+    border: 0 none;
+    border-radius: 0;
+  }
+}
 
 /*
 * CUSTOM MISES ELEMENTS
@@ -45,20 +82,19 @@ body {
 
 /* HEADER */
 #top-bar {
-  height: 110px;
-  padding-top: 28px;
   @include background-texture($brand-primary,'../images/top-bar.jpg');
+  padding-top: 28px;
+  height: 110px;
 }
-#block-boxes-support-mises,
-#block-boxes-support-mises-header {
+.region-navigation .block {
   @extend .pull-right;
-  height: 50px;
   margin-top: -7px;
+  height: 50px;
 }
 /* CONTAINER */
 .main-container {
-  background: transparent url('../images/content-texture.jpg') center top no-repeat;
   padding: 20px 0 35px;
+  background: transparent url('../images/content-texture.jpg') center top no-repeat;
 }
 .main-container > .container {
   padding-top: 20px;
@@ -66,12 +102,14 @@ body {
 
 /* MENU FOOTER */
 .menu-footer {
-  padding: 25px 0 35px;
+  @include background-texture($brand-medium,'../images/menu-footer-texture.jpg');
+  padding: 10px 0 35px;
   border-top: 1px solid $brand-dark;
   background: $brand-medium;
-  @include background-texture($brand-medium,'../images/menu-footer-texture.jpg');
   
-  h2 {
+  h2,
+  .block:first-child h2.block-title {
+    margin-top: $padding-large-vertical;
     color: $brand-secondary;
     text-transform: uppercase;
     font-size: 20px;
@@ -79,12 +117,13 @@ body {
   ul.menu {
     @include content-columns(2);
     li a {
-      color: $gray-lighter;
-      padding: 0;
       display: inline;
+      padding: 0;
+      color: $gray-lighter;
       font-size: $font-size-small;
       &:hover {
         background: transparent;
+        text-decoration: underline;
       }
     }
   }
@@ -92,44 +131,132 @@ body {
 
 /* FOOTER */
 .footer {
-  padding: 25px 0 35px;
-  margin-top: 0;
-  border-top: 7px solid $black;
-  background: $brand-medium;
-  color: $white;
   @include background-texture($gray-darker,'../images/footer-texture.jpg');
+  margin-top: 0;
+  padding: 10px 0 15px;
+  border-top: 7px solid $black;
+  color: $white;
 
-  h2 {
+  .panel {
+    background: transparent;
+  }
+  h2,
+  .block:first-child h2.block-title { 
+    margin-top: $padding-large-vertical;
     color: $brand-contrast;
     text-transform: uppercase;
     font-size: 15px;
   }
-  ul.menu li a {
-      color: $gray-lighter;
-      padding: 0;
-      display: inline;
-      font-size: $font-size-small;
-    &:hover {
-      background: transparent;
+  .region-footer-left,
+  .region-footer-center {
+    ul.menu li a {
+        display: inline;
+        padding: 0;
+        color: $gray-lighter;
+        font-size: $font-size-small;
+      &:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
     }
   }
-  #block-boxes-footer-right {
-    h2 {
-      color: $gray-lighter;
-      font-size: $font-size-h3;
+  .region-footer-right {
+    .panel {
+      padding: $padding-large-vertical 0;
+      border-bottom: 1px solid $gray;
+      h2 {
+        margin: 0 0 $padding-large-vertical;
+        padding: 0  $padding-xs-horizontal $padding-large-vertical;
+        border-bottom: 1px solid $gray;
+        color: $gray-lighter;
+        font-size: $font-size-h3;
+      }
+      p {
+        padding: 0  $padding-xs-horizontal;
+      }
+      .logo {
+        @include background-image('../images/footer-logo.png', 60px, 377px);
+        margin-bottom: -7px;
+        margin-left: -7px;
+        max-width: 100%;
+        background-position: 5px 0;
+        background-size: contain;
+      }
+      a {
+        color: $white;
+      }
     }
   }
-  #boxes-box-footer_right {
-    border-top: 1px solid $gray;
-    border-bottom: 1px solid $gray;
-    padding: $padding-large-vertical $padding-xs-horizontal;
+  #block-menu-menu-mises-social-icons {
+    ul.menu li {
+      display: inline-block;
+      padding-right: $padding-xs-horizontal;
+      padding-bottom: $padding-large-vertical;
+      a {
+        display: inline-block;
+        padding: 0;
+        width: 45px;
+        height: 45px;
+        text-indent: -9999em;
+        opacity: 0.7;
+        &:hover {
+          background-color: transparent;
+          opacity: 1;
+        }
+      }
+    }
   }
-
+  .region-footer-bottom {
+    padding-top: $padding-large-vertical;
+  }
 }
 
 /* PRIMARY CONTENT BLOCKS */
-.region-content {
+.main-content {
+  padding: $padding-base-vertical $padding-large-horizontal * 1.5;
+  border-top: 7px solid $brand-secondary;
   background: $white;
-  border-top: 5px solid $brand-secondary;
-  padding: $padding-large-horizontal
+  .front &:after {
+    position: absolute;
+    top: -7px;
+    left: 33px;
+    display: block;
+    width: 66px;
+    height: 77px;
+    content: url('../images/shield.png');
+  }
+
+}
+.content-bottom {
+  padding-top: $padding-large-horizontal;
+}
+
+/* FONTS AND TYPOGRAPHY 
+* @TODO: CONSIDER SEPARATE STYLESHEET
+*/
+.bold {
+  font-weight: 600;
+}
+.italic {
+  font-style: italic;
+}
+h1, .h1 {
+  color: $brand-primary;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: $font-family-serif;
+}
+.page-header {
+  padding-left: 100px;
+  border-bottom: 0 none;
+}
+h2.teaser-title {
+  color: $brand-primary;
+  font-size: $font-size-h3; // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE
+  font-family: $font-family-serif;
+}
+.read-more a {
+  color: $gray;
+  text-transform: uppercase;
+  font-size: $font-size-small;
 }

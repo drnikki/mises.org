@@ -69,7 +69,7 @@ function mises_library_item_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -85,6 +85,18 @@ function mises_library_item_strongarm() {
       ),
       'revision' => array(
         'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'author_full_name' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sidebar_teaser' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
