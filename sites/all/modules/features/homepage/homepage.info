@@ -22,6 +22,7 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[uuid_node][] = a0982713-1d86-4b6b-a8fa-7eb5e90defa2
+features[uuid_node][] = c3bb4cde-9961-4076-84d1-c1be12fe9ab0
 features[views_view][] = homepage_hero
 features_exclude[box][home_new] = home_new
 features_exclude[node][flex_block] = flex_block

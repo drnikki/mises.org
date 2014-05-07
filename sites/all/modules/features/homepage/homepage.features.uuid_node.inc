@@ -141,5 +141,116 @@ function homepage_uuid_features_default_content() {
   'data' => 'a:1:{s:7:"overlay";i:0;}',
   'date' => '2014-05-02 14:28:49 -0700',
 );
+  $nodes[] = array(
+  'uid' => 18,
+  'title' => 'New to Mises homepage block',
+  'log' => '',
+  'status' => 1,
+  'comment' => 0,
+  'promote' => 1,
+  'sticky' => 0,
+  'vuuid' => '78cf67c6-65ca-446a-9de9-1aaced80089e',
+  'ds_switch' => '',
+  'type' => 'flex_block',
+  'language' => 'und',
+  'created' => 1399432380,
+  'tnid' => 0,
+  'translate' => 0,
+  'uuid' => 'c3bb4cde-9961-4076-84d1-c1be12fe9ab0',
+  'revision_uid' => 18,
+  'field_display_title' => array(),
+  'field_image' => array(),
+  'field_image_link' => array(),
+  'field_region' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'featured_right',
+      ),
+    ),
+  ),
+  'field_section' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'home',
+      ),
+    ),
+  ),
+  'field_teaser_text' => array(
+    'und' => array(
+      0 => array(
+        'value' => '<h2>New to<br /><span>Mises Institute?</span></h2>',
+        'format' => 'full_html',
+        'safe_value' => '<h2>New to<br /><span>Mises Institute?</span></h2>
+',
+      ),
+    ),
+  ),
+  'field_weight' => array(
+    'und' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+  ),
+  'rdf_mapping' => array(
+    'rdftype' => array(
+      0 => 'sioc:Item',
+      1 => 'foaf:Document',
+    ),
+    'title' => array(
+      'predicates' => array(
+        0 => 'dc:title',
+      ),
+    ),
+    'created' => array(
+      'predicates' => array(
+        0 => 'dc:date',
+        1 => 'dc:created',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'changed' => array(
+      'predicates' => array(
+        0 => 'dc:modified',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'body' => array(
+      'predicates' => array(
+        0 => 'content:encoded',
+      ),
+    ),
+    'uid' => array(
+      'predicates' => array(
+        0 => 'sioc:has_creator',
+      ),
+      'type' => 'rel',
+    ),
+    'name' => array(
+      'predicates' => array(
+        0 => 'foaf:name',
+      ),
+    ),
+    'comment_count' => array(
+      'predicates' => array(
+        0 => 'sioc:num_replies',
+      ),
+      'datatype' => 'xsd:integer',
+    ),
+    'last_activity' => array(
+      'predicates' => array(
+        0 => 'sioc:last_activity_date',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+  ),
+  'name' => 'aeasterling',
+  'picture' => 0,
+  'data' => 'a:1:{s:7:"overlay";i:0;}',
+  'date' => '2014-05-06 20:13:00 -0700',
+);
   return $nodes;
 }

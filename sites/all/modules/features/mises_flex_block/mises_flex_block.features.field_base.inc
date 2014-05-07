@@ -88,6 +88,8 @@ function mises_flex_block_field_default_field_bases() {
         'top_left' => 'Top Left Ad',
         'top_right' => 'Top Right Ad',
         'nav' => 'Nav Bar',
+        'featured_left' => 'Featured Left (Homepage Hero region)',
+        'featured_right' => 'Featured Right (Audience menu region)',
         'right' => 'Right Sidebar',
         'footer_right' => 'Footer Right',
         'footer_bottom' => 'Footer Bottom',

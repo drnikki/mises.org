@@ -33,17 +33,17 @@ function homepage_context_default_contexts() {
           'region' => 'featured_left',
           'weight' => '-10',
         ),
-        'boxes-home_new' => array(
-          'module' => 'boxes',
-          'delta' => 'home_new',
+        'views-flex_blocks-block_7' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_7',
           'region' => 'featured_right',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
         'menu-menu-new-to-mises' => array(
           'module' => 'menu',
           'delta' => 'menu-new-to-mises',
           'region' => 'featured_right',
-          'weight' => '-8',
+          'weight' => '-9',
         ),
         'views-flex_blocks-block_5' => array(
           'module' => 'views',
