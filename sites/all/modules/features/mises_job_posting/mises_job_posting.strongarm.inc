@@ -70,6 +70,12 @@ function mises_job_posting_strongarm() {
         'title' => array(
           'weight' => '1',
         ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '5',
+        ),
       ),
       'display' => array(),
     ),
