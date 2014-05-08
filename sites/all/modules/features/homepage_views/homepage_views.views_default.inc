@@ -86,6 +86,11 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Image (field_image_collection) */
+  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
 
   /* Display: Home */
   $handler = $view->new_display('page', 'Home', 'page');
