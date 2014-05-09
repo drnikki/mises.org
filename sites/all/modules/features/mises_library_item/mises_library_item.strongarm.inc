@@ -98,6 +98,12 @@ function mises_library_item_strongarm() {
       'sidebar_teaser' => array(
         'custom_settings' => TRUE,
       ),
+      'simple_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'sidebar_author' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

@@ -26,7 +26,7 @@ function footer_right_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '2ee2df79-7df4-4948-9d74-2165b9cc52e7',
-  'revision_uid' => 18,
+  'revision_uid' => 0,
   'field_display_title' => array(
     'und' => array(
       0 => array(
