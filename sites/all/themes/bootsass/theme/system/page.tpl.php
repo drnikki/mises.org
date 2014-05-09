@@ -195,7 +195,7 @@
     </div>
   </div>
 
-  <?php if (!empty($page['bottom_one']) || !empty($page['fbottom_two']) || !empty($page['fbottom_three']) || !empty($page['fbottom_four'])): ?>
+  <?php if (isset($page['bottom_one']) || isset($page['fbottom_two']) || isset($page['fbottom_three']) || isset($page['fbottom_four'])): ?>
     <div class="content-bottom">
       <div class="container">
         <div class="row">
@@ -225,7 +225,7 @@
   <?php endif; ?>
 
 </div>
-<?php if (!empty($page['menu_footer_one']) || !empty($page['menu_footer_two'])): ?>
+<?php if (isset($page['menu_footer_one']) || isset($page['menu_footer_two'])): ?>
   <div class="menu-footer">
     <div class="container">
       <div class="row">
