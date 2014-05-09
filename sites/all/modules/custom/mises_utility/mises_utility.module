@@ -14,6 +14,10 @@ function mises_utility_permission() {
       'title' => t('Administer Mises Settings'),
       'description' => t('Perform administration tasks for the mises project.'),
     ),
+    'administer mises code' => array(
+      'title' => t('Administer Mises Code Settings'),
+      'description' => t('Perform administration tasks for the mises code.'),
+    ),
   );
 }
 
@@ -27,6 +31,15 @@ function mises_utility_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('mises_utility_admin'),
     'access arguments' => array('administer mises settings'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/mises/development'] = array(
+    'title' => 'Mises Code Settings',
+		'description' => t('Collection of editable settings for the mises code options'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mises_utility_code'),
+    'access arguments' => array('administer mises code'),
     'type' => MENU_NORMAL_ITEM,
   );
 
@@ -61,3 +74,46 @@ function mises_utility_admin() {
 
   return system_settings_form($form);
 }
+
+/**
+ * Implements hook_code().
+ */
+function mises_utility_code() {
+  $form = array();
+
+	$form['mises_code'] = array(
+		'#type' => 'fieldset', 
+		'#title' => t('Mises Code Settings'), 
+		'#weight' => 5, 
+		'#collapsible' => TRUE, 
+		'#collapsed' => FALSE,
+	);
+	$form['mises_code']['markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Code Settings'),
+		'#markup' => 'The fields below will allow you to make adjustments to the code settings',
+	);
+
+  $form['mises_code']['mises_code_job_close_scheduler'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on job scheduler debug'),
+    '#default_value' => variable_get('mises_code_job_close_scheduler', 0),
+    '#description' => t("Turn on job scheduler debug."),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * hook_node_presave
+ * 
+ */
+
+function mises_utility_node_presave($node){ 
+	if($node->type == 'job_posting_'){ // Only update job posting nodes
+		$node->scheduler['unpublish_on'] = $node->field_closing_date['und'][0]['value']; // Setting the unpublish date equal to the closing date
+		$node->unpublish_on = $node->field_closing_date['und'][0]['value']; // Setting the unpublish date equal to the closing date
+		$mises_debug = variable_get('mises_code_job_close_scheduler', 0);
+		if($mises_debug >= 1){watchdog('Job Posting', 'Job Posting node is <pre>'.print_r($node, TRUE).'</pre>');}
+	}
+} 

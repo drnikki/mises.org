@@ -133,7 +133,7 @@ body {
 .footer {
   @include background-texture($gray-darker,'../images/footer-texture.jpg');
   margin-top: 0;
-  padding: 10px 0 15px;
+  padding: 5px 0 15px;
   border-top: 7px solid $black;
   color: $white;
 
@@ -162,11 +162,12 @@ body {
   }
   .region-footer-right {
     .panel {
-      padding: $padding-large-vertical 0;
+      padding: $padding-large-vertical 0 $padding-large-vertical;
       border-bottom: 1px solid $gray;
+      line-height: $line-height-small;
       h2 {
-        margin: 0 0 $padding-large-vertical;
-        padding: 0  $padding-xs-horizontal $padding-large-vertical;
+        margin: 0 0 $padding-base-vertical * 1.5;
+        padding: 0  $padding-xs-horizontal $padding-base-vertical * 1.5;
         border-bottom: 1px solid $gray;
         color: $gray-lighter;
         font-size: $font-size-h3;
@@ -254,6 +255,10 @@ h2.teaser-title {
   color: $brand-primary;
   font-size: $font-size-h3; // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE
   font-family: $font-family-serif;
+}
+address {
+  line-height: $line-height-small;
+  margin: 0 0 ($line-height-computed / 2);
 }
 .read-more a {
   color: $gray;

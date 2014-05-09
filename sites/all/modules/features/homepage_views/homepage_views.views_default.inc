@@ -86,6 +86,11 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Image (field_image_collection) */
+  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
 
   /* Display: Home */
   $handler = $view->new_display('page', 'Home', 'page');
@@ -154,6 +159,11 @@ function homepage_views_views_default_views() {
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'reading_group';
+  /* Filter criterion: Content: Image (field_image_collection) */
+  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
 
   /* Display: Online Courses HP Block */
   $handler = $view->new_display('block', 'Online Courses HP Block', 'online_courses');
@@ -201,6 +211,11 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Image (field_image_collection) */
+  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
 
   /* Display: Mises View HP Block */
   $handler = $view->new_display('block', 'Mises View HP Block', 'mises_view');
@@ -252,6 +267,11 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Image (field_image_collection) */
+  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
 
   /* Display: Library HP Block */
   $handler = $view->new_display('block', 'Library HP Block', 'library_block');
@@ -293,6 +313,11 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_item' => 'library_item',
   );
+  /* Filter criterion: Content: Image (field_image_collection) */
+  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
 
   /* Display: Learn Austrian HP Sidebar */
   $handler = $view->new_display('block', 'Learn Austrian HP Sidebar', 'learn');
