@@ -77,6 +77,15 @@ function mises_flex_block_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'sidebar_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_plain',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -150,6 +159,24 @@ function mises_flex_block_field_default_field_instances() {
         'type' => 'image',
         'weight' => 1,
       ),
+      'sidebar_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(
+            0 => array(
+              'condition' => 'hide_not_empty',
+              'configuration' => array(
+                'target' => 'field_image_link',
+              ),
+            ),
+          ),
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -217,6 +244,15 @@ function mises_flex_block_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 2,
       ),
+      'sidebar_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_plain',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'link',
@@ -277,6 +313,12 @@ function mises_flex_block_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 4,
       ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -317,6 +359,12 @@ function mises_flex_block_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 5,
       ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -356,6 +404,15 @@ function mises_flex_block_field_default_field_instances() {
         ),
         'type' => 'text_default',
         'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -432,6 +489,12 @@ function mises_flex_block_field_default_field_instances() {
         ),
         'type' => 'list_default',
         'weight' => 6,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',

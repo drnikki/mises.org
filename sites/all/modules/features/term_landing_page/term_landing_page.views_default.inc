@@ -101,7 +101,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['css_class'] = 'landing-list';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '1';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -309,7 +309,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Meet Our Columnists';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'audience';
+  $handler->display->display_options['css_class'] = 'audience border-primary';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -503,7 +503,7 @@ function term_landing_page_views_default_views() {
   $handler = $view->new_display('block', 'Most Popular Placeholder', 'popular');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'books panel';
+  $handler->display->display_options['css_class'] = 'books panel border-contrast';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '2';
@@ -521,7 +521,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="panel-heading"><div class="panel-title">Most Popular Articles</div></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="panel-heading single"><div class="panel-title">Most Popular Articles</div></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;

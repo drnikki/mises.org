@@ -74,6 +74,17 @@ span.glyphicon {
 }
 /* NOTE: PLACE HOVER COLORS IN RELEVANT SECTION */
 
+/* TOP BORDERS */
+.border-primary {
+  border-top: 8px solid $brand-primary;
+}
+.border-contrast {
+  border-top: 8px solid $brand-contrast;
+}
+.border-secondary {
+  border-top: 8px solid $brand-secondary;
+}
+
 /* Bootstrap Panel overrides */
 
 .panel-footer {
@@ -130,7 +141,8 @@ span.glyphicon {
 }
 
 /* SIDEBAR BLOCKS */
-.region-sidebar-second {
+.region-sidebar-second,
+.region-sidebar-second-top {
   font-size: $font-size-small;
   
   .view-flex-blocks {
@@ -144,8 +156,8 @@ span.glyphicon {
     border-top: 8px solid $brand-contrast;
   }
   .panel {
-    padding: $padding-small-vertical;
     margin-bottom: 0;
+    padding: $padding-small-vertical;
   }
   .panel-heading {
     background: $gray-lighter;
@@ -156,9 +168,14 @@ span.glyphicon {
       @include vertical-rule(calc(100% - 20px),60px,8px,$gray);
     }
     .panel-title {
-      font-size: $font-size-h5;
       color: $brand-contrast;
       text-transform: uppercase;
+      font-size: $font-size-h5;
+    }
+    &.single,
+    .single {
+      min-height: 62px;
+      line-height: 62px;
     }
     h4 {
       font-size: $font-size-h5;
@@ -168,13 +185,26 @@ span.glyphicon {
     }
   }
 }
-
+.region-sidebar-second-top {
+  border-top: 7px solid $brand-secondary;
+  background: $brand-secondary;
+  color: $white;
+  margin-bottom: 20px;
+  .panel {
+    background: $brand-secondary;
+    padding: $padding-large-horizontal * 2;
+  }
+  h3 {
+    font-size: $font-size-h5;
+    text-transform: uppercase;
+  }
+}
 
 /* HOMEPAGE */
 #block-views-flex-blocks-block-7 .panel {
+  margin-bottom: 0;
   padding: $padding-base-vertical $padding-large-horizontal;
   background-color: $brand-contrast-dark;
-  margin-bottom: 0;
   h2 {
     margin: 0;
     color: $white;

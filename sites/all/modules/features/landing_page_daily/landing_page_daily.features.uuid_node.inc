@@ -41,7 +41,7 @@ function landing_page_daily_uuid_features_default_content() {
   'field_region' => array(
     'und' => array(
       0 => array(
-        'value' => 'right',
+        'value' => 'right_top',
       ),
     ),
   ),

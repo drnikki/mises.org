@@ -186,9 +186,14 @@
         </div>
       </section>
   
-      <?php if (!empty($page['sidebar_second'])): ?>
+      <?php if (!empty($page['sidebar_second'])|| !empty($page['sidebar_second_top'])): ?>
         <aside class="col-sm-4" role="complementary">
-          <?php print render($page['sidebar_second']); ?>
+          <?php if (!empty($page['sidebar_second_top'])): ?>
+            <?php print render($page['sidebar_second_top']); ?>
+          <?php endif; ?>
+          <?php if (!empty($page['sidebar_second_top'])): ?>
+            <?php print render($page['sidebar_second']); ?>
+          <?php endif; ?>
         </aside>  <!-- /#sidebar-second -->
       <?php endif; ?>
   

@@ -34,6 +34,12 @@ function landing_page_library_item_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'sidebar_second_top',
+          'weight' => '-10',
+        ),
         'views-term_landing-popular' => array(
           'module' => 'views',
           'delta' => 'term_landing-popular',
@@ -57,12 +63,6 @@ function landing_page_library_item_context_default_contexts() {
           'delta' => 'term_landing-columnist',
           'region' => 'sidebar_second',
           'weight' => '-5',
-        ),
-        'search-form' => array(
-          'module' => 'search',
-          'delta' => 'form',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
         ),
         'views-term_landing-books' => array(
           'module' => 'views',

@@ -386,7 +386,14 @@ function display_suite_shared_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'ft' => array(),
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'panel-heading single',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
         'conditions' => array(),
       ),
     ),
@@ -960,9 +967,6 @@ function display_suite_shared_ds_layout_settings_info() {
     'classes' => array(
       'layout_class' => array(
         'panel' => 'panel',
-      ),
-      'header' => array(
-        'panel-heading' => 'panel-heading',
       ),
       'left' => array(
         'col-xs-5' => 'col-xs-5',
