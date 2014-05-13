@@ -92,8 +92,9 @@
     span.author {
       padding-left: 10px;
       &:before {
-        content: "\e080";
-        font-family: 'Glyphicons Halflings';
+        display: inline-block;
+        width: 14px;
+        content: "\2022";
       }
       div, p {
         display: inline;
