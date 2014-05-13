@@ -30,7 +30,7 @@ function display_suite_shared_field_group_info() {
     'format_settings' => array(
       'label' => '',
       'instance_settings' => array(
-        'classes' => 'panel-heading',
+        'classes' => 'panel-heading double',
         'element' => 'div',
         'attributes' => '',
       ),

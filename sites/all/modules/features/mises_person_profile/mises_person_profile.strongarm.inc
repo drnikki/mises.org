@@ -95,11 +95,20 @@ function mises_person_profile_strongarm() {
       'block_teaser' => array(
         'custom_settings' => FALSE,
       ),
+      'sidebar_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'sidebar_author' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '4',
         ),
       ),
       'display' => array(),

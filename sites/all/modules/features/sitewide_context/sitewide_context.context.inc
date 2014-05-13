@@ -71,6 +71,12 @@ function sitewide_context_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-10',
         ),
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'menu-menu-browse-library' => array(
           'module' => 'menu',
           'delta' => 'menu-browse-library',

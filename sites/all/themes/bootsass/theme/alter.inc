@@ -19,6 +19,7 @@ function bootsass_css_alter(&$css) {
   }
   // Unset Display Suite
   unset($css['sites/all/modules/contrib/ds/layouts/ds_2col/ds_2col.css']);
+  unset($css['sites/all/modules/contrib/ds/layouts/ds_2col_stacked/ds_2col_stacked.css']);
   
 }
 

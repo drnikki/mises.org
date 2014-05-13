@@ -13,6 +13,13 @@ function display_suite_shared_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_month_day_year';
+  $strongarm->value = 'F j, Y';
+  $export['date_format_month_day_year'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'ds_classes_fields';
   $strongarm->value = 'well
 img-responsive
@@ -24,7 +31,8 @@ img-circle';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_classes_regions';
-  $strongarm->value = 'row
+  $strongarm->value = 'container
+row
 col-sm-3
 col-sm-4
 col-sm-5
@@ -39,6 +47,8 @@ col-xs-6
 col-xs-7
 col-xs-8
 col-xs-9
+panel
+panel-heading
 panel-body';
   $export['ds_classes_regions'] = $strongarm;
 
@@ -118,6 +128,92 @@ panel-body';
   $strongarm->name = 'ds_extras_vd';
   $strongarm->value = 0;
   $export['ds_extras_vd'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'theme_bootsass_settings';
+  $strongarm->value = array(
+    'toggle_logo' => 1,
+    'toggle_name' => 0,
+    'toggle_slogan' => 0,
+    'toggle_node_user_picture' => 0,
+    'toggle_comment_user_picture' => 0,
+    'toggle_comment_user_verification' => 0,
+    'toggle_favicon' => 1,
+    'toggle_main_menu' => 1,
+    'toggle_secondary_menu' => 0,
+    'default_logo' => 1,
+    'logo_path' => '',
+    'logo_upload' => '',
+    'default_favicon' => 1,
+    'favicon_path' => '',
+    'favicon_upload' => '',
+    'general__active_tab' => 'edit-theme-settings',
+    'bootsass__active_tab' => 'edit-components',
+    'bootsass_breadcrumb' => '0',
+    'bootsass_breadcrumb_home' => 0,
+    'bootsass_breadcrumb_title' => 0,
+    'bootsass_navbar_position' => 'static-top',
+    'bootsass_navbar_inverse' => 1,
+    'bootsass_region_well-navigation' => '',
+    'bootsass_region_well-header_left' => '',
+    'bootsass_region_well-header_right' => '',
+    'bootsass_region_well-highlighted' => '',
+    'bootsass_region_well-help' => '',
+    'bootsass_region_well-content' => '',
+    'bootsass_region_well-sidebar_first' => '',
+    'bootsass_region_well-sidebar_second' => '',
+    'bootsass_region_well-menu_footer_one' => '',
+    'bootsass_region_well-menu_footer_two' => '',
+    'bootsass_region_well-footer_left' => '',
+    'bootsass_region_well-footer_center' => '',
+    'bootsass_region_well-footer_right' => '',
+    'bootsass_region_well-dashboard_main' => '',
+    'bootsass_region_well-dashboard_sidebar' => '',
+    'bootsass_region_well-dashboard_inactive' => '',
+    'bootsass_anchors_fix' => 0,
+    'bootsass_anchors_smooth_scrolling' => 0,
+    'bootsass_popover_enabled' => 0,
+    'bootsass_popover_animation' => 0,
+    'bootsass_popover_html' => 0,
+    'bootsass_popover_placement' => 'top',
+    'bootsass_popover_selector' => '',
+    'bootsass_popover_trigger' => array(
+      'click' => 0,
+      'hover' => 0,
+      'focus' => 0,
+      'manual' => 0,
+    ),
+    'bootsass_popover_title' => '',
+    'bootsass_popover_content' => '',
+    'bootsass_popover_delay' => '',
+    'bootsass_popover_container' => '',
+    'bootsass_tooltip_enabled' => 0,
+    'bootsass_tooltip_descriptions' => 0,
+    'bootsass_tooltip_animation' => 0,
+    'bootsass_tooltip_html' => 0,
+    'bootsass_tooltip_placement' => 'top',
+    'bootsass_tooltip_selector' => '',
+    'bootsass_tooltip_trigger' => array(
+      'click' => 0,
+      'hover' => 0,
+      'focus' => 0,
+      'manual' => 0,
+    ),
+    'bootsass_tooltip_delay' => '',
+    'bootsass_tooltip_container' => '',
+    'bootstrap_rebuild_registry' => 0,
+    'bootsass_toggle_jquery_error' => 0,
+  );
+  $export['theme_bootsass_settings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'theme_default';
+  $strongarm->value = 'bootsass';
+  $export['theme_default'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

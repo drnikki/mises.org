@@ -322,7 +322,7 @@ function homepage_views_views_default_views() {
   /* Display: Learn Austrian HP Sidebar */
   $handler = $view->new_display('block', 'Learn Austrian HP Sidebar', 'learn');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'library-block';
+  $handler->display->display_options['css_class'] = 'library-block border-contrast';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';

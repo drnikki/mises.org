@@ -3,6 +3,7 @@ description = Theme integrating Bootstrap and Sass with special features for Dru
 core = 7.x
 
 ; Regions
+regions[hidden]         = 'Hidden'
 regions[navigation]     = 'Navigation'
 regions[header_left]    = 'Top Bar Left'
 regions[header_right]   = 'Top Bar Right'
@@ -11,8 +12,9 @@ regions[featured_right] = 'Featured Right'
 regions[highlighted]    = 'Highlighted'
 regions[help]           = 'Help'
 regions[content]        = 'Content'
-regions[sidebar_first]  = 'Primary'
-regions[sidebar_second] = 'Secondary'
+regions[sidebar_first]  = 'Sidebar Left'
+regions[sidebar_second_top] = 'Sidebar Right Top'
+regions[sidebar_second] = 'Sidebar Right'
 regions[bottom_one]     = 'Content Bottom One'
 regions[bottom_two]     = 'Content Bottom Two'
 regions[bottom_three]   = 'Content Bottom Three'

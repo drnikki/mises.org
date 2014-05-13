@@ -55,18 +55,22 @@
 /* LANDING LISTS */
 .landing-list {
   .views-row {
-    padding-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid $gray-light;
+    .front & {
+      border-bottom: 0 none;
+    }
   }
   .image {
     margin-top: 5px;
     border-top: 8px solid $brand-secondary;
   }
   .tags {
-    margin-top: 5px;
+    padding-top: 5px;
+    color: $gray;
     font-size: $font-size-xs;
     .tag-label {
       padding-right: $padding-xs-horizontal;
-      color: $gray;
       text-transform: uppercase;
     }
     span:not(.tag-label) + span:before {
@@ -83,9 +87,15 @@
     .date {
       color: $brand-primary;
       text-transform: uppercase;
+      font-weight: 600;
     }
     span.author {
       padding-left: 10px;
+      &:before {
+        display: inline-block;
+        width: 14px;
+        content: "\2022";
+      }
       div, p {
         display: inline;
         color: $brand-primary;
@@ -95,6 +105,32 @@
   .view-footer {
     span.glyphicon {
       @include glyph-size(22px);
+    }
+  }
+}
+.todays-article {
+  .views-row {
+    padding: 0; 
+    border-bottom: 0 none;
+    background-color: $gray-lighter;
+  }
+  .image {
+    margin-top: 0;
+  }
+  .tags {
+    margin-top: 0;
+    padding: 10px;
+    background-color: $brand-secondary;
+    color: $white;
+    a {
+      color: $white;
+    }
+  }
+  .group-right {
+    padding: 20px 10px;
+    &:before {
+      display: block;
+      content: "Today's Article";
     }
   }
 }

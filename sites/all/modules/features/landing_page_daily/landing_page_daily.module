@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Landing Page - Daily feature.
+ */
+
+include_once 'landing_page_daily.features.inc';
