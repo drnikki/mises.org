@@ -42,6 +42,8 @@ function mises_social_commenting_user_default_permissions() {
     'name' => 'view disqus comments',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'disqus',
   );
