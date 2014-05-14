@@ -22,7 +22,7 @@ function mises_social_commenting_context_default_contexts() {
         'library_item' => 'library_item',
       ),
       'options' => array(
-        'node_form' => '1',
+        'node_form' => '0',
       ),
     ),
     'node_taxonomy' => array(
