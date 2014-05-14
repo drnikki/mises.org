@@ -474,31 +474,6 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_mises_today'
-  $field_bases['field_mises_today'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_mises_today',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'today' => 'Mises Today',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_original_publication_link'
   $field_bases['field_original_publication_link'] = array(
     'active' => 1,

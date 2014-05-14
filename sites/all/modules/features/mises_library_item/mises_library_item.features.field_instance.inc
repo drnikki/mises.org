@@ -1212,69 +1212,6 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_mises_today'
-  $field_instances['node-library_item-field_mises_today'] = array(
-    'bundle' => 'library_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'block_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'list_default',
-        'weight' => 14,
-      ),
-      'sidebar_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 24,
-      ),
-      'simple_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 30,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_mises_today',
-    'label' => 'Mises Today',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 9,
-    ),
-  );
-
   // Exported field_instance: 'node-library_item-field_original_publication_link'
   $field_instances['node-library_item-field_original_publication_link'] = array(
     'bundle' => 'library_item',
@@ -1832,7 +1769,6 @@ function mises_library_item_field_default_field_instances() {
   t('Level');
   t('Library Item Type');
   t('Mises Published Date');
-  t('Mises Today');
   t('Original Publication Link');
   t('Original Title');
   t('Primary or Original Author');
