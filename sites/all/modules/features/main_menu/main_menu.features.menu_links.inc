@@ -50,21 +50,26 @@ function main_menu_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_daily:<front>
-  $menu_links['main-menu_daily:<front>'] = array(
+  // Exported menu link: main-menu_daily:taxonomy/term/147
+  $menu_links['main-menu_daily:taxonomy/term/147'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'taxonomy/term/147',
+    'router_path' => 'taxonomy/term/%',
     'link_title' => 'Daily',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'main-menu_daily:<front>',
+      'identifier' => 'main-menu_daily:taxonomy/term/147',
+      'menu_icon' => array(
+        'enable' => 0,
+        'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
+        'image_style' => 'menu_icon',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -49,

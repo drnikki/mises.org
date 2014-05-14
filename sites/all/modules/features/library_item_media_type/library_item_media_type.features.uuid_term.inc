@@ -112,9 +112,9 @@ function library_item_media_type_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Daily',
-    'description' => NULL,
-    'format' => NULL,
+    'name' => 'Mises Daily',
+    'description' => '',
+    'format' => 'simplified',
     'weight' => 41,
     'uuid' => '331c8f73-8b2c-4b15-94d6-d586b0c0c370',
     'vocabulary_machine_name' => 'media_type',

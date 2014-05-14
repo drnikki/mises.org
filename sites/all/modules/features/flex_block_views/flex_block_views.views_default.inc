@@ -302,6 +302,39 @@ function flex_block_views_views_default_views() {
     'inside' => 'inside',
   );
 
+  /* Display: Sidebar Daily */
+  $handler = $view->new_display('block', 'Sidebar Daily', 'block_9');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'right' => 'right',
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'daily' => 'daily',
+  );
+
   /* Display: Featured Right Home */
   $handler = $view->new_display('block', 'Featured Right Home', 'block_7');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -366,6 +399,247 @@ function flex_block_views_views_default_views() {
   $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
   $handler->display->display_options['filters']['field_section_value']['value'] = array(
     'home' => 'home',
+  );
+
+  /* Display: Flex Block Management */
+  $handler = $view->new_display('page', 'Flex Block Management', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Flex Block Management';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'editableviews_table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_region_editable' => 'field_region_editable',
+    'field_section_editable' => 'field_section_editable',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_region_editable' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_section_editable' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Descriptive Title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Region (editable) */
+  $handler->display->display_options['fields']['field_region_editable']['id'] = 'field_region_editable';
+  $handler->display->display_options['fields']['field_region_editable']['table'] = 'field_data_field_region';
+  $handler->display->display_options['fields']['field_region_editable']['field'] = 'field_region_editable';
+  $handler->display->display_options['fields']['field_region_editable']['label'] = 'Region';
+  $handler->display->display_options['fields']['field_region_editable']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_region_editable']['widget_type'] = 'options_select';
+  $handler->display->display_options['fields']['field_region_editable']['suppress_label'] = 0;
+  $handler->display->display_options['fields']['field_region_editable']['suppress_description'] = 0;
+  /* Field: Content: Section (editable) */
+  $handler->display->display_options['fields']['field_section_editable']['id'] = 'field_section_editable';
+  $handler->display->display_options['fields']['field_section_editable']['table'] = 'field_data_field_section';
+  $handler->display->display_options['fields']['field_section_editable']['field'] = 'field_section_editable';
+  $handler->display->display_options['fields']['field_section_editable']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_section_editable']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_section_editable']['widget_type'] = 'options_buttons';
+  $handler->display->display_options['fields']['field_section_editable']['suppress_label'] = 0;
+  $handler->display->display_options['fields']['field_section_editable']['suppress_description'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Descriptive Title';
+  $handler->display->display_options['filters']['title']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Display Title (field_display_title) */
+  $handler->display->display_options['filters']['field_display_title_value']['id'] = 'field_display_title_value';
+  $handler->display->display_options['filters']['field_display_title_value']['table'] = 'field_data_field_display_title';
+  $handler->display->display_options['filters']['field_display_title_value']['field'] = 'field_display_title_value';
+  $handler->display->display_options['filters']['field_display_title_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_display_title_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_display_title_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_display_title_value']['expose']['operator_id'] = 'field_display_title_value_op';
+  $handler->display->display_options['filters']['field_display_title_value']['expose']['label'] = 'Display Title';
+  $handler->display->display_options['filters']['field_display_title_value']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_display_title_value']['expose']['operator'] = 'field_display_title_value_op';
+  $handler->display->display_options['filters']['field_display_title_value']['expose']['identifier'] = 'field_display_title_value';
+  $handler->display->display_options['filters']['field_display_title_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_value']['expose']['operator_id'] = 'field_region_value_op';
+  $handler->display->display_options['filters']['field_region_value']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_value']['expose']['operator'] = 'field_region_value_op';
+  $handler->display->display_options['filters']['field_region_value']['expose']['identifier'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_section_value']['expose']['operator_id'] = 'field_section_value_op';
+  $handler->display->display_options['filters']['field_section_value']['expose']['label'] = 'Section';
+  $handler->display->display_options['filters']['field_section_value']['expose']['operator'] = 'field_section_value_op';
+  $handler->display->display_options['filters']['field_section_value']['expose']['identifier'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['path'] = 'admin/config/flex-blocks';
+
+  /* Display: Top Sidebar Inside */
+  $handler = $view->new_display('block', 'Top Sidebar Inside', 'block_10');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'sidebar_teaser';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'right_top' => 'right_top',
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'inside' => 'inside',
+  );
+
+  /* Display: Top Sidebar Daily */
+  $handler = $view->new_display('block', 'Top Sidebar Daily', 'block_11');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'sidebar_teaser';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'right_top' => 'right_top',
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'daily' => 'daily',
   );
   $export['flex_blocks'] = $view;
 

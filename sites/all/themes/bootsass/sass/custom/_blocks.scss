@@ -10,17 +10,59 @@
   padding: 10px 15px 7px 80px;
   &:before {
     @include icon-block(61px,10px,-5px);
-    .press-room & {
-      @include icon-image('../images/icons/icon-press.png');
+    .academy & {
+      @include icon-image('../images/icons/icon-academy.png');
     }
-    .online-courses & {
-      @include icon-image('../images/icons/icon-online.png');
+    .audience & {
+      @include icon-image('../images/icons/icon-audience.png');
+    }
+    .audio & {
+      @include icon-image('../images/icons/icon-audio.png');
+    }
+    .blog & {
+      @include icon-image('../images/icons/icon-blog.png');
+    }
+    .books & {
+      @include icon-image('../images/icons/icon-books.png');
+    }
+    .mises-daily & {
+      @include icon-image('../images/icons/icon-daily.png');
+    }
+    .event & {
+      @include icon-image('../images/icons/icon-event.png');
+    }
+    .lecture & {
+      @include icon-image('../images/icons/icon-lecture.png');
+    }
+    .library-block & {
+      @include icon-image('../images/icons/icon-library.png');
+    }
+    .market & {
+      @include icon-image('../images/icons/icon-market.png');
     }
     .mises-view & {
       @include icon-image('../images/icons/icon-view.png');
     }
-    .library-block & {
-      @include icon-image('../images/icons/icon-library.png');
+    .online-courses & {
+      @include icon-image('../images/icons/icon-online.png');
+    }
+    .press-room & {
+      @include icon-image('../images/icons/icon-press.png');
+    }
+    .research & {
+      @include icon-image('../images/icons/icon-research.png');
+    }
+    .review & {
+      @include icon-image('../images/icons/icon-review.png');
+    }
+    .topic & {
+      @include icon-image('../images/icons/icon-topic.png');
+    }
+    .video & {
+      @include icon-image('../images/icons/icon-video.png');
+    }
+    .mises-view & {
+      @include icon-image('../images/icons/icon-view.png');
     }
   }
 }
@@ -31,6 +73,17 @@ span.glyphicon {
   color: $white;
 }
 /* NOTE: PLACE HOVER COLORS IN RELEVANT SECTION */
+
+/* TOP BORDERS */
+.border-primary {
+  border-top: 8px solid $brand-primary;
+}
+.border-contrast {
+  border-top: 8px solid $brand-contrast;
+}
+.border-secondary {
+  border-top: 8px solid $brand-secondary;
+}
 
 /* Bootstrap Panel overrides */
 
@@ -88,7 +141,10 @@ span.glyphicon {
 }
 
 /* SIDEBAR BLOCKS */
-.region-sidebar-second {
+.region-sidebar-second,
+.region-sidebar-second-top {
+  font-size: $font-size-small;
+  
   .view-flex-blocks {
     margin-bottom: $grid-gutter-width;
     img {
@@ -96,12 +152,9 @@ span.glyphicon {
       width: auto;
     }
   }
-  #block-views-homepage-learn { // depends on Learn block appearing first
-    border-top: 8px solid $brand-contrast;
-  }
   .panel {
-    padding: $padding-small-vertical;
     margin-bottom: 0;
+    padding: $padding-small-vertical;
   }
   .panel-heading {
     background: $gray-lighter;
@@ -112,9 +165,14 @@ span.glyphicon {
       @include vertical-rule(calc(100% - 20px),60px,8px,$gray);
     }
     .panel-title {
-      font-size: $font-size-h5;
       color: $brand-contrast;
       text-transform: uppercase;
+      font-size: $font-size-h5;
+    }
+    &.single,
+    .single {
+      min-height: 62px;
+      line-height: 62px;
     }
     h4 {
       font-size: $font-size-h5;
@@ -123,17 +181,27 @@ span.glyphicon {
       }
     }
   }
-  .panel-body {
-    font-size: $font-size-small;
+}
+.region-sidebar-second-top {
+  border-top: 7px solid $brand-secondary;
+  background: $brand-secondary;
+  color: $white;
+  margin-bottom: 20px;
+  .panel {
+    background: $brand-secondary;
+    padding: $padding-large-horizontal * 2;
+  }
+  h3 {
+    font-size: $font-size-h5;
+    text-transform: uppercase;
   }
 }
 
-
 /* HOMEPAGE */
 #block-views-flex-blocks-block-7 .panel {
+  margin-bottom: 0;
   padding: $padding-base-vertical $padding-large-horizontal;
   background-color: $brand-contrast-dark;
-  margin-bottom: 0;
   h2 {
     margin: 0;
     color: $white;

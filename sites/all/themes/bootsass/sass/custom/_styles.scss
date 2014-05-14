@@ -214,10 +214,11 @@ body {
 
 /* PRIMARY CONTENT BLOCKS */
 .main-content {
+  position: relative;
   padding: $padding-base-vertical $padding-large-horizontal * 1.5;
   border-top: 7px solid $brand-secondary;
   background: $white;
-  .front &:after {
+  &:after {
     position: absolute;
     top: -7px;
     left: 33px;
@@ -226,6 +227,8 @@ body {
     height: 77px;
     content: url('../images/shield.png');
   }
+  // Add customizations for specific pages here
+  
 
 }
 .content-bottom {
@@ -257,8 +260,8 @@ h2.teaser-title {
   font-family: $font-family-serif;
 }
 address {
-  line-height: $line-height-small;
   margin: 0 0 ($line-height-computed / 2);
+  line-height: $line-height-small;
 }
 .read-more a {
   color: $gray;
