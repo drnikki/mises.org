@@ -35,7 +35,7 @@ function mises_wysiwyg_wysiwyg_default_profiles() {
           'Link' => 1,
           'Unlink' => 1,
           'Blockquote' => 1,
-          'SpellChecker' => 1,
+          'Scayt' => 1,
         ),
       ),
       'toolbar_loc' => 'top',
