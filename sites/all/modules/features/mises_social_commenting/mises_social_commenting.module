@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Social Commenting feature.
+ */
+
+include_once 'mises_social_commenting.features.inc';
