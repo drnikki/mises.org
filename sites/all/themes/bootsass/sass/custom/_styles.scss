@@ -217,7 +217,7 @@ body {
 /* PRIMARY CONTENT BLOCKS */
 .main-content {
   position: relative;
-  padding: $padding-base-vertical $padding-large-horizontal * 1.5;
+  padding: $padding-base-vertical $padding-large-horizontal * 1.5 $padding-large-horizontal * 1.5;
   border-top: 7px solid $brand-secondary;
   background: $white;
   &:after {
@@ -230,7 +230,9 @@ body {
     content: url('../images/shield.png');
   }
   // Add customizations for specific pages here
-  
+  .front & {
+    padding: $padding-base-vertical $padding-large-horizontal * 1.5;
+  }
 
 }
 .content-bottom {
@@ -278,4 +280,7 @@ address {
   color: $gray;
   text-transform: uppercase;
   font-size: $font-size-small;
+}
+.author a {
+  color: inherit;
 }

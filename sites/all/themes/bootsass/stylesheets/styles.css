@@ -8909,7 +8909,7 @@ body {
 /* line 218, ../sass/custom/_styles.scss */
 .main-content {
   position: relative;
-  padding: 6px 24px;
+  padding: 6px 24px 24px;
   border-top: 7px solid #5b8ab5;
   background: white;
 }
@@ -8923,8 +8923,12 @@ body {
   height: 77px;
   content: url("../images/shield.png");
 }
+/* line 233, ../sass/custom/_styles.scss */
+.front .main-content {
+  padding: 6px 24px;
+}
 
-/* line 236, ../sass/custom/_styles.scss */
+/* line 238, ../sass/custom/_styles.scss */
 .content-bottom {
   padding-top: 16px;
 }
@@ -8932,17 +8936,17 @@ body {
 /* FONTS AND TYPOGRAPHY 
 * @TODO: CONSIDER SEPARATE STYLESHEET
 */
-/* line 243, ../sass/custom/_styles.scss */
+/* line 245, ../sass/custom/_styles.scss */
 .bold {
   font-weight: 600;
 }
 
-/* line 246, ../sass/custom/_styles.scss */
+/* line 248, ../sass/custom/_styles.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 249, ../sass/custom/_styles.scss */
+/* line 251, ../sass/custom/_styles.scss */
 h1, .h1 {
   color: #00426b;
   text-transform: uppercase;
@@ -8950,41 +8954,46 @@ h1, .h1 {
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 255, ../sass/custom/_styles.scss */
+/* line 257, ../sass/custom/_styles.scss */
 .page-header {
   padding-left: 100px;
   border-bottom: 0 none;
 }
 
-/* line 259, ../sass/custom/_styles.scss */
+/* line 261, ../sass/custom/_styles.scss */
 h2.teaser-title {
   color: #00426b;
   font-size: 23px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 264, ../sass/custom/_styles.scss */
+/* line 266, ../sass/custom/_styles.scss */
 h4.author {
   font-size: 14px;
   margin-top: 0;
 }
 
-/* line 269, ../sass/custom/_styles.scss */
+/* line 271, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 273, ../sass/custom/_styles.scss */
+/* line 275, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 277, ../sass/custom/_styles.scss */
+/* line 279, ../sass/custom/_styles.scss */
 .read-more a {
   color: #788086;
   text-transform: uppercase;
   font-size: 13px;
+}
+
+/* line 284, ../sass/custom/_styles.scss */
+.author a {
+  color: inherit;
 }
 
 /*
@@ -9096,11 +9105,15 @@ address {
   content: "\2022";
 }
 /* line 99, ../sass/custom/_landing.scss */
+.landing-list .group-date-author span.author a {
+  color: #00426b;
+}
+/* line 102, ../sass/custom/_landing.scss */
 .landing-list .group-date-author span.author div, .landing-list .group-date-author span.author p {
   display: inline;
   color: #00426b;
 }
-/* line 106, ../sass/custom/_landing.scss */
+/* line 109, ../sass/custom/_landing.scss */
 .landing-list .view-footer span.glyphicon {
   width: 22px;
   height: 22px;
@@ -9109,33 +9122,33 @@ address {
   line-height: 22px;
 }
 
-/* line 112, ../sass/custom/_landing.scss */
-.todays-article .views-row {
+/* line 116, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 {
   padding: 0;
   border-bottom: 0 none;
   background-color: #e4ebee;
 }
-/* line 117, ../sass/custom/_landing.scss */
-.todays-article .image {
+/* line 121, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .image {
   margin-top: 0;
 }
-/* line 120, ../sass/custom/_landing.scss */
-.todays-article .tags {
+/* line 124, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .tags {
   margin-top: 0;
   padding: 10px;
   background-color: #5b8ab5;
   color: white;
 }
-/* line 125, ../sass/custom/_landing.scss */
-.todays-article .tags a {
+/* line 129, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .tags a {
   color: white;
 }
-/* line 129, ../sass/custom/_landing.scss */
-.todays-article .group-right {
+/* line 133, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .group-right {
   padding: 20px 10px;
 }
-/* line 131, ../sass/custom/_landing.scss */
-.todays-article .group-right:before {
+/* line 135, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .group-right:before {
   display: block;
   content: "Today's Article";
 }

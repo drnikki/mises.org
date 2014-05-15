@@ -96,6 +96,9 @@
         width: 14px;
         content: "\2022";
       }
+      a {
+        color: $brand-primary;
+      }
       div, p {
         display: inline;
         color: $brand-primary;
@@ -108,29 +111,31 @@
     }
   }
 }
-.todays-article {
-  .views-row {
-    padding: 0; 
-    border-bottom: 0 none;
-    background-color: $gray-lighter;
-  }
-  .image {
-    margin-top: 0;
-  }
-  .tags {
-    margin-top: 0;
-    padding: 10px;
-    background-color: $brand-secondary;
-    color: $white;
-    a {
-      color: $white;
+.page-taxonomy-term-147 {
+  .landing-list {
+    .views-row-1 {
+      padding: 0; 
+      border-bottom: 0 none;
+      background-color: $gray-lighter;
     }
-  }
-  .group-right {
-    padding: 20px 10px;
-    &:before {
-      display: block;
-      content: "Today's Article";
+    .image {
+      margin-top: 0;
+    }
+    .tags {
+      margin-top: 0;
+      padding: 10px;
+      background-color: $brand-secondary;
+      color: $white;
+      a {
+        color: $white;
+      }
+    }
+    .group-right {
+      padding: 20px 10px;
+      &:before {
+        display: block;
+        content: "Today's Article";
+      }
     }
   }
 }
