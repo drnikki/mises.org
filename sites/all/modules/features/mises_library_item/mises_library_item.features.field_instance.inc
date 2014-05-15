@@ -338,7 +338,7 @@ function mises_library_item_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'links' => 1,
+          'links' => 0,
           'view_mode' => 'author_full_name',
         ),
         'type' => 'entityreference_entity_view',
