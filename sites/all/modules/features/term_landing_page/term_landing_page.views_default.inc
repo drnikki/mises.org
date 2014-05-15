@@ -371,7 +371,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Author';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'audience';
+  $handler->display->display_options['css_class'] = 'audience border-gray';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -429,6 +429,13 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['filters']['name']['field'] = 'name';
   $handler->display->display_options['filters']['name']['relationship'] = 'field_profile_type_target_id';
   $handler->display->display_options['filters']['name']['value'] = 'Author';
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featued' => 'featued',
+  );
 
   /* Display: Featured Author Articles */
   $handler = $view->new_display('block', 'Featured Author Articles', 'block_1');
@@ -498,12 +505,29 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['nid']['validate']['fail'] = 'summary';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Most Popular Placeholder */
   $handler = $view->new_display('block', 'Most Popular Placeholder', 'popular');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'books panel border-contrast';
+  $handler->display->display_options['css_class'] = 'books panel border-contrast padding-lg';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '2';

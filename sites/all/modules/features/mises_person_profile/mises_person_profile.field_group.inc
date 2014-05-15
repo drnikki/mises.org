@@ -31,7 +31,6 @@ function mises_person_profile_field_group_info() {
       5 => 'field_profile_type',
       6 => 'field_twitter',
       7 => 'title',
-      8 => 'group_expertise',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -56,7 +55,7 @@ function mises_person_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Biography',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'body',
       1 => 'field_bio_summary',
@@ -82,10 +81,10 @@ function mises_person_profile_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'person_profile';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_basic';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Areas of Expertise',
-    'weight' => '9',
+    'weight' => '1',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_austrian_school_of_economi',
@@ -174,7 +173,7 @@ function mises_person_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Works',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_major_works',
       1 => 'field_published_in',
