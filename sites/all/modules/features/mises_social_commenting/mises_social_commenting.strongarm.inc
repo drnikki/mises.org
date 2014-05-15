@@ -35,7 +35,7 @@ function mises_social_commenting_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'disqus_domain';
-  $strongarm->value = 'nvmdevelopment';
+  $strongarm->value = 'misesinstitute';
   $export['disqus_domain'] = $strongarm;
 
   $strongarm = new stdClass();

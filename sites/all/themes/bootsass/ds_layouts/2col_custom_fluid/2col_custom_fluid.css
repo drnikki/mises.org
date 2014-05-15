@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Styling for the ds-2col-stacked-fluid template.
+ */
+
+.ds-2col-custom-fluid > .panel-body > .group-left {
+  padding-left: 0;
+  padding-right: 6px;
+}
+.ds-2col-custom-fluid > .panel-body > .group-right {
+  padding-left: 6px;
+  padding-right: 0;
+}
+
+.ds-2col-custom-fluid.group-one-column > .panel-body > .group-left,
+.ds-2col-custom-fluid.group-one-column > .panel-body > .group-right {
+  width: 100%;
+  float: none;
+}
+.ds-2col-custom-fluid .group-bottom {
+  clear: both;
+}
+

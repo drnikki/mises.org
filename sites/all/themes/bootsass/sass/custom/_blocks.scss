@@ -10,6 +10,8 @@
   padding: 10px 15px 7px 80px;
   &:before {
     @include icon-block(61px,10px,-5px);
+    @include icon-color($brand-contrast);
+    @include icon-border();
     .academy & {
       @include icon-image('../images/icons/icon-academy.png');
     }
@@ -84,9 +86,59 @@ span.glyphicon {
 .border-secondary {
   border-top: 8px solid $brand-secondary;
 }
+.border-gray {
+  .panel-body {
+    border-top: 4px solid $gray-light;
+  }
+}
+/* ICONS RELATED TO TOP-BORDERS */
+.border-primary {
+  .panel-heading {
+    &:before {
+      @include icon-color($brand-primary);
+    }
+    .panel-title {
+      color: $brand-primary;
+    }
+  }
+  h4 {
+    color: $brand-primary;
+  }
+}
+.border-secondary {
+  .panel-heading {
+    &:before {
+      @include icon-color($brand-secondary);
+    }
+    .panel-title {
+      color: $brand-secondary;
+    }
+  }
+  h4 {
+    color: $brand-secondary;
+  }
+}
+.border-contrast {
+  .panel-heading {
+    &:before {
+      @include icon-color($brand-contrast);
+    }
+    .panel-title {
+      color: $brand-contrast;
+    }
+  }
+  h4 {
+    color: $brand-contrast;
+  }
+}
+
+
+/* OTHER HELPER CLASSES */
+.padding-lg {
+  padding: $padding-small-horizontal $padding-small-horizontal * 2;
+}
 
 /* Bootstrap Panel overrides */
-
 .panel-footer {
   padding: $padding-large-vertical $padding-xs-horizontal;
   background-color: transparent;
@@ -101,7 +153,6 @@ span.glyphicon {
   &:hover span.glyphicon {
     background-color: $brand-medium;
   }
-
 }
 
 /* BOTTOM BLOCKS */
@@ -159,20 +210,21 @@ span.glyphicon {
   .panel-heading {
     background: $gray-lighter;
     &:before {
-      @include icon-block(46px,10px,calc(50% - 23px)); 
+      @include icon-block(42px,16px,calc(50% - 23px)); 
+      @include icon-border(0);
     }
     &:after {
-      @include vertical-rule(calc(100% - 20px),60px,8px,$gray);
+      @include vertical-rule(calc(100% - 14px),70px,6px,$gray);
     }
     .panel-title {
-      color: $brand-contrast;
       text-transform: uppercase;
       font-size: $font-size-h5;
+      font-weight: 600;
     }
     &.single,
     .single {
-      min-height: 62px;
-      line-height: 62px;
+      height: 62px;
+      line-height: 40px;
     }
     h4 {
       font-size: $font-size-h5;
@@ -180,6 +232,9 @@ span.glyphicon {
         color: $black;
       }
     }
+  }
+  .panel-body {
+    padding: 10px 20px;
   }
 }
 .region-sidebar-second-top {
@@ -195,6 +250,15 @@ span.glyphicon {
     font-size: $font-size-h5;
     text-transform: uppercase;
   }
+}
+
+/**
+* CUSTOM ELEMENTS
+**/
+
+/* TITLE COLORSS */
+.view-display-id-academy_course .panel-title {
+  color: $brand-contrast !important;
 }
 
 /* HOMEPAGE */
@@ -246,6 +310,38 @@ span.glyphicon {
           background-color: $brand-contrast;
         }
       }
+    }
+  }
+}
+/* LANDING PAGES */
+.view-term-landing {
+  &.view-display-id-popular {
+    .view-content {
+      @extend .padding-lg;
+    }
+  }
+  &.view-display-id-featured_author {
+    .panel {
+      margin-bottom: $grid-gutter-width;
+    }
+    .panel-title {
+      font-size: $font-size-h4;
+      text-transform: uppercase;
+      color: $brand-contrast;
+    }
+    h4.author {
+      color: $brand-contrast;
+    }
+    img {
+      border: 3px solid $gray-light;
+    }
+  }
+  &.view-display-id-columnist {
+    .group-header {
+      margin-bottom: 20px;
+    }
+    img {
+      border: 3px solid $gray-light;
     }
   }
 }
