@@ -496,8 +496,8 @@ function display_suite_shared_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '[node:field-first-name] [node:title]',
-      'format' => 'plain_text',
+      'value' => '<a href="[node:url]">[node:field-first-name] [node:title]</a>',
+      'format' => 'ds_code',
     ),
     'use_token' => 1,
   );
