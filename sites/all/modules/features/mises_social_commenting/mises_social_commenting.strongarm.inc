@@ -71,11 +71,11 @@ function mises_social_commenting_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'disqus_nodetypes';
   $strongarm->value = array(
+    'blog' => 'blog',
     'library_item' => 'library_item',
     'homepage_hero' => 0,
     'article' => 0,
     'award' => 0,
-    'blog' => 0,
     'campaign_' => 0,
     'causeview_snippet' => 0,
     'course' => 0,
