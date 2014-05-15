@@ -38,7 +38,7 @@ function mises_events_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_audience',
     'label' => 'Audience',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -51,7 +51,7 @@ function mises_events_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 7,
     ),
   );
@@ -84,7 +84,7 @@ function mises_events_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_austrian_school',
     'label' => 'Austrian School',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -97,7 +97,7 @@ function mises_events_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 5,
     ),
   );
@@ -130,7 +130,7 @@ function mises_events_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_award_type',
     'label' => 'Award',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -143,7 +143,7 @@ function mises_events_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 3,
     ),
   );
@@ -274,7 +274,7 @@ function mises_events_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_event_type',
     'label' => 'Event Type',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -287,7 +287,7 @@ function mises_events_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 2,
     ),
   );
@@ -320,7 +320,7 @@ function mises_events_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_level',
     'label' => 'Level',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -333,7 +333,7 @@ function mises_events_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 6,
     ),
   );
@@ -518,7 +518,7 @@ function mises_events_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_topics',
     'label' => 'Topics',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -531,7 +531,7 @@ function mises_events_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 4,
     ),
   );

@@ -147,12 +147,12 @@ function mises_library_item_field_group_info() {
     'children' => array(
       0 => 'field_featured_content',
       1 => 'field_timely_content',
-      2 => 'field_mises_today',
-      3 => 'field_austrian_school_of_economi',
-      4 => 'field_audience',
-      5 => 'field_level',
-      6 => 'field_library_item_tree',
-      7 => 'field_topics',
+      2 => 'field_austrian_school_of_economi',
+      3 => 'field_audience',
+      4 => 'field_level',
+      5 => 'field_library_item_tree',
+      6 => 'field_topics',
+      7 => 'field_austrian_school',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -165,63 +165,6 @@ function mises_library_item_field_group_info() {
     ),
   );
   $export['group_tagging|node|library_item|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_teaser|node|library_item|block_teaser';
-  $field_group->group_name = 'group_teaser';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'library_item';
-  $field_group->mode = 'block_teaser';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Teaser',
-    'weight' => '2',
-    'children' => array(
-      0 => 'body',
-      1 => 'field_teaser_text',
-      2 => 'title',
-    ),
-    'format_type' => 'html5',
-    'format_settings' => array(
-      'label' => 'Teaser',
-      'instance_settings' => array(
-        'classes' => 'panel-body',
-        'wrapper' => 'aside',
-      ),
-    ),
-  );
-  $export['group_teaser|node|library_item|block_teaser'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_teaser|node|library_item|sidebar_teaser';
-  $field_group->group_name = 'group_teaser';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'library_item';
-  $field_group->mode = 'sidebar_teaser';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => '',
-    'weight' => '1',
-    'children' => array(
-      0 => 'body',
-      1 => 'field_teaser_text',
-      2 => 'node_link',
-    ),
-    'format_type' => 'html-element',
-    'format_settings' => array(
-      'label' => '',
-      'instance_settings' => array(
-        'classes' => 'panel-body',
-        'element' => 'div',
-        'attributes' => '',
-      ),
-    ),
-  );
-  $export['group_teaser|node|library_item|sidebar_teaser'] = $field_group;
 
   return $export;
 }

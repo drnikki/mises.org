@@ -1,7 +1,7 @@
 name = Award
 core = 7.x
 package = Content Types
-version = 7.x-1.0
+version = 7.x-1.1
 project = mises_award_ct
 dependencies[] = ctools
 dependencies[] = date
@@ -16,8 +16,6 @@ features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_base][] = field_year
-features[field_group][] = group_award_information|node|award|form
-features[field_group][] = group_award_recipients|node|award|form
 features[field_instance][] = node-award-field_award_type
 features[field_instance][] = node-award-field_recipients
 features[field_instance][] = node-award-field_year

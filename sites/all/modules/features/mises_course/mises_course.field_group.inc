@@ -23,8 +23,8 @@ function mises_course_field_group_info() {
     'label' => 'Additional Information',
     'weight' => '1',
     'children' => array(
-      0 => 'field_current_trends',
-      1 => 'field_austrian_school_of_economi',
+      0 => 'field_topics',
+      1 => 'field_austrian_school',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -65,34 +65,6 @@ function mises_course_field_group_info() {
     ),
   );
   $export['group_course_information|node|course|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_teaser|node|course|sidebar_teaser';
-  $field_group->group_name = 'group_teaser';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'course';
-  $field_group->mode = 'sidebar_teaser';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => '',
-    'weight' => '3',
-    'children' => array(
-      0 => 'body',
-      1 => 'node_link',
-    ),
-    'format_type' => 'html-element',
-    'format_settings' => array(
-      'label' => '',
-      'instance_settings' => array(
-        'classes' => 'panel-body',
-        'element' => 'div',
-        'attributes' => '',
-      ),
-    ),
-  );
-  $export['group_teaser|node|course|sidebar_teaser'] = $field_group;
 
   return $export;
 }

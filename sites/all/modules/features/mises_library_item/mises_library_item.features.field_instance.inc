@@ -210,7 +210,7 @@ function mises_library_item_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_audience',
     'label' => 'Audience',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -228,8 +228,8 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_austrian_school_of_economi'
-  $field_instances['node-library_item-field_austrian_school_of_economi'] = array(
+  // Exported field_instance: 'node-library_item-field_austrian_school'
+  $field_instances['node-library_item-field_austrian_school'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
     'deleted' => 0,
@@ -239,48 +239,54 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 24,
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 15,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 0,
       ),
       'simple_teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_austrian_school_of_economi',
+    'field_name' => 'field_austrian_school',
     'label' => 'Austrian School',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1033,7 +1039,7 @@ function mises_library_item_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_level',
     'label' => 'Level',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -1102,7 +1108,7 @@ function mises_library_item_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_library_item_tree',
     'label' => 'Library Item Type',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -1121,7 +1127,7 @@ function mises_library_item_field_default_field_instances() {
         'track_list' => 1,
       ),
       'type' => 'term_reference_tree',
-      'weight' => 15,
+      'weight' => 14,
     ),
   );
 
@@ -1733,7 +1739,7 @@ function mises_library_item_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_topics',
     'label' => 'Topics',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -1747,7 +1753,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 

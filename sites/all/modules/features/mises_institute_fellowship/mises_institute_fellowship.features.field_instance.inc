@@ -87,7 +87,7 @@ function mises_institute_fellowship_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_award_type',
     'label' => 'Award Type',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -100,7 +100,7 @@ function mises_institute_fellowship_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 2,
     ),
   );
