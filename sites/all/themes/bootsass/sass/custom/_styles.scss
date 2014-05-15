@@ -9,10 +9,12 @@
 
 /* LAYOUT */
 @media (max-width: $screen-xs - 1){ // adding mid-small breakpoint
-  *[class*="col-"]{
-    float:none;
-    width:auto;
-  }   
+  .main-content, .content-bottom {
+    *[class*="col-"]{
+      float:none;
+      width:auto;
+    }   
+  }
 }
 
 @media (min-width: $screen-sm) {
@@ -256,8 +258,17 @@ h1, .h1 {
 }
 h2.teaser-title {
   color: $brand-primary;
-  font-size: $font-size-h3; // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE
+  font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
   font-family: $font-family-serif;
+}
+h4.author {
+  font-size: 14px;
+  margin-top: 0;
+}
+h2, .h2, h3, .h3, h4, .h4, h5, .h5 { // FIX FOR AUTHOR FULL NAME NESTED P
+  p {
+    display: inline;
+  }
 }
 address {
   margin: 0 0 ($line-height-computed / 2);
