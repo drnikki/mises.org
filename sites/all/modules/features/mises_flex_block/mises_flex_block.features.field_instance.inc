@@ -479,7 +479,10 @@ function mises_flex_block_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Select the Weight for this Flex Block. If there are more than one Flex Blocks used in the same Region and Page/Section, this field is used to sort the blocks, with the lowest weight first.',
+    'description' => 'Select the Weight for this Flex Block.<br />
+If there are more than one Flex Blocks used in the same Region <br />
+and Page/Section, this field is used to sort the blocks, with the <br />
+lowest weight first.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -528,7 +531,10 @@ function mises_flex_block_field_default_field_instances() {
   t('Image Link');
   t('Region');
   t('Section');
-  t('Select the Weight for this Flex Block. If there are more than one Flex Blocks used in the same Region and Page/Section, this field is used to sort the blocks, with the lowest weight first.');
+  t('Select the Weight for this Flex Block.<br />
+If there are more than one Flex Blocks used in the same Region <br />
+and Page/Section, this field is used to sort the blocks, with the <br />
+lowest weight first.');
   t('Select the region where this Flex Block will appear.');
   t('Specific pages/sections where this Flex Block should appear.');
   t('Teaser Text');
