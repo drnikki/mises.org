@@ -13,7 +13,7 @@ function library_item_media_type_taxonomy_default_vocabularies() {
       'name' => 'Library Item (Media) Type',
       'machine_name' => 'media_type',
       'description' => '',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => -6,
       'rdf_mapping' => array(
