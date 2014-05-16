@@ -105,66 +105,6 @@ function mises_person_profile_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_left|node|person_profile|sidebar_author';
-  $field_group->group_name = 'group_left';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'person_profile';
-  $field_group->mode = 'sidebar_author';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Left',
-    'weight' => '0',
-    'children' => array(
-      0 => 'field_image_collection',
-    ),
-    'format_type' => 'html-element',
-    'format_settings' => array(
-      'label' => 'Left',
-      'instance_settings' => array(
-        'classes' => 'group-left col-xs-5',
-        'wrapper' => 'aside',
-        'element' => 'div',
-        'attributes' => '',
-        'required_fields' => 1,
-      ),
-      'formatter' => '',
-    ),
-  );
-  $export['group_left|node|person_profile|sidebar_author'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_right|node|person_profile|sidebar_author';
-  $field_group->group_name = 'group_right';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'person_profile';
-  $field_group->mode = 'sidebar_author';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Right',
-    'weight' => '1',
-    'children' => array(
-      0 => 'body',
-      1 => 'field_bio_summary',
-      2 => 'contextual_block_title_with_icon',
-      3 => 'author_full_name',
-    ),
-    'format_type' => 'html-element',
-    'format_settings' => array(
-      'label' => 'Right',
-      'instance_settings' => array(
-        'classes' => 'group-right col-xs-7',
-        'element' => 'div',
-        'attributes' => '',
-      ),
-    ),
-  );
-  $export['group_right|node|person_profile|sidebar_author'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_works|node|person_profile|form';
   $field_group->group_name = 'group_works';
   $field_group->entity_type = 'node';

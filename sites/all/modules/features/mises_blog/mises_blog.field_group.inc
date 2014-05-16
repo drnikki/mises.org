@@ -23,8 +23,8 @@ function mises_blog_field_group_info() {
     'label' => 'Additional Information',
     'weight' => '1',
     'children' => array(
-      0 => 'field_austrian_school_of_economi',
-      1 => 'field_current_trends',
+      0 => 'field_austrian_school',
+      1 => 'field_topics',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
