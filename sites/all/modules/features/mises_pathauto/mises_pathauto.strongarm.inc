@@ -203,77 +203,77 @@ function mises_pathauto_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_award_type_pattern';
-  $strongarm->value = 'award-type/[term:name]';
+  $strongarm->value = '';
   $export['pathauto_taxonomy_term_award_type_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_currents_trends_pattern';
-  $strongarm->value = 'topic/[term:name]';
+  $strongarm->value = '';
   $export['pathauto_taxonomy_term_currents_trends_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_events_pattern';
-  $strongarm->value = 'event-type/[term:name]';
+  $strongarm->value = '';
   $export['pathauto_taxonomy_term_events_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_level_pattern';
-  $strongarm->value = 'level/[term:name]';
+  $strongarm->value = '';
   $export['pathauto_taxonomy_term_level_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_media_type_pattern';
-  $strongarm->value = 'library-item-media-type/[term:name]';
+  $strongarm->value = '';
   $export['pathauto_taxonomy_term_media_type_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_pattern';
-  $strongarm->value = '[term:vocabulary]/[term:name]';
+  $strongarm->value = '[term:name]';
   $export['pathauto_taxonomy_term_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_profile_type_pattern';
-  $strongarm->value = 'profile-type/[term:name]';
+  $strongarm->value = '';
   $export['pathauto_taxonomy_term_profile_type_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_reading_group_pattern';
-  $strongarm->value = 'audience-reading-group/[term:name]';
+  $strongarm->value = '';
   $export['pathauto_taxonomy_term_reading_group_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_reason_for_contact_pattern';
-  $strongarm->value = 'reason-for-contact/[term:name]';
+  $strongarm->value = '';
   $export['pathauto_taxonomy_term_reason_for_contact_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_tags_pattern';
-  $strongarm->value = 'tag/[term:name]';
+  $strongarm->value = '';
   $export['pathauto_taxonomy_term_tags_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_the_austrian_school_of_economics_pattern';
-  $strongarm->value = 'austrian-school/[term:name]';
+  $strongarm->value = '';
   $export['pathauto_taxonomy_term_the_austrian_school_of_economics_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
