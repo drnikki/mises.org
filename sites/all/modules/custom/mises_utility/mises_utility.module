@@ -123,7 +123,7 @@ function mises_utility_node_presave($node){
  * 
  */
 
-function mises_utility_projects_alter(&$projects) {
+function mises_utility_update_projects_alter(&$projects) {
   foreach($projects as $key => $project) {
     if($project['datestamp'] == 0) { // check for a timestamp from D.O.
    $custom_module = $project['name']; // get the name of the module
