@@ -484,14 +484,6 @@ function library_item_media_type_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Blog',
-    'description' => '',
-    'format' => 'filtered_html',
-    'weight' => 45,
-    'uuid' => 'e95698aa-8209-4e6e-93b2-4b33061daaea',
-    'vocabulary_machine_name' => 'media_type',
-  );
-  $terms[] = array(
     'name' => 'Institute Publications',
     'description' => '',
     'format' => 'filtered_html',
