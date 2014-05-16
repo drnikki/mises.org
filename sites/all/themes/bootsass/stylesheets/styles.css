@@ -4009,28 +4009,28 @@ select[multiple].input-lg,
 }
 
 /* line 60, ../sass/bootstrap/_buttons.scss */
-.btn-primary {
+.btn-primary, #text-resizer .active {
   color: white;
   background-color: #00426b;
   border-color: #003252;
 }
 /* line 15, ../sass/bootstrap/mixins/_buttons.scss */
-.btn-primary:hover.dropdown-toggle, .btn-primary:focus.dropdown-toggle, .btn-primary:active.dropdown-toggle, .btn-primary.active.dropdown-toggle, .open .btn-primary.dropdown-toggle {
+.btn-primary:hover.dropdown-toggle, #text-resizer .active:hover.dropdown-toggle, .btn-primary:focus.dropdown-toggle, #text-resizer .active:focus.dropdown-toggle, .btn-primary:active.dropdown-toggle, #text-resizer .active:active.dropdown-toggle, .btn-primary.active.dropdown-toggle, #text-resizer .active.dropdown-toggle, .open .btn-primary.dropdown-toggle, .open #text-resizer .dropdown-toggle.active, #text-resizer .open .dropdown-toggle.active {
   color: white;
   background-color: #002338;
   border-color: #000d14;
 }
 /* line 22, ../sass/bootstrap/mixins/_buttons.scss */
-.btn-primary:active.dropdown-toggle, .btn-primary.active.dropdown-toggle, .open .btn-primary.dropdown-toggle {
+.btn-primary:active.dropdown-toggle, #text-resizer .active:active.dropdown-toggle, .btn-primary.active.dropdown-toggle, #text-resizer .active.dropdown-toggle, .open .btn-primary.dropdown-toggle, .open #text-resizer .dropdown-toggle.active, #text-resizer .open .dropdown-toggle.active {
   background-image: none;
 }
 /* line 32, ../sass/bootstrap/mixins/_buttons.scss */
-.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
+.btn-primary.disabled, #text-resizer .disabled.active, .btn-primary.disabled:hover, #text-resizer .disabled.active:hover, .btn-primary.disabled:focus, #text-resizer .disabled.active:focus, .btn-primary.disabled:active, #text-resizer .disabled.active:active, .btn-primary.disabled.active, #text-resizer .disabled.active, .btn-primary[disabled], #text-resizer [disabled].active, .btn-primary[disabled]:hover, #text-resizer [disabled].active:hover, .btn-primary[disabled]:focus, #text-resizer [disabled].active:focus, .btn-primary[disabled]:active, #text-resizer [disabled].active:active, .btn-primary[disabled].active, #text-resizer [disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] #text-resizer .active, #text-resizer fieldset[disabled] .active, fieldset[disabled] .btn-primary:hover, fieldset[disabled] #text-resizer .active:hover, #text-resizer fieldset[disabled] .active:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] #text-resizer .active:focus, #text-resizer fieldset[disabled] .active:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] #text-resizer .active:active, #text-resizer fieldset[disabled] .active:active, fieldset[disabled] .btn-primary.active, fieldset[disabled] #text-resizer .active, #text-resizer fieldset[disabled] .active {
   background-color: #00426b;
   border-color: #003252;
 }
 /* line 38, ../sass/bootstrap/mixins/_buttons.scss */
-.btn-primary .badge {
+.btn-primary .badge, #text-resizer .active .badge {
   color: #00426b;
   background-color: white;
 }
@@ -8927,8 +8927,21 @@ body {
 .front .main-content {
   padding: 6px 24px;
 }
+/* line 237, ../sass/custom/_styles.scss */
+.main-content .body-content.normal {
+  font-size: 15px;
+}
+/* line 240, ../sass/custom/_styles.scss */
+.main-content .body-content.large {
+  font-size: 18px;
+}
 
-/* line 238, ../sass/custom/_styles.scss */
+/* line 246, ../sass/custom/_styles.scss */
+#text-resizer .large {
+  font-size: 18px;
+}
+
+/* line 254, ../sass/custom/_styles.scss */
 .content-bottom {
   padding-top: 16px;
 }
@@ -8936,17 +8949,17 @@ body {
 /* FONTS AND TYPOGRAPHY 
 * @TODO: CONSIDER SEPARATE STYLESHEET
 */
-/* line 245, ../sass/custom/_styles.scss */
+/* line 261, ../sass/custom/_styles.scss */
 .bold {
   font-weight: 600;
 }
 
-/* line 248, ../sass/custom/_styles.scss */
+/* line 264, ../sass/custom/_styles.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 251, ../sass/custom/_styles.scss */
+/* line 267, ../sass/custom/_styles.scss */
 h1, .h1 {
   color: #00426b;
   text-transform: uppercase;
@@ -8954,44 +8967,52 @@ h1, .h1 {
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 257, ../sass/custom/_styles.scss */
+/* line 273, ../sass/custom/_styles.scss */
 .page-header {
   padding-left: 100px;
   border-bottom: 0 none;
 }
 
-/* line 261, ../sass/custom/_styles.scss */
-h2.teaser-title {
+/* line 277, ../sass/custom/_styles.scss */
+h2 {
   color: #00426b;
-  font-size: 23px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
+/* line 280, ../sass/custom/_styles.scss */
+h2.page-title {
+  font-size: 32px;
+  margin-top: 0;
+}
+/* line 284, ../sass/custom/_styles.scss */
+h2.teaser-title {
+  font-size: 23px;
+}
 
-/* line 266, ../sass/custom/_styles.scss */
+/* line 288, ../sass/custom/_styles.scss */
 h4.author {
   font-size: 14px;
   margin-top: 0;
 }
 
-/* line 271, ../sass/custom/_styles.scss */
+/* line 293, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 275, ../sass/custom/_styles.scss */
+/* line 297, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 279, ../sass/custom/_styles.scss */
+/* line 301, ../sass/custom/_styles.scss */
 .read-more a {
   color: #788086;
   text-transform: uppercase;
   font-size: 13px;
 }
 
-/* line 284, ../sass/custom/_styles.scss */
+/* line 306, ../sass/custom/_styles.scss */
 .author a {
   color: inherit;
 }
@@ -9129,28 +9150,28 @@ address {
   background-color: #e4ebee;
 }
 /* line 121, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .image {
+.page-taxonomy-term-147 .landing-list .views-row-1 .group-right:before {
+  display: block;
+  content: "Today's Article";
+}
+/* line 126, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 .image {
   margin-top: 0;
 }
-/* line 124, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .tags {
+/* line 129, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 .tags {
   margin-top: 0;
   padding: 10px;
   background-color: #5b8ab5;
   color: white;
 }
-/* line 129, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .tags a {
+/* line 134, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 .tags a {
   color: white;
 }
-/* line 133, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .group-right {
+/* line 138, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 .group-right {
   padding: 20px 10px;
-}
-/* line 135, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .group-right:before {
-  display: block;
-  content: "Today's Article";
 }
 
 /*
