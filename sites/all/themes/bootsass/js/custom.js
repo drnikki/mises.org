@@ -12,7 +12,7 @@ var Drupal = Drupal || {};
 
   Drupal.behaviors.customScript = {
     attach: function(context) {
-      // Custom strips here.
+      // Custom scrips here.
       
       var implementEqualHeight = function() {
         $('.content-bottom .region .panel-heading .panel-title').equalHeight();
@@ -22,8 +22,27 @@ var Drupal = Drupal || {};
         
       };
       
+      var textResizer = function() {
+        $('#text-resizer .btn').click(function(){
+          //$(this).toggleClass('active');
+          //$(this).siblings('.btn').toggleClass('active');
+          if ($(this).hasClass('small')) {
+            console.log('small on');
+            $(this).addClass('active');
+            $(this).siblings('.large').removeClass('active');
+            $('.body-content').removeClass('large').addClass('normal');
+          } else {
+            console.log('large on');
+            $(this).addClass('active');
+            $(this).siblings('.small').removeClass('active');
+            $('.body-content').removeClass('normal').addClass('large');
+          }
+        });
+      };
+      
       $(document).ready(function() {
         implementEqualHeight();
+        textResizer();
       });
 
 

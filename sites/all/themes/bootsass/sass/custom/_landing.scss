@@ -117,6 +117,11 @@
       padding: 0; 
       border-bottom: 0 none;
       background-color: $gray-lighter;
+      .group-right {
+        &:before {
+          display: block;
+          content: "Today's Article";
+        }
     }
     .image {
       margin-top: 0;
@@ -132,9 +137,6 @@
     }
     .group-right {
       padding: 20px 10px;
-      &:before {
-        display: block;
-        content: "Today's Article";
       }
     }
   }

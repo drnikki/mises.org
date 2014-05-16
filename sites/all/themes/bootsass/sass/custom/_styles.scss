@@ -233,8 +233,24 @@ body {
   .front & {
     padding: $padding-base-vertical $padding-large-horizontal * 1.5;
   }
-
+  .body-content {
+    &.normal {
+      font-size: $font-size-base;
+    }
+    &.large {
+      font-size: $font-size-large;
+    }
+  }
 }
+#text-resizer {
+  .large {
+    font-size: $font-size-large;
+  }
+  .active {
+    @extend .btn-primary;
+  }
+}
+
 .content-bottom {
   padding-top: $padding-large-horizontal;
 }
@@ -258,10 +274,16 @@ h1, .h1 {
   padding-left: 100px;
   border-bottom: 0 none;
 }
-h2.teaser-title {
+h2 {
   color: $brand-primary;
-  font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
   font-family: $font-family-serif;
+  &.page-title {
+    font-size: $font-size-h2;
+    margin-top: 0;
+  }
+  &.teaser-title {
+    font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
+  }
 }
 h4.author {
   font-size: 14px;
