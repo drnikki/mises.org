@@ -71,4 +71,6 @@ features[variable][] = node_options_person_profile
 features[variable][] = node_preview_person_profile
 features[variable][] = node_submitted_person_profile
 features_exclude[field_base][field_austrian_school] = field_austrian_school
+features_exclude[field_base][field_austrian_school_of_economi] = field_austrian_school_of_economi
+features_exclude[field_instance][node-person_profile-field_austrian_school_of_economi] = node-person_profile-field_austrian_school_of_economi
 project path = sites/all/modules/features
