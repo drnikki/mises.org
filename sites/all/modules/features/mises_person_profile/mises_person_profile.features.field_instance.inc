@@ -705,7 +705,7 @@ function mises_person_profile_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
-          'view_mode' => 'single_image',
+          'view_mode' => 'sidebar_author',
         ),
         'type' => 'field_collection_fields',
         'weight' => 1,
@@ -715,7 +715,7 @@ function mises_person_profile_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
-          'view_mode' => 'single_image',
+          'view_mode' => 'sidebar_teaser',
         ),
         'type' => 'field_collection_fields',
         'weight' => 1,
