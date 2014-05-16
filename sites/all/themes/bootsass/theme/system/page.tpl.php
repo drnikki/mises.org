@@ -230,7 +230,7 @@
   <?php endif; ?>
 
 </div>
-<?php if (isset($page['menu_footer_one']) || isset($page['menu_footer_two'])): ?>
+<?php if (!empty($page['menu_footer_one']) || !empty($page['menu_footer_two'])): ?>
   <div class="menu-footer">
     <div class="container">
       <div class="row">

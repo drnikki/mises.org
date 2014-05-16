@@ -26,6 +26,7 @@ function mises_article_field_group_info() {
       0 => 'body',
       1 => 'field_tags',
       2 => 'title',
+      3 => 'field_topics',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

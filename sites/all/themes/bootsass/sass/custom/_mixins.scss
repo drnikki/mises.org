@@ -22,6 +22,7 @@
   display: block;
   width: $size;
   height: $size;
+  border-radius: 50%;
   content: '';
 }
 
@@ -30,6 +31,12 @@
   background-position: center center;
   background-size: $size;
   background-repeat: no-repeat;
+}
+@mixin icon-color($color) {
+  background-color: $color;
+}
+@mixin icon-border($border-width:3px) {
+  border: $border-width solid $white;
 }
 
 @mixin glyph-size($size) {

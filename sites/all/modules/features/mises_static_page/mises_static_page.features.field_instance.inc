@@ -16,6 +16,17 @@ function mises_static_page_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'block_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => 'block_teaser',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -31,13 +42,31 @@ function mises_static_page_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'conditions' => array(
-            0 => array(
-              'condition' => '',
-            ),
-          ),
+          'conditions' => array(),
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'list_teaser',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'sidebar_author' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => 'sidebar_vertical',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => 'sidebar_horizontal',
         ),
         'type' => 'image',
         'weight' => 0,
