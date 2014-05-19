@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Social Media Hub feature.
+ */
+
+include_once 'social_media_hub.features.inc';
