@@ -12,6 +12,21 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_image_collection|full';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_image_collection';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['field_collection_item|field_image_collection|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|course|sidebar_teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'course';
@@ -346,6 +361,22 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'page';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'body_with_media_embedded' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+        'conditions' => array(
+          0 => array(
+            'condition' => 'hide_if_empty',
+            'configuration' => array(
+              'target' => 'field_media_collection',
+            ),
+          ),
+        ),
+      ),
+    ),
     'text_resizer' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -394,6 +425,18 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-cl' => 'pull-left border-secondary slideshow',
           'ow-def-cl' => FALSE,
           'ow-at' => 'id="slideshow"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_media_collection' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pull-left border-secondary media',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="media"',
           'ow-def-at' => FALSE,
         ),
       ),
@@ -617,6 +660,46 @@ function display_suite_shared_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'body_with_media_embedded';
+  $ds_field->label = 'Body with Media Embedded';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'field_collection_item' => 'field_collection_item',
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+
+//print \'<pre>\';
+//print_r($entity);
+//print \'</pre>\';
+
+$display = array (\'type\' => \'field_collection_fields\', \'settings\'=>array(\'view_mode\' => \'full\'));
+$media = render(field_view_field(\'node\',$entity,\'field_media_collection\',\'full\'));
+$media_insert = $entity->field_insert_after[\'und\'][0][\'value\'] ? $entity->field_insert_after[\'und\'][0][\'value\'] : count($content_array) / 2;
+$content_array = explode("<p>", $entity->body[\'und\'][0][\'value\']);
+//$content_array_half_size = count($content_array) / 2;
+//array_splice($content_array, $content_array_half_size, 0, $media);
+array_splice($content_array, $media_insert, 0, $media);
+
+$final_content = implode("<p>", $content_array);
+
+print $final_content;
+
+//field_collection_fields
+
+//print_r($entity->field_media_collection);
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['body_with_media_embedded'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'contextual_block_title_with_icon';
   $ds_field->label = 'Contextual Block Title';
   $ds_field->field_type = 5;
@@ -787,6 +870,39 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
  */
 function display_suite_shared_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_image_collection|full';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_image_collection';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_reset';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_image',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_image_collection|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1063,16 +1179,20 @@ function display_suite_shared_ds_layout_settings_info() {
         0 => 'text_resizer',
         1 => 'field_image_collection',
         2 => 'title',
-        3 => 'body',
-        4 => 'field_media_collection',
+        3 => 'body_with_media_embedded',
+        4 => 'body',
+      ),
+      'ds_hidden' => array(
+        5 => 'field_media_collection',
       ),
     ),
     'fields' => array(
       'text_resizer' => 'ds_content',
       'field_image_collection' => 'ds_content',
       'title' => 'ds_content',
+      'body_with_media_embedded' => 'ds_content',
       'body' => 'ds_content',
-      'field_media_collection' => 'ds_content',
+      'field_media_collection' => 'ds_hidden',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -1393,6 +1513,15 @@ function display_suite_shared_ds_view_modes_info() {
     'taxonomy_term' => 'taxonomy_term',
   );
   $export['simple_teaser'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'slideshow';
+  $ds_view_mode->label = 'Slideshow';
+  $ds_view_mode->entities = array(
+    'field_collection_item' => 'field_collection_item',
+  );
+  $export['slideshow'] = $ds_view_mode;
 
   return $export;
 }
