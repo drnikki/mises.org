@@ -8973,46 +8973,45 @@ h1, .h1 {
   border-bottom: 0 none;
 }
 
-/* line 277, ../sass/custom/_styles.scss */
-h2 {
+/* line 278, ../sass/custom/_styles.scss */
+h2.page-title {
   color: #00426b;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
-}
-/* line 280, ../sass/custom/_styles.scss */
-h2.page-title {
   font-size: 32px;
   margin-top: 0;
 }
 /* line 284, ../sass/custom/_styles.scss */
 h2.teaser-title {
+  color: #00426b;
+  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
   font-size: 23px;
 }
 
-/* line 288, ../sass/custom/_styles.scss */
+/* line 290, ../sass/custom/_styles.scss */
 h4.author {
   font-size: 14px;
   margin-top: 0;
 }
 
-/* line 293, ../sass/custom/_styles.scss */
+/* line 295, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 297, ../sass/custom/_styles.scss */
+/* line 299, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 301, ../sass/custom/_styles.scss */
+/* line 303, ../sass/custom/_styles.scss */
 .read-more a {
   color: #788086;
   text-transform: uppercase;
   font-size: 13px;
 }
 
-/* line 306, ../sass/custom/_styles.scss */
+/* line 308, ../sass/custom/_styles.scss */
 .author a {
   color: inherit;
 }
@@ -9666,4 +9665,35 @@ span.glyphicon {
 /* line 343, ../sass/custom/_blocks.scss */
 .view-term-landing.view-display-id-columnist img {
   border: 3px solid #c8cdd0;
+}
+
+/*
+* Custom Styles for Special Features
+* 
+*/
+/* SLIDESHOW 
+*  Override flexslide styles
+*/
+/* line 9, ../sass/custom/_features.scss */
+.flexslider {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+/* line 15, ../sass/custom/_features.scss */
+.flexslider .flex-direction-nav a {
+  text-shadow: none;
+}
+/* line 17, ../sass/custom/_features.scss */
+.flexslider .flex-direction-nav a:before {
+  font-size: 30px;
+}
+
+/* line 23, ../sass/custom/_features.scss */
+#slideshow {
+  margin-right: 20px;
+  width: 240px;
 }
