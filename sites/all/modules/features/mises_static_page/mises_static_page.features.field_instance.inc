@@ -33,7 +33,18 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'image_link' => '',
-          'image_style' => 'list_teaser',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => 'slideshow',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -80,6 +91,18 @@ function mises_static_page_field_default_field_instances() {
           'image_style' => 'block_teaser',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'slideshow' => array(
+        'label' => 'hidden',
+        'module' => 'flexslider_fields',
+        'settings' => array(
+          'caption' => 0,
+          'conditions' => array(),
+          'image_style' => 'medium',
+          'optionset' => 'node_slideshow',
+        ),
+        'type' => 'flexslider',
         'weight' => 0,
       ),
     ),
@@ -334,12 +357,15 @@ function mises_static_page_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'field_collection',
+        'module' => 'flexslider_field_collection',
         'settings' => array(
           'conditions' => array(),
+          'optionset' => 'node_slideshow',
+          'thumbnail_image_field' => '',
+          'thumbnail_image_style' => '',
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_fields',
+        'type' => 'field_collection_entity_flexslider',
         'weight' => 1,
       ),
       'teaser' => array(
