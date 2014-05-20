@@ -17,7 +17,6 @@ dependencies[] = mises_library_item
 dependencies[] = options
 dependencies[] = strongarm
 dependencies[] = text
-features[context][] = events
 features[ctools][] = context:context:3
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
