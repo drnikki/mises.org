@@ -23,7 +23,7 @@ function mises_theme_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -42,6 +42,9 @@ function mises_theme_strongarm() {
       ),
       'simple_teaser' => array(
         'custom_settings' => FALSE,
+      ),
+      'slideshow' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
