@@ -94,6 +94,36 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|event|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'event';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'dynamic_field_1' => array(
+      'weight' => '11',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:16:"Event Disclaimer";s:5:"title";s:0:"";s:4:"body";s:381:"<p><strong>Publicity Waiver:</strong> Registering for this event gives the Mises Institute permission to take photos of attendees and use the photos for fundraising purposes. By this authorization, attendees understand and agree that no participant shall receive renumeration and that all rights, title and interest to the photos and use of them belongs to the Mises Institute.</p>";s:6:"format";s:10:"simplified";s:10:"substitute";i:0;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
+        'load_terms' => 0,
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'disclaimer italic',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['node|event|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|flex_block|sidebar_teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'flex_block';
@@ -873,6 +903,63 @@ function display_suite_shared_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['node|course|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|event|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'event';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_event_date',
+        1 => 'field_description',
+        2 => 'field_live_feed',
+        3 => 'field_award_type',
+        4 => 'field_event_type',
+        5 => 'field_registration_link',
+        6 => 'field_topics',
+        7 => 'field_austrian_school',
+        8 => 'field_level',
+        9 => 'field_audience',
+        10 => 'field_registration_link_external',
+        11 => 'dynamic_field_1',
+      ),
+    ),
+    'fields' => array(
+      'field_event_date' => 'ds_content',
+      'field_description' => 'ds_content',
+      'field_live_feed' => 'ds_content',
+      'field_award_type' => 'ds_content',
+      'field_event_type' => 'ds_content',
+      'field_registration_link' => 'ds_content',
+      'field_topics' => 'ds_content',
+      'field_austrian_school' => 'ds_content',
+      'field_level' => 'ds_content',
+      'field_audience' => 'ds_content',
+      'field_registration_link_external' => 'ds_content',
+      'dynamic_field_1' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|event|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
