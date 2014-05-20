@@ -7,6 +7,7 @@ dependencies[] = block
 dependencies[] = context
 dependencies[] = context_ui
 dependencies[] = ctools
+dependencies[] = easy_breadcrumb
 dependencies[] = footer_right
 dependencies[] = menu
 dependencies[] = navbar_support_mises
