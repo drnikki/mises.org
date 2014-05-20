@@ -79,6 +79,7 @@ function mises_static_page_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_media_collection',
+      1 => 'field_insert_after',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
