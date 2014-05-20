@@ -1,0 +1,15 @@
+name = FlexSlider Field Collection
+description = Adds a FlexSlider field formatter for Field Collection fields
+core = 7.x
+package = FlexSlider
+
+dependencies[] = ctools
+dependencies[] = flexslider
+dependencies[] = field_collection
+
+; Information added by drupal.org packaging script on 2013-10-17
+version = "7.x-1.0"
+core = "7.x"
+project = "flexslider_field_collection"
+datestamp = "1382024624"
+
