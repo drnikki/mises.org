@@ -1,0 +1,194 @@
+<?php
+/**
+ * @file
+ * Provides a Flex Slider formatter for Field Collection fields.
+ */
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function flexslider_field_collection_field_formatter_info() {
+  return array(
+    'field_collection_entity_flexslider' => array(
+      'label' => t('FlexSlider'),
+      'description' => t('Displays the rendered entities in a FlexSlider.'),
+      'field types' => array('field_collection'),
+      'settings' => array(
+        'optionset' => '',
+        'view_mode' => '',
+        'thumbnail_image_field' => '',
+        'thumbnail_image_style' => '',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function flexslider_field_collection_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $form = array();
+
+  // Creates a select list for the Flex Slider option set.
+  $optionsets = array();
+  ctools_include('export');
+  foreach (flexslider_optionset_load_all() as $name => $optionset) {
+    $optionsets[$name] = $optionset->title;
+  }
+  $form['optionset'] = array(
+    '#title' => t('Option set'),
+    '#type' => 'select',
+    '#options' => $optionsets,
+    '#default_value' => $settings['optionset'],
+  );
+
+  // Creates a select list for the slide view modes.
+  $entity_info = entity_get_info('field_collection_item');
+  $options = array();
+  if (!empty($entity_info['view modes'])) {
+    foreach ($entity_info['view modes'] as $view_mode => $view_mode_settings) {
+      $options[$view_mode] = $view_mode_settings['label'];
+    }
+  }
+  if (count($options) > 1) {
+    $form['view_mode'] = array(
+      '#type' => 'select',
+      '#options' => $options,
+      '#title' => t('Slide view mode'),
+      '#default_value' => $settings['view_mode'],
+    );
+  }
+
+  $form['thumbnail_image_field'] = array(
+    '#title' => t('Thumbnail image field'),
+    '#type' => 'select',
+    '#empty_option' => t('None'),
+    '#options' => _flexslider_field_collection_get_fields(array('image', 'imagefield_crop'), $field['type'], $field['field_name']),
+    '#default_value' => $settings['thumbnail_image_field'],
+  );
+
+  $form['thumbnail_image_style'] = array(
+    '#title' => t('Thumbnail image style'),
+    '#type' => 'select',
+    '#empty_option'   => t('None (original image)'),
+    '#options' => image_style_options(FALSE),
+    '#default_value' => $settings['thumbnail_image_style'],
+    '#states' => array(
+      'invisible' => array(
+        ':input[name$="[settings_edit_form][settings][thumbnail_image_field]"]' => array('value' => ''),
+      ),
+    ),
+  );
+
+  return $form;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function flexslider_field_collection_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $summary = array();
+
+  // Load the Flex Slider option set.
+  ctools_include('export');
+  if (!empty($settings['optionset'])) {
+    $optionset = flexslider_optionset_load($settings['optionset']);
+  }
+
+  // Build the settings summary.
+  $optionset = isset($optionset) ? $optionset->title : t('Default settings');
+  $summary[] = t('Option set: %optionset', array('%optionset' => $optionset));
+
+  $entity_info = entity_get_info('field_collection_item');
+  $summary[] = t('Slides rendered as @mode', array('@mode' => isset($entity_info['view modes'][$settings['view_mode']]['label']) ? $entity_info['view modes'][$settings['view_mode']]['label'] : $settings['view_mode']));
+
+  if (isset($settings['thumbnail_image_field']) && $settings['thumbnail_image_field'] != '') {
+    $summary[] = t('Thumbnail image field: @thumbnail_image_field', array('@thumbnail_image_field' => $settings['thumbnail_image_field']));
+
+    $image_styles = image_style_options(FALSE);
+    // Unset possible 'No defined styles' option.
+    unset($image_styles['']);
+    // Styles could be lost because of enabled/disabled modules that defines
+    // their styles in code.
+    if (isset($image_styles[$settings['thumbnail_image_style']])) {
+      $summary[] = t('Thumbnail image style: @style', array('@style' => $image_styles[$settings['thumbnail_image_style']]));
+    }
+    else {
+      $summary[] = t('Thumbnail image style: None (original image)');
+    }
+  }
+
+  return implode('<br />', $summary);
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function flexslider_field_collection_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $settings = $display['settings'];
+  $result = array();
+
+  switch ($display['type']) {
+    case 'field_collection_entity_flexslider':
+      $view_mode = !empty($display['settings']['view_mode']) ? $display['settings']['view_mode'] : 'full';
+      foreach ($items as $delta => $item) {
+        if ($field_collection = field_collection_field_get_entity($item)) {
+          $result[$delta] = array(
+            'slide' => drupal_render($field_collection->view($view_mode)),
+            'thumb' => '',
+          );
+          if ($settings['thumbnail_image_field'] !== '') {
+            $field_collection = (array) $field_collection;
+            $image_field = $field_collection[$settings['thumbnail_image_field']];
+            $thumbnail_uri = $field_collection[$settings['thumbnail_image_field']][$langcode][0]['uri'];
+            if (!empty($settings['thumbnail_image_style'])) {
+              $result[$delta]['thumb'] = image_style_url($settings['thumbnail_image_style'], $thumbnail_uri);
+            }
+            else {
+              $result[$delta]['thumb'] = file_create_url($image_field[LANGUAGE_NONE][0]['uri']);
+            }
+          }
+        }
+      }
+      break;
+  }
+
+  $element = array();
+  if (count($result) > 0) {
+    $element[] = array(
+      '#theme' => 'flexslider',
+      '#items' => $result,
+      '#settings' => $display['settings'],
+    );
+  }
+  return $element;
+}
+
+/**
+ * Gets a list of fields in the Field Collection.
+ */
+function _flexslider_field_collection_get_fields($field_types, $entity_type, $field_name = '') {
+  $links = array();
+  $fields = field_info_fields();
+
+  if ($entity_type == 'field_collection') {
+    $bundle = 'field_collection_item';
+    $bundle_instance = $field_name;
+    $entity_label = t('Field Collection field:');
+  }
+
+  foreach ($fields as $name => $field) {
+    if (!empty($bundle) && in_array($bundle, array_keys($field['bundles'])) && in_array($bundle_instance, $field['bundles'][$bundle]) && in_array($field['type'], $field_types)) {
+      $infos = field_info_instance($bundle, $name, $bundle_instance);
+      $links[$name] = $entity_label . ' ' . $infos['label'];
+    }
+  }
+
+  return $links;
+}
