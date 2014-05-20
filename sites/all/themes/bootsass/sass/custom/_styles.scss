@@ -275,13 +275,15 @@ h1, .h1 {
   border-bottom: 0 none;
 }
 h2 {
-  color: $brand-primary;
-  font-family: $font-family-serif;
   &.page-title {
+    color: $brand-primary;
+    font-family: $font-family-serif;
     font-size: $font-size-h2;
     margin-top: 0;
   }
   &.teaser-title {
+    color: $brand-primary;
+    font-family: $font-family-serif;
     font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
   }
 }
