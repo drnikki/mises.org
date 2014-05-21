@@ -1,0 +1,175 @@
+<?php
+/**
+ * Implements hook_permission().
+ */
+function mises_popular_content_permission() {
+  return array(
+    'administer mises popular content' => array(
+      'title' => t('Administer Mises Popular Content'),
+      'description' => t('Configure how Drupal periodically fetches popular content from Google\'s Analytics API ') .
+        t('as well as how that data is displayed in an associated block.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * Provides a configuration page for the google stats fetcher as well as the popular content block output.
+ */
+function mises_popular_content_menu() {
+  $items['admin/config/mises-popular-content'] = array(
+    'title' => 'Popular Content',
+    'description' => 'Manage and test integration between Drupal and Google for fetching popular content ' .
+      'as well as what data is queried and how often.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_mises_popular_content_form'),
+    'access arguments' => array('administer mises popular content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Defines the configuration form containing:
+ * - Google access credentials
+ * - How popular content is fetched
+ * 
+ * This form also provides a button for running a test fetch.
+ */
+function _mises_popular_content_form() {
+  // Define fields for Google Analytics access credentials:
+  $form['google_auth'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Google Analytics Authentication'),
+  );
+  $form['google_auth']['analytics_username'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Analytics Username'),
+    '#required' => TRUE,
+    '#description' => t('This is the account associated with Google Analytics for this site. ') .
+      t('It is probably an email address and may end with "@gmail.com".'),
+    '#default_value' => variable_get('mises_popular_content_analytics_username', ''),
+  );
+  $form['google_auth']['analytics_password'] = array(
+    '#type' => 'password',
+    '#title' => t('Analytics Password'),
+    '#required' => TRUE,
+    '#default_value' => variable_get('mises_popular_content_analytics_password', ''),
+  );
+  $form['google_auth']['analytics_profile_id'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Analytics Profile ID'),
+    '#required' => TRUE,
+    '#description' => t('To find this value, log in to Analytics, browse to this website\'s section. ') .
+      t('The Profile ID is located after the "p" in the URL.') .
+      t('Please note that this is not the Tracking ID found within the analytics JavaScript snippet.'),
+    '#default_value' => variable_get('mises_popular_content_analytics_profile_id', ''),
+  );
+
+  // Define fields for describing what will be fetched from Google Analytics and how often:
+  $form['analytics_fetch'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Analytics Fetch Settings'),
+  );
+  $form['analytics_fetch']['analytics_timespan_days'] = array(
+    '#type' => 'select',
+    '#title' => t('Timespan'),
+    '#required' => TRUE,
+    '#description' =>
+      t('How long ago, at most, can a page view have been tracked by Google Analytics for it to be counted toward the list of most popular content?'),
+    '#options' => array(
+      '1' => '1 day',
+      '2' => '2 days',
+      '3' => '3 days',
+      '4' => '4 days',
+      '5' => '5 days',
+      '7' => '1 week',
+      '14' => '2 weeks',
+      '21' => '3 weeks',
+      '30' => '1 month',
+      '60' => '2 months',
+      '91' => '3 months',
+      '182' => '6 months',
+      '365' => '1 year',
+      '730' => '2 years',
+    ),
+    '#default_value' => variable_get('mises_popular_content_analytics_timespan_days', 30),
+  );
+  $form['analytics_fetch']['analytics_fetch_frequency_hours'] = array(
+    '#type' => 'select',
+    '#title' => t('Frequency'),
+    '#required' => TRUE,
+    '#description' => t('How often should Drupal request an updated list of the most popular content from Google Analytics? ') .
+      t('Please note that queries to Google are done when Drupal\'s "cron" process is triggered. ') .
+      t('Due to this, the frequency will not be any more frequent that the frequency of cron.'),
+    '#options' => array(
+      '1' => 'Hourly',
+      '3' => 'Every 3 hours',
+      '6' => 'Every 6 hours',
+      '8' => 'Every 8 hours',
+      '12' => 'Every 12 hours',
+      '24' => 'Daily',
+      '48' => 'Every 2 days',
+      '72' => 'Every 3 days',
+      '96' => 'Every 4 days',
+      '168' => 'Weekly',
+    ),
+    '#default_value' => variable_get('mises_popular_content_analytics_frequency_hours', 24),
+  );
+  $form['analytics_fetch']['analytics_fetch_max_results'] = array(
+    '#type' => 'select',
+    '#title' => t('Maximum Query Results'),
+    '#required' => TRUE,
+    '#description' => t('At most, how many "most popular" results should be requested from Google? ') .
+      t('This number should be more than the number of items to be displayed in the Popular Content block. ') .
+      t('This is because the Popular Content block will only display nodes whereas Google Analytics tracks more than just node pages. ') .
+      t('Padding this number will ensure enough results are available to reach the block\'s maximum number of items.') .
+    '#options' => array(
+      '5' => '5 results',
+      '10' => '10 results',
+      '15' => '15 results',
+      '20' => '20 results',
+      '25' => '25 results',
+      '30' => '30 results',
+      '35' => '35 results',
+      '40' => '40 results',
+    ),
+    '#default_value' => variable_get('mises_popular_content_analytics_max_results', 15),
+  );
+
+  // Define fields related to how the Popular Content block is presented:
+  $form['block_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Popular Content Block Settings'),
+  );
+  $form['block_settings']['block_max_items'] = array(
+    '#type' => 'select',
+    '#title' => t('Maximum Block Items'),
+    '#required' => TRUE,
+    '#description' => t('How many items should be displayed in the "Popular Content" block? ') .
+      t('After Google is queried for the first time, this block will display a list of popular nodes, with the most popular item at the top.'),
+    '#options' => array(
+      '1' => '1 item',
+      '2' => '2 items',
+      '3' => '3 items',
+      '4' => '4 items',
+      '5' => '5 items',
+      '6' => '6 items',
+      '7' => '7 items',
+      '8' => '8 items',
+      '9' => '9 items',
+      '10' => '10 items',
+    ),
+    '#default_value' => variable_get('mises_popular_content_block_max_items', 3),
+  );
+  $form['save_configuration'] = array(
+    '#type' => 'submit',
+    '#value' => 'Save configuration',
+  );
+  $form['manual_fetch'] = array(
+    '#type' => 'submit',
+    '#value' => 'Manually trigger popular content fetch',
+  );
+  return $form;
+}

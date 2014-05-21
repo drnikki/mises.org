@@ -1,0 +1,7 @@
+name = Mises Popular Content 
+description = Periodically fetches most frequently visited content from Google's Analytics API and provides the output in a block.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0
+project = mises_popular_content
+files[] = includes/gapi.class 
