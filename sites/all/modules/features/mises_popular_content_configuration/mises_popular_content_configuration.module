@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Popular Content feature.
+ */
+
+include_once 'mises_popular_content_configuration.features.inc';

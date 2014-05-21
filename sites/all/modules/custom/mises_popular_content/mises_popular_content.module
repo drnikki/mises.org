@@ -38,6 +38,11 @@ function mises_popular_content_menu() {
  * This form also provides a button for running a test fetch.
  */
 function _mises_popular_content_form() {
+  $form['manual_fetch'] = array(
+    '#type' => 'submit',
+    '#value' => 'Manually trigger popular content fetch',
+  );
+
   // Define fields for Google Analytics access credentials:
   $form['google_auth'] = array(
     '#type' => 'fieldset',
@@ -54,15 +59,15 @@ function _mises_popular_content_form() {
   $form['google_auth']['analytics_password'] = array(
     '#type' => 'password',
     '#title' => t('Analytics Password'),
-    '#required' => TRUE,
-    '#default_value' => variable_get('mises_popular_content_analytics_password', ''),
+    '#required' => FALSE,
+    '#description' => (variable_get('mises_popular_content_analytics_password', '') != '' ? t('A password has been set.  Update this field to change it.') : ''),
   );
   $form['google_auth']['analytics_profile_id'] = array(
     '#type' => 'textfield',
     '#title' => t('Analytics Profile ID'),
     '#required' => TRUE,
     '#description' => t('To find this value, log in to Analytics, browse to this website\'s section. ') .
-      t('The Profile ID is located after the "p" in the URL.') .
+      t('The Profile ID is located after the "p" in the URL. ') .
       t('Please note that this is not the Tracking ID found within the analytics JavaScript snippet.'),
     '#default_value' => variable_get('mises_popular_content_analytics_profile_id', ''),
   );
@@ -115,7 +120,7 @@ function _mises_popular_content_form() {
       '96' => 'Every 4 days',
       '168' => 'Weekly',
     ),
-    '#default_value' => variable_get('mises_popular_content_analytics_frequency_hours', 24),
+    '#default_value' => variable_get('mises_popular_content_analytics_frequency_hours', 12),
   );
   $form['analytics_fetch']['analytics_fetch_max_results'] = array(
     '#type' => 'select',
@@ -124,7 +129,7 @@ function _mises_popular_content_form() {
     '#description' => t('At most, how many "most popular" results should be requested from Google? ') .
       t('This number should be more than the number of items to be displayed in the Popular Content block. ') .
       t('This is because the Popular Content block will only display nodes whereas Google Analytics tracks more than just node pages. ') .
-      t('Padding this number will ensure enough results are available to reach the block\'s maximum number of items.') .
+      t('Padding this number will ensure enough results are available to reach the block\'s maximum number of items.'),
     '#options' => array(
       '5' => '5 results',
       '10' => '10 results',
@@ -134,14 +139,32 @@ function _mises_popular_content_form() {
       '30' => '30 results',
       '35' => '35 results',
       '40' => '40 results',
+      '50' => '50 results',
+      '75' => '75 results',
+      '100' => '100 results',
+      '150' => '150 results',
+      '200' => '200 results',
+      '250' => '250 results',
     ),
-    '#default_value' => variable_get('mises_popular_content_analytics_max_results', 15),
+    '#default_value' => variable_get('mises_popular_content_analytics_max_results', 30),
   );
 
-  // Define fields related to how the Popular Content block is presented:
+  // Define fields related to how the Popular Content block is prepared and presented:
   $form['block_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Popular Content Block Settings'),
+  );
+  $node_types_query = db_query("SELECT DISTINCT type FROM node ORDER BY type");
+  $types = array();
+  foreach ($node_types_query as $result) {
+    $types[$result->type] = str_replace('_', ' ', ucwords($result->type));
+  }
+  $form['block_settings']['block_content_types'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Content Types to Display'),
+    '#options' => $types,
+    '#required' => TRUE,
+    '#default_value' => variable_get('mises_popular_content_block_content_types', array()),
   );
   $form['block_settings']['block_max_items'] = array(
     '#type' => 'select',
@@ -163,13 +186,212 @@ function _mises_popular_content_form() {
     ),
     '#default_value' => variable_get('mises_popular_content_block_max_items', 3),
   );
+
+  $entity_info = entity_get_info('node');
+  $view_modes = array();
+  foreach ($entity_info['view modes'] as $view_mode_name => $view_mode_data) {
+    $view_modes[$view_mode_name] = $view_mode_data['label'];
+  }
+  $form['block_settings']['block_node_view_mode'] = array(
+    '#type' => 'select',
+    '#title' => t('Block Item Node View Mode'),
+    '#required' => TRUE,
+    '#description' => t('What node view mode should be used for block items?'),
+    '#options' => $view_modes,
+    '#default_value' => variable_get('mises_popular_content_block_view_mode', 'teaser'),
+  );
   $form['save_configuration'] = array(
     '#type' => 'submit',
     '#value' => 'Save configuration',
   );
-  $form['manual_fetch'] = array(
-    '#type' => 'submit',
-    '#value' => 'Manually trigger popular content fetch',
-  );
   return $form;
+}
+
+/**
+ * Handles form submission of the Popular Content settings page.
+ *
+ * There are two expected operations:
+ * - Saving configuration
+ * - Triggering a manual query to Drupal for popular content data.
+ */
+function _mises_popular_content_form_submit($form, &$form_state) {
+  switch ($form_state['values']['op']) {
+    case 'Save configuration':
+      $form_field_var_map = array(
+        'analytics_username' => 'mises_popular_content_analytics_username',
+        'analytics_password' => 'mises_popular_content_analytics_password',
+        'analytics_profile_id' => 'mises_popular_content_analytics_profile_id',
+        'analytics_timespan_days' => 'mises_popular_content_analytics_timespan_days',
+        'analytics_fetch_frequency_hours' => 'mises_popular_content_analytics_frequency_hours',
+        'analytics_fetch_max_results' => 'mises_popular_content_analytics_max_results',
+        'block_max_items' => 'mises_popular_content_block_max_items',
+        'block_node_view_mode' => 'mises_popular_content_block_view_mode',
+        'block_content_types' => 'mises_popular_content_block_content_types',
+      );
+      foreach ($form_field_var_map as $field_name => $variable_name) {
+        if (!empty($form_state['values'][$field_name])) {
+          variable_set($variable_name, $form_state['values'][$field_name]);
+        }
+      }
+      break;
+    case 'Manually trigger popular content fetch':
+      drupal_set_message('Attempting popular content query to Google...');
+      $results = _mises_popular_content_query_google_analytics();
+      if ($results === FALSE) {
+        drupal_set_message('Query attempt failed.  Please ensure the username, password, and profile ID values are populated and are correct.', 'error');
+      } else if (is_array($results) && empty($results)) {
+        drupal_set_message('No results were returned for your query.  This may be due to the content types selected, or not selected.', 'error');
+      } else {
+        variable_set('mises_popular_content_results', $results);
+        variable_set('mises_popular_content_results_timestamp', time());
+        drupal_set_message('Google Analytics "Most Popular" query results ([number of hits] => node ID):<pre>' . print_r($results, 1) . '</pre>');
+      }
+      break;
+  }
+}
+
+/**
+ * Sends a query to Google for a list of pages with the most hits, ordered by number of hits descending:
+ */
+function _mises_popular_content_query_google_analytics() {
+  module_load_include('inc', 'mises_popular_content', 'includes/gapi.class.php');
+  $ga_username = variable_get('mises_popular_content_analytics_username', '');
+  $ga_password = variable_get('mises_popular_content_analytics_password', '');
+  $ga_profile_id = variable_get('mises_popular_content_analytics_profile_id', '');
+
+  // Abort if authentication options are not populated:
+  if (!$ga_username || !$ga_password || !$ga_profile_id) {
+    watchdog('mises_popular_content', 'Drupal -> Google query for popular content failed due to missing analytics username, password, or profile ID', array(), WATCHDOG_ERROR);
+    return FALSE;
+  }
+  $dimensions = array('pagePath');
+  $metrics = array('uniquePageviews');
+  $sort = '-uniquePageviews';
+  $from_day_count = variable_get('mises_popular_content_analytics_timespan_days', 30);
+  $from_date = date('Y-m-d', strtotime('-' . $from_day_count . ' days'));
+  $to_date = date('Y-m-d');
+  $max_results = variable_get('mises_popular_content_analytics_max_results', 25);
+
+  $ga = new gapi($ga_username, $ga_password);
+  $results = $ga->requestReportData($ga_profile_id, $dimensions, $metrics, $sort, null, $from_date, $to_date, 1, $max_results);
+
+  // drupal_set_message('<pre>' . print_r($results, 1) . '</pre>'); 
+
+  // Process results, such that only published nodes of the type or types defined in settings:
+  $content_types_to_display = variable_get('mises_popular_content_block_content_types', array()); 
+  
+  $processed_results = array();
+  foreach ($results as $gaiReportEntity) {
+    $path = $gaiReportEntity->getDimesions();
+    $hits = $gaiReportEntity->getMetrics();
+    if (isset($hits['uniquePageviews'])) {
+      $hits = $hits['uniquePageviews'];
+    }
+    if (isset($path['pagePath'])) {
+      // Remove the leading slash:
+      $path = substr($path['pagePath'], 1);
+    }
+    // Skip the front page:
+    if ($path == '/') {
+      continue;
+    }
+
+    $path = drupal_lookup_path("source", $path);
+    $node = menu_get_object("node", 1, $path);
+    if (isset($node->nid) && $node->status == 1 && isset($content_types_to_display[$node->type]) && $content_types_to_display[$node->type] == $node->type) {
+      $processed_results[$hits] = $node->nid;
+    }
+  }
+  
+  watchdog(
+    'mises_popular_content',
+    'Drupal -> Google query for popular content returned %results, with %processed_results.', 
+    array(
+      '%results' => format_plural(count($results), '1 result', '@count results'),
+      '%processed_results' => format_plural(count($processed_results), '1 being a published node', '@count being published nodes'),
+    ), 
+    WATCHDOG_INFO
+  );
+
+  // Clear the block's cache since, potentially, its data has now changed:
+  variable_del('mises_popular_content_results_block_cache');
+
+  return $processed_results;
+}
+
+/**
+ * Implements hook_block_info().
+ *
+ * Defines the Popular Content block.
+ */
+function mises_popular_content_block_info() {
+  $blocks = array();
+  $blocks['mises_most_popular'] = array(
+    'info' => t('Popular Content'),
+  );
+ 
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * Defines the Popular Content block's view data.
+ */
+function mises_popular_content_block_view($delta = '') {
+  $block = array();
+  $content = variable_get('mises_popular_content_results_block_cache', '');
+  if (!$content) {
+     $content = _mises_popular_content_block_output();
+     variable_set('mises_popular_content_results_block_cache', $content);
+  }
+  switch ($delta) {
+    case 'mises_most_popular':
+      $block['subject'] = '';
+      $block['content'] = _mises_popular_content_block_output();
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Defines output for the Popular Content block's view data.
+ */
+function _mises_popular_content_block_output() {
+  $output = '';
+  $results = variable_get('mises_popular_content_results', array());
+  if (empty($results)) {
+    return;
+  } 
+  $count = 0;
+  $max_block_items = variable_get('mises_popular_content_block_max_items', 3);
+  foreach ($results as $nid) {
+    $node = node_load($nid);
+    $view_mode = variable_get('mises_popular_content_block_view_mode', 'teaser');
+    $output .= '<div class="mises-popular-item">' . drupal_render(node_view($node, $view_mode)) . '</div>';
+    $count++;
+    if ($count == $max_block_items) {
+      break;
+    }
+  }
+  return $output;
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * Automatically fetch data based on the frequency value defined on this module's settings page:
+ */
+function mises_popular_content_cron() {
+  $frequency_in_seconds = 60 * 60 * variable_get('mises_popular_content_analytics_frequency_hours', 24);
+  $last_attempt = variable_get('mises_popular_content_results_timestamp', 0);
+  $seconds_since_last_attempt = time() - $last_attempt;
+
+  if ($seconds_since_last_attempt > $frequency_in_seconds) {
+    variable_set('mises_popular_content_results_timestamp', time());
+    $results = _mises_popular_content_query_google_analytics();
+    if (is_array($results) && !empty($results)) {
+      variable_set('mises_popular_content_results', $results);
+    }
+  }
 }

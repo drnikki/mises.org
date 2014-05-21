@@ -4,4 +4,4 @@ core = 7.x
 package = Mises Custom
 version = 7.x-1.0
 project = mises_popular_content
-files[] = includes/gapi.class 
+files[] = includes/gapi.class.php
