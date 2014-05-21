@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Search 404 feature.
+ */
+
+include_once 'search_404.features.inc';

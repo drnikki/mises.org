@@ -1,0 +1,26 @@
+/*
+* Custom Styles for Special Features
+* 
+*/
+
+/* SLIDESHOW 
+*  Override flexslide styles
+*/
+.flexslider {
+  @include box-shadow(none);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  .flex-direction-nav a {
+    text-shadow: none;
+    &:before {
+      font-size: 30px;
+    }
+  }
+
+}
+#slideshow, #media {
+  margin-right: $grid-gutter-width;
+  width: 240px; // @TDOO: Check width
+}

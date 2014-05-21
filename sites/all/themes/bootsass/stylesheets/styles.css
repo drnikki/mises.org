@@ -4009,28 +4009,28 @@ select[multiple].input-lg,
 }
 
 /* line 60, ../sass/bootstrap/_buttons.scss */
-.btn-primary {
+.btn-primary, #text-resizer .active {
   color: white;
   background-color: #00426b;
   border-color: #003252;
 }
 /* line 15, ../sass/bootstrap/mixins/_buttons.scss */
-.btn-primary:hover.dropdown-toggle, .btn-primary:focus.dropdown-toggle, .btn-primary:active.dropdown-toggle, .btn-primary.active.dropdown-toggle, .open .btn-primary.dropdown-toggle {
+.btn-primary:hover.dropdown-toggle, #text-resizer .active:hover.dropdown-toggle, .btn-primary:focus.dropdown-toggle, #text-resizer .active:focus.dropdown-toggle, .btn-primary:active.dropdown-toggle, #text-resizer .active:active.dropdown-toggle, .btn-primary.active.dropdown-toggle, #text-resizer .active.dropdown-toggle, .open .btn-primary.dropdown-toggle, .open #text-resizer .dropdown-toggle.active, #text-resizer .open .dropdown-toggle.active {
   color: white;
   background-color: #002338;
   border-color: #000d14;
 }
 /* line 22, ../sass/bootstrap/mixins/_buttons.scss */
-.btn-primary:active.dropdown-toggle, .btn-primary.active.dropdown-toggle, .open .btn-primary.dropdown-toggle {
+.btn-primary:active.dropdown-toggle, #text-resizer .active:active.dropdown-toggle, .btn-primary.active.dropdown-toggle, #text-resizer .active.dropdown-toggle, .open .btn-primary.dropdown-toggle, .open #text-resizer .dropdown-toggle.active, #text-resizer .open .dropdown-toggle.active {
   background-image: none;
 }
 /* line 32, ../sass/bootstrap/mixins/_buttons.scss */
-.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
+.btn-primary.disabled, #text-resizer .disabled.active, .btn-primary.disabled:hover, #text-resizer .disabled.active:hover, .btn-primary.disabled:focus, #text-resizer .disabled.active:focus, .btn-primary.disabled:active, #text-resizer .disabled.active:active, .btn-primary.disabled.active, #text-resizer .disabled.active, .btn-primary[disabled], #text-resizer [disabled].active, .btn-primary[disabled]:hover, #text-resizer [disabled].active:hover, .btn-primary[disabled]:focus, #text-resizer [disabled].active:focus, .btn-primary[disabled]:active, #text-resizer [disabled].active:active, .btn-primary[disabled].active, #text-resizer [disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] #text-resizer .active, #text-resizer fieldset[disabled] .active, fieldset[disabled] .btn-primary:hover, fieldset[disabled] #text-resizer .active:hover, #text-resizer fieldset[disabled] .active:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] #text-resizer .active:focus, #text-resizer fieldset[disabled] .active:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] #text-resizer .active:active, #text-resizer fieldset[disabled] .active:active, fieldset[disabled] .btn-primary.active, fieldset[disabled] #text-resizer .active, #text-resizer fieldset[disabled] .active {
   background-color: #00426b;
   border-color: #003252;
 }
 /* line 38, ../sass/bootstrap/mixins/_buttons.scss */
-.btn-primary .badge {
+.btn-primary .badge, #text-resizer .active .badge {
   color: #00426b;
   background-color: white;
 }
@@ -8909,7 +8909,7 @@ body {
 /* line 218, ../sass/custom/_styles.scss */
 .main-content {
   position: relative;
-  padding: 6px 24px;
+  padding: 6px 24px 24px;
   border-top: 7px solid #5b8ab5;
   background: white;
 }
@@ -8923,8 +8923,25 @@ body {
   height: 77px;
   content: url("../images/shield.png");
 }
+/* line 233, ../sass/custom/_styles.scss */
+.front .main-content {
+  padding: 6px 24px;
+}
+/* line 237, ../sass/custom/_styles.scss */
+.main-content .body-content.normal {
+  font-size: 15px;
+}
+/* line 240, ../sass/custom/_styles.scss */
+.main-content .body-content.large {
+  font-size: 18px;
+}
 
-/* line 236, ../sass/custom/_styles.scss */
+/* line 246, ../sass/custom/_styles.scss */
+#text-resizer .large {
+  font-size: 18px;
+}
+
+/* line 254, ../sass/custom/_styles.scss */
 .content-bottom {
   padding-top: 16px;
 }
@@ -8932,17 +8949,17 @@ body {
 /* FONTS AND TYPOGRAPHY 
 * @TODO: CONSIDER SEPARATE STYLESHEET
 */
-/* line 243, ../sass/custom/_styles.scss */
+/* line 261, ../sass/custom/_styles.scss */
 .bold {
   font-weight: 600;
 }
 
-/* line 246, ../sass/custom/_styles.scss */
+/* line 264, ../sass/custom/_styles.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 249, ../sass/custom/_styles.scss */
+/* line 267, ../sass/custom/_styles.scss */
 h1, .h1 {
   color: #00426b;
   text-transform: uppercase;
@@ -8950,41 +8967,53 @@ h1, .h1 {
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 255, ../sass/custom/_styles.scss */
+/* line 273, ../sass/custom/_styles.scss */
 .page-header {
   padding-left: 100px;
   border-bottom: 0 none;
 }
 
-/* line 259, ../sass/custom/_styles.scss */
+/* line 278, ../sass/custom/_styles.scss */
+h2.page-title {
+  color: #00426b;
+  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+  font-size: 32px;
+  margin-top: 0;
+}
+/* line 284, ../sass/custom/_styles.scss */
 h2.teaser-title {
   color: #00426b;
-  font-size: 23px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+  font-size: 23px;
 }
 
-/* line 264, ../sass/custom/_styles.scss */
+/* line 290, ../sass/custom/_styles.scss */
 h4.author {
   font-size: 14px;
   margin-top: 0;
 }
 
-/* line 269, ../sass/custom/_styles.scss */
+/* line 295, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 273, ../sass/custom/_styles.scss */
+/* line 299, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 277, ../sass/custom/_styles.scss */
+/* line 303, ../sass/custom/_styles.scss */
 .read-more a {
   color: #788086;
   text-transform: uppercase;
   font-size: 13px;
+}
+
+/* line 308, ../sass/custom/_styles.scss */
+.author a {
+  color: inherit;
 }
 
 /*
@@ -9096,11 +9125,15 @@ address {
   content: "\2022";
 }
 /* line 99, ../sass/custom/_landing.scss */
+.landing-list .group-date-author span.author a {
+  color: #00426b;
+}
+/* line 102, ../sass/custom/_landing.scss */
 .landing-list .group-date-author span.author div, .landing-list .group-date-author span.author p {
   display: inline;
   color: #00426b;
 }
-/* line 106, ../sass/custom/_landing.scss */
+/* line 109, ../sass/custom/_landing.scss */
 .landing-list .view-footer span.glyphicon {
   width: 22px;
   height: 22px;
@@ -9109,35 +9142,35 @@ address {
   line-height: 22px;
 }
 
-/* line 112, ../sass/custom/_landing.scss */
-.todays-article .views-row {
+/* line 116, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 {
   padding: 0;
   border-bottom: 0 none;
   background-color: #e4ebee;
 }
-/* line 117, ../sass/custom/_landing.scss */
-.todays-article .image {
+/* line 121, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 .group-right:before {
+  display: block;
+  content: "Today's Article";
+}
+/* line 126, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 .image {
   margin-top: 0;
 }
-/* line 120, ../sass/custom/_landing.scss */
-.todays-article .tags {
+/* line 129, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 .tags {
   margin-top: 0;
   padding: 10px;
   background-color: #5b8ab5;
   color: white;
 }
-/* line 125, ../sass/custom/_landing.scss */
-.todays-article .tags a {
+/* line 134, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 .tags a {
   color: white;
 }
-/* line 129, ../sass/custom/_landing.scss */
-.todays-article .group-right {
+/* line 138, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .views-row-1 .group-right {
   padding: 20px 10px;
-}
-/* line 131, ../sass/custom/_landing.scss */
-.todays-article .group-right:before {
-  display: block;
-  content: "Today's Article";
 }
 
 /*
@@ -9632,4 +9665,35 @@ span.glyphicon {
 /* line 343, ../sass/custom/_blocks.scss */
 .view-term-landing.view-display-id-columnist img {
   border: 3px solid #c8cdd0;
+}
+
+/*
+* Custom Styles for Special Features
+* 
+*/
+/* SLIDESHOW 
+*  Override flexslide styles
+*/
+/* line 9, ../sass/custom/_features.scss */
+.flexslider {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+/* line 15, ../sass/custom/_features.scss */
+.flexslider .flex-direction-nav a {
+  text-shadow: none;
+}
+/* line 17, ../sass/custom/_features.scss */
+.flexslider .flex-direction-nav a:before {
+  font-size: 30px;
+}
+
+/* line 23, ../sass/custom/_features.scss */
+#slideshow, #media {
+  margin-right: 20px;
+  width: 240px;
 }

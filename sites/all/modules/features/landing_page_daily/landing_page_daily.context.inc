@@ -28,6 +28,7 @@ function landing_page_daily_context_default_contexts() {
     'path' => array(
       'values' => array(
         'taxonomy/term/147' => 'taxonomy/term/147',
+        'taxonomy/term/203' => 'taxonomy/term/203',
       ),
     ),
   );

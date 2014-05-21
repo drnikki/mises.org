@@ -62,7 +62,7 @@ function mises_utility_admin() {
 	$form['mises_utility']['markup'] = array(
 		'#type' => 'item',
 		'#title' => t('Ad Settings'),
-		'#markup' => 'The fields below will allow you to make adjustments to the ad settings',
+		'#markup' => '<p>The fields below will allow you to make adjustments to the ad settings.</p><p>Use <a href="/admin/config/flex-blocks" title="Flex Block Management">Flex Block Management</a> to administer position for Ad displays.</p>',
 	);
 
   $form['mises_utility']['mises_utility_ad_header'] = array(
@@ -117,3 +117,17 @@ function mises_utility_node_presave($node){
 		if($mises_debug >= 1){watchdog('Job Posting', 'Job Posting node is <pre>'.print_r($node, TRUE).'</pre>');}
 	}
 } 
+
+/**
+ * hook_node_presave
+ * 
+ */
+
+function mises_utility_update_projects_alter(&$projects) {
+  foreach($projects as $key => $project) {
+    if($project['datestamp'] == 0) { // check for a timestamp from D.O.
+   $custom_module = $project['name']; // get the name of the module
+    unset($projects[$custom_module]); // remove the module from the list
+    }
+  }
+}

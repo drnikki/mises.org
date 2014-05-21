@@ -217,7 +217,7 @@ body {
 /* PRIMARY CONTENT BLOCKS */
 .main-content {
   position: relative;
-  padding: $padding-base-vertical $padding-large-horizontal * 1.5;
+  padding: $padding-base-vertical $padding-large-horizontal * 1.5 $padding-large-horizontal * 1.5;
   border-top: 7px solid $brand-secondary;
   background: $white;
   &:after {
@@ -230,9 +230,27 @@ body {
     content: url('../images/shield.png');
   }
   // Add customizations for specific pages here
-  
-
+  .front & {
+    padding: $padding-base-vertical $padding-large-horizontal * 1.5;
+  }
+  .body-content {
+    &.normal {
+      font-size: $font-size-base;
+    }
+    &.large {
+      font-size: $font-size-large;
+    }
+  }
 }
+#text-resizer {
+  .large {
+    font-size: $font-size-large;
+  }
+  .active {
+    @extend .btn-primary;
+  }
+}
+
 .content-bottom {
   padding-top: $padding-large-horizontal;
 }
@@ -256,10 +274,18 @@ h1, .h1 {
   padding-left: 100px;
   border-bottom: 0 none;
 }
-h2.teaser-title {
-  color: $brand-primary;
-  font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
-  font-family: $font-family-serif;
+h2 {
+  &.page-title {
+    color: $brand-primary;
+    font-family: $font-family-serif;
+    font-size: $font-size-h2;
+    margin-top: 0;
+  }
+  &.teaser-title {
+    color: $brand-primary;
+    font-family: $font-family-serif;
+    font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
+  }
 }
 h4.author {
   font-size: 14px;
@@ -278,4 +304,7 @@ address {
   color: $gray;
   text-transform: uppercase;
   font-size: $font-size-small;
+}
+.author a {
+  color: inherit;
 }

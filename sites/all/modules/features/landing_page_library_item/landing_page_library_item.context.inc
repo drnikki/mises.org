@@ -14,15 +14,21 @@ function landing_page_library_item_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'library_item';
-  $context->description = '';
+  $context->description = 'Also using for Columnist page';
   $context->tag = 'Landing Pages';
   $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'taxonomy/term/203' => 'taxonomy/term/203',
+      ),
+    ),
     'taxonomy_term' => array(
       'values' => array(
         'currents_trends' => 'currents_trends',
         'events' => 'events',
         'level' => 'level',
         'media_type' => 'media_type',
+        'profile_type' => 'profile_type',
         'reading_group' => 'reading_group',
         'the_austrian_school_of_economics' => 'the_austrian_school_of_economics',
       ),
@@ -95,6 +101,7 @@ function landing_page_library_item_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Also using for Columnist page');
   t('Landing Pages');
   $export['library_item'] = $context;
 
