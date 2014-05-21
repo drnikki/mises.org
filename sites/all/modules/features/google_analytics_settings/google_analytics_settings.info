@@ -1,9 +1,10 @@
-name = Google Analytics Settings
+name = Mises Google Analytics Settings
 core = 7.x
 package = Settings
 version = 7.x-1.0
 project = google_analytics_settings
 dependencies[] = ctools
+dependencies[] = ga_tokenizer
 dependencies[] = googleanalytics
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
