@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises SEO Settings feature.
+ */
+
+include_once 'mises_seo_settings.features.inc';
