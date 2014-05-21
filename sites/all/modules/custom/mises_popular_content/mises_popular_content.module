@@ -298,7 +298,7 @@ function _mises_popular_content_query_google_analytics() {
 
     $path = drupal_lookup_path("source", $path);
     $node = menu_get_object("node", 1, $path);
-    if (isset($node->nid) && $node->status == 1 && isset($content_types_to_display[$node->type]) && $content_types_to_display[$node->type] == $node->type) {
+    if (isset($node->nid) && $node->status == 1 && isset($content_types_to_display[$node->type]) && $content_types_to_display[$node->type] === $node->type) {
       $processed_results[$hits] = $node->nid;
     }
   }
