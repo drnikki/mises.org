@@ -36,6 +36,9 @@
     .lecture & {
       @include icon-image('../images/icons/icon-lecture.png');
     }
+    .level & {
+      @include icon-image('../images/icons/icon-level.png');
+    }
     .library-block & {
       @include icon-image('../images/icons/icon-library.png');
     }
@@ -182,7 +185,8 @@ span.glyphicon {
       font-size: $font-size-small;
     }
   }
-  .view-footer {
+  .view-footer,
+  .attachment {
     margin: 0 $padding-large-horizontal;
     line-height: 20px;
     span.glyphicon {

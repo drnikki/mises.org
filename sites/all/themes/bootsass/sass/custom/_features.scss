@@ -3,6 +3,21 @@
 * 
 */
 
+/*
+* BREADCRUMB
+*/
+.easy-breadcrumb {
+  overflow: hidden;
+  margin-bottom: $grid-gutter-width;
+  width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: $font-size-small;
+  a {
+    color: $gray;
+  }
+}
+
 /* SLIDESHOW 
 *  Override flexslide styles
 */
@@ -23,4 +38,84 @@
 #slideshow, #media {
   margin-right: $grid-gutter-width;
   width: 240px; // @TDOO: Check width
+}
+
+/*
+* TAGS ON TEASERS AND NODES
+*/
+.tags {
+  color: $gray;
+  font-size: $font-size-xs;
+  .tag-label {
+    padding-right: $padding-xs-horizontal;
+    text-transform: uppercase;
+  }
+  span:not(.tag-label) + span:before {
+    content: ", ";
+  }
+  a {
+    color: $gray;
+  }
+}
+/*
+* DATE AUTHOR ON TEASERS AND NODES
+*/
+.group-date-author {
+  .date {
+    color: $brand-primary;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  span.author {
+    padding-left: 10px;
+    &:before {
+      display: inline-block;
+      width: 14px;
+      content: "\2022";
+    }
+    a {
+      color: $brand-primary;
+    }
+    div, p {
+      display: inline;
+      color: $brand-primary;
+    }
+  }
+}
+/*
+* SHARING
+*/
+.group-sharing {
+  margin-top: $padding-large-horizontal * 1.5;
+  padding: $padding-large-horizontal * 1.5 0;
+  border-top: 1px solid $gray-lighter;
+  clear: both;
+}
+
+/*
+* FOOTNOTES GROUP -- MAY ABSTRACT THIS
+*/
+.group-footnotes {
+  margin-right: $padding-large-horizontal * -1.5;
+  margin-left: $padding-large-horizontal * -1.5;
+  padding: $padding-large-horizontal * 1.5;
+  background: $gray-lighter;
+  h3 {
+    color: $brand-secondary;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: $font-size-h5;    
+  }
+  p {
+    font-size: $font-size-small;
+  }
+}
+/*
+* COMMENTING
+*/
+.comment-title {
+  h3 {
+    color: $brand-secondary;
+    text-transform: uppercase;
+  }
 }

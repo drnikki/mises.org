@@ -12,8 +12,8 @@ function landing_page_daily_views_default_views() {
 
   $view = new view();
   $view->name = 'daily_landing';
-  $view->description = 'Page and blocks for homepage';
-  $view->tag = 'ref_allowed';
+  $view->description = 'Page and blocks for Daily landing page';
+  $view->tag = '';
   $view->base_table = 'node';
   $view->human_name = 'Daily Landing';
   $view->core = 7;
