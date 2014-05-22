@@ -6,8 +6,7 @@ function mises_popular_content_permission() {
   return array(
     'administer mises popular content' => array(
       'title' => t('Administer Mises Popular Content'),
-      'description' => t('Configure how Drupal periodically fetches popular content from Google\'s Analytics API ') .
-        t('as well as how that data is displayed in an associated block.'),
+      'description' => t('Configure how Drupal periodically fetches popular content page hit stats from Google\'s Analytics API.'),
     ),
   );
 }
@@ -127,9 +126,9 @@ function _mises_popular_content_form() {
     '#title' => t('Maximum Query Results'),
     '#required' => TRUE,
     '#description' => t('At most, how many "most popular" results should be requested from Google? ') .
-      t('This number should be more than the number of items to be displayed in the Popular Content block. ') .
-      t('This is because the Popular Content block will only display nodes whereas Google Analytics tracks more than just node pages. ') .
-      t('Padding this number will ensure enough results are available to reach the block\'s maximum number of items.'),
+      t('This number should be larger than the number of items that are intended to be displayed. ') .
+      t('This is because Google Analytics tracks more than just node page hits and does not allow filter by entity type. ') .
+      t('Padding this number will ensure enough of the desired types of results are available.'),
     '#options' => array(
       '5' => '5 results',
       '10' => '10 results',
@@ -149,57 +148,6 @@ function _mises_popular_content_form() {
     '#default_value' => variable_get('mises_popular_content_analytics_max_results', 30),
   );
 
-  // Define fields related to how the Popular Content block is prepared and presented:
-  $form['block_settings'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Popular Content Block Settings'),
-  );
-  $node_types_query = db_query("SELECT DISTINCT type FROM node ORDER BY type");
-  $types = array();
-  foreach ($node_types_query as $result) {
-    $types[$result->type] = str_replace('_', ' ', ucwords($result->type));
-  }
-  $form['block_settings']['block_content_types'] = array(
-    '#type' => 'checkboxes',
-    '#title' => t('Content Types to Display'),
-    '#options' => $types,
-    '#required' => TRUE,
-    '#default_value' => variable_get('mises_popular_content_block_content_types', array()),
-  );
-  $form['block_settings']['block_max_items'] = array(
-    '#type' => 'select',
-    '#title' => t('Maximum Block Items'),
-    '#required' => TRUE,
-    '#description' => t('How many items should be displayed in the "Popular Content" block? ') .
-      t('After Google is queried for the first time, this block will display a list of popular nodes, with the most popular item at the top.'),
-    '#options' => array(
-      '1' => '1 item',
-      '2' => '2 items',
-      '3' => '3 items',
-      '4' => '4 items',
-      '5' => '5 items',
-      '6' => '6 items',
-      '7' => '7 items',
-      '8' => '8 items',
-      '9' => '9 items',
-      '10' => '10 items',
-    ),
-    '#default_value' => variable_get('mises_popular_content_block_max_items', 3),
-  );
-
-  $entity_info = entity_get_info('node');
-  $view_modes = array();
-  foreach ($entity_info['view modes'] as $view_mode_name => $view_mode_data) {
-    $view_modes[$view_mode_name] = $view_mode_data['label'];
-  }
-  $form['block_settings']['block_node_view_mode'] = array(
-    '#type' => 'select',
-    '#title' => t('Block Item Node View Mode'),
-    '#required' => TRUE,
-    '#description' => t('What node view mode should be used for block items?'),
-    '#options' => $view_modes,
-    '#default_value' => variable_get('mises_popular_content_block_view_mode', 'teaser'),
-  );
   $form['save_configuration'] = array(
     '#type' => 'submit',
     '#value' => 'Save configuration',
@@ -277,8 +225,6 @@ function _mises_popular_content_query_google_analytics() {
 
   // drupal_set_message('<pre>' . print_r($results, 1) . '</pre>'); 
 
-  // Process results, such that only published nodes of the type or types defined in settings:
-  $content_types_to_display = variable_get('mises_popular_content_block_content_types', array()); 
   
   $processed_results = array();
   foreach ($results as $gaiReportEntity) {
@@ -298,7 +244,7 @@ function _mises_popular_content_query_google_analytics() {
 
     $path = drupal_lookup_path("source", $path);
     $node = menu_get_object("node", 1, $path);
-    if (isset($node->nid) && $node->status == 1 && isset($content_types_to_display[$node->type]) && $content_types_to_display[$node->type] === $node->type) {
+    if (isset($node->nid)) {
       $processed_results[$hits] = $node->nid;
     }
   }
@@ -316,65 +262,19 @@ function _mises_popular_content_query_google_analytics() {
   // Clear the block's cache since, potentially, its data has now changed:
   variable_del('mises_popular_content_results_block_cache');
 
+  // Each time this data updates, the "mises_analytics_hits" table will be truncated and this fresh set of data will be inserted:
+  db_truncate('mises_analytics_hits')->execute();
+
+  foreach ($processed_results as $hits => $nid) {
+    db_insert('mises_analytics_hits')->fields(array(
+      'entity_type' => 'node',
+      'entity_id' => $nid,
+      'hit_count' => $hits,
+    ))
+    ->execute();
+  }
+
   return $processed_results;
-}
-
-/**
- * Implements hook_block_info().
- *
- * Defines the Popular Content block.
- */
-function mises_popular_content_block_info() {
-  $blocks = array();
-  $blocks['mises_most_popular'] = array(
-    'info' => t('Popular Content'),
-  );
- 
-  return $blocks;
-}
-
-/**
- * Implements hook_block_view().
- *
- * Defines the Popular Content block's view data.
- */
-function mises_popular_content_block_view($delta = '') {
-  $block = array();
-  $content = variable_get('mises_popular_content_results_block_cache', '');
-  if (!$content) {
-     $content = _mises_popular_content_block_output();
-     variable_set('mises_popular_content_results_block_cache', $content);
-  }
-  switch ($delta) {
-    case 'mises_most_popular':
-      $block['subject'] = '';
-      $block['content'] = _mises_popular_content_block_output();
-      break;
-  }
-  return $block;
-}
-
-/**
- * Defines output for the Popular Content block's view data.
- */
-function _mises_popular_content_block_output() {
-  $output = '';
-  $results = variable_get('mises_popular_content_results', array());
-  if (empty($results)) {
-    return;
-  } 
-  $count = 0;
-  $max_block_items = variable_get('mises_popular_content_block_max_items', 3);
-  foreach ($results as $nid) {
-    $node = node_load($nid);
-    $view_mode = variable_get('mises_popular_content_block_view_mode', 'teaser');
-    $output .= '<div class="mises-popular-item">' . drupal_render(node_view($node, $view_mode)) . '</div>';
-    $count++;
-    if ($count == $max_block_items) {
-      break;
-    }
-  }
-  return $output;
 }
 
 /**
@@ -394,4 +294,16 @@ function mises_popular_content_cron() {
       variable_set('mises_popular_content_results', $results);
     }
   }
+}
+
+/**
+ * Implements hook_views_api().
+ *
+ * Setup for Views integration.
+ */
+function mises_popular_content_views_api() {
+  return array(
+    'api' => '3.0',
+    'path' => drupal_get_path('module', 'mises_popular_content') . '/views',
+  );
 }

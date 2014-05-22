@@ -1,0 +1,13 @@
+name = Popular Content View
+description = Defines the popular content view block, which orders results based on data fetch from Google Analytics.
+core = 7.x
+package = Views
+version = 7.x-1.0
+project = mises_popular_content_block
+dependencies[] = ctools
+dependencies[] = entity
+dependencies[] = mises_popular_content
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = popular_content
