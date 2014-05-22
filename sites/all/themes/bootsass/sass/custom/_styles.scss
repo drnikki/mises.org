@@ -287,9 +287,23 @@ h2 {
     font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
   }
 }
-h4.author {
-  font-size: 14px;
-  margin-top: 0;
+h4 {
+  &.author {
+    font-size: 14px;
+    margin-top: 0;
+  }
+  &.sub-heading {
+    text-transform: uppercase;
+    &.primary {
+      color: $brand-primary;
+    }
+    &.secondary {
+      color: $brand-secondary;
+    }
+    &.contrast {
+      color: $brand-contrast;
+    }
+  }
 }
 h2, .h2, h3, .h3, h4, .h4, h5, .h5 { // FIX FOR AUTHOR FULL NAME NESTED P
   p {
