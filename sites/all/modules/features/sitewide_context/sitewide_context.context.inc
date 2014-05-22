@@ -26,12 +26,6 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'easy_breadcrumb-easy_breadcrumb' => array(
-          'module' => 'easy_breadcrumb',
-          'delta' => 'easy_breadcrumb',
-          'region' => 'highlighted',
-          'weight' => '-10',
-        ),
         'menu-menu-topics' => array(
           'module' => 'menu',
           'delta' => 'menu-topics',

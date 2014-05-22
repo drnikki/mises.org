@@ -20,20 +20,21 @@ function mises_course_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Additional Information',
+    'label' => 'Tagging',
     'weight' => '1',
     'children' => array(
-      0 => 'field_topics',
-      1 => 'field_austrian_school',
+      0 => 'field_austrian_school',
+      1 => 'field_topics',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Tagging',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-additional-information field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-tagging field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_additional_information|node|course|form'] = $field_group;
@@ -52,7 +53,8 @@ function mises_course_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'title',
+      1 => 'field_image_collection',
+      2 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -65,6 +67,33 @@ function mises_course_field_group_info() {
     ),
   );
   $export['group_course_information|node|course|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_teaser|node|course|block_teaser';
+  $field_group->group_name = 'group_teaser';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'course';
+  $field_group->mode = 'block_teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Teaser',
+    'weight' => '2',
+    'children' => array(
+      0 => 'body',
+      1 => 'title',
+    ),
+    'format_type' => 'html5',
+    'format_settings' => array(
+      'label' => 'Teaser',
+      'instance_settings' => array(
+        'classes' => 'panel-body',
+        'wrapper' => 'aside',
+      ),
+    ),
+  );
+  $export['group_teaser|node|course|block_teaser'] = $field_group;
 
   return $export;
 }
