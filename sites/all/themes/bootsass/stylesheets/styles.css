@@ -9752,9 +9752,17 @@ span.glyphicon {
 }
 
 /*
-* SHARING
+*   WIDE MEDIA PLAYER
 */
 /* line 88, ../sass/custom/_features.scss */
+.media-player {
+  clear: both;
+}
+
+/*
+* SHARING
+*/
+/* line 95, ../sass/custom/_features.scss */
 .group-sharing {
   margin-top: 24px;
   padding: 24px 0;
@@ -9765,21 +9773,21 @@ span.glyphicon {
 /*
 * FOOTNOTES GROUP -- MAY ABSTRACT THIS
 */
-/* line 98, ../sass/custom/_features.scss */
+/* line 105, ../sass/custom/_features.scss */
 .group-footnotes {
   margin-right: -24px;
   margin-left: -24px;
   padding: 24px;
   background: #e4ebee;
 }
-/* line 103, ../sass/custom/_features.scss */
+/* line 110, ../sass/custom/_features.scss */
 .group-footnotes h3 {
   color: #5b8ab5;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 15px;
 }
-/* line 109, ../sass/custom/_features.scss */
+/* line 116, ../sass/custom/_features.scss */
 .group-footnotes p {
   font-size: 13px;
 }
@@ -9787,7 +9795,7 @@ span.glyphicon {
 /*
 * COMMENTING
 */
-/* line 117, ../sass/custom/_features.scss */
+/* line 124, ../sass/custom/_features.scss */
 .comment-title h3 {
   color: #5b8ab5;
   text-transform: uppercase;
