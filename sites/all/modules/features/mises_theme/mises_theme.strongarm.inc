@@ -90,6 +90,12 @@ function mises_theme_strongarm() {
       'single_image' => array(
         'custom_settings' => FALSE,
       ),
+      'small_player' => array(
+        'custom_settings' => TRUE,
+      ),
+      'wide_player' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),

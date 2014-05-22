@@ -273,7 +273,7 @@ function display_suite_shared_ds_field_settings_info() {
       'format' => 'default',
     ),
     'dynamic_field_1' => array(
-      'weight' => '11',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -439,6 +439,22 @@ function display_suite_shared_ds_field_settings_info() {
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_media_collection' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Play',
+          'lb-el' => 'h4',
+          'lb-cl' => 'sub-heading contrast',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'clearfix',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -932,7 +948,7 @@ function display_suite_shared_ds_custom_fields_info() {
 //print_r($entity);
 //print \'</pre>\';
 
-$display = array (\'type\' => \'field_collection_fields\', \'settings\'=>array(\'view_mode\' => \'full\'));
+$display = array (\'type\' => \'field_collection_fields\', \'settings\'=>array(\'view_mode\' => \'small_player\'));
 $media = render(field_view_field(\'node\',$entity,\'field_media_collection\',\'full\'));
 $media_insert = $entity->field_insert_after[\'und\'][0][\'value\'] ? $entity->field_insert_after[\'und\'][0][\'value\'] : count($content_array) / 2;
 $content_array = explode("<p>", $entity->body[\'und\'][0][\'value\']);
@@ -1177,6 +1193,32 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['field_collection_item|field_image_collection|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'file|video|small_player';
+  $ds_layout->entity_type = 'file';
+  $ds_layout->bundle = 'video';
+  $ds_layout->view_mode = 'small_player';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'file',
+      ),
+    ),
+    'fields' => array(
+      'file' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['file|video|small_player'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1496,46 +1538,48 @@ function display_suite_shared_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'text_resizer',
         1 => 'custom_breadcrumb',
-        2 => 'title',
-        3 => 'field_image_collection',
-        4 => 'group_date_author',
-        5 => 'field_mises_published_date',
-        6 => 'field_author_1',
+        2 => 'field_copyright_informatio',
+        3 => 'title',
+        4 => 'field_image_collection',
+        5 => 'group_date_author',
+        6 => 'field_mises_published_date',
         7 => 'field_topics',
-        8 => 'field_author_2',
-        9 => 'field_subtitle',
-        10 => 'body',
-        11 => 'field_document_attachment',
+        8 => 'field_author_1',
+        9 => 'field_author_2',
+        10 => 'field_subtitle',
+        11 => 'body',
         12 => 'field_bibliography_footnote',
-        13 => 'group_sharing',
-        14 => 'field_copyright_informatio',
-        15 => 'field_citation',
-        16 => 'group_footnotes',
-        17 => 'dynamic_field_1',
+        13 => 'field_media_collection',
+        14 => 'field_citation',
+        15 => 'field_document_attachment',
+        16 => 'group_sharing',
+        17 => 'group_footnotes',
+        18 => 'dynamic_field_1',
       ),
       'ds_hidden' => array(
-        18 => 'field_level',
-        19 => 'field_austrian_school',
-        20 => 'field_audience',
+        19 => 'field_level',
+        20 => 'field_austrian_school',
+        21 => 'field_audience',
       ),
     ),
     'fields' => array(
       'text_resizer' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
+      'field_copyright_informatio' => 'ds_content',
       'title' => 'ds_content',
       'field_image_collection' => 'ds_content',
       'group_date_author' => 'ds_content',
       'field_mises_published_date' => 'ds_content',
-      'field_author_1' => 'ds_content',
       'field_topics' => 'ds_content',
+      'field_author_1' => 'ds_content',
       'field_author_2' => 'ds_content',
       'field_subtitle' => 'ds_content',
       'body' => 'ds_content',
-      'field_document_attachment' => 'ds_content',
       'field_bibliography_footnote' => 'ds_content',
-      'group_sharing' => 'ds_content',
-      'field_copyright_informatio' => 'ds_content',
+      'field_media_collection' => 'ds_content',
       'field_citation' => 'ds_content',
+      'field_document_attachment' => 'ds_content',
+      'group_sharing' => 'ds_content',
       'group_footnotes' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
       'field_level' => 'ds_hidden',
@@ -1557,7 +1601,7 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'hide_page_title' => '2',
-    'page_option_title' => '%node:field-library-item-tree',
+    'page_option_title' => '%node:field-library-item-tree:0',
   );
   $export['node|library_item|full'] = $ds_layout;
 
@@ -2003,6 +2047,26 @@ function display_suite_shared_ds_view_modes_info() {
     'field_collection_item' => 'field_collection_item',
   );
   $export['slideshow'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'small_player';
+  $ds_view_mode->label = 'Small Player';
+  $ds_view_mode->entities = array(
+    'field_collection_item' => 'field_collection_item',
+    'file' => 'file',
+  );
+  $export['small_player'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'wide_player';
+  $ds_view_mode->label = 'Wide Player';
+  $ds_view_mode->entities = array(
+    'field_collection_item' => 'field_collection_item',
+    'file' => 'file',
+  );
+  $export['wide_player'] = $ds_view_mode;
 
   return $export;
 }
