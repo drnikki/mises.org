@@ -144,6 +144,7 @@ function term_landing_page_views_default_views() {
     3 => 0,
     4 => 0,
   );
+  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
   $handler->display->display_options['path'] = 'taxonomy/term/%';
 
   /* Display: Related Books Block */
