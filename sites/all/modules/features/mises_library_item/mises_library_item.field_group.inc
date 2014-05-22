@@ -54,7 +54,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'body',
       1 => 'field_teaser_text',
@@ -141,7 +141,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '10',
+    'weight' => '12',
     'children' => array(
       0 => 'field_bibliography_footnote',
       1 => 'field_citation',
@@ -156,6 +156,34 @@ function mises_library_item_field_group_info() {
     ),
   );
   $export['group_footnotes|node|library_item|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_media|node|library_item|form';
+  $field_group->group_name = 'group_media';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Media',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_media_collection',
+      1 => 'field_transcript',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-media field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_media|node|library_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -198,7 +226,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '9',
+    'weight' => '11',
     'children' => array(
       0 => 'field_copyright_informatio',
     ),
@@ -228,12 +256,11 @@ function mises_library_item_field_group_info() {
     'children' => array(
       0 => 'field_featured_content',
       1 => 'field_timely_content',
-      2 => 'field_austrian_school_of_economi',
-      3 => 'field_audience',
-      4 => 'field_level',
-      5 => 'field_library_item_tree',
-      6 => 'field_topics',
-      7 => 'field_austrian_school',
+      2 => 'field_audience',
+      3 => 'field_level',
+      4 => 'field_library_item_tree',
+      5 => 'field_topics',
+      6 => 'field_austrian_school',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
