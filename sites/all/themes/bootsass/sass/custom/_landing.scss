@@ -67,43 +67,9 @@
   }
   .tags {
     padding-top: 5px;
-    color: $gray;
-    font-size: $font-size-xs;
-    .tag-label {
-      padding-right: $padding-xs-horizontal;
-      text-transform: uppercase;
-    }
-    span:not(.tag-label) + span:before {
-      content: ", ";
-    }
-    a {
-      color: $gray;
-    }
   }
   h2.teaser-title {
     margin-top: 0;
-  }
-  .group-date-author {
-    .date {
-      color: $brand-primary;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    span.author {
-      padding-left: 10px;
-      &:before {
-        display: inline-block;
-        width: 14px;
-        content: "\2022";
-      }
-      a {
-        color: $brand-primary;
-      }
-      div, p {
-        display: inline;
-        color: $brand-primary;
-      }
-    }
   }
   .view-footer {
     span.glyphicon {

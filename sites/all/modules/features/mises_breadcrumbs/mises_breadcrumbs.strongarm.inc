@@ -92,7 +92,7 @@ function mises_breadcrumbs_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'easy_breadcrumb-title_segment_as_link';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['easy_breadcrumb-title_segment_as_link'] = $strongarm;
 
   return $export;

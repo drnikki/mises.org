@@ -122,6 +122,28 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+    'course' => 'course',
+    'event' => 'event',
+    'library_item' => 'library_item',
+    'product' => 'product',
+  );
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
   $handler->display->display_options['path'] = 'taxonomy/term/%';
 
   /* Display: Related Books Block */

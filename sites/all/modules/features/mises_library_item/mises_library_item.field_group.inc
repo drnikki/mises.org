@@ -78,6 +78,34 @@ function mises_library_item_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_date_author|node|library_item|full';
+  $field_group->group_name = 'group_date_author';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Date Author',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_mises_published_date',
+      1 => 'field_author_1',
+      2 => 'field_author_2',
+    ),
+    'format_type' => 'html5',
+    'format_settings' => array(
+      'label' => 'Date Author',
+      'instance_settings' => array(
+        'classes' => 'group-date-author',
+        'wrapper' => 'section',
+      ),
+    ),
+  );
+  $export['group_date_author|node|library_item|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_date_author|node|library_item|teaser';
   $field_group->group_name = 'group_date_author';
   $field_group->entity_type = 'node';
@@ -101,6 +129,33 @@ function mises_library_item_field_group_info() {
     ),
   );
   $export['group_date_author|node|library_item|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_footnotes|node|library_item|full';
+  $field_group->group_name = 'group_footnotes';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => '',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_bibliography_footnote',
+      1 => 'field_citation',
+    ),
+    'format_type' => 'html5',
+    'format_settings' => array(
+      'label' => '',
+      'instance_settings' => array(
+        'classes' => 'group-footnotes',
+        'wrapper' => 'section',
+      ),
+    ),
+  );
+  $export['group_footnotes|node|library_item|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -131,6 +186,32 @@ function mises_library_item_field_group_info() {
     ),
   );
   $export['group_secondary|node|library_item|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sharing|node|library_item|full';
+  $field_group->group_name = 'group_sharing';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => '',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_copyright_informatio',
+    ),
+    'format_type' => 'html5',
+    'format_settings' => array(
+      'label' => '',
+      'instance_settings' => array(
+        'classes' => 'group-sharing clearfix',
+        'wrapper' => 'section',
+      ),
+    ),
+  );
+  $export['group_sharing|node|library_item|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

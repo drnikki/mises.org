@@ -26,7 +26,7 @@ function top_bar_ads_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '3ca922d0-da89-4036-b82b-333b0c42ccbf',
-  'revision_uid' => 18,
+  'revision_uid' => 0,
   'field_display_title' => array(),
   'field_image' => array(
     'und' => array(
@@ -139,6 +139,7 @@ function top_bar_ads_uuid_features_default_content() {
   'name' => 'aeasterling',
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
+  'weight_weight' => FALSE,
   'date' => '2014-05-02 18:53:16 -0700',
 );
   $nodes[] = array(
@@ -157,7 +158,7 @@ function top_bar_ads_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '492969ec-cdc8-4417-b944-a1c3aa06b127',
-  'revision_uid' => 18,
+  'revision_uid' => 0,
   'field_display_title' => array(),
   'field_image' => array(
     'und' => array(
@@ -270,6 +271,7 @@ function top_bar_ads_uuid_features_default_content() {
   'name' => 'aeasterling',
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
+  'weight_weight' => FALSE,
   'date' => '2014-05-02 18:20:46 -0700',
 );
   return $nodes;
