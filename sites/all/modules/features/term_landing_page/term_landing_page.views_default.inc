@@ -38,6 +38,10 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/taxonomy/term/17">Visit Press Room</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  /* Relationship: Analytics Page Hits: Analytics Hits Entity */
+  $handler->display->display_options['relationships']['entity_id']['id'] = 'entity_id';
+  $handler->display->display_options['relationships']['entity_id']['table'] = 'mises_analytics_hits';
+  $handler->display->display_options['relationships']['entity_id']['field'] = 'entity_id';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -555,8 +559,8 @@ function term_landing_page_views_default_views() {
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
 
-  /* Display: Most Popular Placeholder */
-  $handler = $view->new_display('block', 'Most Popular Placeholder', 'popular');
+  /* Display: Most Popular Posts */
+  $handler = $view->new_display('block', 'Most Popular Posts', 'popular');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'books panel border-contrast padding-lg';
@@ -580,6 +584,19 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<div class="panel-heading single"><div class="panel-title">Most Popular Articles</div></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Analytics Page Hits: Analytics Hits Entity */
+  $handler->display->display_options['relationships']['entity_id']['id'] = 'entity_id';
+  $handler->display->display_options['relationships']['entity_id']['table'] = 'mises_analytics_hits';
+  $handler->display->display_options['relationships']['entity_id']['field'] = 'entity_id';
+  $handler->display->display_options['relationships']['entity_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Analytics Page Hits: Hit Count */
+  $handler->display->display_options['sorts']['hit_count']['id'] = 'hit_count';
+  $handler->display->display_options['sorts']['hit_count']['table'] = 'mises_analytics_hits';
+  $handler->display->display_options['sorts']['hit_count']['field'] = 'hit_count';
+  $handler->display->display_options['sorts']['hit_count']['relationship'] = 'entity_id';
+  $handler->display->display_options['sorts']['hit_count']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
