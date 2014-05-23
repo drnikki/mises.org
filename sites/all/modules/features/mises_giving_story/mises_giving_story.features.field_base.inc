@@ -13,7 +13,7 @@ function mises_giving_story_field_default_field_bases() {
   // Exported field_base: 'field_campaign'
   $field_bases['field_campaign'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_campaign',
@@ -43,7 +43,9 @@ function mises_giving_story_field_default_field_bases() {
         'sort' => array(
           'type' => 'none',
         ),
-        'target_bundles' => array(),
+        'target_bundles' => array(
+          'campaign_' => 'campaign_',
+        ),
       ),
       'target_type' => 'node',
     ),
