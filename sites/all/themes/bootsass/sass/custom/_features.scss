@@ -126,3 +126,11 @@
     text-transform: uppercase;
   }
 }
+/*
+* SOCIAL MEDIA HUB
+*/
+.social-media-categories {
+  .view-content {
+    @extend .panel-body;
+  }
+}
