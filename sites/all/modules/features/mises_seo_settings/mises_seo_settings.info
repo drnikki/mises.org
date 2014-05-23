@@ -5,6 +5,7 @@ version = 7.x-1.0
 project = mises_seo_settings
 dependencies[] = ctools
 dependencies[] = metatag
+dependencies[] = redirect
 dependencies[] = strongarm
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_menu
