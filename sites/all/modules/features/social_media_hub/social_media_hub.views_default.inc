@@ -70,12 +70,36 @@ function social_media_hub_views_default_views() {
 
   /* Display: Social Media Platforms */
   $handler = $view->new_display('block', 'Social Media Platforms', 'block');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'panel border-secondary';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_platform_icon' => 'field_platform_icon',
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_platform_icon' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['override'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Platform Icon */
@@ -114,14 +138,22 @@ function social_media_hub_views_default_views() {
   /* Display: Social Media Categories */
   $handler = $view->new_display('block', 'Social Media Categories', 'block_1');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'social-media-categories';
+  $handler->display->display_options['css_class'] = 'social-media-categories panel border-secondary audience';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<h3>Find Mises on [title]</h3>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="panel-heading single"><div class="panel-title">Find Mises on [title]</div></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -151,16 +183,29 @@ function social_media_hub_views_default_views() {
   $handler->display->display_options['fields']['field_main_pages']['id'] = 'field_main_pages';
   $handler->display->display_options['fields']['field_main_pages']['table'] = 'field_data_field_main_pages';
   $handler->display->display_options['fields']['field_main_pages']['field'] = 'field_main_pages';
-  $handler->display->display_options['fields']['field_main_pages']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_main_pages']['element_class'] = 'links';
-  $handler->display->display_options['fields']['field_main_pages']['element_label_type'] = 'h4';
+  $handler->display->display_options['fields']['field_main_pages']['label'] = '';
   $handler->display->display_options['fields']['field_main_pages']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_main_pages']['element_wrapper_type'] = 'h4';
+  $handler->display->display_options['fields']['field_main_pages']['element_wrapper_class'] = 'sub-heading';
   $handler->display->display_options['fields']['field_main_pages']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_main_pages']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_main_pages']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_main_pages']['type'] = 'custom_formatters_social_media';
+  $handler->display->display_options['fields']['field_main_pages']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_main_pages']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_main_pages']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_main_pages']['multi_type'] = 'ul';
   $handler->display->display_options['fields']['field_main_pages']['separator'] = ' ';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Title */
   $handler->display->display_options['arguments']['title']['id'] = 'title';
@@ -173,7 +218,6 @@ function social_media_hub_views_default_views() {
   $handler->display->display_options['arguments']['title']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['title']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['title']['limit'] = '0';
-  $handler->display->display_options['arguments']['title']['transform_dash'] = TRUE;
 
   /* Display: Twitter Page */
   $handler = $view->new_display('page', 'Twitter Page', 'page_2');
@@ -182,7 +226,7 @@ function social_media_hub_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h1 class="node-title">Twitter</h1>';
+  $handler->display->display_options['header']['area']['content'] = '<h1 class="page-header">Twitter</h1>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
@@ -236,7 +280,7 @@ $url = arg(4) ?:  \'mises\';
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h1 class="node-title">Facebook</h1>';
+  $handler->display->display_options['header']['area']['content'] = '<h1 class="page-header">Facebook</h1>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
@@ -284,7 +328,7 @@ $url = arg(4) ?:  \'mises.institute\';
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h1 class="node-title">YouTube</h1>';
+  $handler->display->display_options['header']['area']['content'] = '<h1 class="page-header">YouTube</h1>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
@@ -337,7 +381,7 @@ if($url == \'playlist\') {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h1 class="node-title">Instagram</h1>';
+  $handler->display->display_options['header']['area']['content'] = '<h1 class="page-header">Instagram</h1>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
@@ -384,7 +428,7 @@ $url = arg(4) ?:  \'misesinstitute\';
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h1 class="node-title">Vimeo</h1>';
+  $handler->display->display_options['header']['area']['content'] = '<h1 class="page-header">Vimeo</h1>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
@@ -465,7 +509,8 @@ endforeach
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h1 class="node-title">Vimeo</h1>';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<h1 class="page-header">Vimeo</h1>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
