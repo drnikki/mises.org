@@ -225,6 +225,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
 
   /* Display: Daily Library Block */
   $handler = $view->new_display('block', 'Daily Library Block', 'library_block');

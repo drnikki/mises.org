@@ -72,6 +72,7 @@ For information on submitting articles for publication click here.',
       ),
     ),
   ),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
