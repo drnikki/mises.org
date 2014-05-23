@@ -58,7 +58,7 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -124,8 +124,8 @@ function mises_library_item_field_default_field_instances() {
           ),
           'more_link' => 0,
           'more_text' => 'Read more',
-          'summary_handler' => 'full',
-          'trim_length' => 120,
+          'summary_handler' => 'trim',
+          'trim_length' => 300,
           'trim_options' => array(
             'text' => 0,
           ),
@@ -182,10 +182,9 @@ function mises_library_item_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'link' => FALSE,
         ),
-        'type' => 'entityreference_label',
-        'weight' => 18,
+        'type' => 'entityreference_entity_id',
+        'weight' => 16,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -253,9 +252,12 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'entityreference_entity_id',
+        'weight' => 15,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -322,10 +324,11 @@ function mises_library_item_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'link' => FALSE,
+          'links' => 0,
+          'view_mode' => 'author_full_name',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 2,
+        'type' => 'entityreference_entity_view',
+        'weight' => 5,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -396,10 +399,11 @@ function mises_library_item_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'link' => FALSE,
+          'links' => 0,
+          'view_mode' => 'author_full_name',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
+        'type' => 'entityreference_entity_view',
+        'weight' => 6,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -467,7 +471,7 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -494,7 +498,41 @@ function mises_library_item_field_default_field_instances() {
     'label' => 'Bibliography Footnote',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
+          'simplified' => 'simplified',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simplified' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -534,7 +572,7 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -561,7 +599,41 @@ function mises_library_item_field_default_field_instances() {
     'label' => 'Citation',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
+          'simplified' => 'simplified',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simplified' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -600,8 +672,8 @@ function mises_library_item_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
         ),
-        'type' => 'text_default',
-        'weight' => 9,
+        'type' => 'text_plain',
+        'weight' => 1,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -661,12 +733,13 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'file',
+        'module' => 'file_entity',
         'settings' => array(
           'conditions' => array(),
+          'text' => 'Download [file:name]',
         ),
-        'type' => 'file_default',
-        'weight' => 8,
+        'type' => 'file_download_link',
+        'weight' => 10,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -693,7 +766,7 @@ function mises_library_item_field_default_field_instances() {
     'label' => 'Document Attachment',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => '',
       'file_extensions' => 'pdf',
       'max_filesize' => '',
@@ -731,12 +804,9 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'text_default',
-        'weight' => 11,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -797,12 +867,9 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'list_default',
-        'weight' => 12,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -862,7 +929,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 37,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -935,17 +1002,16 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'field_collection',
+        'module' => 'flexslider_field_collection',
         'settings' => array(
-          'add' => '',
           'conditions' => array(),
-          'delete' => '',
-          'description' => 0,
-          'edit' => '',
+          'optionset' => 'node_slideshow',
+          'thumbnail_image_field' => '',
+          'thumbnail_image_style' => '',
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_view',
-        'weight' => 0,
+        'type' => 'field_collection_entity_flexslider',
+        'weight' => 3,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1011,10 +1077,9 @@ function mises_library_item_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'link' => FALSE,
         ),
-        'type' => 'entityreference_label',
-        'weight' => 17,
+        'type' => 'entityreference_entity_id',
+        'weight' => 14,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1078,12 +1143,9 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1131,6 +1193,79 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_item-field_media_collection'
+  $field_instances['node-library_item-field_media_collection'] = array(
+    'bundle' => 'library_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'conditions' => array(),
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 25,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'wide_player',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 9,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_media_collection',
+    'label' => 'Media',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-library_item-field_mises_published_date'
   $field_instances['node-library_item-field_mises_published_date'] = array(
     'bundle' => 'library_item',
@@ -1150,7 +1285,7 @@ function mises_library_item_field_default_field_instances() {
         'weight' => 20,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'conditions' => array(),
@@ -1161,7 +1296,7 @@ function mises_library_item_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 20,
+        'weight' => 4,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1241,7 +1376,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 36,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1318,7 +1453,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 35,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1378,17 +1513,9 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'date',
-        'settings' => array(
-          'conditions' => array(),
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 1,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1463,7 +1590,7 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1539,12 +1666,9 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'text_default',
-        'weight' => 10,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1590,7 +1714,7 @@ function mises_library_item_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
-          'trim_length' => 120,
+          'trim_length' => 300,
           'trim_options' => array(
             'text' => 0,
           ),
@@ -1641,12 +1765,9 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'list_default',
-        'weight' => 13,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1703,14 +1824,14 @@ function mises_library_item_field_default_field_instances() {
         'weight' => 16,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 16,
+        'weight' => 5,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1757,8 +1878,110 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_item-field_transcript'
+  $field_instances['node-library_item-field_transcript'] = array(
+    'bundle' => 'library_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'All transcripts for any media attached to this page should be entered in this field. This transcript is used in search indexing only and is not displayed on the site.',
+    'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 26,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_transcript',
+    'label' => 'Transcript',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
+          'simplified' => 'simplified',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simplified' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 8,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('All transcripts for any media attached to this page should be entered in this field. This transcript is used in search indexing only and is not displayed on the site.');
   t('Audience');
   t('Austrian School');
   t('Author 1');
@@ -1774,6 +1997,7 @@ function mises_library_item_field_default_field_instances() {
   t('Image');
   t('Level');
   t('Library Item Type');
+  t('Media');
   t('Mises Published Date');
   t('Original Publication Link');
   t('Original Title');
@@ -1783,6 +2007,7 @@ function mises_library_item_field_default_field_instances() {
   t('Teaser Text');
   t('Timely Content');
   t('Topics');
+  t('Transcript');
 
   return $field_instances;
 }

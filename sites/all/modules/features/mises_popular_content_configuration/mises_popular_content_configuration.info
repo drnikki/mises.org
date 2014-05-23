@@ -1,0 +1,16 @@
+name = Mises Popular Content
+description = Defines configuration for the mises_popular_content module, which pulls popular content from Google and exposes it to Views.
+core = 7.x
+package = Mises
+version = 7.x-1.1
+project = mises_popular_content_configuration
+dependencies[] = ctools
+dependencies[] = fe_block
+dependencies[] = mises_popular_content
+dependencies[] = strongarm
+dependencies[] = views
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = mises_popular_content_analytics_frequency_hours
+features[variable][] = mises_popular_content_analytics_max_results
+features[variable][] = mises_popular_content_analytics_timespan_days

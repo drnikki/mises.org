@@ -18,7 +18,8 @@ var Drupal = Drupal || {};
         $('.content-bottom .region .panel-heading .panel-title').equalHeight();
         $('.content-bottom .region .panel-body').equalHeight();
         $('.content-bottom .region .panel-footer').equalHeight();
-        $("div.main-content").css({ "min-height": $("div.region-sidebar-second").height() }); // Roger's magic!
+        var sidebarHeight = $("div.region-sidebar-second").height() + $("div.region-sidebar-second-top").height() + 27;
+        $("div.main-content").css({ "min-height": sidebarHeight }); // Roger's magic!
         
       };
       

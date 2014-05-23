@@ -152,7 +152,7 @@ function mises_static_page_field_default_field_instances() {
         'module' => 'mediafield',
         'settings' => array(
           'conditions' => array(),
-          'file_view_mode' => 'default',
+          'file_view_mode' => 'small_player',
         ),
         'type' => 'media',
         'weight' => 0,
@@ -163,6 +163,26 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'full',
+        ),
+        'type' => 'media',
+        'weight' => 0,
+      ),
+      'small_player' => array(
+        'label' => 'hidden',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'small_player',
+        ),
+        'type' => 'media',
+        'weight' => 0,
+      ),
+      'wide_player' => array(
+        'label' => 'hidden',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'wide_player',
         ),
         'type' => 'media',
         'weight' => 0,
@@ -182,21 +202,21 @@ function mises_static_page_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 0,
-          'public' => 0,
+          'private' => 'private',
+          'public' => 'public',
           'youtube' => 'youtube',
         ),
         'allowed_types' => array(
-          'audio' => 0,
+          'audio' => 'audio',
           'document' => 0,
           'image' => 0,
           'video' => 'video',
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
           'youtube' => 'youtube',
         ),
       ),

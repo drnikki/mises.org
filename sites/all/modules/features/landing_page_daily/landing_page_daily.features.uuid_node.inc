@@ -130,6 +130,7 @@ For information on submitting articles for publication click here.',
   'name' => 'aeasterling',
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
+  'weight_weight' => FALSE,
   'date' => '2014-05-08 14:36:07 -0700',
 );
   return $nodes;
