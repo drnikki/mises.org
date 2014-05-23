@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Social Media Context feature.
+ */
+
+include_once 'social_media_context.features.inc';
