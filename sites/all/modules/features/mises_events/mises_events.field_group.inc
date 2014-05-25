@@ -20,7 +20,7 @@ function mises_events_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Additional Information',
+    'label' => 'Tagging',
     'weight' => '2',
     'children' => array(
       0 => 'field_audience',
@@ -28,15 +28,17 @@ function mises_events_field_group_info() {
       2 => 'field_award_type',
       3 => 'field_level',
       4 => 'field_topics',
+      5 => 'field_featured_content',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Tagging',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-additional-information field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-tagging field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_additional_information|node|event|form'] = $field_group;
@@ -58,7 +60,8 @@ function mises_events_field_group_info() {
       1 => 'field_event_date',
       2 => 'field_event_type',
       3 => 'field_live_feed',
-      4 => 'title',
+      4 => 'field_event_location',
+      5 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
