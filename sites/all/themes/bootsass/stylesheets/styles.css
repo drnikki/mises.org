@@ -8941,7 +8941,12 @@ body {
   font-size: 18px;
 }
 
-/* line 255, ../sass/custom/_styles.scss */
+/* line 254, ../sass/custom/_styles.scss */
+.body-content {
+  padding-bottom: 16px;
+}
+
+/* line 258, ../sass/custom/_styles.scss */
 .content-bottom {
   padding-top: 16px;
 }
@@ -8949,17 +8954,17 @@ body {
 /* FONTS AND TYPOGRAPHY 
 * @TODO: CONSIDER SEPARATE STYLESHEET
 */
-/* line 262, ../sass/custom/_styles.scss */
+/* line 265, ../sass/custom/_styles.scss */
 .bold {
   font-weight: 600;
 }
 
-/* line 265, ../sass/custom/_styles.scss */
+/* line 268, ../sass/custom/_styles.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 268, ../sass/custom/_styles.scss */
+/* line 271, ../sass/custom/_styles.scss */
 h1, .h1 {
   color: #00426b;
   text-transform: uppercase;
@@ -8967,67 +8972,67 @@ h1, .h1 {
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 274, ../sass/custom/_styles.scss */
+/* line 277, ../sass/custom/_styles.scss */
 .page-header {
   padding-left: 100px;
   border-bottom: 0 none;
 }
 
-/* line 279, ../sass/custom/_styles.scss */
+/* line 282, ../sass/custom/_styles.scss */
 h2.page-title {
   color: #5b8ab5;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
   font-size: 25px;
   margin: 0 0 16px;
 }
-/* line 285, ../sass/custom/_styles.scss */
+/* line 288, ../sass/custom/_styles.scss */
 h2.teaser-title {
   color: #00426b;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
   font-size: 23px;
 }
 
-/* line 292, ../sass/custom/_styles.scss */
-h4.author {
+/* line 295, ../sass/custom/_styles.scss */
+h3.author, h4.author {
   font-size: 14px;
   margin-top: 0;
 }
-/* line 296, ../sass/custom/_styles.scss */
-h4.sub-heading {
+/* line 299, ../sass/custom/_styles.scss */
+h3.sub-heading, h4.sub-heading {
   text-transform: uppercase;
 }
-/* line 298, ../sass/custom/_styles.scss */
-h4.sub-heading.primary {
+/* line 301, ../sass/custom/_styles.scss */
+h3.sub-heading.primary, h4.sub-heading.primary {
   color: #00426b;
 }
-/* line 301, ../sass/custom/_styles.scss */
-h4.sub-heading.secondary {
+/* line 304, ../sass/custom/_styles.scss */
+h3.sub-heading.secondary, h4.sub-heading.secondary {
   color: #5b8ab5;
 }
-/* line 304, ../sass/custom/_styles.scss */
-h4.sub-heading.contrast {
+/* line 307, ../sass/custom/_styles.scss */
+h3.sub-heading.contrast, h4.sub-heading.contrast {
   color: #729949;
 }
 
-/* line 310, ../sass/custom/_styles.scss */
+/* line 313, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 314, ../sass/custom/_styles.scss */
+/* line 317, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 318, ../sass/custom/_styles.scss */
+/* line 321, ../sass/custom/_styles.scss */
 .read-more a {
   color: #788086;
   text-transform: uppercase;
   font-size: 13px;
 }
 
-/* line 323, ../sass/custom/_styles.scss */
+/* line 326, ../sass/custom/_styles.scss */
 .author a {
   color: inherit;
 }
