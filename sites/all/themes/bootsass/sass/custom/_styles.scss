@@ -251,6 +251,9 @@ body {
     @extend .btn-primary;
   }
 }
+.body-content {
+  padding-bottom: $padding-large-horizontal;
+}
 
 .content-bottom {
   padding-top: $padding-large-horizontal;
@@ -288,7 +291,7 @@ h2 {
     font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
   }
 }
-h4 {
+h3, h4 {
   &.author {
     font-size: 14px;
     margin-top: 0;
