@@ -83,6 +83,22 @@
   }
 }
 /*
+* DATE LOCATION ON TEASERS AND NODES
+*/
+.group-date-location {
+  span.location {
+    padding-left: 10px;
+    &:before {
+      display: inline-block;
+      width: 14px;
+      content: "\2022";
+    }
+    a {
+      color: $brand-primary;
+    }
+  }
+}
+/*
 *   WIDE MEDIA PLAYER
 */
 .media-player {
@@ -124,13 +140,5 @@
   h3 {
     color: $brand-secondary;
     text-transform: uppercase;
-  }
-}
-/*
-* SOCIAL MEDIA HUB
-*/
-.social-media-categories {
-  .view-content {
-    @extend .panel-body;
   }
 }

@@ -77,7 +77,7 @@ function display_suite_shared_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Sharing',
-    'weight' => '8',
+    'weight' => '10',
     'children' => array(),
     'format_type' => 'html5',
     'format_settings' => array(

@@ -30,6 +30,7 @@ features[field_base][] = field_live_feed
 features[field_base][] = field_registration_link
 features[field_base][] = field_registration_link_external
 features[field_group][] = group_additional_information|node|event|form
+features[field_group][] = group_date_location|node|event|full
 features[field_group][] = group_event_information|node|event|form
 features[field_group][] = group_event_registration|node|event|form
 features[field_instance][] = node-event-field_audience
