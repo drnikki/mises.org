@@ -27,6 +27,21 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|causeview_snippet|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'causeview_snippet';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'field_code_snippet' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|causeview_snippet|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|course|block_teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'course';
@@ -148,8 +163,13 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'event';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'custom_breadcrumb' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'dynamic_field_1' => array(
-      'weight' => '11',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -166,6 +186,105 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-def-at' => FALSE,
         ),
         'conditions' => array(),
+      ),
+    ),
+    'text_resizer' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pull-right',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'page-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'field_description' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-content',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_event_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'h3',
+          'ow-cl' => 'sub-heading primary',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_registration_link' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Registration',
+          'lb-el' => 'h3',
+          'lb-cl' => 'sub-heading contrast',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'border-contrast',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_topics' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Tags',
+          'lb-el' => 'span',
+          'lb-cl' => 'tag-label bold',
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'tags',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_registration_link_external' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Registration',
+          'lb-el' => 'h3',
+          'lb-cl' => 'sub-heading contrast',
+          'lb-col' => TRUE,
+        ),
       ),
     ),
   );
@@ -1222,6 +1341,41 @@ function display_suite_shared_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|causeview_snippet|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'causeview_snippet';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_code_snippet',
+      ),
+    ),
+    'fields' => array(
+      'field_code_snippet' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '1',
+    'page_option_title' => '',
+  );
+  $export['node|causeview_snippet|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|course|block_teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'course';
@@ -1389,32 +1543,28 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_event_date',
-        1 => 'field_description',
-        2 => 'field_live_feed',
-        3 => 'field_award_type',
-        4 => 'field_event_type',
-        5 => 'field_registration_link',
-        6 => 'field_topics',
-        7 => 'field_austrian_school',
-        8 => 'field_level',
-        9 => 'field_audience',
-        10 => 'field_registration_link_external',
-        11 => 'dynamic_field_1',
+        0 => 'text_resizer',
+        1 => 'custom_breadcrumb',
+        2 => 'title',
+        3 => 'field_event_date',
+        4 => 'field_topics',
+        5 => 'field_description',
+        6 => 'field_registration_link',
+        7 => 'field_registration_link_external',
+        8 => 'group_sharing',
+        9 => 'dynamic_field_1',
       ),
     ),
     'fields' => array(
+      'text_resizer' => 'ds_content',
+      'custom_breadcrumb' => 'ds_content',
+      'title' => 'ds_content',
       'field_event_date' => 'ds_content',
-      'field_description' => 'ds_content',
-      'field_live_feed' => 'ds_content',
-      'field_award_type' => 'ds_content',
-      'field_event_type' => 'ds_content',
-      'field_registration_link' => 'ds_content',
       'field_topics' => 'ds_content',
-      'field_austrian_school' => 'ds_content',
-      'field_level' => 'ds_content',
-      'field_audience' => 'ds_content',
+      'field_description' => 'ds_content',
+      'field_registration_link' => 'ds_content',
       'field_registration_link_external' => 'ds_content',
+      'group_sharing' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
     ),
     'classes' => array(
@@ -1431,8 +1581,8 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
-    'hide_page_title' => '0',
-    'page_option_title' => '',
+    'hide_page_title' => '2',
+    'page_option_title' => 'Mises Event',
   );
   $export['node|event|full'] = $ds_layout;
 
