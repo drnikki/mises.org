@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Resources for the Economist Landing Page feature.
+ */
+
+include_once 'mises_resources_for_the_economist_landing_page.features.inc';
