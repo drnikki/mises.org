@@ -113,6 +113,18 @@ function mises_events_strongarm() {
         'title' => array(
           'weight' => '1',
         ),
+        'metatags' => array(
+          'weight' => '7',
+        ),
+        'path' => array(
+          'weight' => '5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '4',
+        ),
+        'redirect' => array(
+          'weight' => '6',
+        ),
       ),
       'display' => array(),
     ),

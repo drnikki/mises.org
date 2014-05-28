@@ -13,6 +13,34 @@ function mises_person_profile_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_author_title|node|person_profile|full';
+  $field_group->group_name = 'group_author_title';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'person_profile';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Author Title',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_first_name',
+      1 => 'title',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Author Title',
+      'instance_settings' => array(
+        'classes' => 'group-author-title page-title',
+        'element' => 'h2',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_author_title|node|person_profile|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_basic|node|person_profile|form';
   $field_group->group_name = 'group_basic';
   $field_group->entity_type = 'node';

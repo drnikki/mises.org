@@ -168,7 +168,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_media_collection',
       1 => 'field_transcript',
@@ -200,8 +200,8 @@ function mises_library_item_field_group_info() {
     'children' => array(
       0 => 'field_original_title',
       1 => 'field_original_publication_link',
-      2 => 'field_copyright_informatio',
-      3 => 'field_editor_s_note',
+      2 => 'field_editor_s_note',
+      3 => 'field_copyright_info',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -226,9 +226,11 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '11',
+    'weight' => '10',
     'children' => array(
-      0 => 'field_copyright_informatio',
+      0 => 'field_copyright_info',
+      1 => 'print_link',
+      2 => 'social_widget',
     ),
     'format_type' => 'html5',
     'format_settings' => array(
@@ -252,7 +254,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tagging',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_featured_content',
       1 => 'field_timely_content',

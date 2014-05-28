@@ -58,7 +58,7 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -647,68 +647,69 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_copyright_informatio'
-  $field_instances['node-library_item-field_copyright_informatio'] = array(
+  // Exported field_instance: 'node-library_item-field_copyright_info'
+  $field_instances['node-library_item-field_copyright_info'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'block_teaser' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'full' => array(
-        'label' => 'hidden',
-        'module' => 'text',
+        'label' => 'above',
+        'module' => 'creative_commons',
         'settings' => array(
           'conditions' => array(),
         ),
-        'type' => 'text_plain',
-        'weight' => 1,
+        'type' => 'creative_commons_small_image',
+        'weight' => 27,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'creative_commons',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'creative_commons_large_image',
+        'weight' => 2,
       ),
       'sidebar_teaser' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 0,
       ),
       'simple_teaser' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_copyright_informatio',
-    'label' => 'Copyright Information',
+    'field_name' => 'field_copyright_info',
+    'label' => 'Copyright Info',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
+      'active' => 0,
+      'module' => 'creative_commons',
+      'settings' => array(),
+      'type' => 'radios',
       'weight' => 19,
     ),
   );
@@ -739,7 +740,7 @@ function mises_library_item_field_default_field_instances() {
           'text' => 'Download [file:name]',
         ),
         'type' => 'file_download_link',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -806,7 +807,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 33,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -869,7 +870,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 34,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -929,7 +930,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 39,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1145,7 +1146,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 36,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1228,7 +1229,7 @@ function mises_library_item_field_default_field_instances() {
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1376,7 +1377,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 38,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1453,7 +1454,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 37,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1515,7 +1516,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 31,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1668,7 +1669,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 32,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1767,7 +1768,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 35,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1904,7 +1905,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 30,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1989,7 +1990,7 @@ function mises_library_item_field_default_field_instances() {
   t('Bibliography Footnote');
   t('Body');
   t('Citation');
-  t('Copyright Information');
+  t('Copyright Info');
   t('Document Attachment');
   t('Editor’s Note');
   t('Featured Content');

@@ -42,11 +42,13 @@ function mises_campaign_field_default_field_instances() {
       'better_formats' => array(
         'allowed_formats' => array(
           'ds_code' => 'ds_code',
-          'filtered_html' => 'filtered_html',
+          'filtered_html' => 0,
           'full_html' => 'full_html',
+          'php_code' => 0,
           'plain_text' => 'plain_text',
+          'simplified' => 'simplified',
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
@@ -59,13 +61,19 @@ function mises_campaign_field_default_field_instances() {
             'full_html' => array(
               'weight' => 1,
             ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
             'plain_text' => array(
               'weight' => 10,
+            ),
+            'simplified' => array(
+              'weight' => -7,
             ),
           ),
         ),
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(

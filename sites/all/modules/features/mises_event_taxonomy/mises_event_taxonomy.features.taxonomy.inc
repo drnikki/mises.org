@@ -10,7 +10,7 @@
 function mises_event_taxonomy_taxonomy_default_vocabularies() {
   return array(
     'events' => array(
-      'name' => 'Events',
+      'name' => 'Event Types',
       'machine_name' => 'events',
       'description' => '',
       'hierarchy' => 0,

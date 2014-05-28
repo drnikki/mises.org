@@ -194,31 +194,37 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_copyright_informatio'
-  $field_bases['field_copyright_informatio'] = array(
+  // Exported field_base: 'field_copyright_info'
+  $field_bases['field_copyright_info'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_copyright_informatio',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
+    'field_name' => 'field_copyright_info',
+    'foreign keys' => array(),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'licence' => array(
+        0 => 'licence',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
+    'module' => 'creative_commons',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 1,
+        8 => 8,
+        9 => 9,
+        2 => 2,
+        3 => 3,
+        4 => 4,
+        5 => 5,
+        6 => 6,
+        7 => 7,
+      ),
+      'jurisdiction' => '',
+    ),
     'translatable' => 0,
-    'type' => 'text_long',
+    'type' => 'creative_commons',
   );
 
   // Exported field_base: 'field_document_attachment'

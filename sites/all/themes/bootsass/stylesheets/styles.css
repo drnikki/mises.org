@@ -8941,7 +8941,12 @@ body {
   font-size: 18px;
 }
 
-/* line 255, ../sass/custom/_styles.scss */
+/* line 254, ../sass/custom/_styles.scss */
+.body-content {
+  padding-bottom: 16px;
+}
+
+/* line 258, ../sass/custom/_styles.scss */
 .content-bottom {
   padding-top: 16px;
 }
@@ -8949,17 +8954,17 @@ body {
 /* FONTS AND TYPOGRAPHY 
 * @TODO: CONSIDER SEPARATE STYLESHEET
 */
-/* line 262, ../sass/custom/_styles.scss */
+/* line 265, ../sass/custom/_styles.scss */
 .bold {
   font-weight: 600;
 }
 
-/* line 265, ../sass/custom/_styles.scss */
+/* line 268, ../sass/custom/_styles.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 268, ../sass/custom/_styles.scss */
+/* line 271, ../sass/custom/_styles.scss */
 h1, .h1 {
   color: #00426b;
   text-transform: uppercase;
@@ -8967,67 +8972,67 @@ h1, .h1 {
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 274, ../sass/custom/_styles.scss */
+/* line 277, ../sass/custom/_styles.scss */
 .page-header {
   padding-left: 100px;
   border-bottom: 0 none;
 }
 
-/* line 279, ../sass/custom/_styles.scss */
+/* line 282, ../sass/custom/_styles.scss */
 h2.page-title {
   color: #5b8ab5;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
   font-size: 25px;
   margin: 0 0 16px;
 }
-/* line 285, ../sass/custom/_styles.scss */
+/* line 288, ../sass/custom/_styles.scss */
 h2.teaser-title {
   color: #00426b;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
   font-size: 23px;
 }
 
-/* line 292, ../sass/custom/_styles.scss */
-h4.author {
+/* line 295, ../sass/custom/_styles.scss */
+h3.author, h4.author {
   font-size: 14px;
   margin-top: 0;
 }
-/* line 296, ../sass/custom/_styles.scss */
-h4.sub-heading {
+/* line 299, ../sass/custom/_styles.scss */
+h3.sub-heading, h4.sub-heading {
   text-transform: uppercase;
 }
-/* line 298, ../sass/custom/_styles.scss */
-h4.sub-heading.primary {
+/* line 301, ../sass/custom/_styles.scss */
+h3.sub-heading.primary, h4.sub-heading.primary {
   color: #00426b;
 }
-/* line 301, ../sass/custom/_styles.scss */
-h4.sub-heading.secondary {
+/* line 304, ../sass/custom/_styles.scss */
+h3.sub-heading.secondary, h4.sub-heading.secondary {
   color: #5b8ab5;
 }
-/* line 304, ../sass/custom/_styles.scss */
-h4.sub-heading.contrast {
+/* line 307, ../sass/custom/_styles.scss */
+h3.sub-heading.contrast, h4.sub-heading.contrast {
   color: #729949;
 }
 
-/* line 310, ../sass/custom/_styles.scss */
+/* line 313, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 314, ../sass/custom/_styles.scss */
+/* line 317, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 318, ../sass/custom/_styles.scss */
+/* line 321, ../sass/custom/_styles.scss */
 .read-more a {
   color: #788086;
   text-transform: uppercase;
   font-size: 13px;
 }
 
-/* line 323, ../sass/custom/_styles.scss */
+/* line 326, ../sass/custom/_styles.scss */
 .author a {
   color: inherit;
 }
@@ -9752,9 +9757,27 @@ span.glyphicon {
 }
 
 /*
+* DATE LOCATION ON TEASERS AND NODES
+*/
+/* line 89, ../sass/custom/_features.scss */
+.group-date-location span.location {
+  padding-left: 10px;
+}
+/* line 91, ../sass/custom/_features.scss */
+.group-date-location span.location:before {
+  display: inline-block;
+  width: 14px;
+  content: "\2022";
+}
+/* line 96, ../sass/custom/_features.scss */
+.group-date-location span.location a {
+  color: #00426b;
+}
+
+/*
 *   WIDE MEDIA PLAYER
 */
-/* line 88, ../sass/custom/_features.scss */
+/* line 104, ../sass/custom/_features.scss */
 .media-player {
   clear: both;
 }
@@ -9762,32 +9785,73 @@ span.glyphicon {
 /*
 * SHARING
 */
-/* line 95, ../sass/custom/_features.scss */
+/* line 111, ../sass/custom/_features.scss */
 .group-sharing {
+  clear: both;
   margin-top: 24px;
   padding: 24px 0;
-  border-top: 1px solid #e4ebee;
-  clear: both;
+  border-bottom: 1px solid #e4ebee;
+}
+/* line 116, ../sass/custom/_features.scss */
+.group-sharing .copyright {
+  padding-top: 16px;
+}
+/* line 119, ../sass/custom/_features.scss */
+.group-sharing .print {
+  padding-top: 16px;
+}
+/* line 121, ../sass/custom/_features.scss */
+.group-sharing .print .glyphicon {
+  top: 4px;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  color: #333333;
+  font-size: 25px;
+}
+
+/* line 131, ../sass/custom/_features.scss */
+#widgets-element-addthis-share {
+  height: 50px;
+}
+/* line 133, ../sass/custom/_features.scss */
+#widgets-element-addthis-share .widgets-element {
+  padding-right: 5px;
+}
+/* line 136, ../sass/custom/_features.scss */
+#widgets-element-addthis-share .addthis_counter .addthis_button_expanded {
+  height: 37px;
+}
+
+/* line 141, ../sass/custom/_features.scss */
+#bottom-social-share .social-widget {
+  display: inline-block;
+}
+/* line 143, ../sass/custom/_features.scss */
+#bottom-social-share .social-widget.facebook-widget {
+  position: relative;
+  top: -7px;
+  width: 85px;
 }
 
 /*
 * FOOTNOTES GROUP -- MAY ABSTRACT THIS
 */
-/* line 105, ../sass/custom/_features.scss */
+/* line 154, ../sass/custom/_features.scss */
 .group-footnotes {
   margin-right: -24px;
   margin-left: -24px;
   padding: 24px;
   background: #e4ebee;
 }
-/* line 110, ../sass/custom/_features.scss */
+/* line 159, ../sass/custom/_features.scss */
 .group-footnotes h3 {
   color: #5b8ab5;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 15px;
 }
-/* line 116, ../sass/custom/_features.scss */
+/* line 165, ../sass/custom/_features.scss */
 .group-footnotes p {
   font-size: 13px;
 }
@@ -9795,7 +9859,7 @@ span.glyphicon {
 /*
 * COMMENTING
 */
-/* line 124, ../sass/custom/_features.scss */
+/* line 173, ../sass/custom/_features.scss */
 .comment-title h3 {
   color: #5b8ab5;
   text-transform: uppercase;

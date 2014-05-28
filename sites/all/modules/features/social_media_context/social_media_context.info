@@ -1,0 +1,13 @@
+name = Social Media Context
+description = Context for social media hub page blocks
+core = 7.x
+package = Social Media
+version = 7.x-1.0
+project = social_media_context
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = social_media_hub
+dependencies[] = views
+features[context][] = social_media
+features[ctools][] = context:context:3
+features[features_api][] = api:2

@@ -8,6 +8,7 @@ dependencies[] = date
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = link
+dependencies[] = smart_trim
 dependencies[] = strongarm
 dependencies[] = text
 features[ctools][] = field_group:field_group:1

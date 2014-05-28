@@ -27,6 +27,293 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|award|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'award';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'custom_breadcrumb' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'page-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'field_recipients' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb-el' => 'span',
+          'lb-cl' => 'tag-label bold',
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'tags',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_year' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb-el' => 'span',
+          'lb-cl' => 'tag-label bold',
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'tags',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_award_type' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb-el' => 'span',
+          'lb-cl' => 'tag-label bold',
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'tags',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|award|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|award|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'award';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'teaser-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['node|award|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|blog|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'blog';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'custom_breadcrumb' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'dynamic_field_1' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:17:"Add Comment title";s:5:"title";s:0:"";s:4:"body";s:20:"<h3>Add Comment</h3>";s:6:"format";s:10:"simplified";s:10:"substitute";i:1;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
+        'load_terms' => 0,
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'comment-title',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'text_resizer' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pull-right',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'page-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'post_date' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'ds_post_date_long',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'date',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-content',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_topics' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Tags',
+          'lb-el' => 'span',
+          'lb-cl' => 'tag-label bold',
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'tags',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_author_1' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'author',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|blog|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|blog|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'blog';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'teaser-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'node_link' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => 'p',
+        'class' => 'read-more',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|blog|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|causeview_snippet|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'causeview_snippet';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'field_code_snippet' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|causeview_snippet|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|course|block_teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'course';
@@ -125,15 +412,22 @@ function display_suite_shared_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'teaser-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
     ),
     'node_link' => array(
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Learn More',
+        'link text' => 'Read More',
         'wrapper' => 'p',
-        'class' => 'panel-footer',
+        'class' => 'read-more',
         'ft' => array(),
         'conditions' => array(),
       ),
@@ -148,6 +442,11 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'event';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'custom_breadcrumb' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'dynamic_field_1' => array(
       'weight' => '11',
       'label' => 'hidden',
@@ -168,8 +467,184 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'text_resizer' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pull-right',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'page-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'field_description' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-content',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_event_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'date',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_registration_link' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Registration',
+          'lb-el' => 'h3',
+          'lb-cl' => 'sub-heading contrast',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'border-contrast',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_topics' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Tags',
+          'lb-el' => 'span',
+          'lb-cl' => 'tag-label bold',
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'tags',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_registration_link_external' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Registration',
+          'lb-el' => 'h3',
+          'lb-cl' => 'sub-heading contrast',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
+    'field_event_location' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'location',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['node|event|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|event|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'event';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'teaser-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'node_link' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'class' => '',
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'read-more',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'field_event_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'date',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_event_location' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'location',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|event|teaser'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -197,6 +672,67 @@ function display_suite_shared_ds_field_settings_info() {
     ),
   );
   $export['node|flex_block|sidebar_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|job_posting_|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'job_posting_';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'custom_breadcrumb' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'page-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['node|job_posting_|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|job_posting_|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'job_posting_';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'teaser-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'node_link' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => 'p',
+        'class' => 'read-more',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['node|job_posting_|teaser'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -267,6 +803,20 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'library_item';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'follow_mises_institute' => array(
+      'weight' => '11',
+      'label' => 'above',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Follow Mises Institute',
+          'lb-el' => 'h4',
+          'lb-cl' => 'sub-heading secondary',
+          'lb-col' => TRUE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
     'custom_breadcrumb' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -308,6 +858,27 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'print_link' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'print pull-right',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'social_widget' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'title' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -338,18 +909,6 @@ function display_suite_shared_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => 'date',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_copyright_informatio' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'p',
-          'ow-cl' => '',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -452,6 +1011,18 @@ function display_suite_shared_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'media-player clearfix',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_copyright_info' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'copyright pull-right',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -649,6 +1220,11 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
+    'custom_breadcrumb' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'text_resizer' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -734,6 +1310,71 @@ function display_suite_shared_ds_field_settings_info() {
     ),
   );
   $export['node|person_profile|author_full_name'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|person_profile|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'person_profile';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'custom_breadcrumb' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'title' => array(
+      'weight' => '5',
+      'label' => 'inline',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'span',
+        'class' => '',
+        'ft' => array(
+          'lb' => ' ',
+          'lb-el' => 'span',
+          'lb-col' => TRUE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'field_first_name' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_image_collection' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'image pull-left border-secondary',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="slideshow"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_related_nodes' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Related Content',
+          'lb-el' => 'h3',
+          'lb-cl' => 'sub-heading primary',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
+  );
+  $export['node|person_profile|full'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -887,6 +1528,100 @@ function display_suite_shared_ds_field_settings_info() {
     ),
   );
   $export['node|person_profile|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|product|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'product';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'custom_breadcrumb' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'page-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-content',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_topics' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Tags',
+          'lb-el' => 'span',
+          'lb-cl' => 'tag-label bold',
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'tags',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|product|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|product|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'product';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'teaser-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'node_link' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => 'p',
+        'class' => 'read-more',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['node|product|teaser'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -1114,6 +1849,40 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'follow_mises_institute';
+  $ds_field->label = 'Follow Mises Institute';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<div id="bottom-social-share">
+  <span class="social-widget facebook-widget">
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=439661019402770&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, \'script\', \'facebook-jssdk\'));</script>
+    <div class="fb-like" data-href="[url:absolute]" data-width="110" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+  </span>
+  <span class="social-widget twitter-widget">
+    <a href="https://twitter.com/mises" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @mises</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </span>
+</div>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['follow_mises_institute'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'linked_box_image';
   $ds_field->label = 'Linked Flex Box Image';
   $ds_field->field_type = 5;
@@ -1219,6 +1988,210 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['file|video|small_player'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|award|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'award';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'custom_breadcrumb',
+        1 => 'title',
+        2 => 'field_year',
+        3 => 'field_recipients',
+        4 => 'field_award_type',
+      ),
+    ),
+    'fields' => array(
+      'custom_breadcrumb' => 'ds_content',
+      'title' => 'ds_content',
+      'field_year' => 'ds_content',
+      'field_recipients' => 'ds_content',
+      'field_award_type' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '2',
+    'page_option_title' => 'Awards',
+  );
+  $export['node|award|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|award|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'award';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|award|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|blog|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'blog';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'text_resizer',
+        1 => 'custom_breadcrumb',
+        2 => 'title',
+        3 => 'group_date_author',
+        4 => 'field_topics',
+        5 => 'body',
+        6 => 'post_date',
+        7 => 'dynamic_field_1',
+        8 => 'field_author_1',
+      ),
+    ),
+    'fields' => array(
+      'text_resizer' => 'ds_content',
+      'custom_breadcrumb' => 'ds_content',
+      'title' => 'ds_content',
+      'group_date_author' => 'ds_content',
+      'field_topics' => 'ds_content',
+      'body' => 'ds_content',
+      'post_date' => 'ds_content',
+      'dynamic_field_1' => 'ds_content',
+      'field_author_1' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '2',
+    'page_option_title' => 'Blog',
+  );
+  $export['node|blog|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|blog|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'blog';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_2col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'title',
+        1 => 'body',
+        2 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'right',
+      'body' => 'right',
+      'node_link' => 'right',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|blog|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|causeview_snippet|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'causeview_snippet';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_code_snippet',
+      ),
+    ),
+    'fields' => array(
+      'field_code_snippet' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '1',
+    'page_option_title' => '',
+  );
+  $export['node|causeview_snippet|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1389,32 +2362,32 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_event_date',
-        1 => 'field_description',
-        2 => 'field_live_feed',
-        3 => 'field_award_type',
-        4 => 'field_event_type',
-        5 => 'field_registration_link',
+        0 => 'text_resizer',
+        1 => 'custom_breadcrumb',
+        2 => 'title',
+        3 => 'group_date_location',
+        4 => 'field_event_date',
+        5 => 'field_event_location',
         6 => 'field_topics',
-        7 => 'field_austrian_school',
-        8 => 'field_level',
-        9 => 'field_audience',
-        10 => 'field_registration_link_external',
+        7 => 'field_description',
+        8 => 'field_registration_link',
+        9 => 'field_registration_link_external',
+        10 => 'group_sharing',
         11 => 'dynamic_field_1',
       ),
     ),
     'fields' => array(
+      'text_resizer' => 'ds_content',
+      'custom_breadcrumb' => 'ds_content',
+      'title' => 'ds_content',
+      'group_date_location' => 'ds_content',
       'field_event_date' => 'ds_content',
-      'field_description' => 'ds_content',
-      'field_live_feed' => 'ds_content',
-      'field_award_type' => 'ds_content',
-      'field_event_type' => 'ds_content',
-      'field_registration_link' => 'ds_content',
+      'field_event_location' => 'ds_content',
       'field_topics' => 'ds_content',
-      'field_austrian_school' => 'ds_content',
-      'field_level' => 'ds_content',
-      'field_audience' => 'ds_content',
+      'field_description' => 'ds_content',
+      'field_registration_link' => 'ds_content',
       'field_registration_link_external' => 'ds_content',
+      'group_sharing' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
     ),
     'classes' => array(
@@ -1431,10 +2404,56 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'hide_page_title' => '2',
+    'page_option_title' => 'Mises Event',
+  );
+  $export['node|event|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|event|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'event';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_2col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'title',
+        1 => 'group_date_location',
+        2 => 'field_description',
+        3 => 'node_link',
+        4 => 'field_event_date',
+        5 => 'field_event_location',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'right',
+      'group_date_location' => 'right',
+      'field_description' => 'right',
+      'node_link' => 'right',
+      'field_event_date' => 'right',
+      'field_event_location' => 'right',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
     'hide_page_title' => '0',
     'page_option_title' => '',
   );
-  $export['node|event|full'] = $ds_layout;
+  $export['node|event|teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1480,6 +2499,96 @@ function display_suite_shared_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['node|flex_block|sidebar_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|job_posting_|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'job_posting_';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'custom_breadcrumb',
+        1 => 'title',
+        2 => 'field_post_date',
+        3 => 'field_starting_date',
+        4 => 'field_closing_date',
+        5 => 'field_location',
+        6 => 'field_link_to_external_listing_',
+        7 => 'field_contact_information',
+        8 => 'field_full_description',
+      ),
+    ),
+    'fields' => array(
+      'custom_breadcrumb' => 'ds_content',
+      'title' => 'ds_content',
+      'field_post_date' => 'ds_content',
+      'field_starting_date' => 'ds_content',
+      'field_closing_date' => 'ds_content',
+      'field_location' => 'ds_content',
+      'field_link_to_external_listing_' => 'ds_content',
+      'field_contact_information' => 'ds_content',
+      'field_full_description' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '2',
+    'page_option_title' => 'Job Postings',
+  );
+  $export['node|job_posting_|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|job_posting_|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'job_posting_';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_teaser',
+        2 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_teaser' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|job_posting_|teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1538,48 +2647,54 @@ function display_suite_shared_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'text_resizer',
         1 => 'custom_breadcrumb',
-        2 => 'field_copyright_informatio',
-        3 => 'title',
+        2 => 'title',
+        3 => 'field_copyright_info',
         4 => 'field_image_collection',
-        5 => 'field_mises_published_date',
-        6 => 'group_date_author',
-        7 => 'field_topics',
-        8 => 'field_author_1',
-        9 => 'field_author_2',
-        10 => 'field_subtitle',
-        11 => 'body',
-        12 => 'field_bibliography_footnote',
-        13 => 'field_media_collection',
-        14 => 'field_citation',
+        5 => 'print_link',
+        6 => 'social_widget',
+        7 => 'group_date_author',
+        8 => 'field_mises_published_date',
+        9 => 'field_author_1',
+        10 => 'field_topics',
+        11 => 'field_author_2',
+        12 => 'field_subtitle',
+        13 => 'body',
+        14 => 'field_media_collection',
         15 => 'field_document_attachment',
-        16 => 'group_sharing',
-        17 => 'group_footnotes',
-        18 => 'dynamic_field_1',
+        16 => 'field_bibliography_footnote',
+        17 => 'field_citation',
+        18 => 'group_sharing',
+        19 => 'follow_mises_institute',
+        20 => 'group_footnotes',
+        21 => 'dynamic_field_1',
       ),
       'ds_hidden' => array(
-        19 => 'field_level',
-        20 => 'field_austrian_school',
-        21 => 'field_audience',
+        22 => 'field_level',
+        23 => 'field_austrian_school',
+        24 => 'field_audience',
       ),
     ),
     'fields' => array(
       'text_resizer' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
-      'field_copyright_informatio' => 'ds_content',
       'title' => 'ds_content',
+      'field_copyright_info' => 'ds_content',
       'field_image_collection' => 'ds_content',
-      'field_mises_published_date' => 'ds_content',
+      'print_link' => 'ds_content',
+      'social_widget' => 'ds_content',
       'group_date_author' => 'ds_content',
-      'field_topics' => 'ds_content',
+      'field_mises_published_date' => 'ds_content',
       'field_author_1' => 'ds_content',
+      'field_topics' => 'ds_content',
       'field_author_2' => 'ds_content',
       'field_subtitle' => 'ds_content',
       'body' => 'ds_content',
-      'field_bibliography_footnote' => 'ds_content',
       'field_media_collection' => 'ds_content',
-      'field_citation' => 'ds_content',
       'field_document_attachment' => 'ds_content',
+      'field_bibliography_footnote' => 'ds_content',
+      'field_citation' => 'ds_content',
       'group_sharing' => 'ds_content',
+      'follow_mises_institute' => 'ds_content',
       'group_footnotes' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
       'field_level' => 'ds_hidden',
@@ -1702,17 +2817,19 @@ function display_suite_shared_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'text_resizer',
-        1 => 'field_image_collection',
-        2 => 'title',
-        3 => 'body_with_media_embedded',
-        4 => 'body',
+        1 => 'custom_breadcrumb',
+        2 => 'field_image_collection',
+        3 => 'title',
+        4 => 'body_with_media_embedded',
+        5 => 'body',
       ),
       'ds_hidden' => array(
-        5 => 'field_media_collection',
+        6 => 'field_media_collection',
       ),
     ),
     'fields' => array(
       'text_resizer' => 'ds_content',
+      'custom_breadcrumb' => 'ds_content',
       'field_image_collection' => 'ds_content',
       'title' => 'ds_content',
       'body_with_media_embedded' => 'ds_content',
@@ -1770,6 +2887,75 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
   );
   $export['node|person_profile|author_full_name'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|person_profile|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'person_profile';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'custom_breadcrumb',
+        1 => 'field_image_collection',
+        2 => 'group_author_title',
+        3 => 'field_featured_content',
+        4 => 'field_first_name',
+        5 => 'field_bio_summary',
+        6 => 'title',
+        7 => 'field_topics',
+        8 => 'field_published_in',
+        9 => 'field_profile_type',
+        10 => 'field_quote',
+        11 => 'field_twitter',
+        12 => 'field_facebook',
+        13 => 'field_contact_email',
+        14 => 'field_austrian_school',
+        15 => 'field_major_works',
+        16 => 'field_contributions',
+        17 => 'field_related_nodes',
+      ),
+    ),
+    'fields' => array(
+      'custom_breadcrumb' => 'ds_content',
+      'field_image_collection' => 'ds_content',
+      'group_author_title' => 'ds_content',
+      'field_featured_content' => 'ds_content',
+      'field_first_name' => 'ds_content',
+      'field_bio_summary' => 'ds_content',
+      'title' => 'ds_content',
+      'field_topics' => 'ds_content',
+      'field_published_in' => 'ds_content',
+      'field_profile_type' => 'ds_content',
+      'field_quote' => 'ds_content',
+      'field_twitter' => 'ds_content',
+      'field_facebook' => 'ds_content',
+      'field_contact_email' => 'ds_content',
+      'field_austrian_school' => 'ds_content',
+      'field_major_works' => 'ds_content',
+      'field_contributions' => 'ds_content',
+      'field_related_nodes' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '2',
+    'page_option_title' => 'Profiles',
+  );
+  $export['node|person_profile|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1947,6 +3133,86 @@ function display_suite_shared_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['node|person_profile|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|product|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'product';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'custom_breadcrumb',
+        1 => 'title',
+        2 => 'field_topics',
+        3 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'custom_breadcrumb' => 'ds_content',
+      'title' => 'ds_content',
+      'field_topics' => 'ds_content',
+      'body' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|product|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|product|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'product';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'body',
+        2 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'body' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|product|teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

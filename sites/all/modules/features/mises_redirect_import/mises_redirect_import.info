@@ -1,0 +1,9 @@
+name = Mises Redirect Import
+description = This feature adds functionality to import redirect urls.
+core = 7.x
+package = Settings
+version = 7.x-1.0
+project = mises_redirect_import
+dependencies[] = mises_seo_settings
+dependencies[] = path_redirect_import
+features[features_api][] = api:2

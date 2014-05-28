@@ -1,0 +1,9 @@
+name = Mises Economist Landing Page Resources
+core = 7.x
+package = Landing Pages
+version = 7.x-1.0
+project = mises_economist_landing_page_resources
+dependencies[] = fe_nodequeue
+dependencies[] = nodequeue
+features[fe_nodequeue][] = economist_recommended_resources_
+features[features_api][] = api:2

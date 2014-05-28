@@ -78,7 +78,7 @@ function field_ui_inactive_message($entity_type, $bundle) {
  */
 function _field_ui_reduce_order($array, $a) {
   $array = !isset($array) ? array() : $array;
-  if (isset($a['name'])) {
+  if ($a['name']) {
     $array[] = $a['name'];
   }
   if (!empty($a['children'])) {
@@ -936,7 +936,7 @@ function field_ui_display_overview_form($form, &$form_state, $entity_type, $bund
   $field_label_options = array(
     'above' => t('Above'),
     'inline' => t('Inline'),
-    'hidden' => t('<Hidden>'),
+    'hidden' => '<' . t('Hidden') . '>',
   );
   $extra_visibility_options = array(
     'visible' => t('Visible'),
@@ -992,7 +992,7 @@ function field_ui_display_overview_form($form, &$form_state, $entity_type, $bund
     );
 
     $formatter_options = field_ui_formatter_options($field['type']);
-    $formatter_options['hidden'] = t('<Hidden>');
+    $formatter_options['hidden'] = '<' . t('Hidden') . '>';
     $table[$name]['format'] = array(
       'type' => array(
         '#type' => 'select',

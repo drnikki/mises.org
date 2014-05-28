@@ -77,6 +77,7 @@ Auburn, Alabama 36832-4501</address>
       ),
     ),
   ),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -135,6 +136,7 @@ Auburn, Alabama 36832-4501</address>
   'name' => 'aeasterling',
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
+  'weight_weight' => FALSE,
   'date' => '2014-05-02 20:09:29 -0700',
 );
   $nodes[] = array(
@@ -182,6 +184,7 @@ Auburn, Alabama 36832-4501</address>
     ),
   ),
   'field_weight' => array(),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -240,6 +243,7 @@ Auburn, Alabama 36832-4501</address>
   'name' => 'aeasterling',
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
+  'weight_weight' => FALSE,
   'date' => '2014-05-02 19:19:10 -0700',
 );
   return $nodes;

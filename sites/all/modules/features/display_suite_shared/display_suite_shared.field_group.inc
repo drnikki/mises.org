@@ -66,5 +66,29 @@ function display_suite_shared_field_group_info() {
   );
   $export['group_heading|node|library_item|sidebar_teaser'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sharing|node|event|full';
+  $field_group->group_name = 'group_sharing';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Sharing',
+    'weight' => '10',
+    'children' => array(),
+    'format_type' => 'html5',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'wrapper' => '',
+        'classes' => 'group-sharing field-group-html5',
+      ),
+    ),
+  );
+  $export['group_sharing|node|event|full'] = $field_group;
+
   return $export;
 }

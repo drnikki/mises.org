@@ -83,6 +83,22 @@
   }
 }
 /*
+* DATE LOCATION ON TEASERS AND NODES
+*/
+.group-date-location {
+  span.location {
+    padding-left: 10px;
+    &:before {
+      display: inline-block;
+      width: 14px;
+      content: "\2022";
+    }
+    a {
+      color: $brand-primary;
+    }
+  }
+}
+/*
 *   WIDE MEDIA PLAYER
 */
 .media-player {
@@ -93,10 +109,43 @@
 * SHARING
 */
 .group-sharing {
+  clear: both;
   margin-top: $padding-large-horizontal * 1.5;
   padding: $padding-large-horizontal * 1.5 0;
-  border-top: 1px solid $gray-lighter;
-  clear: both;
+  border-bottom: 1px solid $gray-lighter;
+  .copyright {
+    padding-top:  $padding-large-horizontal;
+  }
+  .print {
+    padding-top:  $padding-large-horizontal;
+    .glyphicon {
+      top: 4px;
+      width: 25px;
+      height: 25px;
+      background: transparent;
+      color: $gray-dark;
+      font-size: 25px;
+    }
+  }
+}
+#widgets-element-addthis-share {
+  height: 50px;
+  .widgets-element {
+    padding-right: $padding-xs-horizontal;
+  }
+  .addthis_counter .addthis_button_expanded {
+    height: 37px;
+  }
+}
+#bottom-social-share {
+  .social-widget {
+    display: inline-block;
+    &.facebook-widget {
+      position: relative;
+      top: -7px;
+      width: 85px;
+    }
+  }
 }
 
 /*

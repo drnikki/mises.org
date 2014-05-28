@@ -1,0 +1,12 @@
+name = Mises Homeschool Resources Landing Page
+core = 7.x
+package = Landing Pages
+version = 7.x-1.0
+project = homeschool_resources_landing_page
+dependencies[] = fe_nodequeue
+dependencies[] = nodequeue
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[fe_nodequeue][] = homeschool_recommended_resources
+features[features_api][] = api:2
+features_exclude[dependencies][ctools] = ctools
