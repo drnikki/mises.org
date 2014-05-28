@@ -309,6 +309,7 @@ function mises_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
@@ -398,7 +399,7 @@ function mises_events_views_default_views() {
   $handler->display->display_options['sorts']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['sorts']['field_featured_content_value']['field'] = 'field_featured_content_value';
   $handler->display->display_options['sorts']['field_featured_content_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Date (field_event_date) */
+  /* Sort criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -417,11 +418,19 @@ function mises_events_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date (field_event_date:value2) */
+  /* Filter criterion: Content: Date - end date (field_event_date:value2) */
   $handler->display->display_options['filters']['field_event_date_value2']['id'] = 'field_event_date_value2';
   $handler->display->display_options['filters']['field_event_date_value2']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['filters']['field_event_date_value2']['field'] = 'field_event_date_value2';
   $handler->display->display_options['filters']['field_event_date_value2']['operator'] = '>=';
+  /* Filter criterion: Content: Public/Private (field_public_private) */
+  $handler->display->display_options['filters']['field_public_private_value']['id'] = 'field_public_private_value';
+  $handler->display->display_options['filters']['field_public_private_value']['table'] = 'field_data_field_public_private';
+  $handler->display->display_options['filters']['field_public_private_value']['field'] = 'field_public_private_value';
+  $handler->display->display_options['filters']['field_public_private_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_public_private_value']['value'] = array(
+    'private' => 'private',
+  );
 
   /* Display: Mises Events */
   $handler = $view->new_display('page', 'Mises Events', 'page');
@@ -515,7 +524,7 @@ function mises_events_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Mises Academy';
+  $handler->display->display_options['css_class'] = 'online-courses panel border-contrast padding-lg';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -524,10 +533,16 @@ function mises_events_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'simple_teaser';
   $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="panel-heading single"><div class="panel-title">Mises Courses</div></div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -555,8 +570,8 @@ function mises_events_views_default_views() {
     'course' => 'course',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Mises Courses */
+  $handler = $view->new_display('block', 'Mises Courses', 'block');
   $export['upcoming_courses'] = $view;
 
   return $export;

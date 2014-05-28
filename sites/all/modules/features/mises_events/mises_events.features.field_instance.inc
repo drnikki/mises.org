@@ -58,7 +58,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 47,
+      'weight' => 53,
     ),
   );
 
@@ -110,7 +110,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 45,
+      'weight' => 51,
     ),
   );
 
@@ -162,7 +162,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 43,
+      'weight' => 54,
     ),
   );
 
@@ -524,7 +524,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 42,
+      'weight' => 49,
     ),
   );
 
@@ -658,7 +658,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 46,
+      'weight' => 52,
     ),
   );
 
@@ -764,6 +764,56 @@ function mises_events_field_default_field_instances() {
       'settings' => array(),
       'type' => 'field_collection_embed',
       'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_public_private'
+  $field_instances['node-event-field_public_private'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 'public',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Indicate where this event is public or private. ',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
+        'weight' => 18,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_public_private',
+    'label' => 'Public/Private',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 48,
     ),
   );
 
@@ -947,7 +997,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 44,
+      'weight' => 50,
     ),
   );
 
@@ -961,9 +1011,11 @@ function mises_events_field_default_field_instances() {
   t('Event Image');
   t('Event Type');
   t('Featured');
+  t('Indicate where this event is public or private. ');
   t('Level');
   t('Live Feed');
   t('Location');
+  t('Public/Private');
   t('Registration Link');
   t('Registration Link (External)');
   t('Topics');

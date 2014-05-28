@@ -29,6 +29,7 @@ function mises_events_field_group_info() {
       3 => 'field_level',
       4 => 'field_topics',
       5 => 'field_featured_content',
+      6 => 'field_public_private',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

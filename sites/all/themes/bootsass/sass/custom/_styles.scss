@@ -298,15 +298,18 @@ h3, h4 {
   }
   &.sub-heading {
     text-transform: uppercase;
-    &.primary {
-      color: $brand-primary;
-    }
-    &.secondary {
-      color: $brand-secondary;
-    }
-    &.contrast {
-      color: $brand-contrast;
-    }
+  }
+  &.sidebar-title {
+    margin-bottom: $padding-small-vertical;
+  }
+  &.primary {
+    color: $brand-primary;
+  }
+  &.secondary {
+    color: $brand-secondary;
+  }
+  &.contrast {
+    color: $brand-contrast;
   }
 }
 h2, .h2, h3, .h3, h4, .h4, h5, .h5 { // FIX FOR AUTHOR FULL NAME NESTED P
