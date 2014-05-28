@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Mises Mailchimp Configuration  feature.
- */
-
-include_once 'mises_mailchimp_configuration_.features.inc';
