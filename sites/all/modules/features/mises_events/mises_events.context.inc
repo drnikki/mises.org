@@ -25,15 +25,33 @@ function mises_events_context_default_contexts() {
         'node_form' => '0',
       ),
     ),
+    'path' => array(
+      'values' => array(
+        'events' => 'events',
+        'events/*' => 'events/*',
+      ),
+    ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-1' => array(
-          'module' => 'block',
-          'delta' => '1',
-          'region' => 'content',
-          'weight' => '2',
+        'views-mises_calendar-block_1' => array(
+          'module' => 'views',
+          'delta' => 'mises_calendar-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'menu-menu-event-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-event-menu',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+        'views-upcoming_courses-block' => array(
+          'module' => 'views',
+          'delta' => 'upcoming_courses-block',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
         ),
       ),
     ),
