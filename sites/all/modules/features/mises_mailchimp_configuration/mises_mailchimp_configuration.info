@@ -1,8 +1,8 @@
-name = Mises Mailchimp Configuration 
+name = Mises Mailchimp Configuration
 core = 7.x
 package = Settings
 version = 7.x-1.0
-project = mises_mailchimp_configuration_
+project = mises_mailchimp_configuration
 dependencies[] = ctools
 dependencies[] = mailchimp
 dependencies[] = mailchimp_lists

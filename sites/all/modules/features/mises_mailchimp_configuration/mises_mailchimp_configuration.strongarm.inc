@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * mises_mailchimp_configuration_.strongarm.inc
+ * mises_mailchimp_configuration.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function mises_mailchimp_configuration__strongarm() {
+function mises_mailchimp_configuration_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
