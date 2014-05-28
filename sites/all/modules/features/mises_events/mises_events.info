@@ -73,4 +73,5 @@ features[variable][] = node_preview_event
 features[variable][] = node_submitted_event
 features[views_view][] = mises_calendar
 features[views_view][] = mises_events
+features[views_view][] = upcoming_courses
 project path = sites/all/modules/features
