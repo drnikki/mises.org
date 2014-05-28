@@ -31,7 +31,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -83,7 +83,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -135,7 +135,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 33,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -148,7 +148,7 @@ function mises_events_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_award_type',
     'label' => 'Award',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -189,7 +189,7 @@ function mises_events_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -451,7 +451,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -502,7 +502,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -546,10 +546,18 @@ function mises_events_field_default_field_instances() {
         'weight' => 16,
       ),
       'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'conditions' => array(
+            0 => array(
+              'condition' => '',
+            ),
+          ),
+          'file_view_mode' => 'full',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -623,7 +631,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -663,7 +671,7 @@ function mises_events_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Will this event have a live feed?',
+    'description' => 'Will this event have a live feed? If so, the video embed field will appear below after you select "Yes."',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -678,7 +686,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -701,6 +709,61 @@ function mises_events_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_media_collection'
+  $field_instances['node-event-field_media_collection'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'conditions' => array(),
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 17,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'wide_player',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_media_collection',
+    'label' => 'YouTube Embed',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 8,
     ),
   );
 
@@ -857,7 +920,7 @@ function mises_events_field_default_field_instances() {
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -904,7 +967,8 @@ function mises_events_field_default_field_instances() {
   t('Registration Link');
   t('Registration Link (External)');
   t('Topics');
-  t('Will this event have a live feed?');
+  t('Will this event have a live feed? If so, the video embed field will appear below after you select "Yes."');
+  t('YouTube Embed');
 
   return $field_instances;
 }

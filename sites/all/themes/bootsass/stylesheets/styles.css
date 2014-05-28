@@ -9700,7 +9700,7 @@ span.glyphicon {
 }
 
 /* line 38, ../sass/custom/_features.scss */
-#slideshow, #media {
+#slideshow, #media, #image {
   margin-right: 20px;
   width: 240px;
 }
