@@ -803,6 +803,20 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'library_item';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'follow_mises_institute' => array(
+      'weight' => '11',
+      'label' => 'above',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Follow Mises Institute',
+          'lb-el' => 'h4',
+          'lb-cl' => 'sub-heading secondary',
+          'lb-col' => TRUE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
     'custom_breadcrumb' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -844,6 +858,27 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'print_link' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'print pull-right',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'social_widget' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'title' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -874,18 +909,6 @@ function display_suite_shared_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => 'date',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_copyright_informatio' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'p',
-          'ow-cl' => '',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -988,6 +1011,18 @@ function display_suite_shared_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'media-player clearfix',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_copyright_info' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'copyright pull-right',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -1814,6 +1849,40 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'follow_mises_institute';
+  $ds_field->label = 'Follow Mises Institute';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<div id="bottom-social-share">
+  <span class="social-widget facebook-widget">
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=439661019402770&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, \'script\', \'facebook-jssdk\'));</script>
+    <div class="fb-like" data-href="[url:absolute]" data-width="110" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+  </span>
+  <span class="social-widget twitter-widget">
+    <a href="https://twitter.com/mises" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @mises</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </span>
+</div>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['follow_mises_institute'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'linked_box_image';
   $ds_field->label = 'Linked Flex Box Image';
   $ds_field->field_type = 5;
@@ -2578,48 +2647,54 @@ function display_suite_shared_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'text_resizer',
         1 => 'custom_breadcrumb',
-        2 => 'field_copyright_informatio',
-        3 => 'title',
+        2 => 'title',
+        3 => 'field_copyright_info',
         4 => 'field_image_collection',
-        5 => 'field_mises_published_date',
-        6 => 'group_date_author',
-        7 => 'field_topics',
-        8 => 'field_author_1',
-        9 => 'field_author_2',
-        10 => 'field_subtitle',
-        11 => 'body',
-        12 => 'field_bibliography_footnote',
-        13 => 'field_media_collection',
-        14 => 'field_citation',
+        5 => 'print_link',
+        6 => 'social_widget',
+        7 => 'group_date_author',
+        8 => 'field_mises_published_date',
+        9 => 'field_author_1',
+        10 => 'field_topics',
+        11 => 'field_author_2',
+        12 => 'field_subtitle',
+        13 => 'body',
+        14 => 'field_media_collection',
         15 => 'field_document_attachment',
-        16 => 'group_sharing',
-        17 => 'group_footnotes',
-        18 => 'dynamic_field_1',
+        16 => 'field_bibliography_footnote',
+        17 => 'field_citation',
+        18 => 'group_sharing',
+        19 => 'follow_mises_institute',
+        20 => 'group_footnotes',
+        21 => 'dynamic_field_1',
       ),
       'ds_hidden' => array(
-        19 => 'field_level',
-        20 => 'field_austrian_school',
-        21 => 'field_audience',
+        22 => 'field_level',
+        23 => 'field_austrian_school',
+        24 => 'field_audience',
       ),
     ),
     'fields' => array(
       'text_resizer' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
-      'field_copyright_informatio' => 'ds_content',
       'title' => 'ds_content',
+      'field_copyright_info' => 'ds_content',
       'field_image_collection' => 'ds_content',
-      'field_mises_published_date' => 'ds_content',
+      'print_link' => 'ds_content',
+      'social_widget' => 'ds_content',
       'group_date_author' => 'ds_content',
-      'field_topics' => 'ds_content',
+      'field_mises_published_date' => 'ds_content',
       'field_author_1' => 'ds_content',
+      'field_topics' => 'ds_content',
       'field_author_2' => 'ds_content',
       'field_subtitle' => 'ds_content',
       'body' => 'ds_content',
-      'field_bibliography_footnote' => 'ds_content',
       'field_media_collection' => 'ds_content',
-      'field_citation' => 'ds_content',
       'field_document_attachment' => 'ds_content',
+      'field_bibliography_footnote' => 'ds_content',
+      'field_citation' => 'ds_content',
       'group_sharing' => 'ds_content',
+      'follow_mises_institute' => 'ds_content',
       'group_footnotes' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
       'field_level' => 'ds_hidden',

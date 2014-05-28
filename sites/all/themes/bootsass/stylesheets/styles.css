@@ -9787,30 +9787,71 @@ span.glyphicon {
 */
 /* line 111, ../sass/custom/_features.scss */
 .group-sharing {
+  clear: both;
   margin-top: 24px;
   padding: 24px 0;
-  border-top: 1px solid #e4ebee;
-  clear: both;
+  border-bottom: 1px solid #e4ebee;
+}
+/* line 116, ../sass/custom/_features.scss */
+.group-sharing .copyright {
+  padding-top: 16px;
+}
+/* line 119, ../sass/custom/_features.scss */
+.group-sharing .print {
+  padding-top: 16px;
+}
+/* line 121, ../sass/custom/_features.scss */
+.group-sharing .print .glyphicon {
+  top: 4px;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  color: #333333;
+  font-size: 25px;
+}
+
+/* line 131, ../sass/custom/_features.scss */
+#widgets-element-addthis-share {
+  height: 50px;
+}
+/* line 133, ../sass/custom/_features.scss */
+#widgets-element-addthis-share .widgets-element {
+  padding-right: 5px;
+}
+/* line 136, ../sass/custom/_features.scss */
+#widgets-element-addthis-share .addthis_counter .addthis_button_expanded {
+  height: 37px;
+}
+
+/* line 141, ../sass/custom/_features.scss */
+#bottom-social-share .social-widget {
+  display: inline-block;
+}
+/* line 143, ../sass/custom/_features.scss */
+#bottom-social-share .social-widget.facebook-widget {
+  position: relative;
+  top: -7px;
+  width: 85px;
 }
 
 /*
 * FOOTNOTES GROUP -- MAY ABSTRACT THIS
 */
-/* line 121, ../sass/custom/_features.scss */
+/* line 154, ../sass/custom/_features.scss */
 .group-footnotes {
   margin-right: -24px;
   margin-left: -24px;
   padding: 24px;
   background: #e4ebee;
 }
-/* line 126, ../sass/custom/_features.scss */
+/* line 159, ../sass/custom/_features.scss */
 .group-footnotes h3 {
   color: #5b8ab5;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 15px;
 }
-/* line 132, ../sass/custom/_features.scss */
+/* line 165, ../sass/custom/_features.scss */
 .group-footnotes p {
   font-size: 13px;
 }
@@ -9818,7 +9859,7 @@ span.glyphicon {
 /*
 * COMMENTING
 */
-/* line 140, ../sass/custom/_features.scss */
+/* line 173, ../sass/custom/_features.scss */
 .comment-title h3 {
   color: #5b8ab5;
   text-transform: uppercase;
