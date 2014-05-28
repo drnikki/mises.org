@@ -75,25 +75,22 @@ function main_menu_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_events:<front>
-  $menu_links['main-menu_events:<front>'] = array(
+  // Exported menu link: main-menu_events:events
+  $menu_links['main-menu_events:events'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'events',
+    'router_path' => 'events',
     'link_title' => 'Events',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'main-menu_events:<front>',
+      'identifier' => 'main-menu_events:events',
     ),
-    'module' => 'menu',
+    'module' => 'system',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -45,
-    'customized' => 1,
+    'customized' => 0,
   );
   // Exported menu link: main-menu_home:<front>
   $menu_links['main-menu_home:<front>'] = array(
