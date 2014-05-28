@@ -17,6 +17,7 @@ function mises_event_taxonomy_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '9c1cdf6a-f791-4b9b-94b6-e930e37e6ca8',
     'vocabulary_machine_name' => 'events',
+    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Conference',
@@ -25,6 +26,7 @@ function mises_event_taxonomy_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => 'e48543ca-5bdb-4bf6-a589-52181e7bbdba',
     'vocabulary_machine_name' => 'events',
+    'metatags' => array(),
   );
   return $terms;
 }
