@@ -110,9 +110,8 @@
 */
 .group-sharing {
   clear: both;
-  margin-top: $padding-large-horizontal * 1.5;
-  padding: $padding-large-horizontal * 1.5 0;
-  border-bottom: 1px solid $gray-lighter;
+  padding: $padding-large-horizontal 0;
+  border-bottom: 1px solid $gray-light;
   .copyright {
     padding-top:  $padding-large-horizontal;
   }
@@ -129,7 +128,7 @@
   }
 }
 #widgets-element-addthis-share {
-  height: 50px;
+  height: 62px;
   .widgets-element {
     padding-right: $padding-xs-horizontal;
   }
@@ -138,6 +137,7 @@
   }
 }
 #bottom-social-share {
+  padding: $padding-large-horizontal / 2 0 $padding-large-horizontal * 1.5;
   .social-widget {
     display: inline-block;
     &.facebook-widget {
