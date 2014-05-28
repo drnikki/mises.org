@@ -131,3 +131,13 @@ function mises_utility_update_projects_alter(&$projects) {
     }
   }
 }
+
+/**
+ * Implements hook_info_alter
+ * Overrides default formatter for creative commons field
+ * 
+ */
+
+function mises_utility_field_info_alter(&$info){
+  $info['creative_commons']['default_formatter'] = 'creative_commons_large_image';
+}

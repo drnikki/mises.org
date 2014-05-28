@@ -805,14 +805,16 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->settings = array(
     'follow_mises_institute' => array(
       'weight' => '11',
-      'label' => 'above',
+      'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
-          'lb' => 'Follow Mises Institute',
-          'lb-el' => 'h4',
-          'lb-cl' => 'sub-heading secondary',
-          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'clearfix',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
         'conditions' => array(),
       ),
@@ -857,27 +859,6 @@ function display_suite_shared_ds_field_settings_info() {
         ),
         'conditions' => array(),
       ),
-    ),
-    'print_link' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'print pull-right',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-        'conditions' => array(),
-      ),
-    ),
-    'social_widget' => array(
-      'weight' => '4',
-      'label' => 'hidden',
-      'format' => 'default',
     ),
     'title' => array(
       'weight' => '2',
@@ -1011,18 +992,6 @@ function display_suite_shared_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'media-player clearfix',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_copyright_info' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'copyright pull-right',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -1850,7 +1819,7 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
   $ds_field->field = 'follow_mises_institute';
-  $ds_field->label = 'Follow Mises Institute';
+  $ds_field->label = 'Node Widgets';
   $ds_field->field_type = 5;
   $ds_field->entities = array(
     'node' => 'node',
@@ -1858,7 +1827,13 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<div id="bottom-social-share">
+      'value' => '<div id="group-sharing" class="group-sharing">
+<div class="copyright pull-right">[node:field_copyright_info]</div>
+<div class="print pull-right"><div id="printer-link" class="node-widget"><p><a target="_blank" href="/print/[node:nid]" title="Print"><span class="glyphicon glyphicon-print"></span></a></p></div></div>
+<div class="addthis-widget">[widgets:ws-addthis-share]</div>
+</div>
+<div id="bottom-social-share">
+  <h4 class="label-above sub-heading secondary">Follow Mises Institute</h4>
   <span class="social-widget facebook-widget">
     <div id="fb-root"></div>
       <script>(function(d, s, id) {
@@ -1874,7 +1849,8 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
     <a href="https://twitter.com/mises" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @mises</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </span>
-</div>',
+</div>
+',
       'format' => 'ds_code',
     ),
     'use_token' => 1,
@@ -2648,40 +2624,33 @@ function display_suite_shared_ds_layout_settings_info() {
         0 => 'text_resizer',
         1 => 'custom_breadcrumb',
         2 => 'title',
-        3 => 'field_copyright_info',
-        4 => 'field_image_collection',
-        5 => 'print_link',
-        6 => 'social_widget',
-        7 => 'group_date_author',
-        8 => 'field_mises_published_date',
-        9 => 'field_author_1',
-        10 => 'field_topics',
-        11 => 'field_author_2',
-        12 => 'field_subtitle',
-        13 => 'body',
-        14 => 'field_media_collection',
-        15 => 'field_document_attachment',
-        16 => 'field_bibliography_footnote',
-        17 => 'field_citation',
-        18 => 'group_sharing',
-        19 => 'follow_mises_institute',
-        20 => 'group_footnotes',
-        21 => 'dynamic_field_1',
+        3 => 'field_image_collection',
+        4 => 'group_date_author',
+        5 => 'field_mises_published_date',
+        6 => 'field_author_1',
+        7 => 'field_topics',
+        8 => 'field_author_2',
+        9 => 'field_subtitle',
+        10 => 'body',
+        11 => 'field_media_collection',
+        12 => 'field_bibliography_footnote',
+        13 => 'field_document_attachment',
+        14 => 'field_citation',
+        15 => 'follow_mises_institute',
+        16 => 'group_footnotes',
+        17 => 'dynamic_field_1',
       ),
       'ds_hidden' => array(
-        22 => 'field_level',
-        23 => 'field_austrian_school',
-        24 => 'field_audience',
+        18 => 'field_level',
+        19 => 'field_austrian_school',
+        20 => 'field_audience',
       ),
     ),
     'fields' => array(
       'text_resizer' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
       'title' => 'ds_content',
-      'field_copyright_info' => 'ds_content',
       'field_image_collection' => 'ds_content',
-      'print_link' => 'ds_content',
-      'social_widget' => 'ds_content',
       'group_date_author' => 'ds_content',
       'field_mises_published_date' => 'ds_content',
       'field_author_1' => 'ds_content',
@@ -2690,10 +2659,9 @@ function display_suite_shared_ds_layout_settings_info() {
       'field_subtitle' => 'ds_content',
       'body' => 'ds_content',
       'field_media_collection' => 'ds_content',
-      'field_document_attachment' => 'ds_content',
       'field_bibliography_footnote' => 'ds_content',
+      'field_document_attachment' => 'ds_content',
       'field_citation' => 'ds_content',
-      'group_sharing' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'group_footnotes' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
