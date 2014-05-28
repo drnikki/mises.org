@@ -73,12 +73,21 @@ function mises_course_field_default_field_instances() {
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'trim',
+          'trim_length' => 120,
+          'trim_options' => array(
+            'text' => 0,
+          ),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_default',
-        'weight' => 0,
+        'type' => 'smart_trim_format',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -160,13 +169,9 @@ function mises_course_field_default_field_instances() {
       ),
       'simple_teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 4,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -235,7 +240,7 @@ function mises_course_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -314,17 +319,9 @@ function mises_course_field_default_field_instances() {
       ),
       'simple_teaser' => array(
         'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'conditions' => array(),
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 5,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -391,13 +388,9 @@ function mises_course_field_default_field_instances() {
       ),
       'simple_teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',

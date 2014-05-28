@@ -139,6 +139,9 @@ span.glyphicon {
 /* OTHER HELPER CLASSES */
 .padding-lg {
   padding: $padding-small-horizontal $padding-small-horizontal * 2;
+  .view-content {
+    padding: $padding-small-horizontal $padding-small-horizontal * 2;
+  }
 }
 
 /* Bootstrap Panel overrides */
@@ -239,6 +242,11 @@ span.glyphicon {
   }
   .panel-body {
     padding: 10px 20px;
+  }
+  .view-content {
+    p {
+      margin: 0;
+    }
   }
 }
 .region-sidebar-second-top {

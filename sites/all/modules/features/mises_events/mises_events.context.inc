@@ -38,14 +38,8 @@ function mises_events_context_default_contexts() {
         'views-mises_calendar-block_1' => array(
           'module' => 'views',
           'delta' => 'mises_calendar-block_1',
-          'region' => 'sidebar_second',
+          'region' => 'sidebar_second_top',
           'weight' => '-10',
-        ),
-        'menu-menu-event-menu' => array(
-          'module' => 'menu',
-          'delta' => 'menu-event-menu',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
         ),
         'views-photo_album-block' => array(
           'module' => 'views',

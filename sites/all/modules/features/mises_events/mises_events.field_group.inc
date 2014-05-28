@@ -29,6 +29,7 @@ function mises_events_field_group_info() {
       3 => 'field_level',
       4 => 'field_topics',
       5 => 'field_featured_content',
+      6 => 'field_public_private',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -54,7 +55,7 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Location',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_event_date',
       1 => 'field_event_location',
@@ -145,6 +146,7 @@ function mises_events_field_group_info() {
     'children' => array(
       0 => 'field_live_feed',
       1 => 'field_image',
+      2 => 'field_media_collection',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

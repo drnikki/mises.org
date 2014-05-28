@@ -403,6 +403,28 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|course|simple_teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'course';
+  $ds_fieldsetting->view_mode = 'simple_teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => 'sidebar-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['node|course|simple_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|course|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'course';
@@ -466,6 +488,11 @@ function display_suite_shared_ds_field_settings_info() {
         ),
         'conditions' => array(),
       ),
+    ),
+    'follow_mises_institute' => array(
+      'weight' => '10',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
     'text_resizer' => array(
       'weight' => '0',
@@ -574,6 +601,18 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-cl' => 'location',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'image border-secondary pull-left',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="image"',
           'ow-def-at' => FALSE,
         ),
       ),
@@ -2291,6 +2330,43 @@ function display_suite_shared_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|course|simple_teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'course';
+  $ds_layout->view_mode = 'simple_teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'body' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|course|simple_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|course|teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'course';
@@ -2341,29 +2417,33 @@ function display_suite_shared_ds_layout_settings_info() {
         0 => 'text_resizer',
         1 => 'custom_breadcrumb',
         2 => 'title',
-        3 => 'group_date_location',
-        4 => 'field_event_date',
-        5 => 'field_event_location',
-        6 => 'field_topics',
-        7 => 'field_description',
-        8 => 'field_registration_link',
-        9 => 'field_registration_link_external',
-        10 => 'group_sharing',
-        11 => 'dynamic_field_1',
+        3 => 'field_image',
+        4 => 'group_date_location',
+        5 => 'field_event_date',
+        6 => 'field_event_location',
+        7 => 'field_topics',
+        8 => 'field_description',
+        9 => 'field_media_collection',
+        10 => 'field_registration_link',
+        11 => 'field_registration_link_external',
+        12 => 'follow_mises_institute',
+        13 => 'dynamic_field_1',
       ),
     ),
     'fields' => array(
       'text_resizer' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
       'title' => 'ds_content',
+      'field_image' => 'ds_content',
       'group_date_location' => 'ds_content',
       'field_event_date' => 'ds_content',
       'field_event_location' => 'ds_content',
       'field_topics' => 'ds_content',
       'field_description' => 'ds_content',
+      'field_media_collection' => 'ds_content',
       'field_registration_link' => 'ds_content',
       'field_registration_link_external' => 'ds_content',
-      'group_sharing' => 'ds_content',
+      'follow_mises_institute' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
     ),
     'classes' => array(
