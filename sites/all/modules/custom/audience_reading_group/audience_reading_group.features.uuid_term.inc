@@ -17,6 +17,7 @@ function audience_reading_group_uuid_features_default_terms() {
     'weight' => 2,
     'uuid' => '3e0e7890-605d-4bf4-85c6-dbe0d643cfcb',
     'vocabulary_machine_name' => 'reading_group',
+    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Press Room',
@@ -25,6 +26,7 @@ function audience_reading_group_uuid_features_default_terms() {
     'weight' => 1,
     'uuid' => '5b691658-3714-490e-aacc-336309d096a4',
     'vocabulary_machine_name' => 'reading_group',
+    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Austrian Economics',
@@ -33,6 +35,7 @@ function audience_reading_group_uuid_features_default_terms() {
     'weight' => 3,
     'uuid' => '77a46036-5d3e-472e-bab7-20000bb1e8c9',
     'vocabulary_machine_name' => 'reading_group',
+    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Homeschool Resource',
@@ -41,6 +44,7 @@ function audience_reading_group_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => 'caad2632-f9ab-44a9-b09d-915ce9367368',
     'vocabulary_machine_name' => 'reading_group',
+    'metatags' => array(),
   );
   return $terms;
 }
