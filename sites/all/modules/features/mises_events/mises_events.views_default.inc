@@ -57,7 +57,7 @@ function mises_events_views_default_views() {
   $handler->display->display_options['sorts']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['sorts']['field_featured_content_value']['field'] = 'field_featured_content_value';
   $handler->display->display_options['sorts']['field_featured_content_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Date -  start date (field_event_date) */
+  /* Sort criterion: Content: Date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -76,12 +76,11 @@ function mises_events_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date - end date (field_event_date:value2) */
+  /* Filter criterion: Content: Date (field_event_date:value2) */
   $handler->display->display_options['filters']['field_event_date_value2']['id'] = 'field_event_date_value2';
   $handler->display->display_options['filters']['field_event_date_value2']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['filters']['field_event_date_value2']['field'] = 'field_event_date_value2';
   $handler->display->display_options['filters']['field_event_date_value2']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_event_date_value2']['default_date'] = 'today';
 
   /* Display: Mises Events */
   $handler = $view->new_display('page', 'Mises Events', 'page');

@@ -36,6 +36,7 @@ features[field_base][] = field_published_in
 features[field_base][] = field_quote
 features[field_base][] = field_related_nodes
 features[field_base][] = field_twitter
+features[field_group][] = group_author_title|node|person_profile|full
 features[field_group][] = group_basic|node|person_profile|form
 features[field_group][] = group_bio|node|person_profile|form
 features[field_group][] = group_expertise|node|person_profile|form

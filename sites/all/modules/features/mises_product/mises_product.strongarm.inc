@@ -64,7 +64,50 @@ function mises_product_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__product';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sidebar_author' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sidebar_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'simple_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'author_full_name' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
