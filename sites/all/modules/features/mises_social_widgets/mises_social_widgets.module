@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Social Widgets feature.
+ */
+
+include_once 'mises_social_widgets.features.inc';
