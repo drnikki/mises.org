@@ -111,7 +111,16 @@ function mises_library_item_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '6',
+        ),
+        'metatags' => array(
+          'weight' => '9',
+        ),
+        'redirect' => array(
+          'weight' => '8',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '7',
         ),
       ),
       'display' => array(),
