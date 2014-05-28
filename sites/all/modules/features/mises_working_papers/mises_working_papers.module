@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Working Papers feature.
+ */
+
+include_once 'mises_working_papers.features.inc';
