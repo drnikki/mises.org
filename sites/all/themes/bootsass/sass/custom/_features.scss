@@ -196,3 +196,40 @@
     }
   }
 }
+/*
+* CALENDAR
+*/
+.view-mises-calendar {
+  a {
+    color: $white;
+  }
+  table {
+    width: 100%;
+    th {
+      text-align: center;
+    }
+    td {
+      text-align: center;
+      vertical-align: middle;
+      &.today {
+        background-color: $brand-medium;
+      }
+      &.has-events {
+        background-color: $brand-contrast;
+      }
+      .month {
+        height: 100%;
+      }
+      .calendar-empty {
+        display: none;
+      }
+    }
+  }
+  .pager {
+    margin: 0;
+  }
+}
+/* overrides */
+.date-nav-wrapper .date-heading h3 { 
+  font-size: $font-size-base;
+}
