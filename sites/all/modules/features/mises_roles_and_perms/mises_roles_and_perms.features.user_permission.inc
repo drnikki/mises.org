@@ -14,6 +14,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
     ),
@@ -24,6 +25,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
     ),
@@ -43,6 +45,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['access content'] = array(
     'name' => 'access content',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -66,6 +69,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['access contextual links'] = array(
     'name' => 'access contextual links',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'contextual',
@@ -93,6 +97,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['access media browser'] = array(
     'name' => 'access media browser',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'media',
@@ -102,6 +107,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['access print'] = array(
     'name' => 'access print',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'print',
@@ -111,6 +117,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['access send by email'] = array(
     'name' => 'access send by email',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'print_mail',
@@ -147,6 +154,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['add media from remote sources'] = array(
     'name' => 'add media from remote sources',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'media_internet',
@@ -435,6 +443,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['administer nodes'] = array(
     'name' => 'administer nodes',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
@@ -491,6 +500,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['administer redirects'] = array(
     'name' => 'administer redirects',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'redirect',
@@ -648,7 +658,9 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'assign node weight'.
   $permissions['assign node weight'] = array(
     'name' => 'assign node weight',
-    'roles' => array(),
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+    ),
     'module' => 'weight',
   );
 
@@ -913,9 +925,7 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete any award content'.
   $permissions['delete any award content'] = array(
     'name' => 'delete any award content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -924,7 +934,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any blog content',
     'roles' => array(
       'Blog Author' => 'Blog Author',
-      'Content Creator' => 'Content Creator',
     ),
     'module' => 'node',
   );
@@ -932,27 +941,21 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete any campaign_ content'.
   $permissions['delete any campaign_ content'] = array(
     'name' => 'delete any campaign_ content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any causeview_snippet content'.
   $permissions['delete any causeview_snippet content'] = array(
     'name' => 'delete any causeview_snippet content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any course content'.
   $permissions['delete any course content'] = array(
     'name' => 'delete any course content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -977,36 +980,28 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete any event content'.
   $permissions['delete any event content'] = array(
     'name' => 'delete any event content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any flex_block content'.
   $permissions['delete any flex_block content'] = array(
     'name' => 'delete any flex_block content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any giving_story content'.
   $permissions['delete any giving_story content'] = array(
     'name' => 'delete any giving_story content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any homepage_hero content'.
   $permissions['delete any homepage_hero content'] = array(
     'name' => 'delete any homepage_hero content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1022,27 +1017,21 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete any institute_fellowship content'.
   $permissions['delete any institute_fellowship content'] = array(
     'name' => 'delete any institute_fellowship content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any job_posting_ content'.
   $permissions['delete any job_posting_ content'] = array(
     'name' => 'delete any job_posting_ content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any landing_page content'.
   $permissions['delete any landing_page content'] = array(
     'name' => 'delete any landing_page content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1050,7 +1039,6 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['delete any library_item content'] = array(
     'name' => 'delete any library_item content',
     'roles' => array(
-      'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
@@ -1060,7 +1048,6 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
     'roles' => array(
-      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
     ),
@@ -1070,36 +1057,28 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete any person_profile content'.
   $permissions['delete any person_profile content'] = array(
     'name' => 'delete any person_profile content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any photo_gallery content'.
   $permissions['delete any photo_gallery content'] = array(
     'name' => 'delete any photo_gallery content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any product content'.
   $permissions['delete any product content'] = array(
     'name' => 'delete any product content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any social_media content'.
   $permissions['delete any social_media content'] = array(
     'name' => 'delete any social_media content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1124,9 +1103,7 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own award content'.
   $permissions['delete own award content'] = array(
     'name' => 'delete own award content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1135,7 +1112,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own blog content',
     'roles' => array(
       'Blog Author' => 'Blog Author',
-      'Content Creator' => 'Content Creator',
     ),
     'module' => 'node',
   );
@@ -1143,27 +1119,21 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own campaign_ content'.
   $permissions['delete own campaign_ content'] = array(
     'name' => 'delete own campaign_ content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own causeview_snippet content'.
   $permissions['delete own causeview_snippet content'] = array(
     'name' => 'delete own causeview_snippet content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own course content'.
   $permissions['delete own course content'] = array(
     'name' => 'delete own course content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1188,36 +1158,28 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own event content'.
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own flex_block content'.
   $permissions['delete own flex_block content'] = array(
     'name' => 'delete own flex_block content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own giving_story content'.
   $permissions['delete own giving_story content'] = array(
     'name' => 'delete own giving_story content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own homepage_hero content'.
   $permissions['delete own homepage_hero content'] = array(
     'name' => 'delete own homepage_hero content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1233,27 +1195,21 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own institute_fellowship content'.
   $permissions['delete own institute_fellowship content'] = array(
     'name' => 'delete own institute_fellowship content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own job_posting_ content'.
   $permissions['delete own job_posting_ content'] = array(
     'name' => 'delete own job_posting_ content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own landing_page content'.
   $permissions['delete own landing_page content'] = array(
     'name' => 'delete own landing_page content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1261,7 +1217,6 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['delete own library_item content'] = array(
     'name' => 'delete own library_item content',
     'roles' => array(
-      'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
@@ -1271,7 +1226,6 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
     'roles' => array(
-      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
     ),
@@ -1281,36 +1235,28 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own person_profile content'.
   $permissions['delete own person_profile content'] = array(
     'name' => 'delete own person_profile content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own photo_gallery content'.
   $permissions['delete own photo_gallery content'] = array(
     'name' => 'delete own photo_gallery content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own product content'.
   $permissions['delete own product content'] = array(
     'name' => 'delete own product content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own social_media content'.
   $permissions['delete own social_media content'] = array(
     'name' => 'delete own social_media content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1833,6 +1779,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['edit own audio files'] = array(
     'name' => 'edit own audio files',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'file_entity',
@@ -1888,6 +1835,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['edit own document files'] = array(
     'name' => 'edit own document files',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'file_entity',
@@ -1942,6 +1890,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['edit own image files'] = array(
     'name' => 'edit own image files',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'file_entity',
@@ -2035,6 +1984,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['edit own video files'] = array(
     'name' => 'edit own video files',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'file_entity',
@@ -2057,7 +2007,9 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'edit terms in events'.
   $permissions['edit terms in events'] = array(
     'name' => 'edit terms in events',
-    'roles' => array(),
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -2150,6 +2102,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['manipulate all queues'] = array(
     'name' => 'manipulate all queues',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'nodequeue',
@@ -2159,6 +2112,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['manipulate queues'] = array(
     'name' => 'manipulate queues',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'nodequeue',
@@ -2195,6 +2149,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['schedule (un)publishing of nodes'] = array(
     'name' => 'schedule (un)publishing of nodes',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Site Administrator' => 'Site Administrator',
     ),
@@ -2205,6 +2160,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['search content'] = array(
     'name' => 'search content',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'search',
@@ -2223,6 +2179,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['send unlimited emails'] = array(
     'name' => 'send unlimited emails',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'print_mail',
@@ -2232,6 +2189,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['set page title'] = array(
     'name' => 'set page title',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'page_title',
@@ -2311,6 +2269,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['skip CAPTCHA'] = array(
     'name' => 'skip CAPTCHA',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'captcha',
@@ -2356,6 +2315,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['use advanced search'] = array(
     'name' => 'use advanced search',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'search',
@@ -2410,6 +2370,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['view files'] = array(
     'name' => 'view files',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
       'anonymous user' => 'anonymous user',
@@ -2431,6 +2392,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['view own files'] = array(
     'name' => 'view own files',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'file_entity',
@@ -2440,6 +2402,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['view own private files'] = array(
     'name' => 'view own private files',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'file_entity',
@@ -2488,6 +2451,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'system',
