@@ -74,15 +74,6 @@ function mises_contact_us_uuid_features_default_terms() {
     'metatags' => array(),
   );
   $terms[] = array(
-    'name' => 'Request a Speaker',
-    'description' => '',
-    'format' => 'simplified',
-    'weight' => 0,
-    'uuid' => 'ea44e0fd-ffc4-43a5-9274-4e1637e1fa32',
-    'vocabulary_machine_name' => 'reason_for_contact',
-    'metatags' => array(),
-  );
-  $terms[] = array(
     'name' => 'Other',
     'description' => NULL,
     'format' => NULL,
