@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Book / Digital Text feature.
+ */
+
+include_once 'mises_book_digital_text.features.inc';
