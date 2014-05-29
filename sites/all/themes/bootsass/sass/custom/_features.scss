@@ -175,3 +175,24 @@
     text-transform: uppercase;
   }
 }
+
+/*
+* PHOTO ALBUM
+*/
+.view-photo-album {
+  .view-content {
+    @extend .row;
+    padding: $padding-large-vertical $padding-large-vertical $padding-base-vertical;
+  }
+  .views-row {
+    padding-bottom: $padding-base-vertical;
+  }
+  img {
+    border: 3px solid $gray-light;
+    border-radius: 0%;
+    @include transition(all 0.2s ease);
+    &:hover {
+      border-radius: 50%;
+    }
+  }
+}
