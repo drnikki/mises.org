@@ -21,6 +21,7 @@ function bootsass_css_alter(&$css) {
   unset($css['sites/all/modules/contrib/ds/layouts/ds_2col/ds_2col.css']);
   unset($css['sites/all/modules/contrib/ds/layouts/ds_2col_stacked/ds_2col_stacked.css']);
   unset($css['sites/all/modules/contrib/ds/layouts/ds_2col_fluid/ds_2col_fluid.css']);
+  unset($css['sites/all/modules/contrib/calendar/css/calendar_multiday.css']);
   
 }
 
