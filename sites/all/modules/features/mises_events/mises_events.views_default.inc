@@ -465,7 +465,7 @@ function mises_events_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Photo Album';
+  $handler->display->display_options['css_class'] = 'audience panel border-contrast';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -474,7 +474,14 @@ function mises_events_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-4 img-responsive';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="panel-heading single"><div class="panel-title">Photo Album</div></div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Field: Content: Image(s) */
   $handler->display->display_options['fields']['field_image_s_']['id'] = 'field_image_s_';
   $handler->display->display_options['fields']['field_image_s_']['table'] = 'field_data_field_image_s_';
@@ -482,9 +489,10 @@ function mises_events_views_default_views() {
   $handler->display->display_options['fields']['field_image_s_']['label'] = '';
   $handler->display->display_options['fields']['field_image_s_']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_s_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image_s_']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_image_s_']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_s_']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'sidebar_horizontal',
     'image_link' => 'content',
     'conditions' => array(
       0 => array(
@@ -492,6 +500,7 @@ function mises_events_views_default_views() {
       ),
     ),
   );
+  $handler->display->display_options['fields']['field_image_s_']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_image_s_']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_s_']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_image_s_']['multi_type'] = 'ul';
@@ -507,9 +516,16 @@ function mises_events_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'photo_gallery' => 'photo_gallery',
+  );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Sidebar Block */
+  $handler = $view->new_display('block', 'Sidebar Block', 'block');
   $export['photo_album'] = $view;
 
   $view = new view();
