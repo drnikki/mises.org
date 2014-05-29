@@ -779,6 +779,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['create files'] = array(
     'name' => 'create files',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'file_entity',
