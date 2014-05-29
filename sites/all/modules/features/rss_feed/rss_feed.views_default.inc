@@ -56,7 +56,6 @@ function rss_feed_views_default_views() {
     'blog' => 'blog',
     'event' => 'event',
     'library_item' => 'library_item',
-    'product' => 'product',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
 
