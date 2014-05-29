@@ -148,9 +148,7 @@ function mises_library_item_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_library_item';
-  $strongarm->value = array(
-    0 => 'status',
-  );
+  $strongarm->value = array();
   $export['node_options_library_item'] = $strongarm;
 
   $strongarm = new stdClass();

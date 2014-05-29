@@ -1,7 +1,7 @@
 name = Institute Fellowship
 core = 7.x
 package = Content Types
-version = 7.x-1.1
+version = 7.x-1.2
 project = mises_institute_fellowship
 dependencies[] = ctools
 dependencies[] = entityreference

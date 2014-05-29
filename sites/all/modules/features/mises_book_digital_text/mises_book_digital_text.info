@@ -1,7 +1,7 @@
 name = Mises Book / Digital Text
 core = 7.x
 package = Content Types
-version = 7.x-1.0
+version = 7.x-1.1
 project = mises_book_digital_text
 dependencies[] = ctools
 dependencies[] = entityreference
