@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * mises_roles_and_perms.strongarm.inc
+ */
+
+/**
+ * Implements hook_strongarm().
+ */
+function mises_roles_and_perms_strongarm() {
+  $export = array();
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'roleassign_roles';
+  $strongarm->value = array(
+    9 => '9',
+    8 => '8',
+    6 => '6',
+    5 => '5',
+    3 => 0,
+    7 => 0,
+    4 => 0,
+  );
+  $export['roleassign_roles'] = $strongarm;
+
+  return $export;
+}

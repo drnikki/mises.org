@@ -1,7 +1,7 @@
 name = Mises Working Papers
 core = 7.x
 package = Content Types
-version = 7.x-1.0
+version = 7.x-1.1
 project = mises_working_papers
 dependencies[] = ctools
 dependencies[] = entityreference
