@@ -74,6 +74,31 @@
     border-radius: 0;
   }
 }
+// Pagination
+.pagination {
+  border-radius: $pager-border-radius;
+
+  > li {
+    &, &:first-child, &:last-child {
+      > a,
+      > span {
+        margin-left: 0;
+        border-radius: $pager-border-radius;
+      }
+    }
+    &.next {
+      a {
+        background-color: $brand-secondary;
+        @extend .glyphicon;
+        @extend .glyphicon-chevron-right;
+        &:before {
+          color: $white;
+        }
+      }
+    }
+  }
+  
+}
 
 /*
 * CUSTOM MISES ELEMENTS
