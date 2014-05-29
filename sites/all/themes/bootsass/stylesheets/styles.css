@@ -2071,17 +2071,17 @@ pre code {
 }
 
 /* line 39, ../sass/bootstrap/_grid.scss */
-.row {
+.row, .view-photo-album .view-content {
   margin-left: -10px;
   margin-right: -10px;
 }
 /* line 15, ../sass/bootstrap/mixins/_clearfix.scss */
-.row:before, .row:after {
+.row:before, .view-photo-album .view-content:before, .row:after, .view-photo-album .view-content:after {
   content: " ";
   display: table;
 }
 /* line 19, ../sass/bootstrap/mixins/_clearfix.scss */
-.row:after {
+.row:after, .view-photo-album .view-content:after {
   clear: both;
 }
 
@@ -9047,7 +9047,7 @@ address {
 */
 /* TOP FEATURED REGION */
 /* line 8, ../sass/custom/_landing.scss */
-.featured .container .row {
+.featured .container .row, .featured .container .view-photo-album .view-content, .view-photo-album .featured .container .view-content {
   margin-right: 0;
   margin-left: 0;
   background: white;
@@ -9879,4 +9879,28 @@ span.glyphicon {
 .comment-title h3 {
   color: #38709e;
   text-transform: uppercase;
+}
+
+/*
+* PHOTO ALBUM
+*/
+/* line 183, ../sass/custom/_features.scss */
+.view-photo-album .view-content {
+  padding: 16px 16px 6px;
+}
+/* line 187, ../sass/custom/_features.scss */
+.view-photo-album .views-row {
+  padding-bottom: 6px;
+}
+/* line 190, ../sass/custom/_features.scss */
+.view-photo-album img {
+  border: 3px solid #c8cdd0;
+  border-radius: 0%;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+/* line 194, ../sass/custom/_features.scss */
+.view-photo-album img:hover {
+  border-radius: 50%;
 }
