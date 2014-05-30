@@ -119,6 +119,7 @@ features[image][] = list_teaser
 features[image][] = sidebar_horizontal
 features[image][] = sidebar_vertical
 features[image][] = slideshow
+features[variable][] = features_admin_show_component_menu_links
 features[variable][] = field_bundle_settings_field_collection_item__field_image_collection
 features[variable][] = field_bundle_settings_field_collection_item__field_media_collection
 project path = sites/all/modules/features
