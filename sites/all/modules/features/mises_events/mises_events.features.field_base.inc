@@ -326,6 +326,7 @@ function mises_events_field_default_field_bases() {
       'allowed_values' => array(
         'onsite' => 'On-site embedded Causeview Form',
         'offsite' => 'Off-site link',
+        'none' => 'No registration or past event',
       ),
       'allowed_values_function' => '',
     ),
