@@ -59,6 +59,7 @@ function mises_events_field_group_info() {
     'children' => array(
       0 => 'field_event_date',
       1 => 'field_event_location',
+      2 => 'dynamic_field_2',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -175,6 +176,7 @@ function mises_events_field_group_info() {
     'children' => array(
       0 => 'field_registration_link',
       1 => 'field_registration_link_external',
+      2 => 'field_registration_type',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

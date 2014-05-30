@@ -29,6 +29,7 @@ function mises_events_context_default_contexts() {
       'values' => array(
         'events' => 'events',
         'events/*' => 'events/*',
+        'event*' => 'event*',
       ),
     ),
   );
@@ -61,6 +62,7 @@ function mises_events_context_default_contexts() {
         ),
       ),
     ),
+    'menu' => 'events',
   );
   $context->condition_mode = 0;
 

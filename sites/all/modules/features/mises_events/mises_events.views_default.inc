@@ -158,22 +158,18 @@ function mises_events_views_default_views() {
 
   /* Display: Day */
   $handler = $view->new_display('page', 'Day', 'page_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Events';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'day';
   $handler->display->display_options['pager']['options']['link_format'] = 'clean';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'calendar_style';
-  $handler->display->display_options['style_options']['calendar_type'] = 'day';
-  $handler->display->display_options['style_options']['name_size'] = '3';
-  $handler->display->display_options['style_options']['mini'] = '0';
-  $handler->display->display_options['style_options']['with_weekno'] = '0';
-  $handler->display->display_options['style_options']['multiday_theme'] = '1';
-  $handler->display->display_options['style_options']['theme_style'] = '1';
-  $handler->display->display_options['style_options']['max_items'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'calendar_entity';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
@@ -187,7 +183,7 @@ function mises_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
   );
-  $handler->display->display_options['path'] = 'calendar-node-field-event-date/day';
+  $handler->display->display_options['path'] = 'events/day';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Day';
   $handler->display->display_options['menu']['weight'] = '3';
@@ -261,8 +257,12 @@ function mises_events_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'sidebar';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_3';
   $handler->display->display_options['link_url'] = '!1';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
@@ -443,8 +443,8 @@ function mises_events_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '5';
   $handler->display->display_options['pager']['options']['tags']['first'] = '';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '.';
-  $handler->display->display_options['pager']['options']['tags']['next'] = '.';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '|';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '|';
   $handler->display->display_options['pager']['options']['tags']['last'] = '';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['path'] = 'events';

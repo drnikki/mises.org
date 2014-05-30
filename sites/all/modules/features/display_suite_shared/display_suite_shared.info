@@ -51,6 +51,7 @@ features[ds_fields][] = body_with_media_embedded
 features[ds_fields][] = contextual_block_title_with_icon
 features[ds_fields][] = custom_breadcrumb
 features[ds_fields][] = dynamic_field_1
+features[ds_fields][] = dynamic_field_2
 features[ds_fields][] = follow_mises_institute
 features[ds_fields][] = linked_box_image
 features[ds_fields][] = text_resizer
