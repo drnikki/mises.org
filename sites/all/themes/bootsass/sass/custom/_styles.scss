@@ -49,7 +49,10 @@
     font-size: 18px;
   }
 }
-
+.navbar-inverse .navbar-nav > li > a.active {
+  color: $navbar-inverse-link-active-color;
+  background-color: $navbar-inverse-link-active-bg;
+}
 // Override logo alignment
 .logo.navbar-btn {
   margin-top: 40px;
@@ -77,27 +80,82 @@
 // Pagination
 .pagination {
   border-radius: $pager-border-radius;
-
   > li {
+    display: inline-block;
     &, &:first-child, &:last-child {
       > a,
       > span {
-        margin-left: 0;
+        width: $font-size-base * 2;
+        height: $font-size-base * 2;
         border-radius: $pager-border-radius;
+        line-height: $font-size-base * 2;
+        padding: 0;
+      }
+    }
+    &.prev, &.next {
+      a {
+        @extend .glyphicon;
+        @extend .glyphicon-chevron-left;
+        background-color: $gray;
+        color: $gray;
+        top: 1px;
+        &:before {
+          position: relative;
+          left: 1px;
+          color: $white;
+        }
+      }
+      &:hover {
+        a {
+          background-color: $gray-dark;
+          color: $gray-dark;
+        }
       }
     }
     &.next {
       a {
-        background-color: $brand-secondary;
-        @extend .glyphicon;
         @extend .glyphicon-chevron-right;
-        &:before {
-          color: $white;
-        }
       }
     }
   }
-  
+}
+/* PAGER */
+.sidebar .pager {
+  border-radius: $pager-border-radius;
+  > li {
+    &.date-prev, &.date-next {
+      a {
+        width: $font-size-base * 1.25;
+        height: $font-size-base * 1.25;
+        border-radius: $pager-border-radius;
+        line-height: $font-size-base * 1.25;
+        padding: 0;
+        @extend .glyphicon;
+        @extend .glyphicon-chevron-left;
+        background-color: $white;
+        color: $white;
+        padding: 0;
+        position: relative;
+        &:before {
+          position: absolute;
+          left: 2px;
+          color: $brand-secondary;
+        }
+      }
+      &:hover {
+        a {
+          background-color: $gray-light;
+          color: $gray-light;
+        }
+      }
+    }
+    &.date-next {
+      a {
+        @extend .glyphicon-chevron-right;
+        left: 4px;
+      }
+    }
+  }
 }
 
 /*
@@ -305,21 +363,21 @@ h1, .h1 {
 }
 h2 {
   &.page-title {
-    color: $brand-secondary;
-    font-family: $font-family-serif;
-    font-size: $font-size-h2;
     margin: 0 0 $padding-large-vertical;
+    color: $brand-secondary;
+    font-size: $font-size-h2;
+    font-family: $font-family-serif;
   }
   &.teaser-title {
     color: $brand-primary;
-    font-family: $font-family-serif;
     font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
+    font-family: $font-family-serif;
   }
 }
 h3, h4 {
   &.author {
-    font-size: 14px;
     margin-top: 0;
+    font-size: 14px;
   }
   &.sub-heading {
     text-transform: uppercase;
