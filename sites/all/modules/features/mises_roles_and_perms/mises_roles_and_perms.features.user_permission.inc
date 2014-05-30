@@ -14,7 +14,11 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
     'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'admin_menu',
   );
