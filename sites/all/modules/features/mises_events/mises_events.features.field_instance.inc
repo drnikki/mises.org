@@ -35,12 +35,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 22,
       ),
     ),
@@ -91,12 +87,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 20,
       ),
     ),
@@ -147,12 +139,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 21,
       ),
     ),
@@ -300,7 +288,11 @@ function mises_events_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'addtocal',
         'settings' => array(
-          'conditions' => array(),
+          'conditions' => array(
+            0 => array(
+              'condition' => '',
+            ),
+          ),
           'description' => array(
             'field' => 'tokenize output',
             'tokenized' => '[node:field_description]',
@@ -325,7 +317,7 @@ function mises_events_field_default_field_instances() {
         'module' => 'date',
         'settings' => array(
           'conditions' => array(),
-          'format_type' => 'long',
+          'format_type' => 'month_day_year',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -356,7 +348,7 @@ function mises_events_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '1982:+3',
       ),
       'type' => 'date_popup',
       'weight' => 2,
@@ -477,12 +469,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 18,
       ),
     ),
@@ -532,11 +520,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'list_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 24,
       ),
     ),
@@ -665,12 +650,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 19,
       ),
     ),
@@ -724,11 +705,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'list_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 23,
       ),
     ),
@@ -782,15 +760,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'conditions' => array(),
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-        ),
-        'type' => 'field_collection_list',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -839,11 +810,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'list_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -902,12 +870,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 25,
       ),
     ),
@@ -973,11 +937,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'link',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'link_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 26,
       ),
     ),
@@ -1020,11 +981,15 @@ function mises_events_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => array(
       0 => array(
-        'value' => 'onsite',
+        'value' => 'none',
       ),
     ),
     'deleted' => 0,
-    'description' => 'Select how the user can register for this event. Based on the type selected, the appropriate field will appear.',
+    'description' => 'Select how the user can register for this event. Based on the type selected, the appropriate field will appear.
+
+Select "No registration or past event" to hide the registration embed or link field.
+
+',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1094,12 +1059,8 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 27,
       ),
     ),
@@ -1143,7 +1104,11 @@ function mises_events_field_default_field_instances() {
   t('Registration Link');
   t('Registration Link (External)');
   t('Registration Type');
-  t('Select how the user can register for this event. Based on the type selected, the appropriate field will appear.');
+  t('Select how the user can register for this event. Based on the type selected, the appropriate field will appear.
+
+Select "No registration or past event" to hide the registration embed or link field.
+
+');
   t('Topics');
   t('Will this event have a live feed? If so, the video embed field will appear below after you select "Yes."');
   t('YouTube Embed');

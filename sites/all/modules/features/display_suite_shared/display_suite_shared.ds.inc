@@ -2543,6 +2543,28 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->view_mode = 'teaser';
   $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'title',
+        2 => 'group_date_location',
+        3 => 'field_description',
+        4 => 'node_link',
+        5 => 'field_event_date',
+        6 => 'field_event_location',
+      ),
+      'left' => array(
+        1 => 'field_image',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'right',
+      'field_image' => 'left',
+      'group_date_location' => 'right',
+      'field_description' => 'right',
+      'node_link' => 'right',
+      'field_event_date' => 'right',
+      'field_event_location' => 'right',
+    ),
     'classes' => array(
       'layout_class' => array(
         'row' => 'row',
@@ -2566,28 +2588,6 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_link_custom' => '',
     'hide_page_title' => '0',
     'page_option_title' => '',
-    'regions' => array(
-      'left' => array(
-        0 => 'field_image',
-      ),
-      'right' => array(
-        0 => 'title',
-        1 => 'group_date_location',
-        2 => 'field_description',
-        3 => 'node_link',
-        4 => 'field_event_date',
-        5 => 'field_event_location',
-      ),
-    ),
-    'fields' => array(
-      'field_image' => 'left',
-      'title' => 'right',
-      'group_date_location' => 'right',
-      'field_description' => 'right',
-      'node_link' => 'right',
-      'field_event_date' => 'right',
-      'field_event_location' => 'right',
-    ),
   );
   $export['node|event|teaser'] = $ds_layout;
 

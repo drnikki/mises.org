@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * mises_events.features.menu_links.inc
+ * events_menu.features.menu_links.inc
  */
 
 /**
  * Implements hook_menu_default_menu_links().
  */
-function mises_events_menu_default_menu_links() {
+function events_menu_menu_default_menu_links() {
   $menu_links = array();
 
   // Exported menu link: menu-event-menu_upcoming-events:events
@@ -60,11 +60,11 @@ function mises_events_menu_default_menu_links() {
     'weight' => -46,
     'customized' => 1,
   );
-  // Exported menu link: menu-event-menu_view-past-events:<front>
-  $menu_links['menu-event-menu_view-past-events:<front>'] = array(
+  // Exported menu link: menu-event-menu_view-past-events:events/past
+  $menu_links['menu-event-menu_view-past-events:events/past'] = array(
     'menu_name' => 'menu-event-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'events/past',
+    'router_path' => 'events/past',
     'link_title' => 'View past events',
     'options' => array(
       'attributes' => array(
@@ -75,11 +75,11 @@ function mises_events_menu_default_menu_links() {
         'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
         'image_style' => 'menu_icon',
       ),
-      'identifier' => 'menu-event-menu_view-past-events:<front>',
+      'identifier' => 'menu-event-menu_view-past-events:events/past',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -49,
@@ -110,11 +110,11 @@ function mises_events_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: menu-event-menu_watch-events-live:<front>
-  $menu_links['menu-event-menu_watch-events-live:<front>'] = array(
+  // Exported menu link: menu-event-menu_watch-events-live:events/watch
+  $menu_links['menu-event-menu_watch-events-live:events/watch'] = array(
     'menu_name' => 'menu-event-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'events/watch',
+    'router_path' => 'events/watch',
     'link_title' => 'Watch Events Live',
     'options' => array(
       'attributes' => array(
@@ -125,11 +125,11 @@ function mises_events_menu_default_menu_links() {
         'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
         'image_style' => 'menu_icon',
       ),
-      'identifier' => 'menu-event-menu_watch-events-live:<front>',
+      'identifier' => 'menu-event-menu_watch-events-live:events/watch',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -47,
