@@ -1,7 +1,7 @@
 name = Mises Product
 core = 7.x
 package = Content Types
-version = 7.x-1.1
+version = 7.x-1.2
 project = mises_product
 dependencies[] = ctools
 dependencies[] = entityreference

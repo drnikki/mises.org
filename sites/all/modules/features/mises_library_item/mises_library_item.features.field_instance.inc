@@ -666,16 +666,13 @@ function mises_library_item_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
         ),
-        'type' => 'creative_commons_small_image',
+        'type' => 'creative_commons_large_image',
         'weight' => 27,
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'creative_commons',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'creative_commons_large_image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'sidebar_teaser' => array(

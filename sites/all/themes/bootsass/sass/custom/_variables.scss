@@ -17,14 +17,15 @@ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")
 
 $black:                 #24292c !default;
 $gray-darker:           lighten(#000, 13.5%) !default; // #222
-$gray-dark:             lighten(#000, 20%) !default;   // #333
+$gray-dark:             #494e54 !default; // lighten(#000, 20%) #333
 $gray:                  #788086 !default; // lighten(#000, 33.5%) #555
-$gray-light:            #c8cdd0 !default;   // lighten(#000, 60%)  #999
+$gray-light:            #c8cdd0 !default; // lighten(#000, 60%)  #999
 $gray-lighter:          #e4ebee!default; // lighten(#000, 93.5%) #eee
 $white:                 #fff !default;
 
 $brand-primary:         #00426b !default; //dark blue
-$brand-secondary:       #5b8ab5 !default; //light blue
+$brand-secondary:       #38709e !default; //light blue
+$brand-secondary-reverse:#5b8ab5 !default; //light blue
 $brand-medium:          #206093 !default; //medium blue
 $brand-medium-screen:   rgba(80,129,156,0.8) !default; // medium blue screened
 $brand-dark:            #123551 !default; //darkest blue - footer borders
@@ -161,9 +162,9 @@ $table-border-color:            #ddd !default;
 
 $btn-font-weight:                normal !default;
 
-$btn-default-color:              #333 !default;
-$btn-default-bg:                 #fff !default;
-$btn-default-border:             #ccc !default;
+$btn-default-color:              $white !default;
+$btn-default-bg:                 $brand-secondary !default;
+$btn-default-border:             $brand-secondary !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
@@ -444,19 +445,19 @@ $nav-pills-active-link-hover-color:         $component-active-color !default;
 
 $pagination-color:                     $link-color !default;
 $pagination-bg:                        #fff !default;
-$pagination-border:                    #ddd !default;
+$pagination-border:                    transparent !default;
 
 $pagination-hover-color:               $link-hover-color !default;
-$pagination-hover-bg:                  $gray-lighter !default;
-$pagination-hover-border:              #ddd !default;
+$pagination-hover-bg:                  transparent !default;
+$pagination-hover-border:              transparent !default;
 
-$pagination-active-color:              #fff !default;
-$pagination-active-bg:                 $brand-primary !default;
-$pagination-active-border:             $brand-primary !default;
+$pagination-active-color:              $brand-primary !default;
+$pagination-active-bg:                 $gray-lighter !default;
+$pagination-active-border:             transparent !default;
 
 $pagination-disabled-color:            $gray-light !default;
-$pagination-disabled-bg:               #fff !default;
-$pagination-disabled-border:           #ddd !default;
+$pagination-disabled-bg:               transparent !default;
+$pagination-disabled-border:           transparent !default;
 
 
 //== Pager
@@ -465,7 +466,7 @@ $pagination-disabled-border:           #ddd !default;
 
 $pager-bg:                             $pagination-bg !default;
 $pager-border:                         $pagination-border !default;
-$pager-border-radius:                  15px !default;
+$pager-border-radius:                  50% !default;
 
 $pager-hover-bg:                       $pagination-hover-bg !default;
 

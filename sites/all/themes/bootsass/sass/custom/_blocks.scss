@@ -77,6 +77,15 @@ span.glyphicon {
   background-color: $gray;
   color: $white;
 }
+/* Soft transitions for all menu items */
+ul.menu {
+  li {
+    a, span {
+      @include transition(all 0.2s ease);
+    }
+  }
+}
+
 /* NOTE: PLACE HOVER COLORS IN RELEVANT SECTION */
 
 /* TOP BORDERS */
@@ -134,11 +143,27 @@ span.glyphicon {
     color: $brand-contrast;
   }
 }
+/* BACKGROUND COLORS */
+.bg-primary {
+  background-color: $brand-primary;
+}
+.bg-contrast {
+  background-color: $brand-contrast;
+}
+.bg-secondary {
+  background-color: $brand-secondary;
+}
+.bg-gray {
+  background-color: $gray-light;
+}
 
 
 /* OTHER HELPER CLASSES */
 .padding-lg {
   padding: $padding-small-horizontal $padding-small-horizontal * 2;
+  .view-content {
+    padding: $padding-small-horizontal $padding-small-horizontal * 2;
+  }
 }
 
 /* Bootstrap Panel overrides */
@@ -222,8 +247,8 @@ span.glyphicon {
     }
     .panel-title {
       text-transform: uppercase;
-      font-size: $font-size-h5;
       font-weight: 600;
+      font-size: $font-size-h5;
     }
     &.single,
     .single {
@@ -240,19 +265,45 @@ span.glyphicon {
   .panel-body {
     padding: 10px 20px;
   }
+  .view-content {
+    p {
+      margin: 0;
+    }
+  }
+  .margin-bottom {
+    margin-bottom: $grid-gutter-width;
+  }
 }
 .region-sidebar-second-top {
-  border-top: 7px solid $brand-secondary;
+  margin-bottom: 20px;
   background: $brand-secondary;
   color: $white;
-  margin-bottom: 20px;
   .panel {
-    background: $brand-secondary;
     padding: $padding-large-horizontal * 2;
+    background: $brand-secondary;
   }
   h3 {
-    font-size: $font-size-h5;
     text-transform: uppercase;
+    font-size: $font-size-h5;
+  }
+}
+/* SIDEBAR MENU */
+.region-sidebar-second,
+.region-sidebar-second-top {
+  .nav {
+    > li > a {
+      background-color: $gray-dark;
+      color: $white;
+      text-transform: uppercase;
+      font-size: $font-size-h4;
+      padding-left: $padding-large-horizontal * 1.5;
+      &:hover {
+        background-color: $gray;
+      }
+    }
+    > li + li {
+      border-top: 1px solid $gray;
+    }
   }
 }
 
@@ -329,9 +380,9 @@ span.glyphicon {
       margin-bottom: $grid-gutter-width;
     }
     .panel-title {
-      font-size: $font-size-h4;
-      text-transform: uppercase;
       color: $brand-contrast;
+      text-transform: uppercase;
+      font-size: $font-size-h4;
     }
     h4.author {
       color: $brand-contrast;

@@ -70,7 +70,7 @@ function mises_pathauto_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_award_pattern';
-  $strongarm->value = 'award/[node:title]';
+  $strongarm->value = 'awards/[node:title]';
   $export['pathauto_node_award_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -84,70 +84,70 @@ function mises_pathauto_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_campaign__pattern';
-  $strongarm->value = 'campaign/[node:title]';
+  $strongarm->value = 'campaigns/[node:title]';
   $export['pathauto_node_campaign__pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_causeview_snippet_pattern';
-  $strongarm->value = 'snippet/[node:title]';
+  $strongarm->value = 'snippets/[node:title]';
   $export['pathauto_node_causeview_snippet_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_course_pattern';
-  $strongarm->value = 'course/[node:title]';
+  $strongarm->value = 'courses/[node:title]';
   $export['pathauto_node_course_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_event_pattern';
-  $strongarm->value = 'event/[node:title]';
+  $strongarm->value = 'events/[node:title]';
   $export['pathauto_node_event_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_flex_block_pattern';
-  $strongarm->value = 'flex-block/[node:title]';
+  $strongarm->value = 'flex/[node:title]';
   $export['pathauto_node_flex_block_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_giving_story_pattern';
-  $strongarm->value = 'giving-story/[node:title]';
+  $strongarm->value = 'stories/[node:title]';
   $export['pathauto_node_giving_story_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_homepage_hero_pattern';
-  $strongarm->value = 'hero/[node:title]';
+  $strongarm->value = 'heroes/[node:title]';
   $export['pathauto_node_homepage_hero_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_institute_fellowship_pattern';
-  $strongarm->value = 'followship/[node:title]';
+  $strongarm->value = 'fellowships/[node:title]';
   $export['pathauto_node_institute_fellowship_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_job_posting__pattern';
-  $strongarm->value = 'job/[node:title]';
+  $strongarm->value = 'jobs/[node:title]';
   $export['pathauto_node_job_posting__pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_library_item_pattern';
-  $strongarm->value = 'library-item/[node:title]';
+  $strongarm->value = 'library/[node:title]';
   $export['pathauto_node_library_item_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -168,21 +168,21 @@ function mises_pathauto_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_person_profile_pattern';
-  $strongarm->value = 'person-profile/[node:title]';
+  $strongarm->value = 'profile/[node:title]';
   $export['pathauto_node_person_profile_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_photo_gallery_pattern';
-  $strongarm->value = 'photo-gallery/[node:title]';
+  $strongarm->value = 'galleries/[node:title]';
   $export['pathauto_node_photo_gallery_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_product_pattern';
-  $strongarm->value = 'product/[node:title]';
+  $strongarm->value = 'products/[node:title]';
   $export['pathauto_node_product_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -238,7 +238,7 @@ function mises_pathauto_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_pattern';
-  $strongarm->value = '[term:name]';
+  $strongarm->value = '[term:vocabulary:name]/[term:name]';
   $export['pathauto_taxonomy_term_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

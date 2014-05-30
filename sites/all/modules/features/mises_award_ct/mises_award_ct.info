@@ -1,7 +1,7 @@
 name = Award
 core = 7.x
 package = Content Types
-version = 7.x-1.1
+version = 7.x-1.2
 project = mises_award_ct
 dependencies[] = ctools
 dependencies[] = date
