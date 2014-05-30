@@ -1476,6 +1476,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete revisions',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
