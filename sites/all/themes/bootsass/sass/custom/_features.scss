@@ -97,6 +97,9 @@
       color: $brand-primary;
     }
   }
+  span.reg-link {
+    padding-left: 10px;
+  }
 }
 /*
 *   WIDE MEDIA PLAYER
@@ -200,36 +203,60 @@
 * CALENDAR
 */
 .view-mises-calendar {
-  a {
-    color: $white;
-  }
-  table {
-    width: 100%;
-    th {
-      text-align: center;
+  &.sidebar {
+    a {
+      color: $white;
     }
-    td {
-      text-align: center;
-      vertical-align: middle;
-      &.today {
-        background-color: $brand-medium;
+    table {
+      width: 100%;
+      margin-bottom: $padding-large-vertical;
+      th {
+        text-align: center;
       }
-      &.has-events {
-        background-color: $brand-contrast;
+      td {
+        text-align: center;
+        vertical-align: middle;
+        .month {
+          width: $font-size-base * 2;
+          height: $font-size-base * 2;
+          border-radius: $pager-border-radius;
+          line-height: $font-size-base * 2;
+          margin: 2px auto;
+          &.mini-day-on {
+            background-color: $brand-contrast;
+          }
+        }
+        &.today {
+          .month {
+            background-color: $brand-medium;
+          }
+        }
+        .calendar-empty {
+          display: none;
+        }
       }
-      .month {
-        height: 100%;
-      }
-      .calendar-empty {
-        display: none;
-      }
+    }
+    .date-nav-wrapper .date-heading h3 { 
+      font-size: $font-size-base;
     }
   }
   .pager {
     margin: 0;
   }
 }
+
 /* overrides */
-.date-nav-wrapper .date-heading h3 { 
-  font-size: $font-size-base;
+.date-nav-wrapper .date-nav {
+  margin: 0 0 $padding-large-vertical;
+  padding: 0;
+}
+.main-content .date-nav-wrapper .date-heading h3 { 
+  @extend h2.page-title;
+}
+/*
+* EVENT PAGE
+*/
+#registration-form {
+  clear: both;
+  margin-top: $padding-large-vertical;
 }

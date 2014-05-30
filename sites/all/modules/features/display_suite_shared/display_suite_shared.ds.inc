@@ -464,13 +464,41 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'event';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'dynamic_field_2' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:15:"Reg Form button";s:5:"title";s:0:"";s:4:"body";s:72:"<a href="#registration-form" class="btn btn-default btn-sm">Register</a>";s:6:"format";s:9:"full_html";s:10:"substitute";i:0;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
+        'load_terms' => 0,
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'reg-link',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(
+          0 => array(
+            'condition' => 'hide_no_string',
+            'configuration' => array(
+              'target' => 'field_registration_type',
+              'string' => 'onsite',
+            ),
+          ),
+        ),
+      ),
+    ),
     'custom_breadcrumb' => array(
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'dynamic_field_1' => array(
-      'weight' => '11',
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -490,7 +518,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'follow_mises_institute' => array(
-      'weight' => '10',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -555,9 +583,9 @@ function display_suite_shared_ds_field_settings_info() {
           'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'border-contrast',
+          'ow-cl' => 'border-contrast  clearfix',
           'ow-def-cl' => FALSE,
-          'ow-at' => '',
+          'ow-at' => 'id="registration-form"',
           'ow-def-at' => FALSE,
         ),
       ),
@@ -586,10 +614,12 @@ function display_suite_shared_ds_field_settings_info() {
     'field_registration_link_external' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'lb' => 'Registration',
-          'lb-el' => 'h3',
-          'lb-cl' => 'sub-heading contrast',
-          'lb-col' => TRUE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'btn btn-default',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
         ),
       ),
     ),
@@ -1869,6 +1899,32 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'dynamic_field_2';
+  $ds_field->label = 'Dynamic Field 2';
+  $ds_field->field_type = 7;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'default' => array(),
+    'settings' => array(
+      'show_title' => array(
+        'type' => 'checkbox',
+      ),
+      'title_wrapper' => array(
+        'type' => 'textfield',
+        'description' => 'Eg: h1, h2, p',
+      ),
+      'ctools' => array(
+        'type' => 'ctools',
+      ),
+    ),
+  );
+  $export['dynamic_field_2'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'follow_mises_institute';
   $ds_field->label = 'Node Widgets';
   $ds_field->field_type = 5;
@@ -2430,16 +2486,17 @@ function display_suite_shared_ds_layout_settings_info() {
         1 => 'custom_breadcrumb',
         2 => 'title',
         3 => 'field_image',
-        4 => 'group_date_location',
-        5 => 'field_event_date',
+        4 => 'field_event_date',
+        5 => 'group_date_location',
         6 => 'field_event_location',
         7 => 'field_topics',
-        8 => 'field_description',
-        9 => 'field_media_collection',
-        10 => 'field_registration_link',
-        11 => 'field_registration_link_external',
-        12 => 'follow_mises_institute',
-        13 => 'dynamic_field_1',
+        8 => 'dynamic_field_2',
+        9 => 'field_description',
+        10 => 'field_media_collection',
+        11 => 'field_registration_link',
+        12 => 'field_registration_link_external',
+        13 => 'follow_mises_institute',
+        14 => 'dynamic_field_1',
       ),
     ),
     'fields' => array(
@@ -2447,10 +2504,11 @@ function display_suite_shared_ds_layout_settings_info() {
       'custom_breadcrumb' => 'ds_content',
       'title' => 'ds_content',
       'field_image' => 'ds_content',
-      'group_date_location' => 'ds_content',
       'field_event_date' => 'ds_content',
+      'group_date_location' => 'ds_content',
       'field_event_location' => 'ds_content',
       'field_topics' => 'ds_content',
+      'dynamic_field_2' => 'ds_content',
       'field_description' => 'ds_content',
       'field_media_collection' => 'ds_content',
       'field_registration_link' => 'ds_content',
