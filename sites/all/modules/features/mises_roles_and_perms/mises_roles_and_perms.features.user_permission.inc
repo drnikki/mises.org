@@ -42,17 +42,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'views',
   );
 
-  // Exported permission: 'access all webform results'.
-  $permissions['access all webform results'] = array(
-    'name' => 'access all webform results',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-      'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
-    ),
-    'module' => 'webform',
-  );
-
   // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
@@ -124,28 +113,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'overlay',
-  );
-
-  // Exported permission: 'access own webform results'.
-  $permissions['access own webform results'] = array(
-    'name' => 'access own webform results',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-      'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
-    ),
-    'module' => 'webform',
-  );
-
-  // Exported permission: 'access own webform submissions'.
-  $permissions['access own webform submissions'] = array(
-    'name' => 'access own webform submissions',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-      'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
-    ),
-    'module' => 'webform',
   );
 
   // Exported permission: 'access print'.
@@ -1067,17 +1034,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'shortcut',
   );
 
-  // Exported permission: 'delete all webform submissions'.
-  $permissions['delete all webform submissions'] = array(
-    'name' => 'delete all webform submissions',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-      'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
-    ),
-    'module' => 'webform',
-  );
-
   // Exported permission: 'delete any audio files'.
   $permissions['delete any audio files'] = array(
     'name' => 'delete any audio files',
@@ -1152,6 +1108,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any entityform',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'entityform',
   );
@@ -1370,6 +1327,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own entityform',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'entityform',
   );
@@ -1504,15 +1462,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own webform content',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'delete own webform submissions'.
-  $permissions['delete own webform submissions'] = array(
-    'name' => 'delete own webform submissions',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'webform',
   );
 
   // Exported permission: 'delete own working_papers content'.
@@ -1846,15 +1795,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'ds_extras',
   );
 
-  // Exported permission: 'edit all webform submissions'.
-  $permissions['edit all webform submissions'] = array(
-    'name' => 'edit all webform submissions',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'webform',
-  );
-
   // Exported permission: 'edit any audio files'.
   $permissions['edit any audio files'] = array(
     'name' => 'edit any audio files',
@@ -1944,7 +1884,10 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['edit any entityform'] = array(
     'name' => 'edit any entityform',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'entityform',
   );
@@ -2227,7 +2170,10 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['edit own entityform'] = array(
     'name' => 'edit own entityform',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'entityform',
   );
@@ -2395,15 +2341,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit own webform submissions'.
-  $permissions['edit own webform submissions'] = array(
-    'name' => 'edit own webform submissions',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'webform',
   );
 
   // Exported permission: 'edit own working_papers content'.
@@ -2797,7 +2734,10 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['view any entityform'] = array(
     'name' => 'view any entityform',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'entityform',
   );
@@ -2819,7 +2759,10 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['view own entityform'] = array(
     'name' => 'view own entityform',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'entityform',
   );
