@@ -191,9 +191,9 @@
     padding-bottom: $padding-base-vertical;
   }
   img {
+    @include transition(all 0.2s ease);
     border: 3px solid $gray-light;
     border-radius: 0%;
-    @include transition(all 0.2s ease);
     &:hover {
       border-radius: 50%;
     }
@@ -208,20 +208,20 @@
       color: $white;
     }
     table {
-      width: 100%;
       margin-bottom: $padding-large-vertical;
+      width: 100%;
       th {
         text-align: center;
       }
       td {
-        text-align: center;
         vertical-align: middle;
+        text-align: center;
         .month {
+          margin: 2px auto;
           width: $font-size-base * 2;
           height: $font-size-base * 2;
           border-radius: $pager-border-radius;
           line-height: $font-size-base * 2;
-          margin: 2px auto;
           &.mini-day-on {
             background-color: $brand-contrast;
           }
@@ -260,3 +260,68 @@
   clear: both;
   margin-top: $padding-large-vertical;
 }
+/* Add to calendar */
+.addtocal {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  width: 15px;
+  height: 15px;
+  text-indent: -999px;
+  white-space: nowrap;
+  cursor: pointer;
+  &:before {
+    position: absolute;
+    left: 999px;
+    content: "\e109";
+    font-family: 'Glyphicons Halflings';
+  }
+  &:hover:after{
+    position: absolute;
+    bottom: $padding-large-vertical;
+    left: 0;
+    z-index: 98;
+    padding: $padding-small-vertical;
+    width: auto;
+    border: 1px solid $brand-secondary;
+    border-radius: $border-radius-base;
+    background: $white;
+    color: $brand-secondary;
+    content: 'Add to Calendar';
+    text-indent: 0;
+    font-size: $font-size-small;
+  }
+}
+
+ul.addtocal_menu {
+  position: absolute;
+  z-index: 50;
+  display: none;
+  margin-bottom: 0px;
+  margin-left: 0px !important;
+  padding: 0;
+  min-width: 100px;
+  border: 1px solid $brand-secondary;
+  border-radius: $border-radius-base;
+  background: $white;
+  list-style-type: none;
+  overflow: hidden;
+  text-transform: none;
+  li {
+    margin: 0px;
+    padding: 0px;
+    a {
+      display: block;
+      padding: $padding-small-vertical;
+      color: $brand-secondary;
+      text-decoration: none;
+      &:hover {
+        background: $gray-lighter;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+

@@ -3991,7 +3991,7 @@ select[multiple].input-lg,
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
   color: white;
   background-color: #2b5578;
-  border-color: #285071;
+  border-color: #2b5578;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-default:active, .btn-default.active {
@@ -4027,7 +4027,7 @@ select[multiple].input-lg,
 .btn-primary:hover, #text-resizer .active:hover, .btn-primary:focus, #text-resizer .active:focus, .btn-primary:active, #text-resizer .active:active, .btn-primary.active, #text-resizer .active {
   color: white;
   background-color: #002338;
-  border-color: #000d14;
+  border-color: #00131f;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-primary:active, #text-resizer .active:active, .btn-primary.active, #text-resizer .active {
@@ -4063,7 +4063,7 @@ select[multiple].input-lg,
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active {
   color: white;
   background-color: #449d44;
-  border-color: #398439;
+  border-color: #3d8b3d;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-success:active, .btn-success.active {
@@ -4099,7 +4099,7 @@ select[multiple].input-lg,
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active {
   color: white;
   background-color: #31b0d5;
-  border-color: #269abc;
+  border-color: #28a1c5;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-info:active, .btn-info.active {
@@ -4135,7 +4135,7 @@ select[multiple].input-lg,
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active {
   color: white;
   background-color: #ec971f;
-  border-color: #d58512;
+  border-color: #df8a13;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-warning:active, .btn-warning.active {
@@ -4171,7 +4171,7 @@ select[multiple].input-lg,
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active {
   color: white;
   background-color: #c9302c;
-  border-color: #ac2925;
+  border-color: #b52b27;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-danger:active, .btn-danger.active {
@@ -10110,11 +10110,11 @@ ul.menu li a, ul.menu li span {
 }
 /* line 193, ../sass/custom/_features.scss */
 .view-photo-album img {
-  border: 3px solid #c8cdd0;
-  border-radius: 0%;
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  border: 3px solid #c8cdd0;
+  border-radius: 0%;
 }
 /* line 197, ../sass/custom/_features.scss */
 .view-photo-album img:hover {
@@ -10130,8 +10130,8 @@ ul.menu li a, ul.menu li span {
 }
 /* line 210, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table {
-  width: 100%;
   margin-bottom: 16px;
+  width: 100%;
 }
 /* line 213, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table th {
@@ -10139,16 +10139,16 @@ ul.menu li a, ul.menu li span {
 }
 /* line 216, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td {
-  text-align: center;
   vertical-align: middle;
+  text-align: center;
 }
 /* line 219, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .month {
+  margin: 2px auto;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   line-height: 30px;
-  margin: 2px auto;
 }
 /* line 225, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .month.mini-day-on {
@@ -10185,4 +10185,74 @@ ul.menu li a, ul.menu li span {
 #registration-form {
   clear: both;
   margin-top: 16px;
+}
+
+/* Add to calendar */
+/* line 264, ../sass/custom/_features.scss */
+.addtocal {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  width: 15px;
+  height: 15px;
+  text-indent: -999px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+/* line 273, ../sass/custom/_features.scss */
+.addtocal:before {
+  position: absolute;
+  left: 999px;
+  content: "\e109";
+  font-family: 'Glyphicons Halflings';
+}
+/* line 279, ../sass/custom/_features.scss */
+.addtocal:hover:after {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  z-index: 98;
+  padding: 5px;
+  width: auto;
+  border: 1px solid #38709e;
+  border-radius: 4px;
+  background: white;
+  color: #38709e;
+  content: 'Add to Calendar';
+  text-indent: 0;
+  font-size: 13px;
+}
+
+/* line 296, ../sass/custom/_features.scss */
+ul.addtocal_menu {
+  position: absolute;
+  z-index: 50;
+  display: none;
+  margin-bottom: 0px;
+  margin-left: 0px !important;
+  padding: 0;
+  min-width: 100px;
+  border: 1px solid #38709e;
+  border-radius: 4px;
+  background: white;
+  list-style-type: none;
+  overflow: hidden;
+  text-transform: none;
+}
+/* line 310, ../sass/custom/_features.scss */
+ul.addtocal_menu li {
+  margin: 0px;
+  padding: 0px;
+}
+/* line 313, ../sass/custom/_features.scss */
+ul.addtocal_menu li a {
+  display: block;
+  padding: 5px;
+  color: #38709e;
+  text-decoration: none;
+}
+/* line 318, ../sass/custom/_features.scss */
+ul.addtocal_menu li a:hover {
+  background: #e4ebee;
+  text-decoration: none;
 }
