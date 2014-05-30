@@ -13,6 +13,13 @@ function mises_theme_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'features_admin_show_component_menu_links';
+  $strongarm->value = 1;
+  $export['features_admin_show_component_menu_links'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_field_collection_item__field_image_collection';
   $strongarm->value = array(
     'view_modes' => array(
