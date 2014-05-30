@@ -60,10 +60,10 @@ function events_menu_menu_default_menu_links() {
     'weight' => -46,
     'customized' => 1,
   );
-  // Exported menu link: menu-event-menu_view-past-events:events/past/silliness
-  $menu_links['menu-event-menu_view-past-events:events/past/silliness'] = array(
+  // Exported menu link: menu-event-menu_view-past-events:events/past
+  $menu_links['menu-event-menu_view-past-events:events/past'] = array(
     'menu_name' => 'menu-event-menu',
-    'link_path' => 'events/past/silliness',
+    'link_path' => 'events/past',
     'router_path' => 'events/past',
     'link_title' => 'View past events',
     'options' => array(
@@ -75,7 +75,7 @@ function events_menu_menu_default_menu_links() {
         'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
         'image_style' => 'menu_icon',
       ),
-      'identifier' => 'menu-event-menu_view-past-events:events/past/silliness',
+      'identifier' => 'menu-event-menu_view-past-events:events/past',
     ),
     'module' => 'menu',
     'hidden' => 0,
