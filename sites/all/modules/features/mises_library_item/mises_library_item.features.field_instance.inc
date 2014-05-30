@@ -1313,7 +1313,7 @@ function mises_library_item_field_default_field_instances() {
         'module' => 'date',
         'settings' => array(
           'conditions' => array(),
-          'format_type' => 'long',
+          'format_type' => 'month_day_year',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
