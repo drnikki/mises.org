@@ -383,8 +383,8 @@ function mises_events_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Not working';
-  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['empty']['area']['content'] = 'No events match the search criteria.';
+  $handler->display->display_options['empty']['area']['format'] = 'simplified';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -447,7 +447,163 @@ function mises_events_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = '|';
   $handler->display->display_options['pager']['options']['tags']['last'] = '';
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'event' => 'event',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Date - end date (field_event_date:value2) */
+  $handler->display->display_options['filters']['field_event_date_value2']['id'] = 'field_event_date_value2';
+  $handler->display->display_options['filters']['field_event_date_value2']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['filters']['field_event_date_value2']['field'] = 'field_event_date_value2';
+  $handler->display->display_options['filters']['field_event_date_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_event_date_value2']['default_date'] = 'now';
+  /* Filter criterion: Content: Public/Private (field_public_private) */
+  $handler->display->display_options['filters']['field_public_private_value']['id'] = 'field_public_private_value';
+  $handler->display->display_options['filters']['field_public_private_value']['table'] = 'field_data_field_public_private';
+  $handler->display->display_options['filters']['field_public_private_value']['field'] = 'field_public_private_value';
+  $handler->display->display_options['filters']['field_public_private_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_public_private_value']['value'] = array(
+    'private' => 'private',
+  );
   $handler->display->display_options['path'] = 'events';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Events';
+  $handler->display->display_options['menu']['weight'] = '-45';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Past Events */
+  $handler = $view->new_display('page', 'Past Events', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Past Events';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'landing-list';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '5';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '|';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '|';
+  $handler->display->display_options['pager']['options']['tags']['last'] = '';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date -  start date (field_event_date) */
+  $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'event' => 'event',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Date - end date (field_event_date:value2) */
+  $handler->display->display_options['filters']['field_event_date_value2']['id'] = 'field_event_date_value2';
+  $handler->display->display_options['filters']['field_event_date_value2']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['filters']['field_event_date_value2']['field'] = 'field_event_date_value2';
+  $handler->display->display_options['filters']['field_event_date_value2']['operator'] = '<';
+  $handler->display->display_options['filters']['field_event_date_value2']['default_date'] = 'now';
+  /* Filter criterion: Content: Public/Private (field_public_private) */
+  $handler->display->display_options['filters']['field_public_private_value']['id'] = 'field_public_private_value';
+  $handler->display->display_options['filters']['field_public_private_value']['table'] = 'field_data_field_public_private';
+  $handler->display->display_options['filters']['field_public_private_value']['field'] = 'field_public_private_value';
+  $handler->display->display_options['filters']['field_public_private_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_public_private_value']['value'] = array(
+    'private' => 'private',
+  );
+  $handler->display->display_options['path'] = 'events/past';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Events';
+  $handler->display->display_options['menu']['weight'] = '-45';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Watch Events */
+  $handler = $view->new_display('page', 'Watch Events', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Watch Events';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'landing-list';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '5';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '|';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '|';
+  $handler->display->display_options['pager']['options']['tags']['last'] = '';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date -  start date (field_event_date) */
+  $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'event' => 'event',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Public/Private (field_public_private) */
+  $handler->display->display_options['filters']['field_public_private_value']['id'] = 'field_public_private_value';
+  $handler->display->display_options['filters']['field_public_private_value']['table'] = 'field_data_field_public_private';
+  $handler->display->display_options['filters']['field_public_private_value']['field'] = 'field_public_private_value';
+  $handler->display->display_options['filters']['field_public_private_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_public_private_value']['value'] = array(
+    'private' => 'private',
+  );
+  $handler->display->display_options['filters']['field_public_private_value']['group'] = 1;
+  /* Filter criterion: Content: Media (field_media_collection) */
+  $handler->display->display_options['filters']['field_media_collection_value']['id'] = 'field_media_collection_value';
+  $handler->display->display_options['filters']['field_media_collection_value']['table'] = 'field_data_field_media_collection';
+  $handler->display->display_options['filters']['field_media_collection_value']['field'] = 'field_media_collection_value';
+  $handler->display->display_options['filters']['field_media_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_media_collection_value']['group'] = 1;
+  $handler->display->display_options['path'] = 'events/watch';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Events';
   $handler->display->display_options['menu']['weight'] = '-45';
