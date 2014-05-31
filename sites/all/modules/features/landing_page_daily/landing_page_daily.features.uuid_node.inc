@@ -26,7 +26,7 @@ function landing_page_daily_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '6c5ae0d2-5547-48d1-b23a-6b739fa874c2',
-  'revision_uid' => 18,
+  'revision_uid' => 0,
   'field_display_title' => array(
     'und' => array(
       0 => array(
@@ -132,7 +132,7 @@ For information on submitting articles for publication click here.',
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
   'weight_weight' => FALSE,
-  'date' => '2014-05-08 14:36:07 -0700',
+  'date' => '2014-05-08 16:36:07 -0500',
 );
   return $nodes;
 }

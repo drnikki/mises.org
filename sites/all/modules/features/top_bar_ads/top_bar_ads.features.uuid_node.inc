@@ -43,6 +43,7 @@ function top_bar_ads_uuid_features_default_content() {
         'uuid' => '103817c8-372a-48ee-b000-3a9eb8b24dd9',
         'field_file_image_alt_text' => array(),
         'field_file_image_title_text' => array(),
+        'metatags' => array(),
         'rdf_mapping' => array(),
         'metadata' => array(
           'height' => 63,
@@ -81,6 +82,7 @@ function top_bar_ads_uuid_features_default_content() {
   ),
   'field_teaser_text' => array(),
   'field_weight' => array(),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -140,7 +142,7 @@ function top_bar_ads_uuid_features_default_content() {
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
   'weight_weight' => FALSE,
-  'date' => '2014-05-02 18:53:16 -0700',
+  'date' => '2014-05-02 20:53:16 -0500',
 );
   $nodes[] = array(
   'uid' => 18,
@@ -175,6 +177,7 @@ function top_bar_ads_uuid_features_default_content() {
         'uuid' => '9efa21e2-e357-4604-9efe-ba82df177790',
         'field_file_image_alt_text' => array(),
         'field_file_image_title_text' => array(),
+        'metatags' => array(),
         'rdf_mapping' => array(),
         'metadata' => array(
           'height' => 63,
@@ -213,6 +216,7 @@ function top_bar_ads_uuid_features_default_content() {
   ),
   'field_teaser_text' => array(),
   'field_weight' => array(),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -272,7 +276,7 @@ function top_bar_ads_uuid_features_default_content() {
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
   'weight_weight' => FALSE,
-  'date' => '2014-05-02 18:20:46 -0700',
+  'date' => '2014-05-02 20:20:46 -0500',
 );
   return $nodes;
 }
