@@ -137,7 +137,7 @@ Auburn, Alabama 36832-4501</address>
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
   'weight_weight' => FALSE,
-  'date' => '2014-05-02 20:09:29 -0700',
+  'date' => '2014-05-02 22:09:29 -0500',
 );
   $nodes[] = array(
   'uid' => 18,
@@ -244,7 +244,7 @@ Auburn, Alabama 36832-4501</address>
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
   'weight_weight' => FALSE,
-  'date' => '2014-05-02 19:19:10 -0700',
+  'date' => '2014-05-02 21:19:10 -0500',
 );
   return $nodes;
 }
