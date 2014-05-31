@@ -1,0 +1,10 @@
+name = Mises Autopublish Content
+description = Automatically publish content for user with a specific role assigned to their account.
+core = 7.x
+package = users
+version = 7.x-1.0
+project = mises_autopublish_content
+dependencies[] = entity
+dependencies[] = rules
+features[features_api][] = api:2
+features[rules_config][] = rules_automatic_publish_senior_editor
