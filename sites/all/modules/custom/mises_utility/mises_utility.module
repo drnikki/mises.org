@@ -141,3 +141,26 @@ function mises_utility_update_projects_alter(&$projects) {
 function mises_utility_field_info_alter(&$info){
   $info['creative_commons']['default_formatter'] = 'creative_commons_large_image';
 }
+
+/**
+ * Implements hook_preprocess_page
+ * Automatically disable event registration and the event date has passed
+ * 
+ */
+
+function mises_utility_preprocess_node(&$variables) {
+  if($variables['type'] == 'event') {
+    $timestamp = strtotime($variables['field_event_date'][0]['value']);
+    $current_date = time();
+    if ($current_date >= $timestamp && $variables['field_registration_type']['und'][0]['value'] != 'none') {
+      drupal_set_message('Registration is closed.');
+      $node = node_load($variables['nid']);
+      $node->field_registration_type['und'][0]['value'] = 'none';
+      node_save($node);
+      //drupal_set_message('Node Saved..');
+      header('Location: '.$_SERVER['REQUEST_URI']);
+    } else {
+      //drupal_set_message('Registration is open.');
+    }
+  }
+}
