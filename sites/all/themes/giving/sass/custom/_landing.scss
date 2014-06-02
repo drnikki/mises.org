@@ -1,0 +1,110 @@
+/*
+* Custom Styles for Home and Landing Pages
+* 
+*/
+
+/* TOP FEATURED REGION */
+.featured .container {
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+    background: $white;
+  }
+  .col-sm-8, .col-sm-4 {
+    padding: 6px;
+  }
+}
+/* HOMEPAGE HERO */
+.view-homepage-hero {
+  .featured-block {
+    position: relative;
+    a {
+      color: $white;
+    }
+    .image {
+    }
+    .overlay {
+      position: relative;
+      left: -6px;
+      padding: 10px 20px 10px 38px;
+      width: -moz-calc(100% + 6px);
+      width: calc(100% + 6px);
+      border-left: 6px solid $brand-primary;
+      background: $brand-medium-screen;
+      color: $white;
+      @media (min-width: $screen-md) {
+        & {
+          position: absolute;
+          bottom: 10px;
+          max-width: 75%;
+        }
+      }
+      h3 {
+        margin-top: 0;
+      }
+      p {
+        color: $gray-lighter;
+      }
+    }
+  }
+}
+
+/* HOMEPAGE TOP RIGHT MENU */
+
+
+/* LANDING LISTS */
+.landing-list {
+  .views-row {
+    padding: 20px 0;
+    border-bottom: 1px solid $gray-light;
+    .front & {
+      border-bottom: 0 none;
+    }
+  }
+  .image {
+    margin-top: 5px;
+    border-top: 8px solid $brand-secondary;
+  }
+  .tags {
+    padding-top: 5px;
+  }
+  h2.teaser-title {
+    margin-top: 0;
+  }
+  .view-footer {
+    span.glyphicon {
+      @include glyph-size(22px);
+    }
+  }
+}
+.page-taxonomy-term-147 {
+  .landing-list {
+    .views-row-1 {
+      padding: 0; 
+      border-bottom: 0 none;
+      background-color: $gray-lighter;
+      .group-right {
+        &:before {
+          display: block;
+          content: "Today's Article";
+        }
+    }
+    .image {
+      margin-top: 0;
+    }
+    .tags {
+      margin-top: 0;
+      padding: 10px;
+      background-color: $brand-secondary;
+      color: $white;
+      a {
+        color: $white;
+      }
+    }
+    .group-right {
+      padding: 20px 10px;
+      }
+    }
+  }
+}
+
