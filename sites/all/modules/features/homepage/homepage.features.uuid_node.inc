@@ -26,7 +26,7 @@ function homepage_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'a0982713-1d86-4b6b-a8fa-7eb5e90defa2',
-  'revision_uid' => 18,
+  'revision_uid' => 0,
   'field_display_title' => array(),
   'field_image' => array(
     'und' => array(
@@ -43,6 +43,7 @@ function homepage_uuid_features_default_content() {
         'uuid' => 'f3dd3efe-9ef5-4dcb-9e2f-7904143ea2a5',
         'field_file_image_alt_text' => array(),
         'field_file_image_title_text' => array(),
+        'metatags' => array(),
         'rdf_mapping' => array(),
         'metadata' => array(
           'height' => 154,
@@ -81,6 +82,7 @@ function homepage_uuid_features_default_content() {
   ),
   'field_teaser_text' => array(),
   'field_weight' => array(),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -139,7 +141,8 @@ function homepage_uuid_features_default_content() {
   'name' => 'aeasterling',
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
-  'date' => '2014-05-02 14:28:49 -0700',
+  'weight_weight' => FALSE,
+  'date' => '2014-05-02 16:28:49 -0500',
 );
   $nodes[] = array(
   'uid' => 18,
@@ -157,7 +160,7 @@ function homepage_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'c3bb4cde-9961-4076-84d1-c1be12fe9ab0',
-  'revision_uid' => 18,
+  'revision_uid' => 0,
   'field_display_title' => array(),
   'field_image' => array(),
   'field_image_link' => array(),
@@ -192,6 +195,7 @@ function homepage_uuid_features_default_content() {
       ),
     ),
   ),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -250,7 +254,8 @@ function homepage_uuid_features_default_content() {
   'name' => 'aeasterling',
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
-  'date' => '2014-05-06 20:13:00 -0700',
+  'weight_weight' => FALSE,
+  'date' => '2014-05-06 22:13:00 -0500',
 );
   return $nodes;
 }
