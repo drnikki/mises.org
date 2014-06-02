@@ -1,0 +1,414 @@
+/*
+* Core Custom Styles
+* 
+*/
+
+/*
+* OVERRIDE BOOTSTRAP
+*/
+
+/* LAYOUT */
+@media (max-width: $screen-xs - 1){ // adding mid-small breakpoint
+  .main-content, .content-bottom {
+    *[class*="col-"]{
+      float:none;
+      width:auto;
+    }   
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: $screen-md) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: $screen-lg) {
+  .container {
+    width: 1160px;
+  }
+}
+
+
+// bootstap/_navbar.scss
+.navbar-header {
+  background: $white;
+  @media (min-width: $grid-float-breakpoint) {
+    float: none;
+  }
+}
+#navbar {
+  &.navbar-static-top {
+    border-width: 0 0 6px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+.navbar-inverse .navbar-nav > li > a.active {
+  color: $navbar-inverse-link-active-color;
+  background-color: $navbar-inverse-link-active-bg;
+}
+// Override logo alignment
+.logo.navbar-btn {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+
+  &.btn-sm {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &.btn-xs {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+// Panels
+.panel {
+  margin-bottom: $padding-large-vertical;
+  &, .panel-heading, .panel-footer {
+    @include box-shadow(0 0 0 rgba(0,0,0,0));
+    border: 0 none;
+    border-radius: 0;
+  }
+}
+// Pagination
+.pagination {
+  border-radius: $pager-border-radius;
+  > li {
+    display: inline-block;
+    &, &:first-child, &:last-child {
+      > a,
+      > span {
+        width: $font-size-base * 2;
+        height: $font-size-base * 2;
+        border-radius: $pager-border-radius;
+        line-height: $font-size-base * 2;
+        padding: 0;
+      }
+    }
+    &.prev, &.next {
+      a {
+        @extend .glyphicon;
+        @extend .glyphicon-chevron-left;
+        background-color: $gray;
+        color: $gray;
+        top: 1px;
+        &:before {
+          position: relative;
+          left: 1px;
+          color: $white;
+        }
+      }
+      &:hover {
+        a {
+          background-color: $gray-dark;
+          color: $gray-dark;
+        }
+      }
+    }
+    &.next {
+      a {
+        @extend .glyphicon-chevron-right;
+      }
+    }
+  }
+}
+/* PAGER */
+.sidebar .pager {
+  border-radius: $pager-border-radius;
+  > li {
+    &.date-prev, &.date-next {
+      a {
+        width: $font-size-base * 1.25;
+        height: $font-size-base * 1.25;
+        border-radius: $pager-border-radius;
+        line-height: $font-size-base * 1.25;
+        padding: 0;
+        @extend .glyphicon;
+        @extend .glyphicon-chevron-left;
+        background-color: $white;
+        color: $white;
+        padding: 0;
+        position: relative;
+        &:before {
+          position: absolute;
+          left: 2px;
+          color: $brand-secondary;
+        }
+      }
+      &:hover {
+        a {
+          background-color: $gray-light;
+          color: $gray-light;
+        }
+      }
+    }
+    &.date-next {
+      a {
+        @extend .glyphicon-chevron-right;
+        left: 4px;
+      }
+    }
+  }
+}
+
+/*
+* CUSTOM MISES ELEMENTS
+*/
+/* BODY */
+body {
+  @include background-texture($body-bg,'../images/texture.jpg');
+}
+
+/* HEADER */
+#top-bar {
+  @include background-texture($brand-primary,'../images/top-bar.jpg');
+  padding-top: 28px;
+  height: 110px;
+}
+.region-navigation .block {
+  @extend .pull-right;
+  margin-top: -7px;
+  height: 50px;
+}
+/* CONTAINER */
+.main-container {
+  padding: 20px 0 35px;
+  background: transparent url('../images/content-texture.jpg') center top no-repeat;
+}
+.main-container > .container {
+  padding-top: 20px;
+}
+
+/* MENU FOOTER */
+.menu-footer {
+  @include background-texture($brand-medium,'../images/menu-footer-texture.jpg');
+  padding: 10px 0 35px;
+  border-top: 1px solid $brand-dark;
+  background: $brand-medium;
+  
+  h2,
+  .block:first-child h2.block-title {
+    margin-top: $padding-large-vertical;
+    color: $brand-secondary-reverse;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  ul.menu {
+    @include content-columns(2);
+    li a {
+      display: inline;
+      padding: 0;
+      color: $gray-lighter;
+      font-size: $font-size-small;
+      &:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* FOOTER */
+.footer {
+  @include background-texture($gray-darker,'../images/footer-texture.jpg');
+  margin-top: 0;
+  padding: 5px 0 15px;
+  border-top: 7px solid $black;
+  color: $white;
+
+  .panel {
+    background: transparent;
+  }
+  h2,
+  .block:first-child h2.block-title { 
+    margin-top: $padding-large-vertical;
+    color: $brand-contrast;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+  .region-footer-left,
+  .region-footer-center {
+    ul.menu li a {
+        display: inline;
+        padding: 0;
+        color: $gray-lighter;
+        font-size: $font-size-small;
+      &:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+    }
+  }
+  .region-footer-right {
+    .panel {
+      padding: $padding-large-vertical 0 $padding-large-vertical;
+      border-bottom: 1px solid $gray;
+      line-height: $line-height-small;
+      h2 {
+        margin: 0 0 $padding-base-vertical * 1.5;
+        padding: 0  $padding-xs-horizontal $padding-base-vertical * 1.5;
+        border-bottom: 1px solid $gray;
+        color: $gray-lighter;
+        font-size: $font-size-h3;
+      }
+      p {
+        padding: 0  $padding-xs-horizontal;
+      }
+      .logo {
+        @include background-image('../images/footer-logo.png', 60px, 377px);
+        margin-bottom: -7px;
+        margin-left: -7px;
+        max-width: 100%;
+        background-position: 5px 0;
+        background-size: contain;
+      }
+      a {
+        color: $white;
+      }
+    }
+  }
+  #block-menu-menu-mises-social-icons {
+    ul.menu li {
+      display: inline-block;
+      padding-right: $padding-xs-horizontal;
+      padding-bottom: $padding-large-vertical;
+      a {
+        display: inline-block;
+        padding: 0;
+        width: 45px;
+        height: 45px;
+        text-indent: -9999em;
+        opacity: 0.7;
+        &:hover {
+          background-color: transparent;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .region-footer-bottom {
+    padding-top: $padding-large-vertical;
+  }
+}
+
+/* PRIMARY CONTENT BLOCKS */
+.main-content {
+  position: relative;
+  padding: $padding-base-vertical $padding-large-horizontal * 1.5 $padding-large-horizontal * 1.5;
+  border-top: 7px solid $brand-secondary;
+  background: $white;
+  &:after {
+    position: absolute;
+    top: -7px;
+    left: 33px;
+    display: block;
+    width: 66px;
+    height: 77px;
+    content: url('../images/shield.png');
+  }
+  // Add customizations for specific pages here
+  .front & {
+    padding: $padding-base-vertical $padding-large-horizontal * 1.5;
+  }
+  .body-content {
+    &.normal {
+      font-size: $font-size-base;
+    }
+    &.large {
+      font-size: $font-size-large;
+    }
+  }
+}
+#text-resizer {
+  .large {
+    font-size: $font-size-large;
+  }
+  .active {
+    @extend .btn-primary;
+  }
+}
+.body-content {
+  padding-bottom: $padding-large-horizontal;
+}
+
+.content-bottom {
+  padding-top: $padding-large-horizontal;
+}
+
+/* FONTS AND TYPOGRAPHY 
+* @TODO: CONSIDER SEPARATE STYLESHEET
+*/
+.bold {
+  font-weight: 600;
+}
+.italic {
+  font-style: italic;
+}
+h1, .h1 {
+  color: $brand-primary;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: $font-family-serif;
+}
+.page-header {
+  padding-left: 100px;
+  border-bottom: 0 none;
+}
+h2 {
+  &.page-title {
+    margin: 0 0 $padding-large-vertical;
+    color: $brand-secondary;
+    font-size: $font-size-h2;
+    font-family: $font-family-serif;
+  }
+  &.teaser-title {
+    color: $brand-primary;
+    font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
+    font-family: $font-family-serif;
+  }
+}
+h3, h4 {
+  &.author {
+    margin-top: 0;
+    font-size: 14px;
+  }
+  &.sub-heading {
+    text-transform: uppercase;
+  }
+  &.sidebar-title {
+    margin-bottom: $padding-small-vertical;
+  }
+  &.primary {
+    color: $brand-primary;
+  }
+  &.secondary {
+    color: $brand-secondary;
+  }
+  &.contrast {
+    color: $brand-contrast;
+  }
+}
+h2, .h2, h3, .h3, h4, .h4, h5, .h5 { // FIX FOR AUTHOR FULL NAME NESTED P
+  p {
+    display: inline;
+  }
+}
+address {
+  margin: 0 0 ($line-height-computed / 2);
+  line-height: $line-height-small;
+}
+.read-more a {
+  color: $gray;
+  text-transform: uppercase;
+  font-size: $font-size-small;
+}
+.author a {
+  color: inherit;
+}

@@ -1,0 +1,16 @@
+// DRUPAL-BASED OVERRIDES
+
+// Extend img styles to wrappers since Drupal doesn't make it easy to add classes to images
+.img-responsive img {
+  @extend .img-responsive;
+  width: 100%;
+}
+.img-rounded img {
+  @extend .img-rounded;
+}
+.img-circle img {
+  @extend .img-circle;
+}
+.img-thumbnail img {
+  @extend .img-thumbnail;
+}
