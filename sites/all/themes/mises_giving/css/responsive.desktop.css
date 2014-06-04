@@ -7,3 +7,26 @@
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.desktop\.scss}line{font-family:\0000315}}
+.secondary-inner {
+  margin-right: 33.3%;
+  margin-left: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.desktop\.scss}line{font-family:\0000316}}
+.secondary-left {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.desktop\.scss}line{font-family:\0000317}}
+.region-secondary-aside {
+  clear: none;
+  float: left;
+  margin-left: -33.3%;
+  width: 33.3%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.desktop\.scss}line{font-family:\0000324}}
+#main-content {
+  padding: 0 100px 0 40px;
+}

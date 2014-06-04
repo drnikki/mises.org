@@ -81,6 +81,7 @@
   regions[highlighted]       = Highlighted
   regions[content_aside]     = Aside
   regions[secondary_content] = Secondary
+  regions[secondary_aside]   = Secondary Aside
   regions[tertiary_content]  = Tertiary
   regions[footer]            = Footer
   regions[leaderboard]       = Leaderboard

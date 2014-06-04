@@ -11,3 +11,16 @@
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
+
+.secondary-inner {margin-right: 33.3%; margin-left: 0;}
+.secondary-left {float: left;}
+.region-secondary-aside {
+	clear: none;
+	float: left;
+	margin-left: -33.3%;
+	width: 33.3%;
+}
+
+#main-content {
+	padding: 0 100px 0 40px;
+}

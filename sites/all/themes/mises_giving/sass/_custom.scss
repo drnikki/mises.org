@@ -189,3 +189,11 @@ $gutter-width: 10px;
     }
   }
 }
+
+@mixin box-shadow($color, $x-offset, $y-offset, $blur, $spread) {
+  box-shadow: $color $x-offset $y-offset $blur $spread;
+  -webkit-box-shadow: $color $x-offset $y-offset $blur $spread;
+  -moz-box-shadow: $color $x-offset $y-offset $blur $spread;
+  -o-box-shadow: $color $x-offset $y-offset $blur $spread;
+  -ms-box-shadow: $color $x-offset $y-offset $blur $spread;
+}
