@@ -81,6 +81,10 @@ h6 {
   font-size: 18px;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1.2;
+}
+
 
 p {
   margin: 0 0 12.5px;
@@ -243,8 +247,13 @@ var {
  * Wraps the header
  */
 #header-wrapper {
-  /* Debug styles, is this working */
-  background: $debug;
+  @include box-shadow(#000, 0, 0, 4px, 0);
+
+  background: none repeat scroll 0% 0% #729949;
+  border-bottom: 7px solid #5C8036;
+  position: relative;
+  z-index: 500;
+
   .container {}
 }
 
@@ -277,7 +286,20 @@ var {
  * Wraps the secondary content/preface region
  */
 #secondary-content-wrapper {
-  .container {}
+  background: url(images/giving-bg-inner.jpg) center bottom no-repeat;
+  max-height: 260px;
+  .giving-front & {
+    background: url(images/giving-bg.jpg) center bottom no-repeat;
+    max-height: 590px;
+  }
+  .container {
+    .secondary-inner {
+      position: relative;
+      .block {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 
@@ -322,7 +344,12 @@ var {
  * Logo
  */
 #logo {
-  padding: 10px 0;
+  @include box-shadow(rgba(0, 0, 0, 0.3), 0, 0, 9px, 0);
+  background: none repeat scroll 0% 0% #FFF;
+  border-bottom: 7px solid #216093;
+  margin-bottom: -7px;
+  max-width: 310px;
+  padding: 35px 30px 25px;
 
   img {
     vertical-align: bottom;
@@ -378,8 +405,20 @@ var {
 /*
  * The main page title (h1)
  */
+.title-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+}
+
 #page-title {
-  margin: 0;
+  background: rgba(114,153,73,0.85);
+  color: #FFF;
+  margin: 0 10px;
+  padding: 26px 40px;
+  text-transform: uppercase;
 }
 
 
@@ -520,7 +559,13 @@ ul.links {
 /*
  * Sidebars - targets both
  */
-.sidebar {}
+.sidebar {
+
+  .region-inner {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
 
 
 /*
@@ -1266,7 +1311,13 @@ ul.action-links {
 /*
  * Inner wrapper for most blocks, good for margin, padding and borders, block_system_main does not have it
  */
-.block-inner {}
+.block-inner {
+  
+  .sidebar & {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
 
 /*
@@ -1987,4 +2038,8 @@ tr.error {
     min-height: 260px;
     width: auto;
   }
+}
+
+.field-name-field-header-image {
+  max-height: 260px;
 }

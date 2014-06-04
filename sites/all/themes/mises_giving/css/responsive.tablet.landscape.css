@@ -7,3 +7,21 @@
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000315}}
+.secondary-inner {
+  margin-right: 25%;
+  margin-left: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000316}}
+.secondary-left {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000317}}
+.region-secondary-aside {
+  clear: none;
+  float: left;
+  margin-left: -25%;
+  width: 25%;
+}
