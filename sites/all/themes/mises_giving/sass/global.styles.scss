@@ -83,6 +83,7 @@ h6 {
 
 h1,h2,h3,h4,h5,h6 {
   line-height: 1.2;
+  margin: 0 0 1.5em;
 }
 
 
@@ -126,13 +127,17 @@ q {}
 address {}
 
 
-ul {}
+ul {
+  padding: 0;
+}
 
 
 ol {}
 
 
-li {}
+li {
+  padding: 0;
+}
 
 
 dl {}
@@ -293,6 +298,7 @@ var {
     max-height: 590px;
   }
   .container {
+    position: relative;
     .secondary-inner {
       position: relative;
       .block {
@@ -323,8 +329,6 @@ var {
  * Footer wrapper
  */
 #footer-wrapper {
-  /* Debug styles, is this working? */
-  background: $debug;
 
   .container {}
 }
@@ -411,14 +415,25 @@ var {
   left: 0;
   width: 100%;
   z-index: 500;
-}
 
-#page-title {
-  background: rgba(114,153,73,0.85);
-  color: #FFF;
-  margin: 0 10px;
-  padding: 26px 40px;
-  text-transform: uppercase;
+  .giving-front & {
+    margin-top: 290px;
+    position: static;
+  }
+
+  #page-title {
+    background: rgba(114,153,73,0.85);
+    color: #FFF;
+    line-height: 100px;
+    margin: 0 10px;
+    padding: 0 40px;
+    text-transform: uppercase;
+
+    .giving-front & {
+      line-height: 70px;
+      text-align: center;
+    }
+  }
 }
 
 
@@ -469,7 +484,6 @@ ul.links {
   li {
     display: inline;
     list-style: none;
-    padding: 0 10px 0 0;
   }
 }
 
@@ -543,6 +557,7 @@ ul.links {
  */
 .region-secondary-content {}
 
+.region-secondary-aside {}
 
 /*
  * Sits above the main content header, like a content-top region
@@ -785,8 +800,6 @@ ul.sf-menu {
  * ========================================================================== */
 
 ul.menu {
-  padding-left: 15px;
-
   ul {
     padding-left: 15px;
 
@@ -2042,4 +2055,157 @@ tr.error {
 
 .field-name-field-header-image {
   max-height: 260px;
+}
+
+/**
+* GIVING THEME STYLES
+*/
+
+// Header
+.giving-front #block-fieldblock-node-giving-page-default-field-header-image {
+  margin-top: -330px;
+  margin-bottom: 70px !important;
+}
+#block-views-giving-feature-blocks-block {
+  @include clearfix;
+  background: none repeat scroll 0% 0% rgba(114, 153, 73, 0.85);
+  color: #FFF;
+  margin: 0px 10px;
+  padding: 40px 0 15px;
+  text-align: center;
+
+  .views-row {
+    @include border-box;
+    width: 33.3%;
+    float: left;
+    padding: 0px 20px;
+
+    &.views-row-2 {
+      border-left: #FFF 1px solid;
+      border-right: #FFF 1px solid;
+    }
+
+    .views-field-field-image {
+      display: inline-block;
+      margin-top: -50px;
+      margin-bottom: 3px;
+      position: relative;
+
+      a {
+        @include border-radius(50%);
+        background: none repeat scroll 0% 0% #FFF;
+        display: block;
+        height: 54px;
+        width: 54px;
+        line-height: 1;
+
+        img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          -webkit-transform: translateX(-50%) translateY(-50%);
+          -moz-transform: translateX(-50%) translateY(-50%);
+          -o-transform: translateX(-50%) translateY(-50%);
+          -ms-transform: translateX(-50%) translateY(-50%);
+        }
+      }
+    }
+
+    .views-field-title {
+      h5 {
+        margin: 0 0 10px;
+      }
+    }
+
+    .views-field-body {
+      margin: 0 0 15px;
+    }
+
+    a {
+      color: #FFF;
+    }
+  }
+}
+
+// Giving Today
+.give-today-block {
+  margin-bottom: 0;
+  .giving-internal & {
+    margin-top: -60px;
+  }
+  h3.give {
+    background: #FFF;
+    margin: 0;
+    line-height: 60px;
+    height: 60px;
+    text-transform: uppercase;
+
+    a {
+      color: $green;
+      display: block;
+      padding: 0 25px;
+
+      &:hover {
+        span {
+          background-position: left center;
+          padding-right: 0;
+          padding-left: 46px;
+        }
+      }
+
+      span {
+        @include transition(all 0.5s);
+        background: url(images/giving-arrow-green.png) right center no-repeat;
+        display: inline-block;
+        padding-right: 46px;
+      }
+    }
+  }
+  .description {
+    background: $blue;
+    border-bottom: #FFF 2px solid;
+    color: #FFF;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 20px;
+  }
+  .links {
+    background: $green;
+    padding: 0;
+    li {
+      border-bottom: rgba(255,255,255,0.4) 1px solid;
+      display: block;
+      text-transform: uppercase;
+
+      &.last {
+        border: none;
+      }
+      a {
+        @include transition(background-color 0.5s);
+        color: #FFF;
+        display: block;
+        line-height: 65px;
+        padding: 0 25px;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+
+        &:hover {
+          background-color: #678d40;
+
+          span {
+            background-position: 10px center;
+            padding-left: 44px;
+          }
+        }
+
+        span {
+          @include transition(all 0.5s);
+          background: url(images/giving-arrow-white.png) left center no-repeat;
+          display: inline-block;
+          padding-left: 34px;
+        }
+      }
+    }
+  }
 }

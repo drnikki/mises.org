@@ -16,12 +16,13 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000316}}
 .secondary-left {
   float: left;
+  width: 70%;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.tablet\.landscape\.scss}line{font-family:\0000317}}
 .region-secondary-aside {
-  clear: none;
-  float: left;
-  margin-left: -25%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 25%;
 }

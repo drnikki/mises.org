@@ -9,21 +9,22 @@
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.desktop\.scss}line{font-family:\0000315}}
 .secondary-inner {
-  margin-right: 33.3%;
+  margin-right: 30%;
   margin-left: 0;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.desktop\.scss}line{font-family:\0000316}}
 .secondary-left {
   float: left;
+  width: 70%;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.desktop\.scss}line{font-family:\0000317}}
 .region-secondary-aside {
-  clear: none;
-  float: left;
-  margin-left: -33.3%;
-  width: 33.3%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.desktop\.scss}line{font-family:\0000324}}
