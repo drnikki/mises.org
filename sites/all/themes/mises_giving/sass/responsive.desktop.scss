@@ -12,13 +12,13 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 
-.secondary-inner {margin-right: 33.3%; margin-left: 0;}
-.secondary-left {float: left;}
+.secondary-inner {margin-right: 30%; margin-left: 0;}
+.secondary-left {float: left; width: 70%;}
 .region-secondary-aside {
-	clear: none;
-	float: left;
-	margin-left: -33.3%;
-	width: 33.3%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 30%;
 }
 
 #main-content {

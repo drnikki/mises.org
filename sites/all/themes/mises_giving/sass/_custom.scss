@@ -30,7 +30,11 @@ $ultralight:   #f5f5f5; // table row even, primary link inactive tabs
 $light:        #eee;    // table row odd active, primary link inactive hover
 $medium_light: #ebebeb; // table row even active
 $medium_dark:  #e5e5e5; // table thead
-$debug:        rgba(255, 192, 203, 0.5); // Full width wrapper test
+
+$green:        #81a957; // Main Green
+$cleargreen:   rgba(114,153,73,0.85); // Semi-Transparent Green
+$blue:         #216093; // Main Blue
+$clearblue:    rgba(33,96,147,0.85); // Semi-Transparent Blue
 
 $thead:          $medium_dark;
 $tr_odd:         $page;
@@ -196,4 +200,31 @@ $gutter-width: 10px;
   -moz-box-shadow: $color $x-offset $y-offset $blur $spread;
   -o-box-shadow: $color $x-offset $y-offset $blur $spread;
   -ms-box-shadow: $color $x-offset $y-offset $blur $spread;
+}
+
+@mixin border-box {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin transition($transition) {
+  transition: $transition;
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
 }

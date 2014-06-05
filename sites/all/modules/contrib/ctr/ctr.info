@@ -1,0 +1,11 @@
+name = Context Themes Reactions
+description = Display all themes and regions for blocks reactions
+version = 7.x-3.x
+core = 7.x
+dependencies[] = context
+; Information added by drupal.org packaging script on 2013-09-19
+version = "7.x-3.2"
+core = "7.x"
+project = "ctr"
+datestamp = "1379582524"
+
