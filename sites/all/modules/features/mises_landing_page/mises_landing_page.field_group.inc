@@ -26,8 +26,9 @@ function mises_landing_page_field_group_info() {
       0 => 'field_page_subtitle',
       1 => 'field_read_more_link',
       2 => 'field_teaser',
-      3 => 'title',
-      4 => 'field_teaser_header',
+      3 => 'field_teaser_header',
+      4 => 'field_teaser_title',
+      5 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -54,8 +55,8 @@ function mises_landing_page_field_group_info() {
     'label' => 'Images',
     'weight' => '1',
     'children' => array(
-      0 => 'field_image',
-      1 => 'field_banner_image',
+      0 => 'field_banner_image',
+      1 => 'field_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

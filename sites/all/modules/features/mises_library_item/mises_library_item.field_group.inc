@@ -46,6 +46,35 @@ function mises_library_item_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_body|node|library_item|block_teaser_term';
+  $field_group->group_name = 'group_body';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'block_teaser_term';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Panel Body',
+    'weight' => '2',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_teaser_text',
+      2 => 'title',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Panel Body',
+      'instance_settings' => array(
+        'classes' => 'group-body panel-body',
+        'element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_body|node|library_item|block_teaser_term'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_content|node|library_item|form';
   $field_group->group_name = 'group_content';
   $field_group->entity_type = 'node';
@@ -184,6 +213,35 @@ function mises_library_item_field_group_info() {
     ),
   );
   $export['group_media|node|library_item|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_panel_body|node|library_item|video_block_teaser';
+  $field_group->group_name = 'group_panel_body';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'video_block_teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => '',
+    'weight' => '2',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_teaser_text',
+      2 => 'title',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => '',
+      'instance_settings' => array(
+        'classes' => 'group-teaser panel-body',
+        'element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_panel_body|node|library_item|video_block_teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
