@@ -5,10 +5,10 @@
 
 .ds-2col-custom-fluid > .panel-body > .group-left {
   padding-left: 0;
-  padding-right: 6px;
+  padding-right: 12px;
 }
 .ds-2col-custom-fluid > .panel-body > .group-right {
-  padding-left: 6px;
+  padding-left: 12px;
   padding-right: 0;
 }
 

@@ -6,6 +6,7 @@
 
 /* ICONS */
 .panel-heading {
+  @include border-top-radius(0);
   position: relative;
   padding: 10px 15px 7px 80px;
   &:before {
@@ -168,7 +169,9 @@ ul.menu {
 
 /* Bootstrap Panel overrides */
 .panel-footer {
+  @include border-bottom-radius(0);
   padding: $padding-large-vertical $padding-xs-horizontal;
+  border-top: 0;
   background-color: transparent;
   a {
     color: $gray;
@@ -184,9 +187,21 @@ ul.menu {
 }
 
 /* BOTTOM BLOCKS */
-.content-bottom .region {
-  position: relative;
-  background: $white;
+.content-bottom {
+	 .region {
+	  position: relative;
+	  background: $white;
+	}
+}
+.bottom-blocks {
+	 .view-mises-library {
+	  position: relative;
+	  margin-bottom: $grid-gutter-width;
+	  background: $gray-lighter;
+	}
+}
+.content-bottom,
+.bottom-blocks {
   .panel-heading {
     border-radius: 0;
     background-color: $brand-medium;
@@ -210,8 +225,9 @@ ul.menu {
       font-size: $font-size-small;
     }
   }
-  .view-footer,
-  .attachment {
+  //.view-footer,
+  //.attachment,
+  .panel-footer {
     margin: 0 $padding-large-horizontal;
     line-height: 20px;
     span.glyphicon {
@@ -219,7 +235,6 @@ ul.menu {
     }
   } 
 }
-
 /* SIDEBAR BLOCKS */
 .region-sidebar-second,
 .region-sidebar-second-top {
@@ -292,11 +307,11 @@ ul.menu {
 .region-sidebar-second-top {
   .nav {
     > li > a {
+      padding-left: $padding-large-horizontal * 1.5;
       background-color: $gray-dark;
       color: $white;
       text-transform: uppercase;
       font-size: $font-size-h4;
-      padding-left: $padding-large-horizontal * 1.5;
       &:hover {
         background-color: $gray;
       }
@@ -397,6 +412,54 @@ ul.menu {
     }
     img {
       border: 3px solid $gray-light;
+    }
+  }
+}
+
+/* BLOCK TEASER WITH TERM */
+.view-mode-block_teaser_term {
+	.panel-heading {
+	  padding: 10px 10px 10px 50px;
+		background-color: $gray-dark;
+	  &:before {
+	    @include icon-block(30px,10px,10px);
+	    @include icon-color($brand-secondary-reverse);
+	    border: 0;
+		}
+		.panel-title {
+			color: $white;
+			text-transform: uppercase;
+		}
+	}
+	.panel-body {
+		background-color: $gray-lighter;
+		h3 {
+			margin-top: 0;
+			color: $brand-secondary;
+		}
+		p {
+			font-size: $font-size-small;
+		}
+	}
+	.panel-footer {
+		padding: 0 $padding-large-horizontal;
+		background-color: $gray-lighter;
+		p {
+			padding: $padding-large-horizontal 0;
+			border-top: 1px solid $gray-light;
+	    line-height: 20px;
+	    span.glyphicon {
+	      @include glyph-size(20px);
+	      margin-right: 5px;
+	    }
+		}
+	}
+}
+/* BOTTOM BLOCKS FLEX BLOCKS */
+.bottom-blocks {
+  .view-flex-blocks {
+    .panel {
+    margin-bottom: 0;
     }
   }
 }

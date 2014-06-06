@@ -10,8 +10,11 @@
   if (($left && !$right) || ($right && !$left)) {
     $classes .= ' group-one-column';
   }
+  if ($left) {
+    $right_classes .= ' col-xs-8';
+  }
 ?>
-<<?php print $layout_wrapper; print $layout_attributes; ?> class="ds-2col-custom-fluid <?php print $classes;?> clearfix">
+<<?php print $layout_wrapper; print $layout_attributes; ?> class="ds-2col-custom-fluid column <?php print $classes;?> clearfix">
 
   <?php if (isset($title_suffix['contextual_links'])): ?>
   <?php print render($title_suffix['contextual_links']); ?>
@@ -23,9 +26,9 @@
     </<?php print $header_wrapper ?>>
   <?php endif; ?>
 
-  <div class="panel-body">
+  <div class="panel-body row">
     <?php if ($left): ?>
-      <<?php print $left_wrapper ?> class="group-left<?php print $left_classes; ?>">
+      <<?php print $left_wrapper ?> class="group-left col-xs-4<?php print $left_classes; ?>">
         <?php print $left; ?>
       </<?php print $left_wrapper ?>>
     <?php endif; ?>

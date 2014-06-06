@@ -18,6 +18,15 @@ var Drupal = Drupal || {};
         $('.content-bottom .region .panel-heading .panel-title').equalHeight();
         $('.content-bottom .region .panel-body').equalHeight();
         $('.content-bottom .region .panel-footer').equalHeight();
+        $('.bottom-blocks .panel-heading .panel-title').equalHeight();
+        $('.bottom-blocks .panel-body').equalHeight();
+        $('.bottom-blocks .panel-footer').equalHeight();
+        $('.latest-library-content .views-row > .col-sm-4').equalHeight();
+        $('.latest-library-content .views-row > .col-sm-4 .panel-heading .panel-title').equalHeight();
+        $('.latest-library-content .views-row > .col-sm-4 .panel-body').equalHeight();
+        $('.latest-library-content .views-row > .col-sm-4 .panel-footer').equalHeight();
+        $('.bottom-blocks .view-mises-library').equalHeight();
+
         var sidebarHeight = $("div.region-sidebar-second").height() + $("div.region-sidebar-second-top").height() + 20;
         $("div.main-content").css({ "min-height": sidebarHeight }); // Roger's magic!
         
@@ -44,6 +53,10 @@ var Drupal = Drupal || {};
       $(document).ready(function() {
         implementEqualHeight();
         textResizer();
+        
+        $('.latest-library-content .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        //$('.bottom-blocks .read-more a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        
       });
 
 
