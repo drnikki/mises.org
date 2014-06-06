@@ -9,8 +9,10 @@
   // Add sidebar classes so that we can apply the correct width in css.
   if (($left && !$right) || ($right && !$left)) {
     $classes .= ' group-one-column';
-  }
-  if ($left) {
+    $left_classes .= ' col-xs-12';
+    $right_classes .= ' col-xs-12';
+  } else {
+    $left_classes .= ' col-xs-4';
     $right_classes .= ' col-xs-8';
   }
 ?>
@@ -26,7 +28,13 @@
     </<?php print $header_wrapper ?>>
   <?php endif; ?>
 
-  <div class="panel-body row">
+  <div class="panel-body">
+    <?php if ($top): ?>
+      <<?php print $top_wrapper ?> class="group-top col-xs-12<?php print $top_classes; ?>">
+        <?php print $top; ?>
+      </<?php print $top_wrapper ?>>
+    <?php endif; ?>
+
     <?php if ($left): ?>
       <<?php print $left_wrapper ?> class="group-left col-xs-4<?php print $left_classes; ?>">
         <?php print $left; ?>
@@ -40,7 +48,7 @@
     <?php endif; ?>
 
   <?php if ($bottom): ?>
-    <<?php print $bottom_wrapper ?> class="group-bottom<?php print $bottom_classes; ?>">
+    <<?php print $bottom_wrapper ?> class="group-bottom col-xs-12<?php print $bottom_classes; ?>">
       <?php print $bottom; ?>
     </<?php print $bottom_wrapper ?>>
   <?php endif; ?>

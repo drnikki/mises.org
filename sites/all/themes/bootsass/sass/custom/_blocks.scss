@@ -155,7 +155,7 @@ ul.menu {
   background-color: $brand-secondary;
 }
 .bg-gray {
-  background-color: $gray-light;
+  background-color: $gray-lighter;
 }
 
 
@@ -165,6 +165,11 @@ ul.menu {
   .view-content {
     padding: $padding-small-horizontal $padding-small-horizontal * 2;
   }
+}
+.outset {
+  margin-left: $grid-gutter-width * -1.5;
+  margin-right: $grid-gutter-width * -1.5;
+  padding: $grid-gutter-width * 1.5;
 }
 
 /* Bootstrap Panel overrides */

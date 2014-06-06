@@ -55,9 +55,9 @@ var Drupal = Drupal || {};
         textResizer();
         
         $('.latest-library-content .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
-        //$('.bottom-blocks .read-more a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.field-collection-item-field-resources .read-more a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
         
-      });
+      }); 
 
 
       $(window).resize(function() {

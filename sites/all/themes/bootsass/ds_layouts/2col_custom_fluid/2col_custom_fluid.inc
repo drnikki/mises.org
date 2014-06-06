@@ -4,6 +4,7 @@ function ds_2col_custom_fluid() {
     'label' => t('Custom 2-Col Fluid using Bootstap Panel'),
     'regions' => array(
       'header' => t('Panel Heading'),
+      'top' => t('Top'),
       'left' => t('Left'),
       'right' => t('Right'),
       'bottom' => t('Bottom'),

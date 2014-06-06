@@ -183,7 +183,7 @@
             <ul class="action-links"><?php print render($action_links); ?></ul>
           <?php endif; ?>
           <?php print render($page['content']); ?>
-		  <?php if (isset($page['bottom_left']) || isset($page['bottom_right'])): ?>
+		  <?php if (!empty($page['bottom_left']) || !empty($page['bottom_right'])): ?>
 		    <div class="bottom-blocks">
 	        <div class="row">
 	          <?php if (!empty($page['bottom_left'])): ?>
