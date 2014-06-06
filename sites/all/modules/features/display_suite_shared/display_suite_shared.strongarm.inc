@@ -68,6 +68,7 @@ col-xs-6
 col-xs-7
 col-xs-8
 col-xs-9
+col-xs-12
 panel
 panel-heading
 panel-body

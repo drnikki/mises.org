@@ -27,6 +27,86 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_resources|default';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_resources';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_teaser_title' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'h2',
+          'ow-cl' => 'block-title',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_read_more_link' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'read-more',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['field_collection_item|field_resources|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_resources|list_teaser';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_resources';
+  $ds_fieldsetting->view_mode = 'list_teaser';
+  $ds_fieldsetting->settings = array(
+    'field_teaser_title' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'h3',
+          'ow-cl' => 'sub-heading contrast',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_read_more_link' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'read-more text-right',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_resource' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['field_collection_item|field_resources|list_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|award|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'award';
@@ -822,6 +902,18 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'landing_page';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'field_banner_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'img-responsive',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'field_image' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -859,6 +951,42 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'field_teaser_title' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'h2',
+          'ow-cl' => 'teaser-title',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_resources' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'resource-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => TRUE,
+        ),
+      ),
+    ),
+    'field_description' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'intro-body',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_display_title' => array(
       'formatter_settings' => array(
         'ft' => array(
           'ow' => TRUE,
@@ -2321,6 +2449,80 @@ function display_suite_shared_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_resources|default';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_resources';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_teaser_title',
+        1 => 'field_resource',
+        2 => 'field_read_more_link',
+      ),
+    ),
+    'fields' => array(
+      'field_teaser_title' => 'ds_content',
+      'field_resource' => 'ds_content',
+      'field_read_more_link' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_resources|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_resources|list_teaser';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_resources';
+  $ds_layout->view_mode = 'list_teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_teaser_title',
+        1 => 'field_resource',
+        2 => 'field_read_more_link',
+      ),
+    ),
+    'fields' => array(
+      'field_teaser_title' => 'ds_content',
+      'field_resource' => 'ds_content',
+      'field_read_more_link' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_resources|list_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'file|video|small_player';
   $ds_layout->entity_type = 'file';
   $ds_layout->bundle = 'video';
@@ -3008,7 +3210,7 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
-      'header' => array(
+      'top' => array(
         0 => 'field_banner_image',
         1 => 'field_page_subtitle',
       ),
@@ -3021,29 +3223,34 @@ function display_suite_shared_ds_layout_settings_info() {
         5 => 'field_teaser',
         6 => 'field_read_more_link',
       ),
+      'bottom' => array(
+        7 => 'group_block_intro',
+        8 => 'field_display_title',
+        9 => 'field_description',
+        10 => 'field_resources',
+      ),
     ),
     'fields' => array(
-      'field_banner_image' => 'header',
-      'field_page_subtitle' => 'header',
+      'field_banner_image' => 'top',
+      'field_page_subtitle' => 'top',
       'field_image' => 'left',
       'field_teaser_header' => 'right',
       'field_teaser_title' => 'right',
       'field_teaser' => 'right',
       'field_read_more_link' => 'right',
+      'group_block_intro' => 'bottom',
+      'field_display_title' => 'bottom',
+      'field_description' => 'bottom',
+      'field_resources' => 'bottom',
     ),
     'classes' => array(
       'layout_class' => array(
         'row' => 'row',
       ),
-      'left' => array(
-        'col-xs-4' => 'col-xs-4',
-      ),
-      'right' => array(
-        'col-xs-8' => 'col-xs-8',
-      ),
     ),
     'wrappers' => array(
       'header' => 'div',
+      'top' => 'div',
       'left' => 'div',
       'right' => 'div',
       'bottom' => 'div',

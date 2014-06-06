@@ -70,21 +70,26 @@ function footer_browser_library_menu_default_menu_links() {
     'weight' => -45,
     'customized' => 1,
   );
-  // Exported menu link: menu-browse-library_home-schooling-resources:<front>
-  $menu_links['menu-browse-library_home-schooling-resources:<front>'] = array(
+  // Exported menu link: menu-browse-library_home-schooling-resources:node/818
+  $menu_links['menu-browse-library_home-schooling-resources:node/818'] = array(
     'menu_name' => 'menu-browse-library',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'node/818',
+    'router_path' => 'node/%',
     'link_title' => 'Home Schooling Resources',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-browse-library_home-schooling-resources:<front>',
+      'identifier' => 'menu-browse-library_home-schooling-resources:node/818',
+      'menu_icon' => array(
+        'enable' => 0,
+        'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
+        'image_style' => 'menu_icon',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -41,
