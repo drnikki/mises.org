@@ -14,3 +14,14 @@
 .img-thumbnail img {
   @extend .img-thumbnail;
 }
+// OVERRIDE FIELD-COLLECTION
+.field-collection-container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.field-collection-view {
+  margin: $padding-large-vertical 0;
+  padding: 0;
+  border: 0;
+}

@@ -117,9 +117,32 @@
     margin-top: 0;
   }
 }
+.field-collection-item-field-resources {
+  .read-more {
+    margin: 0 $padding-large-horizontal;
+    line-height: 20px;
+    span.glyphicon {
+      @include glyph-size(24px);
+    }
+    a:hover {
+      color: $brand-secondary;
+      span.glyphicon {
+        background-color: $brand-secondary;
+      }
+    }
+  }
+} 
+.resource-item {
+  &.odd {
+    @extend .outset;
+    @extend .bg-gray;
+  }  
+}
 
 /* LANDING LIBRARY PAGE */
 .latest-library-content.outset {
 	margin-left: $grid-gutter-width / -2;
 	margin-right: $grid-gutter-width / -2;
+	padding: 0;
 }
+

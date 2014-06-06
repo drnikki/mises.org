@@ -301,7 +301,7 @@ body {
 /* PRIMARY CONTENT BLOCKS */
 .main-content {
   position: relative;
-  padding: $padding-base-vertical $padding-large-horizontal * 1.5 $padding-large-horizontal * 1.5;
+  padding: $padding-base-vertical $grid-gutter-width *1.5 $padding-large-horizontal * 1.5;
   border-top: 7px solid $brand-secondary;
   background: $white;
   &:after {
@@ -400,6 +400,9 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5 { // FIX FOR AUTHOR FULL NAME NESTED P
   p {
     display: inline;
   }
+}
+h5 {
+  margin-bottom: $padding-base-vertical / 2;
 }
 address {
   margin: 0 0 ($line-height-computed / 2);
