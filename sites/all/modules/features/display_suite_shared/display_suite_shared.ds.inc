@@ -2230,6 +2230,33 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'random_term';
+  $ds_field->label = 'Random Lib Item Type Term';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+$random = array_rand($entity->field_library_item_tree[\'und\']);
+$entity->ds_delta = $random;
+$random_term =  $entity->field_library_item_tree[\'und\'][$random][\'taxonomy_term\']->name;
+$random_class = strtolower($random_term);
+$random_class = preg_replace(\'@[^a-z0-9_]+@\',\'-\',$random_class);
+$random_tid =  $entity->field_library_item_tree[\'und\'][$random][\'taxonomy_term\']->tid;
+print \'<div class="panel-heading \' . $random_class . \'"><div class="panel-title">\' . $random_term . \'</div></div>\';
+//print \'<div class="panel-heading \' . $random_class . \'"><div class="panel-title">\' . $entity->field_library_item_tree[\'und\'] . \'</div></div>\';
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['random_term'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'text_resizer';
   $ds_field->label = 'Text Resizer';
   $ds_field->field_type = 5;
