@@ -108,3 +108,18 @@
   }
 }
 
+/* LANDING PAGE */
+.node-landing-page.view-mode-full {
+  h2.teaser-title {
+    margin-top: $padding-base-vertical;
+  }
+  .sub-heading {
+    margin-top: 0;
+  }
+}
+
+/* LANDING LIBRARY PAGE */
+.latest-library-content.outset {
+	margin-left: $grid-gutter-width / -2;
+	margin-right: $grid-gutter-width / -2;
+}

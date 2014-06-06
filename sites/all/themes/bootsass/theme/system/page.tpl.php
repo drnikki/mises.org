@@ -183,6 +183,23 @@
             <ul class="action-links"><?php print render($action_links); ?></ul>
           <?php endif; ?>
           <?php print render($page['content']); ?>
+		  <?php if (isset($page['bottom_left']) || isset($page['bottom_right'])): ?>
+		    <div class="bottom-blocks">
+	        <div class="row">
+	          <?php if (!empty($page['bottom_left'])): ?>
+	            <div class="col-xs-6">
+	              <?php print render($page['bottom_left']); ?>
+	            </div>
+	          <?php endif; ?>
+	          <?php if (!empty($page['bottom_right'])): ?>
+	            <div class="col-xs-6">
+	              <?php print render($page['bottom_right']); ?>
+	            </div>
+	          <?php endif; ?>
+	        </div>
+		    </div>
+		  <?php endif; ?>
+
         </div>
       </section>
   
@@ -200,7 +217,7 @@
     </div>
   </div>
 
-  <?php if (isset($page['bottom_one']) || isset($page['fbottom_two']) || isset($page['fbottom_three']) || isset($page['fbottom_four'])): ?>
+  <?php if (isset($page['bottom_one']) || isset($page['bottom_two']) || isset($page['bottom_three']) || isset($page['bottom_four'])): ?>
     <div class="content-bottom">
       <div class="container">
         <div class="row">
