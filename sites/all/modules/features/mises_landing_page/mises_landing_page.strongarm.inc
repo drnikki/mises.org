@@ -70,6 +70,12 @@ function mises_landing_page_strongarm() {
         'path' => array(
           'weight' => '2',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
