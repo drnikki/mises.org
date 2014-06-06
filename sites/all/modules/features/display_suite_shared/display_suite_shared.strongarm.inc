@@ -232,7 +232,7 @@ single';
         'custom_settings' => FALSE,
       ),
       'token' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'small_player' => array(
         'custom_settings' => TRUE,
@@ -258,6 +258,10 @@ single';
             'visible' => TRUE,
           ),
           'wide_player' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'token' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),

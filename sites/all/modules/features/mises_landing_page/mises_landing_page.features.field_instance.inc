@@ -36,7 +36,7 @@ function mises_landing_page_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -112,7 +112,7 @@ function mises_landing_page_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'list_teaser',
         ),
         'type' => 'image',
         'weight' => 2,
@@ -173,7 +173,7 @@ function mises_landing_page_field_default_field_instances() {
     'bundle' => 'landing_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If banner image is used, the title and subtitle appear before the banner image. Otherwise, they are not displayed.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -191,7 +191,7 @@ function mises_landing_page_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -277,7 +277,7 @@ function mises_landing_page_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'link_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -316,7 +316,7 @@ function mises_landing_page_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -343,7 +343,7 @@ function mises_landing_page_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -402,7 +402,7 @@ function mises_landing_page_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -411,7 +411,7 @@ function mises_landing_page_field_default_field_instances() {
     'bundle' => 'landing_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If content image is used, this header, plus the Body Title entered below are displayed above the body.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -492,12 +492,101 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-landing_page-field_teaser_title'
+  $field_instances['node-landing_page-field_teaser_title'] = array(
+    'bundle' => 'landing_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_teaser_title',
+    'label' => 'Body Title',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'simplified' => 'simplified',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simplified' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Banner Image');
   t('Body');
   t('Body Header');
+  t('Body Title');
   t('Content Image');
+  t('If banner image is used, the title and subtitle appear before the banner image. Otherwise, they are not displayed.');
+  t('If content image is used, this header, plus the Body Title entered below are displayed above the body.');
   t('Read More Link');
   t('Subtitle');
 

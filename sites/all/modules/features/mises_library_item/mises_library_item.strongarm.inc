@@ -104,6 +104,21 @@ function mises_library_item_strongarm() {
       'sidebar_author' => array(
         'custom_settings' => FALSE,
       ),
+      'block_teaser_term' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'single_term' => array(
+        'custom_settings' => FALSE,
+      ),
+      'video_block_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
