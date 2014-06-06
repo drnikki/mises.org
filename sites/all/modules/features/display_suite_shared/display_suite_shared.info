@@ -59,6 +59,7 @@ features[ds_fields][] = dynamic_field_1
 features[ds_fields][] = dynamic_field_2
 features[ds_fields][] = follow_mises_institute
 features[ds_fields][] = linked_box_image
+features[ds_fields][] = random_term
 features[ds_fields][] = text_resizer
 features[ds_layout_settings][] = field_collection_item|field_image_collection|full
 features[ds_layout_settings][] = file|video|small_player
