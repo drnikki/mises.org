@@ -27,6 +27,40 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_resource_group|default';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_resource_group';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_display_title' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'h2',
+          'ow-cl' => 'teaser-title',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_description' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'intro-body',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['field_collection_item|field_resource_group|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'field_collection_item|field_resources|default';
   $ds_fieldsetting->entity_type = 'field_collection_item';
   $ds_fieldsetting->bundle = 'field_resources';
@@ -962,18 +996,6 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_resources' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'resource-item',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => TRUE,
-        ),
-      ),
-    ),
     'field_description' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -996,6 +1018,11 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-at' => '',
           'ow-def-at' => FALSE,
         ),
+      ),
+    ),
+    'field_resource_group' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
   );
@@ -2449,6 +2476,45 @@ function display_suite_shared_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_resource_group|default';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_resource_group';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'group_block_intro',
+        1 => 'field_display_title',
+        2 => 'field_resources',
+        3 => 'field_description',
+      ),
+    ),
+    'fields' => array(
+      'group_block_intro' => 'ds_content',
+      'field_display_title' => 'ds_content',
+      'field_resources' => 'ds_content',
+      'field_description' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_resource_group|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'field_collection_item|field_resources|default';
   $ds_layout->entity_type = 'field_collection_item';
   $ds_layout->bundle = 'field_resources';
@@ -3225,9 +3291,9 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
       'bottom' => array(
         7 => 'group_block_intro',
-        8 => 'field_display_title',
-        9 => 'field_description',
-        10 => 'field_resources',
+        8 => 'field_resource_group',
+        9 => 'field_display_title',
+        10 => 'field_description',
       ),
     ),
     'fields' => array(
@@ -3239,9 +3305,9 @@ function display_suite_shared_ds_layout_settings_info() {
       'field_teaser' => 'right',
       'field_read_more_link' => 'right',
       'group_block_intro' => 'bottom',
+      'field_resource_group' => 'bottom',
       'field_display_title' => 'bottom',
       'field_description' => 'bottom',
-      'field_resources' => 'bottom',
     ),
     'classes' => array(
       'layout_class' => array(

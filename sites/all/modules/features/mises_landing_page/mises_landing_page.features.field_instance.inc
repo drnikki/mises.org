@@ -10,6 +10,187 @@
 function mises_landing_page_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_resource_group-field_description'
+  $field_instances['field_collection_item-field_resource_group-field_description'] = array(
+    'bundle' => 'field_resource_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_description',
+    'label' => 'Resource Intro',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'simplified' => 'simplified',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simplified' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_resource_group-field_display_title'
+  $field_instances['field_collection_item-field_resource_group-field_display_title'] = array(
+    'bundle' => 'field_resource_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_display_title',
+    'label' => 'Resource Sub-Title',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'simplified' => 'simplified',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simplified' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_resource_group-field_resources'
+  $field_instances['field_collection_item-field_resource_group-field_resources'] = array(
+    'bundle' => 'field_resource_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'conditions' => array(),
+          'delete' => 'Delete',
+          'description' => 0,
+          'edit' => 'Edit',
+          'view_mode' => 'list_teaser',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_resources',
+    'label' => 'Resources',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_resources-field_read_more_link'
   $field_instances['field_collection_item-field_resources-field_read_more_link'] = array(
     'bundle' => 'field_resources',
@@ -66,7 +247,7 @@ function mises_landing_page_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 34,
+      'weight' => 9,
     ),
   );
 
@@ -117,7 +298,7 @@ function mises_landing_page_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 35,
+      'weight' => 8,
     ),
   );
 
@@ -150,7 +331,7 @@ function mises_landing_page_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_teaser_title',
-    'label' => 'Resource Group Title',
+    'label' => 'Resource Sub-Group Title',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -197,7 +378,7 @@ function mises_landing_page_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 32,
+      'weight' => 7,
     ),
   );
 
@@ -683,12 +864,12 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_resources'
-  $field_instances['node-landing_page-field_resources'] = array(
+  // Exported field_instance: 'node-landing_page-field_resource_group'
+  $field_instances['node-landing_page-field_resource_group'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'If this landing page includes Related Resources blocks, enter the name and link, and select the relevant resources. You can also enter more than one group of Recommended Resources (such as for the Austrian Economics landing page).',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -702,7 +883,7 @@ function mises_landing_page_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -713,10 +894,10 @@ function mises_landing_page_field_default_field_instances() {
           'delete' => '',
           'description' => 0,
           'edit' => '',
-          'view_mode' => 'list_teaser',
+          'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -727,8 +908,8 @@ function mises_landing_page_field_default_field_instances() {
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_resources',
-    'label' => 'Resources',
+    'field_name' => 'field_resource_group',
+    'label' => 'Resource Group',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1011,11 +1192,13 @@ function mises_landing_page_field_default_field_instances() {
   t('If banner image is used, the title and subtitle appear before the banner image. Otherwise, they are not displayed.');
   t('If content image is used, this header, plus the Body Title entered below are displayed above the body.');
   t('If entering items below to be displayed as blocks on this landing page, you can enter a title and introductory text to be displayed above the blocks.');
-  t('If this landing page includes Related Resources blocks, enter the name and link, and select the relevant resources. You can also enter more than one group of Recommended Resources (such as for the Austrian Economics landing page).');
   t('Introduction');
   t('More Link');
   t('Read More Link');
-  t('Resource Group Title');
+  t('Resource Group');
+  t('Resource Intro');
+  t('Resource Sub-Group Title');
+  t('Resource Sub-Title');
   t('Resources');
   t('Subtitle');
 

@@ -32,42 +32,6 @@ function homeschool_resources_landing_page_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
-        'views-term_landing-popular' => array(
-          'module' => 'views',
-          'delta' => 'term_landing-popular',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'views-term_landing-featured_author' => array(
-          'module' => 'views',
-          'delta' => 'term_landing-featured_author',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'views-daily_landing-books' => array(
-          'module' => 'views',
-          'delta' => 'daily_landing-books',
-          'region' => 'bottom_one',
-          'weight' => '-10',
-        ),
-        'views-daily_landing-online_courses' => array(
-          'module' => 'views',
-          'delta' => 'daily_landing-online_courses',
-          'region' => 'bottom_two',
-          'weight' => '-10',
-        ),
-        'views-daily_landing-mises_view' => array(
-          'module' => 'views',
-          'delta' => 'daily_landing-mises_view',
-          'region' => 'bottom_three',
-          'weight' => '-10',
-        ),
-        'views-daily_landing-library_block' => array(
-          'module' => 'views',
-          'delta' => 'daily_landing-library_block',
-          'region' => 'bottom_four',
-          'weight' => '-10',
-        ),
       ),
     ),
     'theme_html' => array(
