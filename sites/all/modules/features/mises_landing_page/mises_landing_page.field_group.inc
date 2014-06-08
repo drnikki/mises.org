@@ -41,6 +41,34 @@ function mises_landing_page_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_block_intro|field_collection_item|field_resource_group|full';
+  $field_group->group_name = 'group_block_intro';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_resource_group';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Block Intro',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_display_title',
+      1 => 'field_description',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Block Intro',
+      'instance_settings' => array(
+        'classes' => 'group-block-intro bg-gray outset',
+        'element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_block_intro|field_collection_item|field_resource_group|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_block_intro|node|landing_page|full';
   $field_group->group_name = 'group_block_intro';
   $field_group->entity_type = 'node';

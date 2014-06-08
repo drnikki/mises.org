@@ -26,6 +26,15 @@ function mises_landing_page_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
@@ -89,6 +98,15 @@ function mises_landing_page_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
@@ -172,6 +190,20 @@ function mises_landing_page_field_default_field_instances() {
         ),
         'type' => 'field_collection_view',
         'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'conditions' => array(),
+          'delete' => 'Delete',
+          'description' => 0,
+          'edit' => 'Edit',
+          'view_mode' => 'list_teaser',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 2,
       ),
     ),
     'ds_extras_field_template' => '',
