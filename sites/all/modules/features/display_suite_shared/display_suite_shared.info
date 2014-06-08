@@ -66,6 +66,7 @@ features[ds_fields][] = random_term
 features[ds_fields][] = text_resizer
 features[ds_layout_settings][] = field_collection_item|field_image_collection|full
 features[ds_layout_settings][] = field_collection_item|field_resource_group|default
+features[ds_layout_settings][] = field_collection_item|field_resource_group|full
 features[ds_layout_settings][] = field_collection_item|field_resources|default
 features[ds_layout_settings][] = field_collection_item|field_resources|list_teaser
 features[ds_layout_settings][] = file|video|small_player
