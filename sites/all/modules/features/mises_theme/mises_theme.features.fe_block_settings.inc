@@ -12,6 +12,39 @@ function mises_theme_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['menu-menu-austrian-economics-sub-menu'] = array(
+    'cache' => -1,
+    'css_class' => 'border-secondary',
+    'custom' => 0,
+    'delta' => 'menu-austrian-economics-sub-menu',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootsass' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootsass',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['menu-menu-event-menu'] = array(
     'cache' => -1,
     'css_class' => 'border-contrast margin-bottom',
@@ -905,7 +938,7 @@ function mises_theme_default_fe_block_settings() {
 
   $export['views-term_landing-featured_author'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'border-contrast',
     'custom' => 0,
     'delta' => 'term_landing-featured_author',
     'module' => 'views',

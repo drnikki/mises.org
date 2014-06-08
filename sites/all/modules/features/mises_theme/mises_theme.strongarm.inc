@@ -16,6 +16,7 @@ function mises_theme_strongarm() {
   $strongarm->name = 'features_admin_menu_links_menus';
   $strongarm->value = array(
     'menu-about-the-mises-institute' => 'menu-about-the-mises-institute',
+    'menu-austrian-economics-sub-menu' => 'menu-austrian-economics-sub-menu',
     'menu-austrian-school' => 'menu-austrian-school',
     'menu-browse-library' => 'menu-browse-library',
     'devel' => 'devel',
@@ -39,6 +40,13 @@ function mises_theme_strongarm() {
   $strongarm->name = 'features_admin_show_component_menu_links';
   $strongarm->value = 1;
   $export['features_admin_show_component_menu_links'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'features_admin_show_component_uuid_entities';
+  $strongarm->value = 1;
+  $export['features_admin_show_component_uuid_entities'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
