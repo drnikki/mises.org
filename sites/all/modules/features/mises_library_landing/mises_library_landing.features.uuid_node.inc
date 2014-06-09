@@ -26,7 +26,7 @@ function mises_library_landing_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '7b6ec892-e832-4495-98c4-b35aa1cfab21',
-  'revision_uid' => 18,
+  'revision_uid' => 0,
   'field_display_title' => array(),
   'field_image' => array(),
   'field_image_link' => array(),
@@ -121,7 +121,7 @@ function mises_library_landing_uuid_features_default_content() {
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:0;}',
   'weight_weight' => FALSE,
-  'date' => '2014-05-30 18:48:48 -0700',
+  'date' => '2014-05-30 20:48:48 -0500',
 );
   return $nodes;
 }
