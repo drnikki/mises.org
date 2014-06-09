@@ -12,11 +12,11 @@ function austrian_economics_landing_page_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['menu-menu-austrian-school'] = array(
+  $export['menu-menu-austrian-economics-sub-menu'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'border-secondary',
     'custom' => 0,
-    'delta' => 'menu-austrian-school',
+    'delta' => 'menu-austrian-economics-sub-menu',
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -41,7 +41,7 @@ function austrian_economics_landing_page_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 

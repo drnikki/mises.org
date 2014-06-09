@@ -27,6 +27,12 @@ function austrian_economics_landing_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-austrian_economists-block' => array(
+          'module' => 'views',
+          'delta' => 'austrian_economists-block',
+          'region' => 'content',
+          'weight' => '10',
+        ),
         'menu-menu-austrian-economics-sub-menu' => array(
           'module' => 'menu',
           'delta' => 'menu-austrian-economics-sub-menu',
