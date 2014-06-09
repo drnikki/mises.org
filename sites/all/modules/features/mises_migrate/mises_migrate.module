@@ -402,10 +402,9 @@ class DocumentAuthorsMigration extends MisesMigration {
       'AuthorId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
       MigrateDestinationNode::getKeySchema()
     );
-    $this->addFieldMapping('title', 'AuthorLast');
+    $this->addFieldMapping('title', 'name');
     $this->addFieldMapping('field_first_name', 'AuthorFirst');
-    //$this->addFieldMapping('field_middle_name', 'AuthorMiddle');
-//    $this->addFieldMapping('field_lastname', 'AuthorLast');
+    $this->addFieldMapping('field_last_name', 'AuthorLast');
     //$this->addFieldMapping('field_born', 'Born');
     //$this->addFieldMapping('field_died', 'Died');
     $this->addFieldMapping('body', 'BioText');
