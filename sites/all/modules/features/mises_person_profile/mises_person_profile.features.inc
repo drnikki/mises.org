@@ -29,7 +29,7 @@ function mises_person_profile_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Last Name'),
+      'title_label' => t('Full name'),
       'help' => '',
     ),
   );

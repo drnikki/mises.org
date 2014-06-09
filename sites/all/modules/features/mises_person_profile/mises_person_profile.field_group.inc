@@ -55,10 +55,11 @@ function mises_person_profile_field_group_info() {
       1 => 'field_facebook',
       2 => 'field_featured_content',
       3 => 'field_first_name',
-      4 => 'field_image_collection',
-      5 => 'field_profile_type',
-      6 => 'field_twitter',
-      7 => 'title',
+      4 => 'field_profile_type',
+      5 => 'field_twitter',
+      6 => 'field_image_collection',
+      7 => 'field_last_name',
+      8 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -115,8 +116,7 @@ function mises_person_profile_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_austrian_school',
-      1 => 'field_austrian_school_of_economi',
-      2 => 'field_topics',
+      1 => 'field_topics',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
