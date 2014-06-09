@@ -167,8 +167,8 @@ ul.menu {
   }
 }
 .outset {
-  margin-left: $grid-gutter-width * -1.5;
   margin-right: $grid-gutter-width * -1.5;
+  margin-left: $grid-gutter-width * -1.5;
   padding: $grid-gutter-width * 1.5;
 }
 
@@ -234,6 +234,7 @@ ul.menu {
   //.attachment,
   .panel-footer {
     margin: 0 $padding-large-horizontal;
+    border-top: 1px solid $gray-light;
     line-height: 20px;
     span.glyphicon {
       @include glyph-size(24px);
