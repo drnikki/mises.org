@@ -1,13 +1,19 @@
 <?php
-/**
- * @file
- * Drupal needs this blank file.
- */
-function mises_migrate_boot() {
-}
-
 function mises_migrate_init() {
-
+  /*
+  $query = Database::getConnection('default', 'for_migration')
+    ->query("SELECT Description FROM {DocumentMediaType}");
+    print '<pre>';
+    while($result = $query->fetch()) {
+      print $result->Description;
+      print "\n";
+    }
+    print '</pre>';
+  $query = db_query("SELECT tid, name FROM {taxonomy_term_data} WHERE vid = 10");
+  while($result = $query->fetch()) {
+    dprint_r($result);
+  }
+  */
 }
 
 
@@ -19,21 +25,37 @@ abstract class MisesMigration extends Migration {
       $this->description = t('Wine producers of the world');
       $this->dependencies = array();
     }
-    protected function processTags(&$row) {
-      $row->tags = array();
-      $query = $this->db
-        ->query("SELECT t.* FROM {Tag} t INNER JOIN {TagMap} m ON t.TagId = m.TagId WHERE m.ObjectId = '$row->GUID' AND m.TaggedBy NOT IN('SearchEngineBot', 'MisesBot')");
-      while($result = $query->fetch()) {
-        $row->tags[] = $result->Tag;
+    public function mapTags(&$row) {
+      $mapper = new MisesTagMapper($row);
+      $terms = $mapper->getTerms();
+      $row->tags = $terms['tag'];
+      $row->field_topics = $terms['field_topics'];
+      $row->field_austrian_school = $terms['field_austrian_school'];
+    }
+    public function getFullName($row) {
+      $name = array(
+        $row->AuthorFirst,
+        $row->AuthorMiddle,
+        $row->AuthorLast,
+      );
+      foreach($name as $k => $v) {
+        if($v) {
+          $name[$k] = trim($v);
+        }
+        else {
+          unset($name[$k]);
+        }
       }
-      $row->tags = implode($row->tags,'|');
+      return implode($name, ' ');
     }
 }
+
+
 class BiographyMigration extends MisesMigration {
   public function __construct($arguments) {
     parent::__construct($arguments);
     $query = $this->db
-      ->select('Biography', 'r')
+      ->select('biography', 'r')
       ->fields('r');
     $this->map = new MigrateSQLMap($this->machineName, array(
       'AAuthorId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
@@ -44,12 +66,11 @@ class BiographyMigration extends MisesMigration {
     $this->addFieldMapping('field_published_date', 'CreateDate');
     $this->addFieldMapping('created', 'CreateDate');
     $this->addFieldMapping('changed', 'CreateDate');
-    $this->addFieldMapping('field_media_type')->defaultValue('Review');
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('body', 'body');
     $this->addFieldMapping('body:format')->defaultValue('full_html');
     $this->addFieldMapping('field_legacy_tags', 'tags')->separator('|')->defaultValue('');;
-    $this->addFieldMapping('field_author', 'authors')
+    $this->addFieldMapping('field_author_1', 'authors')
       ->separator('|')
       ->sourceMigration('DocumentAuthors');  
   }
@@ -71,11 +92,13 @@ class BiographyMigration extends MisesMigration {
     return $row;
   }
 }
+
+
 class ReviewMigration extends MisesMigration {
   public function __construct($arguments) {
     parent::__construct($arguments);
     $query = $this->db
-      ->select('MisesReview', 'r')
+      ->select('misesreview', 'r')
       ->fields('r');
     $this->source = new MigrateSourceSQL($query);
     $this->destination = new MigrateDestinationNode('library_item');
@@ -114,11 +137,116 @@ class ReviewMigration extends MisesMigration {
   }
 }
 
+
+class MisesTagMapper {
+  protected $legacytags;
+  protected $map1;
+  protected $map2;
+  protected $db;
+  protected $terms;
+  protected $articleId;
+  public function __construct($row) {
+    $this->articleId = $row->ArticleId;
+    $this->terms = array('tag' => array(), 'field_topics' => array(), 'field_austrian_school' => array());
+    $guid = $row->GUID;
+    $this->db = Database::getConnection('default', 'for_migration');
+    $this->legacytags = $this->getLegacyTags($guid);
+    $this->processCSV1();
+    $this->processMap1();
+  }
+  public function getTerms() {
+    return $this->terms;
+  }
+  protected function processMap1() {
+    static $vocabs;
+    if(!$vocabs) {
+      $vocabs = array(6 => array(), 7 => array());
+      $query = db_query("SELECT name, tid, vid FROM {taxonomy_term_data} WHERE vid IN(6,7)");
+      while($result = $query->fetch()) {
+        switch($result->vid) {
+          case 6:
+            $field = 'field_topics';
+            break;
+          case 7:
+            $field = 'field_austrian_school';
+            break;
+        }
+        $vocabs[$field][$result->name] = $result->tid;
+      }
+    }
+    foreach($this->legacytags as $tag) {
+      if(isset($this->map1[$tag])) {
+        foreach($this->map1[$tag] as $type => $names) {
+          foreach($names as $name) {
+            if($vocabs[$type][$name]) {
+              $this->terms[$type][$vocabs[$field][$name]] = $vocabs[$field][$name];
+            }
+          }
+        }
+      }
+    }
+  }
+  protected function getLegacyTags($guid) {
+    $tags = array();
+    $query = $this->db
+      ->query("SELECT t.* FROM {tag} t INNER JOIN {TagMap} m ON t.TagId = m.TagId WHERE m.ObjectId = '$guid' AND m.TaggedBy NOT IN('SearchEngineBot', 'MisesBot')");
+    while($result = $query->fetch()) {
+      $tags[] = $result->Tag;
+    }
+    return $tags;
+  }
+  protected function processCSV1() {
+    static $rows;
+    if(!$row) {
+      $rows = array();
+      $url = url(drupal_get_path('module', 'mises_migrate'). '/tagmapping1.csv');
+
+      $contents = file_get_contents('./'.$url);
+
+      $lines = explode("\n", $contents);
+      foreach($lines as $line) {
+        $row = str_getcsv($line);
+        if($row[2] != '—') {
+          $mapping = array(
+            'field_tags' => array($row[1]),
+            'field_topics' => array_map('trim',explode(",",$row[2])),
+            'field_austrian_school' => array_map('trim',explode(",", $row[3]))
+          );
+          $rows[trim($row[1])] = $mapping;
+        }
+      }
+    }
+    $this->map1 = $rows;
+  }
+  protected function processCSV2() {
+    $rows = array();
+    $url = url(drupal_get_path('module', 'mises_migrate'). '/tagmapping2.csv');
+    $contents = file_get_contents('./'.$url);
+    $lines = explode("\n", $contents);
+    unset($lines[1]);
+    unset($lines[2]);
+    unset($lines[3]);
+    unset($lines[4]);
+    foreach($lines as $line) {
+      $row = explode(',', $line);
+      foreach($row as $k => $v) {
+        $row[$k] = trim($v);
+      }
+      if(!$row[4]) {
+        $mapping = new stdClass();
+        $mapping->tag = $row[3];
+        $rows[$row[6]] = $mapping;
+      }
+    }
+  }
+}
+
+
 class DailyArticlesMigration extends MisesMigration {
   public function __construct($arguments) {
     parent::__construct($arguments);
     $query = $this->db
-      ->select('DailyArticles', 'd')
+      ->select('dailyarticles', 'd')
       ->fields('d');
     $this->source = new MigrateSourceSQL($query);
     $this->destination = new MigrateDestinationNode('library_item');
@@ -130,36 +258,134 @@ class DailyArticlesMigration extends MisesMigration {
     $this->addFieldMapping('body', 'ArticleText');
     $this->addFieldMapping('body:summary', 'Description');
     $this->addFieldMapping('body:format')->defaultValue('full_html');
-    $this->addFieldMapping('field_published_date', 'DatePosted');
-    $this->addFieldMapping('field_legacy_tags', 'tags')->separator('|')->defaultValue('');;
-    $this->addFieldMapping('field_author', 'authors')
-      ->separator('|')
+    $this->addFieldMapping('field_published_date', 'DatePosted'); 
+    $this->addFieldMapping('field_mises_published_date', 'DatePosted'); 
+    $this->addFieldMapping('field_author_1', 'AuthorId')
       ->sourceMigration('DocumentAuthors');  
-    $this->addFieldMapping('field_media_type')->defaultValue('Mises Today');
+    $this->addFieldMapping('field_author_2', 'CoAuthorId')
+      ->sourceMigration('DocumentAuthors');  
+    $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Mises Daily'));
     $this->addFieldMapping('created', 'CreatedDate');
     $this->addFieldMapping('changed', 'EditDate');
     $this->addFieldMapping('status', 'ShowArticle');
-    $this->addFieldMapping('field_image_attachment', 'image');
-    $this->addFieldMapping('field_image_attachment:file_replace')
-         ->defaultValue(FILE_EXISTS_REPLACE);
-    $this->addFieldMapping('field_image_attachment:alt', 'Title');
-    $this->addFieldMapping('field_image_attachment:title', 'Title');
+    $this->addFieldMapping('field_austrian_school', 'field_austrian_school');
+    $this->addFieldMapping('field_topics', 'field_topics');
   }
   public function prepareRow($row) {
-    $this->processTags($row);
-    $row->authors = $row->AuthorId;
-    if($row->CoAuthorId > 0) {
-      $row->authors .= '|'.$row->CoAuthorId;
-    }
-    if($row->ThumbnailURL) {
-      $row->image = 'http://mises.org'.$row->ThumbnailURL;
-    }
-    dd($row->image);
+    $this->mapTags($row);
     return $row;
   }
   public function prepare($node, $row) {
-    dd($row->tags);
-    dd($node->field_legacy_tags);
+
+  }
+}
+
+
+class DocumentMigration extends MisesMigration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $query = $this->db
+      ->select('documents', 'd')
+      ->fields('d');
+    $this->source = new MigrateSourceSQL($query);
+    $this->destination = new MigrateDestinationNode('library_item');
+    $this->map = new MigrateSQLMap($this->machineName, array(
+      'DocumentId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
+      MigrateDestinationNode::getKeySchema()
+    );
+    $this->addFieldMapping('title', 'Title');
+    $this->addFieldMapping('body', 'Description');
+    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('field_published_date', 'CreateDate'); 
+    $this->addFieldMapping('field_mises_published_date', 'CreateDate'); 
+    $this->addFieldMapping('field_bibliography_footnote', 'PublicationInformation'); 
+    $this->addFieldMapping('field_author_1', 'Author1')
+      ->sourceMigration('DocumentAuthors');
+    $this->addFieldMapping('field_author_2', 'Author2')
+      ->sourceMigration('DocumentAuthors');
+    // @todo - assign this
+    $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Books'));
+    $this->addFieldMapping('field_austrian_school', 'field_austrian_school');
+    $this->addFieldMapping('field_topics', 'field_topics');
+    $this->addFieldMapping('uid')->defaultValue(1);
+  }
+  public function prepareRow($row) {
+    $this->mapTags($row);
+    /*
+    $query = $this->db->query("SELECT SubjectID FROM documentsubjectlink WHERE DocumentId = $row->DocumentId");
+    while($result = $query->fetch()) {
+      $row->subjects[] = $result->SubjectID;
+    }
+    $row->subjects = implode($row->subjects,'|');
+    $row->mediatype = array();
+    $query = $this->db->query("SELECT dmt.MediaType FROM documentmediatype dmt INNER JOIN DocumentFiles df ON df.mediaTypeID = dmt.MediaTypeID WHERE df.DocumentId = $row->DocumentId");
+    while($result = $query->fetch()) {
+      $row->mediatype[] = $result->MediaType;
+    }
+    $row->mediatype = implode($row->mediatype,'|');
+    */
+    return $row;
+  }
+  public function prepare($node, $row) {
+
+  }
+}
+
+
+class CourseMigration extends MisesMigration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $this->db = Database::getConnection('default', 'course');
+    $query = $this->db
+      ->select('mdl_course', 'p')
+      ->fields('p');
+    $this->source = new MigrateSourceSQL($query);
+    $this->destination = new MigrateDestinationNode('course');
+    $this->map = new MigrateSQLMap($this->machineName, array(
+      'id' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
+      MigrateDestinationNode::getKeySchema()
+    );
+    $this->addFieldMapping('title', 'fullname');
+    $this->addFieldMapping('body', 'summary');
+    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('uid')->defaultValue(1);
+    $this->addFieldMapping('status','visible')->defaultValue(1);
+  }
+}
+
+
+class ProductMigration extends MisesMigration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $this->db = Database::getConnection('default', 'product');
+    $query = $this->db
+      ->select('agd_temp_products', 'p')
+      ->fields('p');
+    $this->source = new MigrateSourceSQL($query);
+    $this->destination = new MigrateDestinationNode('product');
+    $this->map = new MigrateSQLMap($this->machineName, array(
+      'productid' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
+      MigrateDestinationNode::getKeySchema()
+    );
+    $this->addFieldMapping('title', 'name');
+    $this->addFieldMapping('body', 'description');
+    $this->addFieldMapping('body:summary', 'summary');
+    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('uid')->defaultValue(1);
+    $this->addFieldMapping('field_product_link', 'ProductURL');
+    $this->addFieldMapping('field_product_image', 'imageurl');
+    $this->addFieldMapping('status')->defaultValue(1);
+    /*
+    $this->addFieldMapping('field_product_image:file_replace')
+         ->defaultValue(FILE_EXISTS_REPLACE);
+    $this->addFieldMapping('field_product_image:alt', 'name');
+    $this->addFieldMapping('field_product_image:title', 'name');
+    */
+  }
+  public function prepareRow($row) {
+    $row->ProductURL = 'http://'.$row->ProductURL;
+    $row->imageurl = 'http://store.mises.org'.str_replace("~", '',$row->imageurl);
+    return $row;
   }
 }
 
@@ -168,61 +394,130 @@ class DocumentAuthorsMigration extends MisesMigration {
   public function __construct($arguments) {
     parent::__construct($arguments);
     $query = $this->db
-      ->select('DocumentAuthors', 'd')
+      ->select('documentauthors', 'd')
       ->fields('d');
     $this->source = new MigrateSourceSQL($query);
-    $this->destination = new MigrateDestinationTerm('authors');
+    $this->destination = new MigrateDestinationNode('person_profile');
     $this->map = new MigrateSQLMap($this->machineName, array(
       'AuthorId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
       MigrateDestinationNode::getKeySchema()
     );
-    $this->addFieldMapping('name', 'name');
+    $this->addFieldMapping('title', 'AuthorLast');
     $this->addFieldMapping('field_first_name', 'AuthorFirst');
-    $this->addFieldMapping('field_middle_name', 'AuthorMiddle');
-    $this->addFieldMapping('field_last_name', 'AuthorLast');
-    $this->addFieldMapping('field_biography', 'BioText');
-    $this->addFieldMapping('field_born', 'Born');
-    $this->addFieldMapping('field_died', 'Died');
-        $this->addFieldMapping('field_headshot', 'Photo');
-
-    // Indicate that we want each file to maintain its name, replacing any
-    // previous file of the same name (as opposed to being renamed to avoid
-    // collisions, which is the default).
-    $this->addFieldMapping('field_headshot:file_replace')
-         ->defaultValue(FILE_EXISTS_REPLACE);
-    $this->addFieldMapping('field_headshot:alt', 'name');
-    $this->addFieldMapping('field_headshot:title', 'name');
+    //$this->addFieldMapping('field_middle_name', 'AuthorMiddle');
+//    $this->addFieldMapping('field_lastname', 'AuthorLast');
+    //$this->addFieldMapping('field_born', 'Born');
+    //$this->addFieldMapping('field_died', 'Died');
+    $this->addFieldMapping('body', 'BioText');
+    $this->addFieldMapping('body:format')->defaultValue('full_html');
   }
-
   public function prepareRow($row) {
-    // process the full name
-    $name = array(
-      $row->AuthorFirst,
-      $row->AuthorMiddle,
-      $row->AuthorLast,
-    );
-    foreach($name as $k => $v) {
-      if($v) {
-        $name[$k] = trim($v);
-      }
-      else {
-        unset($name[$k]);
-      }
-    }
-    $row->name = implode($name, ' ');
+    $row->name = $this->getFullName($row);
     return $row;
   }
-
   public function prepare($row, $node) {
 
   }
 }
 
+
+abstract class MisesImageMigration extends MisesMigration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+  }
+  public function setFieldMapping($query, $key, $parent_migration, $node_type) {
+    $this->source = new MigrateSourceSQL($query);
+    $this->destination = new MigrateDestinationFieldCollection(
+      'field_image_collection',
+      array('host_entity_type' => 'node')
+    );
+   // $this->dependencies = array($parent_migration);
+    $this->map = new MigrateSQLMap($this->machineName,
+      array(
+        $key => array(
+          'type' => 'int',
+          'not null' => true,
+        ),
+      ),
+      MigrateDestinationFieldCollection::getKeySchema()
+    );
+    $this->addFieldMapping('host_entity_id', $key)->sourceMigration($parent_migration);
+    $this->addFieldMapping('field_image', 'image');
+    // Indicate that we want each file to maintain its name, replacing any
+    // previous file of the same name (as opposed to being renamed to avoid
+    // collisions, which is the default).
+    $this->addFieldMapping('field_image:file_replace')
+         ->defaultValue(FILE_EXISTS_REPLACE);
+    $this->addFieldMapping('field_image:alt', 'alt');
+    $this->addFieldMapping('field_image:title', 'alt');
+  }
+}
+
+
+class DocumentImageMigration extends MisesImageMigration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $query = $this->db
+      ->select('documents', 'd')
+      ->fields('d');
+    //$query->where("d.ThumbnailURL IS NOT NULL OR NOT ''");
+    $this->source = new MigrateSourceSQL($query);
+    $this->setFieldMapping($query, 'DocumentId' ,'Document', 'library_item');
+  }
+  public function prepareRow($row) {
+    if($row->CoverImageURL) {
+      $row->alt = $row->Title;
+      $row->image = 'http://mises.org'.$row->CoverImageURL;
+    }
+    return $row;
+  }
+}
+
+
+class DailyArticlesImageMigration extends MisesImageMigration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $query = $this->db
+      ->select('dailyarticles', 'd')
+      ->fields('d');
+    //$query->where("d.ThumbnailURL IS NOT NULL OR NOT ''");
+    $this->source = new MigrateSourceSQL($query);
+    $this->setFieldMapping($query, 'ArticleId' ,'DailyArticles', 'library_item');
+  }
+  public function prepareRow($row) {
+    if($row->ThumbnailURL) {
+      $row->alt = $row->Title;
+      $row->image = 'http://mises.org'.$row->ThumbnailURL;
+    }
+    return $row;
+  }
+}
+
+
+class DocumentAuthorsImageMigration extends MisesImageMigration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $query = $this->db
+      ->select('documentauthors', 'd')
+      ->fields('d');
+    $this->source = new MigrateSourceSQL($query);
+    $this->setFieldMapping($query, 'AuthorId' ,'DocumentAuthors', 'person_profile');
+  }
+  public function prepareRow($row) {
+    if($row->Photo) {
+      $row->alt = $this->getFullName($row);
+      $row->image = $row->Photo;
+    }
+    return $row;
+  }
+}
+
+
 class TagsMigration extends MisesMigration {
   public function __construct($arguments) {
     parent::__construct($arguments);
     $query = $this->db
-      ->select('Tag', 't')
+      ->select('tag', 't')
       ->fields('t')
       ->distinct('TagId', 't');
       $query->join('TagMap', 'm', 't.TagId=m.TagId');
@@ -237,6 +532,7 @@ class TagsMigration extends MisesMigration {
       $this->addFieldMapping('name', 'Tag');
   }
 }
+
 
 class DocumentMediaTypeMigration extends MisesMigration {
   public function __construct($arguments) {
@@ -268,11 +564,13 @@ class DocumentMediaTypeMigration extends MisesMigration {
 
   }
 }
+
+
 class DocumentSubjectsMigration extends MisesMigration {
   public function __construct($arguments) {
     parent::__construct($arguments);
     $query = $this->db
-      ->select('DocumentSubjects', 'd')
+      ->select('documentsubjects', 'd')
       ->fields('d');
     $this->source = new MigrateSourceSQL($query);
     $this->destination = new MigrateDestinationTerm('subject');
@@ -297,71 +595,6 @@ class DocumentSubjectsMigration extends MisesMigration {
   }
   public function prepare($row, $node) {
 
-  }
-}
-
-
-class DocumentMigration extends MisesMigration {
-  public function __construct($arguments) {
-    parent::__construct($arguments);
-    $query = $this->db
-      ->select('Documents', 'd')
-      ->fields('d');
-    $this->source = new MigrateSourceSQL($query);
-    $this->destination = new MigrateDestinationNode('library_item');
-    $this->map = new MigrateSQLMap($this->machineName, array(
-      'DocumentId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
-      MigrateDestinationNode::getKeySchema()
-    );
-    $this->addFieldMapping('title', 'Title');
-    $this->addFieldMapping('body', 'Description');
-    $this->addFieldMapping('body:format')->defaultValue('full_html');
-    $this->addFieldMapping('field_published_date', 'DatePosted');
-    $this->addFieldMapping('field_author', 'authors')
-        ->separator('|')
-         ->sourceMigration('DocumentAuthors');
-    $this->addFieldMapping('field_subject', 'subjects')
-         ->separator('|')
-         ->sourceMigration('DocumentSubjects');
-    $this->addFieldMapping('field_subject:source_type')
-         ->defaultValue('tid');
-
-    $this->addFieldMapping('field_legacy_media_type', 'mediatype')
-         ->separator('|')
-         ->sourceMigration('DocumentMediaType');
-    $this->addFieldMapping('field_legacy_media_type:source_type')
-         ->defaultValue('tid');
-    $this->addFieldMapping('uid')->defaultValue(1);
-    $this->addFieldMapping('field_image_attachment', 'image');
-    // Indicate that we want each file to maintain its name, replacing any
-    // previous file of the same name (as opposed to being renamed to avoid
-    // collisions, which is the default).
-    $this->addFieldMapping('field_image_attachment:file_replace')
-         ->defaultValue(FILE_EXISTS_REPLACE);
-    $this->addFieldMapping('field_image_attachment:alt', 'Title');
-    $this->addFieldMapping('field_image_attachment:title', 'Title');
-  }
-
-
-  public function prepareRow($row) {
-    $row->subjects = array();
-    $query = $this->db->query("SELECT SubjectID FROM DocumentSubjectLink WHERE DocumentId = $row->DocumentId");
-    while($result = $query->fetch()) {
-      $row->subjects[] = $result->SubjectID;
-    }
-    $row->subjects = implode($row->subjects,'|');
-    $row->image = 'http://mises.org'.$row->CoverImageURL;
-    $row->authors = $row->Author1.'|'.$row->Author2;
-    $row->mediatype = array();
-    $query = $this->db->query("SELECT dmt.MediaTypeID FROM DocumentMediaType dmt INNER JOIN DocumentFiles df ON df.mediaTypeID = dmt.MediaTypeID WHERE df.DocumentId = $row->DocumentId");
-    while($result = $query->fetch()) {
-      $row->mediatype[] = $result->MediaTypeID;
-    }
-    $row->mediatype = implode($row->mediatype,'|');
-    return $row;
-  }
-  public function prepare($row, $node) {
-    dd($row->field_legacy_media_type);
   }
 }
 
