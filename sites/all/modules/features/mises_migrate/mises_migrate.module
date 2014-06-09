@@ -179,7 +179,7 @@ class MisesTagMapper {
         foreach($this->map1[$tag] as $type => $names) {
           foreach($names as $name) {
             if($vocabs[$type][$name]) {
-              $this->terms[$type][$vocabs[$field][$name]] = $vocabs[$field][$name];
+              $this->terms[$type][$vocabs[$type][$name]] = $vocabs[$type][$name];
             }
           }
         }
