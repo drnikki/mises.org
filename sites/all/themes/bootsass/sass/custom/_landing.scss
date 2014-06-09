@@ -119,17 +119,7 @@
 }
 .field-collection-item-field-resources {
   .read-more {
-    margin: 0 $padding-large-horizontal;
-    line-height: 20px;
-    span.glyphicon {
-      @include glyph-size(24px);
-    }
-    a:hover {
-      color: $brand-secondary;
-      span.glyphicon {
-        background-color: $brand-secondary;
-      }
-    }
+    @extend .more-link;
   }
 } 
 .resource-item {
@@ -146,3 +136,9 @@
 	padding: 0;
 }
 
+/* AUSTRIAN ECONOMICS LANDING PAGE */
+.austrian-econ-block {
+  img {
+    border: 3px solid $gray;
+  }
+}

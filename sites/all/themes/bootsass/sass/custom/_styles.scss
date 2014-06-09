@@ -408,11 +408,29 @@ address {
   margin: 0 0 ($line-height-computed / 2);
   line-height: $line-height-small;
 }
-.read-more a {
-  color: $gray;
-  text-transform: uppercase;
-  font-size: $font-size-small;
+.read-more,
+.more-link {
+  a {
+    color: $gray;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+  }
 }
+.more-link {
+  @extend .text-right;
+  margin: 0 $padding-large-horizontal;
+  line-height: 20px;
+  span.glyphicon {
+    @include glyph-size(24px);
+  }
+  a:hover {
+    color: $brand-secondary;
+    span.glyphicon {
+      background-color: $brand-secondary;
+    }
+  }
+}
+
 .author a {
   color: inherit;
 }
