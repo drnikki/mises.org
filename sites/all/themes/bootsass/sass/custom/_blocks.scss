@@ -16,25 +16,25 @@
     .academy & {
       @include icon-image('../images/icons/icon-academy.png');
     }
-    .audience & {
+    .audience &, .Biography &, .Interviews & {
       @include icon-image('../images/icons/icon-audience.png');
     }
     .audio & {
       @include icon-image('../images/icons/icon-audio.png');
     }
-    .blog & {
+    .blog &, .Blog & {
       @include icon-image('../images/icons/icon-blog.png');
     }
-    .books & {
+    .books &, .Books & {
       @include icon-image('../images/icons/icon-books.png');
     }
-    .mises-daily & {
+    .mises-daily &, .Mises-Daily & {
       @include icon-image('../images/icons/icon-daily.png');
     }
     .event & {
       @include icon-image('../images/icons/icon-event.png');
     }
-    .lecture & {
+    .lecture &, .Lectures & {
       @include icon-image('../images/icons/icon-lecture.png');
     }
     .level & {
@@ -46,7 +46,7 @@
     .market & {
       @include icon-image('../images/icons/icon-market.png');
     }
-    .mises-view & {
+    .mises-view &, .Mises-View {
       @include icon-image('../images/icons/icon-view.png');
     }
     .online-courses & {
@@ -64,11 +64,8 @@
     .topic & {
       @include icon-image('../images/icons/icon-topic.png');
     }
-    .video & {
+    .video &, .AudioVideo & {
       @include icon-image('../images/icons/icon-video.png');
-    }
-    .mises-view & {
-      @include icon-image('../images/icons/icon-view.png');
     }
   }
 }
