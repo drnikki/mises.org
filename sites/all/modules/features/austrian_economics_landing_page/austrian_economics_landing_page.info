@@ -21,6 +21,7 @@ features[ctools][] = views:views_default:3.0
 features[fe_block_settings][] = menu-menu-austrian-economics-sub-menu
 features[fe_nodequeue][] = austrian_economics_lp_advanced_r
 features[fe_nodequeue][] = austrian_economics_recommended_r
+features[fe_nodequeue][] = austrian_economists
 features[features_api][] = api:2
 features[menu_custom][] = menu-austrian-economics-sub-menu
 features[menu_links][] = menu-austrian-economics-sub-menu_articles:taxonomy/term/150

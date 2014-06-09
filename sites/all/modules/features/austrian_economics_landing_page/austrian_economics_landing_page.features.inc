@@ -75,5 +75,28 @@ function austrian_economics_landing_page_fe_nodequeue_export_fields() {
     'count' => 0,
   );
 
+  // Exported nodequeues: austrian_economists
+  $nodequeues['austrian_economists'] = array(
+    'name' => 'austrian_economists',
+    'title' => 'Austrian Economists',
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 0,
+    'reference' => 0,
+    'reverse' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'person_profile',
+    ),
+    'roles' => array(),
+    'count' => 0,
+  );
+
   return $nodequeues;
 }
