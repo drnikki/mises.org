@@ -1,19 +1,8 @@
 <?php
 function mises_migrate_init() {
-  /*
-  $query = Database::getConnection('default', 'for_migration')
-    ->query("SELECT Description FROM {DocumentMediaType}");
-    print '<pre>';
-    while($result = $query->fetch()) {
-      print $result->Description;
-      print "\n";
-    }
-    print '</pre>';
-  $query = db_query("SELECT tid, name FROM {taxonomy_term_data} WHERE vid = 10");
-  while($result = $query->fetch()) {
-    dprint_r($result);
-  }
-  */
+  //require_once('extras.inc');
+  //create_subject_mapping_csv();
+
 }
 
 
@@ -304,6 +293,7 @@ class DocumentMigration extends MisesMigration {
     $this->addFieldMapping('field_author_2', 'Author2')
       ->sourceMigration('DocumentAuthors');
     // @todo - assign this
+    $this->addFieldMapping('status', 'Display');
     $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Books'));
     $this->addFieldMapping('field_austrian_school', 'field_austrian_school');
     $this->addFieldMapping('field_topics', 'field_topics');
@@ -409,13 +399,11 @@ class DocumentAuthorsMigration extends MisesMigration {
     //$this->addFieldMapping('field_died', 'Died');
     $this->addFieldMapping('body', 'BioText');
     $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('status')->defaultValue(1);
   }
   public function prepareRow($row) {
     $row->name = $this->getFullName($row);
     return $row;
-  }
-  public function prepare($row, $node) {
-
   }
 }
 
@@ -486,8 +474,18 @@ class DailyArticlesImageMigration extends MisesImageMigration {
   public function prepareRow($row) {
     if($row->ThumbnailURL) {
       $row->alt = $row->Title;
-      $row->image = 'http://mises.org'.$row->ThumbnailURL;
+      // check to see if its a relative link
+      if(!strpos($row->ThumbnailURL,'ttp://') !== false) {
+        // some of these image links are broken lolz, 
+        // lets fix them
+        if($row->ThumbnailURL[0] != '/') {
+          $row->ThumbnailURL = '/'.$row->ThumbnailURL;
+        }
+        $row->ThumbnailURL = 'http://mises.org'.$row->ThumbnailURL;
+      }
+      $row->image = $row->ThumbnailURL;
     }
+    dd($row->ThumbnailURL);
     return $row;
   }
 }
