@@ -9445,7 +9445,7 @@ address {
   background-repeat: no-repeat;
 }
 /* line 31, ../sass/custom/_blocks.scss */
-.mises-daily .panel-heading:before, .Mises-Daily .panel-heading:before {
+.mises-daily .panel-heading:before, .Mises-Daily .panel-heading:before, .Mises.Daily .panel-heading:before {
   background-image: url("../images/icons/icon-daily.png");
   background-position: center center;
   background-size: cover;
@@ -9529,7 +9529,7 @@ address {
   background-repeat: no-repeat;
 }
 /* line 67, ../sass/custom/_blocks.scss */
-.video .panel-heading:before, .AudioVideo .panel-heading:before {
+.video .panel-heading:before, .AudioVideo .panel-heading:before, .Audio.Video .panel-heading:before {
   background-image: url("../images/icons/icon-video.png");
   background-position: center center;
   background-size: cover;
@@ -9631,7 +9631,7 @@ ul.menu li a, ul.menu li span {
 }
 
 /* line 154, ../sass/custom/_blocks.scss */
-.bg-gray, .resource-item.odd, .group-footnotes {
+.bg-gray, .resource-item.odd, .view-mode-video_block_teaser, .group-footnotes {
   background-color: #e4ebee;
 }
 
@@ -10030,6 +10030,47 @@ ul.menu li a, ul.menu li span {
 /* line 463, ../sass/custom/_blocks.scss */
 .bottom-blocks .view-flex-blocks .panel {
   margin-bottom: 0;
+}
+
+/* VIDEO TEASER BLOCK */
+/* line 471, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-heading {
+  border-radius: 0;
+  background-color: #206093;
+}
+/* line 474, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-heading .panel-title {
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+}
+/* line 483, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-body h4 {
+  font-size: 15px;
+}
+/* line 485, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-body h4 a {
+  color: #00426b;
+}
+/* line 489, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-body p {
+  color: #788086;
+  font-size: 13px;
+}
+/* line 494, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-footer {
+  margin: 0 16px;
+  border-top: 1px solid #c8cdd0;
+  line-height: 20px;
+}
+/* line 498, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-footer span.glyphicon {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px;
 }
 
 /*
