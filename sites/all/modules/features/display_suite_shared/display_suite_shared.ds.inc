@@ -3772,8 +3772,8 @@ function display_suite_shared_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_media_collection',
         1 => 'title',
-        2 => 'contextual_block_title_with_icon',
-        3 => 'field_teaser_text',
+        2 => 'field_teaser_text',
+        3 => 'contextual_block_title_with_icon',
         4 => 'group_panel_body',
         5 => 'body',
         6 => 'field_library_item_tree',
@@ -3782,8 +3782,8 @@ function display_suite_shared_ds_layout_settings_info() {
     'fields' => array(
       'field_media_collection' => 'ds_content',
       'title' => 'ds_content',
-      'contextual_block_title_with_icon' => 'ds_content',
       'field_teaser_text' => 'ds_content',
+      'contextual_block_title_with_icon' => 'ds_content',
       'group_panel_body' => 'ds_content',
       'body' => 'ds_content',
       'field_library_item_tree' => 'ds_content',
@@ -3794,7 +3794,7 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        '' => '',
+        'panel' => 'panel',
       ),
     ),
     'wrappers' => array(

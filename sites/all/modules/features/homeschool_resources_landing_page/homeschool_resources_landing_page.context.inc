@@ -32,6 +32,12 @@ function homeschool_resources_landing_page_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
+        'views-faaeb062562ec6d9c97848d39a52d510' => array(
+          'module' => 'views',
+          'delta' => 'faaeb062562ec6d9c97848d39a52d510',
+          'region' => 'sidebar_second',
+          'weight' => '10',
+        ),
       ),
     ),
     'theme_html' => array(

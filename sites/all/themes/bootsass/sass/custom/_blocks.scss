@@ -467,7 +467,10 @@ ul.menu {
 }
 /* VIDEO TEASER BLOCK */
 .view-mode-video_block_teaser {
-  @extend .bg-gray;
+  background-color: $white;
+  .main-content & {
+    @extend .bg-gray;
+  }
   .panel-heading {
     border-radius: 0;
     background-color: $brand-medium;

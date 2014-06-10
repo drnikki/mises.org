@@ -45,7 +45,7 @@ function mises_landing_page_context_default_contexts() {
           'module' => 'views',
           'delta' => 'flex_blocks-block_6',
           'region' => 'sidebar_second',
-          'weight' => '-8',
+          'weight' => '15',
         ),
         'views-daily_landing-books' => array(
           'module' => 'views',

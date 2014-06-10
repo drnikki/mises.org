@@ -9631,7 +9631,7 @@ ul.menu li a, ul.menu li span {
 }
 
 /* line 154, ../sass/custom/_blocks.scss */
-.bg-gray, .resource-item.odd, .view-mode-video_block_teaser, .group-footnotes {
+.bg-gray, .resource-item.odd, .main-content .view-mode-video_block_teaser, .group-footnotes {
   background-color: #e4ebee;
 }
 
@@ -10033,38 +10033,42 @@ ul.menu li a, ul.menu li span {
 }
 
 /* VIDEO TEASER BLOCK */
-/* line 471, ../sass/custom/_blocks.scss */
+/* line 469, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser {
+  background-color: white;
+}
+/* line 474, ../sass/custom/_blocks.scss */
 .view-mode-video_block_teaser .panel-heading {
   border-radius: 0;
   background-color: #206093;
 }
-/* line 474, ../sass/custom/_blocks.scss */
+/* line 477, ../sass/custom/_blocks.scss */
 .view-mode-video_block_teaser .panel-heading .panel-title {
   color: white;
   text-transform: uppercase;
   font-size: 20px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
-/* line 483, ../sass/custom/_blocks.scss */
+/* line 486, ../sass/custom/_blocks.scss */
 .view-mode-video_block_teaser .panel-body h4 {
   font-size: 15px;
 }
-/* line 485, ../sass/custom/_blocks.scss */
+/* line 488, ../sass/custom/_blocks.scss */
 .view-mode-video_block_teaser .panel-body h4 a {
   color: #00426b;
 }
-/* line 489, ../sass/custom/_blocks.scss */
+/* line 492, ../sass/custom/_blocks.scss */
 .view-mode-video_block_teaser .panel-body p {
   color: #788086;
   font-size: 13px;
 }
-/* line 494, ../sass/custom/_blocks.scss */
+/* line 497, ../sass/custom/_blocks.scss */
 .view-mode-video_block_teaser .panel-footer {
   margin: 0 16px;
   border-top: 1px solid #c8cdd0;
   line-height: 20px;
 }
-/* line 498, ../sass/custom/_blocks.scss */
+/* line 501, ../sass/custom/_blocks.scss */
 .view-mode-video_block_teaser .panel-footer span.glyphicon {
   width: 24px;
   height: 24px;
