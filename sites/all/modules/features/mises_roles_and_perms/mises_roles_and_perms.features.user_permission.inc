@@ -102,17 +102,9 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'media',
-  );
-
-  // Exported permission: 'access overlay'.
-  $permissions['access overlay'] = array(
-    'name' => 'access overlay',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'overlay',
   );
 
   // Exported permission: 'access print'.
@@ -125,6 +117,15 @@ function mises_roles_and_perms_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'print',
+  );
+
+  // Exported permission: 'access rules debug'.
+  $permissions['access rules debug'] = array(
+    'name' => 'access rules debug',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
   );
 
   // Exported permission: 'access send by email'.
@@ -412,6 +413,8 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'administer media browser',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'media',
   );
@@ -547,6 +550,15 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'redirect',
+  );
+
+  // Exported permission: 'administer rules'.
+  $permissions['administer rules'] = array(
+    'name' => 'administer rules',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
   );
 
   // Exported permission: 'administer salesforce'.
@@ -705,6 +717,15 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'xmlsitemap',
   );
 
+  // Exported permission: 'advanced migration information'.
+  $permissions['advanced migration information'] = array(
+    'name' => 'advanced migration information',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'migrate',
+  );
+
   // Exported permission: 'assign node weight'.
   $permissions['assign node weight'] = array(
     'name' => 'assign node weight',
@@ -755,6 +776,15 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'bypass rules access'.
+  $permissions['bypass rules access'] = array(
+    'name' => 'bypass rules access',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
   );
 
   // Exported permission: 'cancel account'.
@@ -1039,6 +1069,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any audio files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -1098,6 +1129,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any document files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -1146,6 +1178,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any image files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1232,6 +1265,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any video files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -1365,6 +1399,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own image files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1538,6 +1573,13 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in tags'.
+  $permissions['delete terms in tags'] = array(
+    'name' => 'delete terms in tags',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in the_austrian_school_of_economics'.
   $permissions['delete terms in the_austrian_school_of_economics'] = array(
     'name' => 'delete terms in the_austrian_school_of_economics',
@@ -1561,6 +1603,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'download any audio files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1570,6 +1613,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'download any document files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1579,6 +1623,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'download any image files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1588,6 +1633,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'download any video files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1597,6 +1643,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'download own audio files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1606,6 +1653,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'download own document files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1615,6 +1663,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'download own image files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1624,6 +1673,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'download own video files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1898,6 +1948,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any event content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1934,6 +1985,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any image files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -2220,6 +2272,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own image files',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -2409,6 +2462,13 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'edit terms in tags'.
+  $permissions['edit terms in tags'] = array(
+    'name' => 'edit terms in tags',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit terms in the_austrian_school_of_economics'.
   $permissions['edit terms in the_austrian_school_of_economics'] = array(
     'name' => 'edit terms in the_austrian_school_of_economics',
@@ -2476,6 +2536,15 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'nodequeue',
+  );
+
+  // Exported permission: 'migration information'.
+  $permissions['migration information'] = array(
+    'name' => 'migration information',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'migrate',
   );
 
   // Exported permission: 'notify of path changes'.
@@ -2594,6 +2663,13 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
     ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for rules_config'.
+  $permissions['show format selection for rules_config'] = array(
+    'name' => 'show format selection for rules_config',
+    'roles' => array(),
     'module' => 'better_formats',
   );
 
