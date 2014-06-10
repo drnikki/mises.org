@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Featured Latest View Blocks feature.
+ */
+
+include_once 'featured_latest_view_blocks.features.inc';
