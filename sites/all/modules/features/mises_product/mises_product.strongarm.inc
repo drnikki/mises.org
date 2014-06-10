@@ -116,6 +116,15 @@ function mises_product_strongarm() {
         'path' => array(
           'weight' => '30',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),

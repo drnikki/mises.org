@@ -24,10 +24,9 @@ function mises_product_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'field_austrian_school_of_economi',
+      1 => 'field_austrian_school',
       2 => 'field_topics',
       3 => 'title',
-      4 => 'field_austrian_school',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
