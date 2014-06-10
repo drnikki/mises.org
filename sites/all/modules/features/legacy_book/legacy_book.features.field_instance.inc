@@ -82,14 +82,14 @@ function legacy_book_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'ds_code' => 'ds_code',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
           'simplified' => 'simplified',
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
@@ -114,7 +114,7 @@ function legacy_book_field_default_field_instances() {
           ),
         ),
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -159,14 +159,14 @@ function legacy_book_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'ds_code' => 'ds_code',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
           'simplified' => 'simplified',
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
@@ -191,7 +191,7 @@ function legacy_book_field_default_field_instances() {
           ),
         ),
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -234,7 +234,7 @@ function legacy_book_field_default_field_instances() {
     'label' => 'ePub',
     'required' => 0,
     'settings' => array(
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_extensions' => 'epub',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -321,10 +321,10 @@ function legacy_book_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'media_internet' => 0,
-          'upload' => 0,
+          'upload' => 'upload',
           'youtube' => 0,
         ),
       ),
@@ -362,7 +362,7 @@ function legacy_book_field_default_field_instances() {
     'label' => 'Kindle',
     'required' => 0,
     'settings' => array(
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_extensions' => 'azw kf8',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -482,7 +482,7 @@ function legacy_book_field_default_field_instances() {
     'label' => 'Mobi',
     'required' => 0,
     'settings' => array(
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_extensions' => 'mobi',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -542,7 +542,7 @@ function legacy_book_field_default_field_instances() {
     'label' => 'PDF',
     'required' => 0,
     'settings' => array(
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_extensions' => 'pdf',
       'user_register_form' => FALSE,
     ),
     'widget' => array(

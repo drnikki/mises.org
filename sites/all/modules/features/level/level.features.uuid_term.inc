@@ -17,6 +17,7 @@ function level_uuid_features_default_terms() {
     'weight' => -1,
     'uuid' => '01692385-76d1-4859-abd3-7f2de8103fbd',
     'vocabulary_machine_name' => 'level',
+    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Introductory',
@@ -25,6 +26,7 @@ function level_uuid_features_default_terms() {
     'weight' => -2,
     'uuid' => '6abfa0ed-1a4b-4661-9e8e-aef80bdab866',
     'vocabulary_machine_name' => 'level',
+    'metatags' => array(),
   );
   return $terms;
 }

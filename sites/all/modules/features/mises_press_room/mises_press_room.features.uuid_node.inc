@@ -74,6 +74,8 @@ function mises_press_room_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_description' => array(),
+  'field_display_title' => array(),
   'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(

@@ -542,7 +542,7 @@ To find a specific block, use the filters to narrow the list of blocks. You can 
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Display Title (field_display_title) */
+  /* Filter criterion: Field: Resource Sub-Title (field_display_title) */
   $handler->display->display_options['filters']['field_display_title_value']['id'] = 'field_display_title_value';
   $handler->display->display_options['filters']['field_display_title_value']['table'] = 'field_data_field_display_title';
   $handler->display->display_options['filters']['field_display_title_value']['field'] = 'field_display_title_value';

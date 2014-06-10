@@ -1,7 +1,7 @@
 name = mises_migrate
 core = 7.x
 package = Mises
-features[features_api][] = api:2
-project path = sites/all/modules/features
 dependencies[] = migrate
 dependencies[] = migrate_extras
+features[features_api][] = api:2
+project path = sites/all/modules/features
