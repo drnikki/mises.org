@@ -107,19 +107,23 @@ function mises_landing_page_field_group_info() {
     'label' => 'Blocks',
     'weight' => '2',
     'children' => array(
-      0 => 'field_description',
-      1 => 'field_display_title',
-      2 => 'field_resources',
-      3 => 'field_resource_group',
+      0 => 'field_resource_group',
+      1 => 'field_featured_nodes',
+      2 => 'field_featured_videos',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Blocks',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-blocks field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-blocks field-group-tab',
+        'description' => 'Use these fields to manually curate content for this landing page. Hints:
+
+<ul><li>Press Room: Enter 3 Featured Content and 2 Featured Videos.</li>
+<li>Homeschool Resources and Austrian Economics: Use Resource Group to enter groups of recommended resources.</li>
+<li>Library Landing Page: No entries are needed on this form. The six most recently added Library Items and two most recent videos will automatically be pulled and output on the page. </li></ul>',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_blocks|node|landing_page|form'] = $field_group;
