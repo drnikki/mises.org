@@ -996,33 +996,34 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_description' => array(
+    'field_featured_nodes' => array(
       'formatter_settings' => array(
         'ft' => array(
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'intro-body',
+          'ow-cl' => 'row featured',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
         ),
       ),
     ),
-    'field_display_title' => array(
+    'field_featured_videos' => array(
       'formatter_settings' => array(
         'ft' => array(
           'ow' => TRUE,
-          'ow-el' => 'h2',
-          'ow-cl' => 'teaser-title',
+          'ow-el' => 'div',
+          'ow-cl' => 'row video',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'col-xs-6',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
         ),
-      ),
-    ),
-    'field_resource_group' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
       ),
     ),
   );
@@ -1109,10 +1110,15 @@ function display_suite_shared_ds_field_settings_info() {
         'ft' => array(
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'panel-heading',
+          'ow-cl' => '[node:field-library-item-tree:0] [node:field-library-item-tree:0:machine-name]',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'panel-heading',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
           'fi' => TRUE,
           'fi-el' => 'div',
           'fi-cl' => 'panel-title',
@@ -1654,6 +1660,18 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_library_item_tree' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'panel-footer',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['node|library_item|video_block_teaser'] = $ds_fieldsetting;
 
@@ -2188,13 +2206,17 @@ print $final_content;
     'code' => array(
       'value' => '<?php
 //print \'<pre>\';
-//print_r($entity->view->name);
+//print_r($entity);
 //print \'</pre>\';
-$view_name = $entity->view->name;
-$view_display = $entity->view->current_display;
+//$view_name = $entity->view->name;
+if ($entity->view) {
+  $view_display = $entity->view->current_display;
+} else {
+  $view_display = \'node\';
+}
 switch ($view_display) { 
   case "press_room": 
-    $ctitle = "Press Room"; 
+   $ctitle = "Press Room"; 
     break;
   case "online_courses": 
     $ctitle = "Online Courses"; 
@@ -2264,6 +2286,9 @@ switch ($view_display) {
     break;
   case "featured_video": 
     $ctitle = "Featured Video"; 
+    break;
+  case "node": 
+    $ctitle = "[node:field-library-item-tree:0]"; 
     break;
   default: 
     $ctitle = "Add case"; 
@@ -3353,10 +3378,9 @@ function display_suite_shared_ds_layout_settings_info() {
         6 => 'field_read_more_link',
       ),
       'bottom' => array(
-        7 => 'group_block_intro',
-        8 => 'field_resource_group',
-        9 => 'field_display_title',
-        10 => 'field_description',
+        7 => 'field_featured_nodes',
+        8 => 'field_featured_videos',
+        9 => 'field_resource_group',
       ),
     ),
     'fields' => array(
@@ -3367,10 +3391,9 @@ function display_suite_shared_ds_layout_settings_info() {
       'field_teaser_title' => 'right',
       'field_teaser' => 'right',
       'field_read_more_link' => 'right',
-      'group_block_intro' => 'bottom',
+      'field_featured_nodes' => 'bottom',
+      'field_featured_videos' => 'bottom',
       'field_resource_group' => 'bottom',
-      'field_display_title' => 'bottom',
-      'field_description' => 'bottom',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -3753,6 +3776,7 @@ function display_suite_shared_ds_layout_settings_info() {
         3 => 'field_teaser_text',
         4 => 'group_panel_body',
         5 => 'body',
+        6 => 'field_library_item_tree',
       ),
     ),
     'fields' => array(
@@ -3762,6 +3786,11 @@ function display_suite_shared_ds_layout_settings_info() {
       'field_teaser_text' => 'ds_content',
       'group_panel_body' => 'ds_content',
       'body' => 'ds_content',
+      'field_library_item_tree' => 'ds_content',
+    ),
+    'limit' => array(
+      'field_media_collection' => '1',
+      'field_library_item_tree' => '1',
     ),
     'classes' => array(
       'layout_class' => array(

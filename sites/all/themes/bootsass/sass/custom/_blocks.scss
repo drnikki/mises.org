@@ -28,7 +28,7 @@
     .books &, .Books & {
       @include icon-image('../images/icons/icon-books.png');
     }
-    .mises-daily &, .Mises-Daily & {
+    .mises-daily &, .Mises-Daily &, .Mises.Daily & {
       @include icon-image('../images/icons/icon-daily.png');
     }
     .event & {
@@ -64,7 +64,7 @@
     .topic & {
       @include icon-image('../images/icons/icon-topic.png');
     }
-    .video &, .AudioVideo & {
+    .video &, .AudioVideo &, .Audio.Video & {
       @include icon-image('../images/icons/icon-video.png');
     }
   }
@@ -464,4 +464,39 @@ ul.menu {
     margin-bottom: 0;
     }
   }
+}
+/* VIDEO TEASER BLOCK */
+.view-mode-video_block_teaser {
+  @extend .bg-gray;
+  .panel-heading {
+    border-radius: 0;
+    background-color: $brand-medium;
+    .panel-title {
+      color: $white;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-family: $font-family-serif;
+    }
+  }
+  .panel-body {
+    //height: 150px;
+    h4 {
+      font-size: $font-size-h5;
+      a {
+        color: $brand-primary;
+      }
+    }
+    p {
+      color: $gray;
+      font-size: $font-size-small;
+    }
+  }
+  .panel-footer {
+    margin: 0 $padding-large-horizontal;
+    border-top: 1px solid $gray-light;
+    line-height: 20px;
+    span.glyphicon {
+      @include glyph-size(24px);
+    }
+  } 
 }

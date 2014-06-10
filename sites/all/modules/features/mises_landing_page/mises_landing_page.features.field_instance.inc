@@ -493,30 +493,33 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_description'
-  $field_instances['node-landing_page-field_description'] = array(
+  // Exported field_instance: 'node-landing_page-field_featured_nodes'
+  $field_instances['node-landing_page-field_featured_nodes'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Select up to six items to be displayed in vertical blocks on this landing page. For proper display, select either three or six items. Available items include Library Items, Events and Courses.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
+          'link' => FALSE,
         ),
-        'type' => 'text_default',
-        'weight' => 8,
+        'type' => 'entityreference_label',
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
+          'links' => 1,
+          'view_mode' => 'block_teaser_term',
         ),
-        'type' => 'text_default',
-        'weight' => 9,
+        'type' => 'entityreference_entity_view',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -527,81 +530,51 @@ function mises_landing_page_field_default_field_instances() {
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_description',
-    'label' => 'Introduction',
+    'field_name' => 'field_featured_nodes',
+    'label' => 'Featured Content',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'ds_code' => 0,
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'php_code' => 0,
-          'plain_text' => 0,
-          'simplified' => 'simplified',
-        ),
-        'allowed_formats_toggle' => 1,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'ds_code' => array(
-              'weight' => 12,
-            ),
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'php_code' => array(
-              'weight' => 11,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'simplified' => array(
-              'weight' => -7,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'entityreference',
       'settings' => array(
-        'rows' => 5,
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'text_textarea',
-      'weight' => 13,
+      'type' => 'entityreference_autocomplete',
+      'weight' => 15,
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_display_title'
-  $field_instances['node-landing_page-field_display_title'] = array(
+  // Exported field_instance: 'node-landing_page-field_featured_videos'
+  $field_instances['node-landing_page-field_featured_videos'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'If entering items below to be displayed as blocks on this landing page, you can enter a title and introductory text to be displayed above the blocks.',
+    'description' => 'Select two Library Item nodes to display in the featured videos section of the landing page.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
+          'link' => FALSE,
         ),
-        'type' => 'text_default',
-        'weight' => 9,
+        'type' => 'entityreference_label',
+        'weight' => 12,
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
+          'links' => 1,
+          'view_mode' => 'video_block_teaser',
         ),
-        'type' => 'text_plain',
+        'type' => 'entityreference_entity_view',
         'weight' => 8,
       ),
       'teaser' => array(
@@ -613,55 +586,22 @@ function mises_landing_page_field_default_field_instances() {
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_display_title',
-    'label' => 'Blocks Sub-Title',
+    'field_name' => 'field_featured_videos',
+    'label' => 'Featured Videos',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'ds_code' => 'ds_code',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-          'simplified' => 'simplified',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'ds_code' => array(
-              'weight' => 12,
-            ),
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'php_code' => array(
-              'weight' => 11,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'simplified' => array(
-              'weight' => -7,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'entityreference',
       'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
         'size' => 60,
       ),
-      'type' => 'text_textfield',
-      'weight' => 12,
+      'type' => 'entityreference_autocomplete',
+      'weight' => 16,
     ),
   );
 
@@ -929,7 +869,7 @@ function mises_landing_page_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -951,7 +891,7 @@ function mises_landing_page_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 14,
+      'weight' => 17,
     ),
   );
 
@@ -1216,15 +1156,14 @@ function mises_landing_page_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Banner Image');
-  t('Blocks Sub-Title');
   t('Body');
   t('Body Header');
   t('Body Title');
   t('Content Image');
+  t('Featured Content');
+  t('Featured Videos');
   t('If banner image is used, the title and subtitle appear before the banner image. Otherwise, they are not displayed.');
   t('If content image is used, this header, plus the Body Title entered below are displayed above the body.');
-  t('If entering items below to be displayed as blocks on this landing page, you can enter a title and introductory text to be displayed above the blocks.');
-  t('Introduction');
   t('More Link');
   t('Read More Link');
   t('Resource Group');
@@ -1232,6 +1171,8 @@ function mises_landing_page_field_default_field_instances() {
   t('Resource Sub-Group Title');
   t('Resource Sub-Title');
   t('Resources');
+  t('Select two Library Item nodes to display in the featured videos section of the landing page.');
+  t('Select up to six items to be displayed in vertical blocks on this landing page. For proper display, select either three or six items. Available items include Library Items, Events and Courses.');
   t('Subtitle');
 
   return $field_instances;
