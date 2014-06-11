@@ -16,3 +16,17 @@
 html {
   font-size: 81.3%; 
 }
+
+/**
+ * Giving Stories
+ */
+.view-giving-stories {
+  .views-row {
+    float: left;
+    margin: 0 2.5% 30px;
+    width: 45%;
+    &.views-row-odd {
+      clear: left;
+    }
+  }
+}

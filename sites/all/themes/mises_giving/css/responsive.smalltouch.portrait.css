@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:600,700);
 /*
  *   Important Information about this CSS File
  *
@@ -38,4 +39,18 @@ body {
 .at-mt .at-menu-toggle ul.menu li a {
   background: #eee;
   border-bottom: 1px solid #fff;
+}
+
+/**
+ * Giving Stories
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000349}}
+.block-giving-stories-block,
+.block-giving-stories-block-1 {
+  margin-top: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000354}}
+.view-giving-stories .views-row .views-field-nothing {
+  padding: 20px 30px;
 }
