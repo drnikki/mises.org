@@ -645,11 +645,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_item' => 'library_item',
   );
-  /* Filter criterion: Content: Image (field_image_collection) */
-  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
-  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Today's Article */
   $handler = $view->new_display('attachment', 'Today\'s Article', 'attachment_1');
