@@ -23,6 +23,7 @@ features[field_group][] = group_giving_story|node|giving_story|form
 features[field_instance][] = node-giving_story-field_body
 features[field_instance][] = node-giving_story-field_campaign
 features[field_instance][] = node-giving_story-field_image
+features[field_instance][] = node-giving_story-field_media_collection
 features[node][] = giving_story
 features[variable][] = comment_anonymous_giving_story
 features[variable][] = comment_default_mode_giving_story

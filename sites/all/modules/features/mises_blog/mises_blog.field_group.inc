@@ -20,20 +20,23 @@ function mises_blog_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Additional Information',
+    'label' => 'Tagging',
     'weight' => '1',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
+      2 => 'field_level',
+      3 => 'field_audience',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Tagging',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-addit-blog-information field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-addit-blog-information field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_addit_blog_information|node|blog|form'] = $field_group;

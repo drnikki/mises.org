@@ -330,11 +330,12 @@ function mises_static_page_field_default_field_instances() {
           'ds_code' => 0,
           'filtered_html' => 0,
           'full_html' => 0,
-          'plain_text' => 'plain_text',
+          'php_code' => 0,
+          'plain_text' => 0,
           'simplified' => 'simplified',
         ),
         'allowed_formats_toggle' => 1,
-        'default_order_toggle' => 1,
+        'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
             'ds_code' => array(
@@ -346,6 +347,9 @@ function mises_static_page_field_default_field_instances() {
             'full_html' => array(
               'weight' => -49,
             ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
             'plain_text' => array(
               'weight' => -47,
             ),
@@ -355,7 +359,7 @@ function mises_static_page_field_default_field_instances() {
           ),
         ),
       ),
-      'display_summary' => 1,
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -363,7 +367,7 @@ function mises_static_page_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 5,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
