@@ -212,6 +212,10 @@ function _mises_popular_content_form() {
     '#type' => 'submit',
     '#value' => 'Save configuration',
   );
+
+  // Remove dynamic timespan feature until complete:
+  unset($form['analytics_fetch']['dynamic_timespan_settings']);
+
   return $form;
 }
 
@@ -286,8 +290,8 @@ function _mises_popular_content_query_google_analytics() {
   $ga = new gapi($ga_username, $ga_password);
   $results = $ga->requestReportData($ga_profile_id, $dimensions, $metrics, $sort, null, $from_date, $to_date, 1, $max_results);
 
-  // drupal_set_message('<pre>' . print_r($results, 1) . '</pre>'); 
-
+  //drupal_set_message('<pre>' . print_r($results, 1) . '</pre>'); 
+  $total_results = array();
   
   $processed_results = array();
   foreach ($results as $gaiReportEntity) {
@@ -300,6 +304,13 @@ function _mises_popular_content_query_google_analytics() {
       // Remove the leading slash:
       $path = substr($path['pagePath'], 1);
     }
+
+    // $total_results[$hits] = $path;
+
+    // Account for the library item content type's updated URL alias.
+    // Ultimately, this can be removed, but is currently needed for theming and testing purposes:
+    $path = str_replace('library-item/', 'library/', $path);
+
     // Skip the front page:
     if ($path == '/') {
       continue;
@@ -312,6 +323,13 @@ function _mises_popular_content_query_google_analytics() {
     }
   }
   
+  //$total_output_test = '<table><thead><tr><th>Path</th><th>Hits</th></tr></thead><tbody>';
+  //foreach ($total_results as $hits => $path) {
+  //  $total_output_test .= '<tr><td>' . $path . '</td><td>' . $hits . '</td></tr>';
+  //}
+  //$total_output_test .= '</tbody></table>';
+  //drupal_set_message('<h1>Total results from google:</h1>' . $total_output_test . '<hr />');
+
   watchdog(
     'mises_popular_content',
     'Drupal -> Google query for popular content returned %results, with %processed_results.', 
