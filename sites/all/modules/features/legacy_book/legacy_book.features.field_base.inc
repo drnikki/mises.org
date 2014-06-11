@@ -13,7 +13,7 @@ function legacy_book_field_default_field_bases() {
   // Exported field_base: 'field_epub'
   $field_bases['field_epub'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_epub',
@@ -40,7 +40,7 @@ function legacy_book_field_default_field_bases() {
   // Exported field_base: 'field_kindle'
   $field_bases['field_kindle'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_kindle',
@@ -67,7 +67,7 @@ function legacy_book_field_default_field_bases() {
   // Exported field_base: 'field_mobi'
   $field_bases['field_mobi'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_mobi',
@@ -94,7 +94,7 @@ function legacy_book_field_default_field_bases() {
   // Exported field_base: 'field_pdf'
   $field_bases['field_pdf'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_pdf',

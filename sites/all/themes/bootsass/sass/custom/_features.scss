@@ -155,10 +155,8 @@
 * FOOTNOTES GROUP -- MAY ABSTRACT THIS
 */
 .group-footnotes {
-  margin-right: $padding-large-horizontal * -1.5;
-  margin-left: $padding-large-horizontal * -1.5;
-  padding: $padding-large-horizontal * 1.5;
-  background: $gray-lighter;
+  @extend .outset;
+  @extend .bg-gray;
   h3 {
     color: $brand-secondary;
     text-transform: uppercase;
@@ -322,6 +320,18 @@ ul.addtocal_menu {
     }
   }
 }
-
-
+/* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+.media-youtube-video {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.media-youtube-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 

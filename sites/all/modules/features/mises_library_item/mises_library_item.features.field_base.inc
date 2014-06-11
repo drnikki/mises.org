@@ -76,17 +76,20 @@ function mises_library_item_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'views',
+      'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_1',
-          'view_name' => 'profile_reference',
+        'sort' => array(
+          'direction' => 'ASC',
+          'field' => 'field_last_name:value',
+          'type' => 'field',
+        ),
+        'target_bundles' => array(
+          'person_profile' => 'person_profile',
         ),
       ),
       'target_type' => 'node',
@@ -118,20 +121,18 @@ function mises_library_item_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'views',
+      'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
-          'treefield_sql' => array(
-            'status' => 0,
-          ),
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_1',
-          'view_name' => 'profile_reference',
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'person_profile' => 'person_profile',
         ),
       ),
       'target_type' => 'node',

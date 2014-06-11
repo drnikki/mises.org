@@ -24,10 +24,10 @@ function mises_book_digital_text_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_author_1',
-      1 => 'field_image',
+      1 => 'field_body',
       2 => 'field_citation',
-      3 => 'field_video_review',
-      4 => 'field_body',
+      3 => 'field_image',
+      4 => 'field_video_review',
       5 => 'title',
     ),
     'format_type' => 'tab',
@@ -53,12 +53,12 @@ function mises_book_digital_text_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
-      0 => 'field_pdf',
-      1 => 'field_epub',
+      0 => 'field_epub',
+      1 => 'field_kindle',
       2 => 'field_mobi',
-      3 => 'field_kindle',
+      3 => 'field_pdf',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -82,22 +82,23 @@ function mises_book_digital_text_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Tags',
-    'weight' => '1',
+    'label' => 'Tagging',
+    'weight' => '2',
     'children' => array(
-      0 => 'field_topics',
+      0 => 'field_audience',
       1 => 'field_austrian_school',
       2 => 'field_level',
-      3 => 'field_audience',
+      3 => 'field_topics',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Tagging',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-book-digi-text-tags field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-tagging field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_book_digi_text_tags|node|book_digital_text|form'] = $field_group;

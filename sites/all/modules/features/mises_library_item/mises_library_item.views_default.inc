@@ -15,7 +15,7 @@ function mises_library_item_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Profile Reference';
+  $view->human_name = 'DEPRECATED Profile Reference';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

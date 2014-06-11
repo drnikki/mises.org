@@ -108,3 +108,37 @@
   }
 }
 
+/* LANDING PAGE */
+.node-landing-page.view-mode-full {
+  h2.teaser-title {
+    margin-top: $padding-base-vertical;
+  }
+  .sub-heading {
+    margin-top: 0;
+  }
+}
+.field-collection-item-field-resources {
+  .read-more {
+    @extend .more-link;
+  }
+} 
+.resource-item {
+  &.odd {
+    @extend .outset;
+    @extend .bg-gray;
+  }  
+}
+
+/* LANDING LIBRARY PAGE */
+.latest-library-content.outset {
+	margin-left: $grid-gutter-width / -2;
+	margin-right: $grid-gutter-width / -2;
+	padding: 0;
+}
+
+/* AUSTRIAN ECONOMICS LANDING PAGE */
+.austrian-econ-block {
+  img {
+    border: 3px solid $gray;
+  }
+}

@@ -68,6 +68,7 @@ col-xs-6
 col-xs-7
 col-xs-8
 col-xs-9
+col-xs-12
 panel
 panel-heading
 panel-body
@@ -232,7 +233,7 @@ single';
         'custom_settings' => FALSE,
       ),
       'token' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'small_player' => array(
         'custom_settings' => TRUE,
@@ -258,6 +259,10 @@ single';
             'visible' => TRUE,
           ),
           'wide_player' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'token' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),
@@ -359,22 +364,29 @@ single';
   $strongarm->name = 'uuid_features_entity_node';
   $strongarm->value = array(
     'flex_block' => 'flex_block',
-    'article' => 0,
+    'landing_page' => 'landing_page',
     'award' => 0,
     'blog' => 0,
+    'book_digital_text' => 0,
     'campaign_' => 0,
     'causeview_snippet' => 0,
     'course' => 0,
+    'document' => 0,
     'event' => 0,
     'giving_story' => 0,
     'homepage_hero' => 0,
     'institute_fellowship' => 0,
     'job_posting_' => 0,
+    'legacy_book' => 0,
     'library_item' => 0,
     'person_profile' => 0,
     'photo_gallery' => 0,
     'product' => 0,
+    'scholarship_' => 0,
+    'social_media' => 0,
     'page' => 0,
+    'webform' => 0,
+    'working_papers' => 0,
   );
   $export['uuid_features_entity_node'] = $strongarm;
 
@@ -389,11 +401,10 @@ single';
     'level' => 'level',
     'media_type' => 'media_type',
     'profile_type' => 'profile_type',
-    'tags' => 0,
-    'authors' => 0,
     'award_type' => 0,
     'events' => 0,
     'reason_for_contact' => 0,
+    'tags' => 0,
   );
   $export['uuid_features_entity_taxonomy_term'] = $strongarm;
 
@@ -416,23 +427,30 @@ single';
   $strongarm->api_version = 1;
   $strongarm->name = 'uuid_features_file_node';
   $strongarm->value = array(
-    'article' => 0,
+    'flex_block' => 'flex_block',
+    'landing_page' => 'landing_page',
     'award' => 0,
     'blog' => 0,
+    'book_digital_text' => 0,
     'campaign_' => 0,
     'causeview_snippet' => 0,
     'course' => 0,
+    'document' => 0,
     'event' => 0,
-    'flex_block' => 0,
     'giving_story' => 0,
     'homepage_hero' => 0,
     'institute_fellowship' => 0,
     'job_posting_' => 0,
+    'legacy_book' => 0,
     'library_item' => 0,
     'person_profile' => 0,
     'photo_gallery' => 0,
     'product' => 0,
+    'scholarship_' => 0,
+    'social_media' => 0,
     'page' => 0,
+    'webform' => 0,
+    'working_papers' => 0,
   );
   $export['uuid_features_file_node'] = $strongarm;
 
@@ -448,17 +466,16 @@ single';
   $strongarm->api_version = 1;
   $strongarm->name = 'uuid_features_file_taxonomy_term';
   $strongarm->value = array(
-    'tags' => 0,
     'reading_group' => 0,
     'currents_trends' => 0,
     'the_austrian_school_of_economics' => 0,
-    'authors' => 0,
     'level' => 0,
     'media_type' => 0,
     'profile_type' => 0,
     'award_type' => 0,
     'events' => 0,
     'reason_for_contact' => 0,
+    'tags' => 0,
   );
   $export['uuid_features_file_taxonomy_term'] = $strongarm;
 

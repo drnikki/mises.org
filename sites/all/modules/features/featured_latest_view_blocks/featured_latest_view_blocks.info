@@ -1,0 +1,10 @@
+name = Featured Latest View Blocks
+core = 7.x
+package = Views
+version = 7.x-1.0
+project = featured_latest_view_blocks
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = featured_latest_content
+features_exclude[dependencies][ctools] = ctools
