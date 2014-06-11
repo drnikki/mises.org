@@ -127,6 +127,8 @@ function mises_flex_block_field_default_field_bases() {
         'daily' => 'Daily',
         'blog' => 'Blog',
         'press' => 'Press',
+        'giving_home' => 'Giving Home',
+        'giving_member' => 'Giving Membership Info',
       ),
       'allowed_values_function' => '',
     ),
