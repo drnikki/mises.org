@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:600,700);
 /*
  *   Important Information about this CSS File
  *
@@ -11,4 +12,18 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000316}}
 html {
   font-size: 81.3%;
+}
+
+/**
+ * Giving Stories
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000324}}
+.view-giving-stories .views-row {
+  float: left;
+  margin: 0 2.5% 30px;
+  width: 45%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000328}}
+.view-giving-stories .views-row.views-row-odd {
+  clear: left;
 }

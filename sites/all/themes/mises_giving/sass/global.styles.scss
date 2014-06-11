@@ -61,31 +61,28 @@ h2 {
   font-size: 35px;
 }
 
-
 h3 {
-  font-size: 30px
+  font-size: 30px;
 }
-
 
 h4 {
   font-size: 26px;
 }
 
-
 h5 {
-  font-size: 20px;
+  font-size: 22px;
 }
 
-
 h6 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h1,h2,h3,h4,h5,h6 {
   line-height: 1.2;
-  margin: 0 0 1.5em;
+  font-family: 'Crimson Text';
+  font-weight: 600;
+  margin: 0 0 0.5em;
 }
-
 
 p {
   margin: 0 0 12.5px;
@@ -292,10 +289,8 @@ var {
  */
 #secondary-content-wrapper {
   background: url(images/giving-bg-inner.jpg) center bottom no-repeat;
-  max-height: 260px;
   .giving-front & {
     background: url(images/giving-bg.jpg) center bottom no-repeat;
-    max-height: 590px;
   }
   .container {
     position: relative;
@@ -321,6 +316,7 @@ var {
  * Wraps the tertiary content/postfix region
  */
 #tertiary-content-wrapper {
+  background: #6E9DC2 url(images/giving-story-bg.jpg) 0 0 repeat;
   .container {}
 }
 
@@ -341,7 +337,9 @@ var {
 /*
  * Wraps all the branding elements, logo, name and slogan
  */
-#branding {}
+#branding {
+  float: left;
+}
 
 
 /*
@@ -352,11 +350,14 @@ var {
   background: none repeat scroll 0% 0% #FFF;
   border-bottom: 7px solid #216093;
   margin-bottom: -7px;
-  max-width: 310px;
-  padding: 35px 30px 25px;
-
-  img {
-    vertical-align: bottom;
+  max-width: 380px;
+  a {
+    display: block;
+    height: 80px;
+    padding: 40px 30px 0;
+    img {
+      vertical-align: bottom;
+    }
   }
 }
 
@@ -430,7 +431,8 @@ var {
     text-transform: uppercase;
 
     .giving-front & {
-      line-height: 70px;
+      line-height: 65px;
+      padding-top: 5px;
       text-align: center;
     }
   }
@@ -543,7 +545,10 @@ ul.links {
 /*
  * Header region, embedded in the #header
  */
-.region-header {}
+.region-header {
+  float: right;
+  margin: 0 10px;
+}
 
 
 /*
@@ -664,6 +669,28 @@ a {
 
   .block {
     margin-bottom: 0;
+  }
+}
+
+.block-menu-giving {
+  .block-inner {
+    margin-top: 60px;
+    ul.menu {
+      li {
+        display: inline-block;
+        padding: 0 10px;
+        a {
+          color: #FFF;
+          padding: 0;
+          text-transform: uppercase;
+          &.active,
+          &:hover {
+            color: #0d0202;
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -789,7 +816,6 @@ ul.sf-menu {
   }
 
   .at-menu-toggle ul a {
-    padding: 0 10px;
     white-space: nowrap;
   }
 }
@@ -2114,7 +2140,8 @@ tr.error {
 
     .views-field-title {
       h5 {
-        margin: 0 0 10px;
+        margin: 3px 0 7px;
+        text-transform: uppercase;
       }
     }
 
@@ -2131,7 +2158,7 @@ tr.error {
 // Giving Today
 .give-today-block {
   margin-bottom: 0;
-  .giving-internal & {
+  .giving-impact & {
     margin-top: -60px;
   }
   h3.give {
@@ -2148,7 +2175,7 @@ tr.error {
 
       &:hover {
         span {
-          background-position: left center;
+          background-position: left 12px;
           padding-right: 0;
           padding-left: 46px;
         }
@@ -2156,9 +2183,11 @@ tr.error {
 
       span {
         @include transition(all 0.5s);
-        background: url(images/giving-arrow-green.png) right center no-repeat;
+        background: url(images/giving-arrow-green.png) right 12px no-repeat;
         display: inline-block;
+        max-height: 56px;
         padding-right: 46px;
+        padding-top: 4px;
       }
     }
   }
@@ -2166,7 +2195,7 @@ tr.error {
     background: $blue;
     border-bottom: #FFF 2px solid;
     color: #FFF;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 22px;
     padding: 20px;
   }
@@ -2204,6 +2233,92 @@ tr.error {
           background: url(images/giving-arrow-white.png) left center no-repeat;
           display: inline-block;
           padding-left: 34px;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Giving Stories
+ */
+.block-giving-stories-block,
+.block-giving-stories-block-1 {
+  padding-top: 50px;
+  position: relative;
+
+  .block-title {
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFF;
+    padding-bottom: 20px;
+  }
+}
+.view-giving-stories {
+  .view-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    .icon {
+      background: $blue;
+      @include border-radius(50%);
+      border: #FFF 5px solid;
+      img {
+        display: block;
+        padding: 17px;
+      }
+    }
+  }
+  .views-row {
+    margin: 0 auto 20px;
+    max-width: 350px;
+    .views-field-field-image {
+      a {
+        display: block;
+        line-height: 0;
+      }
+    }
+    .views-field-nothing {
+      background: #FFF;
+      padding: 20px 40px 30px;
+      .title {
+        text-transform: uppercase;
+        a {
+          color: $green;
+        }
+      }
+      .body {
+        color: #3e454b;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+      }
+    }
+    .views-field-view-node {
+      background: $green;
+      a {
+        @include transition(all 0.5s);
+        color: #FFF;
+        display: block;
+        font-size: 18px;
+        line-height: 50px;
+        padding: 0 40px 0;
+        position: relative;
+        text-transform: uppercase;
+        &:after {
+          content: url(images/readmore.png);
+          margin: 0 0 0 10px;
+          position: absolute;
+          top: 1px;
+        }
+        &:hover {
+          background-color: #678d40;
+          text-decoration: none;
+          padding: 0 30px 0 50px;
         }
       }
     }

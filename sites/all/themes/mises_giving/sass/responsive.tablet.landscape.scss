@@ -20,3 +20,17 @@
 	left: 0;
 	width: 25%;
 }
+
+/**
+ * Giving Stories
+ */
+.view-giving-stories {
+  .views-row {
+    float: left;
+    margin: 0 2.5% 30px;
+    width: 45%;
+    &.views-row-odd {
+      clear: left;
+    }
+  }
+}

@@ -41,3 +41,18 @@ body {
     border-bottom: 1px solid #fff;
   }
 }
+
+/**
+ * Giving Stories
+ */
+.block-giving-stories-block,
+.block-giving-stories-block-1 {
+  margin-top: 20px;
+}
+.view-giving-stories {
+  .views-row {
+    .views-field-nothing {
+      padding: 20px 30px;
+    }
+  }
+}

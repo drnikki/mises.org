@@ -12,15 +12,58 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 
-.secondary-inner {margin-right: 30%; margin-left: 0;}
-.secondary-left {float: left; width: 70%;}
+.secondary-inner {margin-right: 31%; margin-left: 0;}
+.secondary-left {float: left; width: 69%;}
 .region-secondary-aside {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 30%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 31%;
 }
 
 #main-content {
-	padding: 0 100px 0 40px;
+  padding: 0 100px 0 40px;
+}
+
+#secondary-content-wrapper {
+  max-height: 260px;
+  .giving-front & {
+    max-height: 590px;
+  }
+}
+
+#header-wrapper .container {
+  max-width: 1100px;
+  #header {
+    background: rgba(92,128,54,0.5);
+    #branding {
+      margin: 0;
+    }
+    .region-header {
+      margin: 0;
+    }
+  }
+}
+
+/**
+ * Giving Stories
+ */
+.view-giving-stories {
+  .views-row {
+    float: left;
+    margin: 0;
+    width: 31.8%;
+    &.views-row-odd {
+      clear: none;
+    }
+    &.views-row-1,
+    &.views-row-2,
+    &.views-row-4,
+    &.views-row-5 {
+      margin: 0 2.3% 2.3% 0;
+    }
+    &.views-row-4 {
+      clear: left;
+    }
+  }
 }
