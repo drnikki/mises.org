@@ -18,6 +18,23 @@ var Drupal = Drupal || {};
         $('.content-bottom .region .panel-heading .panel-title').equalHeight();
         $('.content-bottom .region .panel-body').equalHeight();
         $('.content-bottom .region .panel-footer').equalHeight();
+        $('.bottom-blocks .panel-heading .panel-title').equalHeight();
+        $('.bottom-blocks .panel-body').equalHeight();
+        $('.bottom-blocks .panel-footer').equalHeight();
+        $('.latest-library-content .views-row > .col-sm-4').equalHeight();
+        $('.latest-library-content .views-row > .col-sm-4 .panel-heading .panel-title').equalHeight();
+        $('.latest-library-content .views-row > .col-sm-4 .panel-body').equalHeight();
+        $('.latest-library-content .views-row > .col-sm-4 .panel-footer').equalHeight();
+        $('.bottom-blocks .view-mises-library').equalHeight();
+        $('.row.featured .col-xs-6').equalHeight();
+        $('.row.featured .col-xs-6 .panel-heading .panel-title').equalHeight();
+        $('.row.featured .col-xs-6 .panel-body').equalHeight();
+        $('.row.featured .col-xs-6 .panel-footer').equalHeight();
+        $('.row.video .col-xs-6').equalHeight();
+        $('.row.video .col-xs-6 .panel-heading .panel-title').equalHeight();
+        $('.row.video .col-xs-6 .panel-body').equalHeight();
+        $('.row.video .col-xs-6 .panel-footer').equalHeight();
+
         var sidebarHeight = $("div.region-sidebar-second").height() + $("div.region-sidebar-second-top").height() + 20;
         $("div.main-content").css({ "min-height": sidebarHeight }); // Roger's magic!
         
@@ -44,7 +61,15 @@ var Drupal = Drupal || {};
       $(document).ready(function() {
         implementEqualHeight();
         textResizer();
-      });
+        
+        $('.latest-library-content .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.row.featured .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.row.video .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.featured-block.video .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.field-collection-item-field-resources .read-more a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
+        $('.more-link a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
+        
+      }); 
 
 
       $(window).resize(function() {

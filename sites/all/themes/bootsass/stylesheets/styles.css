@@ -1661,7 +1661,7 @@ mark,
 }
 
 /* line 92, ../sass/bootstrap/_type.scss */
-.text-right {
+.text-right, .more-link, .field-collection-item-field-resources .read-more {
   text-align: right;
 }
 
@@ -6487,7 +6487,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 
 /* line 16, ../sass/bootstrap/_panels.scss */
 .panel-body {
-  padding: 15px;
+  padding: 20px;
 }
 /* line 15, ../sass/bootstrap/mixins/_clearfix.scss */
 .panel-body:before, .panel-body:after {
@@ -6501,7 +6501,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 
 /* line 22, ../sass/bootstrap/_panels.scss */
 .panel-heading {
-  padding: 10px 15px;
+  padding: 10px 20px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
@@ -6525,7 +6525,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 
 /* line 45, ../sass/bootstrap/_panels.scss */
 .panel-footer {
-  padding: 10px 15px;
+  padding: 10px 20px;
   background-color: whitesmoke;
   border-top: 1px solid #dddddd;
   border-bottom-right-radius: 3px;
@@ -8735,6 +8735,20 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
   width: 100%;
 }
 
+/* line 18, ../sass/drupal/_drupal.scss */
+.field-collection-container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* line 23, ../sass/drupal/_drupal.scss */
+.field-collection-view {
+  margin: 16px 0;
+  padding: 0;
+  border: 0;
+}
+
 /********************
 * Custom styles
 ********************/
@@ -8748,7 +8762,7 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 /* LAYOUT */
 @media (max-width: 479px) {
   /* line 13, ../sass/custom/_styles.scss */
-  .main-content *[class*="col-"], .content-bottom *[class*="col-"] {
+  .main-content *[class*="col-"], .content-bottom *[class*="col-"], .menu-footer *[class*="col-"] {
     float: none;
     width: auto;
   }
@@ -8792,8 +8806,8 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 
 /* line 52, ../sass/custom/_styles.scss */
 .navbar-inverse .navbar-nav > li > a.active {
-  color: white;
   background-color: #38709e;
+  color: white;
 }
 
 /* line 57, ../sass/custom/_styles.scss */
@@ -8838,17 +8852,17 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 .pagination > li > span, .pagination > li:first-child > a,
 .pagination > li:first-child > span, .pagination > li:last-child > a,
 .pagination > li:last-child > span {
+  padding: 0;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   line-height: 30px;
-  padding: 0;
 }
 /* line 96, ../sass/custom/_styles.scss */
 .pagination > li.prev a, .pagination > li.next a {
+  top: 1px;
   background-color: #788086;
   color: #788086;
-  top: 1px;
 }
 /* line 102, ../sass/custom/_styles.scss */
 .pagination > li.prev a:before, .pagination > li.next a:before {
@@ -8869,15 +8883,15 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 }
 /* line 127, ../sass/custom/_styles.scss */
 .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-next a {
+  position: relative;
+  padding: 0;
+  padding: 0;
   width: 18.75px;
   height: 18.75px;
   border-radius: 50%;
-  line-height: 18.75px;
-  padding: 0;
   background-color: white;
   color: white;
-  padding: 0;
-  position: relative;
+  line-height: 18.75px;
 }
 /* line 139, ../sass/custom/_styles.scss */
 .sidebar .pager > li.date-prev a:before, .sidebar .pager > li.date-next a:before {
@@ -9048,30 +9062,31 @@ body {
 .footer #block-menu-menu-mises-social-icons ul.menu li a {
   display: inline-block;
   padding: 0;
-  width: 45px;
-  height: 45px;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
   text-indent: -9999em;
   opacity: 0.7;
 }
-/* line 289, ../sass/custom/_styles.scss */
+/* line 290, ../sass/custom/_styles.scss */
 .footer #block-menu-menu-mises-social-icons ul.menu li a:hover {
   background-color: transparent;
   opacity: 1;
 }
-/* line 296, ../sass/custom/_styles.scss */
+/* line 297, ../sass/custom/_styles.scss */
 .footer .region-footer-bottom {
   padding-top: 16px;
 }
 
 /* PRIMARY CONTENT BLOCKS */
-/* line 302, ../sass/custom/_styles.scss */
+/* line 303, ../sass/custom/_styles.scss */
 .main-content {
   position: relative;
-  padding: 6px 24px 24px;
+  padding: 6px 30px 24px;
   border-top: 7px solid #38709e;
   background: white;
 }
-/* line 307, ../sass/custom/_styles.scss */
+/* line 308, ../sass/custom/_styles.scss */
 .main-content:after {
   position: absolute;
   top: -7px;
@@ -9081,48 +9096,49 @@ body {
   height: 77px;
   content: url("../images/shield.png");
 }
-/* line 317, ../sass/custom/_styles.scss */
+/* line 318, ../sass/custom/_styles.scss */
 .front .main-content {
   padding: 6px 24px;
 }
-/* line 321, ../sass/custom/_styles.scss */
+/* line 322, ../sass/custom/_styles.scss */
 .main-content .body-content.normal {
   font-size: 15px;
 }
-/* line 324, ../sass/custom/_styles.scss */
+/* line 325, ../sass/custom/_styles.scss */
 .main-content .body-content.large {
   font-size: 18px;
 }
 
-/* line 330, ../sass/custom/_styles.scss */
+/* line 331, ../sass/custom/_styles.scss */
 #text-resizer .large {
   font-size: 18px;
 }
 
-/* line 337, ../sass/custom/_styles.scss */
+/* line 338, ../sass/custom/_styles.scss */
 .body-content {
   padding-bottom: 16px;
 }
 
-/* line 341, ../sass/custom/_styles.scss */
-.content-bottom {
+/* line 343, ../sass/custom/_styles.scss */
+.content-bottom,
+.bottom-blocks {
   padding-top: 16px;
 }
 
 /* FONTS AND TYPOGRAPHY 
 * @TODO: CONSIDER SEPARATE STYLESHEET
 */
-/* line 348, ../sass/custom/_styles.scss */
+/* line 350, ../sass/custom/_styles.scss */
 .bold {
   font-weight: 600;
 }
 
-/* line 351, ../sass/custom/_styles.scss */
+/* line 353, ../sass/custom/_styles.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 354, ../sass/custom/_styles.scss */
+/* line 356, ../sass/custom/_styles.scss */
 h1, .h1 {
   color: #00426b;
   text-transform: uppercase;
@@ -9130,71 +9146,100 @@ h1, .h1 {
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 360, ../sass/custom/_styles.scss */
+/* line 362, ../sass/custom/_styles.scss */
 .page-header {
   padding-left: 100px;
   border-bottom: 0 none;
 }
 
-/* line 365, ../sass/custom/_styles.scss */
+/* line 367, ../sass/custom/_styles.scss */
 h2.page-title, .main-content .date-nav-wrapper .date-heading h3 {
   margin: 0 0 16px;
   color: #38709e;
   font-size: 25px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
-/* line 371, ../sass/custom/_styles.scss */
+/* line 373, ../sass/custom/_styles.scss */
 h2.teaser-title {
   color: #00426b;
   font-size: 23px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 378, ../sass/custom/_styles.scss */
+/* line 380, ../sass/custom/_styles.scss */
 h3.author, h4.author {
   margin-top: 0;
   font-size: 14px;
 }
-/* line 382, ../sass/custom/_styles.scss */
+/* line 384, ../sass/custom/_styles.scss */
 h3.sub-heading, h4.sub-heading {
   text-transform: uppercase;
 }
-/* line 385, ../sass/custom/_styles.scss */
+/* line 387, ../sass/custom/_styles.scss */
 h3.sidebar-title, h4.sidebar-title {
   margin-bottom: 5px;
 }
-/* line 388, ../sass/custom/_styles.scss */
+/* line 390, ../sass/custom/_styles.scss */
 h3.primary, h4.primary {
   color: #00426b;
 }
-/* line 391, ../sass/custom/_styles.scss */
+/* line 393, ../sass/custom/_styles.scss */
 h3.secondary, h4.secondary {
   color: #38709e;
 }
-/* line 394, ../sass/custom/_styles.scss */
+/* line 396, ../sass/custom/_styles.scss */
 h3.contrast, h4.contrast {
   color: #729949;
 }
 
-/* line 399, ../sass/custom/_styles.scss */
+/* line 401, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 403, ../sass/custom/_styles.scss */
+/* line 405, ../sass/custom/_styles.scss */
+h5 {
+  margin-bottom: 3px;
+}
+
+/* line 408, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 407, ../sass/custom/_styles.scss */
-.read-more a {
+/* line 414, ../sass/custom/_styles.scss */
+.read-more a,
+.more-link a,
+.field-collection-item-field-resources .read-more a {
   color: #788086;
   text-transform: uppercase;
   font-size: 13px;
 }
 
-/* line 412, ../sass/custom/_styles.scss */
+/* line 420, ../sass/custom/_styles.scss */
+.more-link, .field-collection-item-field-resources .read-more {
+  margin: 0 16px;
+  line-height: 20px;
+}
+/* line 424, ../sass/custom/_styles.scss */
+.more-link span.glyphicon, .field-collection-item-field-resources .read-more span.glyphicon {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px;
+}
+/* line 427, ../sass/custom/_styles.scss */
+.more-link a:hover, .field-collection-item-field-resources .read-more a:hover {
+  color: #38709e;
+}
+/* line 429, ../sass/custom/_styles.scss */
+.more-link a:hover span.glyphicon, .field-collection-item-field-resources .read-more a:hover span.glyphicon {
+  background-color: #38709e;
+}
+
+/* line 435, ../sass/custom/_styles.scss */
 .author a {
   color: inherit;
 }
@@ -9316,6 +9361,30 @@ address {
   padding: 20px 10px;
 }
 
+/* LANDING PAGE */
+/* line 113, ../sass/custom/_landing.scss */
+.node-landing-page.view-mode-full h2.teaser-title {
+  margin-top: 6px;
+}
+/* line 116, ../sass/custom/_landing.scss */
+.node-landing-page.view-mode-full .sub-heading {
+  margin-top: 0;
+}
+
+/* LANDING LIBRARY PAGE */
+/* line 133, ../sass/custom/_landing.scss */
+.latest-library-content.outset, .latest-library-content.resource-item.odd, .latest-library-content.group-footnotes {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 0;
+}
+
+/* AUSTRIAN ECONOMICS LANDING PAGE */
+/* line 141, ../sass/custom/_landing.scss */
+.austrian-econ-block img {
+  border: 3px solid #788086;
+}
+
 /*
 * Custom Styles for Blocks
 * 
@@ -9323,10 +9392,12 @@ address {
 /* ICONS */
 /* line 8, ../sass/custom/_blocks.scss */
 .panel-heading {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
   position: relative;
   padding: 10px 15px 7px 80px;
 }
-/* line 11, ../sass/custom/_blocks.scss */
+/* line 12, ../sass/custom/_blocks.scss */
 .panel-heading:before {
   position: absolute;
   top: -5px;
@@ -9339,141 +9410,134 @@ address {
   background-color: #729949;
   border: 3px solid white;
 }
-/* line 15, ../sass/custom/_blocks.scss */
+/* line 16, ../sass/custom/_blocks.scss */
 .academy .panel-heading:before {
   background-image: url("../images/icons/icon-academy.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 18, ../sass/custom/_blocks.scss */
-.audience .panel-heading:before {
+/* line 19, ../sass/custom/_blocks.scss */
+.audience .panel-heading:before, .Biography .panel-heading:before, .Interviews .panel-heading:before {
   background-image: url("../images/icons/icon-audience.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 21, ../sass/custom/_blocks.scss */
+/* line 22, ../sass/custom/_blocks.scss */
 .audio .panel-heading:before {
   background-image: url("../images/icons/icon-audio.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 24, ../sass/custom/_blocks.scss */
-.blog .panel-heading:before {
+/* line 25, ../sass/custom/_blocks.scss */
+.blog .panel-heading:before, .Blog .panel-heading:before {
   background-image: url("../images/icons/icon-blog.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 27, ../sass/custom/_blocks.scss */
-.books .panel-heading:before {
+/* line 28, ../sass/custom/_blocks.scss */
+.books .panel-heading:before, .Books .panel-heading:before {
   background-image: url("../images/icons/icon-books.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 30, ../sass/custom/_blocks.scss */
-.mises-daily .panel-heading:before {
+/* line 31, ../sass/custom/_blocks.scss */
+.mises-daily .panel-heading:before, .Mises-Daily .panel-heading:before, .Mises.Daily .panel-heading:before {
   background-image: url("../images/icons/icon-daily.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 33, ../sass/custom/_blocks.scss */
+/* line 34, ../sass/custom/_blocks.scss */
 .event .panel-heading:before {
   background-image: url("../images/icons/icon-event.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 36, ../sass/custom/_blocks.scss */
-.lecture .panel-heading:before {
+/* line 37, ../sass/custom/_blocks.scss */
+.lecture .panel-heading:before, .Lectures .panel-heading:before {
   background-image: url("../images/icons/icon-lecture.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 39, ../sass/custom/_blocks.scss */
+/* line 40, ../sass/custom/_blocks.scss */
 .level .panel-heading:before {
   background-image: url("../images/icons/icon-level.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 42, ../sass/custom/_blocks.scss */
+/* line 43, ../sass/custom/_blocks.scss */
 .library-block .panel-heading:before {
   background-image: url("../images/icons/icon-library.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 45, ../sass/custom/_blocks.scss */
+/* line 46, ../sass/custom/_blocks.scss */
 .market .panel-heading:before {
   background-image: url("../images/icons/icon-market.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 48, ../sass/custom/_blocks.scss */
-.mises-view .panel-heading:before {
+/* line 49, ../sass/custom/_blocks.scss */
+.mises-view .panel-heading:before, .panel-heading:before .Mises-View {
   background-image: url("../images/icons/icon-view.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 51, ../sass/custom/_blocks.scss */
+/* line 52, ../sass/custom/_blocks.scss */
 .online-courses .panel-heading:before {
   background-image: url("../images/icons/icon-online.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 54, ../sass/custom/_blocks.scss */
+/* line 55, ../sass/custom/_blocks.scss */
 .press-room .panel-heading:before {
   background-image: url("../images/icons/icon-press.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 57, ../sass/custom/_blocks.scss */
+/* line 58, ../sass/custom/_blocks.scss */
 .research .panel-heading:before {
   background-image: url("../images/icons/icon-research.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 60, ../sass/custom/_blocks.scss */
+/* line 61, ../sass/custom/_blocks.scss */
 .review .panel-heading:before {
   background-image: url("../images/icons/icon-review.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 63, ../sass/custom/_blocks.scss */
+/* line 64, ../sass/custom/_blocks.scss */
 .topic .panel-heading:before {
   background-image: url("../images/icons/icon-topic.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 66, ../sass/custom/_blocks.scss */
-.video .panel-heading:before {
+/* line 67, ../sass/custom/_blocks.scss */
+.video .panel-heading:before, .AudioVideo .panel-heading:before, .Audio.Video .panel-heading:before {
   background-image: url("../images/icons/icon-video.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 69, ../sass/custom/_blocks.scss */
-.mises-view .panel-heading:before {
-  background-image: url("../images/icons/icon-view.png");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
-/* line 74, ../sass/custom/_blocks.scss */
+/* line 72, ../sass/custom/_blocks.scss */
 span.glyphicon {
   margin-right: 10px;
   border-radius: 50%;
@@ -9482,7 +9546,7 @@ span.glyphicon {
 }
 
 /* Soft transitions for all menu items */
-/* line 83, ../sass/custom/_blocks.scss */
+/* line 81, ../sass/custom/_blocks.scss */
 ul.menu li a, ul.menu li span {
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -9491,158 +9555,182 @@ ul.menu li a, ul.menu li span {
 
 /* NOTE: PLACE HOVER COLORS IN RELEVANT SECTION */
 /* TOP BORDERS */
-/* line 92, ../sass/custom/_blocks.scss */
+/* line 90, ../sass/custom/_blocks.scss */
 .border-primary {
   border-top: 8px solid #00426b;
 }
 
-/* line 95, ../sass/custom/_blocks.scss */
+/* line 93, ../sass/custom/_blocks.scss */
 .border-contrast {
   border-top: 8px solid #729949;
 }
 
-/* line 98, ../sass/custom/_blocks.scss */
+/* line 96, ../sass/custom/_blocks.scss */
 .border-secondary {
   border-top: 8px solid #38709e;
 }
 
-/* line 102, ../sass/custom/_blocks.scss */
+/* line 100, ../sass/custom/_blocks.scss */
 .border-gray .panel-body {
   border-top: 4px solid #c8cdd0;
 }
 
 /* ICONS RELATED TO TOP-BORDERS */
-/* line 109, ../sass/custom/_blocks.scss */
+/* line 107, ../sass/custom/_blocks.scss */
 .border-primary .panel-heading:before {
   background-color: #00426b;
 }
-/* line 112, ../sass/custom/_blocks.scss */
+/* line 110, ../sass/custom/_blocks.scss */
 .border-primary .panel-heading .panel-title {
   color: #00426b;
 }
-/* line 116, ../sass/custom/_blocks.scss */
+/* line 114, ../sass/custom/_blocks.scss */
 .border-primary h4 {
   color: #00426b;
 }
 
-/* line 122, ../sass/custom/_blocks.scss */
+/* line 120, ../sass/custom/_blocks.scss */
 .border-secondary .panel-heading:before {
   background-color: #38709e;
 }
-/* line 125, ../sass/custom/_blocks.scss */
+/* line 123, ../sass/custom/_blocks.scss */
 .border-secondary .panel-heading .panel-title {
   color: #38709e;
 }
-/* line 129, ../sass/custom/_blocks.scss */
+/* line 127, ../sass/custom/_blocks.scss */
 .border-secondary h4 {
   color: #38709e;
 }
 
-/* line 135, ../sass/custom/_blocks.scss */
+/* line 133, ../sass/custom/_blocks.scss */
 .border-contrast .panel-heading:before {
   background-color: #729949;
 }
-/* line 138, ../sass/custom/_blocks.scss */
+/* line 136, ../sass/custom/_blocks.scss */
 .border-contrast .panel-heading .panel-title {
   color: #729949;
 }
-/* line 142, ../sass/custom/_blocks.scss */
+/* line 140, ../sass/custom/_blocks.scss */
 .border-contrast h4 {
   color: #729949;
 }
 
 /* BACKGROUND COLORS */
-/* line 147, ../sass/custom/_blocks.scss */
+/* line 145, ../sass/custom/_blocks.scss */
 .bg-primary {
   background-color: #00426b;
 }
 
-/* line 150, ../sass/custom/_blocks.scss */
+/* line 148, ../sass/custom/_blocks.scss */
 .bg-contrast {
   background-color: #729949;
 }
 
-/* line 153, ../sass/custom/_blocks.scss */
+/* line 151, ../sass/custom/_blocks.scss */
 .bg-secondary {
   background-color: #38709e;
 }
 
-/* line 156, ../sass/custom/_blocks.scss */
-.bg-gray {
-  background-color: #c8cdd0;
+/* line 154, ../sass/custom/_blocks.scss */
+.bg-gray, .resource-item.odd, .main-content .view-mode-video_block_teaser, .group-footnotes {
+  background-color: #e4ebee;
 }
 
 /* OTHER HELPER CLASSES */
-/* line 162, ../sass/custom/_blocks.scss */
+/* line 160, ../sass/custom/_blocks.scss */
 .padding-lg, .view-term-landing.view-display-id-popular .view-content {
   padding: 10px 20px;
 }
-/* line 164, ../sass/custom/_blocks.scss */
+/* line 162, ../sass/custom/_blocks.scss */
 .padding-lg .view-content, .view-term-landing.view-display-id-popular .view-content .view-content {
   padding: 10px 20px;
 }
 
+/* line 166, ../sass/custom/_blocks.scss */
+.outset, .resource-item.odd, .group-footnotes {
+  margin-right: -30px;
+  margin-left: -30px;
+  padding: 30px;
+}
+
 /* Bootstrap Panel overrides */
-/* line 170, ../sass/custom/_blocks.scss */
+/* line 173, ../sass/custom/_blocks.scss */
 .panel-footer {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
   padding: 16px 5px;
+  border-top: 0;
   background-color: transparent;
 }
-/* line 173, ../sass/custom/_blocks.scss */
+/* line 178, ../sass/custom/_blocks.scss */
 .panel-footer a {
   color: #788086;
   text-transform: uppercase;
   font-size: 13px;
 }
-/* line 177, ../sass/custom/_blocks.scss */
+/* line 182, ../sass/custom/_blocks.scss */
 .panel-footer a:hover {
   color: #206093;
 }
-/* line 181, ../sass/custom/_blocks.scss */
+/* line 186, ../sass/custom/_blocks.scss */
 .panel-footer:hover span.glyphicon {
   background-color: #206093;
 }
 
 /* BOTTOM BLOCKS */
-/* line 187, ../sass/custom/_blocks.scss */
+/* line 193, ../sass/custom/_blocks.scss */
 .content-bottom .region {
   position: relative;
   background: white;
 }
-/* line 190, ../sass/custom/_blocks.scss */
-.content-bottom .region .panel-heading {
+
+/* line 199, ../sass/custom/_blocks.scss */
+.bottom-blocks .view-mises-library {
+  position: relative;
+  margin-bottom: 20px;
+  background: #e4ebee;
+}
+
+/* line 207, ../sass/custom/_blocks.scss */
+.content-bottom .panel-heading,
+.bottom-blocks .panel-heading {
   border-radius: 0;
   background-color: #206093;
 }
-/* line 193, ../sass/custom/_blocks.scss */
-.content-bottom .region .panel-heading .panel-title {
+/* line 210, ../sass/custom/_blocks.scss */
+.content-bottom .panel-heading .panel-title,
+.bottom-blocks .panel-heading .panel-title {
   color: white;
   text-transform: uppercase;
   font-size: 20px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
-/* line 202, ../sass/custom/_blocks.scss */
-.content-bottom .region .panel-body h4 {
+/* line 219, ../sass/custom/_blocks.scss */
+.content-bottom .panel-body h4,
+.bottom-blocks .panel-body h4 {
   font-size: 15px;
 }
-/* line 204, ../sass/custom/_blocks.scss */
-.content-bottom .region .panel-body h4 a {
+/* line 221, ../sass/custom/_blocks.scss */
+.content-bottom .panel-body h4 a,
+.bottom-blocks .panel-body h4 a {
   color: #00426b;
 }
-/* line 208, ../sass/custom/_blocks.scss */
-.content-bottom .region .panel-body p {
+/* line 225, ../sass/custom/_blocks.scss */
+.content-bottom .panel-body p,
+.bottom-blocks .panel-body p {
   color: #788086;
   font-size: 13px;
 }
-/* line 214, ../sass/custom/_blocks.scss */
-.content-bottom .region .view-footer,
-.content-bottom .region .attachment {
+/* line 232, ../sass/custom/_blocks.scss */
+.content-bottom .panel-footer,
+.bottom-blocks .panel-footer {
   margin: 0 16px;
+  border-top: 1px solid #c8cdd0;
   line-height: 20px;
 }
-/* line 217, ../sass/custom/_blocks.scss */
-.content-bottom .region .view-footer span.glyphicon,
-.content-bottom .region .attachment span.glyphicon {
+/* line 236, ../sass/custom/_blocks.scss */
+.content-bottom .panel-footer span.glyphicon,
+.bottom-blocks .panel-footer span.glyphicon {
   width: 24px;
   height: 24px;
   text-align: center;
@@ -9651,33 +9739,32 @@ ul.menu li a, ul.menu li span {
 }
 
 /* SIDEBAR BLOCKS */
-/* line 225, ../sass/custom/_blocks.scss */
+/* line 243, ../sass/custom/_blocks.scss */
 .region-sidebar-second,
 .region-sidebar-second-top {
   font-size: 13px;
 }
-/* line 228, ../sass/custom/_blocks.scss */
+/* line 246, ../sass/custom/_blocks.scss */
 .region-sidebar-second .view-flex-blocks,
 .region-sidebar-second-top .view-flex-blocks {
   margin-bottom: 20px;
 }
-/* line 230, ../sass/custom/_blocks.scss */
+/* line 248, ../sass/custom/_blocks.scss */
 .region-sidebar-second .view-flex-blocks img,
 .region-sidebar-second-top .view-flex-blocks img {
   width: auto;
 }
-/* line 235, ../sass/custom/_blocks.scss */
+/* line 253, ../sass/custom/_blocks.scss */
 .region-sidebar-second .panel,
 .region-sidebar-second-top .panel {
-  margin-bottom: 0;
   padding: 5px;
 }
-/* line 239, ../sass/custom/_blocks.scss */
+/* line 256, ../sass/custom/_blocks.scss */
 .region-sidebar-second .panel-heading,
 .region-sidebar-second-top .panel-heading {
   background: #e4ebee;
 }
-/* line 241, ../sass/custom/_blocks.scss */
+/* line 258, ../sass/custom/_blocks.scss */
 .region-sidebar-second .panel-heading:before,
 .region-sidebar-second-top .panel-heading:before {
   position: absolute;
@@ -9690,7 +9777,7 @@ ul.menu li a, ul.menu li span {
   content: '';
   border: 0 solid white;
 }
-/* line 245, ../sass/custom/_blocks.scss */
+/* line 262, ../sass/custom/_blocks.scss */
 .region-sidebar-second .panel-heading:after,
 .region-sidebar-second-top .panel-heading:after {
   position: absolute;
@@ -9703,14 +9790,14 @@ ul.menu li a, ul.menu li span {
   border-left: 1px solid #788086;
   content: '';
 }
-/* line 248, ../sass/custom/_blocks.scss */
+/* line 265, ../sass/custom/_blocks.scss */
 .region-sidebar-second .panel-heading .panel-title,
 .region-sidebar-second-top .panel-heading .panel-title {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 15px;
 }
-/* line 254, ../sass/custom/_blocks.scss */
+/* line 271, ../sass/custom/_blocks.scss */
 .region-sidebar-second .panel-heading.single,
 .region-sidebar-second .panel-heading .single,
 .region-sidebar-second-top .panel-heading.single,
@@ -9718,65 +9805,65 @@ ul.menu li a, ul.menu li span {
   height: 62px;
   line-height: 40px;
 }
-/* line 258, ../sass/custom/_blocks.scss */
+/* line 275, ../sass/custom/_blocks.scss */
 .region-sidebar-second .panel-heading h4,
 .region-sidebar-second-top .panel-heading h4 {
   font-size: 15px;
 }
-/* line 260, ../sass/custom/_blocks.scss */
+/* line 277, ../sass/custom/_blocks.scss */
 .region-sidebar-second .panel-heading h4 a,
 .region-sidebar-second-top .panel-heading h4 a {
   color: #24292c;
 }
-/* line 265, ../sass/custom/_blocks.scss */
+/* line 282, ../sass/custom/_blocks.scss */
 .region-sidebar-second .panel-body,
 .region-sidebar-second-top .panel-body {
   padding: 10px 20px;
 }
-/* line 269, ../sass/custom/_blocks.scss */
+/* line 286, ../sass/custom/_blocks.scss */
 .region-sidebar-second .view-content p,
 .region-sidebar-second-top .view-content p {
   margin: 0;
 }
-/* line 273, ../sass/custom/_blocks.scss */
+/* line 290, ../sass/custom/_blocks.scss */
 .region-sidebar-second .margin-bottom,
 .region-sidebar-second-top .margin-bottom {
   margin-bottom: 20px;
 }
 
-/* line 277, ../sass/custom/_blocks.scss */
+/* line 294, ../sass/custom/_blocks.scss */
 .region-sidebar-second-top {
   margin-bottom: 20px;
   background: #38709e;
   color: white;
 }
-/* line 281, ../sass/custom/_blocks.scss */
+/* line 298, ../sass/custom/_blocks.scss */
 .region-sidebar-second-top .panel {
   padding: 32px;
   background: #38709e;
 }
-/* line 285, ../sass/custom/_blocks.scss */
+/* line 302, ../sass/custom/_blocks.scss */
 .region-sidebar-second-top h3 {
   text-transform: uppercase;
   font-size: 15px;
 }
 
 /* SIDEBAR MENU */
-/* line 294, ../sass/custom/_blocks.scss */
+/* line 311, ../sass/custom/_blocks.scss */
 .region-sidebar-second .nav > li > a,
 .region-sidebar-second-top .nav > li > a {
+  padding-left: 24px;
   background-color: #494e54;
   color: white;
   text-transform: uppercase;
   font-size: 15px;
-  padding-left: 24px;
 }
-/* line 300, ../sass/custom/_blocks.scss */
+/* line 317, ../sass/custom/_blocks.scss */
 .region-sidebar-second .nav > li > a:hover,
 .region-sidebar-second-top .nav > li > a:hover {
   background-color: #788086;
 }
-/* line 304, ../sass/custom/_blocks.scss */
+/* line 321, ../sass/custom/_blocks.scss */
 .region-sidebar-second .nav > li + li,
 .region-sidebar-second-top .nav > li + li {
   border-top: 1px solid #788086;
@@ -9786,30 +9873,30 @@ ul.menu li a, ul.menu li span {
 * CUSTOM ELEMENTS
 **/
 /* TITLE COLORSS */
-/* line 315, ../sass/custom/_blocks.scss */
+/* line 332, ../sass/custom/_blocks.scss */
 .view-display-id-academy_course .panel-title {
   color: #729949 !important;
 }
 
 /* HOMEPAGE */
-/* line 320, ../sass/custom/_blocks.scss */
+/* line 337, ../sass/custom/_blocks.scss */
 #block-views-flex-blocks-block-7 .panel {
   margin-bottom: 0;
   padding: 6px 16px;
   background-color: #46763a;
 }
-/* line 324, ../sass/custom/_blocks.scss */
+/* line 341, ../sass/custom/_blocks.scss */
 #block-views-flex-blocks-block-7 .panel h2 {
   margin: 0;
   color: white;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
-/* line 328, ../sass/custom/_blocks.scss */
+/* line 345, ../sass/custom/_blocks.scss */
 #block-views-flex-blocks-block-7 .panel h2 span {
   font-size: 40px;
 }
 
-/* line 334, ../sass/custom/_blocks.scss */
+/* line 351, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises h2 {
   margin: 0;
   padding: 9px 16px;
@@ -9819,22 +9906,22 @@ ul.menu li a, ul.menu li span {
   font-weight: 200;
   font-size: 15px;
 }
-/* line 343, ../sass/custom/_blocks.scss */
+/* line 360, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav {
   padding-top: 16px;
 }
-/* line 345, ../sass/custom/_blocks.scss */
+/* line 362, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav > li > a {
   padding: 7px 16px;
   color: #729949;
   text-transform: uppercase;
   font-weight: 600;
 }
-/* line 353, ../sass/custom/_blocks.scss */
+/* line 370, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav > li > a span {
   color: #788086;
 }
-/* line 356, ../sass/custom/_blocks.scss */
+/* line 373, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav > li > a span.glyphicon {
   width: 24px;
   height: 24px;
@@ -9844,42 +9931,151 @@ ul.menu li a, ul.menu li span {
   color: white;
   font-weight: 100;
 }
-/* line 361, ../sass/custom/_blocks.scss */
+/* line 378, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav > li > a:hover {
   background: transparent;
   text-decoration: underline;
 }
-/* line 364, ../sass/custom/_blocks.scss */
+/* line 381, ../sass/custom/_blocks.scss */
 #block-menu-menu-new-to-mises .nav > li > a:hover span.glyphicon {
   background-color: #729949;
 }
 
 /* LANDING PAGES */
-/* line 379, ../sass/custom/_blocks.scss */
+/* line 396, ../sass/custom/_blocks.scss */
 .view-term-landing.view-display-id-featured_author .panel {
   margin-bottom: 20px;
 }
-/* line 382, ../sass/custom/_blocks.scss */
+/* line 399, ../sass/custom/_blocks.scss */
 .view-term-landing.view-display-id-featured_author .panel-title {
   color: #729949;
   text-transform: uppercase;
   font-size: 15px;
 }
-/* line 387, ../sass/custom/_blocks.scss */
+/* line 404, ../sass/custom/_blocks.scss */
 .view-term-landing.view-display-id-featured_author h4.author {
   color: #729949;
 }
-/* line 390, ../sass/custom/_blocks.scss */
+/* line 407, ../sass/custom/_blocks.scss */
 .view-term-landing.view-display-id-featured_author img {
   border: 3px solid #c8cdd0;
 }
-/* line 395, ../sass/custom/_blocks.scss */
+/* line 412, ../sass/custom/_blocks.scss */
 .view-term-landing.view-display-id-columnist .group-header {
   margin-bottom: 20px;
 }
-/* line 398, ../sass/custom/_blocks.scss */
+/* line 415, ../sass/custom/_blocks.scss */
 .view-term-landing.view-display-id-columnist img {
   border: 3px solid #c8cdd0;
+}
+
+/* BLOCK TEASER WITH TERM */
+/* line 423, ../sass/custom/_blocks.scss */
+.view-mode-block_teaser_term .panel-heading {
+  padding: 10px 10px 10px 50px;
+  background-color: #494e54;
+}
+/* line 426, ../sass/custom/_blocks.scss */
+.view-mode-block_teaser_term .panel-heading:before {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  content: '';
+  background-color: #5b8ab5;
+  border: 0;
+}
+/* line 431, ../sass/custom/_blocks.scss */
+.view-mode-block_teaser_term .panel-heading .panel-title {
+  color: white;
+  text-transform: uppercase;
+}
+/* line 436, ../sass/custom/_blocks.scss */
+.view-mode-block_teaser_term .panel-body {
+  background-color: #e4ebee;
+}
+/* line 438, ../sass/custom/_blocks.scss */
+.view-mode-block_teaser_term .panel-body h3 {
+  margin-top: 0;
+  color: #38709e;
+}
+/* line 442, ../sass/custom/_blocks.scss */
+.view-mode-block_teaser_term .panel-body p {
+  font-size: 13px;
+}
+/* line 446, ../sass/custom/_blocks.scss */
+.view-mode-block_teaser_term .panel-footer {
+  padding: 0 16px;
+  background-color: #e4ebee;
+}
+/* line 449, ../sass/custom/_blocks.scss */
+.view-mode-block_teaser_term .panel-footer p {
+  padding: 16px 0;
+  border-top: 1px solid #c8cdd0;
+  line-height: 20px;
+}
+/* line 453, ../sass/custom/_blocks.scss */
+.view-mode-block_teaser_term .panel-footer p span.glyphicon {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 20px;
+  margin-right: 5px;
+}
+
+/* BOTTOM BLOCKS FLEX BLOCKS */
+/* line 463, ../sass/custom/_blocks.scss */
+.bottom-blocks .view-flex-blocks .panel {
+  margin-bottom: 0;
+}
+
+/* VIDEO TEASER BLOCK */
+/* line 469, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser {
+  background-color: white;
+}
+/* line 474, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-heading {
+  border-radius: 0;
+  background-color: #206093;
+}
+/* line 477, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-heading .panel-title {
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+}
+/* line 486, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-body h4 {
+  font-size: 15px;
+}
+/* line 488, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-body h4 a {
+  color: #00426b;
+}
+/* line 492, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-body p {
+  color: #788086;
+  font-size: 13px;
+}
+/* line 497, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-footer {
+  margin: 0 16px;
+  border-top: 1px solid #c8cdd0;
+  line-height: 20px;
+}
+/* line 501, ../sass/custom/_blocks.scss */
+.view-mode-video_block_teaser .panel-footer span.glyphicon {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px;
 }
 
 /*
@@ -10069,21 +10265,14 @@ ul.menu li a, ul.menu li span {
 /*
 * FOOTNOTES GROUP -- MAY ABSTRACT THIS
 */
-/* line 157, ../sass/custom/_features.scss */
-.group-footnotes {
-  margin-right: -24px;
-  margin-left: -24px;
-  padding: 24px;
-  background: #e4ebee;
-}
-/* line 162, ../sass/custom/_features.scss */
+/* line 160, ../sass/custom/_features.scss */
 .group-footnotes h3 {
   color: #38709e;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 15px;
 }
-/* line 168, ../sass/custom/_features.scss */
+/* line 166, ../sass/custom/_features.scss */
 .group-footnotes p {
   font-size: 13px;
 }
@@ -10091,7 +10280,7 @@ ul.menu li a, ul.menu li span {
 /*
 * COMMENTING
 */
-/* line 176, ../sass/custom/_features.scss */
+/* line 174, ../sass/custom/_features.scss */
 .comment-title h3 {
   color: #38709e;
   text-transform: uppercase;
@@ -10100,15 +10289,15 @@ ul.menu li a, ul.menu li span {
 /*
 * PHOTO ALBUM
 */
-/* line 186, ../sass/custom/_features.scss */
+/* line 184, ../sass/custom/_features.scss */
 .view-photo-album .view-content {
   padding: 16px 16px 6px;
 }
-/* line 190, ../sass/custom/_features.scss */
+/* line 188, ../sass/custom/_features.scss */
 .view-photo-album .views-row {
   padding-bottom: 6px;
 }
-/* line 193, ../sass/custom/_features.scss */
+/* line 191, ../sass/custom/_features.scss */
 .view-photo-album img {
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -10116,7 +10305,7 @@ ul.menu li a, ul.menu li span {
   border: 3px solid #c8cdd0;
   border-radius: 0%;
 }
-/* line 197, ../sass/custom/_features.scss */
+/* line 195, ../sass/custom/_features.scss */
 .view-photo-album img:hover {
   border-radius: 50%;
 }
@@ -10124,25 +10313,25 @@ ul.menu li a, ul.menu li span {
 /*
 * CALENDAR
 */
-/* line 207, ../sass/custom/_features.scss */
+/* line 205, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar a {
   color: white;
 }
-/* line 210, ../sass/custom/_features.scss */
+/* line 208, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table {
   margin-bottom: 16px;
   width: 100%;
 }
-/* line 213, ../sass/custom/_features.scss */
+/* line 211, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table th {
   text-align: center;
 }
-/* line 216, ../sass/custom/_features.scss */
+/* line 214, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td {
   vertical-align: middle;
   text-align: center;
 }
-/* line 219, ../sass/custom/_features.scss */
+/* line 217, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .month {
   margin: 2px auto;
   width: 30px;
@@ -10150,29 +10339,29 @@ ul.menu li a, ul.menu li span {
   border-radius: 50%;
   line-height: 30px;
 }
-/* line 225, ../sass/custom/_features.scss */
+/* line 223, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .month.mini-day-on {
   background-color: #729949;
 }
-/* line 230, ../sass/custom/_features.scss */
+/* line 228, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td.today .month {
   background-color: #206093;
 }
-/* line 234, ../sass/custom/_features.scss */
+/* line 232, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .calendar-empty {
   display: none;
 }
-/* line 239, ../sass/custom/_features.scss */
+/* line 237, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar .date-nav-wrapper .date-heading h3 {
   font-size: 15px;
 }
-/* line 243, ../sass/custom/_features.scss */
+/* line 241, ../sass/custom/_features.scss */
 .view-mises-calendar .pager {
   margin: 0;
 }
 
 /* overrides */
-/* line 249, ../sass/custom/_features.scss */
+/* line 247, ../sass/custom/_features.scss */
 .date-nav-wrapper .date-nav {
   margin: 0 0 16px;
   padding: 0;
@@ -10181,14 +10370,14 @@ ul.menu li a, ul.menu li span {
 /*
 * EVENT PAGE
 */
-/* line 259, ../sass/custom/_features.scss */
+/* line 257, ../sass/custom/_features.scss */
 #registration-form {
   clear: both;
   margin-top: 16px;
 }
 
 /* Add to calendar */
-/* line 264, ../sass/custom/_features.scss */
+/* line 262, ../sass/custom/_features.scss */
 .addtocal {
   position: relative;
   display: inline-block;
@@ -10199,14 +10388,14 @@ ul.menu li a, ul.menu li span {
   white-space: nowrap;
   cursor: pointer;
 }
-/* line 273, ../sass/custom/_features.scss */
+/* line 271, ../sass/custom/_features.scss */
 .addtocal:before {
   position: absolute;
   left: 999px;
   content: "\e109";
   font-family: 'Glyphicons Halflings';
 }
-/* line 279, ../sass/custom/_features.scss */
+/* line 277, ../sass/custom/_features.scss */
 .addtocal:hover:after {
   position: absolute;
   bottom: 16px;
@@ -10223,7 +10412,7 @@ ul.menu li a, ul.menu li span {
   font-size: 13px;
 }
 
-/* line 296, ../sass/custom/_features.scss */
+/* line 294, ../sass/custom/_features.scss */
 ul.addtocal_menu {
   position: absolute;
   z-index: 50;
@@ -10239,20 +10428,39 @@ ul.addtocal_menu {
   overflow: hidden;
   text-transform: none;
 }
-/* line 310, ../sass/custom/_features.scss */
+/* line 308, ../sass/custom/_features.scss */
 ul.addtocal_menu li {
   margin: 0px;
   padding: 0px;
 }
-/* line 313, ../sass/custom/_features.scss */
+/* line 311, ../sass/custom/_features.scss */
 ul.addtocal_menu li a {
   display: block;
   padding: 5px;
   color: #38709e;
   text-decoration: none;
 }
-/* line 318, ../sass/custom/_features.scss */
+/* line 316, ../sass/custom/_features.scss */
 ul.addtocal_menu li a:hover {
   background: #e4ebee;
   text-decoration: none;
+}
+
+/* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+/* line 324, ../sass/custom/_features.scss */
+.media-youtube-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+/* line 330, ../sass/custom/_features.scss */
+.media-youtube-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

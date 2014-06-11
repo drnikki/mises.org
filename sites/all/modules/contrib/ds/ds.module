@@ -717,7 +717,12 @@ function ds_entity_variables(&$vars) {
       $url = '';
       switch ($layout['settings']['layout_link_attribute']) {
         case 'content':
-          $uri = entity_uri($vars['elements']['#entity_type'], $vars[$object]);
+          if ($object == 'user') {
+            $uri = entity_uri($vars['elements']['#entity_type'], $vars['elements']['#account']);
+          }
+          else {
+            $uri = entity_uri($vars['elements']['#entity_type'], $vars[$object]);
+          }
           if (!empty($uri)) {
             $url = $uri['path'];
           }
@@ -726,7 +731,7 @@ function ds_entity_variables(&$vars) {
           $url = $layout['settings']['layout_link_custom'];
           break;
         case 'tokens':
-          $url = token_replace($layout['settings']['layout_link_custom'], array($vars['elements']['#entity_type'] => $vars[$object]));
+          $url = token_replace($layout['settings']['layout_link_custom'], array($vars['elements']['#entity_type'] => $vars[$object]), array('clear' => TRUE));
           break;
       }
 
@@ -737,7 +742,7 @@ function ds_entity_variables(&$vars) {
 
     // Let other modules alter the ds array before creating the region variables.
     $context = array('entity' => isset($vars[$object]) ? $vars[$object] : (isset($vars['elements']['#' . $object]) ? $vars['elements']['#' . $object] : ''), 'entity_type' => $vars['elements']['#entity_type'], 'bundle' => $vars['elements']['#bundle'], 'view_mode' => $vars['elements']['#view_mode']);
-    drupal_alter('ds_pre_render', $layout_render_array, $context);
+    drupal_alter('ds_pre_render', $layout_render_array, $context, $vars);
     foreach ($layout_render_array as $region_name => $content) {
       // In case this is a panels layout, add the region to the $content variable.
       if (isset($layout['module']) && $layout['module'] == 'panels') {
@@ -816,7 +821,12 @@ function ds_render_ctools_field($field) {
           foreach ($field['entity']->{$key}[$language] as $tkey => $item) {
             if (isset($item['tid']) && !isset($item['taxonomy_term'])) {
               if (!isset($terms_loaded[$item['tid']])) {
-                $terms_loaded[$item['tid']] = taxonomy_term_load($item['tid']);
+                $term = taxonomy_term_load($item['tid']);
+                if (!is_object($term)) {
+                  // This term is missing in the database.
+                  continue;
+                }
+                $terms_loaded[$item['tid']];
               }
               $field['entity']->{$key}[$language][$tkey]['taxonomy_term'] = $terms_loaded[$item['tid']];
             }
@@ -873,7 +883,7 @@ function ds_render_block_field($field) {
   $contextual_links = array();
   $contextual = module_exists('contextual') && user_access('access contextual links');
   if ($contextual) {
-    if (is_array($block['content']) && isset($block['content']['#contextual_links'])) {
+    if (isset($block['content']) && is_array($block['content']) && isset($block['content']['#contextual_links'])) {
       $contextual_links = $block['content']['#contextual_links'];
     }
   }
@@ -892,7 +902,9 @@ function ds_render_block_field($field) {
     }
 
     global $theme_key;
-    $full_block = db_query("SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme", array(':module' => $module, ':delta' => $delta, ':theme' => $theme_key))->fetchObject();
+    if (module_exists('block')) {
+      $full_block = db_query("SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme", array(':module' => $module, ':delta' => $delta, ':theme' => $theme_key))->fetchObject();
+    }
     if (!empty($full_block)) {
       if ($full_block->title == '<none>') {
         $block['subject'] = '';
@@ -955,7 +967,6 @@ function ds_render_block_field($field) {
  * Render a field.
  */
 function ds_render_field($field) {
-
   $title_field = FALSE;
 
   $output = '';
@@ -982,14 +993,13 @@ function ds_render_field($field) {
 
   // Link.
   if ($settings['link']) {
-    if (isset($field['entity']->uri['path'])) {
-      $path = $field['entity']->uri['path'];
+    if (isset($field['entity']->uri)) {
+      $uri_info = $field['entity']->uri;
     }
     else {
       $uri_info = entity_uri($field['entity_type'], $field['entity']);
-      $path = $uri_info['path'];
     }
-    $output = l($output, $path);
+    $output = l($output, $uri_info['path'], $uri_info['options']);
     if ($title_field) {
       $output = ds_edit_support('title', $output, $field);
     }
@@ -1157,7 +1167,10 @@ function ds_field_formatter_info() {
       'label'       => t('Rendered taxonomy term'),
       'description' => t('Display the referenced term in a specific view mode'),
       'field types' => array('taxonomy_term_reference'),
-      'settings'    => array('taxonomy_term_reference_view_mode' => 'full'),
+      'settings'    => array(
+        'taxonomy_term_reference_view_mode' => 'full',
+        'use_content_language' => TRUE,
+      ),
     );
     $formatters['ds_taxonomy_separator'] = array(
       'label'       => t('Separated'),
@@ -1203,6 +1216,14 @@ function ds_field_formatter_view($entity_type, $entity, $field, $instance, $lang
       }
       else {
         $term = taxonomy_term_load($item['tid']);
+        if (!is_object($term)) {
+          // This term is missing in the database.
+          continue;
+        }
+        $settings = $display['settings'];
+        if ($settings['use_content_language'] && !empty($GLOBALS['language_content']->language)) {
+          $langcode = $GLOBALS['language_content']->language;
+        }
         if (!empty($term)) {
           $build = taxonomy_term_view($term, $view_mode, $langcode);
         }
@@ -1227,6 +1248,10 @@ function ds_field_formatter_view($entity_type, $entity, $field, $instance, $lang
       }
       else {
         $term = taxonomy_term_load($item['tid']);
+        if (!is_object($term)) {
+          // This term is missing in the database.
+          continue;
+        }
         if ($display['type'] == 'ds_taxonomy_separator_localized' && function_exists('i18n_taxonomy_term_name')) {
           $term->name = i18n_taxonomy_term_name($term, $language->language);
         }

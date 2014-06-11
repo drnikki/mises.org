@@ -10,18 +10,23 @@
 function home_new_to_mises_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-homeschoooler:taxonomy/term/51
-  $menu_links['menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-homeschoooler:taxonomy/term/51'] = array(
+  // Exported menu link: menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-homeschoooler:node/818
+  $menu_links['menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-homeschoooler:node/818'] = array(
     'menu_name' => 'menu-new-to-mises',
-    'link_path' => 'taxonomy/term/51',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'node/818',
+    'router_path' => 'node/%',
     'link_title' => '<span class="glyphicon glyphicon-chevron-right"></span> <span>I am</span> a Homeschoooler',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-homeschoooler:taxonomy/term/51',
+      'identifier' => 'menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-homeschoooler:node/818',
       'html' => 1,
+      'menu_icon' => array(
+        'enable' => 0,
+        'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
+        'image_style' => 'menu_icon',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -31,18 +36,23 @@ function home_new_to_mises_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:taxonomy/term/17
-  $menu_links['menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:taxonomy/term/17'] = array(
+  // Exported menu link: menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:node/16704
+  $menu_links['menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:node/16704'] = array(
     'menu_name' => 'menu-new-to-mises',
-    'link_path' => 'taxonomy/term/17',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'node/16704',
+    'router_path' => 'node/%',
     'link_title' => '<span class="glyphicon glyphicon-chevron-right"></span> <span>I am</span> a Journalist',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:taxonomy/term/17',
+      'identifier' => 'menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:node/16704',
       'html' => 1,
+      'menu_icon' => array(
+        'enable' => 0,
+        'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
+        'image_style' => 'menu_icon',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -73,18 +83,23 @@ function home_new_to_mises_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-an-economistresearcher:taxonomy/term/18
-  $menu_links['menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-an-economistresearcher:taxonomy/term/18'] = array(
+  // Exported menu link: menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-an-economistresearcher:node/819
+  $menu_links['menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-an-economistresearcher:node/819'] = array(
     'menu_name' => 'menu-new-to-mises',
-    'link_path' => 'taxonomy/term/18',
-    'router_path' => 'taxonomy/term/%',
+    'link_path' => 'node/819',
+    'router_path' => 'node/%',
     'link_title' => '<span class="glyphicon glyphicon-chevron-right"></span> <span>I am</span> an Economist/Researcher',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-an-economistresearcher:taxonomy/term/18',
+      'identifier' => 'menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-an-economistresearcher:node/819',
       'html' => 1,
+      'menu_icon' => array(
+        'enable' => 0,
+        'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
+        'image_style' => 'menu_icon',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,

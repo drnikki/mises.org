@@ -184,7 +184,7 @@ function mises_course_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_austrian_school',
     'label' => 'Austrian School',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -403,7 +403,7 @@ function mises_course_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_topics',
     'label' => 'Topics',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(

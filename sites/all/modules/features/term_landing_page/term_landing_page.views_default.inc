@@ -101,7 +101,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['css_class'] = 'landing-list';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -438,7 +438,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Author';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'audience border-gray';
+  $handler->display->display_options['css_class'] = 'audience panel';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -645,11 +645,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_item' => 'library_item',
   );
-  /* Filter criterion: Content: Image (field_image_collection) */
-  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
-  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Today's Article */
   $handler = $view->new_display('attachment', 'Today\'s Article', 'attachment_1');

@@ -13,6 +13,120 @@ function mises_landing_page_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_field_collection_item__field_resources';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'list_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sidebar_author' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sidebar_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'simple_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'slideshow' => array(
+        'custom_settings' => FALSE,
+      ),
+      'small_player' => array(
+        'custom_settings' => FALSE,
+      ),
+      'wide_player' => array(
+        'custom_settings' => FALSE,
+      ),
+      'single_image' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'redirect' => array(
+          'weight' => '3',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_field_collection_item__field_resources'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_field_collection_item__field_resource_group';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sidebar_author' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sidebar_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'simple_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'slideshow' => array(
+        'custom_settings' => FALSE,
+      ),
+      'small_player' => array(
+        'custom_settings' => FALSE,
+      ),
+      'wide_player' => array(
+        'custom_settings' => FALSE,
+      ),
+      'single_image' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'redirect' => array(
+          'weight' => '3',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_field_collection_item__field_resource_group'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__landing_page';
   $strongarm->value = array(
     'view_modes' => array(
@@ -62,13 +176,19 @@ function mises_landing_page_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '3',
+        ),
+        'redirect' => array(
+          'weight' => '5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '6',
         ),
       ),
       'display' => array(),

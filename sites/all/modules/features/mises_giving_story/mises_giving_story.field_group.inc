@@ -20,19 +20,21 @@ function mises_giving_story_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Giving Story Images',
+    'label' => 'Media',
     'weight' => '1',
     'children' => array(
       0 => 'field_image',
+      1 => 'field_media_collection',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Media',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-giving-story-images field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-giving-story-images field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_giving_story_images|node|giving_story|form'] = $field_group;

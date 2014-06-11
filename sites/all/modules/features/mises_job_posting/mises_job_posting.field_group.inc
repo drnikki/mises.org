@@ -54,7 +54,6 @@ function mises_job_posting_field_group_info() {
       0 => 'field_closing_date',
       1 => 'field_post_date',
       2 => 'field_starting_date',
-      3 => 'scheduler_settings',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

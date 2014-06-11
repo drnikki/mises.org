@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Press Room feature.
+ */
+
+include_once 'mises_press_room.features.inc';

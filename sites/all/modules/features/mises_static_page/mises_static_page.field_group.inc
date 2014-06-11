@@ -55,12 +55,13 @@ function mises_static_page_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Images',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-page-images field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-page-images field-group-tab',
+        'description' => 'If multiple images are attached, the images will be displayed in a slideshow/carousel.',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_page_images|node|page|form'] = $field_group;

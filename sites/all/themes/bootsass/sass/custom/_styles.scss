@@ -9,7 +9,7 @@
 
 /* LAYOUT */
 @media (max-width: $screen-xs - 1){ // adding mid-small breakpoint
-  .main-content, .content-bottom {
+  .main-content, .content-bottom, .menu-footer {
     *[class*="col-"]{
       float:none;
       width:auto;
@@ -50,8 +50,8 @@
   }
 }
 .navbar-inverse .navbar-nav > li > a.active {
-  color: $navbar-inverse-link-active-color;
   background-color: $navbar-inverse-link-active-bg;
+  color: $navbar-inverse-link-active-color;
 }
 // Override logo alignment
 .logo.navbar-btn {
@@ -85,20 +85,20 @@
     &, &:first-child, &:last-child {
       > a,
       > span {
+        padding: 0;
         width: $font-size-base * 2;
         height: $font-size-base * 2;
         border-radius: $pager-border-radius;
         line-height: $font-size-base * 2;
-        padding: 0;
       }
     }
     &.prev, &.next {
       a {
         @extend .glyphicon;
         @extend .glyphicon-chevron-left;
+        top: 1px;
         background-color: $gray;
         color: $gray;
-        top: 1px;
         &:before {
           position: relative;
           left: 1px;
@@ -125,17 +125,17 @@
   > li {
     &.date-prev, &.date-next {
       a {
+        @extend .glyphicon;
+        @extend .glyphicon-chevron-left;
+        position: relative;
+        padding: 0;
+        padding: 0;
         width: $font-size-base * 1.25;
         height: $font-size-base * 1.25;
         border-radius: $pager-border-radius;
-        line-height: $font-size-base * 1.25;
-        padding: 0;
-        @extend .glyphicon;
-        @extend .glyphicon-chevron-left;
         background-color: $white;
         color: $white;
-        padding: 0;
-        position: relative;
+        line-height: $font-size-base * 1.25;
         &:before {
           position: absolute;
           left: 2px;
@@ -282,8 +282,9 @@ body {
       a {
         display: inline-block;
         padding: 0;
-        width: 45px;
-        height: 45px;
+        width: 32px;
+        height: 32px;
+        background-size: contain;
         text-indent: -9999em;
         opacity: 0.7;
         &:hover {
@@ -301,7 +302,7 @@ body {
 /* PRIMARY CONTENT BLOCKS */
 .main-content {
   position: relative;
-  padding: $padding-base-vertical $padding-large-horizontal * 1.5 $padding-large-horizontal * 1.5;
+  padding: $padding-base-vertical $grid-gutter-width *1.5 $padding-large-horizontal * 1.5;
   border-top: 7px solid $brand-secondary;
   background: $white;
   &:after {
@@ -338,7 +339,8 @@ body {
   padding-bottom: $padding-large-horizontal;
 }
 
-.content-bottom {
+.content-bottom,
+.bottom-blocks {
   padding-top: $padding-large-horizontal;
 }
 
@@ -400,15 +402,36 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5 { // FIX FOR AUTHOR FULL NAME NESTED P
     display: inline;
   }
 }
+h5 {
+  margin-bottom: $padding-base-vertical / 2;
+}
 address {
   margin: 0 0 ($line-height-computed / 2);
   line-height: $line-height-small;
 }
-.read-more a {
-  color: $gray;
-  text-transform: uppercase;
-  font-size: $font-size-small;
+.read-more,
+.more-link {
+  a {
+    color: $gray;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+  }
 }
+.more-link {
+  @extend .text-right;
+  margin: 0 $padding-large-horizontal;
+  line-height: 20px;
+  span.glyphicon {
+    @include glyph-size(24px);
+  }
+  a:hover {
+    color: $brand-secondary;
+    span.glyphicon {
+      background-color: $brand-secondary;
+    }
+  }
+}
+
 .author a {
   color: inherit;
 }

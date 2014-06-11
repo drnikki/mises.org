@@ -23,10 +23,11 @@ function mises_working_papers_field_group_info() {
     'label' => 'Working Paper Information',
     'weight' => '0',
     'children' => array(
-      0 => 'field_author',
-      1 => 'field_link_to_paper_on_ssrn_site',
-      2 => 'field_abstract',
-      3 => 'title',
+      0 => 'body',
+      1 => 'field_abstract',
+      2 => 'field_author',
+      3 => 'field_link_to_paper_on_ssrn_site',
+      4 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -50,22 +51,23 @@ function mises_working_papers_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Tags',
+    'label' => 'Tagging',
     'weight' => '1',
     'children' => array(
-      0 => 'field_topics',
+      0 => 'field_audience',
       1 => 'field_austrian_school',
       2 => 'field_level',
-      3 => 'field_audience',
+      3 => 'field_topics',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Tagging',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-working-paper-tags field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-working-paper-tags field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_working_paper_tags|node|working_papers|form'] = $field_group;

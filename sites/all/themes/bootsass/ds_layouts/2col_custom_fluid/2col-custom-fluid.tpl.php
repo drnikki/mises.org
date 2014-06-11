@@ -9,9 +9,14 @@
   // Add sidebar classes so that we can apply the correct width in css.
   if (($left && !$right) || ($right && !$left)) {
     $classes .= ' group-one-column';
+    $left_classes .= ' col-xs-12';
+    $right_classes .= ' col-xs-12';
+  } else {
+    $left_classes .= ' col-xs-4';
+    $right_classes .= ' col-xs-8';
   }
 ?>
-<<?php print $layout_wrapper; print $layout_attributes; ?> class="ds-2col-custom-fluid <?php print $classes;?> clearfix">
+<<?php print $layout_wrapper; print $layout_attributes; ?> class="ds-2col-custom-fluid column <?php print $classes;?> clearfix">
 
   <?php if (isset($title_suffix['contextual_links'])): ?>
   <?php print render($title_suffix['contextual_links']); ?>
@@ -24,8 +29,14 @@
   <?php endif; ?>
 
   <div class="panel-body">
+    <?php if ($top): ?>
+      <<?php print $top_wrapper ?> class="group-top col-xs-12<?php print $top_classes; ?>">
+        <?php print $top; ?>
+      </<?php print $top_wrapper ?>>
+    <?php endif; ?>
+
     <?php if ($left): ?>
-      <<?php print $left_wrapper ?> class="group-left<?php print $left_classes; ?>">
+      <<?php print $left_wrapper ?> class="group-left col-xs-4<?php print $left_classes; ?>">
         <?php print $left; ?>
       </<?php print $left_wrapper ?>>
     <?php endif; ?>
@@ -37,7 +48,7 @@
     <?php endif; ?>
 
   <?php if ($bottom): ?>
-    <<?php print $bottom_wrapper ?> class="group-bottom<?php print $bottom_classes; ?>">
+    <<?php print $bottom_wrapper ?> class="group-bottom col-xs-12<?php print $bottom_classes; ?>">
       <?php print $bottom; ?>
     </<?php print $bottom_wrapper ?>>
   <?php endif; ?>
