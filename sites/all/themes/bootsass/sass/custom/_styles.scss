@@ -50,8 +50,8 @@
   }
 }
 .navbar-inverse .navbar-nav > li > a.active {
-  color: $navbar-inverse-link-active-color;
   background-color: $navbar-inverse-link-active-bg;
+  color: $navbar-inverse-link-active-color;
 }
 // Override logo alignment
 .logo.navbar-btn {
@@ -85,20 +85,20 @@
     &, &:first-child, &:last-child {
       > a,
       > span {
+        padding: 0;
         width: $font-size-base * 2;
         height: $font-size-base * 2;
         border-radius: $pager-border-radius;
         line-height: $font-size-base * 2;
-        padding: 0;
       }
     }
     &.prev, &.next {
       a {
         @extend .glyphicon;
         @extend .glyphicon-chevron-left;
+        top: 1px;
         background-color: $gray;
         color: $gray;
-        top: 1px;
         &:before {
           position: relative;
           left: 1px;
@@ -125,17 +125,17 @@
   > li {
     &.date-prev, &.date-next {
       a {
+        @extend .glyphicon;
+        @extend .glyphicon-chevron-left;
+        position: relative;
+        padding: 0;
+        padding: 0;
         width: $font-size-base * 1.25;
         height: $font-size-base * 1.25;
         border-radius: $pager-border-radius;
-        line-height: $font-size-base * 1.25;
-        padding: 0;
-        @extend .glyphicon;
-        @extend .glyphicon-chevron-left;
         background-color: $white;
         color: $white;
-        padding: 0;
-        position: relative;
+        line-height: $font-size-base * 1.25;
         &:before {
           position: absolute;
           left: 2px;
@@ -282,8 +282,9 @@ body {
       a {
         display: inline-block;
         padding: 0;
-        width: 45px;
-        height: 45px;
+        width: 32px;
+        height: 32px;
+        background-size: contain;
         text-indent: -9999em;
         opacity: 0.7;
         &:hover {

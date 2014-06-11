@@ -8806,8 +8806,8 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 
 /* line 52, ../sass/custom/_styles.scss */
 .navbar-inverse .navbar-nav > li > a.active {
-  color: white;
   background-color: #38709e;
+  color: white;
 }
 
 /* line 57, ../sass/custom/_styles.scss */
@@ -8852,17 +8852,17 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 .pagination > li > span, .pagination > li:first-child > a,
 .pagination > li:first-child > span, .pagination > li:last-child > a,
 .pagination > li:last-child > span {
+  padding: 0;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   line-height: 30px;
-  padding: 0;
 }
 /* line 96, ../sass/custom/_styles.scss */
 .pagination > li.prev a, .pagination > li.next a {
+  top: 1px;
   background-color: #788086;
   color: #788086;
-  top: 1px;
 }
 /* line 102, ../sass/custom/_styles.scss */
 .pagination > li.prev a:before, .pagination > li.next a:before {
@@ -8883,15 +8883,15 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 }
 /* line 127, ../sass/custom/_styles.scss */
 .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-next a {
+  position: relative;
+  padding: 0;
+  padding: 0;
   width: 18.75px;
   height: 18.75px;
   border-radius: 50%;
-  line-height: 18.75px;
-  padding: 0;
   background-color: white;
   color: white;
-  padding: 0;
-  position: relative;
+  line-height: 18.75px;
 }
 /* line 139, ../sass/custom/_styles.scss */
 .sidebar .pager > li.date-prev a:before, .sidebar .pager > li.date-next a:before {
@@ -9062,30 +9062,31 @@ body {
 .footer #block-menu-menu-mises-social-icons ul.menu li a {
   display: inline-block;
   padding: 0;
-  width: 45px;
-  height: 45px;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
   text-indent: -9999em;
   opacity: 0.7;
 }
-/* line 289, ../sass/custom/_styles.scss */
+/* line 290, ../sass/custom/_styles.scss */
 .footer #block-menu-menu-mises-social-icons ul.menu li a:hover {
   background-color: transparent;
   opacity: 1;
 }
-/* line 296, ../sass/custom/_styles.scss */
+/* line 297, ../sass/custom/_styles.scss */
 .footer .region-footer-bottom {
   padding-top: 16px;
 }
 
 /* PRIMARY CONTENT BLOCKS */
-/* line 302, ../sass/custom/_styles.scss */
+/* line 303, ../sass/custom/_styles.scss */
 .main-content {
   position: relative;
   padding: 6px 30px 24px;
   border-top: 7px solid #38709e;
   background: white;
 }
-/* line 307, ../sass/custom/_styles.scss */
+/* line 308, ../sass/custom/_styles.scss */
 .main-content:after {
   position: absolute;
   top: -7px;
@@ -9095,30 +9096,30 @@ body {
   height: 77px;
   content: url("../images/shield.png");
 }
-/* line 317, ../sass/custom/_styles.scss */
+/* line 318, ../sass/custom/_styles.scss */
 .front .main-content {
   padding: 6px 24px;
 }
-/* line 321, ../sass/custom/_styles.scss */
+/* line 322, ../sass/custom/_styles.scss */
 .main-content .body-content.normal {
   font-size: 15px;
 }
-/* line 324, ../sass/custom/_styles.scss */
+/* line 325, ../sass/custom/_styles.scss */
 .main-content .body-content.large {
   font-size: 18px;
 }
 
-/* line 330, ../sass/custom/_styles.scss */
+/* line 331, ../sass/custom/_styles.scss */
 #text-resizer .large {
   font-size: 18px;
 }
 
-/* line 337, ../sass/custom/_styles.scss */
+/* line 338, ../sass/custom/_styles.scss */
 .body-content {
   padding-bottom: 16px;
 }
 
-/* line 342, ../sass/custom/_styles.scss */
+/* line 343, ../sass/custom/_styles.scss */
 .content-bottom,
 .bottom-blocks {
   padding-top: 16px;
@@ -9127,17 +9128,17 @@ body {
 /* FONTS AND TYPOGRAPHY 
 * @TODO: CONSIDER SEPARATE STYLESHEET
 */
-/* line 349, ../sass/custom/_styles.scss */
+/* line 350, ../sass/custom/_styles.scss */
 .bold {
   font-weight: 600;
 }
 
-/* line 352, ../sass/custom/_styles.scss */
+/* line 353, ../sass/custom/_styles.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 355, ../sass/custom/_styles.scss */
+/* line 356, ../sass/custom/_styles.scss */
 h1, .h1 {
   color: #00426b;
   text-transform: uppercase;
@@ -9145,69 +9146,69 @@ h1, .h1 {
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 361, ../sass/custom/_styles.scss */
+/* line 362, ../sass/custom/_styles.scss */
 .page-header {
   padding-left: 100px;
   border-bottom: 0 none;
 }
 
-/* line 366, ../sass/custom/_styles.scss */
+/* line 367, ../sass/custom/_styles.scss */
 h2.page-title, .main-content .date-nav-wrapper .date-heading h3 {
   margin: 0 0 16px;
   color: #38709e;
   font-size: 25px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
-/* line 372, ../sass/custom/_styles.scss */
+/* line 373, ../sass/custom/_styles.scss */
 h2.teaser-title {
   color: #00426b;
   font-size: 23px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 379, ../sass/custom/_styles.scss */
+/* line 380, ../sass/custom/_styles.scss */
 h3.author, h4.author {
   margin-top: 0;
   font-size: 14px;
 }
-/* line 383, ../sass/custom/_styles.scss */
+/* line 384, ../sass/custom/_styles.scss */
 h3.sub-heading, h4.sub-heading {
   text-transform: uppercase;
 }
-/* line 386, ../sass/custom/_styles.scss */
+/* line 387, ../sass/custom/_styles.scss */
 h3.sidebar-title, h4.sidebar-title {
   margin-bottom: 5px;
 }
-/* line 389, ../sass/custom/_styles.scss */
+/* line 390, ../sass/custom/_styles.scss */
 h3.primary, h4.primary {
   color: #00426b;
 }
-/* line 392, ../sass/custom/_styles.scss */
+/* line 393, ../sass/custom/_styles.scss */
 h3.secondary, h4.secondary {
   color: #38709e;
 }
-/* line 395, ../sass/custom/_styles.scss */
+/* line 396, ../sass/custom/_styles.scss */
 h3.contrast, h4.contrast {
   color: #729949;
 }
 
-/* line 400, ../sass/custom/_styles.scss */
+/* line 401, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 404, ../sass/custom/_styles.scss */
+/* line 405, ../sass/custom/_styles.scss */
 h5 {
   margin-bottom: 3px;
 }
 
-/* line 407, ../sass/custom/_styles.scss */
+/* line 408, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 413, ../sass/custom/_styles.scss */
+/* line 414, ../sass/custom/_styles.scss */
 .read-more a,
 .more-link a,
 .field-collection-item-field-resources .read-more a {
@@ -9216,12 +9217,12 @@ address {
   font-size: 13px;
 }
 
-/* line 419, ../sass/custom/_styles.scss */
+/* line 420, ../sass/custom/_styles.scss */
 .more-link, .field-collection-item-field-resources .read-more {
   margin: 0 16px;
   line-height: 20px;
 }
-/* line 423, ../sass/custom/_styles.scss */
+/* line 424, ../sass/custom/_styles.scss */
 .more-link span.glyphicon, .field-collection-item-field-resources .read-more span.glyphicon {
   width: 24px;
   height: 24px;
@@ -9229,16 +9230,16 @@ address {
   font-size: 12px;
   line-height: 24px;
 }
-/* line 426, ../sass/custom/_styles.scss */
+/* line 427, ../sass/custom/_styles.scss */
 .more-link a:hover, .field-collection-item-field-resources .read-more a:hover {
   color: #38709e;
 }
-/* line 428, ../sass/custom/_styles.scss */
+/* line 429, ../sass/custom/_styles.scss */
 .more-link a:hover span.glyphicon, .field-collection-item-field-resources .read-more a:hover span.glyphicon {
   background-color: #38709e;
 }
 
-/* line 434, ../sass/custom/_styles.scss */
+/* line 435, ../sass/custom/_styles.scss */
 .author a {
   color: inherit;
 }
