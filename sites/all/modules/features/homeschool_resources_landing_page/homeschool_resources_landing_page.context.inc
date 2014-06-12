@@ -14,7 +14,7 @@ function homeschool_resources_landing_page_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'homeschool';
-  $context->description = '';
+  $context->description = 'Custom blocks for Homeschool Resources landing page';
   $context->tag = 'Landing Pages';
   $context->conditions = array(
     'path' => array(
@@ -48,6 +48,7 @@ function homeschool_resources_landing_page_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Custom blocks for Homeschool Resources landing page');
   t('Landing Pages');
   $export['homeschool'] = $context;
 

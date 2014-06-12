@@ -170,21 +170,26 @@ function footer_about_menu_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-about-the-mises-institute_press-room:<front>
-  $menu_links['menu-about-the-mises-institute_press-room:<front>'] = array(
+  // Exported menu link: menu-about-the-mises-institute_press-room:node/16717
+  $menu_links['menu-about-the-mises-institute_press-room:node/16717'] = array(
     'menu_name' => 'menu-about-the-mises-institute',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'node/16717',
+    'router_path' => 'node/%',
     'link_title' => 'Press Room',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-about-the-mises-institute_press-room:<front>',
+      'identifier' => 'menu-about-the-mises-institute_press-room:node/16717',
+      'menu_icon' => array(
+        'enable' => 0,
+        'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
+        'image_style' => 'menu_icon',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -40,
