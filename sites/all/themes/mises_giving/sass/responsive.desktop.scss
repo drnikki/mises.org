@@ -12,6 +12,37 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 
+.region-header {
+  float: right;
+  margin: 0 10px;
+}
+
+#branding {
+  float: left;
+}
+
+.block-menu-giving {
+  .block-inner {
+    margin-top: 60px;
+    ul.menu {
+      li {
+        display: inline-block;
+        padding: 0 10px;
+        a {
+          color: #FFF;
+          padding: 0;
+          text-transform: uppercase;
+          &.active,
+          &:hover {
+            color: #0d0202;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 .secondary-inner {margin-right: 31%; margin-left: 0;}
 .secondary-left {float: left; width: 69%;}
 .region-secondary-aside {
@@ -27,8 +58,13 @@
 
 #secondary-content-wrapper {
   max-height: 260px;
+  min-height: 140px;
+  .container,
+  .secondary-inner {
+    min-height: 140px;
+  }
   .giving-front & {
-    max-height: 590px;
+    max-height: 100%;
   }
 }
 

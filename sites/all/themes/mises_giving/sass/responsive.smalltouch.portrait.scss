@@ -23,15 +23,27 @@ body {
  *   These are example styles for the menu toggle menu, you can use these in the
  *   relevant responsive stylesheets as required. Modify to suit your design.
  * ========================================================================== */
+#branding {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 380px;
+}
+#logo {
+  margin-bottom: 0;
+}
 .at-mt .at-menu-toggle {
   /* The toggle link */
   h2 {
     margin-bottom: 5px;
     
     a {
-      background: #eee;
-      border: 2px solid #ccc;
-      padding: 2px 10px;
+      @include ir;
+      border: 1px solid #FFF;
+      display: block;
+      height: 14px;
+      margin: 8px 0;
+      padding: 9px 10px;
+      width: 22px;
     }
   }
 
