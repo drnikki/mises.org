@@ -1,8 +1,9 @@
 name = Mises Library Item
 core = 7.x
 package = Content Types
-version = 7.x-1.2
+version = 7.x-1.4
 project = mises_library_item
+dependencies[] = addtocal
 dependencies[] = austrian_school
 dependencies[] = creative_commons
 dependencies[] = ctools
