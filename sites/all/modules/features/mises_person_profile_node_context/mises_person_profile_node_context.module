@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Person Profile Node Context feature.
- */
-
-include_once 'mises_person_profile_node_context.features.inc';

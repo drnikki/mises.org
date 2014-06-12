@@ -1,5 +1,5 @@
 name = Person Profile Views
-description = Defines the Person Profile page's tabbed block views: Major Works and Significant Contributions.
+description = Defines tabbed block views: Major Works and Significant Contributions.
 core = 7.x
 package = Views
 version = 7.x-1.0

@@ -43,6 +43,13 @@ function mises_person_profile_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'author_teaser';
   $handler->display->display_options['row_options']['links'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No major works are noted at this time.';
+  $handler->display->display_options['empty']['area']['format'] = 'simplified';
   /* Relationship: Entity Reference: Referencing entity */
   $handler->display->display_options['relationships']['reverse_field_major_works_node']['id'] = 'reverse_field_major_works_node';
   $handler->display->display_options['relationships']['reverse_field_major_works_node']['table'] = 'node';
@@ -114,7 +121,10 @@ function mises_person_profile_views_views_default_views() {
   $handler->display->display_options['fields']['field_contributions']['table'] = 'field_data_field_contributions';
   $handler->display->display_options['fields']['field_contributions']['field'] = 'field_contributions';
   $handler->display->display_options['fields']['field_contributions']['label'] = '';
+  $handler->display->display_options['fields']['field_contributions']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_contributions']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_contributions']['empty'] = 'No significant contributions are noted at this time.';
+  $handler->display->display_options['fields']['field_contributions']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_contributions']['settings'] = array(
     'conditions' => array(
       0 => array(
