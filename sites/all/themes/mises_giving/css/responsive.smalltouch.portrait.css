@@ -38,10 +38,10 @@ body {
   /* Menu items */
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000336}}
-.at-mt .at-menu-toggle h2 {
-  margin-bottom: 5px;
+.at-mt .at-menu-toggle .block-inner {
+  margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000343}}
 .at-mt .at-menu-toggle h2 a {
   display: block !important;
   text-indent: 100%;
@@ -55,26 +55,37 @@ body {
   border: 1px solid #FFF;
   display: block;
   height: 14px;
-  margin: 8px 0;
+  float: right;
+  margin: 8px 10px;
   padding: 9px 10px;
   width: 22px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000355}}
+.at-mt .at-menu-toggle .menu-toggle {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000360}}
+.at-mt .at-menu-toggle ul.menu li {
+  padding: 1px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000362}}
 .at-mt .at-menu-toggle ul.menu li a {
-  background: #eee;
-  border-bottom: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFF;
+  padding: 5px 10px;
+  text-transform: uppercase;
 }
 
 /**
  * Giving Stories
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000375}}
 .block-giving-stories-block,
 .block-giving-stories-block-1 {
   margin-top: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/responsive\.smalltouch\.portrait\.scss}line{font-family:\0000380}}
 .view-giving-stories .views-row .views-field-nothing {
   padding: 20px 30px;
 }
