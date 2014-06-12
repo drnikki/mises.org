@@ -21,6 +21,19 @@
   float: left;
 }
 
+.title-bar {
+
+  .giving-front & {
+    margin-top: 40px;
+  }
+
+  #page-title {
+    background: $cleargreen;
+    margin: 0 10px;
+    padding: 10px 40px 0;
+  }
+}
+
 .block-menu-giving {
   .block-inner {
     margin-top: 60px;
@@ -51,6 +64,10 @@
 	bottom: 0;
 	left: 0;
 	width: 25%;
+}
+
+#block-views-giving-feature-blocks-block {
+  background: $cleargreen;
 }
 
 /**

@@ -21,6 +21,23 @@
   float: left;
 }
 
+.title-bar {
+
+  .giving-front & {
+    margin-top: 40px;
+  }
+
+  #page-title {
+    background: $cleargreen;
+    margin: 0 10px;
+    padding: 10px 40px 0;
+
+    .giving-front & {
+      padding-top: 10px;
+    }
+  }
+}
+
 .block-menu-giving {
   .block-inner {
     margin-top: 60px;
@@ -77,6 +94,22 @@
     }
     .region-header {
       margin: 0;
+    }
+  }
+}
+
+#block-views-giving-feature-blocks-block {
+  background: $cleargreen;
+}
+
+// Giving Today
+.give-today-block {
+  h3.give {
+    a {
+      span {
+        max-height: 56px;
+        padding-top: 4px;
+      }
     }
   }
 }

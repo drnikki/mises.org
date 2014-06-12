@@ -43,8 +43,10 @@ html {
 }
 
 body {
-  font-family: $sans-serif-small; // Set from _custom.scss font variables
+  color: #3e454b;
+  font-family: $sans-serif-small;
   font-size: 87.5%;
+  line-height: 1.66667;
 }
 
 
@@ -53,33 +55,32 @@ body {
  * ========================================================================== */
 
 h1 {
-  font-size: 40px;
+  font-size: 2.857em;
 }
 
-
 h2 {
-  font-size: 35px;
+  font-size: 2.5em;
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 2.143em;
 }
 
 h4 {
-  font-size: 26px;
+  font-size: 1.857em;
 }
 
 h5 {
-  font-size: 22px;
+  font-size: 1.571em;
 }
 
 h6 {
-  font-size: 20px;
+  font-size: 1.429em;
 }
 
 h1,h2,h3,h4,h5,h6 {
   line-height: 1.2;
-  font-family: 'Crimson Text';
+  font-family: 'Crimson Text', sans-serif;
   font-weight: 600;
   margin: 0 0 0.5em;
 }
@@ -421,21 +422,17 @@ var {
   z-index: 500;
 
   .giving-front & {
-    margin-top: 40px;
     position: static;
   }
 
   #page-title {
-    background: rgba(114,153,73,0.85);
     color: #FFF;
     line-height: 90px;
-    margin: 0 10px;
-    padding: 10px 40px 0;
+    padding: 0;
     text-transform: uppercase;
 
     .giving-front & {
       line-height: 60px;
-      padding-top: 10px;
       text-align: center;
     }
   }
@@ -2071,7 +2068,7 @@ tr.error {
 }
 #block-views-giving-feature-blocks-block {
   @include clearfix;
-  background: none repeat scroll 0% 0% rgba(114, 153, 73, 0.85);
+  background: $green;
   color: #FFF;
   margin: 0px 10px;
   padding: 5px 0 15px;
@@ -2165,9 +2162,8 @@ tr.error {
         @include transition(all 0.5s);
         background: url(images/giving-arrow-green.png) right 12px no-repeat;
         display: inline-block;
-        max-height: 56px;
+        max-height: 60px;
         padding-right: 46px;
-        padding-top: 4px;
       }
     }
   }
@@ -2255,7 +2251,7 @@ tr.error {
     }
   }
   .views-row {
-    margin: 0 auto 20px;
+    margin: 0 auto 10px;
     max-width: 350px;
     .views-field-field-image {
       a {

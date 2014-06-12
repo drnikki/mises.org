@@ -17,6 +17,18 @@ body {
   font-size: 100%;
 }
 
+h1 {
+  font-size: 2.25em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h6 {
+  font-size: 1.25em;
+}
+
 /* =============================================================================
  *   Mobile Menu Toggle
  *   See your theme settings extensions for how to enable the menu toggle.
@@ -27,6 +39,12 @@ body {
   margin: 0 auto;
   max-width: 100%;
   width: 380px;
+}
+.title-bar {
+  #page-title {
+    background: $blue;
+    margin: 0;
+  }
 }
 #logo {
   margin-bottom: 0;
@@ -42,28 +60,94 @@ body {
 
     a {
       @include ir;
-      border: 1px solid #FFF;
+      background: #5C8036;
       display: block;
       height: 14px;
       float: right;
-      margin: 8px 10px;
-      padding: 9px 10px;
+      margin: 10px;
+      padding: 10px;
+      position: relative;
       width: 22px;
+
+      &:after {
+        color: #FFF;
+        content: "☰";
+        display: block;
+        font-family: Arial, sans-serif;
+        font-size: 22px;
+        line-height: 34px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        text-indent: 0;
+      }
     }
   }
 
   .menu-toggle {
-    clear: both;
+    margin: 0 62px 9px 10px;
+    padding-top: 9px;
   }
 
   /* Menu items */
   ul.menu li {
     padding: 1px 0;
     a {
-      background: rgba(255,255,255,0.2);
+      background: #5C8036;
       color: #FFF;
-      padding: 5px 10px;
+      line-height: 34px;
+      padding: 0 10px;
       text-transform: uppercase;
+    }
+  }
+}
+
+#secondary-content-wrapper .block-inner {
+  margin-left: 0;
+  margin-right: 0;
+}
+#block-system-main {
+  margin-bottom: 0;
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+.region-sidebar-first,
+.region-sidebar-second {
+  background: $blue;
+  margin-top: 0;
+  padding: 20px 0 0;
+  .node {
+    margin-bottom: 0;
+    .file-video {
+      line-height: 0;
+    }
+  }
+}
+#block-views-giving-feature-blocks-block {
+  margin-left: 0;
+  margin-right: 0;
+
+  .views-row {
+    .views-field-nothing {
+      padding: 5px 10px 0px;
+      .body {
+        display: none;
+      }
+    }
+  }
+}
+
+/**
+ * Giving Stories
+ */
+.view-giving-stories {
+  .views-row {
+    .views-field-nothing {
+      padding: 20px;
     }
   }
 }
