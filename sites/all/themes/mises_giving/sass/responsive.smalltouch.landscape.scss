@@ -11,7 +11,7 @@
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
-
+ 
 /* Increase the body font size on small touch devices */
 body {
   font-size: 100%;
@@ -23,6 +23,12 @@ body {
  *   These are example styles for the menu toggle menu, you can use these in the
  *   relevant responsive stylesheets as required. Modify to suit your design.
  * ========================================================================== */
+#branding {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 380px;
+}
+
 .at-mt .at-menu-toggle {
   /* The toggle link */
   h2 {

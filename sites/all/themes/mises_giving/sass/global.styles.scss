@@ -161,6 +161,10 @@ var {
   font-family: $mono;
 }
 
+.contextual-links-trigger {
+  line-height: 1.5;
+}
+
 
 /* =============================================================================
  *   Wrappers
@@ -251,7 +255,7 @@ var {
 #header-wrapper {
   @include box-shadow(#000, 0, 0, 4px, 0);
 
-  background: none repeat scroll 0% 0% #729949;
+  background: #729949 url(images/menubar-bg.png) 0 0 repeat-x;
   border-bottom: 7px solid #5C8036;
   position: relative;
   z-index: 500;
@@ -308,6 +312,7 @@ var {
  * Wraps the main content column
  */
 #content-wrapper {
+  padding-top: 20px;
   .container {}
 }
 
@@ -337,9 +342,7 @@ var {
 /*
  * Wraps all the branding elements, logo, name and slogan
  */
-#branding {
-  float: left;
-}
+#branding {}
 
 
 /*
@@ -418,21 +421,21 @@ var {
   z-index: 500;
 
   .giving-front & {
-    margin-top: 290px;
+    margin-top: 40px;
     position: static;
   }
 
   #page-title {
     background: rgba(114,153,73,0.85);
     color: #FFF;
-    line-height: 100px;
+    line-height: 90px;
     margin: 0 10px;
-    padding: 0 40px;
+    padding: 10px 40px 0;
     text-transform: uppercase;
 
     .giving-front & {
-      line-height: 65px;
-      padding-top: 5px;
+      line-height: 60px;
+      padding-top: 10px;
       text-align: center;
     }
   }
@@ -545,10 +548,7 @@ ul.links {
 /*
  * Header region, embedded in the #header
  */
-.region-header {
-  float: right;
-  margin: 0 10px;
-}
+.region-header {}
 
 
 /*
@@ -669,28 +669,6 @@ a {
 
   .block {
     margin-bottom: 0;
-  }
-}
-
-.block-menu-giving {
-  .block-inner {
-    margin-top: 60px;
-    ul.menu {
-      li {
-        display: inline-block;
-        padding: 0 10px;
-        a {
-          color: #FFF;
-          padding: 0;
-          text-transform: uppercase;
-          &.active,
-          &:hover {
-            color: #0d0202;
-            text-decoration: none;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -2089,36 +2067,37 @@ tr.error {
 
 // Header
 .giving-front #block-fieldblock-node-giving-page-default-field-header-image {
-  margin-top: -330px;
-  margin-bottom: 70px !important;
+  line-height: 0;
 }
 #block-views-giving-feature-blocks-block {
   @include clearfix;
   background: none repeat scroll 0% 0% rgba(114, 153, 73, 0.85);
   color: #FFF;
   margin: 0px 10px;
-  padding: 40px 0 15px;
+  padding: 5px 0 15px;
   text-align: center;
 
   .views-row {
-    @include border-box;
     width: 33.3%;
     float: left;
-    padding: 0px 20px;
 
-    &.views-row-2 {
+    .views-field-nothing {
+      padding: 5px 20px 0;
+    }
+
+    &.views-row-2 .views-field-nothing {
       border-left: #FFF 1px solid;
       border-right: #FFF 1px solid;
     }
 
     .views-field-field-image {
       display: inline-block;
-      margin-top: -50px;
-      margin-bottom: 3px;
+      margin-top: -35px;
       position: relative;
 
       a {
         @include border-radius(50%);
+        @include box-shadow(rgba(0,0,0,0.25), 0, -1px, 5px, 0);
         background: none repeat scroll 0% 0% #FFF;
         display: block;
         height: 54px;
@@ -2158,8 +2137,9 @@ tr.error {
 // Giving Today
 .give-today-block {
   margin-bottom: 0;
+  .giving-inner &,
   .giving-impact & {
-    margin-top: -60px;
+    margin-top: -80px;
   }
   h3.give {
     background: #FFF;
