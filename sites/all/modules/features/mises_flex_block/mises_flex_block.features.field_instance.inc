@@ -95,6 +95,12 @@ function mises_flex_block_field_default_field_instances() {
         'type' => 'text_plain',
         'weight' => 0,
       ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
+      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
@@ -138,7 +144,7 @@ function mises_flex_block_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => -4,
     ),
   );
 
@@ -195,6 +201,12 @@ function mises_flex_block_field_default_field_instances() {
         'type' => 'image',
         'weight' => 2,
       ),
+      'video_block_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image',
@@ -224,7 +236,7 @@ function mises_flex_block_field_default_field_instances() {
         'browser_plugins' => array(),
       ),
       'type' => 'media_generic',
-      'weight' => 3,
+      'weight' => -3,
     ),
   );
 
@@ -262,6 +274,12 @@ function mises_flex_block_field_default_field_instances() {
         'type' => 'link_plain',
         'weight' => 4,
       ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
@@ -293,7 +311,68 @@ function mises_flex_block_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 4,
+      'weight' => -2,
+    ),
+  );
+
+  // Exported field_instance: 'node-flex_block-field_media_collection'
+  $field_instances['node-flex_block-field_media_collection'] = array(
+    'bundle' => 'flex_block',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'conditions' => array(),
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 7,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'wide_player',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_media_collection',
+    'label' => 'Media',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 0,
     ),
   );
 
@@ -324,6 +403,12 @@ function mises_flex_block_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 13,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -370,6 +455,12 @@ function mises_flex_block_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 12,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -423,6 +514,15 @@ function mises_flex_block_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'video_block_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 29,
+      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
@@ -466,7 +566,7 @@ function mises_flex_block_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => -1,
     ),
   );
 
@@ -505,6 +605,12 @@ lowest weight first.',
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
@@ -529,6 +635,7 @@ lowest weight first.',
   t('Enter a title here if this Flex Block has a title above the image. (Most Flex Blocks have no title or should enter the title in the Teaser Text field.)');
   t('Image');
   t('Image Link');
+  t('Media');
   t('Region');
   t('Section');
   t('Select the Weight for this Flex Block.<br />

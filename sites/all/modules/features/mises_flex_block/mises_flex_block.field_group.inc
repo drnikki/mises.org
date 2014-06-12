@@ -23,11 +23,12 @@ function mises_flex_block_field_group_info() {
     'label' => 'Basic Information',
     'weight' => '0',
     'children' => array(
-      0 => 'field_teaser_text',
+      0 => 'field_display_title',
       1 => 'field_image',
       2 => 'field_image_link',
-      3 => 'field_display_title',
-      4 => 'title',
+      3 => 'field_teaser_text',
+      4 => 'field_media_collection',
+      5 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
