@@ -28,6 +28,7 @@ function mises_theme_strongarm() {
     'main-menu' => 'main-menu',
     'management' => 'management',
     'navigation' => 'navigation',
+    'menu-press-room' => 'menu-press-room',
     'menu-mises-social-icons' => 'menu-mises-social-icons',
     'menu-topics' => 'menu-topics',
     'user-menu' => 'user-menu',

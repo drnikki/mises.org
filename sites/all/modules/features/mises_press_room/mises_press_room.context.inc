@@ -38,6 +38,12 @@ function mises_press_room_context_default_contexts() {
           'region' => 'bottom_right',
           'weight' => '-10',
         ),
+        'menu-menu-press-room' => array(
+          'module' => 'menu',
+          'delta' => 'menu-press-room',
+          'region' => 'sidebar_second_top',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
