@@ -1110,7 +1110,7 @@ function display_suite_shared_ds_field_settings_info() {
         'ft' => array(
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => '[node:field-library-item-tree:0] [node:field-library-item-tree:0:machine-name]',
+          'ow-cl' => '[node:field-library-item-tree:0]',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -1608,18 +1608,33 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'library_item';
   $ds_fieldsetting->view_mode = 'video_block_teaser';
   $ds_fieldsetting->settings = array(
-    'contextual_block_title_with_icon' => array(
+    'dynamic_field_2' => array(
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:9:{s:5:"label";s:6:"hidden";s:9:"formatter";s:29:"taxonomy_term_reference_plain";s:11:"delta_limit";s:1:"1";s:12:"delta_offset";s:1:"0";s:14:"delta_reversed";i:0;s:18:"formatter_settings";a:0:{}s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";}s:4:"type";s:12:"entity_field";s:7:"subtype";s:28:"node:field_library_item_tree";}',
+        'load_terms' => 1,
         'ft' => array(
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'panel-heading',
+          'ow-cl' => '[node:field-library-item-tree:0]',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'panel-heading',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'panel-title',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
         ),
         'conditions' => array(),
       ),
@@ -3772,20 +3787,20 @@ function display_suite_shared_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_media_collection',
         1 => 'title',
-        2 => 'field_teaser_text',
-        3 => 'contextual_block_title_with_icon',
-        4 => 'group_panel_body',
-        5 => 'body',
+        2 => 'dynamic_field_2',
+        3 => 'field_teaser_text',
+        4 => 'body',
+        5 => 'group_panel_body',
         6 => 'field_library_item_tree',
       ),
     ),
     'fields' => array(
       'field_media_collection' => 'ds_content',
       'title' => 'ds_content',
+      'dynamic_field_2' => 'ds_content',
       'field_teaser_text' => 'ds_content',
-      'contextual_block_title_with_icon' => 'ds_content',
-      'group_panel_body' => 'ds_content',
       'body' => 'ds_content',
+      'group_panel_body' => 'ds_content',
       'field_library_item_tree' => 'ds_content',
     ),
     'limit' => array(
