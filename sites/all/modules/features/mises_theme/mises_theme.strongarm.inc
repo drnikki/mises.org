@@ -17,7 +17,6 @@ function mises_theme_strongarm() {
   $strongarm->value = array(
     'menu-about-the-mises-institute' => 'menu-about-the-mises-institute',
     'menu-austrian-economics-sub-menu' => 'menu-austrian-economics-sub-menu',
-    'menu-austrian-school' => 'menu-austrian-school',
     'menu-browse-library' => 'menu-browse-library',
     'devel' => 'devel',
     'menu-event-menu' => 'menu-event-menu',
@@ -30,8 +29,9 @@ function mises_theme_strongarm() {
     'navigation' => 'navigation',
     'menu-press-room' => 'menu-press-room',
     'menu-mises-social-icons' => 'menu-mises-social-icons',
-    'menu-topics' => 'menu-topics',
     'user-menu' => 'user-menu',
+    'menu-austrian-school' => 0,
+    'menu-topics' => 0,
   );
   $export['features_admin_menu_links_menus'] = $strongarm;
 

@@ -26,17 +26,17 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu-menu-topics' => array(
-          'module' => 'menu',
-          'delta' => 'menu-topics',
+        'views-menu_footer_blocks-block' => array(
+          'module' => 'views',
+          'delta' => 'menu_footer_blocks-block',
           'region' => 'menu_footer_one',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
-        'menu-menu-austrian-school' => array(
-          'module' => 'menu',
-          'delta' => 'menu-austrian-school',
+        'views-menu_footer_blocks-block_1' => array(
+          'module' => 'views',
+          'delta' => 'menu_footer_blocks-block_1',
           'region' => 'menu_footer_two',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
       ),
     ),
