@@ -160,12 +160,12 @@ function mises_press_room_menu_default_menu_links() {
     'weight' => -45,
     'customized' => 1,
   );
-  // Exported menu link: menu-press-room_request-a-speaker:<front>
-  $menu_links['menu-press-room_request-a-speaker:<front>'] = array(
+  // Exported menu link: menu-press-room_request-a-speaker--media-inquiry:eform/submit/contact-us
+  $menu_links['menu-press-room_request-a-speaker--media-inquiry:eform/submit/contact-us'] = array(
     'menu_name' => 'menu-press-room',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Request a Speaker',
+    'link_path' => 'eform/submit/contact-us',
+    'router_path' => 'eform/submit/%',
+    'link_title' => 'Request a Speaker / Media Inquiry',
     'options' => array(
       'attributes' => array(
         'title' => '',
@@ -175,11 +175,11 @@ function mises_press_room_menu_default_menu_links() {
         'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
         'image_style' => 'menu_icon',
       ),
-      'identifier' => 'menu-press-room_request-a-speaker:<front>',
+      'identifier' => 'menu-press-room_request-a-speaker--media-inquiry:eform/submit/contact-us',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -44,
@@ -193,7 +193,7 @@ function mises_press_room_menu_default_menu_links() {
   t('Mises View');
   t('Past Interviews');
   t('Pre-recorded Topics');
-  t('Request a Speaker');
+  t('Request a Speaker / Media Inquiry');
 
 
   return $menu_links;
