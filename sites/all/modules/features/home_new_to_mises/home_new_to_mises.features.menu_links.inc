@@ -36,23 +36,23 @@ function home_new_to_mises_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:node/16704
-  $menu_links['menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:node/16704'] = array(
+  // Exported menu link: menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:node/16717
+  $menu_links['menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:node/16717'] = array(
     'menu_name' => 'menu-new-to-mises',
-    'link_path' => 'node/16704',
+    'link_path' => 'node/16717',
     'router_path' => 'node/%',
     'link_title' => '<span class="glyphicon glyphicon-chevron-right"></span> <span>I am</span> a Journalist',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:node/16704',
       'html' => 1,
       'menu_icon' => array(
         'enable' => 0,
         'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
         'image_style' => 'menu_icon',
       ),
+      'identifier' => 'menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-a-journalist:node/16717',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -109,22 +109,27 @@ function home_new_to_mises_menu_default_menu_links() {
     'weight' => -46,
     'customized' => 1,
   );
-  // Exported menu link: menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-new-to-austrian-economics:<front>
-  $menu_links['menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-new-to-austrian-economics:<front>'] = array(
+  // Exported menu link: menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-new-to-austrian-economics:node/819
+  $menu_links['menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-new-to-austrian-economics:node/819'] = array(
     'menu_name' => 'menu-new-to-mises',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'node/819',
+    'router_path' => 'node/%',
     'link_title' => '<span class="glyphicon glyphicon-chevron-right"></span> <span>I am</span> new to Austrian Economics',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
       'html' => 1,
-      'identifier' => 'menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-new-to-austrian-economics:<front>',
+      'identifier' => 'menu-new-to-mises_span-classglyphicon-glyphicon-chevron-rightspan-spani-amspan-new-to-austrian-economics:node/819',
+      'menu_icon' => array(
+        'enable' => 0,
+        'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
+        'image_style' => 'menu_icon',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -50,
