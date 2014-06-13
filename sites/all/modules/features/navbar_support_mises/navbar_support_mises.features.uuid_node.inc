@@ -82,6 +82,7 @@ function navbar_support_mises_uuid_features_default_content() {
   ),
   'field_teaser_text' => array(),
   'field_weight' => array(),
+  'field_media_collection' => array(),
   'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(

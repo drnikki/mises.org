@@ -5,6 +5,7 @@ package = Theme
 version = 7.x-1.0
 project = landing_page_daily
 dependencies[] = context
+dependencies[] = mises_static_page
 dependencies[] = top_bar_ads
 dependencies[] = views
 __drupal_alter_by_ref[][node][flex_block] = flex_block

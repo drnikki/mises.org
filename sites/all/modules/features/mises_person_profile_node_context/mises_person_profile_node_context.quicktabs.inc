@@ -40,7 +40,6 @@ function mises_person_profile_node_context_quicktabs_default_quicktabs() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('');
   t('Major Works');
   t('Significant Contributions');
 

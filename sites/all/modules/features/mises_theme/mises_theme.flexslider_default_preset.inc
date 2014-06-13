@@ -37,7 +37,7 @@ function mises_theme_flexslider_default_presets() {
     'controlsContainer' => '.flex-navigation',
     'sync' => '',
     'asNavFor' => '',
-    'itemWidth' => '0',
+    'itemWidth' => '240',
     'itemMargin' => '0',
     'minItems' => '0',
     'maxItems' => '0',

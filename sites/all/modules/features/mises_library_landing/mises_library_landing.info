@@ -12,6 +12,7 @@ dependencies[] = features
 dependencies[] = menu
 dependencies[] = mises_landing_page
 dependencies[] = mises_popular_content
+dependencies[] = mises_static_page
 dependencies[] = top_bar_ads
 dependencies[] = uuid_features
 dependencies[] = views
