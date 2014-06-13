@@ -205,7 +205,7 @@ function mises_events_field_default_field_instances() {
           'summary_handler' => 'full',
           'trim_length' => 240,
           'trim_options' => array(
-            'text' => 0,
+            'text' => 'text',
           ),
           'trim_suffix' => '...',
           'trim_type' => 'chars',

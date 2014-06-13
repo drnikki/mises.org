@@ -550,6 +550,11 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|course|simple_teaser'] = $ds_fieldsetting;
 
@@ -822,6 +827,11 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-def-at' => FALSE,
         ),
         'conditions' => array(),
+      ),
+    ),
+    'field_description' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
     'field_event_date' => array(
