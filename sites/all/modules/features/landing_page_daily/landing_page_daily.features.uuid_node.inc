@@ -72,6 +72,7 @@ For information on submitting articles for publication click here.',
       ),
     ),
   ),
+  'field_media_collection' => array(),
   'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(

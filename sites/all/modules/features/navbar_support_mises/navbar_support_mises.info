@@ -6,6 +6,7 @@ project = navbar_support_mises
 dependencies[] = fe_block
 dependencies[] = flex_block_views
 dependencies[] = mises_flex_block
+dependencies[] = mises_static_page
 dependencies[] = strongarm
 dependencies[] = uuid_features
 __drupal_alter_by_ref[][node][flex_block] = flex_block

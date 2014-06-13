@@ -8,6 +8,7 @@ dependencies[] = context
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = mises_flex_block
+dependencies[] = mises_static_page
 dependencies[] = search
 dependencies[] = strongarm
 dependencies[] = top_bar_ads

@@ -30,7 +30,7 @@ function mises_person_profile_node_info() {
       'description' => '',
       'has_title' => '1',
       'title_label' => t('Full name'),
-      'help' => '',
+      'help' => t('Enter complete name in Full Name field. First Name and Last Name fields are used in searches and filters, so both fields are also required.'),
     ),
   );
   return $items;
