@@ -81,7 +81,7 @@ function mises_course_field_default_field_instances() {
           'summary_handler' => 'trim',
           'trim_length' => 120,
           'trim_options' => array(
-            'text' => 0,
+            'text' => 'text',
           ),
           'trim_suffix' => '...',
           'trim_type' => 'chars',
