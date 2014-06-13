@@ -305,14 +305,38 @@ body {
   padding: $padding-base-vertical $grid-gutter-width *1.5 $padding-large-horizontal * 1.5;
   border-top: 7px solid $brand-secondary;
   background: $white;
-  &:after {
+  .shield {
     position: absolute;
     top: -7px;
     left: 33px;
     display: block;
     width: 66px;
-    height: 77px;
-    content: url('../images/shield.png');
+    height: 74px;
+    background-image: url('../images/icons/shield-bg.png');
+    .icon {
+      @include icon-block(55px,6px,6px);
+      @include icon-image('../images/icons/icon-daily.png');
+      // Daily is default icon, custom shield icons based on path
+      body.section-press-room & {
+        @include icon-image('../images/icons/icon-press.png');
+      }
+      body.section-events & {
+        @include icon-image('../images/icons/icon-event.png');
+      }
+      body.section-blog & {
+        @include icon-image('../images/icons/icon-blog.png');
+      }
+      body.section-books & {
+        @include icon-image('../images/icons/icon-books.png');
+      }
+      body.section-courses & {
+        @include icon-image('../images/icons/icon-online.png');
+      }
+      body.section-jobs &,
+      body.section-profile & {
+        @include icon-image('../images/icons/icon-audience.png');
+      }
+    }
   }
   // Add customizations for specific pages here
   .front & {
@@ -327,6 +351,7 @@ body {
     }
   }
 }
+
 #text-resizer {
   .large {
     font-size: $font-size-large;

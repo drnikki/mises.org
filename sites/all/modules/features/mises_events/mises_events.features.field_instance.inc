@@ -31,7 +31,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -44,7 +44,7 @@ function mises_events_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_audience',
     'label' => 'Audience',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -80,10 +80,14 @@ function mises_events_field_default_field_instances() {
         'weight' => 10,
       ),
       'full' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 34,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 0,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -135,7 +139,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 39,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -189,7 +193,7 @@ function mises_events_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -201,7 +205,7 @@ function mises_events_field_default_field_instances() {
           'summary_handler' => 'full',
           'trim_length' => 240,
           'trim_options' => array(
-            'text' => 0,
+            'text' => 'text',
           ),
           'trim_suffix' => '...',
           'trim_type' => 'chars',
@@ -288,11 +292,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'addtocal',
         'settings' => array(
-          'conditions' => array(
-            0 => array(
-              'condition' => '',
-            ),
-          ),
+          'conditions' => array(),
           'description' => array(
             'field' => 'tokenize output',
             'tokenized' => '[node:field_description]',
@@ -465,7 +465,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -516,7 +516,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -646,7 +646,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -659,7 +659,7 @@ function mises_events_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_level',
     'label' => 'Level',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -701,7 +701,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 33,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -756,7 +756,7 @@ function mises_events_field_default_field_instances() {
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -806,7 +806,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -866,7 +866,7 @@ function mises_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -933,7 +933,7 @@ function mises_events_field_default_field_instances() {
           ),
         ),
         'type' => 'link_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1004,7 +1004,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1055,7 +1055,7 @@ Select "No registration or past event" to hide the registration embed or link fi
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',

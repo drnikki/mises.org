@@ -27,6 +27,12 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 8,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -72,6 +78,16 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -119,6 +135,16 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 1,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -158,6 +184,15 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'text_default',
         'weight' => 13,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -236,6 +271,15 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -313,6 +357,16 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'media',
         'weight' => 10,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 7,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -373,6 +427,18 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'flexslider_fields',
+        'settings' => array(
+          'caption' => 0,
+          'conditions' => array(),
+          'image_style' => 'slideshow',
+          'optionset' => 'node_slideshow',
+        ),
+        'type' => 'flexslider',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -441,6 +507,16 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'media',
         'weight' => 12,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 9,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -502,6 +578,12 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 7,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -546,6 +628,16 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -606,6 +698,16 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -668,6 +770,16 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 5,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 7,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -712,6 +824,16 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'wide_player',
+        ),
+        'type' => 'media',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',

@@ -61,6 +61,7 @@ function mises_library_landing_uuid_features_default_content() {
       ),
     ),
   ),
+  'field_media_collection' => array(),
   'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(

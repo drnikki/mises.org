@@ -24,7 +24,7 @@ function mises_person_profile_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_first_name',
-      1 => 'title',
+      1 => 'field_last_name',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

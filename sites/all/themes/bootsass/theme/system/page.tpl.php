@@ -182,23 +182,27 @@
           <?php if (!empty($action_links)): ?>
             <ul class="action-links"><?php print render($action_links); ?></ul>
           <?php endif; ?>
+
           <?php print render($page['content']); ?>
-		  <?php if (!empty($page['bottom_left']) || !empty($page['bottom_right'])): ?>
-		    <div class="bottom-blocks">
-	        <div class="row">
-	          <?php if (!empty($page['bottom_left'])): ?>
-	            <div class="col-xs-6">
-	              <?php print render($page['bottom_left']); ?>
-	            </div>
-	          <?php endif; ?>
-	          <?php if (!empty($page['bottom_right'])): ?>
-	            <div class="col-xs-6">
-	              <?php print render($page['bottom_right']); ?>
-	            </div>
-	          <?php endif; ?>
-	        </div>
-		    </div>
-		  <?php endif; ?>
+
+    		  <?php if (!empty($page['bottom_left']) || !empty($page['bottom_right'])): ?>
+    		    <div class="bottom-blocks">
+    	        <div class="row">
+    	          <?php if (!empty($page['bottom_left'])): ?>
+    	            <div class="col-xs-6">
+    	              <?php print render($page['bottom_left']); ?>
+    	            </div>
+    	          <?php endif; ?>
+    	          <?php if (!empty($page['bottom_right'])): ?>
+    	            <div class="col-xs-6">
+    	              <?php print render($page['bottom_right']); ?>
+    	            </div>
+    	          <?php endif; ?>
+    	        </div>
+    		    </div>
+    		  <?php endif; ?>
+          
+          <div class="shield"><div class="icon"></div></div>
 
         </div>
       </section>

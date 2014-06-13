@@ -103,5 +103,60 @@ function mises_book_digital_text_field_group_info() {
   );
   $export['group_book_digi_text_tags|node|book_digital_text|form'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_image|node|book_digital_text|full';
+  $field_group->group_name = 'group_image';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'book_digital_text';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Slideshow Wrapper',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_image',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Slideshow Wrapper',
+      'instance_settings' => array(
+        'classes' => 'image pull-left border-secondary',
+        'element' => 'div',
+        'attributes' => 'id="slideshow"',
+      ),
+    ),
+  );
+  $export['group_image|node|book_digital_text|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|book_digital_text|full';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'book_digital_text';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Tags',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_austrian_school',
+      1 => 'field_topics',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Tags',
+      'instance_settings' => array(
+        'classes' => 'tags',
+        'element' => 'p',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_tags|node|book_digital_text|full'] = $field_group;
+
   return $export;
 }

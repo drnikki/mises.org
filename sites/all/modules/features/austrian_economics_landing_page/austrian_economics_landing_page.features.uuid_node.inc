@@ -14,7 +14,7 @@ function austrian_economics_landing_page_uuid_features_default_content() {
   'uid' => 18,
   'title' => 'Austrian Economics',
   'log' => '',
-  'status' => 0,
+  'status' => 1,
   'comment' => 0,
   'promote' => 0,
   'sticky' => 0,
@@ -26,7 +26,7 @@ function austrian_economics_landing_page_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'c58b8a21-6cfa-4e4d-b32f-a2147ad2f5b4',
-  'revision_uid' => 0,
+  'revision_uid' => 18,
   'field_banner_image' => array(
     'und' => array(
       0 => array(

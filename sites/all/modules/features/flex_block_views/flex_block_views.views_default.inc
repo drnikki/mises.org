@@ -815,6 +815,72 @@ To find a specific block, use the filters to narrow the list of blocks. You can 
   $handler->display->display_options['filters']['field_section_value']['value'] = array(
     'library' => 'library',
   );
+
+  /* Display: Content Btm Left Press Room */
+  $handler = $view->new_display('block', 'Content Btm Left Press Room', 'block_16');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'bottom_left' => 'bottom_left',
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'press' => 'press',
+  );
+
+  /* Display: Content Btm Right Press Room */
+  $handler = $view->new_display('block', 'Content Btm Right Press Room', 'block_17');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'bottom_right' => 'bottom_right',
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'press' => 'press',
+  );
   $export['flex_blocks'] = $view;
 
   return $export;

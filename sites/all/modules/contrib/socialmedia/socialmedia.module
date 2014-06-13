@@ -391,7 +391,7 @@ function _socialmedia_widgets_set_error($element, $msg, $status = 'warning') {
       widgets_set_error($element['name'], $msg);
     }
     else {
-      widgets_set_error($element);
+      widgets_set_error($element['name']);
     }
   }
 }

@@ -77,6 +77,7 @@ Auburn, Alabama 36832-4501</address>
       ),
     ),
   ),
+  'field_media_collection' => array(),
   'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
@@ -184,6 +185,7 @@ Auburn, Alabama 36832-4501</address>
     ),
   ),
   'field_weight' => array(),
+  'field_media_collection' => array(),
   'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(

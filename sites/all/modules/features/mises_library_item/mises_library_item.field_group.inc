@@ -143,7 +143,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_mises_published_date',
       1 => 'field_author_1',
@@ -170,7 +170,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'field_bibliography_footnote',
       1 => 'field_citation',
@@ -284,7 +284,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '10',
+    'weight' => '33',
     'children' => array(
       0 => 'field_copyright_info',
       1 => 'print_link',
@@ -333,6 +333,62 @@ function mises_library_item_field_group_info() {
     ),
   );
   $export['group_tagging|node|library_item|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|library_item|full';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Tags',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_topics',
+      1 => 'field_austrian_school',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Tags',
+      'instance_settings' => array(
+        'classes' => 'tags',
+        'element' => 'p',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_tags|node|library_item|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|library_item|teaser';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Tags',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_topics',
+      1 => 'field_austrian_school',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Tags',
+      'instance_settings' => array(
+        'classes' => 'tags',
+        'element' => 'p',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_tags|node|library_item|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

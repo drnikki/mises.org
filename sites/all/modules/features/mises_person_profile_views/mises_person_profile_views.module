@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Person Profile Views feature.
+ */
+
+include_once 'mises_person_profile_views.features.inc';
