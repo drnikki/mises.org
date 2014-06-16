@@ -1,0 +1,12 @@
+name = Landing Page Views
+description = Views in support of multiple landing pages
+core = 7.x
+package = Landing Pages
+version = 7.x-1.0
+project = landing_page_views
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = job_postings
+features[views_view][] = profile_blocks
+features_exclude[dependencies][ctools] = ctools
