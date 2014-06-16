@@ -368,6 +368,24 @@ body {
 .bottom-blocks {
   padding-top: $padding-large-horizontal;
 }
+.node-unpublished.view-mode-full {
+  background: #ffc0c0;
+  &:before {
+    position: absolute;
+    width: 100%;
+    color: $white;
+    content: "UNPUBLISHED";
+    text-align: center;
+    font-size: 6em;
+    opacity: 0.5;
+  }
+}
+/*
+* IMG
+*/
+.border-gray img {
+  border: 3px solid $gray-lighter;
+}
 
 /* FONTS AND TYPOGRAPHY 
 * @TODO: CONSIDER SEPARATE STYLESHEET

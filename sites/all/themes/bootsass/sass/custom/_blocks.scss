@@ -13,6 +13,9 @@
     @include icon-block(61px,10px,-5px);
     @include icon-color($brand-contrast);
     @include icon-border();
+    .mises-daily &, .Mises-Daily &, .Mises.Daily & {
+      @include icon-image('../images/icons/icon-daily.png');
+    }
     .academy & {
       @include icon-image('../images/icons/icon-academy.png');
     }
@@ -27,9 +30,6 @@
     }
     .books &, .Books & {
       @include icon-image('../images/icons/icon-books.png');
-    }
-    .mises-daily &, .Mises-Daily &, .Mises.Daily & {
-      @include icon-image('../images/icons/icon-daily.png');
     }
     .event & {
       @include icon-image('../images/icons/icon-event.png');
