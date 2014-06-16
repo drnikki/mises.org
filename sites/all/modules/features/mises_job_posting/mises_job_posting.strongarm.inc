@@ -99,12 +99,27 @@ function mises_job_posting_strongarm() {
         'custom_settings' => FALSE,
       ),
       'simple_teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'author_full_name' => array(
         'custom_settings' => FALSE,
       ),
       'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'author_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_teaser_term' => array(
+        'custom_settings' => FALSE,
+      ),
+      'single_term' => array(
+        'custom_settings' => FALSE,
+      ),
+      'video_block_teaser' => array(
         'custom_settings' => FALSE,
       ),
     ),

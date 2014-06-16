@@ -902,67 +902,6 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|job_posting_|full';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'job_posting_';
-  $ds_fieldsetting->view_mode = 'full';
-  $ds_fieldsetting->settings = array(
-    'custom_breadcrumb' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'title' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '0',
-        'wrapper' => 'h2',
-        'class' => 'page-title',
-        'ft' => array(),
-        'conditions' => array(),
-      ),
-    ),
-  );
-  $export['node|job_posting_|full'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|job_posting_|teaser';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'job_posting_';
-  $ds_fieldsetting->view_mode = 'teaser';
-  $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '1',
-        'wrapper' => 'h2',
-        'class' => 'teaser-title',
-        'ft' => array(),
-        'conditions' => array(),
-      ),
-    ),
-    'node_link' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link text' => 'Read more',
-        'wrapper' => 'p',
-        'class' => 'read-more',
-        'ft' => array(),
-        'conditions' => array(),
-      ),
-    ),
-  );
-  $export['node|job_posting_|teaser'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|landing_page|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'landing_page';
@@ -1931,33 +1870,29 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'person_profile';
   $ds_fieldsetting->view_mode = 'sidebar_author';
   $ds_fieldsetting->settings = array(
-    'author_full_name' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'h4',
-          'ow-cl' => 'author',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-        'conditions' => array(),
-      ),
-    ),
     'contextual_block_title_with_icon' => array(
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => 'author',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
     ),
     'field_image_collection' => array(
       'formatter_settings' => array(
         'ft' => array(
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'img-responsive',
+          'ow-cl' => 'img-responsive border-gray',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -1974,22 +1909,6 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'person_profile';
   $ds_fieldsetting->view_mode = 'sidebar_teaser';
   $ds_fieldsetting->settings = array(
-    'author_full_name' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'h4',
-          'ow-cl' => 'author',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-        'conditions' => array(),
-      ),
-    ),
     'contextual_block_title_with_icon' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -1999,15 +1918,14 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
-    'dynamic_field_1' => array(
-      'weight' => '5',
+    'title' => array(
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'show_title' => 0,
-        'title_wrapper' => '',
-        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:19:"Columnist More Link";s:5:"title";s:0:"";s:4:"body";s:62:"<p class="read-more"><a href="/taxonomy/term/203">More</a></p>";s:6:"format";s:9:"full_html";s:10:"substitute";i:1;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
-        'load_terms' => 0,
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => 'author',
         'ft' => array(),
         'conditions' => array(),
       ),
@@ -2017,10 +1935,16 @@ function display_suite_shared_ds_field_settings_info() {
         'ft' => array(
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'img-responsive',
+          'ow-cl' => 'img-responsive border-gray',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
         ),
       ),
     ),
@@ -2349,6 +2273,9 @@ switch ($view_display) {
     break;
   case "node": 
     $ctitle = "[node:field-library-item-tree:0]"; 
+    break;
+  case "faculty": 
+    $ctitle = "Meet Our Faculty and Scholars"; 
     break;
   default: 
     $ctitle = "Add case"; 
@@ -3339,96 +3266,6 @@ function display_suite_shared_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|job_posting_|full';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'job_posting_';
-  $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'custom_breadcrumb',
-        1 => 'title',
-        2 => 'field_post_date',
-        3 => 'field_starting_date',
-        4 => 'field_closing_date',
-        5 => 'field_location',
-        6 => 'field_link_to_external_listing_',
-        7 => 'field_contact_information',
-        8 => 'field_full_description',
-      ),
-    ),
-    'fields' => array(
-      'custom_breadcrumb' => 'ds_content',
-      'title' => 'ds_content',
-      'field_post_date' => 'ds_content',
-      'field_starting_date' => 'ds_content',
-      'field_closing_date' => 'ds_content',
-      'field_location' => 'ds_content',
-      'field_link_to_external_listing_' => 'ds_content',
-      'field_contact_information' => 'ds_content',
-      'field_full_description' => 'ds_content',
-    ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
-    'wrappers' => array(
-      'ds_content' => 'div',
-      'ds_hidden' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'hide_page_title' => '2',
-    'page_option_title' => 'Job Postings',
-  );
-  $export['node|job_posting_|full'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|job_posting_|teaser';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'job_posting_';
-  $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'title',
-        1 => 'field_teaser',
-        2 => 'node_link',
-      ),
-    ),
-    'fields' => array(
-      'title' => 'ds_content',
-      'field_teaser' => 'ds_content',
-      'node_link' => 'ds_content',
-    ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
-    'wrappers' => array(
-      'ds_content' => 'div',
-      'ds_hidden' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'hide_page_title' => '0',
-    'page_option_title' => '',
-  );
-  $export['node|job_posting_|teaser'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|landing_page|full';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'landing_page';
@@ -4084,21 +3921,21 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
       'right' => array(
         1 => 'contextual_block_title_with_icon',
-        2 => 'author_full_name',
-        4 => 'field_bio_summary',
-        5 => 'body',
+        2 => 'title',
+        3 => 'field_bio_summary',
+        4 => 'body',
       ),
       'bottom' => array(
-        3 => 'field_related_nodes',
+        5 => 'field_related_nodes',
       ),
     ),
     'fields' => array(
       'field_image_collection' => 'left',
       'contextual_block_title_with_icon' => 'right',
-      'author_full_name' => 'right',
-      'field_related_nodes' => 'bottom',
+      'title' => 'right',
       'field_bio_summary' => 'right',
       'body' => 'right',
+      'field_related_nodes' => 'bottom',
     ),
     'limit' => array(
       'field_image_collection' => '1',
@@ -4116,6 +3953,7 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
     'wrappers' => array(
       'header' => 'div',
+      'top' => 'div',
       'left' => 'div',
       'right' => 'div',
       'bottom' => 'div',
@@ -4141,31 +3979,29 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
-      'header' => array(
-        0 => 'contextual_block_title_with_icon',
+      'right' => array(
+        0 => 'title',
+        3 => 'field_bio_summary',
       ),
       'left' => array(
         1 => 'field_image_collection',
       ),
-      'right' => array(
-        2 => 'author_full_name',
-        3 => 'field_bio_summary',
-        4 => 'dynamic_field_1',
+      'header' => array(
+        2 => 'contextual_block_title_with_icon',
       ),
     ),
     'fields' => array(
-      'contextual_block_title_with_icon' => 'header',
+      'title' => 'right',
       'field_image_collection' => 'left',
-      'author_full_name' => 'right',
+      'contextual_block_title_with_icon' => 'header',
       'field_bio_summary' => 'right',
-      'dynamic_field_1' => 'right',
     ),
     'limit' => array(
       'field_image_collection' => '1',
     ),
     'classes' => array(
       'layout_class' => array(
-        'panel' => 'panel',
+        '' => '',
       ),
       'header' => array(
         'single' => 'single',
@@ -4179,6 +4015,7 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
     'wrappers' => array(
       'header' => 'div',
+      'top' => 'div',
       'left' => 'div',
       'right' => 'div',
       'bottom' => 'div',
