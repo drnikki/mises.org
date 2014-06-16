@@ -58,7 +58,7 @@ function mises_person_profile_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -177,7 +177,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 38,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -261,7 +261,7 @@ function mises_person_profile_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -355,7 +355,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 37,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -422,7 +422,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 29,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -492,7 +492,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 36,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -573,7 +573,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 28,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -640,7 +640,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 27,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -720,7 +720,7 @@ function mises_person_profile_field_default_field_instances() {
           'view_mode' => 'sidebar_author',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -795,7 +795,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -897,7 +897,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 31,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -966,7 +966,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 33,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1040,7 +1040,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 32,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1111,7 +1111,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 34,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1186,7 +1186,7 @@ function mises_person_profile_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'viewfield_default',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1264,7 +1264,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 30,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1336,7 +1336,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 35,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
