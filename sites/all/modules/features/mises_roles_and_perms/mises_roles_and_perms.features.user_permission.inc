@@ -2538,6 +2538,161 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'nodequeue',
   );
 
+  // Exported permission: 'menu edit devel'.
+  $permissions['menu edit devel'] = array(
+    'name' => 'menu edit devel',
+    'roles' => array(
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit features'.
+  $permissions['menu edit features'] = array(
+    'name' => 'menu edit features',
+    'roles' => array(
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit main-menu'.
+  $permissions['menu edit main-menu'] = array(
+    'name' => 'menu edit main-menu',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit management'.
+  $permissions['menu edit management'] = array(
+    'name' => 'menu edit management',
+    'roles' => array(
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-about-the-mises-institute'.
+  $permissions['menu edit menu-about-the-mises-institute'] = array(
+    'name' => 'menu edit menu-about-the-mises-institute',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-austrian-economics-sub-menu'.
+  $permissions['menu edit menu-austrian-economics-sub-menu'] = array(
+    'name' => 'menu edit menu-austrian-economics-sub-menu',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-browse-library'.
+  $permissions['menu edit menu-browse-library'] = array(
+    'name' => 'menu edit menu-browse-library',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-economist-resources-sub-men'.
+  $permissions['menu edit menu-economist-resources-sub-men'] = array(
+    'name' => 'menu edit menu-economist-resources-sub-men',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-event-menu'.
+  $permissions['menu edit menu-event-menu'] = array(
+    'name' => 'menu edit menu-event-menu',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-homeschool-sub-menu'.
+  $permissions['menu edit menu-homeschool-sub-menu'] = array(
+    'name' => 'menu edit menu-homeschool-sub-menu',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-library-sub-menu'.
+  $permissions['menu edit menu-library-sub-menu'] = array(
+    'name' => 'menu edit menu-library-sub-menu',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-mises-social-icons'.
+  $permissions['menu edit menu-mises-social-icons'] = array(
+    'name' => 'menu edit menu-mises-social-icons',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-new-to-mises'.
+  $permissions['menu edit menu-new-to-mises'] = array(
+    'name' => 'menu edit menu-new-to-mises',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-press-room'.
+  $permissions['menu edit menu-press-room'] = array(
+    'name' => 'menu edit menu-press-room',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit navigation'.
+  $permissions['menu edit navigation'] = array(
+    'name' => 'menu edit navigation',
+    'roles' => array(
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit user-menu'.
+  $permissions['menu edit user-menu'] = array(
+    'name' => 'menu edit user-menu',
+    'roles' => array(
+      'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
   // Exported permission: 'migration information'.
   $permissions['migration information'] = array(
     'name' => 'migration information',
