@@ -81,7 +81,7 @@ function mises_solr_search_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_solr_last_optimize';
-  $strongarm->value = 1402945593;
+  $strongarm->value = 1403035496;
   $export['search_api_solr_last_optimize'] = $strongarm;
 
   return $export;
