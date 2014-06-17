@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Resources for Economist feature.
+ */
+
+include_once 'resources_for_economist.features.inc';

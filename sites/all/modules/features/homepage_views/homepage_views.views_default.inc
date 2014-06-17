@@ -12,10 +12,10 @@ function homepage_views_views_default_views() {
 
   $view = new view();
   $view->name = 'homepage';
-  $view->description = 'Page and blocks for homepage';
+  $view->description = 'Page and blocks for homepage and About Section';
   $view->tag = 'ref_allowed';
   $view->base_table = 'node';
-  $view->human_name = 'Homepage';
+  $view->human_name = 'Homepage and About';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -368,7 +368,7 @@ function homepage_views_views_default_views() {
   /* Display: Academy HP Sidebar */
   $handler = $view->new_display('block', 'Academy HP Sidebar', 'academy_course');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'online-courses';
+  $handler->display->display_options['css_class'] = 'online-courses panel';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;

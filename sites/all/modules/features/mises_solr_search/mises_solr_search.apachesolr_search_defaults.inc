@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * mises_apache_solr.apachesolr_search_defaults.inc
+ * mises_solr_search.apachesolr_search_defaults.inc
  */
 
 /**
  * Implements hook_apachesolr_search_default_searchers().
  */
-function mises_apache_solr_apachesolr_search_default_searchers() {
+function mises_solr_search_apachesolr_search_default_searchers() {
   $export = array();
 
   $searcher = new stdClass();
@@ -27,7 +27,7 @@ function mises_apache_solr_apachesolr_search_default_searchers() {
     'apachesolr_search_spellcheck' => 1,
     'apachesolr_search_search_box' => 1,
     'apachesolr_search_allow_user_input' => 0,
-    'apachesolr_search_browse' => 'none',
+    'apachesolr_search_browse' => 'results',
   );
   $export['core_search'] = $searcher;
 

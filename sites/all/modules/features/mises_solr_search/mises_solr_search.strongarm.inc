@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * mises_apache_solr.strongarm.inc
+ * mises_solr_search.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function mises_apache_solr_strongarm() {
+function mises_solr_search_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -66,22 +66,8 @@ function mises_apache_solr_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'features_admin_show_component_apachesolr_environment';
-  $strongarm->value = 1;
-  $export['features_admin_show_component_apachesolr_environment'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'features_admin_show_component_apachesolr_search_page';
-  $strongarm->value = 1;
-  $export['features_admin_show_component_apachesolr_search_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'search_api_solr_last_optimize';
-  $strongarm->value = 1402606488;
+  $strongarm->value = 1403035496;
   $export['search_api_solr_last_optimize'] = $strongarm;
 
   return $export;

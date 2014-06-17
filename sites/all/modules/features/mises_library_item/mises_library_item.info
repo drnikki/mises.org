@@ -58,6 +58,7 @@ features[field_group][] = group_date_author|node|library_item|full
 features[field_group][] = group_date_author|node|library_item|teaser
 features[field_group][] = group_footnotes|node|library_item|full
 features[field_group][] = group_media|node|library_item|form
+features[field_group][] = group_panel_body|node|library_item|sidebar_teaser
 features[field_group][] = group_panel_body|node|library_item|video_block_teaser
 features[field_group][] = group_secondary|node|library_item|form
 features[field_group][] = group_sharing|node|library_item|full
