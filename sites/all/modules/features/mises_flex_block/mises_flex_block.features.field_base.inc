@@ -123,6 +123,7 @@ function mises_flex_block_field_default_field_bases() {
         'sitewide' => 'Sitewide',
         'home' => 'Homepage',
         'inside' => 'Inside / Not Home',
+        'about' => 'About Mises',
         'library' => 'Library',
         'daily' => 'Daily',
         'blog' => 'Blog',
