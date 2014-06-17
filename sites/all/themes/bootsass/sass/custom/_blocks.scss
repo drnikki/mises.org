@@ -503,3 +503,9 @@ ul.menu {
     }
   } 
 }
+/* MAILCHIMP SIGNUP FORM */
+.block-mailchimp-lists {
+  form {
+    @extend .padding-lg;
+  }
+}

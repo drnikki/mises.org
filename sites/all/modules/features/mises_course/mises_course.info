@@ -22,6 +22,7 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_group][] = group_additional_information|node|course|form
 features[field_group][] = group_course_information|node|course|form
+features[field_group][] = group_panel_body|node|course|sidebar_teaser
 features[field_group][] = group_teaser|node|course|block_teaser
 features[field_instance][] = node-course-body
 features[field_instance][] = node-course-field_austrian_school
