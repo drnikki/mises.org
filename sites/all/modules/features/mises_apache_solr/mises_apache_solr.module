@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Apache Solr feature.
- */
-
-include_once 'mises_apache_solr.features.inc';

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * mises_apache_solr.apachesolr_environments.inc
+ * mises_solr_search.apachesolr_environments.inc
  */
 
 /**
  * Implements hook_apachesolr_environments().
  */
-function mises_apache_solr_apachesolr_environments() {
+function mises_solr_search_apachesolr_environments() {
   $export = array();
 
   $environment = new stdClass();
@@ -20,12 +20,14 @@ function mises_apache_solr_apachesolr_environments() {
     'apachesolr_direct_commit' => 0,
     'apachesolr_index_last' => array(
       'node' => array(
-        'last_changed' => '1402669722',
-        'last_entity_id' => '9997',
+        'last_changed' => '1403020033',
+        'last_entity_id' => '727',
       ),
     ),
-    'apachesolr_index_updated' => 1402670253,
+    'apachesolr_index_updated' => 1403024694,
+    'apachesolr_last_optimize' => 1402945593,
     'apachesolr_read_only' => '0',
+    'apachesolr_search_facet_pages' => '',
     'apachesolr_soft_commit' => 0,
   );
   $environment->index_bundles = array(
