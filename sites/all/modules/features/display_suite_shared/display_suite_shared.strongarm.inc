@@ -155,6 +155,263 @@ single';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_file_render';
+  $strongarm->value = 0;
+  $export['ds_search_file_render'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_group_by_type';
+  $strongarm->value = 0;
+  $export['ds_search_group_by_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_group_by_type_other';
+  $strongarm->value = 'Other';
+  $export['ds_search_group_by_type_other'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_group_by_type_other_wrapper';
+  $strongarm->value = 'fieldset';
+  $export['ds_search_group_by_type_other_wrapper'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_group_by_type_settings';
+  $strongarm->value = array(
+    'award' => array(
+      'status' => 1,
+      'label' => 'Results for award',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'blog' => array(
+      'status' => 1,
+      'label' => 'Results for blog',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'book_digital_text' => array(
+      'status' => 1,
+      'label' => 'Results for book / digital text',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'campaign_' => array(
+      'status' => 1,
+      'label' => 'Results for campaign',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'causeview_snippet' => array(
+      'status' => 1,
+      'label' => 'Results for causeview snippet',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'course' => array(
+      'status' => 1,
+      'label' => 'Results for course',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'document' => array(
+      'status' => 1,
+      'label' => 'Results for document',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'event' => array(
+      'status' => 1,
+      'label' => 'Results for event',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'flex_block' => array(
+      'status' => 1,
+      'label' => 'Results for flex block',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'giving_story' => array(
+      'status' => 1,
+      'label' => 'Results for giving story',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'homepage_hero' => array(
+      'status' => 1,
+      'label' => 'Results for homepage hero',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'institute_fellowship' => array(
+      'status' => 1,
+      'label' => 'Results for institute fellowship',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'job_posting_' => array(
+      'status' => 1,
+      'label' => 'Results for job posting',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'landing_page' => array(
+      'status' => 1,
+      'label' => 'Results for landing page',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'legacy_book' => array(
+      'status' => 1,
+      'label' => 'Results for legacy book',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'library_item' => array(
+      'status' => 1,
+      'label' => 'Results for library item',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'person_profile' => array(
+      'status' => 1,
+      'label' => 'Results for person profile',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'photo_gallery' => array(
+      'status' => 1,
+      'label' => 'Results for photo gallery',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'product' => array(
+      'status' => 1,
+      'label' => 'Results for product',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'scholarship_' => array(
+      'status' => 1,
+      'label' => 'Results for scholarship',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'social_media' => array(
+      'status' => 1,
+      'label' => 'Results for social media',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'page' => array(
+      'status' => 1,
+      'label' => 'Results for static page',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'webform' => array(
+      'status' => 1,
+      'label' => 'Results for webform',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'working_papers' => array(
+      'status' => 1,
+      'label' => 'Results for working papers',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+  );
+  $export['ds_search_group_by_type_settings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_highlight';
+  $strongarm->value = 0;
+  $export['ds_search_highlight'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_highlight_selector';
+  $strongarm->value = '.view-mode-search_result';
+  $export['ds_search_highlight_selector'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_language';
+  $strongarm->value = 0;
+  $export['ds_search_language'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_node_form_alter';
+  $strongarm->value = 0;
+  $export['ds_search_node_form_alter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_node_limit';
+  $strongarm->value = '10';
+  $export['ds_search_node_limit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_path';
+  $strongarm->value = 'content';
+  $export['ds_search_path'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_show_title';
+  $strongarm->value = 0;
+  $export['ds_search_show_title'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_type';
+  $strongarm->value = 'node';
+  $export['ds_search_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_variables';
+  $strongarm->value = 'none';
+  $export['ds_search_variables'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_search_view_mode';
+  $strongarm->value = 'teaser';
+  $export['ds_search_view_mode'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_user_override_search_page';
+  $strongarm->value = 0;
+  $export['ds_user_override_search_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_file__audio';
   $strongarm->value = array(
     'view_modes' => array(

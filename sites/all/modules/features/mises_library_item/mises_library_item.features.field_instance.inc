@@ -293,7 +293,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 41,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -387,7 +387,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 26,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -486,7 +486,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 30,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
@@ -581,7 +581,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 31,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
@@ -669,7 +669,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 33,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -794,7 +794,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 34,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -916,7 +916,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -1004,7 +1004,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 35,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -1095,7 +1095,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 36,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -1182,7 +1182,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 37,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -1266,7 +1266,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 46,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -1372,7 +1372,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 28,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
@@ -1468,7 +1468,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 40,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -1561,7 +1561,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 42,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -1663,7 +1663,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 27,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -1759,7 +1759,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 43,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -1863,7 +1863,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 45,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
@@ -1964,7 +1964,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 44,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
@@ -2050,7 +2050,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 29,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
@@ -2149,7 +2149,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 32,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
@@ -2419,7 +2419,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 38,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -2507,7 +2507,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 39,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -2601,7 +2601,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
       'simple_teaser' => array(
         'label' => 'above',

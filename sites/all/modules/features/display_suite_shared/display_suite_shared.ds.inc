@@ -517,7 +517,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '5',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -2254,6 +2254,7 @@ switch ($view_display) {
     $ctitle = "Learn Austrian Economics"; 
     break;
   case "academy_course": 
+  case "academy_courses": 
     $ctitle = "Take An Academy Course"; 
     break;
   case "columnist": 
@@ -2987,8 +2988,8 @@ function display_suite_shared_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'group_heading',
         1 => 'contextual_block_title_with_icon',
-        2 => 'title',
-        3 => 'group_teaser',
+        2 => 'group_panel_body',
+        3 => 'title',
         4 => 'body',
         5 => 'node_link',
       ),
@@ -2996,8 +2997,8 @@ function display_suite_shared_ds_layout_settings_info() {
     'fields' => array(
       'group_heading' => 'ds_content',
       'contextual_block_title_with_icon' => 'ds_content',
+      'group_panel_body' => 'ds_content',
       'title' => 'ds_content',
-      'group_teaser' => 'ds_content',
       'body' => 'ds_content',
       'node_link' => 'ds_content',
     ),
@@ -3608,7 +3609,7 @@ function display_suite_shared_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'group_heading',
         1 => 'contextual_block_title_with_icon',
-        2 => 'group_teaser',
+        2 => 'group_panel_body',
         3 => 'field_teaser_text',
         4 => 'title',
         5 => 'body',
@@ -3618,7 +3619,7 @@ function display_suite_shared_ds_layout_settings_info() {
     'fields' => array(
       'group_heading' => 'ds_content',
       'contextual_block_title_with_icon' => 'ds_content',
-      'group_teaser' => 'ds_content',
+      'group_panel_body' => 'ds_content',
       'field_teaser_text' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',

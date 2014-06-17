@@ -10,21 +10,26 @@
 function main_menu_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_about:<front>
-  $menu_links['main-menu_about:<front>'] = array(
+  // Exported menu link: main-menu_about:node/16723
+  $menu_links['main-menu_about:node/16723'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'node/16723',
+    'router_path' => 'node/%',
     'link_title' => 'About',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'main-menu_about:<front>',
+      'identifier' => 'main-menu_about:node/16723',
+      'menu_icon' => array(
+        'enable' => 0,
+        'path' => 'sites/all/modules/contrib/menu_icons/images/default_icon.png',
+        'image_style' => 'menu_icon',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -50,

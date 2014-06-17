@@ -69,7 +69,7 @@ function mises_course_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
@@ -165,7 +165,7 @@ function mises_course_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -234,7 +234,7 @@ function mises_course_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -315,7 +315,7 @@ function mises_course_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -384,7 +384,7 @@ function mises_course_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'simple_teaser' => array(
         'label' => 'above',
