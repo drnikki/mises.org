@@ -68,6 +68,14 @@
     margin-bottom: 10px;
   }
 }
+// Form Checkbox and Radio -- mod needed because Drupal places checkbox outside label
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  margin-left: 0px;
+}
+
 // Panels
 .panel {
   margin-bottom: $padding-large-vertical;
