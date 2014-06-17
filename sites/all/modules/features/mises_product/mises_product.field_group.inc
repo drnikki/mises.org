@@ -26,7 +26,8 @@ function mises_product_field_group_info() {
       0 => 'body',
       1 => 'field_image',
       2 => 'field_link_to_external_listing_',
-      3 => 'title',
+      3 => 'field_product_id',
+      4 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
