@@ -1229,7 +1229,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Filter by secondary author',
     'visibility' => 0,
   );
 
