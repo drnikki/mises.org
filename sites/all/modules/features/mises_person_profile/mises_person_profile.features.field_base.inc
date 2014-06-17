@@ -244,6 +244,8 @@ function mises_person_profile_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
+          'book_digital_text' => 'book_digital_text',
+          'legacy_book' => 'legacy_book',
           'library_item' => 'library_item',
         ),
       ),
@@ -330,6 +332,8 @@ function mises_person_profile_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
+          'book_digital_text' => 'book_digital_text',
+          'legacy_book' => 'legacy_book',
           'library_item' => 'library_item',
         ),
       ),
