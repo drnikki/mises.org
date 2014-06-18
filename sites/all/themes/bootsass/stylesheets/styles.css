@@ -8746,6 +8746,11 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
   border: 0;
 }
 
+/* line 29, ../sass/drupal/_drupal.scss */
+.view-empty + .attachment-after {
+  display: none;
+}
+
 /********************
 * Custom styles
 ********************/

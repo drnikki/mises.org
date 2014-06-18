@@ -79,6 +79,15 @@ function legacy_book_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_citation' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb-el' => 'h3',
+          'lb-cl' => 'sub-heading secondary',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
     'field_epub' => array(
       'formatter_settings' => array(
         'ft' => array(
