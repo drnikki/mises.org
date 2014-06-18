@@ -168,7 +168,6 @@ features[variable][] = features_admin_show_component_variable
 features[variable][] = features_admin_show_component_views_view
 features[variable][] = features_admin_show_component_weight
 features[variable][] = features_admin_show_component_wysiwyg
-features[variable][] = features_codecache
 features[variable][] = features_default_export_path
 features[variable][] = features_ignored_orphans
 features[variable][] = features_rebuild_on_flush
