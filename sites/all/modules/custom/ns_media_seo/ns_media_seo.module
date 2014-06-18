@@ -1,0 +1,81 @@
+<?php
+/**
+ * Implements hook_form_alter().
+ */
+function ns_media_seo_form_alter(&$form, &$form_state, $form_id) {
+  if (isset($form['type']) && $form['type']['#type'] == 'value' && $form['type']['#value'] . '_node_form' == $form_id) {
+    $form['#attached']['js'][] = drupal_get_path('module', 'ns_media_seo') . '/ns_media_seo.js';
+    
+    $fields = field_info_instances('node', $form['type']['#value']);
+
+    // Loop through all image fields that use the Media module.
+    foreach ($fields as $field_name => $field) {
+      if ($field['widget']['module'] == 'media' && $field['widget']['settings']['allowed_types']['image']) {
+        $items = element_children($form[$field_name][$form['language']['#value']]);
+        foreach ($items as $delta) {
+          $value = (isset($form[$field_name][$form['language']['#value']][$delta]['#value'])) ? $form[$field_name][$form['language']['#value']][$delta]['#value'] : $form[$field_name][$form['language']['#value']][$delta]['#default_value'];
+
+          $form[$field_name][$form['language']['#value']][$delta]['ns_media_seo_alt'] = array(
+            '#title' => t('Alternate text'),
+            '#type' => 'textfield',
+            '#default_value' => isset($value['alt']) ? $value['alt'] : '',
+            '#description' => t('This text will be used by screen readers, search engines, or when the image cannot be loaded.'),
+            // @see http://www.gawds.org/show.php?contentid=28
+            '#prefix' => '<div class="alt-text" style="padding-left:50px">',
+            '#suffix' => '</div>',
+            '#maxlength' => 512,
+            '#weight' => 1,
+          );
+
+
+          $form[$field_name][$form['language']['#value']][$delta]['ns_media_seo_title'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Title'),
+            '#default_value' => isset($value['title']) ? $value['title'] : '',
+            '#description' => t('The title is used as a tool tip when the user hovers the mouse over the image.'),
+            '#prefix' => '<div class="title-text" style="padding-left:50px">',
+            '#suffix' => '</div>',
+            '#maxlength' => 1024,
+            '#weight' => 2,
+          );
+        }
+      }
+    }
+    
+    // Attach a custom form submit handler before the standard Drupal form submit handler.
+    array_unshift($form['actions']['submit']['#submit'], "ns_media_seo_node_form_submit");
+  }
+  
+  if ($form_id == 'file_entity_edit') {
+    // Hide Alt and Title text fields on File entities which are images, to avoid any possible confusion with the 
+    // Alt and Title text fields on the node add/edit form.
+    if ($form['type']['#value'] == 'image') {
+      $form['field_file_image_alt_text']['#access'] = FALSE;
+      $form['field_file_image_title_text']['#access'] = FALSE;
+    }
+  }
+}
+
+function ns_media_seo_node_form_submit(&$form, &$form_state) {
+  $fields = field_info_instances('node', $form_state['values']['type']);
+  
+  // Loop through all image fields that use the Media module.
+  foreach ($fields as $field_name => $field) {
+    if ($field['widget']['module'] == 'media' && $field['widget']['settings']['allowed_types']['image']) {
+      $items = element_children($form_state['values'][$field_name][$form_state['values']['language']]);
+      
+      foreach ($items as $delta) {
+        // Move the submitted values from the 'input' array to the 'values' array, with the appropriate keys for saving (alt, title).
+        if (isset($form_state['input'][$field_name][$form_state['values']['language']][$delta]['ns_media_seo_alt'])) {
+          $form_state['values'][$field_name][$form_state['values']['language']][$delta]['alt'] = $form_state['input'][$field_name][$form_state['values']['language']][$delta]['ns_media_seo_alt'];
+          unset($form_state['values'][$field_name][$form_state['values']['language']][$delta]['ns_media_seo_alt']);
+        }
+        
+        if (isset($form_state['input'][$field_name][$form_state['values']['language']][$delta]['ns_media_seo_title'])) {
+          $form_state['values'][$field_name][$form_state['values']['language']][$delta]['title'] = $form_state['input'][$field_name][$form_state['values']['language']][$delta]['ns_media_seo_title'];
+          unset($form_state['values'][$field_name][$form_state['values']['language']][$delta]['ns_media_seo_title']);
+        }
+      }
+    }
+  }
+}
