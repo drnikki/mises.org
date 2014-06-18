@@ -25,3 +25,7 @@
   padding: 0;
   border: 0;
 }
+// COMPENSATE FOR VIEW ATTACHMENT THAT APPEARS WHEN PRINTING ANOTHER VIEW BLOCK WHEN NO RESULTS
+.view-empty + .attachment-after {
+  display: none;
+}
