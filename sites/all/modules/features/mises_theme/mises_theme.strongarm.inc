@@ -38,20 +38,6 @@ function mises_theme_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'features_admin_show_component_apachesolr_environment';
-  $strongarm->value = 1;
-  $export['features_admin_show_component_apachesolr_environment'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'features_admin_show_component_apachesolr_search_page';
-  $strongarm->value = 1;
-  $export['features_admin_show_component_apachesolr_search_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'features_admin_show_component_box';
   $strongarm->value = 1;
   $export['features_admin_show_component_box'] = $strongarm;
@@ -415,7 +401,7 @@ function mises_theme_strongarm() {
       'dependencies' => 'fc3326f2a9c165881b310339f7064e45',
       'image' => '4f70c64da9633d70273e0425dc4678ef',
       'fe_block_settings' => '125a4bc1134077be9582015bca3a3c30',
-      'variable' => 'a6eeee71b48b11647d63ebdfac26fb28',
+      'variable' => '5dfd2c66b3ca6ccf5dd8c59f4294b6ec',
       'file_display' => 'c446a371c878f52322622e6077d2519c',
       'flexslider_optionset' => '29aed62a28e8415b01c4083e3edfe9a5',
       'conditional_fields' => '3c16f3b7f9d74cd9ac4ffc1ded7eb8d8',
@@ -432,7 +418,7 @@ function mises_theme_strongarm() {
     ),
     'main_menu' => array(
       'menu_custom' => '2042931cc12c0466aab8fc8a74f2d400',
-      'menu_links' => '55bee687800f37aaee5a1b64bef5701a',
+      'menu_links' => 'd0f273b9c8c03b40d81d7dcf359dc664',
       'dependencies' => 'ce43b2cc540f90d9ef38740c8f0b0f83',
     ),
     'menu_footer_austrian_school' => array(
@@ -491,7 +477,7 @@ function mises_theme_strongarm() {
     ),
     'mises_person_profile' => array(
       'variable' => 'ee6b1e6d515053e5fa425aca29d5b391',
-      'field_base' => '0bd64ddd592be2a4b91723299cd6d57e',
+      'field_base' => '02e13fc2f00d87387a2dd63f9c2fb125',
       'field_instance' => '8b2ecea3d81058c9c34872498b3f3b99',
       'dependencies' => '190381e40415e8b811228c85d126029b',
       'field_group' => 'df6d97ee5cd75b7e3c9580e98262b1dd',
@@ -611,24 +597,25 @@ function mises_theme_strongarm() {
     ),
     'mises_product' => array(
       'variable' => '3dc4ca0578f8e516fef3825efa4b46e6',
-      'field_instance' => '38c2dd418886682d5032ebef2a556925',
-      'dependencies' => '7adeddf6784ea521a7783ba2f9363d5c',
-      'field_group' => '72501be2a74773fccd934f86b441d1ef',
+      'field_instance' => 'df391661e09c5e2afc0ebdfe572b6c18',
+      'dependencies' => 'd8653c61d320e6f7c8bce202bac30a99',
+      'field_group' => 'b6195f94e1cd2913e11dfe5cd4cf7e78',
       'node' => '911ce45184640ea5cb013ba5cab14898',
+      'field_base' => '637c29be475dffc4a4b17ce93bda1eec',
     ),
     'display_suite_shared' => array(
       'ds_field_settings' => 'b9443cf53b889026d067d81135678bdf',
       'ds_fields' => '41b4988e172568150bcaff3b4cf864a9',
       'ds_layout_settings' => '6ede6aab29daf7ada3deee8e6cce06c7',
       'ds_view_modes' => 'ced25b4944fee00d4ffb477d456f3f2b',
-      'dependencies' => 'c4e0490967785467ec271837e1683a6b',
+      'dependencies' => '2f97dc09dacadc4d13c87d78ff8857c9',
       'field_group' => '7d80cc449058f07097b16bedf5eecf73',
-      'variable' => 'b91ae5807cd8dbc0c5b19fb5b5839242',
+      'variable' => '0bb92041ad6602aa1bca031d0afab3c8',
       'conditional_fields' => '3c16f3b7f9d74cd9ac4ffc1ded7eb8d8',
     ),
     'homepage_views' => array(
       'dependencies' => '83cf887d5106e8114013a451f1c34f4d',
-      'views_view' => '0e5e29441365d018632002db5b4cb8c4',
+      'views_view' => '827fb593af55eaaa071cf17cbe8c6505',
       'ds_view_modes' => '4a14dd02db7a8611e50eb3488e838a0a',
       'ds_layout_settings' => '9f9c14df70ad21f40da02636831b6279',
     ),
@@ -690,7 +677,7 @@ function mises_theme_strongarm() {
     ),
     'mises_pathauto' => array(
       'dependencies' => 'fafb8f4e54f3cfd7874f67b00cea0499',
-      'variable' => '64de6d9b5ba19d70223419b2b0ed0166',
+      'variable' => '15d68e7a384905e911b0075ac35d4a00',
     ),
     'landing_page_daily' => array(
       'uuid_node' => 'df76abe90121253d0b91ffbd33d5fe70',
@@ -839,12 +826,14 @@ function mises_theme_strongarm() {
       'node' => 'f45a0b7796a78c0e85882860f298e56e',
     ),
     'legacy_book' => array(
-      'variable' => '1b1a7a5ec4ceb77ab9432c217b435045',
+      'variable' => '6c30ae2fca317d589bf0bdc4bca627dc',
       'field_base' => '5ff429f50101f415d0014898db25644c',
-      'field_instance' => '5818914a38e61505b8b681b7a176d7d4',
-      'dependencies' => '2f43417b84197bf7eb5b56fb963ec04d',
+      'field_instance' => 'e7aacbdabb55c08987a16116a2f6f70c',
+      'dependencies' => 'fa94719d48604becf0613a6517e93d38',
       'field_group' => 'ec87b5d831a67d56484dbe65b2c4fc79',
       'node' => '3d1deaf5fc249e590fd93ba08176ef19',
+      'ds_field_settings' => '779891d913d071aa162f2bedf30536e5',
+      'ds_layout_settings' => '474cd31f91945b67a8823eb014154231',
     ),
     'mises_document' => array(
       'variable' => 'd78cce4020a672bf7955df9e97455a67',
@@ -922,6 +911,25 @@ function mises_theme_strongarm() {
     'landing_page_views' => array(
       'dependencies' => '242d389f813a156ec0b8c564d5aff0c6',
       'views_view' => 'dd90f9be9a5aaa87091b23f443543941',
+    ),
+    'about_mises' => array(
+      'context' => 'f736bc041a21f7d72e03d80e5af3fa57',
+      'mailchimp_list' => '70c44e92ee5c09d7939687b07a265351',
+      'menu_custom' => '8b816dae4a16bf25d717e2f531eae04c',
+      'menu_links' => 'e466b5184d4456c686a977c039898c3f',
+      'dependencies' => '76c1b16a1dadc185032c32d34fa9d52e',
+    ),
+    'mises_solr_node_results_context' => array(
+      'context' => '6328c39ad593f3d085c9b88f0968a8e6',
+      'dependencies' => '17c5d8f048b0801e3e913aa6900e4da6',
+    ),
+    'mises_solr_search' => array(
+      'apachesolr_environment' => '833d00246343a258516f74cd9c36b7c3',
+      'apachesolr_search_page' => '0a303c5514083e13980c5069d9145fc0',
+      'facetapi' => '6daeaeee3668a697b70c2e7a531272ac',
+      'fe_block_settings' => '6ed1d58087d2d405b847013f5c8f2703',
+      'variable' => '14614d1e3cc3f5d011b51d7b206fab2a',
+      'dependencies' => 'edbe9adbd1656c36ab4fdf685988b9c9',
     ),
   );
   $export['features_codecache'] = $strongarm;

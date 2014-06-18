@@ -335,3 +335,12 @@ ul.addtocal_menu {
 	height: 100%;
 }
 
+/* ATTACHMENT LISTS */
+.attachments {
+  ul {
+    @extend .list-group;
+  }
+  li {
+    @extend .list-group-item;
+  }
+}
