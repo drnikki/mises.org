@@ -425,6 +425,7 @@ h2 {
     color: $brand-primary;
     font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
     font-family: $font-family-serif;
+    margin-top: 0;
   }
 }
 h3, h4 {
