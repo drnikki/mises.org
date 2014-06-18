@@ -239,7 +239,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Author',
     'visibility' => 0,
   );
 
@@ -404,7 +404,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Date published',
     'visibility' => 0,
   );
 
@@ -503,7 +503,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Content type',
     'visibility' => 0,
   );
 
@@ -536,7 +536,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Topic',
     'visibility' => 0,
   );
 
@@ -602,7 +602,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Event type',
     'visibility' => 0,
   );
 
@@ -701,7 +701,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Level',
     'visibility' => 0,
   );
 
@@ -899,7 +899,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Featured',
     'visibility' => 0,
   );
 
@@ -1130,7 +1130,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Year',
     'visibility' => 0,
   );
 
@@ -1229,7 +1229,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Filter by secondary author',
+    'title' => 'Second author',
     'visibility' => 0,
   );
 
@@ -1262,7 +1262,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Austrian school',
     'visibility' => 0,
   );
 
@@ -1328,7 +1328,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Audience',
     'visibility' => 0,
   );
 
@@ -1691,7 +1691,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Media type',
     'visibility' => 0,
   );
 

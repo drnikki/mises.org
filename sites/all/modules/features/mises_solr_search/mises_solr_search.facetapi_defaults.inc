@@ -202,6 +202,8 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => 0,
@@ -434,6 +436,8 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => '0',
@@ -455,6 +459,8 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => '0',
@@ -583,6 +589,8 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => '0',
@@ -892,7 +900,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => '5',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
@@ -1162,7 +1170,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => '5',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
@@ -1440,7 +1448,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => '5',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
@@ -1812,7 +1820,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => '5',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
@@ -1854,7 +1862,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => '5',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
@@ -2074,7 +2082,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => '5',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
@@ -2616,7 +2624,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => '5',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
