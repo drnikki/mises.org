@@ -6281,13 +6281,13 @@ a.thumbnail.active {
 }
 
 /* line 10, ../sass/bootstrap/_list-group.scss */
-.list-group {
+.list-group, .attachments ul {
   margin-bottom: 20px;
   padding-left: 0;
 }
 
 /* line 21, ../sass/bootstrap/_list-group.scss */
-.list-group-item {
+.list-group-item, .attachments li {
   position: relative;
   display: block;
   padding: 10px 15px;
@@ -6296,22 +6296,22 @@ a.thumbnail.active {
   border: 1px solid #dddddd;
 }
 /* line 31, ../sass/bootstrap/_list-group.scss */
-.list-group-item:first-child {
+.list-group-item:first-child, .attachments li:first-child {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
 /* line 34, ../sass/bootstrap/_list-group.scss */
-.list-group-item:last-child {
+.list-group-item:last-child, .attachments li:last-child {
   margin-bottom: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 /* line 40, ../sass/bootstrap/_list-group.scss */
-.list-group-item > .badge {
+.list-group-item > .badge, .attachments li > .badge {
   float: right;
 }
 /* line 43, ../sass/bootstrap/_list-group.scss */
-.list-group-item > .badge + .badge {
+.list-group-item > .badge + .badge, .attachments li > .badge + .badge {
   margin-right: 5px;
 }
 
@@ -6331,31 +6331,31 @@ a.list-group-item:hover, a.list-group-item:focus {
 }
 
 /* line 74, ../sass/bootstrap/_list-group.scss */
-.list-group-item.disabled, .list-group-item.disabled:hover, .list-group-item.disabled:focus {
+.list-group-item.disabled, .attachments li.disabled, .list-group-item.disabled:hover, .attachments li.disabled:hover, .list-group-item.disabled:focus, .attachments li.disabled:focus {
   background-color: #e4ebee;
   color: #c8cdd0;
 }
 /* line 79, ../sass/bootstrap/_list-group.scss */
-.list-group-item.disabled .list-group-item-heading, .list-group-item.disabled:hover .list-group-item-heading, .list-group-item.disabled:focus .list-group-item-heading {
+.list-group-item.disabled .list-group-item-heading, .attachments li.disabled .list-group-item-heading, .list-group-item.disabled:hover .list-group-item-heading, .attachments li.disabled:hover .list-group-item-heading, .list-group-item.disabled:focus .list-group-item-heading, .attachments li.disabled:focus .list-group-item-heading {
   color: inherit;
 }
 /* line 82, ../sass/bootstrap/_list-group.scss */
-.list-group-item.disabled .list-group-item-text, .list-group-item.disabled:hover .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text {
+.list-group-item.disabled .list-group-item-text, .attachments li.disabled .list-group-item-text, .list-group-item.disabled:hover .list-group-item-text, .attachments li.disabled:hover .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text, .attachments li.disabled:focus .list-group-item-text {
   color: #c8cdd0;
 }
 /* line 90, ../sass/bootstrap/_list-group.scss */
-.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+.list-group-item.active, .attachments li.active, .list-group-item.active:hover, .attachments li.active:hover, .list-group-item.active:focus, .attachments li.active:focus {
   z-index: 2;
   color: white;
   background-color: #00426b;
   border-color: #00426b;
 }
 /* line 97, ../sass/bootstrap/_list-group.scss */
-.list-group-item.active .list-group-item-heading, .list-group-item.active:hover .list-group-item-heading, .list-group-item.active:focus .list-group-item-heading {
+.list-group-item.active .list-group-item-heading, .attachments li.active .list-group-item-heading, .list-group-item.active:hover .list-group-item-heading, .attachments li.active:hover .list-group-item-heading, .list-group-item.active:focus .list-group-item-heading, .attachments li.active:focus .list-group-item-heading {
   color: inherit;
 }
 /* line 100, ../sass/bootstrap/_list-group.scss */
-.list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
+.list-group-item.active .list-group-item-text, .attachments li.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .attachments li.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text, .attachments li.active:focus .list-group-item-text {
   color: #38b3ff;
 }
 
@@ -6533,29 +6533,29 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 /* line 59, ../sass/bootstrap/_panels.scss */
-.panel > .list-group {
+.panel > .list-group, .attachments .panel > ul {
   margin-bottom: 0;
 }
 /* line 62, ../sass/bootstrap/_panels.scss */
-.panel > .list-group .list-group-item {
+.panel > .list-group .list-group-item, .attachments .panel > ul .list-group-item, .panel > .list-group .attachments li, .attachments .panel > .list-group li, .attachments .panel > ul li {
   border-width: 1px 0;
   border-radius: 0;
 }
 /* line 69, ../sass/bootstrap/_panels.scss */
-.panel > .list-group:first-child .list-group-item:first-child {
+.panel > .list-group:first-child .list-group-item:first-child, .attachments .panel > ul:first-child .list-group-item:first-child, .panel > .list-group:first-child .attachments li:first-child, .attachments .panel > .list-group:first-child li:first-child, .attachments .panel > ul:first-child li:first-child {
   border-top: 0;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
 /* line 76, ../sass/bootstrap/_panels.scss */
-.panel > .list-group:last-child .list-group-item:last-child {
+.panel > .list-group:last-child .list-group-item:last-child, .attachments .panel > ul:last-child .list-group-item:last-child, .panel > .list-group:last-child .attachments li:last-child, .attachments .panel > .list-group:last-child li:last-child, .attachments .panel > ul:last-child li:last-child {
   border-bottom: 0;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
 /* line 85, ../sass/bootstrap/_panels.scss */
-.panel-heading + .list-group .list-group-item:first-child {
+.panel-heading + .list-group .list-group-item:first-child, .attachments .panel-heading + ul .list-group-item:first-child, .panel-heading + .list-group .attachments li:first-child, .attachments .panel-heading + .list-group li:first-child, .attachments .panel-heading + ul li:first-child {
   border-top-width: 0;
 }
 
@@ -9279,24 +9279,28 @@ h3.secondary, h4.secondary {
 h3.contrast, h4.contrast {
   color: #729949;
 }
+/* line 450, ../sass/custom/_styles.scss */
+.outset > h3, .resource-item.odd > h3, .group-footnotes > h3, .outset > h4, .resource-item.odd > h4, .group-footnotes > h4 {
+  margin-top: 0;
+}
 
-/* line 452, ../sass/custom/_styles.scss */
+/* line 455, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 456, ../sass/custom/_styles.scss */
+/* line 459, ../sass/custom/_styles.scss */
 h5 {
   margin-bottom: 3px;
 }
 
-/* line 459, ../sass/custom/_styles.scss */
+/* line 462, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 465, ../sass/custom/_styles.scss */
+/* line 468, ../sass/custom/_styles.scss */
 .read-more a,
 .more-link a,
 .field-collection-item-field-resources .read-more a {
@@ -9305,12 +9309,12 @@ address {
   font-size: 13px;
 }
 
-/* line 471, ../sass/custom/_styles.scss */
+/* line 474, ../sass/custom/_styles.scss */
 .more-link, .field-collection-item-field-resources .read-more {
   margin: 0 16px;
   line-height: 20px;
 }
-/* line 475, ../sass/custom/_styles.scss */
+/* line 478, ../sass/custom/_styles.scss */
 .more-link span.glyphicon, .field-collection-item-field-resources .read-more span.glyphicon {
   width: 24px;
   height: 24px;
@@ -9318,16 +9322,16 @@ address {
   font-size: 12px;
   line-height: 24px;
 }
-/* line 478, ../sass/custom/_styles.scss */
+/* line 481, ../sass/custom/_styles.scss */
 .more-link a:hover, .field-collection-item-field-resources .read-more a:hover {
   color: #38709e;
 }
-/* line 480, ../sass/custom/_styles.scss */
+/* line 483, ../sass/custom/_styles.scss */
 .more-link a:hover span.glyphicon, .field-collection-item-field-resources .read-more a:hover span.glyphicon {
   background-color: #38709e;
 }
 
-/* line 486, ../sass/custom/_styles.scss */
+/* line 489, ../sass/custom/_styles.scss */
 .author a {
   color: inherit;
 }
@@ -10553,3 +10557,5 @@ ul.addtocal_menu li a:hover {
   width: 100%;
   height: 100%;
 }
+
+/* ATTACHMENT LISTS */
