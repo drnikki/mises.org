@@ -83,6 +83,13 @@ function mises_pathauto_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_book_digital_text_pattern';
+  $strongarm->value = 'books/[node:title]';
+  $export['pathauto_node_book_digital_text_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_campaign__pattern';
   $strongarm->value = 'campaigns/[node:title]';
   $export['pathauto_node_campaign__pattern'] = $strongarm;
@@ -100,6 +107,13 @@ function mises_pathauto_strongarm() {
   $strongarm->name = 'pathauto_node_course_pattern';
   $strongarm->value = 'courses/[node:title]';
   $export['pathauto_node_course_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_document_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_document_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -146,6 +160,20 @@ function mises_pathauto_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_landing_page_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_landing_page_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_legacy_book_pattern';
+  $strongarm->value = 'legacy-books/[node:title]';
+  $export['pathauto_node_legacy_book_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_library_item_pattern';
   $strongarm->value = 'library/[node:title]';
   $export['pathauto_node_library_item_pattern'] = $strongarm;
@@ -184,6 +212,34 @@ function mises_pathauto_strongarm() {
   $strongarm->name = 'pathauto_node_product_pattern';
   $strongarm->value = 'products/[node:title]';
   $export['pathauto_node_product_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_scholarship__pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_scholarship__pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_social_media_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_social_media_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_webform_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_webform_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_working_papers_pattern';
+  $strongarm->value = 'working-papers/[node:title]';
+  $export['pathauto_node_working_papers_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
