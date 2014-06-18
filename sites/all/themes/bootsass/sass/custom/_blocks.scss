@@ -510,9 +510,10 @@ ul.menu {
 }
 /* SEARCH SIDEBAR */
 .section-search {
-  .sidebar {
+  .sidebar .region {
     @extend .border-secondary;
     background-color: $white;
+    padding: 0 $padding-base-horizontal;
     h2.block-title {
       @extend h3.sub-heading;
       @extend h3.contrast;

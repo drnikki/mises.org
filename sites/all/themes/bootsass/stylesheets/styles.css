@@ -1661,7 +1661,7 @@ mark,
 }
 
 /* line 92, ../sass/bootstrap/_type.scss */
-.text-right, .more-link, .field-collection-item-field-resources .read-more, .section-search .sidebar a.facetapi-limit-link {
+.text-right, .more-link, .field-collection-item-field-resources .read-more, .section-search .sidebar .region a.facetapi-limit-link {
   text-align: right;
 }
 
@@ -9258,7 +9258,7 @@ h3.author, h4.author {
   font-size: 14px;
 }
 /* line 436, ../sass/custom/_styles.scss */
-h3.sub-heading, .section-search .sidebar h2.block-title, h4.sub-heading {
+h3.sub-heading, .section-search .sidebar .region h2.block-title, h4.sub-heading {
   text-transform: uppercase;
 }
 /* line 439, ../sass/custom/_styles.scss */
@@ -9274,7 +9274,7 @@ h3.secondary, h4.secondary {
   color: #38709e;
 }
 /* line 448, ../sass/custom/_styles.scss */
-h3.contrast, .section-search .sidebar h2.block-title, h4.contrast {
+h3.contrast, .section-search .sidebar .region h2.block-title, h4.contrast {
   color: #729949;
 }
 /* line 451, ../sass/custom/_styles.scss */
@@ -9656,7 +9656,7 @@ ul.menu li a, ul.menu li span {
 }
 
 /* line 96, ../sass/custom/_blocks.scss */
-.border-secondary, .section-search .sidebar {
+.border-secondary, .section-search .sidebar .region {
   border-top: 8px solid #38709e;
 }
 
@@ -9680,15 +9680,15 @@ ul.menu li a, ul.menu li span {
 }
 
 /* line 120, ../sass/custom/_blocks.scss */
-.border-secondary .panel-heading:before, .section-search .sidebar .panel-heading:before {
+.border-secondary .panel-heading:before, .section-search .sidebar .region .panel-heading:before {
   background-color: #38709e;
 }
 /* line 123, ../sass/custom/_blocks.scss */
-.border-secondary .panel-heading .panel-title, .section-search .sidebar .panel-heading .panel-title {
+.border-secondary .panel-heading .panel-title, .section-search .sidebar .region .panel-heading .panel-title {
   color: #38709e;
 }
 /* line 127, ../sass/custom/_blocks.scss */
-.border-secondary h4, .section-search .sidebar h4 {
+.border-secondary h4, .section-search .sidebar .region h4 {
   color: #38709e;
 }
 
@@ -10156,28 +10156,29 @@ ul.menu li a, ul.menu li span {
 /* MAILCHIMP SIGNUP FORM */
 /* SEARCH SIDEBAR */
 /* line 513, ../sass/custom/_blocks.scss */
-.section-search .sidebar {
+.section-search .sidebar .region {
   background-color: white;
+  padding: 0 12px;
 }
-/* line 516, ../sass/custom/_blocks.scss */
-.section-search .sidebar h2.block-title {
+/* line 517, ../sass/custom/_blocks.scss */
+.section-search .sidebar .region h2.block-title {
   font-size: 15px;
 }
-/* line 521, ../sass/custom/_blocks.scss */
-.section-search .sidebar ul {
+/* line 522, ../sass/custom/_blocks.scss */
+.section-search .sidebar .region ul {
   padding-left: 0;
 }
-/* line 523, ../sass/custom/_blocks.scss */
-.section-search .sidebar ul li {
+/* line 524, ../sass/custom/_blocks.scss */
+.section-search .sidebar .region ul li {
   padding-left: 16px;
   text-indent: -16px;
 }
-/* line 528, ../sass/custom/_blocks.scss */
-.section-search .sidebar input.facetapi-checkbox {
+/* line 529, ../sass/custom/_blocks.scss */
+.section-search .sidebar .region input.facetapi-checkbox {
   margin-right: 5px;
 }
-/* line 531, ../sass/custom/_blocks.scss */
-.section-search .sidebar a.facetapi-limit-link {
+/* line 532, ../sass/custom/_blocks.scss */
+.section-search .sidebar .region a.facetapi-limit-link {
   display: block;
   text-transform: uppercase;
 }
