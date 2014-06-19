@@ -368,7 +368,7 @@ function homepage_views_views_default_views() {
   /* Display: Academy HP Sidebar */
   $handler = $view->new_display('block', 'Academy HP Sidebar', 'academy_course');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'online-courses panel';
+  $handler->display->display_options['css_class'] = 'online-courses';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -380,11 +380,11 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Timely Content (field_timely_content) */
-  $handler->display->display_options['sorts']['field_timely_content_value']['id'] = 'field_timely_content_value';
-  $handler->display->display_options['sorts']['field_timely_content_value']['table'] = 'field_data_field_timely_content';
-  $handler->display->display_options['sorts']['field_timely_content_value']['field'] = 'field_timely_content_value';
-  $handler->display->display_options['sorts']['field_timely_content_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['sorts']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['sorts']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['sorts']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['sorts']['field_featured_content_value']['order'] = 'DESC';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

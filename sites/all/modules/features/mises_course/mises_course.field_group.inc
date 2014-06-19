@@ -57,7 +57,8 @@ function mises_course_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_image_collection',
-      2 => 'title',
+      2 => 'field_link_to_external_listing_',
+      3 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -85,7 +86,7 @@ function mises_course_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'body',
-      1 => 'node_link',
+      1 => 'field_link_to_external_listing_',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -113,7 +114,7 @@ function mises_course_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'body',
-      1 => 'title',
+      1 => 'course_title_linked',
     ),
     'format_type' => 'html5',
     'format_settings' => array(
