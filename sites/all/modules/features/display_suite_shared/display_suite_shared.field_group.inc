@@ -23,8 +23,8 @@ function display_suite_shared_field_group_info() {
     'label' => '',
     'weight' => '0',
     'children' => array(
-      0 => 'contextual_block_title_with_icon',
-      1 => 'title',
+      0 => 'course_title_linked',
+      1 => 'contextual_block_title_with_icon',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

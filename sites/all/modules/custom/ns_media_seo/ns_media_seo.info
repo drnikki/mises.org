@@ -1,0 +1,5 @@
+name = NS Media Seo
+description = SEO/accessibility enhancements (eg. Alt and Title text) for the 7.x-2.x branch of the Media module.
+package = Media
+core = 7.x
+version = 7.x-2.0
