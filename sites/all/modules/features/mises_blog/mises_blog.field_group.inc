@@ -25,8 +25,8 @@ function mises_blog_field_group_info() {
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
-      2 => 'field_level',
-      3 => 'field_audience',
+      2 => 'field_audience',
+      3 => 'field_level',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -56,7 +56,8 @@ function mises_blog_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_author_1',
-      2 => 'title',
+      2 => 'field_media_collection',
+      3 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
