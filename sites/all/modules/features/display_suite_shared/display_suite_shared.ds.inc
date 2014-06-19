@@ -2330,6 +2330,29 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'course_title_linked';
+  $ds_field->label = 'Course Title Linked';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'course|*';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+if ($entity->field_link_to_external_listing_) {
+  $link = "[node:field-link-to-external-listing-:url]";
+} else { $link = "http://academy.mises.org";}
+?>
+<a href="<?php print $link; ?>" target="_blank" title="[node:title]">[node:title]</a>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['course_title_linked'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'custom_breadcrumb';
   $ds_field->label = 'Custom Breadcrumb';
   $ds_field->field_type = 6;

@@ -57,6 +57,7 @@ features[ds_fields][] = author_articles
 features[ds_fields][] = author_full_name
 features[ds_fields][] = body_with_media_embedded
 features[ds_fields][] = contextual_block_title_with_icon
+features[ds_fields][] = course_title_linked
 features[ds_fields][] = custom_breadcrumb
 features[ds_fields][] = dynamic_field_1
 features[ds_fields][] = dynamic_field_2
