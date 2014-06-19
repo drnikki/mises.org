@@ -80,6 +80,16 @@ function _mises_popular_content_form() {
     '#title' => t('Analytics Fetch Settings'),
   );
 
+  $form['analytics_fetch']['analytics_path_filter'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Path Filter'),
+    '#required' => FALSE,
+    '#description' =>
+      t('Include a filter in the query to Google Analytics to reduce the set of results to those whose paths contain the specified string. ') .
+        '<br />' . t('If this filter starts from the beginning of the path, please use a leading slash.'),
+    '#default_value' => variable_get('mises_popular_content_analytics_path_filter', ''),
+  );
+
   $form['analytics_fetch']['analytics_timespan_days'] = array(
     '#type' => 'select',
     '#title' => t('Timespan'),
@@ -233,6 +243,7 @@ function _mises_popular_content_form_submit($form, &$form_state) {
         'analytics_username' => 'mises_popular_content_analytics_username',
         'analytics_password' => 'mises_popular_content_analytics_password',
         'analytics_profile_id' => 'mises_popular_content_analytics_profile_id',
+        'analytics_path_filter' => 'mises_popular_content_analytics_path_filter',
         'analytics_timespan_days' => 'mises_popular_content_analytics_timespan_days',
         'analytics_fetch_frequency_hours' => 'mises_popular_content_analytics_frequency_hours',
         'analytics_fetch_max_results' => 'mises_popular_content_analytics_max_results',
@@ -251,15 +262,26 @@ function _mises_popular_content_form_submit($form, &$form_state) {
       break;
     case 'Manually trigger popular content fetch':
       drupal_set_message('Attempting popular content query to Google...');
-      $results = _mises_popular_content_query_google_analytics();
+      $results = _mises_popular_content_query_google_analytics(TRUE);
       if ($results === FALSE) {
         drupal_set_message('Query attempt failed.  Please ensure the username, password, and profile ID values are populated and are correct.', 'error');
       } else if (is_array($results) && empty($results)) {
-        drupal_set_message('No results were returned for your query.  This may be due to the content types selected, or not selected.', 'error');
+        drupal_set_message('No results were returned for your query.');
       } else {
         variable_set('mises_popular_content_results', $results);
         variable_set('mises_popular_content_results_timestamp', time());
-        drupal_set_message('Google Analytics "Most Popular" query results ([number of hits] => node ID):<pre>' . print_r($results, 1) . '</pre>');
+        $filtered_results = t('Results filtered by paths associated with published nodes:') .
+          '<table><thead><tr><th>&nbsp;</th><th>Node</th><th>Number of Hits</th></tr></thead><tbody>';
+        $count = 0;
+        foreach ($results as $hits => $nid) {
+          $count++;
+          $node = node_load($nid);
+          $filtered_results .= '<tr><td>' . $count . '</td>' . 
+            '<td>' . l($node->title, 'node/' . $node->nid, array('attributes' => array('target' => '_blank'))) . '</td>' .
+            '<td>' . $hits . '</td></tr>';
+        }
+        $filtered_results .= '</tbody></table>';
+        drupal_set_message($filtered_results);
       }
       break;
   }
@@ -267,8 +289,11 @@ function _mises_popular_content_form_submit($form, &$form_state) {
 
 /**
  * Sends a query to Google for a list of pages with the most hits, ordered by number of hits descending:
+ *
+ * @params
+ *   - $verbose - Set to TRUE to see all results returned from Google.
  */
-function _mises_popular_content_query_google_analytics() {
+function _mises_popular_content_query_google_analytics($verbose = FALSE) {
   module_load_include('inc', 'mises_popular_content', 'includes/gapi.class.php');
   $ga_username = variable_get('mises_popular_content_analytics_username', '');
   $ga_password = variable_get('mises_popular_content_analytics_password', '');
@@ -287,10 +312,16 @@ function _mises_popular_content_query_google_analytics() {
   $to_date = date('Y-m-d');
   $max_results = variable_get('mises_popular_content_analytics_max_results', 25);
 
-  $ga = new gapi($ga_username, $ga_password);
-  $results = $ga->requestReportData($ga_profile_id, $dimensions, $metrics, $sort, null, $from_date, $to_date, 1, $max_results);
+  // Apply a path filter if one was specified:
+  $filter = null;
+  $path_filter = variable_get('mises_popular_content_analytics_path_filter', null);
+  if ($path_filter) {
+    $filter = 'pagePath=@' . $path_filter;
+  }
 
-  //drupal_set_message('<pre>' . print_r($results, 1) . '</pre>'); 
+  $ga = new gapi($ga_username, $ga_password);
+  $results = $ga->requestReportData($ga_profile_id, $dimensions, $metrics, $sort, $filter, $from_date, $to_date, 1, $max_results);
+
   $total_results = array();
   
   $processed_results = array();
@@ -305,7 +336,9 @@ function _mises_popular_content_query_google_analytics() {
       $path = substr($path['pagePath'], 1);
     }
 
-    // $total_results[$hits] = $path;
+    if ($verbose) {
+      $total_results[$hits] = $path;
+    }
 
     // Account for the library item content type's updated URL alias.
     // Ultimately, this can be removed, but is currently needed for theming and testing purposes:
@@ -319,16 +352,27 @@ function _mises_popular_content_query_google_analytics() {
     $path = drupal_lookup_path("source", $path);
     $node = menu_get_object("node", 1, $path);
     if (isset($node->nid)) {
+      // Exclude any nodes returned twice, which can occur if a node's path has changed:
+      if (in_array($node->nid, $processed_results)) {
+        continue;
+      }
+
       $processed_results[$hits] = $node->nid;
     }
   }
-  
-  //$total_output_test = '<table><thead><tr><th>Path</th><th>Hits</th></tr></thead><tbody>';
-  //foreach ($total_results as $hits => $path) {
-  //  $total_output_test .= '<tr><td>' . $path . '</td><td>' . $hits . '</td></tr>';
-  //}
-  //$total_output_test .= '</tbody></table>';
-  //drupal_set_message('<h1>Total results from google:</h1>' . $total_output_test . '<hr />');
+
+  if ($verbose) {
+    $verbose_output = t('Raw Analytics query response:') . ':' . '<br />';
+    if ($filter) {
+      $verbose_output .= t('Please note that this query contained the path filter') . ', "' . $path_filter . '".';
+    }
+    $verbose_output .= '<table><thead><tr><th>Path</th><th>Hits</th></tr></thead><tbody>';
+    foreach ($total_results as $hits => $path) {
+      $verbose_output .= '<tr><td>' . $path . '</td><td>' . $hits . '</td></tr>';
+    }
+    $verbose_output .= '</tbody></table>';
+    drupal_set_message($verbose_output);
+  }
 
   watchdog(
     'mises_popular_content',
