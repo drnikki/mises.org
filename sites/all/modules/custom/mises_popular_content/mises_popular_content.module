@@ -362,13 +362,15 @@ function _mises_popular_content_query_google_analytics($verbose = FALSE) {
   }
 
   if ($verbose) {
-    $verbose_output = t('Raw Analytics query response:') . ':' . '<br />';
+    $verbose_output = t('Raw Analytics query response') . ':' . '<br />';
     if ($filter) {
       $verbose_output .= t('Please note that this query contained the path filter') . ', "' . $path_filter . '".';
     }
-    $verbose_output .= '<table><thead><tr><th>Path</th><th>Hits</th></tr></thead><tbody>';
+    $verbose_output .= '<table><thead><tr><th>&nbsp;</th><th>Path</th><th>Hits</th></tr></thead><tbody>';
+    $count = 0;
     foreach ($total_results as $hits => $path) {
-      $verbose_output .= '<tr><td>' . $path . '</td><td>' . $hits . '</td></tr>';
+      $count++;
+      $verbose_output .= '<tr><td>' . $count . '</td><td>' . $path . '</td><td>' . $hits . '</td></tr>';
     }
     $verbose_output .= '</tbody></table>';
     drupal_set_message($verbose_output);

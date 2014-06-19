@@ -14,15 +14,22 @@ function mises_popular_content_configuration_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mises_popular_content_analytics_frequency_hours';
-  $strongarm->value = '1';
+  $strongarm->value = '3';
   $export['mises_popular_content_analytics_frequency_hours'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mises_popular_content_analytics_max_results';
-  $strongarm->value = '30';
+  $strongarm->value = '100';
   $export['mises_popular_content_analytics_max_results'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mises_popular_content_analytics_path_filter';
+  $strongarm->value = '/library';
+  $export['mises_popular_content_analytics_path_filter'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
