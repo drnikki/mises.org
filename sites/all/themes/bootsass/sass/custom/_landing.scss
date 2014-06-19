@@ -51,19 +51,34 @@
 
 /* HOMEPAGE TOP RIGHT MENU */
 
+/* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
+.main-content .node-teaser {
+  padding: $grid-gutter-width 0 0;
+  &:after {
+    display: block;
+    content: '';
+    visibility: visible;
+    height: 1px;
+    width: calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    border-bottom: 1px solid $gray-light;
+    margin: 20px auto 0;
+  }
+  .image {
+    margin-top: 5px;
+  }
+}
+
 
 /* LANDING LISTS */
 .landing-list {
-  .views-row {
-    padding: 20px 0;
-    border-bottom: 1px solid $gray-light;
-    .front & {
-      border-bottom: 0 none;
+  .node-teaser {
+    .front &:after {
+      display: none;
     }
   }
   .image {
     margin-top: 5px;
-    border-top: 8px solid $brand-secondary;
   }
   .tags {
     padding-top: 5px;
@@ -80,9 +95,13 @@
 .page-taxonomy-term-147 {
   .landing-list {
     .views-row-1 {
-      padding: 0; 
-      border-bottom: 0 none;
       background-color: $gray-lighter;
+      .node-teaser {
+        padding: 0;
+        &:after {
+          display: none;
+        } 
+      }
       .group-right {
         &:before {
           display: block;
