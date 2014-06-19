@@ -96,6 +96,7 @@
         padding: 0;
         width: $font-size-base * 2;
         height: $font-size-base * 2;
+        border-width: 0;
         border-radius: $pager-border-radius;
         line-height: $font-size-base * 2;
       }
@@ -103,13 +104,9 @@
     &.prev, &.next {
       a {
         @extend .glyphicon;
-        @extend .glyphicon-chevron-left;
-        top: 1px;
         background-color: $gray;
-        color: $gray;
         &:before {
           position: relative;
-          left: 1px;
           color: $white;
         }
       }
@@ -118,6 +115,11 @@
           background-color: $gray-dark;
           color: $gray-dark;
         }
+      }
+    }
+    &.prev {
+      a {
+        @extend .glyphicon-chevron-left;
       }
     }
     &.next {
@@ -425,7 +427,11 @@ h2 {
     color: $brand-primary;
     font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
     font-family: $font-family-serif;
-    margin-top: 0;
+    @media (min-width: $screen-xs + 1) {
+      & {
+        margin-top: 0;
+      }
+    }
   }
 }
 h3, h4 {
