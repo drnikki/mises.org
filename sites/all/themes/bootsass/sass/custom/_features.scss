@@ -335,7 +335,13 @@ ul.addtocal_menu {
 	height: 100%;
 }
 
-/* ATTACHMENT LISTS */
+/* LIST GROUPS AND ATTACHMENT LISTS */
+.list-group {
+  overflow: hidden;
+  h3 {
+    margin: 0;
+  }
+}
 .attachments {
   ul {
     @extend .list-group;

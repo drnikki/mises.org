@@ -134,6 +134,38 @@ function mises_book_digital_text_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_links|node|book_digital_text|full';
+  $field_group->group_name = 'group_links';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'book_digital_text';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Links',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_epub',
+      1 => 'field_kindle',
+      2 => 'field_mobi',
+      3 => 'field_pdf',
+      4 => 'field_link_to_external_listing_',
+      5 => 'dynamic_field_1',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Links',
+      'instance_settings' => array(
+        'classes' => 'group-links list-group',
+        'element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_links|node|book_digital_text|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_tags|node|book_digital_text|full';
   $field_group->group_name = 'group_tags';
   $field_group->entity_type = 'node';
