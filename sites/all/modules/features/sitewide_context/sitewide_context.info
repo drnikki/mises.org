@@ -12,6 +12,7 @@ dependencies[] = footer_right
 dependencies[] = menu
 dependencies[] = menu_footer_blocks
 dependencies[] = navbar_support_mises
+dependencies[] = search
 dependencies[] = top_bar_ads
 dependencies[] = views
 dependencies[] = widgets

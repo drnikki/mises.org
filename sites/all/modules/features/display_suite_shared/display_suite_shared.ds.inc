@@ -919,6 +919,17 @@ function display_suite_shared_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+        'conditions' => array(
+          0 => array(
+            'condition' => 'hide_if_empty',
+            'configuration' => array(
+              'target' => 'field_image',
+            ),
+          ),
+        ),
+      ),
     ),
     'field_display_title' => array(
       'formatter_settings' => array(
@@ -1579,6 +1590,11 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'field_mises_published_date' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -1589,6 +1605,11 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-at' => '',
           'ow-def-at' => FALSE,
         ),
+      ),
+    ),
+    'field_teaser_text' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
     'field_author_1' => array(
@@ -2518,8 +2539,8 @@ print \'<div class="panel-heading \' . $random_class . \'"><div class="panel-tit
   $ds_field->properties = array(
     'code' => array(
       'value' => '<div id="text-resizer">
-<div class="btn btn-default btn-xs small active">A</div>
-<div class="btn btn-default btn-xs large">A</div>
+<div class="btn btn-white btn-xs small active">A</div>
+<div class="btn btn-white btn-xs large">A</div>
 </div>',
       'format' => 'full_html',
     ),

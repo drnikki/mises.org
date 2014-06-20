@@ -65,17 +65,23 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'navigation',
+          'weight' => '-89',
+        ),
         'views-flex_blocks-block_4' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_4',
           'region' => 'navigation',
-          'weight' => '-10',
+          'weight' => '-88',
         ),
         'system-main' => array(
           'module' => 'system',
           'delta' => 'main',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'menu-menu-browse-library' => array(
           'module' => 'menu',
