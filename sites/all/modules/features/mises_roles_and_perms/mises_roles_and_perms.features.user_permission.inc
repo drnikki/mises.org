@@ -282,6 +282,24 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'context_ui',
   );
 
+  // Exported permission: 'administer custom search'.
+  $permissions['administer custom search'] = array(
+    'name' => 'administer custom search',
+    'roles' => array(
+      'Drupal Developer' => 'Drupal Developer',
+    ),
+    'module' => 'custom_search',
+  );
+
+  // Exported permission: 'administer custom search blocks'.
+  $permissions['administer custom search blocks'] = array(
+    'name' => 'administer custom search blocks',
+    'roles' => array(
+      'Drupal Developer' => 'Drupal Developer',
+    ),
+    'module' => 'custom_search_blocks',
+  );
+
   // Exported permission: 'administer dependencies'.
   $permissions['administer dependencies'] = array(
     'name' => 'administer dependencies',
@@ -2924,6 +2942,40 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'search',
+  );
+
+  // Exported permission: 'use custom search'.
+  $permissions['use custom search'] = array(
+    'name' => 'use custom search',
+    'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'custom_search',
+  );
+
+  // Exported permission: 'use custom search blocks'.
+  $permissions['use custom search blocks'] = array(
+    'name' => 'use custom search blocks',
+    'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'custom_search_blocks',
   );
 
   // Exported permission: 'use text format ds_code'.
