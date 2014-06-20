@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * bootstrap-modal.tpl.php
+ * bootsass-modal.tpl.php
  *
  * Markup for Bootstrap modals.
  *

@@ -174,7 +174,7 @@ function mises_library_item_field_default_field_instances() {
           'summary_handler' => 'trim',
           'trim_length' => 300,
           'trim_options' => array(
-            'text' => 0,
+            'text' => 'text',
           ),
           'trim_suffix' => '...',
           'trim_type' => 'chars',
@@ -2320,7 +2320,7 @@ function mises_library_item_field_default_field_instances() {
           'summary_handler' => 'full',
           'trim_length' => 300,
           'trim_options' => array(
-            'text' => 0,
+            'text' => 'text',
           ),
           'trim_suffix' => '...',
           'trim_type' => 'chars',

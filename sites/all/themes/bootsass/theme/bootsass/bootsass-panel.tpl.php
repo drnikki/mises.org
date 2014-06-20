@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * bootstrap-panel.tpl.php
+ * bootsass-panel.tpl.php
  *
  * Markup for Bootstrap panels ([collapsible] fieldsets).
  */
