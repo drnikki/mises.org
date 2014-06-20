@@ -18,15 +18,7 @@ function mises_solr_search_apachesolr_environments() {
   $environment->service_class = '';
   $environment->conf = array(
     'apachesolr_direct_commit' => 0,
-    'apachesolr_index_last' => array(
-      'node' => array(
-        'last_changed' => '1403035299',
-        'last_entity_id' => '16716',
-      ),
-    ),
-    'apachesolr_index_updated' => 1403035774,
-    'apachesolr_last_optimize' => 1403035496,
-    'apachesolr_read_only' => '0',
+    'apachesolr_read_only' => '1',
     'apachesolr_search_facet_pages' => '',
     'apachesolr_soft_commit' => 0,
   );
