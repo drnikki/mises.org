@@ -35,7 +35,9 @@ var Drupal = Drupal || {};
         $('.row.video .col-xs-6 .panel-body').equalHeight();
         $('.row.video .col-xs-6 .panel-footer').equalHeight();
 
-        var sidebarHeight = $("div.region-sidebar-second").height() + $("div.region-sidebar-second-top").height() + 20;
+        //var sidebarHeight = $("div.region-sidebar-second").height() + $("div.region-sidebar-second-top").height();
+        var sidebarHeight = $(".sidebar").height();
+        console.log('sidebarHeight ' + sidebarHeight);
         $("div.main-content").css({ "min-height": sidebarHeight }); // Roger's magic!
         
       };
@@ -70,6 +72,7 @@ var Drupal = Drupal || {};
         $('.more-link a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
         $('.block-mailchimp-lists h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
         $('#block-custom-search-blocks-1 h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
+        $('a.external-link').append('<span class="glyphicon glyphicon-new-window"></span> ');
         
       }); 
 
