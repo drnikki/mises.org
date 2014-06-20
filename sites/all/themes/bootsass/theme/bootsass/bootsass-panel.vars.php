@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * bootstrap-panel.vars.php
+ * bootsass-panel.vars.php
  */
 
 /**

@@ -428,10 +428,10 @@ function _bootsass_settings_form(&$form, $form_state) {
     '#group' => 'bootsass',
   );
   // Rebuild registry.
-  $form['advanced']['bootstrap_rebuild_registry'] = array(
+  $form['advanced']['bootsass_rebuild_registry'] = array(
     '#type' => 'checkbox',
     '#title' => t('Rebuild theme registry on every page.'),
-    '#default_value' => theme_get_setting('bootstrap_rebuild_registry'),
+    '#default_value' => theme_get_setting('bootsass_rebuild_registry'),
     '#description' => t('During theme development, it can be very useful to continuously !rebuild. !warning', array(
       '!rebuild' => l(t('rebuild the theme registry'), 'http://drupal.org/node/173880#theme-registry'),
       '!warning' => '<div class="alert alert-warning messages warning"><strong>' . t('WARNING') . ':</strong> ' . t('This is a huge performance penalty and must be turned off on production websites. ') . '</div>',

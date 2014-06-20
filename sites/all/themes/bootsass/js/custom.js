@@ -69,6 +69,7 @@ var Drupal = Drupal || {};
         $('.field-collection-item-field-resources .read-more a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
         $('.more-link a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
         $('.block-mailchimp-lists h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
+        $('#block-custom-search-blocks-1 h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
         
       }); 
 

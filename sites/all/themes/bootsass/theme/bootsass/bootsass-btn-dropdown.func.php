@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * bootstrap-btn-dropdown.func.php
+ * bootsass-btn-dropdown.func.php
  */
 
 /**

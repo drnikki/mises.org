@@ -104,7 +104,7 @@ function bootsass_form_alter(array &$form, array &$form_state = array(), $form_i
         $form['#attributes']['class'][] = 'form-search';
 
         $form['search_block_form']['#title'] = '';
-        $form['search_block_form']['#attributes']['placeholder'] = t('Search');
+        $form['search_block_form']['#attributes']['placeholder'] = t('SEARCH MISES');
 
         // Hide the default button from display and implement a theme wrapper
         // to add a submit button containing a search icon directly after the
