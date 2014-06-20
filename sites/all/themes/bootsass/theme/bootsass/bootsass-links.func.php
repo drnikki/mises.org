@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * bootstrap-links.func.php
+ * bootsass-links.func.php
  */
 
 /**

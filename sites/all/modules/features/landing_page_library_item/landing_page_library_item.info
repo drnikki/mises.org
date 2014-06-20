@@ -6,6 +6,7 @@ version = 7.x-1.0
 project = landing_page_library_item
 dependencies[] = context
 dependencies[] = ctools
+dependencies[] = custom_search_blocks
 dependencies[] = features
 dependencies[] = mises_flex_block
 dependencies[] = mises_static_page

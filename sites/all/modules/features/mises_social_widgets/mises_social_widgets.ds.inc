@@ -39,7 +39,7 @@ function mises_social_widgets_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<div id="printer-link" class="node-widget"><p><a target="_blank" href="/print/[node:nid]" title="Print"><span class="glyphicon glyphicon-print"></span></a></p></div>',
+      'value' => '<div id="printer-link" class="node-widget"><p><a target="_blank" class="print" href="/print/[node:nid]" title="Print"><span class="glyphicon glyphicon-print"></span></a></p></div>',
       'format' => 'full_html',
     ),
     'use_token' => 1,

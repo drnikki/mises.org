@@ -40,9 +40,9 @@ function landing_page_library_item_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'search-form' => array(
-          'module' => 'search',
-          'delta' => 'form',
+        'custom_search_blocks-1' => array(
+          'module' => 'custom_search_blocks',
+          'delta' => '1',
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),

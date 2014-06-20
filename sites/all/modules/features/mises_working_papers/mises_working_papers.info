@@ -20,6 +20,7 @@ features[features_api][] = api:2
 features[field_base][] = field_abstract
 features[field_base][] = field_author
 features[field_base][] = field_link_to_paper_on_ssrn_site
+features[field_group][] = group_tags|node|working_papers|full
 features[field_group][] = group_working_paper_information|node|working_papers|form
 features[field_group][] = group_working_paper_tags|node|working_papers|form
 features[field_instance][] = node-working_papers-body

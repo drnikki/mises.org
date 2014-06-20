@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * bootstrap-accordion.func.php
+ * bootsass-accordion.func.php
  * @todo replace this with bootsass_panel?
  */
 
