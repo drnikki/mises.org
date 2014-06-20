@@ -10,6 +10,58 @@
 function legacy_book_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-legacy_book-field_audience'
+  $field_instances['node-legacy_book-field_audience'] = array(
+    'bundle' => 'legacy_book',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_audience',
+    'label' => 'Audience',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-legacy_book-field_author_1'
   $field_instances['node-legacy_book-field_author_1'] = array(
     'bundle' => 'legacy_book',
@@ -469,6 +521,58 @@ function legacy_book_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-legacy_book-field_level'
+  $field_instances['node-legacy_book-field_level'] = array(
+    'bundle' => 'legacy_book',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_level',
+    'label' => 'Level',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-legacy_book-field_media'
   $field_instances['node-legacy_book-field_media'] = array(
     'bundle' => 'legacy_book',
@@ -681,11 +785,13 @@ function legacy_book_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Audience');
   t('Author');
   t('Body');
   t('Citation');
   t('Image');
   t('Kindle');
+  t('Level');
   t('Mobi');
   t('PDF');
   t('Video Review');
