@@ -479,7 +479,6 @@ function mises_events_views_default_views() {
     'private' => 'private',
   );
   $handler->display->display_options['path'] = 'events';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Events';
   $handler->display->display_options['menu']['weight'] = '-45';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -541,7 +540,6 @@ function mises_events_views_default_views() {
     'private' => 'private',
   );
   $handler->display->display_options['path'] = 'events/past';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Events';
   $handler->display->display_options['menu']['weight'] = '-45';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -604,7 +602,6 @@ function mises_events_views_default_views() {
   $handler->display->display_options['filters']['field_media_collection_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_media_collection_value']['group'] = 1;
   $handler->display->display_options['path'] = 'events/watch';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Events';
   $handler->display->display_options['menu']['weight'] = '-45';
   $handler->display->display_options['menu']['name'] = 'main-menu';
