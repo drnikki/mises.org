@@ -32,6 +32,7 @@ features[field_group][] = group_book_digi_text_info|node|book_digital_text|form
 features[field_group][] = group_book_digi_text_media|node|book_digital_text|form
 features[field_group][] = group_book_digi_text_tags|node|book_digital_text|form
 features[field_group][] = group_image|node|book_digital_text|full
+features[field_group][] = group_links|node|book_digital_text|full
 features[field_group][] = group_tags|node|book_digital_text|full
 features[field_instance][] = node-book_digital_text-field_audience
 features[field_instance][] = node-book_digital_text-field_austrian_school

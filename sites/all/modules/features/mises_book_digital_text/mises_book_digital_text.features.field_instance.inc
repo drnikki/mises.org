@@ -31,7 +31,7 @@ function mises_book_digital_text_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -192,7 +192,7 @@ function mises_book_digital_text_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -278,7 +278,7 @@ function mises_book_digital_text_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -358,14 +358,14 @@ function mises_book_digital_text_field_default_field_instances() {
         'weight' => 10,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'mediafield',
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 7,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -508,14 +508,14 @@ function mises_book_digital_text_field_default_field_instances() {
         'weight' => 12,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'mediafield',
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 9,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -582,7 +582,7 @@ function mises_book_digital_text_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -630,10 +630,13 @@ function mises_book_digital_text_field_default_field_instances() {
         'weight' => 14,
       ),
       'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -660,9 +663,9 @@ function mises_book_digital_text_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'rel_remove' => 'default',
-      'title' => 'optional',
+      'title' => 'value',
       'title_maxlength' => 128,
-      'title_value' => '',
+      'title_value' => 'Buy Now from Mises Store',
       'url' => 0,
       'user_register_form' => FALSE,
       'validate_url' => 1,
@@ -693,14 +696,14 @@ function mises_book_digital_text_field_default_field_instances() {
         'weight' => 11,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'mediafield',
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 8,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -763,14 +766,14 @@ function mises_book_digital_text_field_default_field_instances() {
         'weight' => 9,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'mediafield',
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'default',
         ),
         'type' => 'media',
-        'weight' => 6,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -896,7 +899,7 @@ function mises_book_digital_text_field_default_field_instances() {
           'file_view_mode' => 'wide_player',
         ),
         'type' => 'media',
-        'weight' => 10,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
