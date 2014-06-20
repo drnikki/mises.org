@@ -93,6 +93,9 @@
     border: 0 none;
     border-radius: 0;
   }
+  .sidebar .block:last-child & {
+    margin-bottom: 0;
+  }
 }
 // Pagination
 .pagination {
@@ -521,6 +524,18 @@ address {
     @include glyph-size(24px);
   }
   a:hover {
+    color: $brand-secondary;
+    span.glyphicon {
+      background-color: $brand-secondary;
+    }
+  }
+}
+a.external-link {
+  span.glyphicon {
+    @include glyph-size(24px);
+    margin-left: $padding-base-vertical;
+  }
+  &:hover {
     color: $brand-secondary;
     span.glyphicon {
       background-color: $brand-secondary;

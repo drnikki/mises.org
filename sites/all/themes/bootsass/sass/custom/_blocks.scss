@@ -172,6 +172,7 @@ ul.menu {
 .outset {
   margin-right: $grid-gutter-width * -1.5;
   margin-left: $grid-gutter-width * -1.5;
+  margin-bottom: $padding-large-vertical;
   padding: $grid-gutter-width * 1.5;
 }
 

@@ -52,7 +52,7 @@ function main_menu_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: main-menu_daily:taxonomy/term/147
@@ -87,6 +87,9 @@ function main_menu_menu_default_menu_links() {
     'router_path' => 'events',
     'link_title' => 'Events',
     'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
       'identifier' => 'main-menu_events:events',
     ),
     'module' => 'system',
@@ -94,8 +97,8 @@ function main_menu_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -45,
-    'customized' => 0,
+    'weight' => -44,
+    'customized' => 1,
   );
   // Exported menu link: main-menu_home:<front>
   $menu_links['main-menu_home:<front>'] = array(
@@ -111,67 +114,67 @@ function main_menu_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -43,
+    'weight' => -42,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_library:<front>
-  $menu_links['main-menu_library:<front>'] = array(
+  // Exported menu link: main-menu_library:node/786
+  $menu_links['main-menu_library:node/786'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'node/786',
+    'router_path' => 'node/%',
     'link_title' => 'Library',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'main-menu_library:<front>',
+      'identifier' => 'main-menu_library:node/786',
     ),
     'module' => 'menu',
-    'hidden' => 1,
-    'external' => 1,
+    'hidden' => 0,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_online-learning:<front>
-  $menu_links['main-menu_online-learning:<front>'] = array(
+  // Exported menu link: main-menu_online-learning:http://academy.mises.org
+  $menu_links['main-menu_online-learning:http://academy.mises.org'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'http://academy.mises.org',
     'router_path' => '',
     'link_title' => 'Online Learning',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'main-menu_online-learning:<front>',
+      'identifier' => 'main-menu_online-learning:http://academy.mises.org',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -45,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_store:<front>
-  $menu_links['main-menu_store:<front>'] = array(
+  // Exported menu link: main-menu_store:http://store.mises.org
+  $menu_links['main-menu_store:http://store.mises.org'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => '<front>',
+    'link_path' => 'http://store.mises.org',
     'router_path' => '',
     'link_title' => 'Store',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'main-menu_store:<front>',
+      'identifier' => 'main-menu_store:http://store.mises.org',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -44,
+    'weight' => -43,
     'customized' => 1,
   );
   // Translatables
