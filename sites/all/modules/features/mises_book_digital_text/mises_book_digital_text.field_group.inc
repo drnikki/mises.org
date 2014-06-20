@@ -59,6 +59,7 @@ function mises_book_digital_text_field_group_info() {
       1 => 'field_kindle',
       2 => 'field_mobi',
       3 => 'field_pdf',
+      4 => 'field_link_to_external_listing_',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -145,6 +146,7 @@ function mises_book_digital_text_field_group_info() {
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
+      2 => 'tags_title',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
