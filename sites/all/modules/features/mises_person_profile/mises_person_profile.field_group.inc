@@ -146,6 +146,7 @@ function mises_person_profile_field_group_info() {
       0 => 'field_major_works',
       1 => 'field_published_in',
       2 => 'field_quote',
+      3 => 'field_quote_reference',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
