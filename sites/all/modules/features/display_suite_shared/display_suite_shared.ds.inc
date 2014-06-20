@@ -864,11 +864,6 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
-    'field_description' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
     'field_event_date' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -2151,6 +2146,123 @@ function display_suite_shared_ds_field_settings_info() {
   );
   $export['node|product|teaser'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|working_papers|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'working_papers';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'tags_title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'follow_mises_institute' => array(
+      'weight' => '27',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'page-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-content',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_abstract' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb-el' => 'h3',
+          'lb-cl' => 'sub-heading secondary',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'outset bg-gray',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'body-content',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_austrian_school' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_author' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'author',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_link_to_paper_on_ssrn_site' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'View Paper',
+          'lb-el' => 'h3',
+          'lb-cl' => 'sub-heading contrast',
+          'lb-col' => TRUE,
+          'fi' => TRUE,
+          'fi-el' => 'p',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_topics' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|working_papers|full'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -2525,6 +2637,24 @@ print \'<div class="panel-heading \' . $random_class . \'"><div class="panel-tit
     'use_token' => 1,
   );
   $export['random_term'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'tags_title';
+  $ds_field->label = 'Tags title';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<span class="tag-label bold">Tags</span>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['tags_title'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -3258,7 +3388,7 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'event';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
       'right' => array(
@@ -3294,8 +3424,12 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
     ),
     'wrappers' => array(
+      'header' => 'div',
+      'top' => 'div',
       'left' => 'div',
       'right' => 'div',
+      'bottom' => 'div',
+      'footer' => 'div',
       'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
@@ -4252,6 +4386,65 @@ function display_suite_shared_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['node|product|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|working_papers|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'working_papers';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'tags_title',
+        2 => 'field_author',
+        3 => 'field_topics',
+        4 => 'field_link_to_paper_on_ssrn_site',
+        5 => 'field_abstract',
+        6 => 'field_austrian_school',
+        7 => 'body',
+        8 => 'group_tags',
+        11 => 'follow_mises_institute',
+      ),
+      'ds_hidden' => array(
+        9 => 'field_level',
+        10 => 'field_audience',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'tags_title' => 'ds_content',
+      'field_author' => 'ds_content',
+      'field_topics' => 'ds_content',
+      'field_link_to_paper_on_ssrn_site' => 'ds_content',
+      'field_abstract' => 'ds_content',
+      'field_austrian_school' => 'ds_content',
+      'body' => 'ds_content',
+      'group_tags' => 'ds_content',
+      'field_level' => 'ds_hidden',
+      'field_audience' => 'ds_hidden',
+      'follow_mises_institute' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '2',
+    'page_option_title' => 'Working Papers',
+  );
+  $export['node|working_papers|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
