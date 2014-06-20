@@ -929,7 +929,7 @@ function mises_person_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1072,77 +1072,76 @@ function mises_person_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_quote'
-  $field_instances['node-person_profile-field_quote'] = array(
+  // Exported field_instance: 'node-person_profile-field_quote_reference'
+  $field_instances['node-person_profile-field_quote_reference'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Reference a library item that has been tagged with "Quotes".',
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
+          'link' => FALSE,
         ),
-        'type' => 'text_default',
-        'weight' => 11,
+        'type' => 'entityreference_label',
+        'weight' => 19,
       ),
       'full' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'text_default',
-        'weight' => 4,
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'sidebar_author' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 0,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_quote',
+    'field_name' => 'field_quote_reference',
     'label' => 'Quote',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'entityreference',
       'settings' => array(
-        'rows' => 5,
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'text_textarea',
-      'weight' => 10,
+      'type' => 'entityreference_autocomplete',
+      'weight' => 11,
     ),
   );
 
@@ -1398,6 +1397,7 @@ function mises_person_profile_field_default_field_instances() {
   t('Last name');
   t('Major Works');
   t('Quote');
+  t('Reference a library item that has been tagged with "Quotes".');
   t('Related Nodes');
   t('Significant Contributions');
   t('TECHNICAL NOTE: Currently autocompletes from Library Item only. Add Legacy Book and Book/Digital when those content types are created.');
