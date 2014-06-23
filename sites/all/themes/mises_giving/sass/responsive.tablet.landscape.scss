@@ -123,6 +123,10 @@ h5 {
   }
   h3.give {
     line-height: 50px;
+    .win.ff & {
+      line-height: 45px;
+      padding-top: 5px;
+    }
     a {
       padding: 0 15px;
       text-align: left;
@@ -133,6 +137,9 @@ h5 {
         display: inline-block;
         max-height: 50px;
         padding-right: 35px;
+        .win.ff & {
+          background-position: right 7px;
+        }
       }
     }
   }

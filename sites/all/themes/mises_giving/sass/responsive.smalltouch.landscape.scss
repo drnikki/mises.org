@@ -204,6 +204,10 @@ h6 {
   h3.give {
     height: 46px;
     line-height: 46px;
+    .win.ff & {
+      line-height: 42px;
+      padding-top: 4px;
+    }
   }
 }
 

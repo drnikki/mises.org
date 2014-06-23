@@ -67,6 +67,10 @@ h5 {
     padding: 10px 20px;
     text-align: center;
     margin: 0;
+    .win.ff & {
+      line-height: 36px;
+      padding-top: 14px;
+    }
   }
 }
 

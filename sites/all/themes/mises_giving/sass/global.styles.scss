@@ -1406,6 +1406,11 @@ div {
     margin: 0;
     line-height: 60px;
     text-transform: uppercase;
+    .win.ff & {
+      @include border-box;
+      line-height: 54px;
+      padding-top: 6px;
+    }
 
     a {
       color: $green;
@@ -1564,6 +1569,10 @@ div {
   &:hover {
     text-decoration: none;
   }
+  .win.ff & {
+    line-height: 55px;
+    padding-top: 5px;
+  }
 }
 .green-link-small,
 .field-name-field-donate-link a {
@@ -1578,6 +1587,10 @@ div {
   display: block;
   &:hover {
     text-decoration: none;
+  }
+  .win.ff & {
+    line-height: 36px;
+    padding-top: 4px;
   }
 }
 .field-name-field-donate-link {

@@ -36,10 +36,18 @@
     background: $cleargreen;
     margin: 0 10px;
     padding: 30px 40px;
+    .win.ff & {
+      line-height: 36px;
+      padding-top: 34px;
+    }
 
     .giving-front & {
       background: $green;
       line-height: 70px;
+    }
+    .win.ff.giving-front & {
+      line-height: 66px;
+      padding-top: 4px;
     }
   }
 }
@@ -154,6 +162,9 @@
           background-position: left 12px;
           padding-right: 0;
           padding-left: 46px;
+          .win.ff & {
+            background-position: left 6px;
+          }
         }
       }
 
@@ -163,6 +174,9 @@
         display: inline-block;
         max-height: 60px;
         padding-right: 46px;
+        .win.ff & {
+          background-position: right 6px;
+        }
       }
     }
   }
