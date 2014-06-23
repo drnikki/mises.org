@@ -56,6 +56,11 @@ function mises_giving_process_html(&$vars) {
 
 function mises_giving_preprocess_page(&$vars) {
 	$vars['site_logo'] = str_replace('href="/"', 'href="/giving"', $vars['site_logo']);
+	$alias = explode("/", drupal_get_path_alias($_GET['q']));
+	$section = $alias[0];
+	if ($section == 'giving') {
+		$vars['theme_hook_suggestions'][] = 'page__giving';
+	}
 }
 /* -- Delete this line if you want to use these functions
 function mises_giving_process_page(&$vars) {

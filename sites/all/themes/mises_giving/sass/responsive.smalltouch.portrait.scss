@@ -18,11 +18,19 @@ body {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.75em;
 }
 
 h2 {
-  font-size: 1.75em;
+  font-size: 1.625em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.25em;
 }
 
 h6 {
@@ -35,18 +43,25 @@ h6 {
  *   These are example styles for the menu toggle menu, you can use these in the
  *   relevant responsive stylesheets as required. Modify to suit your design.
  * ========================================================================== */
+#header-wrapper {
+  @include box-shadow(none);
+}
 #branding {
   margin: 0 auto;
   max-width: 100%;
   width: 380px;
 }
 .title-bar {
+  position: static;
   #page-title {
     background: $blue;
+    line-height: 40px;
     margin: 0;
+    text-align: center;
   }
 }
 #logo {
+  @include box-shadow(none);
   margin-bottom: 0;
 }
 .at-mt .at-menu-toggle {
@@ -60,27 +75,26 @@ h6 {
 
     a {
       @include ir;
-      background: #5C8036;
+      background: $darkgreen;
       display: block;
       height: 14px;
       float: right;
       margin: 10px;
       padding: 10px;
+      position: relative;
       width: 22px;
 
-      &:after {
-        color: #FFF;
-        content: "☰";
-        display: block;
-        font-size: 22px;
-        line-height: 34px;
+      &:before {
+        @include box-shadow((#FFF 0 0.3em 0 0, #FFF 0 0.6em 0 0));
+        background: #FFF;
+        content: "";
+        font-size: 24px;
+        margin-left: -0.5em;
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        text-align: center;
-        text-indent: 0;
+        top: 0.35em;
+        left: 50%;
+        height: 0.15em;
+        width: 1em;
       }
     }
   }
@@ -94,30 +108,64 @@ h6 {
   ul.menu li {
     padding: 1px 0;
     a {
-      background: #5C8036;
+      background: $darkgreen;
       color: #FFF;
       line-height: 34px;
       padding: 0 10px;
       text-transform: uppercase;
+      &.active,
+      &:hover {
+        background: #FFF;
+        color: $darkgreen;
+        text-decoration: none;
+      }
     }
   }
 }
 
-#secondary-content-wrapper .block-inner {
-  margin-left: 0;
-  margin-right: 0;
+#secondary-content-wrapper {
+  .block-inner {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .secondary-inner {
+    .block {
+      line-height: 0;
+    }
+  }
 }
+
+/*
+ * Match item list and block menu margin and padding
+ */
+.block-content {
+  ul,
+  ol {
+    padding: 0 0 0 20px;
+  }
+}
+
 #block-system-main {
   margin-bottom: 0;
   p:last-of-type {
     margin-bottom: 0;
   }
+  ul,
+  ol {
+    padding: 0 0 0 20px;
+  }
 }
-.region-sidebar-first,
-.region-sidebar-second {
-  background: $blue;
+.sidebar {
+  border-top: $blue 7px solid;
   margin-top: 0;
-  padding: 20px 0 0;
+  padding: 0;
+  .region-inner {
+    margin-left: 0;
+    margin-right: 0;
+    .block {
+      margin: 0;
+    }
+  }
   .node {
     margin-bottom: 0;
     .file-video {
@@ -130,8 +178,23 @@ h6 {
   margin-right: 0;
 
   .views-row {
+    .views-field-field-image {
+      margin-top: -17px;
+
+      a {
+        height: 48px;
+        width: 48px;
+        img {
+          max-width: 24px;
+        }
+      }
+    }
     .views-field-nothing {
-      padding: 5px 10px 0px;
+      padding: 0 10px 5px;
+      h6 {
+        line-height: 1.1;
+        margin: 0;
+      }
       .body {
         display: none;
       }
@@ -140,12 +203,82 @@ h6 {
 }
 
 /**
+ * Give Today Block
+ */
+.give-today-block {
+  h3.give {
+    height: 46px;
+    line-height: 46px;
+  }
+}
+
+/**
  * Giving Stories
  */
+.node-type-giving-story #main-content,
+.node-type-campaign- #main-content {
+  margin: 0;
+  #block-system-main {
+    margin-top: 0;
+    .field-name-field-campaign,
+    .field-name-field-body,
+    .field-name-field-form-frame {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
 .view-giving-stories {
+  .view-header {
+    @include translate(xy, -50%, -25%);
+    .icon img {
+      max-width: 20px;
+      padding: 10px;
+    }
+  }
   .views-row {
     .views-field-nothing {
       padding: 20px;
+    }
+  }
+}
+
+/**
+ * Areas to Support
+ */
+.view-areas-to-support {
+  margin-bottom: 20px;
+  .views-row {
+    padding: 15px 0;
+    .views-field-title {
+      width: 100%;
+      h5 {
+        margin: 0 0 0.1em;
+      }
+    }
+    .views-field-field-body {
+      clear: left;
+      margin-bottom: 12px;
+      max-width: 100%;
+      padding: 0;
+    }
+    .views-field-field-donate-link {
+      float: none;
+    }
+  }
+}
+/**
+ * Membership Levels
+ */
+.view-membership-levels {
+  .views-row {
+    .views-field-title {
+      .dash {
+        display: none;
+      }
+      .cost {
+        display: block;
+      }
     }
   }
 }

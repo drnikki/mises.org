@@ -20,7 +20,12 @@
 #branding {
   float: left;
 }
-
+#secondary-content-wrapper {
+  background: #24292C url(images/giving-bg-inner-lg.jpg) center bottom no-repeat;
+  .giving-front & {
+    background: #24292C url(images/giving-bg-lg.jpg) center bottom no-repeat;
+  }
+}
 .title-bar {
 
   .giving-front & {
@@ -30,10 +35,11 @@
   #page-title {
     background: $cleargreen;
     margin: 0 10px;
-    padding: 10px 40px 0;
+    padding: 30px 40px;
 
     .giving-front & {
-      padding-top: 10px;
+      background: $green;
+      line-height: 70px;
     }
   }
 }
@@ -44,7 +50,7 @@
     ul.menu {
       li {
         display: inline-block;
-        padding: 0 9px;
+        padding: 0 12px;
         a {
           color: #FFF;
           padding: 0;
@@ -60,6 +66,13 @@
   }
 }
 
+.sidebar {
+  padding-top: 20px;
+  .giving-front & .view-id-flex_blocks {
+    padding-top: 20px;
+  }
+}
+
 .secondary-inner {margin-right: 31%; margin-left: 0;}
 .secondary-left {float: left; width: 69%;}
 .region-secondary-aside {
@@ -69,8 +82,22 @@
   width: 31%;
 }
 
-#main-content {
+#main-content .field-name-body,
+#main-content .field-name-field-body,
+#main-content .field-name-field-form-frame,
+#main-content .field-name-field-donate-link,
+.node-type-membership-level #main-content .field,
+.node-type-giving-feature-block #main-content .field {
   padding: 0 100px 0 40px;
+}
+
+.node-type-campaign- #main-content ul.links,
+.node-type-membership-level #main-content ul.links,
+.node-type-giving-feature-block #main-content ul.links {
+  padding: 20px 100px 0 40px;
+  li.first {
+    padding-left: 0;
+  }
 }
 
 #secondary-content-wrapper {
@@ -78,7 +105,11 @@
   min-height: 140px;
   .container,
   .secondary-inner {
+    max-height: 260px;
     min-height: 140px;
+    .giving-front & {
+      max-height: 100%;
+    }
   }
   .giving-front & {
     max-height: 100%;
@@ -104,11 +135,34 @@
 
 // Giving Today
 .give-today-block {
+  margin-bottom: 20px;
+  .giving-front & {
+    margin-bottom: 0;
+  }
+  .giving-inner &,
+  .giving-impact & {
+    margin-top: -80px;
+    position: relative;
+    z-index: 500;
+  }
   h3.give {
+    height: 60px;
     a {
+      text-align: left;
+      &:hover {
+        span {
+          background-position: left 12px;
+          padding-right: 0;
+          padding-left: 46px;
+        }
+      }
+
       span {
-        max-height: 56px;
-        padding-top: 4px;
+        @include transition(all 0.5s);
+        background: url(images/giving-arrow-green.png) right 12px no-repeat;
+        display: inline-block;
+        max-height: 60px;
+        padding-right: 46px;
       }
     }
   }
@@ -117,6 +171,12 @@
 /**
  * Giving Stories
  */
+.node-type-giving-story {
+  .field-name-field-campaign {
+      margin-left: 40px;
+      margin-right: 100px;
+    }
+}
 .view-giving-stories {
   .views-row {
     float: left;
@@ -133,6 +193,67 @@
     }
     &.views-row-4 {
       clear: left;
+    }
+  }
+}
+
+/**
+ * Footer
+ */
+#footer-wrapper {
+  #footer {
+    #block-views-flex-blocks-block-2 {
+      clear: none;
+      float: right;
+      width: 50%;
+    }
+    #block-menu-menu-browse-library,
+    #block-menu-menu-about-the-mises-institute {
+      float: left;
+      width: 25%;
+    }
+    #block-menu-menu-mises-social-icons {
+      float: right;
+      width: 50%;
+    }
+  }
+}
+
+/**
+ * Areas to Support
+ */
+.view-areas-to-support {
+  margin-bottom: 40px;
+  .views-row {
+    .views-field-title {
+      float: left;
+      width: 25%;
+    }
+    .views-field-field-body {
+      float: left;
+      max-width: calc(75% - 205px);
+      padding: 0px 90px;
+    }
+    .views-field-field-donate-link {
+      float: right;
+    }
+  }
+}
+
+/**
+ * Membership Levels
+ */
+.view-membership-levels {
+  margin-bottom: 40px;
+  .views-row {
+    .views-field-title {
+      float: left;
+      width: 50%;
+    }
+    .views-field-body {
+      float: right;
+      padding: 0 0 0 30px;
+      width: 50%;
     }
   }
 }

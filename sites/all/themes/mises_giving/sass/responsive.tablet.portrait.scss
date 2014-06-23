@@ -12,29 +12,191 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 
-/* Increase the body font size on small devices */
-html {
-  font-size: 81.3%; 
+h1 {
+  font-size: 2.571em;
 }
 
-#page-title {
-  background: $cleargreen;
+h5 {
+  font-size: 1.357em;
+}
+
+#header-wrapper {
+  @include box-shadow(none);
+}
+
+#logo {
+  margin-bottom: 0;
+}
+
+.region-header {
+  ul.menu {
+    padding: 7px 0 !important;
+    text-align: center;
+    li {
+      display: inline-block;
+      list-style: none;
+      padding: 0 8px;
+      &.first {
+        padding-left: 0;
+      }
+      &.last {
+        padding-right: 0;
+      }
+      a {
+        color: #FFF;
+        font-size: 13px;
+        &.active,
+        &:hover {
+          color: #0d0202;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+#secondary-content-wrapper {
+  .giving-front & {
+    background: url(images/giving-bg-md.jpg) center bottom no-repeat;
+  }
+}
+.title-bar {
+  position: static;
+  #page-title {
+    background: $blue;
+    line-height: 40px;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 0;
+  }
 }
 
 #block-views-giving-feature-blocks-block {
-  background: $cleargreen;
+  background: $green;
+  .views-row {
+    .views-field-nothing {
+      padding: 5px 10px 0;
+    }
+  }
+}
+
+#block-fieldblock-node-giving-page-default-field-header-image {
+  line-height: 0;
+}
+
+#block-fieldblock-node-giving-page-default-field-header-image .block-inner,
+#block-views-giving-feature-blocks-block {
+  margin: 0;
+}
+
+.region-secondary-aside {
+  margin-top: 10px;
+}
+
+#block-system-main {
+  margin-bottom: 1em;
+}
+
+.sidebar {
+  border-top: $blue 7px solid;
+  margin-top: 0;
+  .region-inner {
+    margin-left: 0;
+    margin-right: 0;
+    .block {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.node {
+  margin-bottom: 0;
 }
 
 /**
  * Giving Stories
  */
+.node-type-giving-story #main-content,
+.node-type-campaign- #main-content {
+  margin: 0;
+  #block-system-main {
+    margin-top: 0;
+    .field-name-field-campaign,
+    .field-name-field-body,
+    .field-name-field-form-frame {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
 .view-giving-stories {
+  .giving-front & .views-row-3,
+  .giving-inner & .views-row-3 {
+    display: none;
+  }
   .views-row {
     float: left;
-    margin: 0 2.5% 30px;
-    width: 45%;
+    margin: 0 1% 30px;
+    width: 48%;
     &.views-row-odd {
       clear: left;
+    }
+    .views-field-nothing {
+      padding: 15px;
+
+      .body {
+        font-size: 12px;
+      }
+    }
+    .views-field-view-node {
+      a {
+        padding: 0 20px
+      }
+    }
+  }
+}
+/**
+ * Areas to Support
+ */
+.view-areas-to-support {
+  margin-bottom: 20px;
+  .views-row {
+    .views-field-title {
+      width: calc(100% - 182px);
+      h5 {
+        margin: 0 0 0.1em;
+      }
+    }
+    .views-field-field-body {
+      clear: left;
+      max-width: calc(100% - 182px);
+      padding: 0;
+    }
+    .views-field-field-donate-link {
+      @include translate(y, -50%);
+      position: absolute;
+      right: 10px;
+      top: 50%;
+    }
+  }
+}
+.green-link-small {
+  font-size: 16px;
+}
+
+/**
+ * Membership Levels
+ */
+.view-membership-levels {
+  margin-bottom: 20px;
+  .views-row {
+    .views-field-title {
+      float: left;
+      width: 50%;
+    }
+    .views-field-body {
+      float: right;
+      padding: 0 0 0 30px;
+      width: 50%;
     }
   }
 }

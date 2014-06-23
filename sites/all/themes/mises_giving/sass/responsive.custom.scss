@@ -71,3 +71,12 @@
  * Desktops/laptops and up
  */
 /* @media only screen and (min-width: 1025px) {} */
+
+@media only screen and (min-width: 1921px) {
+  #secondary-content-wrapper {
+    background: url(images/giving-bg-inner-xl.jpg) center bottom no-repeat;
+    .giving-front & {
+      background: url(images/giving-bg-xl.jpg) center bottom no-repeat;
+    }
+  }
+}

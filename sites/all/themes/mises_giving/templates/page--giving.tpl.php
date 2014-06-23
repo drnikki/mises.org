@@ -252,6 +252,14 @@
       </div></div>
     </div></div>
 
+    <?php if ($page['postscript_content']): ?>
+      <div id="postscript-content-wrapper">
+        <div class="container clearfix">
+          <?php print render($page['postscript_content']); ?>
+        </div>
+      </div>
+    <?php endif; ?>
+
     <?php if ($page['tertiary_content']): ?>
       <div id="tertiary-content-wrapper">
         <div class="container clearfix">
