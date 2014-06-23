@@ -1,0 +1,255 @@
+
+// _base.scss imports _custom.scss and other partials.
+@import "base";
+
+/*
+ *   Important Information about this CSS File
+ *
+ * - Do not delete or rename this file, if you do not use it leave it blank (delete 
+ *   everything) and the file will be skipped when you enable Production Mode in
+ *   the Global theme settings.
+ *
+ * - Read the _README file in this directory, it contains useful help and other information.
+ */
+h1 {
+  font-size: 2.286em;
+}
+h3 {
+  font-size: 1.857em;
+}
+h5 {
+  font-size: 1.143em;
+}
+
+#secondary-content-wrapper {
+  max-height: 260px;
+  min-height: 140px;
+  .container,
+  .secondary-inner {
+    min-height: 140px;
+  }
+  .giving-front & {
+    max-height: 100%;
+  }
+}
+#secondary-content-wrapper {
+  background: #24292C url(images/giving-bg-inner-md.jpg) center bottom no-repeat;
+  .giving-front & {
+    background: #24292C url(images/giving-bg-md.jpg) center bottom no-repeat;
+  }
+}
+.title-bar {
+  .giving-front & {
+    margin-top: 40px;
+  }
+
+  #page-title {
+    background: $cleargreen;
+    line-height: 34px;
+    margin: 0 10px;
+    padding: 20px 30px 10px;
+    .giving-front & {
+      background: $green;
+    }
+  }
+}
+
+#logo {
+  margin-bottom: 0;
+}
+
+.block-menu-giving {
+  .block-inner {
+    ul.menu {
+      padding: 7px 0;
+      li {
+        display: block;
+        float: left;
+        padding: 0 20px 0 0;
+        a {
+          color: #FFF;
+          padding: 0;
+          text-transform: uppercase;
+          &.active,
+          &:hover {
+            color: #0d0202;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  padding-top: 20px;
+  .giving-front & .view-id-flex_blocks {
+    padding-top: 20px;
+  }
+}
+
+
+.secondary-inner {margin-right: 35%; margin-left: 0;}
+.secondary-left {float: left; width: 65%;}
+.region-secondary-aside {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+}
+
+#block-views-giving-feature-blocks-block {
+  background: $cleargreen;
+  .views-row {
+    .views-field-nothing {
+      padding: 5px 10px 0px;
+      .body {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.give-today-block {
+  margin-bottom: 20px;
+  .giving-front & {
+    margin-bottom: 0;
+  }
+  .giving-impact &,
+  .giving-inner & {
+    margin-top: -70px;
+    position: relative;
+    z-index: 500;
+  }
+  h3.give {
+    line-height: 50px;
+    .win.ff & {
+      line-height: 45px;
+      padding-top: 5px;
+    }
+    a {
+      padding: 0 15px;
+      text-align: left;
+
+      span {
+        background: url(images/giving-arrow-green.png) right 12px no-repeat;
+        background-size: 28px;
+        display: inline-block;
+        max-height: 50px;
+        padding-right: 35px;
+        .win.ff & {
+          background-position: right 7px;
+        }
+      }
+    }
+  }
+  .description {
+    padding: 15px;
+  }
+  .links {
+    li {
+      a {
+        font-size: 15px;
+        line-height: 55px;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+/**
+ * Giving Stories
+ */
+.view-giving-stories {
+  .views-row {
+    float: left;
+    margin: 0;
+    width: 31.8%;
+    &.views-row-odd {
+      clear: none;
+    }
+    &.views-row-1,
+    &.views-row-2,
+    &.views-row-4,
+    &.views-row-5 {
+      margin: 0 2.3% 2.3% 0;
+    }
+    &.views-row-4 {
+      clear: left;
+    }
+    .views-field-nothing {
+      padding: 15px;
+
+      .body {
+        font-size: 12px;
+      }
+    }
+    .views-field-view-node {
+      a {
+        font-size: 1.143em;
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+/**
+ * Footer
+ */
+#footer-wrapper {
+  #footer {
+    #block-views-flex-blocks-block-2 {
+      clear: none;
+      float: right;
+      width: 50%;
+    }
+    #block-menu-menu-browse-library,
+    #block-menu-menu-about-the-mises-institute {
+      float: left;
+      width: 25%;
+    }
+    #block-menu-menu-mises-social-icons {
+      float: right;
+      width: 50%;
+    }
+  }
+}
+
+/**
+ * Areas to Support
+ */
+.view-areas-to-support {
+  margin-bottom: 40px;
+  .views-row {
+    .views-field-title {
+      float: left;
+      width: 20%;
+    }
+    .views-field-field-body {
+      float: left;
+      max-width: calc(80% - 205px);
+      padding: 0px 50px;
+    }
+    .views-field-field-donate-link {
+      float: right;
+    }
+  }
+}
+
+/**
+ * Membership Levels
+ */
+.view-membership-levels {
+  margin-bottom: 40px;
+  .views-row {
+    .views-field-title {
+      float: left;
+      width: 38%;
+    }
+    .views-field-body {
+      float: right;
+      padding: 0 0 0 30px;
+      width: 62%;
+    }
+  }
+}

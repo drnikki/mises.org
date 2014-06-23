@@ -1,0 +1,8 @@
+<?php
+/**
+ * This file run when we install this module
+ */
+function ctr_enable() {
+  // clear context cache to get our plugins handle block
+  context_invalidate_cache();
+}

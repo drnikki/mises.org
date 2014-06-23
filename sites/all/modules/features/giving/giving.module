@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Giving feature.
+ */
+
+include_once 'giving.features.inc';
