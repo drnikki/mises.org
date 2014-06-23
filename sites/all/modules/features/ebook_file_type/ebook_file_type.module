@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the eBook file type feature.
+ */
+
+include_once 'ebook_file_type.features.inc';
