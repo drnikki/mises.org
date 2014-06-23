@@ -74,7 +74,6 @@
 
   scripts[] = scripts/equalHeights.js
 
-
 ;----------// Regions
 
   regions[sidebar_first]     = Sidebar first
@@ -480,4 +479,3 @@ version = "7.x-3.2"
 core = "7.x"
 project = "adaptivetheme"
 datestamp = "1395575059"
-

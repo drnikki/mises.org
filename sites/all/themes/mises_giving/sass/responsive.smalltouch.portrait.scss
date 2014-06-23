@@ -12,204 +12,104 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 
-/* Increase the default font size on small touch devices */
-body {
-  font-size: 100%;
-}
-
 h1 {
-  font-size: 1.75em;
-}
-
-h2 {
-  font-size: 1.625em;
-}
-
-h3 {
-  font-size: 1.5em;
+  font-size: 2.571em;
 }
 
 h5 {
-  font-size: 1.25em;
+  font-size: 1.357em;
 }
 
-h6 {
-  font-size: 1em;
-}
-
-/* =============================================================================
- *   Mobile Menu Toggle
- *   See your theme settings extensions for how to enable the menu toggle.
- *   These are example styles for the menu toggle menu, you can use these in the
- *   relevant responsive stylesheets as required. Modify to suit your design.
- * ========================================================================== */
 #header-wrapper {
   @include box-shadow(none);
 }
-#branding {
-  margin: 0 auto;
-  max-width: 100%;
-  width: 380px;
+
+#logo {
+  margin-bottom: 0;
+}
+
+.region-header {
+  ul.menu {
+    padding: 7px 0 !important;
+    text-align: center;
+    li {
+      display: inline-block;
+      list-style: none;
+      padding: 0 8px;
+      &.first {
+        padding-left: 0;
+      }
+      &.last {
+        padding-right: 0;
+      }
+      a {
+        color: #FFF;
+        font-size: 13px;
+        &.active,
+        &:hover {
+          color: #0d0202;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+#secondary-content-wrapper {
+  .giving-front & {
+    background: url(images/giving-bg-md.jpg) center bottom no-repeat;
+  }
 }
 .title-bar {
   position: static;
   #page-title {
     background: $blue;
     line-height: 40px;
-    margin: 0;
+    padding: 10px 20px;
     text-align: center;
-  }
-}
-#logo {
-  @include box-shadow(none);
-  margin-bottom: 0;
-}
-.at-mt .at-menu-toggle {
-
-  .block-inner {
     margin: 0;
   }
+}
 
-  /* The toggle link */
-  h2 {
-
-    a {
-      @include ir;
-      background: $darkgreen;
-      display: block;
-      height: 14px;
-      float: right;
-      margin: 10px;
-      padding: 10px;
-      position: relative;
-      width: 22px;
-
-      &:before {
-        @include box-shadow((#FFF 0 0.3em 0 0, #FFF 0 0.6em 0 0));
-        background: #FFF;
-        content: "";
-        font-size: 24px;
-        margin-left: -0.5em;
-        position: absolute;
-        top: 0.35em;
-        left: 50%;
-        height: 0.15em;
-        width: 1em;
-      }
-    }
-  }
-
-  .menu-toggle {
-    margin: 0 62px 9px 10px;
-    padding-top: 9px;
-  }
-
-  /* Menu items */
-  ul.menu li {
-    padding: 1px 0;
-    a {
-      background: $darkgreen;
-      color: #FFF;
-      line-height: 34px;
-      padding: 0 10px;
-      text-transform: uppercase;
-      &.active,
-      &:hover {
-        background: #FFF;
-        color: $darkgreen;
-        text-decoration: none;
-      }
+#block-views-giving-feature-blocks-block {
+  background: $green;
+  .views-row {
+    .views-field-nothing {
+      padding: 5px 10px 0;
     }
   }
 }
 
-#secondary-content-wrapper {
-  .block-inner {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .secondary-inner {
-    .block {
-      line-height: 0;
-    }
-  }
+#block-fieldblock-node-giving-page-default-field-header-image {
+  line-height: 0;
 }
 
-/*
- * Match item list and block menu margin and padding
- */
-.block-content {
-  ul,
-  ol {
-    padding: 0 0 0 20px;
-  }
+#block-fieldblock-node-giving-page-default-field-header-image .block-inner,
+#block-views-giving-feature-blocks-block {
+  margin: 0;
+}
+
+.region-secondary-aside {
+  margin-top: 10px;
 }
 
 #block-system-main {
-  margin-bottom: 0;
-  p:last-of-type {
-    margin-bottom: 0;
-  }
-  ul,
-  ol {
-    padding: 0 0 0 20px;
-  }
+  margin-bottom: 1em;
 }
+
 .sidebar {
   border-top: $blue 7px solid;
   margin-top: 0;
-  padding: 0;
   .region-inner {
     margin-left: 0;
     margin-right: 0;
     .block {
-      margin: 0;
-    }
-  }
-  .node {
-    margin-bottom: 0;
-    .file-video {
-      line-height: 0;
-    }
-  }
-}
-#block-views-giving-feature-blocks-block {
-  margin-left: 0;
-  margin-right: 0;
-
-  .views-row {
-    .views-field-field-image {
-      margin-top: -17px;
-
-      a {
-        height: 48px;
-        width: 48px;
-        img {
-          max-width: 24px;
-        }
-      }
-    }
-    .views-field-nothing {
-      padding: 0 10px 5px;
-      h6 {
-        line-height: 1.1;
-        margin: 0;
-      }
-      .body {
-        display: none;
-      }
+      margin-bottom: 0;
     }
   }
 }
 
-/**
- * Give Today Block
- */
-.give-today-block {
-  h3.give {
-    height: 46px;
-    line-height: 46px;
-  }
+.node {
+  margin-bottom: 0;
 }
 
 /**
@@ -229,56 +129,74 @@ h6 {
   }
 }
 .view-giving-stories {
-  .view-header {
-    @include translate(xy, -50%, -25%);
-    .icon img {
-      max-width: 20px;
-      padding: 10px;
-    }
+  .giving-front & .views-row-3,
+  .giving-inner & .views-row-3 {
+    display: none;
   }
   .views-row {
+    float: left;
+    margin: 0 1% 30px;
+    width: 48%;
+    &.views-row-odd {
+      clear: left;
+    }
     .views-field-nothing {
-      padding: 20px;
+      padding: 15px;
+
+      .body {
+        font-size: 12px;
+      }
+    }
+    .views-field-view-node {
+      a {
+        padding: 0 20px
+      }
     }
   }
 }
-
 /**
  * Areas to Support
  */
 .view-areas-to-support {
   margin-bottom: 20px;
   .views-row {
-    padding: 15px 0;
     .views-field-title {
-      width: 100%;
+      width: calc(100% - 182px);
       h5 {
         margin: 0 0 0.1em;
       }
     }
     .views-field-field-body {
       clear: left;
-      margin-bottom: 12px;
-      max-width: 100%;
+      max-width: calc(100% - 182px);
       padding: 0;
     }
     .views-field-field-donate-link {
-      float: none;
+      @include translate(y, -50%);
+      position: absolute;
+      right: 10px;
+      top: 50%;
     }
   }
 }
+.green-link-small {
+  font-size: 16px;
+}
+
 /**
  * Membership Levels
  */
 .view-membership-levels {
+  margin-bottom: 20px;
   .views-row {
     .views-field-title {
-      .dash {
-        display: none;
-      }
-      .cost {
-        display: block;
-      }
+      float: left;
+      width: 50%;
+    }
+    .views-field-body {
+      float: right;
+      padding: 0 0 0 30px;
+      width: 50%;
     }
   }
 }
