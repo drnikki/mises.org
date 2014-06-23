@@ -380,7 +380,7 @@ function mises_book_digital_text_field_default_field_instances() {
     'label' => 'ePub',
     'required' => 0,
     'settings' => array(
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_extensions' => 'epub',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -530,7 +530,7 @@ function mises_book_digital_text_field_default_field_instances() {
     'label' => 'Kindle',
     'required' => 0,
     'settings' => array(
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_extensions' => 'mobi',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -718,7 +718,7 @@ function mises_book_digital_text_field_default_field_instances() {
     'label' => 'Mobi',
     'required' => 0,
     'settings' => array(
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_extensions' => 'mobi',
       'user_register_form' => FALSE,
     ),
     'widget' => array(

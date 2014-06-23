@@ -11,6 +11,7 @@ dependencies[] = field_group
 dependencies[] = flexslider_fields
 dependencies[] = image
 dependencies[] = legacy_book
+dependencies[] = link
 dependencies[] = media
 dependencies[] = mediafield
 dependencies[] = mises_campaign
