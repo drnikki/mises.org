@@ -31,7 +31,6 @@ function mises_wysiwyg_wysiwyg_default_profiles() {
           'BulletedList' => 1,
           'NumberedList' => 1,
           'Outdent' => 1,
-          'Indent' => 1,
           'Link' => 1,
           'Unlink' => 1,
           'Blockquote' => 1,
