@@ -394,7 +394,8 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'allowed_types' => array(
           'audio' => 0,
-          'document' => 'document',
+          'document' => 0,
+          'ebook' => 'ebook',
           'image' => 0,
           'video' => 0,
         ),
@@ -530,7 +531,7 @@ function mises_book_digital_text_field_default_field_instances() {
     'label' => 'Kindle',
     'required' => 0,
     'settings' => array(
-      'file_extensions' => 'mobi',
+      'file_extensions' => 'azw mobi epub',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -545,6 +546,7 @@ function mises_book_digital_text_field_default_field_instances() {
         'allowed_types' => array(
           'audio' => 0,
           'document' => 'document',
+          'ebook' => 'ebook',
           'image' => 0,
           'video' => 0,
         ),
@@ -733,6 +735,7 @@ function mises_book_digital_text_field_default_field_instances() {
         'allowed_types' => array(
           'audio' => 0,
           'document' => 'document',
+          'ebook' => 0,
           'image' => 0,
           'video' => 0,
         ),
@@ -788,7 +791,7 @@ function mises_book_digital_text_field_default_field_instances() {
     'label' => 'PDF',
     'required' => 0,
     'settings' => array(
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_extensions' => 'pdf',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -803,6 +806,7 @@ function mises_book_digital_text_field_default_field_instances() {
         'allowed_types' => array(
           'audio' => 0,
           'document' => 'document',
+          'ebook' => 'ebook',
           'image' => 0,
           'video' => 0,
         ),
