@@ -1922,7 +1922,7 @@ div.messages ul {
   top: 0;
   height: 100%;
   width: 60px;
-  z-index: 1000;
+  z-index: 500;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/mises\/branches\/giving-context\/htdocs\/sites\/all\/themes\/mises_giving\/sass\/global\.styles\.scss}line{font-family:\000031805}}
 .flexslider .flex-direction-nav li a.flex-prev {

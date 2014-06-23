@@ -1801,7 +1801,7 @@ div {
         top: 0;
         height: 100%;
         width: 60px;
-        z-index: 1000;
+        z-index: 500;
         &.flex-prev {
           @include transform(scaleX(-1));
           filter: flipH;
