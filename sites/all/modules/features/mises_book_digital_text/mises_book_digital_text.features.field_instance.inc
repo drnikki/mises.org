@@ -531,7 +531,7 @@ function mises_book_digital_text_field_default_field_instances() {
     'label' => 'Kindle',
     'required' => 0,
     'settings' => array(
-      'file_extensions' => 'azw mobi epub',
+      'file_extensions' => 'azw',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
