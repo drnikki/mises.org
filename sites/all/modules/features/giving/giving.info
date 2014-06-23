@@ -6,6 +6,7 @@ version = 7.x-1.0
 project = giving
 dependencies[] = browserclass
 dependencies[] = context
+dependencies[] = ctr
 dependencies[] = fe_nodequeue
 dependencies[] = field_group
 dependencies[] = fieldblock
