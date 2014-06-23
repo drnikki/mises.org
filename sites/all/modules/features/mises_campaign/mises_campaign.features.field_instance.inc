@@ -18,13 +18,13 @@ function mises_campaign_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -87,6 +87,63 @@ function mises_campaign_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-campaign_-field_donate_link'
+  $field_instances['node-campaign_-field_donate_link'] = array(
+    'bundle' => 'campaign_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_donate_link',
+    'label' => 'Donate Link',
+    'required' => 1,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'value',
+      'title_maxlength' => 128,
+      'title_value' => 'Give Now',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-campaign_-field_form_frame'
   $field_instances['node-campaign_-field_form_frame'] = array(
     'bundle' => 'campaign_',
@@ -95,13 +152,13 @@ function mises_campaign_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -163,14 +220,15 @@ function mises_campaign_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'image',
+        'label' => 'hidden',
+        'module' => 'flexslider_fields',
         'settings' => array(
+          'caption' => 0,
           'conditions' => array(),
-          'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'giving_full-width',
+          'optionset' => 'node_slideshow',
         ),
-        'type' => 'image',
+        'type' => 'flexslider',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -203,6 +261,7 @@ function mises_campaign_field_default_field_instances() {
         'allowed_schemes' => array(
           'private' => 'private',
           'public' => 'public',
+          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
@@ -213,18 +272,20 @@ function mises_campaign_field_default_field_instances() {
         'browser_plugins' => array(
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
           'upload' => 0,
+          'youtube' => 0,
         ),
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 2,
+      'weight' => 10,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Donate Link');
   t('Form Frame');
   t('Image');
 
