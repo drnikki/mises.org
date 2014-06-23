@@ -63,6 +63,12 @@ function giving_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-6',
         ),
+        'menu-menu-giving' => array(
+          'module' => 'menu',
+          'delta' => 'menu-giving',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
       ),
     ),
     'theme_html' => array(
