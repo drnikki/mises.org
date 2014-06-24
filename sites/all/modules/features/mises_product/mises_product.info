@@ -27,6 +27,7 @@ features[field_group][] = group_product_information|node|product|form
 features[field_group][] = group_tagging|node|product|form
 features[field_instance][] = node-product-body
 features[field_instance][] = node-product-field_austrian_school
+features[field_instance][] = node-product-field_author_1
 features[field_instance][] = node-product-field_image
 features[field_instance][] = node-product-field_link_to_external_listing_
 features[field_instance][] = node-product-field_product_id

@@ -119,6 +119,12 @@ function mises_library_item_strongarm() {
       'video_block_teaser' => array(
         'custom_settings' => TRUE,
       ),
+      'simple_content' => array(
+        'custom_settings' => TRUE,
+      ),
+      'author_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
