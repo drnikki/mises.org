@@ -113,8 +113,8 @@ function giving_default_fe_block_settings() {
         'weight' => 0,
       ),
       'mises_giving' => array(
-        'region' => 'header',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'mises_giving',
         'weight' => 0,
       ),

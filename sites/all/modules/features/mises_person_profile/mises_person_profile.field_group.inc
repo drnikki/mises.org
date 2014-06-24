@@ -59,7 +59,8 @@ function mises_person_profile_field_group_info() {
       5 => 'field_profile_type',
       6 => 'field_twitter',
       7 => 'field_last_name',
-      8 => 'title',
+      8 => 'field_email_link',
+      9 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -105,6 +106,35 @@ function mises_person_profile_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_details|node|person_profile|full';
+  $field_group->group_name = 'group_details';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'person_profile';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Details',
+    'weight' => '12',
+    'children' => array(
+      0 => 'field_contributions',
+      1 => 'field_major_works',
+      2 => 'profile_author_articles',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Details',
+      'instance_settings' => array(
+        'classes' => 'group-details panel-group clearfix',
+        'element' => 'div',
+        'attributes' => 'id="profile-accordion"',
+      ),
+    ),
+  );
+  $export['group_details|node|person_profile|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_expertise|node|person_profile|form';
   $field_group->group_name = 'group_expertise';
   $field_group->entity_type = 'node';
@@ -133,6 +163,35 @@ function mises_person_profile_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|person_profile|full';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'person_profile';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Areas of Expertise',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_austrian_school',
+      1 => 'field_topics',
+      2 => 'tags_title',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Areas of Expertise',
+      'instance_settings' => array(
+        'classes' => 'group-tags tags',
+        'element' => 'p',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_tags|node|person_profile|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_works|node|person_profile|form';
   $field_group->group_name = 'group_works';
   $field_group->entity_type = 'node';
@@ -145,8 +204,7 @@ function mises_person_profile_field_group_info() {
     'children' => array(
       0 => 'field_major_works',
       1 => 'field_published_in',
-      2 => 'field_quote',
-      3 => 'field_quote_reference',
+      2 => 'field_quote_reference',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
