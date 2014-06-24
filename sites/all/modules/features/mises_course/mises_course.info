@@ -28,6 +28,7 @@ features[field_group][] = group_teaser|node|course|block_teaser
 features[field_instance][] = node-course-body
 features[field_instance][] = node-course-field_audience
 features[field_instance][] = node-course-field_austrian_school
+features[field_instance][] = node-course-field_author_1
 features[field_instance][] = node-course-field_featured_content
 features[field_instance][] = node-course-field_image_collection
 features[field_instance][] = node-course-field_level
