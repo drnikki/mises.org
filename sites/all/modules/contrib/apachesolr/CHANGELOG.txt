@@ -1,5 +1,7 @@
 Apache Solr integration 7.x-1.x, xxxx-xx-xx
 -----------------------------
+#2237113 by cilefen: Fix for wrong per-field array key in apachesolr_get_field_mappings()
+#2157849 by Nick_vh, pwolanin: Copy over the new Solr Config files from the common schema project
 
 Apache Solr integration 7.x-1.6, 2013-11-14
 -----------------------------
