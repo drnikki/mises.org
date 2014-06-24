@@ -58,7 +58,8 @@ function mises_course_field_group_info() {
       0 => 'body',
       1 => 'field_image_collection',
       2 => 'field_link_to_external_listing_',
-      3 => 'title',
+      3 => 'field_author_1',
+      4 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
