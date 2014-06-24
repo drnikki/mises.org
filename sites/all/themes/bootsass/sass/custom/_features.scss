@@ -295,6 +295,7 @@ ul.addtocal_menu {
   position: absolute;
   z-index: 50;
   display: none;
+  overflow: hidden;
   margin-bottom: 0px;
   margin-left: 0px !important;
   padding: 0;
@@ -303,7 +304,6 @@ ul.addtocal_menu {
   border-radius: $border-radius-base;
   background: $white;
   list-style-type: none;
-  overflow: hidden;
   text-transform: none;
   li {
     margin: 0px;
@@ -323,8 +323,8 @@ ul.addtocal_menu {
 /* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 .media-youtube-video {
 	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 25px;
+	padding-bottom: 56.25%; /* 16:9 */
 	height: 0;
 }
 .media-youtube-video iframe {
@@ -348,5 +348,59 @@ ul.addtocal_menu {
   }
   li {
     @extend .list-group-item;
+  }
+}
+/* EXTEND BOOTSTRAP COLLAPSE */
+.accordion-toggle {
+  cursor: pointer;
+}
+.accordion-toggle:before {
+    padding-right: $padding-xs-horizontal; 
+    content: "\e114";    /* down arrow */
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';
+}
+.accordion-toggle.collapsed:before {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* right-arrow */
+}
+/* PROFILE */
+#profile-accordion {
+  clear: both;
+}
+.group-contact {
+  span {
+    display: inline-block;
+    padding-right: $padding-xs-horizontal;
+  }
+  .twitter, .facebook {
+    a {
+      display: inline-block;
+      width: $padding-xs-horizontal * 4;
+      height: $padding-xs-horizontal * 4;
+      background-image: url(/sites/default/files/public/styles/menu_icon/public/menu_icons/menu_icon_775.png);
+      background-position: 0 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      text-indent: -9999em;
+    }
+  }
+  .facebook {
+    a {
+      background-image: url(/sites/default/files/public/styles/menu_icon/public/menu_icons/menu_icon_774.png);
+    }
+  }
+}
+.quote {
+  overflow: hidden;
+  margin-bottom: $grid-gutter-width;
+  padding: $grid-gutter-width $grid-gutter-width $grid-gutter-width $grid-gutter-width * 3;
+  position: relative;
+  background-color: $gray-lighter;
+  //font-size: $font-size-large;
+  &:before {
+    @include icon-block(40px,10px,10px);
+    @include icon-image('../images/icons/icon-blog.png');
+    @include icon-color($brand-secondary);
   }
 }

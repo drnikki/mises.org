@@ -34,6 +34,9 @@
     .event & {
       @include icon-image('../images/icons/icon-event.png');
     }
+    .interview &, .Interviews & {
+      @include icon-image('../images/icons/icon-interview.png');
+    }
     .lecture &, .Lectures & {
       @include icon-image('../images/icons/icon-lecture.png');
     }

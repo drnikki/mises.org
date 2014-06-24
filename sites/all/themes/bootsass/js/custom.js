@@ -64,6 +64,7 @@ var Drupal = Drupal || {};
         implementEqualHeight();
         textResizer();
         
+        //glyphicons
         $('.latest-library-content .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
         $('.row.featured .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
         $('.row.video .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
@@ -73,6 +74,7 @@ var Drupal = Drupal || {};
         $('.block-mailchimp-lists h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
         $('#block-custom-search-blocks-1 h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
         $('a.external-link').append('<span class="glyphicon glyphicon-new-window"></span> ');
+        
         
       }); 
 

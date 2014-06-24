@@ -510,6 +510,9 @@ address {
 }
 .read-more,
 .more-link {
+  text-transform: uppercase;
+  font-size: $font-size-small;
+  cursor: pointer;
   a {
     color: $gray;
     text-transform: uppercase;
