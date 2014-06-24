@@ -308,6 +308,75 @@ function mises_course_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-course-field_author_1'
+  $field_instances['node-course-field_author_1'] = array(
+    'bundle' => 'course',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter Person Profile related to this course. This may be the instructor or the subject of the course.',
+    'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_author_1',
+    'label' => 'Related Profile',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-course-field_featured_content'
   $field_instances['node-course-field_featured_content'] = array(
     'bundle' => 'course',
@@ -697,10 +766,12 @@ function mises_course_field_default_field_instances() {
   t('Audience');
   t('Austrian School');
   t('Body');
+  t('Enter Person Profile related to this course. This may be the instructor or the subject of the course.');
   t('Featured');
   t('Image');
   t('Level');
   t('Link (to Academy)');
+  t('Related Profile');
   t('This field will be used as the teaser and trimmed to 400 characters.');
   t('Topics');
 
