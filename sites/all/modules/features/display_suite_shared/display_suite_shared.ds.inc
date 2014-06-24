@@ -2313,22 +2313,26 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'product';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'custom_breadcrumb' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'title' => array(
+    'course_title_linked' => array(
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
-        'wrapper' => 'h2',
-        'class' => 'page-title',
-        'ft' => array(),
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'h2',
+          'ow-cl' => 'teaser-title',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
         'conditions' => array(),
       ),
+    ),
+    'custom_breadcrumb' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
     'body' => array(
       'formatter_settings' => array(
@@ -2363,6 +2367,18 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_link_to_external_listing_' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'read-more',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['node|product|full'] = $ds_fieldsetting;
 
@@ -2373,15 +2389,19 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'product';
   $ds_fieldsetting->view_mode = 'simple_teaser';
   $ds_fieldsetting->settings = array(
-    'title' => array(
+    'course_title_linked' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '1',
-        'wrapper' => 'h5',
-        'class' => '',
-        'ft' => array(),
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'h5',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
         'conditions' => array(),
       ),
     ),
@@ -2407,28 +2427,44 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'product';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '0',
+    'course_title_linked' => array(
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '1',
-        'wrapper' => 'h2',
-        'class' => 'teaser-title',
-        'ft' => array(),
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'h2',
+          'ow-cl' => 'teaser-title',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
         'conditions' => array(),
       ),
     ),
-    'node_link' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
+    'field_image' => array(
       'formatter_settings' => array(
-        'link text' => 'Read more',
-        'wrapper' => 'p',
-        'class' => 'read-more',
-        'ft' => array(),
-        'conditions' => array(),
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'image img-responsive border-secondary',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_link_to_external_listing_' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => 'read-more',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
       ),
     ),
   );
@@ -2757,17 +2793,20 @@ print \'<div class="panel-title">\'  . $ctitle . \'</div>\';
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
   $ds_field->field = 'course_title_linked';
-  $ds_field->label = 'Course Title Linked';
+  $ds_field->label = 'Title Linked External URL';
   $ds_field->field_type = 5;
   $ds_field->entities = array(
     'node' => 'node',
   );
-  $ds_field->ui_limit = 'course|*';
+  $ds_field->ui_limit = 'course|*
+product|*';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<?php
+//print_r($entity);
 if ($entity->field_link_to_external_listing_) {
   $link = "[node:field-link-to-external-listing-:url]";
+} else if ($entity->type == \'product\') { $link = "http://store.mises.org";
 } else { $link = "http://academy.mises.org";}
 ?>
 <a href="<?php print $link; ?>" target="_blank" title="[node:title]">[node:title]</a>',
@@ -4776,16 +4815,18 @@ function display_suite_shared_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'custom_breadcrumb',
-        1 => 'title',
+        1 => 'course_title_linked',
         2 => 'field_topics',
         3 => 'body',
+        4 => 'field_link_to_external_listing_',
       ),
     ),
     'fields' => array(
       'custom_breadcrumb' => 'ds_content',
-      'title' => 'ds_content',
+      'course_title_linked' => 'ds_content',
       'field_topics' => 'ds_content',
       'body' => 'ds_content',
+      'field_link_to_external_listing_' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -4816,12 +4857,12 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
+        0 => 'course_title_linked',
         1 => 'body',
       ),
     ),
     'fields' => array(
-      'title' => 'ds_content',
+      'course_title_linked' => 'ds_content',
       'body' => 'ds_content',
     ),
     'classes' => array(
@@ -4849,19 +4890,23 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'product';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
-        0 => 'title',
+      'right' => array(
+        0 => 'course_title_linked',
         1 => 'body',
-        2 => 'node_link',
+        2 => 'field_link_to_external_listing_',
+      ),
+      'left' => array(
+        3 => 'field_image',
       ),
     ),
     'fields' => array(
-      'title' => 'ds_content',
-      'body' => 'ds_content',
-      'node_link' => 'ds_content',
+      'course_title_linked' => 'right',
+      'body' => 'right',
+      'field_link_to_external_listing_' => 'right',
+      'field_image' => 'left',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -4869,7 +4914,12 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
     ),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'header' => 'div',
+      'top' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'bottom' => 'div',
+      'footer' => 'div',
       'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
