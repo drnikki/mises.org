@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Profile Pages Views feature.
+ */
+
+include_once 'profile_pages_views.features.inc';
