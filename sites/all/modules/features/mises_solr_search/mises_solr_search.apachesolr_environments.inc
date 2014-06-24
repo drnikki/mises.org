@@ -18,7 +18,6 @@ function mises_solr_search_apachesolr_environments() {
   $environment->service_class = '';
   $environment->conf = array(
     'apachesolr_direct_commit' => 0,
-    'apachesolr_read_only' => '1',
     'apachesolr_search_facet_pages' => '',
     'apachesolr_soft_commit' => 0,
   );
