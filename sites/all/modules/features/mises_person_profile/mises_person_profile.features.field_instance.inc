@@ -1069,7 +1069,7 @@ function mises_person_profile_field_default_field_instances() {
     'bundle' => 'person_profile',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'TECHNICAL NOTE: Currently autocompletes from Library Item only. Add Legacy Book and Book/Digital when those content types are created.',
+    'description' => 'Select from Library Item, Legacy Book and Book/Digital items.',
     'display' => array(
       'author_full_name' => array(
         'label' => 'above',
@@ -1687,9 +1687,9 @@ function mises_person_profile_field_default_field_instances() {
   t('Quote');
   t('Reference a library item that has been tagged with "Quotes".');
   t('Related Nodes');
+  t('Select from Library Item, Legacy Book and Book/Digital items.');
   t('Select the Library category where this author\'s work is published.');
   t('Significant Contributions');
-  t('TECHNICAL NOTE: Currently autocompletes from Library Item only. Add Legacy Book and Book/Digital when those content types are created.');
   t('Topics');
   t('Twitter');
   t('Type of Profile');
