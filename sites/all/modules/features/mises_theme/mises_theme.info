@@ -122,6 +122,7 @@ features[image][] = list_teaser
 features[image][] = sidebar_horizontal
 features[image][] = sidebar_vertical
 features[image][] = slideshow
+features[image][] = vertical_teaser
 features[variable][] = features_admin_menu_links_menus
 features[variable][] = features_admin_show_component_box
 features[variable][] = features_admin_show_component_conditional_fields
