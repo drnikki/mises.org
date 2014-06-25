@@ -414,6 +414,18 @@ function mises_theme_strongarm() {
       'slideshow' => array(
         'custom_settings' => TRUE,
       ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'small_player' => array(
+        'custom_settings' => FALSE,
+      ),
+      'wide_player' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),

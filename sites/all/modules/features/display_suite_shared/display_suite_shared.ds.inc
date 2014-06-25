@@ -3040,6 +3040,39 @@ function display_suite_shared_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_image_collection|default';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_image_collection';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_reset';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_image',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_image_collection|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'field_collection_item|field_image_collection|full';
   $ds_layout->entity_type = 'field_collection_item';
   $ds_layout->bundle = 'field_image_collection';
@@ -3070,6 +3103,39 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['field_collection_item|field_image_collection|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_image_collection|vertical_teaser';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_image_collection';
+  $ds_layout->view_mode = 'vertical_teaser';
+  $ds_layout->layout = 'ds_reset';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_image',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_image_collection|vertical_teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -4510,53 +4576,31 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_first_name',
-        1 => 'field_image_collection',
-        2 => 'body',
-        3 => 'field_featured_content',
-        4 => 'field_bio_summary',
-        5 => 'field_contributions',
-        6 => 'field_topics',
-        7 => 'field_major_works',
-        8 => 'field_published_in',
-        9 => 'field_profile_type',
-        10 => 'field_twitter',
-        11 => 'field_facebook',
-        12 => 'field_contact_email',
-        13 => 'field_austrian_school',
-        14 => 'field_related_nodes',
-        15 => 'field_last_name',
-        16 => 'field_quote_reference',
-        17 => 'field_email_link',
+        0 => 'field_image_collection',
+        1 => 'title',
       ),
     ),
     'fields' => array(
-      'field_first_name' => 'ds_content',
       'field_image_collection' => 'ds_content',
-      'body' => 'ds_content',
-      'field_featured_content' => 'ds_content',
-      'field_bio_summary' => 'ds_content',
-      'field_contributions' => 'ds_content',
-      'field_topics' => 'ds_content',
-      'field_major_works' => 'ds_content',
-      'field_published_in' => 'ds_content',
-      'field_profile_type' => 'ds_content',
-      'field_twitter' => 'ds_content',
-      'field_facebook' => 'ds_content',
-      'field_contact_email' => 'ds_content',
-      'field_austrian_school' => 'ds_content',
-      'field_related_nodes' => 'ds_content',
-      'field_last_name' => 'ds_content',
-      'field_quote_reference' => 'ds_content',
-      'field_email_link' => 'ds_content',
+      'title' => 'ds_content',
     ),
-    'classes' => array(),
-    'wrappers' => array(),
+    'classes' => array(
+      'layout_class' => array(
+        'col-sm-4' => 'col-sm-4',
+        'col-xs-6' => 'col-xs-6',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
-    'layout_attributes_merge' => TRUE,
-    'layout_link_attribute' => FALSE,
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
   );
   $export['node|person_profile|block_teaser'] = $ds_layout;
 
@@ -5142,6 +5186,16 @@ function display_suite_shared_ds_view_modes_info() {
     'file' => 'file',
   );
   $export['small_player'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'vertical_teaser';
+  $ds_view_mode->label = 'Vertical Teaser';
+  $ds_view_mode->entities = array(
+    'field_collection_item' => 'field_collection_item',
+    'node' => 'node',
+  );
+  $export['vertical_teaser'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
