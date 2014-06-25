@@ -15,7 +15,6 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[variable][] = metatag_schema_installed
 features[variable][] = xmlsitemap_rebuild_needed
-features[variable][] = xmlsitemap_regenerate_needed
 features[variable][] = xmlsitemap_settings_node_blog
 features[variable][] = xmlsitemap_settings_node_campaign_
 features[variable][] = xmlsitemap_settings_node_event
