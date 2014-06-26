@@ -33,3 +33,17 @@ function create_subject_mapping_csv() {
   }
   dprint_r(implode("\n", $rows));
 }
+
+function generate_url_mappings() {
+    //require_once('extras.inc');
+  //create_subject_mapping_csv();
+  //insert_mapping_url(1, 'mises_org');
+  //require_once('mises_migrate.install');
+  //insert_mapping_url(45, 2, 'document', 'Authors Forum: Property, Freedom & Society');
+  $query = db_query("SELECT old_url, new_url FROM {mises_migrate_url_map}");
+  while($result = $query->fetch()) {
+    $result->old_url = str_replace('"','', $result->old_url);
+    $items[] = implode(',',(array)$result);
+  }
+  print implode($items, "<br />");
+}
