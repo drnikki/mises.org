@@ -383,8 +383,8 @@ class ProductMigration extends MisesMigration {
     $this->addFieldMapping('body:summary', 'summary');
     $this->addFieldMapping('body:format')->defaultValue('full_html');
     $this->addFieldMapping('uid')->defaultValue(1);
-    $this->addFieldMapping('field_product_link', 'ProductURL');
-    $this->addFieldMapping('field_product_image', 'imageurl');
+    $this->addFieldMapping('field_link_to_external_listing_', 'ProductURL');
+    $this->addFieldMapping('field_image', 'imageurl');
     $this->addFieldMapping('status')->defaultValue(1);
     /*
     $this->addFieldMapping('field_product_image:file_replace')
