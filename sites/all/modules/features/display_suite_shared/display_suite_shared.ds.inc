@@ -2983,6 +2983,28 @@ if ($entity->field_link_to_external_listing_) {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'linked_box_image';
+  $ds_field->label = 'Linked Flex Box Image';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php if (isset($entity->field_image_link[LANGUAGE_NONE][0][\'url\'] ) && isset($entity->field_image)) : ?> 
+  <?php $image_link =$entity->field_image_link[LANGUAGE_NONE][0][\'url\'] ; ?>
+  <a href="<?php print $image_link; ?>"><img class="img-responsive" src="[node:field_image]"></a>
+<? endif ?>
+',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['linked_box_image'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'profile_author_articles';
   $ds_field->label = 'Profile Author Articles';
   $ds_field->field_type = 6;

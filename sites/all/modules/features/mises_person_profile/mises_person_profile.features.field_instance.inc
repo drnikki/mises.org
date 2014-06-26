@@ -25,6 +25,22 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_options' => array(),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
+        'weight' => 2,
+      ),
+      'default' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 26,
@@ -168,9 +184,13 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 37,
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 15,
       ),
       'default' => array(
         'label' => 'above',
@@ -248,9 +268,12 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 28,
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'above',
@@ -360,9 +383,12 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 36,
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 14,
       ),
       'default' => array(
         'label' => 'above',
@@ -433,9 +459,12 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 29,
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
       ),
       'default' => array(
         'label' => 'above',
@@ -509,9 +538,12 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 41,
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
+        'weight' => 20,
       ),
       'default' => array(
         'label' => 'above',
@@ -599,9 +631,12 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 35,
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
+        'weight' => 13,
       ),
       'default' => array(
         'label' => 'above',
@@ -689,9 +724,12 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 27,
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'above',
@@ -759,9 +797,12 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'above',
@@ -930,9 +971,12 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 39,
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 18,
       ),
       'default' => array(
         'label' => 'above',
@@ -1037,9 +1081,13 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 31,
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
       ),
       'default' => array(
         'label' => 'above',
@@ -1117,9 +1165,13 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 33,
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
       ),
       'default' => array(
         'label' => 'above',
@@ -1193,9 +1245,13 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 32,
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 9,
       ),
       'default' => array(
         'label' => 'above',
@@ -1277,9 +1333,13 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 40,
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 19,
       ),
       'default' => array(
         'label' => 'above',
@@ -1362,9 +1422,12 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 38,
+        'module' => 'viewfield',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'viewfield_default',
+        'weight' => 17,
       ),
       'default' => array(
         'label' => 'above',
@@ -1448,9 +1511,13 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 30,
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 7,
       ),
       'default' => array(
         'label' => 'above',
@@ -1528,9 +1595,12 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'block_teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 34,
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
+        'weight' => 12,
       ),
       'default' => array(
         'label' => 'above',
