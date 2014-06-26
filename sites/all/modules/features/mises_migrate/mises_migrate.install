@@ -1,0 +1,53 @@
+<?php
+function mises_migrate_schema() {
+  $schema = array(
+    'mises_migrate_url_map' => array(
+      'description' => 'The main table to hold the scheduler data.',
+      'fields' => array(
+        'nid' => array(
+          'description' => 'The {user}.uid of the user.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+        'old_id' => array(
+          'description' => 'The {user}.uid of the user.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+        'old_type' => array(
+          'description' => 'The UNIX UTC timestamp when to unpublish',
+          'type' => 'varchar',
+          'length' => 128,
+        ), 
+       'old_url' => array(
+          'description' => 'The UNIX UTC timestamp when to unpublish',
+          'type' => 'varchar',
+          'length' => 128,
+        ), 
+        'new_url' => array(
+          'description' => 'The UNIX UTC timestamp when to unpublish',
+          'type' => 'varchar',
+          'length' => 128,
+        ),        
+      ),
+      'primary key' => array('nid'),
+    ),
+  );
+  return $schema;
+}
+
+function mises_migrate_install() {
+  drupal_install_schema('mises_migrate');
+}
+function mises_migrate_uninstall() {
+  drupal_uninstall_schema('mises_migrate');
+}
+
+function mises_migrate_update_1() {
+  drupal_install_schema('mises_migrate');
+}
+
