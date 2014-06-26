@@ -51,7 +51,7 @@ function bootsass_pager($variables) {
   // ));
   $li_previous = theme('pager_previous', array(
     //'text' => (isset($tags[1]) ? $tags[1] : t('')),
-    'text' => t('funny'),
+    'text' => t(''),
     'element' => $element,
     'interval' => 1,
     'parameters' => $parameters,

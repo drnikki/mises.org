@@ -83,7 +83,10 @@
 .btn-white {
   @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
 }
-
+// Label 
+label {
+  margin-bottom: 0;
+}
 
 // Panels
 .panel {
@@ -99,6 +102,8 @@
 }
 // Pagination
 .pagination {
+  display: block;
+  clear: both;
   border-radius: $pager-border-radius;
   > li {
     display: inline-block;
@@ -197,8 +202,8 @@ body {
 .region-navigation {
   position: relative;
   .block {
-    height: 50px;
     width: 258px;
+    height: 50px;
     &.block-views {
       @extend .pull-right;
     }
@@ -215,12 +220,12 @@ body {
   }
   #block-search-form {
     .form-control {
-      border-radius: 0;
       border-right: 0 none;
+      border-radius: 0;
     }
     button {
-      border-radius: 0;
       padding: 2px 7px;
+      border-radius: 0;
       font-size: 20px;
     }
   }
