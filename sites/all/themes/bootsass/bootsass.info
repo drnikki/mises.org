@@ -35,6 +35,7 @@ stylesheets[all][] = stylesheets/styles.css
 ;; Scripts
 ;;;;;;;;;;;;;;;;;;;;;
  
+scripts[] = 'js/bootstrap/transition.js'
 scripts[] = 'js/bootstrap/affix.js'
 scripts[] = 'js/bootstrap/alert.js'
 scripts[] = 'js/bootstrap/button.js'
@@ -46,7 +47,6 @@ scripts[] = 'js/bootstrap/tooltip.js'
 scripts[] = 'js/bootstrap/popover.js'
 scripts[] = 'js/bootstrap/scrollspy.js'
 scripts[] = 'js/bootstrap/tab.js'
-scripts[] = 'js/bootstrap/transition.js'
 scripts[] = 'js/custom.js'
 
 

@@ -11,6 +11,9 @@ function mises_person_profile_node_context_ctools_plugin_api($module = NULL, $ap
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
   if ($module == "quicktabs" && $api == "quicktabs") {
     return array("version" => "1");
   }

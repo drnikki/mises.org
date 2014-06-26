@@ -21,8 +21,9 @@ function _mises_solr_search_manage_solr_write_access() {
     return;
   }
 
-  // Do nothing if this is not hosted on devmises.org:
-  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE) {
+  // Do nothing if this is not hosted on devmises.org or is the master-content site:
+  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE ||
+    strpos($_SERVER['HTTP_HOST'], 'master-content.mises.devmises.org') !== FALSE) {
     return;
   }
 
@@ -31,18 +32,12 @@ function _mises_solr_search_manage_solr_write_access() {
 
   // For all solr environments, ensure read-only mode is enabled:
   foreach ($solr_environments as $environment) {
-    // Enforce read-only mode unless this site is "master-content.mises.devmises.org":
-    if (strpos($_SERVER['HTTP_HOST'], 'master-content.mises.devmises.org') !== FALSE) {
-      if (isset($environment['conf']['apachesolr_read_only']) && $environment['conf']['apachesolr_read_only'] === '0') {
-        return;
-      }
-      $environment['conf']['apachesolr_read_only'] = '0';
-    } else {
-      if (isset($environment['conf']['apachesolr_read_only']) && $environment['conf']['apachesolr_read_only'] === '1') {
-        return;
-      }      
-      $environment['conf']['apachesolr_read_only'] = '1';
+    // Don't modify this environment if read-only mode is already set:
+    if (isset($environment['conf']['apachesolr_read_only']) && $environment['conf']['apachesolr_read_only'] === '1') {
+      continue;
     }
+
+    $environment['conf']['apachesolr_read_only'] = '1';
 
     // Emulate form values on Apache Solr configuration to minimize unintended results:
     unset($environment['conf']['apachesolr_index_last']);
@@ -69,9 +64,9 @@ function mises_solr_search_init() {
  * make it clear that "Read only" access to the index is being enforced:
  */
 function mises_solr_search_form_apachesolr_environment_edit_form_alter(&$form, &$form_state, $form_id) {
-
-  // Do nothing if this is not hosted on devmises.org:
-  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE) {
+  // Do nothing if this is not hosted on devmises.org or if this is master-content.mises.devmises.org:
+  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE ||
+    strpos($_SERVER['HTTP_HOST'], 'master-content.mises.devmises.org') !== FALSE) {
     return;
   }
   

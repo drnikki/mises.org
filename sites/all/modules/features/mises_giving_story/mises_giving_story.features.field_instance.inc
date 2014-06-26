@@ -18,7 +18,7 @@ function mises_giving_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
@@ -95,11 +95,11 @@ function mises_giving_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
         'weight' => 2,
@@ -115,7 +115,7 @@ function mises_giving_story_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_campaign',
     'label' => 'Campaign',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -140,14 +140,15 @@ function mises_giving_story_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'image',
+        'label' => 'hidden',
+        'module' => 'flexslider_fields',
         'settings' => array(
+          'caption' => FALSE,
           'conditions' => array(),
-          'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'giving_full-width',
+          'optionset' => 'default',
         ),
-        'type' => 'image',
+        'type' => 'flexslider',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -161,7 +162,7 @@ function mises_giving_story_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_image',
     'label' => 'Image',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
@@ -201,57 +202,11 @@ function mises_giving_story_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-giving_story-field_media_collection'
-  $field_instances['node-giving_story-field_media_collection'] = array(
-    'bundle' => 'giving_story',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'conditions' => array(),
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_media_collection',
-    'label' => 'Video',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 3,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
   t('Campaign');
   t('Image');
-  t('Video');
 
   return $field_instances;
 }

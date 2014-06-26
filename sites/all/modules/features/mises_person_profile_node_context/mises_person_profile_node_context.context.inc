@@ -29,10 +29,46 @@ function mises_person_profile_node_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'quicktabs-major_works_signif_contrib' => array(
-          'module' => 'quicktabs',
-          'delta' => 'major_works_signif_contrib',
-          'region' => 'content',
+        'views-author_articles-block_1' => array(
+          'module' => 'views',
+          'delta' => 'author_articles-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-90',
+        ),
+        'views-faaeb062562ec6d9c97848d39a52d510' => array(
+          'module' => 'views',
+          'delta' => 'faaeb062562ec6d9c97848d39a52d510',
+          'region' => 'sidebar_second',
+          'weight' => '-89',
+        ),
+        'views-flex_blocks-block_6' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_6',
+          'region' => 'sidebar_second',
+          'weight' => '-88',
+        ),
+        'views-related_blocks_node-topics' => array(
+          'module' => 'views',
+          'delta' => 'related_blocks_node-topics',
+          'region' => 'bottom_one',
+          'weight' => '-10',
+        ),
+        'views-related_blocks_node-level' => array(
+          'module' => 'views',
+          'delta' => 'related_blocks_node-level',
+          'region' => 'bottom_two',
+          'weight' => '-10',
+        ),
+        'views-related_blocks_node-audience' => array(
+          'module' => 'views',
+          'delta' => 'related_blocks_node-audience',
+          'region' => 'bottom_three',
+          'weight' => '-10',
+        ),
+        'views-related_blocks_node-courses' => array(
+          'module' => 'views',
+          'delta' => 'related_blocks_node-courses',
+          'region' => 'bottom_four',
           'weight' => '-10',
         ),
       ),
