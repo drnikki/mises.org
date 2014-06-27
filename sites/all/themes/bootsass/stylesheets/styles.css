@@ -10851,16 +10851,17 @@ ul.addtocal_menu li a:hover {
 /* DIRECTORY */
 /* line 409, ../sass/custom/_features.scss */
 .view-profile-lists .views-summary {
+  display: block;
   text-align: center;
   padding: 20px;
   word-break: break-word;
 }
-/* line 413, ../sass/custom/_features.scss */
+/* line 414, ../sass/custom/_features.scss */
 .view-profile-lists .views-summary span {
   padding: 0 5px;
 }
 
-/* line 418, ../sass/custom/_features.scss */
+/* line 419, ../sass/custom/_features.scss */
 .profile-item {
   clear: right;
 }

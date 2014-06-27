@@ -22,6 +22,7 @@ function profile_pages_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['link_display'] = 'page';
   $handler->display->display_options['access']['type'] = 'none';
@@ -522,6 +523,10 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['arguments']['field_last_name_value']['glossary'] = TRUE;
   $handler->display->display_options['arguments']['field_last_name_value']['limit'] = '1';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
@@ -582,6 +587,20 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['filters']['tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'profile_type';
+  /* Filter criterion: Taxonomy term: Term ID */
+  $handler->display->display_options['filters']['tid_raw']['id'] = 'tid_raw';
+  $handler->display->display_options['filters']['tid_raw']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['tid_raw']['field'] = 'tid_raw';
+  $handler->display->display_options['filters']['tid_raw']['relationship'] = 'field_profile_type_target_id_1';
+  $handler->display->display_options['filters']['tid_raw']['value']['value'] = '199';
+  $handler->display->display_options['filters']['tid_raw']['group'] = 2;
+  /* Filter criterion: Taxonomy term: Term ID */
+  $handler->display->display_options['filters']['tid_raw_1']['id'] = 'tid_raw_1';
+  $handler->display->display_options['filters']['tid_raw_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['tid_raw_1']['field'] = 'tid_raw';
+  $handler->display->display_options['filters']['tid_raw_1']['relationship'] = 'field_profile_type_target_id_1';
+  $handler->display->display_options['filters']['tid_raw_1']['value']['value'] = '206';
+  $handler->display->display_options['filters']['tid_raw_1']['group'] = 2;
   $handler->display->display_options['path'] = 'faculty-staff';
   $handler->display->display_options['menu']['title'] = 'Glossary';
   $handler->display->display_options['menu']['weight'] = '0';
