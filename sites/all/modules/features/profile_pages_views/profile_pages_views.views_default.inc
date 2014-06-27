@@ -22,7 +22,6 @@ function profile_pages_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['link_display'] = 'page';
   $handler->display->display_options['access']['type'] = 'none';
@@ -35,7 +34,7 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = 36;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'profile-item';
+  $handler->display->display_options['style_options']['row_class'] = 'profile-item col-sm-4 col-xs-6';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
@@ -234,8 +233,8 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Alphabet Menu - Glossary */
-  $handler = $view->new_display('attachment', 'Alphabet Menu - Glossary', 'glossary');
+  /* Display: Alphabet Menu - All */
+  $handler = $view->new_display('attachment', 'Alphabet Menu - All', 'glossary');
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -266,8 +265,8 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['displays'] = array(
     'default' => 'default',
     'page' => 'page',
-    'page_1' => 'page_1',
-    'page_2' => 'page_2',
+    'page_1' => 0,
+    'page_2' => 0,
   );
   $handler->display->display_options['inherit_arguments'] = FALSE;
 
@@ -297,7 +296,7 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['arguments']['field_last_name_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_last_name_value']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_last_name_value']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_last_name_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_last_name_value']['validate']['fail'] = 'empty';
   $handler->display->display_options['arguments']['field_last_name_value']['glossary'] = TRUE;
   $handler->display->display_options['arguments']['field_last_name_value']['limit'] = '1';
   $handler->display->display_options['arguments']['field_last_name_value']['case'] = 'upper';
@@ -363,7 +362,7 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
   $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid_1']['relationship'] = 'field_profile_type_target_id_1';
+  $handler->display->display_options['filters']['tid_1']['relationship'] = 'field_topics_target_id';
   $handler->display->display_options['filters']['tid_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tid_1']['expose']['operator_id'] = 'tid_1_op';
   $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Topic Expertise';
@@ -386,7 +385,7 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['filters']['tid_2']['id'] = 'tid_2';
   $handler->display->display_options['filters']['tid_2']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['filters']['tid_2']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid_2']['relationship'] = 'field_profile_type_target_id_1';
+  $handler->display->display_options['filters']['tid_2']['relationship'] = 'field_austrian_school_target_id';
   $handler->display->display_options['filters']['tid_2']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tid_2']['expose']['operator_id'] = 'tid_2_op';
   $handler->display->display_options['filters']['tid_2']['expose']['label'] = 'Austrian School Expertise';
@@ -411,6 +410,64 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
+  /* Display: Alphabet Menu - Speakers Bureau */
+  $handler = $view->new_display('attachment', 'Alphabet Menu - Speakers Bureau', 'attachment_1');
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_1';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-sm-4 col-xs-6';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Last name (field_last_name) */
+  $handler->display->display_options['arguments']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['arguments']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['arguments']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['arguments']['field_last_name_value']['default_action'] = 'summary';
+  $handler->display->display_options['arguments']['field_last_name_value']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary']['format'] = 'unformatted_summary';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary_options']['count'] = FALSE;
+  $handler->display->display_options['arguments']['field_last_name_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary_options']['inline'] = TRUE;
+  $handler->display->display_options['arguments']['field_last_name_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_last_name_value']['glossary'] = TRUE;
+  $handler->display->display_options['arguments']['field_last_name_value']['limit'] = '1';
+  $handler->display->display_options['arguments']['field_last_name_value']['case'] = 'upper';
+  $handler->display->display_options['arguments']['field_last_name_value']['path_case'] = 'lower';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'person_profile' => 'person_profile',
+  );
+  /* Filter criterion: Taxonomy term: Term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['relationship'] = 'field_profile_type_target_id_1';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    198 => '198',
+  );
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'profile_type';
+  $handler->display->display_options['displays'] = array(
+    'page_1' => 'page_1',
+    'default' => 0,
+    'page' => 0,
+    'page_2' => 0,
+  );
+  $handler->display->display_options['inherit_arguments'] = FALSE;
+
   /* Display: Faculty and Staff */
   $handler = $view->new_display('page', 'Faculty and Staff', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -425,12 +482,36 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '';
   $handler->display->display_options['pager']['options']['tags']['next'] = '';
   $handler->display->display_options['pager']['options']['tags']['last'] = '';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'profile-item col-sm-4 col-xs-6';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['uses_fields'] = TRUE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'block_teaser';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_profile_type_target_id_1']['id'] = 'field_profile_type_target_id_1';
+  $handler->display->display_options['relationships']['field_profile_type_target_id_1']['table'] = 'field_data_field_profile_type';
+  $handler->display->display_options['relationships']['field_profile_type_target_id_1']['field'] = 'field_profile_type_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_austrian_school_target_id']['id'] = 'field_austrian_school_target_id';
+  $handler->display->display_options['relationships']['field_austrian_school_target_id']['table'] = 'field_data_field_austrian_school';
+  $handler->display->display_options['relationships']['field_austrian_school_target_id']['field'] = 'field_austrian_school_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_topics_target_id']['id'] = 'field_topics_target_id';
+  $handler->display->display_options['relationships']['field_topics_target_id']['table'] = 'field_data_field_topics';
+  $handler->display->display_options['relationships']['field_topics_target_id']['field'] = 'field_topics_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Last name (field_last_name) */
   $handler->display->display_options['arguments']['field_last_name_value']['id'] = 'field_last_name_value';
   $handler->display->display_options['arguments']['field_last_name_value']['table'] = 'field_data_field_last_name';
   $handler->display->display_options['arguments']['field_last_name_value']['field'] = 'field_last_name_value';
-  $handler->display->display_options['arguments']['field_last_name_value']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_last_name_value']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_last_name_value']['default_argument_options']['argument'] = 'all';
   $handler->display->display_options['arguments']['field_last_name_value']['summary']['number_of_records'] = '0';
@@ -450,18 +531,6 @@ function profile_pages_views_views_default_views() {
     'person_profile' => 'person_profile',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
-  $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid_1']['relationship'] = 'field_profile_type_target_id_1';
-  $handler->display->display_options['filters']['tid_1']['value'] = array(
-    199 => '199',
-    206 => '206',
-  );
-  $handler->display->display_options['filters']['tid_1']['group'] = 1;
-  $handler->display->display_options['filters']['tid_1']['type'] = 'select';
-  $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'profile_type';
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -518,6 +587,65 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Alphabet Menu - Faculty Staff */
+  $handler = $view->new_display('attachment', 'Alphabet Menu - Faculty Staff', 'attachment_2');
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_2';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-sm-4 col-xs-6';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Last name (field_last_name) */
+  $handler->display->display_options['arguments']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['arguments']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['arguments']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['arguments']['field_last_name_value']['default_action'] = 'summary';
+  $handler->display->display_options['arguments']['field_last_name_value']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary']['format'] = 'unformatted_summary';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary_options']['count'] = FALSE;
+  $handler->display->display_options['arguments']['field_last_name_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary_options']['inline'] = TRUE;
+  $handler->display->display_options['arguments']['field_last_name_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_last_name_value']['glossary'] = TRUE;
+  $handler->display->display_options['arguments']['field_last_name_value']['limit'] = '1';
+  $handler->display->display_options['arguments']['field_last_name_value']['case'] = 'upper';
+  $handler->display->display_options['arguments']['field_last_name_value']['path_case'] = 'lower';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'person_profile' => 'person_profile',
+  );
+  /* Filter criterion: Taxonomy term: Term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['relationship'] = 'field_profile_type_target_id_1';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    199 => '199',
+    206 => '206',
+  );
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'profile_type';
+  $handler->display->display_options['displays'] = array(
+    'page_2' => 'page_2',
+    'default' => 0,
+    'page' => 0,
+    'page_1' => 0,
+  );
+  $handler->display->display_options['inherit_arguments'] = FALSE;
   $export['profile_lists'] = $view;
 
   return $export;
