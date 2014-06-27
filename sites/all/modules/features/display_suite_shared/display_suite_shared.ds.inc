@@ -1935,6 +1935,40 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|person_profile|block_teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'person_profile';
+  $ds_fieldsetting->view_mode = 'block_teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'teaser-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'field_image_collection' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'image img-responsive border-gray',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|person_profile|block_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|person_profile|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'person_profile';
@@ -2949,6 +2983,28 @@ if ($entity->field_link_to_external_listing_) {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'linked_box_image';
+  $ds_field->label = 'Linked Flex Box Image';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php if (isset($entity->field_image_link[LANGUAGE_NONE][0][\'url\'] ) && isset($entity->field_image)) : ?> 
+  <?php $image_link =$entity->field_image_link[LANGUAGE_NONE][0][\'url\'] ; ?>
+  <a href="<?php print $image_link; ?>"><img class="img-responsive" src="[node:field_image]"></a>
+<? endif ?>
+',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['linked_box_image'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'profile_author_articles';
   $ds_field->label = 'Profile Author Articles';
   $ds_field->field_type = 6;
@@ -3119,6 +3175,9 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
     'fields' => array(
       'field_image' => 'ds_content',
+    ),
+    'limit' => array(
+      'field_image' => '1',
     ),
     'classes' => array(
       'layout_class' => array(
