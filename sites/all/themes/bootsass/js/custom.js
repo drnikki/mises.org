@@ -34,10 +34,11 @@ var Drupal = Drupal || {};
         $('.row.video .col-xs-6 .panel-heading .panel-title').equalHeight();
         $('.row.video .col-xs-6 .panel-body').equalHeight();
         $('.row.video .col-xs-6 .panel-footer').equalHeight();
+        $('.profile-item').equalHeight();
 
         //var sidebarHeight = $("div.region-sidebar-second").height() + $("div.region-sidebar-second-top").height();
         var sidebarHeight = $(".sidebar").height();
-        console.log('sidebarHeight ' + sidebarHeight);
+        //console.log('sidebarHeight ' + sidebarHeight);
         $("div.main-content").css({ "min-height": sidebarHeight }); // Roger's magic!
         
       };
