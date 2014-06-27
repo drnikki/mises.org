@@ -106,9 +106,18 @@ function mises_static_page_field_default_field_instances() {
         'weight' => 0,
       ),
       'vertical_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(
+            0 => array(
+              'condition' => '',
+            ),
+          ),
+          'image_link' => 'content',
+          'image_style' => 'vertical_teaser',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
