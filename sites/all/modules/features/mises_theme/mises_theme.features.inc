@@ -48,6 +48,30 @@ function mises_theme_image_default_styles() {
     ),
   );
 
+  // Exported image style: footer_icon_32x32.
+  $styles['footer_icon_32x32'] = array(
+    'name' => 'footer_icon_32x32',
+    'label' => 'Footer Icon',
+    'effects' => array(
+      1 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 32,
+          'height' => 32,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: list_teaser.
   $styles['list_teaser'] = array(
     'name' => 'list_teaser',
