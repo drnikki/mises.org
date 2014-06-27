@@ -83,10 +83,7 @@
 .btn-white {
   @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
 }
-// Label 
-label {
-  margin-bottom: 0;
-}
+
 
 // Panels
 .panel {
@@ -102,8 +99,6 @@ label {
 }
 // Pagination
 .pagination {
-  display: block;
-  clear: both;
   border-radius: $pager-border-radius;
   > li {
     display: inline-block;
@@ -202,8 +197,8 @@ body {
 .region-navigation {
   position: relative;
   .block {
-    width: 258px;
     height: 50px;
+    width: 258px;
     &.block-views {
       @extend .pull-right;
     }
@@ -220,12 +215,12 @@ body {
   }
   #block-search-form {
     .form-control {
-      border-right: 0 none;
       border-radius: 0;
+      border-right: 0 none;
     }
     button {
-      padding: 2px 7px;
       border-radius: 0;
+      padding: 2px 7px;
       font-size: 20px;
     }
   }
@@ -327,8 +322,8 @@ body {
       }
     }
   }
-  #block-menu-menu-mises-social-icons {
-    ul.menu li {
+  .social-media-menu {
+    div {
       display: inline-block;
       padding-right: $padding-xs-horizontal;
       padding-bottom: $padding-large-vertical;
@@ -338,7 +333,7 @@ body {
         width: 32px;
         height: 32px;
         background-size: contain;
-        text-indent: -9999em;
+        //text-indent: -9999em;
         opacity: 0.7;
         &:hover {
           background-color: transparent;

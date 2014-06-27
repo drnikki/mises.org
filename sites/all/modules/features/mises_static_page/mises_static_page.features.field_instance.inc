@@ -105,6 +105,12 @@ function mises_static_page_field_default_field_instances() {
         'type' => 'flexslider',
         'weight' => 0,
       ),
+      'vertical_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_image',

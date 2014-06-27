@@ -15,23 +15,24 @@ function mises_theme_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'features_admin_menu_links_menus';
   $strongarm->value = array(
-    'menu-about-mises-sub-menu' => 'menu-about-mises-sub-menu',
-    'menu-about-the-mises-institute' => 'menu-about-the-mises-institute',
-    'menu-austrian-economics-sub-menu' => 'menu-austrian-economics-sub-menu',
-    'menu-browse-library' => 'menu-browse-library',
-    'devel' => 'devel',
-    'menu-economist-resources-sub-men' => 'menu-economist-resources-sub-men',
-    'menu-event-menu' => 'menu-event-menu',
-    'features' => 'features',
-    'menu-new-to-mises' => 'menu-new-to-mises',
-    'menu-homeschool-sub-menu' => 'menu-homeschool-sub-menu',
-    'menu-library-sub-menu' => 'menu-library-sub-menu',
-    'main-menu' => 'main-menu',
-    'management' => 'management',
-    'navigation' => 'navigation',
-    'menu-press-room' => 'menu-press-room',
-    'menu-mises-social-icons' => 'menu-mises-social-icons',
-    'user-menu' => 'user-menu',
+    'menu-about-mises-sub-menu' => 0,
+    'menu-about-the-mises-institute' => 0,
+    'menu-austrian-economics-sub-menu' => 0,
+    'menu-browse-library' => 0,
+    'devel' => 0,
+    'menu-economist-resources-sub-men' => 0,
+    'menu-event-menu' => 0,
+    'features' => 0,
+    'menu-new-to-mises' => 0,
+    'menu-giving' => 0,
+    'menu-homeschool-sub-menu' => 0,
+    'menu-library-sub-menu' => 0,
+    'main-menu' => 0,
+    'management' => 0,
+    'navigation' => 0,
+    'menu-press-room' => 0,
+    'menu-mises-social-icons' => 0,
+    'user-menu' => 0,
   );
   $export['features_admin_menu_links_menus'] = $strongarm;
 
@@ -228,7 +229,7 @@ function mises_theme_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'features_admin_show_component_menu_links';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['features_admin_show_component_menu_links'] = $strongarm;
 
   $strongarm = new stdClass();

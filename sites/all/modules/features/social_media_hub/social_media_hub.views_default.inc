@@ -666,6 +666,59 @@ jQuery.fn.googlePlusActivity.defaults.api_key = \'AIzaSyChpn9DmQ9RyGovv7JLDI-y4r
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['value'] = 'google';
   $handler->display->display_options['path'] = 'about/social/media/rss';
+
+  /* Display: Social Media Footer Menu */
+  $handler = $view->new_display('block', 'Social Media Footer Menu', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Stay Connected';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'social-media-menu';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Platform Icon */
+  $handler->display->display_options['fields']['field_platform_icon']['id'] = 'field_platform_icon';
+  $handler->display->display_options['fields']['field_platform_icon']['table'] = 'field_data_field_platform_icon';
+  $handler->display->display_options['fields']['field_platform_icon']['field'] = 'field_platform_icon';
+  $handler->display->display_options['fields']['field_platform_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_platform_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_platform_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_platform_icon']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_platform_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_platform_icon']['settings'] = array(
+    'image_style' => 'footer_icon_32x32',
+    'image_link' => '',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[field_platform_icon]';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'about/social/media/[title]';
+  $handler->display->display_options['fields']['title']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $export['social_media_displays'] = $view;
 
   return $export;
