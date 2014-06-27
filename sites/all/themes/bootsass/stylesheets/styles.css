@@ -9130,23 +9130,22 @@ body {
   color: white;
 }
 /* line 326, ../sass/custom/_styles.scss */
-.footer #block-menu-menu-mises-social-icons ul.menu li {
+.footer .social-media-menu div {
   display: inline-block;
   padding-right: 5px;
   padding-bottom: 16px;
 }
 /* line 330, ../sass/custom/_styles.scss */
-.footer #block-menu-menu-mises-social-icons ul.menu li a {
+.footer .social-media-menu div a {
   display: inline-block;
   padding: 0;
   width: 32px;
   height: 32px;
   background-size: contain;
-  text-indent: -9999em;
   opacity: 0.7;
 }
 /* line 338, ../sass/custom/_styles.scss */
-.footer #block-menu-menu-mises-social-icons ul.menu li a:hover {
+.footer .social-media-menu div a:hover {
   background-color: transparent;
   opacity: 1;
 }
