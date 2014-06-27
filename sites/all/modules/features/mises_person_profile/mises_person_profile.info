@@ -9,6 +9,7 @@ dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = field_collection
 dependencies[] = field_group
+dependencies[] = flexslider_field_collection
 dependencies[] = link
 dependencies[] = list
 dependencies[] = mises_events

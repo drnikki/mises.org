@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Profile Listings feature.
+ */
+
+include_once 'profile_listings.features.inc';
