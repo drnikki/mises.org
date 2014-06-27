@@ -407,6 +407,7 @@ ul.addtocal_menu {
 /* DIRECTORY */
 .view-profile-lists {
   .views-summary {
+    display: block;
     text-align: center;
     padding: $grid-gutter-width;
     word-break: break-word;
