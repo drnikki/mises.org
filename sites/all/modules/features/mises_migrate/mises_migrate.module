@@ -1,6 +1,6 @@
 <?php
 function mises_migrate_init() {
-
+  require_once('mises.media.inc');
 }
 
 
@@ -68,38 +68,25 @@ class BiographyMigration extends MisesMigration {
       ->select('biography', 'r')
       ->fields('r');
     $this->map = new MigrateSQLMap($this->machineName, array(
-      'AAuthorId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
+      'AuthorId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
       MigrateDestinationNode::getKeySchema()
     );
     $this->source = new MigrateSourceSQL($query);
     $this->destination = new MigrateDestinationNode('library_item');
     $this->addFieldMapping('field_published_date', 'CreateDate');
     $this->addFieldMapping('created', 'CreateDate');
-    $this->addFieldMapping('changed', 'CreateDate');
-    $this->addFieldMapping('title', 'title');
-    $this->addFieldMapping('body', 'body');
+    $this->addFieldMapping('title', 'AuthorFirst');
+    $this->addFieldMapping('body', 'BioText');
     $this->addFieldMapping('body:format')->defaultValue('full_html');
-    $this->addFieldMapping('field_legacy_tags', 'tags')->separator('|')->defaultValue('');;
-    $this->addFieldMapping('field_author_1', 'authors')
-      ->separator('|')
-      ->sourceMigration('DocumentAuthors');  
+    $this->addFieldMapping('field_author_1', 'author');
+    $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Biography'));
+    $this->addFieldMapping('status')->defaultValue(1);
   }
   public function prepareRow($row) {
-    $this->processTags($row);
-    $row->authors = array();
-    if($row->authorlast) {
-      $row->authors[] = $row->authorfirst.' '.$row->authorlast;
+    $query = db_query("SELECT nid FROM {node} WHERE type = 'person_profile' AND title = '$row->AuthorFirst'");
+    if($result = $query->fetch()) {
+      $author = $result->nid;
     }
-    if($row->author2last) {
-      $row->authors[] = $row->author2first.' '.$row->author2last;
-    }
-    if($row->author3last) {
-      $row->authors[] = $row->author3first.' '.$row->author3last;
-    }
-    if($row->CoAuthorId > 0) {
-      $row->authors .= '|'.$row->CoAuthorId;
-    }
-    return $row;
   }
 }
 
@@ -161,6 +148,9 @@ class MisesTagMapper {
     $guid = $row->GUID;
     $this->db = Database::getConnection('default', 'for_migration');
     $this->legacytags = $this->getLegacyTags($guid);
+    if($row->DocumentID) {
+      $this->legacytags = array_merge($this->legacytags, $this->getLegacySubjects($row->DocumentId));
+    }
     $this->processCSV1();
     $this->processMap1();
   }
@@ -205,6 +195,18 @@ class MisesTagMapper {
     }
     return $tags;
   }
+  protected function getLegacySubjects($documentId) {
+    $subjects = array();
+    $query = $this->db->query("SELECT dsl.Subject 
+      FROM documentsubjectlink dsl 
+      INNER JOIN documentsubject ds ON ds.SubjectID = dsl.SubjectID
+      WHERE dsl.DocumentId = $documentId");
+    while($result = $query->fetch()) {
+      $subjects[] = $result->SubjectID;
+    }
+    dd($subjects);
+    return $subjects;
+  }
   protected function processCSV1() {
     static $rows;
     if(!$row) {
@@ -224,6 +226,30 @@ class MisesTagMapper {
           );
           $rows[trim($row[1])] = $mapping;
         }
+      }
+      $url = url(drupal_get_path('module', 'mises_migrate'). '/subjectmap.csv');
+
+      $contents = file_get_contents('./'.$url);
+
+      $lines = explode("\n", $contents);
+      foreach($lines as $line) {
+                /*
+        $row = str_getcsv($line);
+
+        if($row[1] != '—') {
+          $rows[trim($row[0])
+        }
+        if($row[2] != '—') {
+
+        }
+        $mapping2 = array(
+          'field_topics' => array_map('trim',explode(",",$row[1])),
+          'field_austrian_school' => array_map('trim',explode(",", $row[2]))
+        );
+        $rows[trim($row[0])] = array_merge($mapping2, $mapping1);
+        }
+
+        }        */
       }
     }
     $this->map1 = $rows;
@@ -251,6 +277,31 @@ class MisesTagMapper {
   }
 }
 
+class QuotesMigration extends MisesMigration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $query = $this->db
+      ->select('Quotes', 'q')
+      ->fields('q');
+    $this->source = new MigrateSourceSQL($query);
+    $this->destination = new MigrateDestinationNode('library_item');
+    $this->map = new MigrateSQLMap($this->machineName, array(
+      'QuoteId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
+      MigrateDestinationNode::getKeySchema()
+    );
+    $this->addFieldMapping('title', 'title');
+    $this->addFieldMapping('body', 'Quote');
+    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Quotes'));
+    $this->addFieldMapping('status')->defaultValue(1);
+  }
+  public function prepareRow($row) {
+    $row->title = $row->Source.' '.$row->Page;
+  }
+  public function prepare($node, $row) {
+
+  }
+}
 
 class DailyArticlesMigration extends MisesMigration {
   public function __construct($arguments) {
@@ -323,11 +374,7 @@ class DocumentMigration extends MisesMigration {
   public function prepareRow($row) {
     $this->mapTags($row);
     /*
-    $query = $this->db->query("SELECT SubjectID FROM documentsubjectlink WHERE DocumentId = $row->DocumentId");
-    while($result = $query->fetch()) {
-      $row->subjects[] = $result->SubjectID;
-    }
-    $row->subjects = implode($row->subjects,'|');
+
     $row->mediatype = array();
     $query = $this->db->query("SELECT dmt.MediaType FROM documentmediatype dmt INNER JOIN DocumentFiles df ON df.mediaTypeID = dmt.MediaTypeID WHERE df.DocumentId = $row->DocumentId");
     while($result = $query->fetch()) {
