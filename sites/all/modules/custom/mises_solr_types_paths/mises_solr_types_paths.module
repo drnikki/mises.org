@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * Implements hook_url_inbound_alter().
+ *
+ * Defines url aliases to the search results page filtered by the facet indicated:
+ *
+ * search/[content type]
+ *
+ * Types are shorted for improved usability.
+ *
+ * Add jQuery to adjust type facets to use the this simplified type of path.
+ *
+ */
+function mises_solr_types_paths_url_inbound_alter(&$path, $original_path, $path_language) {
+  if (arg(0) != 'search' || !arg(1)) {
+    return;
+  }
+
+  // Translate simplified versions of type names:
+  $simple_types = array(
+    'library' => 'library_item',
+    'book' => 'book_digital_text',
+    'profile' => 'person_profile',
+    'fellowship' => 'institute_fellowship',
+    'papers' => 'working_papers',
+  );
+  if (isset($simple_types[arg(1)])) {
+    $type = $simple_types[arg(1)];
+  } else {
+    $type = arg(1);
+  }
+
+  // Confirm the specified content type is valid and, if so, point the path to Solr search filtered by this type:
+  $types_query = db_query("SELECT DISTINCT type FROM node WHERE type = :type", array(':type' => $type));
+  foreach ($types_query as $type_data) {
+    $path = 'search/site';
+    $_GET['f'] = array('bundle:' . $type_data->type);
+  }
+
+  // Add jQuery to cause facet links to use the appropriate simplified paths:
+  $js = '';
+  if ($path == 'search/site') {
+    $js .= "
+      (function ($) {
+        $('.block-facetapi li a').each(function () {
+    ";
+    $types_query = db_query("SELECT DISTINCT type FROM node");
+    foreach ($types_query as $type_data) {
+      if (in_array($type_data->type, $simple_types)) {
+        $type = array_search($type_data->type, $simple_types);
+      } else {
+        $type = $type_data->type;
+      }
+      $js .= "
+          if ($(this).attr('href').indexOf('/search/site/?f[0]=bundle%3A" . $type_data->type . "') != -1) {
+            $(this).attr('href', '/search/" . $type . "');
+          }
+      ";
+    }
+    $js .= "
+        });
+      })(jQuery);
+    ";
+    drupal_add_js($js, array('type' => 'inline', 'scope' => 'footer', 'cache' => TRUE));
+  }
+}
