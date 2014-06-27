@@ -13,7 +13,10 @@ foreach($rows as $id => $row){
 //add ALL at end
 $letters[] = "ALL";
 $existing_letters[] = "ALL";
-$urls['ALL'] = str_replace(strtolower($row->link), "all", $row->url);
+$urlPieces = explode("/", $row->url);
+$urlPieces[count($urlPieces)-1] = "all";
+$urls['ALL'] = implode("/", $urlPieces);
+//$urls['ALL'] = str_replace(strtolower($row->link), "all", $row->url);
 $counts['ALL'] = $total;
 print '<div class="views-summary views-summary-unformatted">';
 foreach($letters as $letter){

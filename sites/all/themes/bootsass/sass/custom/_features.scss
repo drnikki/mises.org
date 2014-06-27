@@ -409,6 +409,7 @@ ul.addtocal_menu {
   .views-summary {
     text-align: center;
     padding: $grid-gutter-width;
+    word-break: break-word;
     span {
       padding: 0 $padding-xs-horizontal;
     }
