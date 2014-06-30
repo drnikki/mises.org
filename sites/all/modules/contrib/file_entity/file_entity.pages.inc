@@ -68,6 +68,7 @@ function file_entity_download_page($file) {
 function file_entity_add_upload($form, &$form_state, array $options = array()) {
   $step = (isset($form_state['step']) && in_array($form_state['step'], array(1, 2, 3, 4))) ? $form_state['step'] : 1;
   $form['#step'] = $step;
+  $form['#options'] = $options;
   switch ($step) {
     case 1:
       return file_entity_add_upload_step_upload($form, $form_state, $options);
@@ -336,7 +337,12 @@ function file_entity_add_upload_submit($form, &$form_state) {
       else {
         // Check if we can skip step 3.
         $schemes = file_get_stream_wrappers(STREAM_WRAPPERS_WRITE_VISIBLE);
-        if (count($schemes) == 1) {
+        if (!file_entity_file_is_writeable($file)) {
+          // The file is read-only (remote) and must use its provided scheme.
+          $form['#step'] += ($trigger == 'edit-previous') ? -1 : 1;
+          $form_state['storage']['scheme'] = file_uri_scheme($file->uri);
+        }
+        elseif (count($schemes) == 1) {
           // There is only one possible stream wrapper for this file.
           // Skip the third page.
           $form['#step'] += ($trigger == 'edit-previous') ? -1 : 1;
@@ -742,7 +748,10 @@ function file_entity_edit_submit($form, &$form_state) {
   if (!empty($form_state['values']['replace_upload'])) {
     $replacement = $form_state['values']['replace_upload'];
     // Move file from temp to permanent home.
-    file_unmanaged_copy($replacement->uri, $file->uri, FILE_EXISTS_REPLACE);
+    if (file_unmanaged_copy($replacement->uri, $file->uri, FILE_EXISTS_REPLACE)) {
+      // @todo Add watchdog() about replaced file here?
+      file_delete($replacement);
+    }
   }
 
   // Run entity form submit handling and save the file.

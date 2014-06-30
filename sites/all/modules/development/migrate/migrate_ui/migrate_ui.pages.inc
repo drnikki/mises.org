@@ -440,7 +440,7 @@ function migrate_ui_migrate_submit($form, &$form_state) {
   $operations = array();
 
   // Rollback in reverse order.
-  if ($operation == 'rollback') {
+  if (in_array($operation, array('rollback_immediate', 'deregister'))) {
     $machine_names = array_reverse($machine_names);
   }
 
@@ -497,7 +497,7 @@ function migrate_ui_migrate_submit($form, &$form_state) {
   }
   elseif (count($drush_arguments) > 0) {
     $drush_path = trim(variable_get('migrate_drush_path', ''));
-    $uri = 'http://' . $_SERVER['HTTP_HOST'];
+    $uri = $GLOBALS['base_url'];
     $uid = $GLOBALS['user']->uid;
     if ($operation == 'import_background') {
       $command = 'mi';
@@ -538,6 +538,8 @@ function migrate_ui_migrate_submit($form, &$form_state) {
 }
 
 /**
+ * Implements callback_batch_operation().
+ *
  * Process all enabled migration processes in a browser, using the Batch API
  * to break it into manageable chunks.
  *
@@ -631,7 +633,9 @@ function migrate_ui_batch($operation, $machine_name, $limit, $force = FALSE, &$c
 }
 
 /**
- * Batch API finished callback - report results
+ * Implements callback_batch_finished().
+ *
+ * Report results.
  *
  * @param $success
  *  Ignored
@@ -1049,16 +1053,17 @@ function migrate_ui_edit_mappings($form, $form_state, $group_name,
         '#type' => 'checkbox',
         '#title' => $label,
         '#default_value' => $dnm_value,
-        '#ajax' => array(
-          'callback' => 'migrate_ui_dnm_changed',
-          'wrapper' => 'field-mappings',
-        ),
       );
     }
 
+    if (isset($field_mappings['is_new'])) {
+      $default_is_new = $field_mappings['is_new']->getDefaultValue();
+    } else {
+      $default_is_new = 0;
+    }
     foreach ($dest_fields as $name => $description) {
-      // Don't map the destination key
-      if (isset($dest_key[$name])) {
+      // Don't map the destination key unless is_new = 1 (ie, TRUE)
+      if (isset($dest_key[$name]) && $default_is_new == 0) {
         continue;
       }
 
@@ -1114,10 +1119,6 @@ function migrate_ui_edit_mappings($form, $form_state, $group_name,
       $form['field_mappings'][$name]['issue_group'] = array(
         '#type' => 'checkbox',
         '#default_value' => $dnm_value,
-        '#ajax' => array(
-          'callback' => 'migrate_ui_dnm_changed',
-          'wrapper' => 'field-mappings',
-        ),
       );
 
       $form['field_mappings'][$name]['mapping'] = array(
@@ -1126,24 +1127,12 @@ function migrate_ui_edit_mappings($form, $form_state, $group_name,
                       array('!description' => $description, '!field_name' => $name)),
         '#options' => $options,
         '#default_value' => $default_mapping,
-        '#states' => array(
-          'disabled' => array(
-            ':input[name="field_mappings[' . $name . '][issue_group]"]' =>
-              array('checked' => TRUE),
-          ),
-        ),
       );
 
       $form['field_mappings'][$name]['default_value'] = array(
         '#type' => 'textfield',
         '#default_value' => $default_value,
         '#size' => 20,
-        '#states' => array(
-          'disabled' => array(
-            ':input[name="field_mappings[' . $name . '][issue_group]"]' =>
-              array('checked' => TRUE),
-          ),
-        ),
       );
 
       $source_migration = NULL;
@@ -1157,12 +1146,6 @@ function migrate_ui_edit_mappings($form, $form_state, $group_name,
         '#type' => 'select',
         '#options' => $source_migration_options,
         '#default_value' => $source_migration,
-        '#states' => array(
-          'disabled' => array(
-            ':input[name="field_mappings[' . $name . '][issue_group]"]' =>
-              array('checked' => TRUE),
-          ),
-        ),
       );
     }
   }
@@ -1249,15 +1232,6 @@ function _migrate_ui_get_descendents($migration_name, array $all_dependencies) {
     }
   }
   return $descendents;
-}
-
-/**
- * Selects the field mapping fieldset for re-rendering
- *
- * @return array
- */
-function migrate_ui_dnm_changed(&$form, &$form_state) {
-  return $form['field_mappings'];
 }
 
 /**
@@ -1377,19 +1351,34 @@ function migrate_ui_edit_mappings_submit(&$form, &$form_state) {
 
     // Handle any source fields marked DNM.
     foreach ($form_state['values']['source_fields'] as $source_field => $value) {
-      if ($value) {
-        // But if there in the coded mappings we have this field mapped to no
-        // destination field, then let that mapping stand.
-        $already_ignored = FALSE;
-        foreach ($coded_mappings as $destination_field => $mapping) {
-          if (is_numeric($destination_field) &&
-              $mapping->getSourceField() == $source_field) {
-            $already_ignored = TRUE;
+      // Is this field ignored in the code?
+      $code_ignored = FALSE;
+      foreach ($coded_mappings as $destination_field => $mapping) {
+        if (is_numeric($destination_field) &&
+            $mapping->getSourceField() == $source_field) {
+          $code_ignored = TRUE;
+        }
+      }
+      // If it is marked DNM in the UI, but is not ignored in the code,
+      // generate a DNM mapping.
+      if ($value && !$code_ignored) {
+        $mapping = new MigrateFieldMapping(NULL, $source_field);
+        $mapping->issueGroup(t('DNM'));
+        $arguments['field_mappings'][] = $mapping;
+      }
+      // If it is marked DNM in the code, but is unchecked in the UI, see if
+      // it's mapped to a destination field through the UI. If not, generate
+      // an empty mapping without the DNM so it's available to be mapped.
+      elseif (!$value && $code_ignored) {
+        $mapping_found = FALSE;
+        foreach ($field_mappings as $destination_field => $mapped_source_field) {
+          if ($source_field == $mapped_source_field) {
+            $mapping_found = TRUE;
+            break;
           }
         }
-        if (!$already_ignored) {
+        if (!$mapping_found) {
           $mapping = new MigrateFieldMapping(NULL, $source_field);
-          $mapping->issueGroup(t('DNM'));
           $arguments['field_mappings'][] = $mapping;
         }
       }
@@ -1644,8 +1633,9 @@ function migrate_ui_configure_form($form, &$form_state) {
   $drush_validated = FALSE;
   if ($drush_path) {
     // Try running a drush status command to verify it's properly configured.
-    $uri = 'http://' . $_SERVER['HTTP_HOST'];
+    $uri = $GLOBALS['base_url'];
     $uid = $GLOBALS['user']->uid;
+    $drush_path = str_replace(' ', '\ ', $drush_path);
     $command = "$drush_path status --user=$uid --uri=$uri --root=" . DRUPAL_ROOT;
     exec($command, $output, $status);
     if ($status == 0) {
