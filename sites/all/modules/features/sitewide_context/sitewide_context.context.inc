@@ -65,6 +65,12 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
         'search-form' => array(
           'module' => 'search',
           'delta' => 'form',
@@ -76,12 +82,6 @@ function sitewide_context_context_default_contexts() {
           'delta' => 'flex_blocks-block_4',
           'region' => 'navigation',
           'weight' => '-88',
-        ),
-        'system-main' => array(
-          'module' => 'system',
-          'delta' => 'main',
-          'region' => 'content',
-          'weight' => '-9',
         ),
         'menu-menu-browse-library' => array(
           'module' => 'menu',
@@ -101,11 +101,11 @@ function sitewide_context_context_default_contexts() {
           'region' => 'footer_right',
           'weight' => '-10',
         ),
-        'menu-menu-mises-social-icons' => array(
-          'module' => 'menu',
-          'delta' => 'menu-mises-social-icons',
+        'views-social_media_displays-block_2' => array(
+          'module' => 'views',
+          'delta' => 'social_media_displays-block_2',
           'region' => 'footer_right',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'views-flex_blocks-block_3' => array(
           'module' => 'views',

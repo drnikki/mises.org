@@ -404,3 +404,18 @@ ul.addtocal_menu {
     @include icon-color($brand-secondary);
   }
 }
+/* DIRECTORY */
+.view-profile-lists {
+  .views-summary {
+    display: block;
+    text-align: center;
+    padding: $grid-gutter-width;
+    word-break: break-word;
+    span {
+      padding: 0 $padding-xs-horizontal;
+    }
+  }
+}
+.profile-item {
+  clear: right;
+}

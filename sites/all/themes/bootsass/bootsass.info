@@ -48,7 +48,7 @@ scripts[] = 'js/bootstrap/popover.js'
 scripts[] = 'js/bootstrap/scrollspy.js'
 scripts[] = 'js/bootstrap/tab.js'
 scripts[] = 'js/custom.js'
-
+scripts[] = 'js/solr_facet_changes.js'
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Theme Settings

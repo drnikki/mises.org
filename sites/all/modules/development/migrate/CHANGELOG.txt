@@ -13,14 +13,45 @@ UI to register them.
 
 Migration class constructors should now always accept a $arguments array as
 the first parameter and pass it to its parent. This version does support legacy
-migrations which pass a group object, or nothing, but that support may be
-removed in a future version.
+migrations which pass a group object, or nothing, but these methods are
+deprecated.
 
 Features and enhancements
+- #1961316 - Get data from all XML namespaces
+- #1298724 - Add a node revision destination plugin.
+- #1890610 - Add a MongoDB source plugin
 - #2065295 - Add ability to disable other module's hooks during migration.
 - #2051547 - Add ability to revert UI-defined field mappings.
 
 Bug fixes
+- #2154385 - Add file/line context to source plugin exceptions.
+- #2190255 - Remove duplicate warnings on missing XML source.
+- #2129609 - Remove warnings on MS SQL counts.
+- #2109931 - Pass drush global options to subprocess.
+- #2236279 - Prevent ignore_case from causing created terms to be lower-cased.
+- #2104149 - Sanity-check decrypted arguments.
+- #2047523 - Consistently document destination handler fields() implementations.
+- #2244759 - Rollback migrations in proper (reverse) order in UI.
+- #2184641 - Make saveHighwater() work with PostgreSQL.
+- #2076035 - Properly check key values in saveMessage().
+- #2076035 - Validate that term names are not empty.
+- #2225809 - Use proper API for registering wizard classes.
+- #2105037 - Expose nid/uid destinations when is_new is on.
+- #2145213 - Add SQLMap constructor documentation.
+- #2213033 - Add batch callback documentation.
+- #2095829 - Remove all variables on uninstall.
+- #2072721 - Proper title for migrate_example_baseball feature.
+- #1999228 - Removed AJAX from field mapping form for performance.
+- #2237755 - Fix activeUrl handling in JSON source.
+- #2237891 - Use drupal_register_shutdown_function().
+- #2141409 - Handle drush spawning when Drupal in subdirectory.
+- #2191335 - Remove unused columns from CSV source row.
+- #2210533 - Properly pass directory by reference.
+- #2141569 - Explicitly create group in baseball example.
+- #2159291 - Add message for missing argument to drush migrate-messages.
+- #2019193 - Fix unsetting of DNM source fields through the UI.
+- #2227061 - Fix to subfields in a multi-value context.
+- #2170177 - Properly handle multi-value fields when a subfield is mapped first.
 - #2120205 - Fix bug when upgrading lastimported from D6 to D7.
 - #2109821 - Handle multi-value subfields in the default field handler.
 - #2039649 - Smarter setting of file 'type' field.

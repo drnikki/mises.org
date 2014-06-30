@@ -20,6 +20,7 @@ dependencies[] = mises_job_posting
 dependencies[] = mises_library_item
 dependencies[] = mises_static_page
 dependencies[] = options
+dependencies[] = smart_trim
 dependencies[] = strongarm
 dependencies[] = text
 features[ctools][] = ds:ds:1
