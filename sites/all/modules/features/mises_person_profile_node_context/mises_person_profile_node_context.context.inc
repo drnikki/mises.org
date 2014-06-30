@@ -29,6 +29,12 @@ function mises_person_profile_node_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-author_articles-block_2' => array(
+          'module' => 'views',
+          'delta' => 'author_articles-block_2',
+          'region' => 'sidebar_second_top',
+          'weight' => '-10',
+        ),
         'views-author_articles-block_1' => array(
           'module' => 'views',
           'delta' => 'author_articles-block_1',

@@ -169,14 +169,15 @@ function mises_person_profile_views_default_views() {
   $handler->display->display_options['arguments']['name']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['name']['summary']['sort_order'] = 'desc';
   $handler->display->display_options['arguments']['name']['summary']['number_of_records'] = '1';
-  $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['name']['summary']['format'] = 'unformatted_summary';
+  $handler->display->display_options['arguments']['name']['summary_options']['count'] = FALSE;
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['name']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['name']['validate_options']['vocabularies'] = array(
     'media_type' => 'media_type',
   );
-  $handler->display->display_options['arguments']['name']['validate_options']['type'] = 'name';
+  $handler->display->display_options['arguments']['name']['validate_options']['type'] = 'convert';
   $handler->display->display_options['arguments']['name']['validate_options']['transform'] = TRUE;
   $handler->display->display_options['arguments']['name']['limit'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -223,7 +224,8 @@ function mises_person_profile_views_default_views() {
   $handler->display->display_options['arguments']['type']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['type']['summary']['sort_order'] = 'desc';
   $handler->display->display_options['arguments']['type']['summary']['number_of_records'] = '1';
-  $handler->display->display_options['arguments']['type']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['type']['summary']['format'] = 'unformatted_summary';
+  $handler->display->display_options['arguments']['type']['summary_options']['count'] = FALSE;
   $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
