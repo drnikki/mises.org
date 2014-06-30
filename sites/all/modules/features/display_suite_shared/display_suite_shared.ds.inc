@@ -1935,6 +1935,40 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|person_profile|block_teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'person_profile';
+  $ds_fieldsetting->view_mode = 'block_teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'teaser-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'field_image_collection' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'image img-responsive border-gray',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|person_profile|block_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|person_profile|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'person_profile';
@@ -3119,6 +3153,9 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
     'fields' => array(
       'field_image' => 'ds_content',
+    ),
+    'limit' => array(
+      'field_image' => '1',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -4586,8 +4623,7 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        'col-sm-4' => 'col-sm-4',
-        'col-xs-6' => 'col-xs-6',
+        '' => '',
       ),
     ),
     'wrappers' => array(

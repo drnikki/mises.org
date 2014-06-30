@@ -48,6 +48,7 @@ features[ds_field_settings][] = node|library_item|teaser
 features[ds_field_settings][] = node|library_item|video_block_teaser
 features[ds_field_settings][] = node|page|full
 features[ds_field_settings][] = node|person_profile|author_full_name
+features[ds_field_settings][] = node|person_profile|block_teaser
 features[ds_field_settings][] = node|person_profile|full
 features[ds_field_settings][] = node|person_profile|sidebar_author
 features[ds_field_settings][] = node|person_profile|sidebar_teaser

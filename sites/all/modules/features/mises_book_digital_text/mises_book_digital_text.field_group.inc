@@ -150,6 +150,7 @@ function mises_book_digital_text_field_group_info() {
       3 => 'field_pdf',
       4 => 'field_link_to_external_listing_',
       5 => 'dynamic_field_1',
+      6 => 'dynamic_field_2',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

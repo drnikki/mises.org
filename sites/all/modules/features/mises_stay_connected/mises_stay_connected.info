@@ -8,12 +8,3 @@ dependencies[] = menu
 dependencies[] = menu_icons
 features[features_api][] = api:2
 features[menu_custom][] = menu-mises-social-icons
-features[menu_links][] = menu-mises-social-icons_facebook:https://www.facebook.com/mises.institute
-features[menu_links][] = menu-mises-social-icons_google:https://plus.google.com/+mises
-features[menu_links][] = menu-mises-social-icons_instagram:http://instagram.com/misesinstitute
-features[menu_links][] = menu-mises-social-icons_itunes:https://itunes.apple.com/institution/mises-institute/id380675456#ls=1
-features[menu_links][] = menu-mises-social-icons_picasa:https://picasaweb.google.com/MisesInstitute
-features[menu_links][] = menu-mises-social-icons_rss:<front>
-features[menu_links][] = menu-mises-social-icons_twitter:https://twitter.com/mises
-features[menu_links][] = menu-mises-social-icons_vimeo:http://vimeo.com/misesmedia
-features[menu_links][] = menu-mises-social-icons_youtube:http://www.youtube.com/user/misesmedia
