@@ -107,6 +107,15 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'media',
   );
 
+  // Exported permission: 'access overlay'.
+  $permissions['access overlay'] = array(
+    'name' => 'access overlay',
+    'roles' => array(
+      'Drupal Developer' => 'Drupal Developer',
+    ),
+    'module' => 'overlay',
+  );
+
   // Exported permission: 'access print'.
   $permissions['access print'] = array(
     'name' => 'access print',
@@ -556,6 +565,15 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'print',
+  );
+
+  // Exported permission: 'administer quicktabs'.
+  $permissions['administer quicktabs'] = array(
+    'name' => 'administer quicktabs',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'quicktabs',
   );
 
   // Exported permission: 'administer redirects'.
@@ -1191,6 +1209,15 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'delete any ebook files'.
+  $permissions['delete any ebook files'] = array(
+    'name' => 'delete any ebook files',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'delete any entityform'.
   $permissions['delete any entityform'] = array(
     'name' => 'delete any entityform',
@@ -1456,6 +1483,15 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'delete own ebook files'.
+  $permissions['delete own ebook files'] = array(
+    'name' => 'delete own ebook files',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -1756,6 +1792,13 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'download any ebook files'.
+  $permissions['download any ebook files'] = array(
+    'name' => 'download any ebook files',
+    'roles' => array(),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'download any image files'.
   $permissions['download any image files'] = array(
     'name' => 'download any image files',
@@ -1793,6 +1836,13 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
     ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'download own ebook files'.
+  $permissions['download own ebook files'] = array(
+    'name' => 'download own ebook files',
+    'roles' => array(),
     'module' => 'file_entity',
   );
 
@@ -1984,6 +2034,338 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'ds_extras',
   );
 
+  // Exported permission: 'eck add book_chapter book_chapter entities'.
+  $permissions['eck add book_chapter book_chapter entities'] = array(
+    'name' => 'eck add book_chapter book_chapter entities',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck add book_chapter bundles'.
+  $permissions['eck add book_chapter bundles'] = array(
+    'name' => 'eck add book_chapter bundles',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck add book_page book_page entities'.
+  $permissions['eck add book_page book_page entities'] = array(
+    'name' => 'eck add book_page book_page entities',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck add book_page bundles'.
+  $permissions['eck add book_page bundles'] = array(
+    'name' => 'eck add book_page bundles',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck add bundles'.
+  $permissions['eck add bundles'] = array(
+    'name' => 'eck add bundles',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck add entities'.
+  $permissions['eck add entities'] = array(
+    'name' => 'eck add entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck add entity types'.
+  $permissions['eck add entity types'] = array(
+    'name' => 'eck add entity types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck administer book_chapter book_chapter entities'.
+  $permissions['eck administer book_chapter book_chapter entities'] = array(
+    'name' => 'eck administer book_chapter book_chapter entities',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck administer book_chapter bundles'.
+  $permissions['eck administer book_chapter bundles'] = array(
+    'name' => 'eck administer book_chapter bundles',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck administer book_page book_page entities'.
+  $permissions['eck administer book_page book_page entities'] = array(
+    'name' => 'eck administer book_page book_page entities',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck administer book_page bundles'.
+  $permissions['eck administer book_page bundles'] = array(
+    'name' => 'eck administer book_page bundles',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck administer bundles'.
+  $permissions['eck administer bundles'] = array(
+    'name' => 'eck administer bundles',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck administer entities'.
+  $permissions['eck administer entities'] = array(
+    'name' => 'eck administer entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck administer entity types'.
+  $permissions['eck administer entity types'] = array(
+    'name' => 'eck administer entity types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck delete book_chapter book_chapter entities'.
+  $permissions['eck delete book_chapter book_chapter entities'] = array(
+    'name' => 'eck delete book_chapter book_chapter entities',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck delete book_chapter bundles'.
+  $permissions['eck delete book_chapter bundles'] = array(
+    'name' => 'eck delete book_chapter bundles',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck delete book_page book_page entities'.
+  $permissions['eck delete book_page book_page entities'] = array(
+    'name' => 'eck delete book_page book_page entities',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck delete book_page bundles'.
+  $permissions['eck delete book_page bundles'] = array(
+    'name' => 'eck delete book_page bundles',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck delete bundles'.
+  $permissions['eck delete bundles'] = array(
+    'name' => 'eck delete bundles',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck delete entities'.
+  $permissions['eck delete entities'] = array(
+    'name' => 'eck delete entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck delete entity types'.
+  $permissions['eck delete entity types'] = array(
+    'name' => 'eck delete entity types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck edit book_chapter book_chapter entities'.
+  $permissions['eck edit book_chapter book_chapter entities'] = array(
+    'name' => 'eck edit book_chapter book_chapter entities',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck edit book_chapter bundles'.
+  $permissions['eck edit book_chapter bundles'] = array(
+    'name' => 'eck edit book_chapter bundles',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck edit book_page book_page entities'.
+  $permissions['eck edit book_page book_page entities'] = array(
+    'name' => 'eck edit book_page book_page entities',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck edit book_page bundles'.
+  $permissions['eck edit book_page bundles'] = array(
+    'name' => 'eck edit book_page bundles',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck edit bundles'.
+  $permissions['eck edit bundles'] = array(
+    'name' => 'eck edit bundles',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck edit entities'.
+  $permissions['eck edit entities'] = array(
+    'name' => 'eck edit entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck edit entity types'.
+  $permissions['eck edit entity types'] = array(
+    'name' => 'eck edit entity types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck list book_chapter book_chapter entities'.
+  $permissions['eck list book_chapter book_chapter entities'] = array(
+    'name' => 'eck list book_chapter book_chapter entities',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck list book_chapter bundles'.
+  $permissions['eck list book_chapter bundles'] = array(
+    'name' => 'eck list book_chapter bundles',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck list book_page book_page entities'.
+  $permissions['eck list book_page book_page entities'] = array(
+    'name' => 'eck list book_page book_page entities',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck list book_page bundles'.
+  $permissions['eck list book_page bundles'] = array(
+    'name' => 'eck list book_page bundles',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck list bundles'.
+  $permissions['eck list bundles'] = array(
+    'name' => 'eck list bundles',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck list entities'.
+  $permissions['eck list entities'] = array(
+    'name' => 'eck list entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck list entity types'.
+  $permissions['eck list entity types'] = array(
+    'name' => 'eck list entity types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck view book_chapter book_chapter entities'.
+  $permissions['eck view book_chapter book_chapter entities'] = array(
+    'name' => 'eck view book_chapter book_chapter entities',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck view book_chapter bundles'.
+  $permissions['eck view book_chapter bundles'] = array(
+    'name' => 'eck view book_chapter bundles',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck view book_page book_page entities'.
+  $permissions['eck view book_page book_page entities'] = array(
+    'name' => 'eck view book_page book_page entities',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck view book_page bundles'.
+  $permissions['eck view book_page bundles'] = array(
+    'name' => 'eck view book_page bundles',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'eck view entities'.
+  $permissions['eck view entities'] = array(
+    'name' => 'eck view entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'eck',
+  );
+
   // Exported permission: 'edit any audio files'.
   $permissions['edit any audio files'] = array(
     'name' => 'edit any audio files',
@@ -2072,6 +2454,15 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit any ebook files'.
+  $permissions['edit any ebook files'] = array(
+    'name' => 'edit any ebook files',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'file_entity',
   );
@@ -2387,6 +2778,15 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'edit own ebook files'.
+  $permissions['edit own ebook files'] = array(
+    'name' => 'edit own ebook files',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'edit own entityform'.
   $permissions['edit own entityform'] = array(
     'name' => 'edit own entityform',
@@ -2690,6 +3090,20 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: 'manage book_chapter properties'.
+  $permissions['manage book_chapter properties'] = array(
+    'name' => 'manage book_chapter properties',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
+  // Exported permission: 'manage book_page properties'.
+  $permissions['manage book_page properties'] = array(
+    'name' => 'manage book_page properties',
+    'roles' => array(),
+    'module' => 'eck',
+  );
+
   // Exported permission: 'manage features'.
   $permissions['manage features'] = array(
     'name' => 'manage features',
@@ -2760,6 +3174,13 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'menu_editor',
   );
 
+  // Exported permission: 'menu edit menu-about-mises-sub-menu'.
+  $permissions['menu edit menu-about-mises-sub-menu'] = array(
+    'name' => 'menu edit menu-about-mises-sub-menu',
+    'roles' => array(),
+    'module' => 'menu_editor',
+  );
+
   // Exported permission: 'menu edit menu-about-the-mises-institute'.
   $permissions['menu edit menu-about-the-mises-institute'] = array(
     'name' => 'menu edit menu-about-the-mises-institute',
@@ -2776,6 +3197,15 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-austrian-school'.
+  $permissions['menu edit menu-austrian-school'] = array(
+    'name' => 'menu edit menu-austrian-school',
+    'roles' => array(
+      'administrator' => 'administrator',
     ),
     'module' => 'menu_editor',
   );
@@ -2856,6 +3286,15 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
+    ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-topics'.
+  $permissions['menu edit menu-topics'] = array(
+    'name' => 'menu edit menu-topics',
+    'roles' => array(
+      'administrator' => 'administrator',
     ),
     'module' => 'menu_editor',
   );
@@ -2970,6 +3409,20 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'page_title',
+  );
+
+  // Exported permission: 'show format selection for book_chapter'.
+  $permissions['show format selection for book_chapter'] = array(
+    'name' => 'show format selection for book_chapter',
+    'roles' => array(),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for book_page'.
+  $permissions['show format selection for book_page'] = array(
+    'name' => 'show format selection for book_page',
+    'roles' => array(),
+    'module' => 'better_formats',
   );
 
   // Exported permission: 'show format selection for entityform'.
