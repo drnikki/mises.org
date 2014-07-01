@@ -59,7 +59,7 @@ function mises_book_digital_text_strongarm() {
         'custom_settings' => FALSE,
       ),
       'simple_teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'single_term' => array(
         'custom_settings' => FALSE,
@@ -71,6 +71,12 @@ function mises_book_digital_text_strongarm() {
         'custom_settings' => FALSE,
       ),
       'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'simple_content' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -105,13 +111,6 @@ function mises_book_digital_text_strongarm() {
     0 => 'main-menu',
   );
   $export['menu_options_book_digital_text'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_book_digital_text';
-  $strongarm->value = 'main-menu:0';
-  $export['menu_parent_book_digital_text'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

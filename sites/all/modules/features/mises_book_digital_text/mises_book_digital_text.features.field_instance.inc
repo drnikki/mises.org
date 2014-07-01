@@ -33,6 +33,12 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 35,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -88,6 +94,12 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 2,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -145,6 +157,12 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 4,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -193,6 +211,24 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'text_default',
         'weight' => 12,
+      ),
+      'simple_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 120,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -292,6 +328,12 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 13,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -379,6 +421,12 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'media',
         'weight' => 2,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -452,6 +500,12 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'flexslider',
         'weight' => 4,
+      ),
+      'simple_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -535,6 +589,12 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'media',
         'weight' => 4,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -603,6 +663,12 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 34,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -656,6 +722,12 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'link_default',
         'weight' => 6,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -723,6 +795,12 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 3,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -794,6 +872,12 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 1,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -867,6 +951,12 @@ function mises_book_digital_text_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 1,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -921,6 +1011,12 @@ function mises_book_digital_text_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 14,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'above',
