@@ -111,6 +111,9 @@ function mises_person_profile_views_default_views() {
   $handler = $view->new_display('block', 'Profile Library Menu', 'block_2');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'view-menu';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -133,22 +136,10 @@ function mises_person_profile_views_default_views() {
   $handler->display->display_options['relationships']['field_author_1_target_id']['table'] = 'field_data_field_author_1';
   $handler->display->display_options['relationships']['field_author_1_target_id']['field'] = 'field_author_1_target_id';
   $handler->display->display_options['relationships']['field_author_1_target_id']['required'] = TRUE;
-  /* Relationship: Content: Taxonomy terms on node */
-  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
-  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
-    'award_type' => 0,
-    'currents_trends' => 0,
-    'the_austrian_school_of_economics' => 0,
-    'level' => 0,
-    'media_type' => 0,
-    'reading_group' => 0,
-    'tags' => 0,
-    'events' => 0,
-    'profile_type' => 0,
-    'reason_for_contact' => 0,
-  );
+  /* Relationship: Content: Library Item Type (field_library_item_tree) */
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -164,7 +155,7 @@ function mises_person_profile_views_default_views() {
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
-  $handler->display->display_options['arguments']['name']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['arguments']['name']['relationship'] = 'field_library_item_tree_tid';
   $handler->display->display_options['arguments']['name']['default_action'] = 'summary';
   $handler->display->display_options['arguments']['name']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['name']['summary']['sort_order'] = 'desc';
@@ -199,6 +190,9 @@ function mises_person_profile_views_default_views() {
 
   /* Display: Profile Not Library Menu */
   $handler = $view->new_display('block', 'Profile Not Library Menu', 'block_3');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_author_1_target_id']['id'] = 'field_author_1_target_id';

@@ -33,6 +33,12 @@ function legacy_book_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -89,6 +95,12 @@ function legacy_book_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 4,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 25,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -137,6 +149,24 @@ function legacy_book_field_default_field_instances() {
         ),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'simple_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 120,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -236,6 +266,12 @@ function legacy_book_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 6,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -323,6 +359,12 @@ function legacy_book_field_default_field_instances() {
         'type' => 'media',
         'weight' => 9,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -394,6 +436,12 @@ function legacy_book_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 2,
+      ),
+      'simple_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -477,6 +525,12 @@ function legacy_book_field_default_field_instances() {
         'type' => 'media',
         'weight' => 11,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -544,6 +598,12 @@ function legacy_book_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -598,6 +658,12 @@ function legacy_book_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 7,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -669,6 +735,12 @@ function legacy_book_field_default_field_instances() {
         'type' => 'media',
         'weight' => 10,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -738,6 +810,12 @@ function legacy_book_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 8,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
