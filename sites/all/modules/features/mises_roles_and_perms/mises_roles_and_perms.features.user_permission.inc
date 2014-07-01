@@ -3623,6 +3623,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'use text format full_html',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'filter',
   );
