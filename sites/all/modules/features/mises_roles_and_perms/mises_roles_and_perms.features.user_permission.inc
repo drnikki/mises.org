@@ -837,6 +837,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create award content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -847,6 +848,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Blog Author' => 'Blog Author',
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -856,6 +858,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create book_digital_text content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -865,6 +868,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create campaign_ content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -874,6 +878,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create causeview_snippet content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -883,6 +888,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create course content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -892,6 +898,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create document content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -901,6 +908,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create event content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -923,6 +931,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create flex_block content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -932,6 +941,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create giving_story content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -941,6 +951,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create homepage_hero content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -950,6 +961,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create institute_fellowship content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -959,6 +971,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create job_posting_ content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -968,6 +981,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create landing_page content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -977,6 +991,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create legacy_book content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -986,6 +1001,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create library_item content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -995,6 +1011,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create page content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1004,6 +1021,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create person_profile content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1013,6 +1031,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create photo_gallery content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1022,6 +1041,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create product content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1031,6 +1051,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create scholarship_ content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1040,6 +1061,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create social_media content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1060,6 +1082,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create webform content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1069,6 +1092,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create working_papers content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1096,49 +1120,63 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete any award content'.
   $permissions['delete any award content'] = array(
     'name' => 'delete any award content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any blog content'.
   $permissions['delete any blog content'] = array(
     'name' => 'delete any blog content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any book_digital_text content'.
   $permissions['delete any book_digital_text content'] = array(
     'name' => 'delete any book_digital_text content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any campaign_ content'.
   $permissions['delete any campaign_ content'] = array(
     'name' => 'delete any campaign_ content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any causeview_snippet content'.
   $permissions['delete any causeview_snippet content'] = array(
     'name' => 'delete any causeview_snippet content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any course content'.
   $permissions['delete any course content'] = array(
     'name' => 'delete any course content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any document content'.
   $permissions['delete any document content'] = array(
     'name' => 'delete any document content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
@@ -1166,28 +1204,36 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete any event content'.
   $permissions['delete any event content'] = array(
     'name' => 'delete any event content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any flex_block content'.
   $permissions['delete any flex_block content'] = array(
     'name' => 'delete any flex_block content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any giving_story content'.
   $permissions['delete any giving_story content'] = array(
     'name' => 'delete any giving_story content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any homepage_hero content'.
   $permissions['delete any homepage_hero content'] = array(
     'name' => 'delete any homepage_hero content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
@@ -1204,77 +1250,99 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete any institute_fellowship content'.
   $permissions['delete any institute_fellowship content'] = array(
     'name' => 'delete any institute_fellowship content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any job_posting_ content'.
   $permissions['delete any job_posting_ content'] = array(
     'name' => 'delete any job_posting_ content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any landing_page content'.
   $permissions['delete any landing_page content'] = array(
     'name' => 'delete any landing_page content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any legacy_book content'.
   $permissions['delete any legacy_book content'] = array(
     'name' => 'delete any legacy_book content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any library_item content'.
   $permissions['delete any library_item content'] = array(
     'name' => 'delete any library_item content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any person_profile content'.
   $permissions['delete any person_profile content'] = array(
     'name' => 'delete any person_profile content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any photo_gallery content'.
   $permissions['delete any photo_gallery content'] = array(
     'name' => 'delete any photo_gallery content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any product content'.
   $permissions['delete any product content'] = array(
     'name' => 'delete any product content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any scholarship_ content'.
   $permissions['delete any scholarship_ content'] = array(
     'name' => 'delete any scholarship_ content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any social_media content'.
   $permissions['delete any social_media content'] = array(
     'name' => 'delete any social_media content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
@@ -1292,14 +1360,18 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete any webform content'.
   $permissions['delete any webform content'] = array(
     'name' => 'delete any webform content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any working_papers content'.
   $permissions['delete any working_papers content'] = array(
     'name' => 'delete any working_papers content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
@@ -1317,49 +1389,63 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own award content'.
   $permissions['delete own award content'] = array(
     'name' => 'delete own award content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own blog content'.
   $permissions['delete own blog content'] = array(
     'name' => 'delete own blog content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own book_digital_text content'.
   $permissions['delete own book_digital_text content'] = array(
     'name' => 'delete own book_digital_text content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own campaign_ content'.
   $permissions['delete own campaign_ content'] = array(
     'name' => 'delete own campaign_ content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own causeview_snippet content'.
   $permissions['delete own causeview_snippet content'] = array(
     'name' => 'delete own causeview_snippet content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own course content'.
   $permissions['delete own course content'] = array(
     'name' => 'delete own course content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own document content'.
   $permissions['delete own document content'] = array(
     'name' => 'delete own document content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
@@ -1387,28 +1473,36 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own event content'.
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own flex_block content'.
   $permissions['delete own flex_block content'] = array(
     'name' => 'delete own flex_block content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own giving_story content'.
   $permissions['delete own giving_story content'] = array(
     'name' => 'delete own giving_story content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own homepage_hero content'.
   $permissions['delete own homepage_hero content'] = array(
     'name' => 'delete own homepage_hero content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
@@ -1425,77 +1519,99 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own institute_fellowship content'.
   $permissions['delete own institute_fellowship content'] = array(
     'name' => 'delete own institute_fellowship content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own job_posting_ content'.
   $permissions['delete own job_posting_ content'] = array(
     'name' => 'delete own job_posting_ content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own landing_page content'.
   $permissions['delete own landing_page content'] = array(
     'name' => 'delete own landing_page content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own legacy_book content'.
   $permissions['delete own legacy_book content'] = array(
     'name' => 'delete own legacy_book content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own library_item content'.
   $permissions['delete own library_item content'] = array(
     'name' => 'delete own library_item content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own page content'.
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own person_profile content'.
   $permissions['delete own person_profile content'] = array(
     'name' => 'delete own person_profile content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own photo_gallery content'.
   $permissions['delete own photo_gallery content'] = array(
     'name' => 'delete own photo_gallery content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own product content'.
   $permissions['delete own product content'] = array(
     'name' => 'delete own product content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own scholarship_ content'.
   $permissions['delete own scholarship_ content'] = array(
     'name' => 'delete own scholarship_ content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own social_media content'.
   $permissions['delete own social_media content'] = array(
     'name' => 'delete own social_media content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
@@ -1513,14 +1629,18 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own webform content'.
   $permissions['delete own webform content'] = array(
     'name' => 'delete own webform content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own working_papers content'.
   $permissions['delete own working_papers content'] = array(
     'name' => 'delete own working_papers content',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'node',
   );
 
@@ -1880,6 +2000,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any award content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1889,6 +2010,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any blog content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1898,6 +2020,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any book_digital_text content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1907,6 +2030,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any campaign_ content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1916,6 +2040,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any causeview_snippet content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1925,6 +2050,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any course content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1934,6 +2060,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any document content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1976,6 +2103,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any flex_block content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1985,6 +2113,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any giving_story content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -1994,6 +2123,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any homepage_hero content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2013,6 +2143,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any institute_fellowship content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2022,6 +2153,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any job_posting_ content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2031,6 +2163,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any landing_page content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2040,6 +2173,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any legacy_book content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2049,6 +2183,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any library_item content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2058,6 +2193,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any page content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2067,6 +2203,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any person_profile content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2076,6 +2213,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any photo_gallery content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2085,6 +2223,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any product content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2094,6 +2233,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any scholarship_ content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2103,6 +2243,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any social_media content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2123,6 +2264,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any webform content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2132,6 +2274,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any working_papers content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2166,6 +2309,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own award content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2176,6 +2320,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Blog Author' => 'Blog Author',
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2185,6 +2330,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own book_digital_text content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2194,6 +2340,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own campaign_ content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2203,6 +2350,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own causeview_snippet content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2212,6 +2360,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own course content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2221,6 +2370,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own document content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2254,6 +2404,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own event content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2263,6 +2414,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own flex_block content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2272,6 +2424,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own giving_story content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2281,6 +2434,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own homepage_hero content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2300,6 +2454,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own institute_fellowship content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2309,6 +2464,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own job_posting_ content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2318,6 +2474,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own landing_page content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2327,6 +2484,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own legacy_book content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2336,6 +2494,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own library_item content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2345,6 +2504,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own page content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2354,6 +2514,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own person_profile content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2363,6 +2524,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own photo_gallery content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2372,6 +2534,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own product content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2381,6 +2544,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own scholarship_ content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2390,6 +2554,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own social_media content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2411,6 +2576,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own webform content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
@@ -2420,6 +2586,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own working_papers content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
   );
