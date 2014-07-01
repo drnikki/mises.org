@@ -59,7 +59,7 @@ function legacy_book_strongarm() {
         'custom_settings' => FALSE,
       ),
       'simple_teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'single_term' => array(
         'custom_settings' => FALSE,
@@ -71,6 +71,12 @@ function legacy_book_strongarm() {
         'custom_settings' => FALSE,
       ),
       'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'simple_content' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
         'custom_settings' => FALSE,
       ),
     ),

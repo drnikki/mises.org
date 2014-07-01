@@ -27,6 +27,7 @@ function mises_blog_field_group_info() {
       1 => 'field_topics',
       2 => 'field_audience',
       3 => 'field_level',
+      4 => 'field_featured_content',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

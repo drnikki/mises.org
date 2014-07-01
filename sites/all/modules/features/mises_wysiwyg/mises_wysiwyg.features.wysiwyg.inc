@@ -37,6 +37,9 @@ function mises_wysiwyg_wysiwyg_default_profiles() {
           'Format' => 1,
           'Scayt' => 1,
         ),
+        'footnotes' => array(
+          'footnotes' => 1,
+        ),
       ),
       'toolbar_loc' => 'top',
       'toolbar_align' => 'left',

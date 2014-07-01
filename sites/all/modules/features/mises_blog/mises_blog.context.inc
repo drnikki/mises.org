@@ -1,25 +1,25 @@
 <?php
 /**
  * @file
- * mises_person_profile_node_context.context.inc
+ * mises_blog.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function mises_person_profile_node_context_context_default_contexts() {
+function mises_blog_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'person_profile';
-  $context->description = 'Blocks for Person Profile node pages';
+  $context->name = 'blog';
+  $context->description = 'Blocks for Blog posts';
   $context->tag = 'Content Types';
   $context->conditions = array(
     'node' => array(
       'values' => array(
-        'person_profile' => 'person_profile',
+        'blog' => 'blog',
       ),
       'options' => array(
         'node_form' => '0',
@@ -29,29 +29,35 @@ function mises_person_profile_node_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-author_articles-block_2' => array(
+        'views-flex_blocks-block_24' => array(
           'module' => 'views',
-          'delta' => 'author_articles-block_2',
+          'delta' => 'flex_blocks-block_24',
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
-        'views-author_articles-block_1' => array(
+        'views-blog-block_featured' => array(
           'module' => 'views',
-          'delta' => 'author_articles-block_1',
+          'delta' => 'blog-block_featured',
           'region' => 'sidebar_second',
-          'weight' => '-90',
+          'weight' => '-10',
         ),
-        'views-faaeb062562ec6d9c97848d39a52d510' => array(
+        'views-blog-block_popular' => array(
           'module' => 'views',
-          'delta' => 'faaeb062562ec6d9c97848d39a52d510',
+          'delta' => 'blog-block_popular',
           'region' => 'sidebar_second',
-          'weight' => '-89',
+          'weight' => '-9',
         ),
-        'views-flex_blocks-block_6' => array(
+        'views-flex_blocks-block_23' => array(
           'module' => 'views',
-          'delta' => 'flex_blocks-block_6',
+          'delta' => 'flex_blocks-block_23',
           'region' => 'sidebar_second',
-          'weight' => '-88',
+          'weight' => '-8',
+        ),
+        'views-blog-blogger' => array(
+          'module' => 'views',
+          'delta' => 'blog-blogger',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
         ),
         'views-related_blocks_node-topics' => array(
           'module' => 'views',
@@ -79,14 +85,15 @@ function mises_person_profile_node_context_context_default_contexts() {
         ),
       ),
     ),
+    'menu' => 'blog',
   );
   $context->condition_mode = 0;
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Blocks for Person Profile node pages');
+  t('Blocks for Blog posts');
   t('Content Types');
-  $export['person_profile'] = $context;
+  $export['blog'] = $context;
 
   return $export;
 }
