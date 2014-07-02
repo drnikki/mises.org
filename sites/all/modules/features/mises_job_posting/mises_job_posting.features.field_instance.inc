@@ -42,7 +42,21 @@ function mises_job_posting_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 4,
+        'weight' => 2,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'conditions' => array(),
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 2,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -102,6 +116,15 @@ function mises_job_posting_field_default_field_instances() {
         'weight' => 7,
       ),
       'full' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'print' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(
@@ -200,7 +223,16 @@ function mises_job_posting_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 5,
+      ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -294,6 +326,15 @@ function mises_job_posting_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 6,
       ),
+      'print' => array(
+        'label' => 'inline',
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
+        'weight' => 6,
+      ),
       'simple_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -364,7 +405,16 @@ function mises_job_posting_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 4,
+      ),
+      'print' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -465,7 +515,21 @@ function mises_job_posting_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 1,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'conditions' => array(),
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 1,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -542,6 +606,20 @@ function mises_job_posting_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 3,
       ),
+      'print' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'conditions' => array(),
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
       'simple_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -603,7 +681,13 @@ function mises_job_posting_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 31,
+      ),
+      'print' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',

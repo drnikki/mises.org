@@ -108,7 +108,7 @@ function mises_job_posting_strongarm() {
         'custom_settings' => FALSE,
       ),
       'print' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'author_teaser' => array(
         'custom_settings' => FALSE,
@@ -120,6 +120,12 @@ function mises_job_posting_strongarm() {
         'custom_settings' => FALSE,
       ),
       'video_block_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'simple_content' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
         'custom_settings' => FALSE,
       ),
     ),

@@ -77,11 +77,8 @@ function mises_landing_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '7',
-    'children' => array(
-      0 => 'field_description',
-      1 => 'field_display_title',
-    ),
+    'weight' => '34',
+    'children' => array(),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => '',
