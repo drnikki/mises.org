@@ -108,7 +108,7 @@ function mises_person_profile_strongarm() {
         'custom_settings' => FALSE,
       ),
       'print' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'simple_content' => array(
         'custom_settings' => FALSE,
@@ -123,6 +123,9 @@ function mises_person_profile_strongarm() {
         'custom_settings' => FALSE,
       ),
       'video_block_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
         'custom_settings' => FALSE,
       ),
     ),
