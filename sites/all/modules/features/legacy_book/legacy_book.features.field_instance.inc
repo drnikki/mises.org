@@ -33,6 +33,12 @@ function legacy_book_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
       'simple_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -95,6 +101,16 @@ function legacy_book_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 4,
       ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
       'simple_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -118,9 +134,13 @@ function legacy_book_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
       'weight' => 2,
     ),
   );
@@ -149,6 +169,15 @@ function legacy_book_field_default_field_instances() {
         ),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 7,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
@@ -266,6 +295,15 @@ function legacy_book_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 6,
       ),
+      'print' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
       'simple_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -359,6 +397,16 @@ function legacy_book_field_default_field_instances() {
         'type' => 'media',
         'weight' => 9,
       ),
+      'print' => array(
+        'label' => 'inline',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 4,
+      ),
       'simple_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -436,6 +484,17 @@ function legacy_book_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 2,
+      ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => 'slideshow',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
@@ -525,6 +584,16 @@ function legacy_book_field_default_field_instances() {
         'type' => 'media',
         'weight' => 11,
       ),
+      'print' => array(
+        'label' => 'inline',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 6,
+      ),
       'simple_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -598,6 +667,12 @@ function legacy_book_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
+      ),
       'simple_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -658,6 +733,16 @@ function legacy_book_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 7,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'wide_player',
+        ),
+        'type' => 'media',
+        'weight' => 8,
       ),
       'simple_teaser' => array(
         'label' => 'above',
@@ -735,6 +820,16 @@ function legacy_book_field_default_field_instances() {
         'type' => 'media',
         'weight' => 10,
       ),
+      'print' => array(
+        'label' => 'inline',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 5,
+      ),
       'simple_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -810,6 +905,16 @@ function legacy_book_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 8,
+      ),
+      'print' => array(
+        'label' => 'inline',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 3,
       ),
       'simple_teaser' => array(
         'label' => 'above',

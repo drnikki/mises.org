@@ -221,6 +221,21 @@ function legacy_book_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|legacy_book|print';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'legacy_book';
+  $ds_fieldsetting->view_mode = 'print';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|legacy_book|print'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|legacy_book|simple_teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'legacy_book';
@@ -322,6 +337,70 @@ function legacy_book_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|landing_page|print';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'landing_page';
+  $ds_layout->view_mode = 'print';
+  $ds_layout->layout = '2col_custom_fluid';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'top' => array(
+        0 => 'field_banner_image',
+        1 => 'field_page_subtitle',
+      ),
+      'left' => array(
+        2 => 'field_image',
+      ),
+      'right' => array(
+        3 => 'field_teaser_header',
+        4 => 'field_teaser_title',
+        5 => 'field_teaser',
+        6 => 'field_read_more_link',
+      ),
+      'bottom' => array(
+        7 => 'field_featured_nodes',
+        8 => 'field_featured_videos',
+        9 => 'field_resource_group',
+      ),
+    ),
+    'fields' => array(
+      'field_banner_image' => 'top',
+      'field_page_subtitle' => 'top',
+      'field_image' => 'left',
+      'field_teaser_header' => 'right',
+      'field_teaser_title' => 'right',
+      'field_teaser' => 'right',
+      'field_read_more_link' => 'right',
+      'field_featured_nodes' => 'bottom',
+      'field_featured_videos' => 'bottom',
+      'field_resource_group' => 'bottom',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'row' => 'row',
+      ),
+    ),
+    'wrappers' => array(
+      'header' => 'div',
+      'top' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'bottom' => 'div',
+      'footer' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|landing_page|print'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|legacy_book|full';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'legacy_book';
@@ -378,6 +457,59 @@ function legacy_book_ds_layout_settings_info() {
     'page_option_title' => 'Legacy Books',
   );
   $export['node|legacy_book|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|legacy_book|print';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'legacy_book';
+  $ds_layout->view_mode = 'print';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_image',
+        2 => 'field_author_1',
+        3 => 'field_pdf',
+        4 => 'field_epub',
+        5 => 'field_mobi',
+        6 => 'field_kindle',
+        7 => 'field_body',
+        8 => 'field_media',
+        9 => 'field_citation',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_image' => 'ds_content',
+      'field_author_1' => 'ds_content',
+      'field_pdf' => 'ds_content',
+      'field_epub' => 'ds_content',
+      'field_mobi' => 'ds_content',
+      'field_kindle' => 'ds_content',
+      'field_body' => 'ds_content',
+      'field_media' => 'ds_content',
+      'field_citation' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '2',
+    'page_option_title' => 'Legacy Books',
+  );
+  $export['node|legacy_book|print'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
