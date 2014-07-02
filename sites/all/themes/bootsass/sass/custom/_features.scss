@@ -419,3 +419,30 @@ ul.addtocal_menu {
 .profile-item {
   clear: right;
 }
+/* SOCIAL MEDIA PAGES */
+.social-media-submenu {
+  a {
+    font-weight: bold;
+    text-transform: uppercase;
+    &.active {
+      background: $gray-lighter;
+    }
+  }
+  img {
+    margin-right: $padding-xs-horizontal;
+  }
+}
+.social-media-categories {
+  a {
+    span.glyphicon {
+      @include glyph-size(24px);
+      margin-left: $padding-base-vertical;
+    }
+    &:hover {
+      color: $brand-secondary;
+      span.glyphicon {
+        background-color: $brand-secondary;
+      }
+    }
+  }
+}

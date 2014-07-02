@@ -10876,3 +10876,36 @@ ul.addtocal_menu li a:hover {
 .profile-item {
   clear: right;
 }
+
+/* SOCIAL MEDIA PAGES */
+/* line 424, ../sass/custom/_features.scss */
+.social-media-submenu a {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 427, ../sass/custom/_features.scss */
+.social-media-submenu a.active {
+  background: #e4ebee;
+}
+/* line 431, ../sass/custom/_features.scss */
+.social-media-submenu img {
+  margin-right: 5px;
+}
+
+/* line 437, ../sass/custom/_features.scss */
+.social-media-categories a span.glyphicon {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px;
+  margin-left: 6px;
+}
+/* line 441, ../sass/custom/_features.scss */
+.social-media-categories a:hover {
+  color: #38709e;
+}
+/* line 443, ../sass/custom/_features.scss */
+.social-media-categories a:hover span.glyphicon {
+  background-color: #38709e;
+}
