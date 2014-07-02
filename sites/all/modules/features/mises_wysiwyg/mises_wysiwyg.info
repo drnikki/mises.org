@@ -5,6 +5,7 @@ version = 7.x-1.0
 project = mises_wysiwyg
 dependencies[] = features
 dependencies[] = filter
+dependencies[] = footnotes
 dependencies[] = wysiwyg
 features[features_api][] = api:2
 features[filter][] = simplified
