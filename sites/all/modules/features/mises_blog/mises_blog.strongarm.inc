@@ -107,6 +107,27 @@ function mises_blog_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'print' => array(
+        'custom_settings' => TRUE,
+      ),
+      'author_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_teaser_term' => array(
+        'custom_settings' => FALSE,
+      ),
+      'simple_content' => array(
+        'custom_settings' => FALSE,
+      ),
+      'single_term' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'video_block_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -165,7 +186,7 @@ function mises_blog_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_blog';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_blog'] = $strongarm;
 
   return $export;

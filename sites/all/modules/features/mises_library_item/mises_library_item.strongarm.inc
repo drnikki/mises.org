@@ -108,7 +108,7 @@ function mises_library_item_strongarm() {
         'custom_settings' => TRUE,
       ),
       'print' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'list_teaser' => array(
         'custom_settings' => FALSE,
@@ -123,6 +123,9 @@ function mises_library_item_strongarm() {
         'custom_settings' => TRUE,
       ),
       'author_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
         'custom_settings' => FALSE,
       ),
     ),

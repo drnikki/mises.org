@@ -172,6 +172,27 @@ function mises_landing_page_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'print' => array(
+        'custom_settings' => TRUE,
+      ),
+      'author_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_teaser_term' => array(
+        'custom_settings' => FALSE,
+      ),
+      'simple_content' => array(
+        'custom_settings' => FALSE,
+      ),
+      'single_term' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'video_block_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
