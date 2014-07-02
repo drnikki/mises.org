@@ -342,6 +342,77 @@ function mises_book_digital_text_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-book_digital_text-field_book_chapter'
+  $field_instances['node-book_digital_text-field_book_chapter'] = array(
+    'bundle' => 'book_digital_text',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 15,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'entityreference_entity_id',
+        'weight' => 11,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_book_chapter',
+    'label' => 'Book Chapter',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 0,
+          'delete_references' => 1,
+          'label_plural' => 'chapters',
+          'label_singular' => 'chapter',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
+      ),
+      'type' => 'inline_entity_form',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-book_digital_text-field_citation'
   $field_instances['node-book_digital_text-field_citation'] = array(
     'bundle' => 'book_digital_text',
@@ -1203,6 +1274,7 @@ function mises_book_digital_text_field_default_field_instances() {
   t('Austrian School');
   t('Author');
   t('Body');
+  t('Book Chapter');
   t('Citation');
   t('Image');
   t('Kindle');
