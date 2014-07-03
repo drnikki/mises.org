@@ -187,6 +187,12 @@ body.media {
     }
   }
 }
+// OVERRIDE FOR CONTEXTUAL LINKS FOR ANON
+body.not-logged-in {
+  .contextual-links-wrapper {
+    display: none;
+  }
+}
 
 /*
 * CUSTOM MISES ELEMENTS

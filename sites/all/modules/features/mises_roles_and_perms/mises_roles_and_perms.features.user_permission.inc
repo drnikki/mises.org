@@ -911,16 +911,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create document content'.
-  $permissions['create document content'] = array(
-    'name' => 'create document content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create event content'.
   $permissions['create event content'] = array(
     'name' => 'create event content',
@@ -1183,15 +1173,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete any course content'.
   $permissions['delete any course content'] = array(
     'name' => 'delete any course content',
-    'roles' => array(
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any document content'.
-  $permissions['delete any document content'] = array(
-    'name' => 'delete any document content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
     ),
@@ -1461,15 +1442,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own course content'.
   $permissions['delete own course content'] = array(
     'name' => 'delete own course content',
-    'roles' => array(
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own document content'.
-  $permissions['delete own document content'] = array(
-    'name' => 'delete own document content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
     ),
@@ -1908,13 +1880,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'ds_extras',
   );
 
-  // Exported permission: 'ds_switch document'.
-  $permissions['ds_switch document'] = array(
-    'name' => 'ds_switch document',
-    'roles' => array(),
-    'module' => 'ds_extras',
-  );
-
   // Exported permission: 'ds_switch event'.
   $permissions['ds_switch event'] = array(
     'name' => 'ds_switch event',
@@ -2155,7 +2120,9 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'eck delete book_chapter book_chapter entities'.
   $permissions['eck delete book_chapter book_chapter entities'] = array(
     'name' => 'eck delete book_chapter book_chapter entities',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'eck',
   );
 
@@ -2171,7 +2138,9 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'eck delete book_page book_page entities'.
   $permissions['eck delete book_page book_page entities'] = array(
     'name' => 'eck delete book_page book_page entities',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'eck',
   );
 
@@ -2214,7 +2183,9 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'eck edit book_chapter book_chapter entities'.
   $permissions['eck edit book_chapter book_chapter entities'] = array(
     'name' => 'eck edit book_chapter book_chapter entities',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'eck',
   );
 
@@ -2230,7 +2201,9 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'eck edit book_page book_page entities'.
   $permissions['eck edit book_page book_page entities'] = array(
     'name' => 'eck edit book_page book_page entities',
-    'roles' => array(),
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'eck',
   );
 
@@ -2430,16 +2403,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'edit any course content'.
   $permissions['edit any course content'] = array(
     'name' => 'edit any course content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any document content'.
-  $permissions['edit any document content'] = array(
-    'name' => 'edit any document content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
@@ -2749,16 +2712,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'edit own course content'.
   $permissions['edit own course content'] = array(
     'name' => 'edit own course content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own document content'.
-  $permissions['edit own document content'] = array(
-    'name' => 'edit own document content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
