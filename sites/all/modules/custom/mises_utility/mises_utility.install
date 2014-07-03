@@ -18,4 +18,24 @@ function mises_utility_update_7001() {
   node_types_rebuild();
   menu_rebuild();
 }
+
+/**
+* Delete unused Legacy Book content types.
+*
+*/
+function mises_utility_update_7002() {
+  $types = array(
+    'legacy_book',
+  );
+  foreach($types as $type) {
+    node_type_delete($type);
+    $t_args = array('%name' => $type);
+    drupal_set_message(t('The content type %name has been deleted.', $t_args));
+    watchdog('node', 'Deleted content type %name.', $t_args, WATCHDOG_NOTICE);
+  }
+
+  node_types_rebuild();
+  menu_rebuild();
+}
+
 ?>
