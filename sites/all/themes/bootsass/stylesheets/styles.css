@@ -9343,53 +9343,68 @@ h2.teaser-title {
   }
 }
 
-/* line 490, ../sass/custom/_styles.scss */
+/* line 489, ../sass/custom/_styles.scss */
+h3 {
+  color: #729949;
+}
+
+/* line 492, ../sass/custom/_styles.scss */
+h4 {
+  color: #38709e;
+}
+
+/* line 495, ../sass/custom/_styles.scss */
+h5 {
+  color: #00426b;
+}
+
+/* line 499, ../sass/custom/_styles.scss */
 h3.author, h4.author {
   margin-top: 0;
   font-size: 14px;
 }
-/* line 494, ../sass/custom/_styles.scss */
+/* line 503, ../sass/custom/_styles.scss */
 h3.sub-heading, .section-search .sidebar .region h2.block-title, h4.sub-heading, label {
   text-transform: uppercase;
 }
-/* line 497, ../sass/custom/_styles.scss */
+/* line 506, ../sass/custom/_styles.scss */
 h3.sidebar-title, h4.sidebar-title {
   margin-bottom: 5px;
 }
-/* line 500, ../sass/custom/_styles.scss */
+/* line 509, ../sass/custom/_styles.scss */
 h3.primary, h4.primary {
   color: #00426b;
 }
-/* line 503, ../sass/custom/_styles.scss */
+/* line 512, ../sass/custom/_styles.scss */
 h3.secondary, h4.secondary {
   color: #38709e;
 }
-/* line 506, ../sass/custom/_styles.scss */
+/* line 515, ../sass/custom/_styles.scss */
 h3.contrast, .section-search .sidebar .region h2.block-title, h4.contrast {
   color: #729949;
 }
-/* line 509, ../sass/custom/_styles.scss */
+/* line 518, ../sass/custom/_styles.scss */
 .outset > h3, .resource-item.odd > h3, .group-footnotes > h3, .outset > h4, .resource-item.odd > h4, .group-footnotes > h4 {
   margin-top: 0;
 }
 
-/* line 514, ../sass/custom/_styles.scss */
+/* line 523, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 518, ../sass/custom/_styles.scss */
+/* line 527, ../sass/custom/_styles.scss */
 h5 {
   margin-bottom: 3px;
 }
 
-/* line 521, ../sass/custom/_styles.scss */
+/* line 530, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 526, ../sass/custom/_styles.scss */
+/* line 535, ../sass/custom/_styles.scss */
 .read-more,
 .more-link,
 .field-collection-item-field-resources .read-more {
@@ -9397,7 +9412,7 @@ address {
   font-size: 13px;
   cursor: pointer;
 }
-/* line 530, ../sass/custom/_styles.scss */
+/* line 539, ../sass/custom/_styles.scss */
 .read-more a,
 .more-link a,
 .field-collection-item-field-resources .read-more a {
@@ -9406,12 +9421,12 @@ address {
   font-size: 13px;
 }
 
-/* line 536, ../sass/custom/_styles.scss */
+/* line 545, ../sass/custom/_styles.scss */
 .more-link, .field-collection-item-field-resources .read-more {
   margin: 0 16px;
   line-height: 20px;
 }
-/* line 540, ../sass/custom/_styles.scss */
+/* line 549, ../sass/custom/_styles.scss */
 .more-link span.glyphicon, .field-collection-item-field-resources .read-more span.glyphicon {
   width: 24px;
   height: 24px;
@@ -9419,16 +9434,16 @@ address {
   font-size: 12px;
   line-height: 24px;
 }
-/* line 543, ../sass/custom/_styles.scss */
+/* line 552, ../sass/custom/_styles.scss */
 .more-link a:hover, .field-collection-item-field-resources .read-more a:hover {
   color: #38709e;
 }
-/* line 545, ../sass/custom/_styles.scss */
+/* line 554, ../sass/custom/_styles.scss */
 .more-link a:hover span.glyphicon, .field-collection-item-field-resources .read-more a:hover span.glyphicon {
   background-color: #38709e;
 }
 
-/* line 551, ../sass/custom/_styles.scss */
+/* line 560, ../sass/custom/_styles.scss */
 a.external-link span.glyphicon {
   width: 24px;
   height: 24px;
@@ -9437,18 +9452,23 @@ a.external-link span.glyphicon {
   line-height: 24px;
   margin-left: 6px;
 }
-/* line 555, ../sass/custom/_styles.scss */
+/* line 564, ../sass/custom/_styles.scss */
 a.external-link:hover {
   color: #38709e;
 }
-/* line 557, ../sass/custom/_styles.scss */
+/* line 566, ../sass/custom/_styles.scss */
 a.external-link:hover span.glyphicon {
   background-color: #38709e;
 }
 
-/* line 563, ../sass/custom/_styles.scss */
+/* line 572, ../sass/custom/_styles.scss */
 .author a {
   color: inherit;
+}
+
+/* line 578, ../sass/custom/_styles.scss */
+html[contenteditable="true"] body {
+  background-image: none;
 }
 
 /*

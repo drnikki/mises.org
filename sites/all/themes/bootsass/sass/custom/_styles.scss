@@ -486,6 +486,15 @@ h2 {
     }
   }
 }
+h3 {
+  color: $brand-contrast;
+}
+h4 {
+  color: $brand-secondary;
+}
+h5 {
+  color: $brand-primary;
+}
 h3, h4 {
   &.author {
     margin-top: 0;
@@ -562,4 +571,11 @@ a.external-link {
 
 .author a {
   color: inherit;
+}
+
+// CKEDITOR
+html[contenteditable="true"] {
+  body {
+    background-image: none;
+  }
 }
