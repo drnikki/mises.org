@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Legacy Book feature.
- */
-
-include_once 'legacy_book.features.inc';
