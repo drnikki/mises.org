@@ -41,6 +41,21 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '20+194';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -66,6 +81,7 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'feed/rss.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
@@ -88,11 +104,23 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['relationships']['field_topics_target_id']['table'] = 'field_data_field_topics';
   $handler->display->display_options['relationships']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '195+21+22+28+193+24+195+25+26+27+29+30+32+33+237+35+36+37+38+191+40+41+42+44+43+45+189+190+48+50+49';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -111,59 +139,6 @@ function rss_feed_views_default_views() {
     'library_item' => 'library_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid']['id'] = 'tid';
-  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['relationship'] = 'field_austrian_school_target_id';
-  $handler->display->display_options['filters']['tid']['value'] = array(
-    237 => '237',
-    35 => '35',
-    36 => '36',
-    37 => '37',
-    38 => '38',
-    191 => '191',
-    40 => '40',
-    41 => '41',
-    42 => '42',
-    43 => '43',
-    44 => '44',
-    45 => '45',
-    189 => '189',
-    190 => '190',
-    48 => '48',
-    49 => '49',
-    50 => '50',
-  );
-  $handler->display->display_options['filters']['tid']['group'] = 2;
-  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid']['type'] = 'select';
-  $handler->display->display_options['filters']['tid']['vocabulary'] = 'the_austrian_school_of_economics';
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
-  $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid_1']['relationship'] = 'field_topics_target_id';
-  $handler->display->display_options['filters']['tid_1']['value'] = array(
-    194 => '194',
-    21 => '21',
-    22 => '22',
-    28 => '28',
-    193 => '193',
-    24 => '24',
-    195 => '195',
-    25 => '25',
-    26 => '26',
-    27 => '27',
-    29 => '29',
-    30 => '30',
-    32 => '32',
-    33 => '33',
-  );
-  $handler->display->display_options['filters']['tid_1']['group'] = 2;
-  $handler->display->display_options['filters']['tid_1']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid_1']['type'] = 'select';
-  $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'currents_trends';
   $handler->display->display_options['path'] = 'feed/economics-100100.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
@@ -186,11 +161,23 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['relationships']['field_topics_target_id']['table'] = 'field_data_field_topics';
   $handler->display->display_options['relationships']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '20+31+47';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -209,31 +196,6 @@ function rss_feed_views_default_views() {
     'library_item' => 'library_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid']['id'] = 'tid';
-  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['relationship'] = 'field_austrian_school_target_id';
-  $handler->display->display_options['filters']['tid']['value'] = array(
-    47 => '47',
-  );
-  $handler->display->display_options['filters']['tid']['group'] = 2;
-  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid']['type'] = 'select';
-  $handler->display->display_options['filters']['tid']['vocabulary'] = 'the_austrian_school_of_economics';
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
-  $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid_1']['relationship'] = 'field_topics_target_id';
-  $handler->display->display_options['filters']['tid_1']['value'] = array(
-    20 => '20',
-    31 => '31',
-  );
-  $handler->display->display_options['filters']['tid_1']['group'] = 2;
-  $handler->display->display_options['filters']['tid_1']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid_1']['type'] = 'select';
-  $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'currents_trends';
   $handler->display->display_options['path'] = 'feed/law-politics-116.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
@@ -256,11 +218,23 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['relationships']['field_topics_target_id']['table'] = 'field_data_field_topics';
   $handler->display->display_options['relationships']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '197';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -279,18 +253,6 @@ function rss_feed_views_default_views() {
     'library_item' => 'library_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
-  $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid_1']['relationship'] = 'field_topics_target_id';
-  $handler->display->display_options['filters']['tid_1']['value'] = array(
-    197 => '197',
-  );
-  $handler->display->display_options['filters']['tid_1']['group'] = 2;
-  $handler->display->display_options['filters']['tid_1']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid_1']['type'] = 'select';
-  $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'currents_trends';
   $handler->display->display_options['path'] = 'feed/law-116101.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
@@ -313,11 +275,23 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['relationships']['field_topics_target_id']['table'] = 'field_data_field_topics';
   $handler->display->display_options['relationships']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '23+39';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -336,30 +310,6 @@ function rss_feed_views_default_views() {
     'library_item' => 'library_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid']['id'] = 'tid';
-  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['relationship'] = 'field_austrian_school_target_id';
-  $handler->display->display_options['filters']['tid']['value'] = array(
-    39 => '39',
-  );
-  $handler->display->display_options['filters']['tid']['group'] = 2;
-  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid']['type'] = 'select';
-  $handler->display->display_options['filters']['tid']['vocabulary'] = 'the_austrian_school_of_economics';
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
-  $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid_1']['relationship'] = 'field_topics_target_id';
-  $handler->display->display_options['filters']['tid_1']['value'] = array(
-    23 => '23',
-  );
-  $handler->display->display_options['filters']['tid_1']['group'] = 2;
-  $handler->display->display_options['filters']['tid_1']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid_1']['type'] = 'select';
-  $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'currents_trends';
   $handler->display->display_options['path'] = 'feed/entrepreneurship-100107.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
@@ -382,11 +332,23 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['relationships']['field_topics_target_id']['table'] = 'field_data_field_topics';
   $handler->display->display_options['relationships']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '196';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -405,18 +367,6 @@ function rss_feed_views_default_views() {
     'library_item' => 'library_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
-  $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid_1']['relationship'] = 'field_topics_target_id';
-  $handler->display->display_options['filters']['tid_1']['value'] = array(
-    196 => '196',
-  );
-  $handler->display->display_options['filters']['tid_1']['group'] = 2;
-  $handler->display->display_options['filters']['tid_1']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid_1']['type'] = 'select';
-  $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'currents_trends';
   $handler->display->display_options['path'] = 'feed/na-history-104108.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
@@ -439,11 +389,23 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['relationships']['field_topics_target_id']['table'] = 'field_data_field_topics';
   $handler->display->display_options['relationships']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '34';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -462,18 +424,6 @@ function rss_feed_views_default_views() {
     'library_item' => 'library_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
-  $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid_1']['relationship'] = 'field_topics_target_id';
-  $handler->display->display_options['filters']['tid_1']['value'] = array(
-    34 => '34',
-  );
-  $handler->display->display_options['filters']['tid_1']['group'] = 2;
-  $handler->display->display_options['filters']['tid_1']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid_1']['type'] = 'select';
-  $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'currents_trends';
   $handler->display->display_options['path'] = 'feed/foreign-policy-116100.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
@@ -496,11 +446,23 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['relationships']['field_topics_target_id']['table'] = 'field_data_field_topics';
   $handler->display->display_options['relationships']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '192';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -519,18 +481,6 @@ function rss_feed_views_default_views() {
     'library_item' => 'library_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
-  $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid_1']['relationship'] = 'field_topics_target_id';
-  $handler->display->display_options['filters']['tid_1']['value'] = array(
-    192 => '192',
-  );
-  $handler->display->display_options['filters']['tid_1']['group'] = 2;
-  $handler->display->display_options['filters']['tid_1']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid_1']['type'] = 'select';
-  $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'currents_trends';
   $handler->display->display_options['path'] = 'feed/history-104.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
@@ -553,11 +503,23 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['relationships']['field_topics_target_id']['table'] = 'field_data_field_topics';
   $handler->display->display_options['relationships']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['argument'] = '46';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -576,18 +538,6 @@ function rss_feed_views_default_views() {
     'library_item' => 'library_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid']['id'] = 'tid';
-  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['relationship'] = 'field_austrian_school_target_id';
-  $handler->display->display_options['filters']['tid']['value'] = array(
-    46 => '46',
-  );
-  $handler->display->display_options['filters']['tid']['group'] = 2;
-  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['tid']['type'] = 'select';
-  $handler->display->display_options['filters']['tid']['vocabulary'] = 'the_austrian_school_of_economics';
   $handler->display->display_options['path'] = 'feed/philosophy-114.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
