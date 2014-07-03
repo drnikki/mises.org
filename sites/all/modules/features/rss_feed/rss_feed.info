@@ -1,7 +1,7 @@
 name = RSS Feed
 core = 7.x
 package = Views
-version = 7.x-1.0
+version = 7.x-1.1
 project = rss_feed
 dependencies[] = views
 features[ctools][] = views:views_default:3.0

@@ -994,16 +994,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create legacy_book content'.
-  $permissions['create legacy_book content'] = array(
-    'name' => 'create legacy_book content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create library_item content'.
   $permissions['create library_item content'] = array(
     'name' => 'create library_item content',
@@ -1282,15 +1272,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any legacy_book content'.
-  $permissions['delete any legacy_book content'] = array(
-    'name' => 'delete any legacy_book content',
-    'roles' => array(
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any library_item content'.
   $permissions['delete any library_item content'] = array(
     'name' => 'delete any library_item content',
@@ -1545,15 +1526,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete own landing_page content'.
   $permissions['delete own landing_page content'] = array(
     'name' => 'delete own landing_page content',
-    'roles' => array(
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own legacy_book content'.
-  $permissions['delete own legacy_book content'] = array(
-    'name' => 'delete own legacy_book content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
     ),
@@ -1925,13 +1897,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'ds_switch landing_page'.
   $permissions['ds_switch landing_page'] = array(
     'name' => 'ds_switch landing_page',
-    'roles' => array(),
-    'module' => 'ds_extras',
-  );
-
-  // Exported permission: 'ds_switch legacy_book'.
-  $permissions['ds_switch legacy_book'] = array(
-    'name' => 'ds_switch legacy_book',
     'roles' => array(),
     'module' => 'ds_extras',
   );
@@ -2522,16 +2487,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any legacy_book content'.
-  $permissions['edit any legacy_book content'] = array(
-    'name' => 'edit any legacy_book content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any library_item content'.
   $permissions['edit any library_item content'] = array(
     'name' => 'edit any library_item content',
@@ -2825,16 +2780,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'edit own landing_page content'.
   $permissions['edit own landing_page content'] = array(
     'name' => 'edit own landing_page content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own legacy_book content'.
-  $permissions['edit own legacy_book content'] = array(
-    'name' => 'edit own legacy_book content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
