@@ -12,3 +12,10 @@ function mises_mailchimp_configuration_ctools_plugin_api($module = NULL, $api = 
     return array("version" => "1");
   }
 }
+
+/**
+ * Implements hook_views_api().
+ */
+function mises_mailchimp_configuration_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
