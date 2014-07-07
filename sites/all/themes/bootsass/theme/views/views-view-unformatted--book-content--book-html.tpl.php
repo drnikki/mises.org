@@ -25,6 +25,7 @@
   }
   $group_classes[] = $static[$key_name]['gc'];
   $group_class = implode(' ', $group_classes);
+  //dpm($rows);
 ?>
 
 <div class="panel">
@@ -32,6 +33,10 @@
     <div class="group-title"><?php print $title; ?></div>
   <?php endif; ?>
   <div class="chapter collapse panel-group" id="chapter-<?php print $group_class; ?>">
+    <div class="panel">
+      <div class="hidden accordion-toggle" data-toggle="collapse" data-parent="#chapter-<?php print $group_class; ?>" data-target="#chapter-<?php print $group_class; ?>-intro"></div>
+      <div class="chapter-intro collapse in" id="chapter-<?php print $group_class; ?>-intro"><?php print $view->result[$group_class]->field_field_book_chapter_content[0][rendered]['#markup']; ?></div>
+    </div>
     <?php foreach ($rows as $id => $row): ?>
       <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
         <?php print $row; ?>
