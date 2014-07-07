@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * giving.field_group.inc
+ * mises_giving_content_types.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function giving_field_group_info() {
+function mises_giving_content_types_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();
