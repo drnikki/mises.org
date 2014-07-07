@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * giving.views_default.inc
+ * mises_giving_structure.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function giving_views_default_views() {
+function mises_giving_structure_views_default_views() {
   $export = array();
 
   $view = new view();

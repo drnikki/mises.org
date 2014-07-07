@@ -101,6 +101,9 @@
       <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
       <?php endif; ?>
     </div>
+    <?php if (!empty($page['header'])): ?>
+      <?php print render($page['header']); ?>
+    <?php endif; ?>
   </div>
 
   <div id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
@@ -226,22 +229,22 @@
       <div class="container">
         <div class="row">
           <?php if (!empty($page['bottom_one'])): ?>
-            <div class="col-sm-3 col-xs-6">
+            <div<?php print $bottom_column_class; ?>>
               <?php print render($page['bottom_one']); ?>
             </div>
           <?php endif; ?>
           <?php if (!empty($page['bottom_two'])): ?>
-            <div class="col-sm-3 col-xs-6">
+            <div<?php print $bottom_column_class; ?>>
               <?php print render($page['bottom_two']); ?>
             </div>
           <?php endif; ?>
           <?php if (!empty($page['bottom_three'])): ?>
-            <div class="col-sm-3 col-xs-6">
+            <div<?php print $bottom_column_class; ?>>
               <?php print render($page['bottom_three']); ?>
             </div>
           <?php endif; ?>
           <?php if (!empty($page['bottom_four'])): ?>
-            <div class="col-sm-3 col-xs-6">
+            <div<?php print $bottom_column_class; ?>>
               <?php print render($page['bottom_four']); ?>
             </div>
           <?php endif; ?>

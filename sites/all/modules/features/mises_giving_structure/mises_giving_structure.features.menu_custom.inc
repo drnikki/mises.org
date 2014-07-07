@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * giving.features.menu_custom.inc
+ * mises_giving_structure.features.menu_custom.inc
  */
 
 /**
  * Implements hook_menu_default_menu_custom().
  */
-function giving_menu_default_menu_custom() {
+function mises_giving_structure_menu_default_menu_custom() {
   $menus = array();
 
   // Exported menu: menu-giving.
