@@ -519,8 +519,9 @@ h3, h4 {
     margin-top: 0;
   }
 }
-h2, .h2, h3, .h3, h4, .h4, h5, .h5 { // FIX FOR AUTHOR FULL NAME NESTED P
-  p {
+h2, .h2, h3, .h3, h4, .h4, h5, .h5 { 
+  vertical-align: top;
+  p { // FIX FOR AUTHOR FULL NAME NESTED P
     display: inline;
   }
 }

@@ -9388,30 +9388,34 @@ h3.contrast, h4.contrast {
   margin-top: 0;
 }
 
-/* line 523, ../sass/custom/_styles.scss */
+/* line 522, ../sass/custom/_styles.scss */
+h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  vertical-align: top;
+}
+/* line 524, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 527, ../sass/custom/_styles.scss */
+/* line 528, ../sass/custom/_styles.scss */
 h5 {
   margin-bottom: 3px;
 }
 
-/* line 530, ../sass/custom/_styles.scss */
+/* line 531, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 535, ../sass/custom/_styles.scss */
+/* line 536, ../sass/custom/_styles.scss */
 .read-more,
 .more-link {
   text-transform: uppercase;
   font-size: 13px;
   cursor: pointer;
 }
-/* line 539, ../sass/custom/_styles.scss */
+/* line 540, ../sass/custom/_styles.scss */
 .read-more a,
 .more-link a {
   color: #788086;
@@ -9419,12 +9423,12 @@ address {
   font-size: 13px;
 }
 
-/* line 545, ../sass/custom/_styles.scss */
+/* line 546, ../sass/custom/_styles.scss */
 .more-link {
   margin: 0 16px;
   line-height: 20px;
 }
-/* line 549, ../sass/custom/_styles.scss */
+/* line 550, ../sass/custom/_styles.scss */
 .more-link span.glyphicon {
   width: 24px;
   height: 24px;
@@ -9432,16 +9436,16 @@ address {
   font-size: 12px;
   line-height: 24px;
 }
-/* line 552, ../sass/custom/_styles.scss */
+/* line 553, ../sass/custom/_styles.scss */
 .more-link a:hover {
   color: #38709e;
 }
-/* line 554, ../sass/custom/_styles.scss */
+/* line 555, ../sass/custom/_styles.scss */
 .more-link a:hover span.glyphicon {
   background-color: #38709e;
 }
 
-/* line 560, ../sass/custom/_styles.scss */
+/* line 561, ../sass/custom/_styles.scss */
 a.external-link span.glyphicon {
   width: 24px;
   height: 24px;
@@ -9450,21 +9454,21 @@ a.external-link span.glyphicon {
   line-height: 24px;
   margin-left: 6px;
 }
-/* line 564, ../sass/custom/_styles.scss */
+/* line 565, ../sass/custom/_styles.scss */
 a.external-link:hover {
   color: #38709e;
 }
-/* line 566, ../sass/custom/_styles.scss */
+/* line 567, ../sass/custom/_styles.scss */
 a.external-link:hover span.glyphicon {
   background-color: #38709e;
 }
 
-/* line 572, ../sass/custom/_styles.scss */
+/* line 573, ../sass/custom/_styles.scss */
 .author a {
   color: inherit;
 }
 
-/* line 578, ../sass/custom/_styles.scss */
+/* line 579, ../sass/custom/_styles.scss */
 html[contenteditable="true"] body {
   background-image: none;
 }
