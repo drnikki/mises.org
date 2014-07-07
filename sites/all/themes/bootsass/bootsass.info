@@ -29,7 +29,7 @@ regions[footer_right]   = 'Footer Right'
 regions[footer_bottom]  = 'Footer Bottom'
 
 ; Stylesheets
-stylesheets[all][] = stylesheets/styles.css
+; stylesheets[all][] = stylesheets/styles.css
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Scripts

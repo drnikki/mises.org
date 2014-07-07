@@ -24,6 +24,14 @@ function bootsass_preprocess_page(&$variables) {
     $variables['content_column_class'] = ' class="col-sm-12"';
   }
 
+  // Add information about Giving section for .
+  if (isset($variables['node']) && $variables['node']->type == 'giving_page') {
+    $variables['bottom_column_class'] = ' class="giving_bottom"';
+  }
+  else {
+    $variables['bottom_column_class'] = ' class="col-sm-3 col-xs-6"';
+  }
+
   // Container layout
   if (theme_get_setting('bootsass_container') == 'fluid') {
     $variables['container_classes_array'][] = 'container-fluid';
