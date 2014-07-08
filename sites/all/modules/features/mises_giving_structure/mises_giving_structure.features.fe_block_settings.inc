@@ -47,7 +47,7 @@ function mises_giving_structure_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Menu',
+    'title' => '',
     'visibility' => 0,
   );
 
