@@ -20,6 +20,7 @@ function sitewide_context_context_default_contexts() {
     'path' => array(
       'values' => array(
         '~<front>' => '~<front>',
+        '~giving*' => '~giving*',
       ),
     ),
   );
@@ -56,6 +57,11 @@ function sitewide_context_context_default_contexts() {
   $context->description = '';
   $context->tag = 'sitewide';
   $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '~giving*' => '~giving*',
+      ),
+    ),
     'sitewide' => array(
       'values' => array(
         1 => 1,
@@ -65,12 +71,6 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'system-main' => array(
-          'module' => 'system',
-          'delta' => 'main',
-          'region' => 'content',
-          'weight' => '-9',
-        ),
         'search-form' => array(
           'module' => 'search',
           'delta' => 'form',
@@ -82,6 +82,12 @@ function sitewide_context_context_default_contexts() {
           'delta' => 'flex_blocks-block_4',
           'region' => 'navigation',
           'weight' => '-88',
+        ),
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-9',
         ),
         'menu-menu-browse-library' => array(
           'module' => 'menu',
@@ -116,7 +122,7 @@ function sitewide_context_context_default_contexts() {
       ),
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
