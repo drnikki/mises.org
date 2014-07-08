@@ -1,0 +1,5 @@
+name = Mises Solr Reset 
+description = Adds a clear search button to the solr search results keyword form.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0
