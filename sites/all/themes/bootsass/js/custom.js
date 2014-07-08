@@ -76,6 +76,7 @@ var Drupal = Drupal || {};
         $('#block-custom-search-blocks-1 h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
         $('a.external-link').append('<span class="glyphicon glyphicon-new-window"></span> ');
         $('.social-media-categories a').append('<span class="glyphicon glyphicon-new-window"></span> ');
+        $('.view-giving-stories .panel-footer a').append(' <span class="glyphicon glyphicon-chevron-right"></span> ');
         
         // Bootstrap collapse/accordion scroll Reference: http://www.bootply.com/101026
         $('#book-html').on('shown.bs.collapse', function () {
