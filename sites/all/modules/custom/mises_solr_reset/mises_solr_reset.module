@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Modify search form.
+ */
+function mises_solr_reset_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'apachesolr_search_custom_page_search_form') {
+    if ($form['basic']['get']['#default_value'] != '[]' || !empty($form['basic']['keys']['#default_value'])) {
+      $form['reset'] = array(
+        '#type' => 'submit',
+        '#value' => 'Clear',
+      );
+      $form['#submit'][] = '_mises_solr_reset_redirect';
+    }
+  }
+}
+
+/**
+ * Apply redirect to search results:
+ */
+function _mises_solr_reset_redirect(&$form, &$form_state) {
+  if ($form_state['input']['op'] == 'Clear') {
+    drupal_goto('search/site');
+  }
+}
