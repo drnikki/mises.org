@@ -1,0 +1,99 @@
+/*
+* Main Site Custom Styles
+* 
+*/
+/* TYPOGRAPHY */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 { 
+  font-weight: normal;
+}
+/* BODY */
+body {
+  background: $white;
+}
+/* HEADER */
+.header {
+  background: $brand-contrast;
+}
+.logo.navbar-btn {
+  max-width: 380px;
+  border-bottom: 7px solid $brand-primary;
+  background: $white;
+}
+#navbar {
+  &.navbar-static-top {
+    border-width: 0;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 15px;
+    @media (min-width: $grid-float-breakpoint) {
+      float: right;
+    }
+  }
+}
+/* FOOTER */
+.giving-footer {
+  @include background-texture($brand-secondary,'../images/giving-story-bg.jpg');
+  padding: 0 0 $grid-gutter-width * 1.5 0;
+}
+/* PRIMARY CONTENT BLOCKS */
+
+
+
+/* GIVING STORIES */
+// view bottom blocks
+.giving-footer {
+  h2.block-title {
+    margin-top: $grid-gutter-width * 2.5;
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: $font-size-h1;
+    font-family: $font-family-serif;
+  }
+}  
+.view-giving-stories {
+  &.bottom-blocks {
+    .view-header {
+      @include translate(-50%, -50%);
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+    .icon {
+      padding: $padding-large-vertical;
+      border: $padding-xs-horizontal solid $white;
+      border-radius: 50%;
+      background: $brand-primary;
+    }
+    .panel-body {
+      padding: $grid-gutter-width $grid-gutter-width * 2;
+      font-size: $font-size-small;
+    }
+    h3 {
+      margin-top: 0;
+      text-transform: uppercase;
+      font-size: ceil(($font-size-base * 1.46666667));
+      font-family: $font-family-serif;
+      a {
+        color: $brand-contrast;
+      }
+    }
+    .panel-footer {
+      @include transition(all, 0.5s);
+      padding: $grid-gutter-width $grid-gutter-width * 2;
+      background: $brand-contrast;
+      text-transform: uppercase;
+      font-size: $font-size-large;
+      &:hover {
+        padding: $grid-gutter-width $grid-gutter-width * 3;
+        background: $brand-contrast-medium;
+      }
+      a {
+        color: $white;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
