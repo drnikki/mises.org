@@ -518,7 +518,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['chapter_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['chapter_title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['chapter_title']['alter']['text'] = '<h2 class="teaser-title contrast accordion-toggle"  data-toggle="collapse" data-parent="#book-html" data-target="#chapter-[delta]">[chapter_title]</h3>
-<div class="chapter-intro">[field_book_chapter_content]</div>';
+';
   $handler->display->display_options['fields']['chapter_title']['alter']['path'] = '#';
   $handler->display->display_options['fields']['chapter_title']['element_type'] = 'strong';
   $handler->display->display_options['fields']['chapter_title']['element_label_colon'] = FALSE;

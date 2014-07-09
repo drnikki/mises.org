@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * giving.context.inc
+ * mises_giving_structure.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function giving_context_default_contexts() {
+function mises_giving_structure_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();
@@ -30,43 +30,43 @@ function giving_context_default_contexts() {
         'fieldblock-e32400f688b5b1150d46199e8c938d47' => array(
           'module' => 'fieldblock',
           'delta' => 'e32400f688b5b1150d46199e8c938d47',
-          'region' => 'secondary_content',
+          'region' => 'featured_left',
+          'weight' => '-10',
+        ),
+        'menu-menu-giving-sub-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-giving-sub-menu',
+          'region' => 'featured_right',
           'weight' => '-10',
         ),
         'menu-menu-browse-library' => array(
           'module' => 'menu',
           'delta' => 'menu-browse-library',
-          'region' => 'footer',
+          'region' => 'footer_left',
           'weight' => '-10',
         ),
         'menu-menu-about-the-mises-institute' => array(
           'module' => 'menu',
           'delta' => 'menu-about-the-mises-institute',
-          'region' => 'footer',
-          'weight' => '-9',
+          'region' => 'footer_center',
+          'weight' => '-10',
         ),
         'views-flex_blocks-block_2' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_2',
-          'region' => 'footer',
-          'weight' => '-8',
+          'region' => 'footer_right',
+          'weight' => '-10',
         ),
-        'menu-menu-mises-social-icons' => array(
-          'module' => 'menu',
-          'delta' => 'menu-mises-social-icons',
-          'region' => 'footer',
-          'weight' => '-7',
+        'views-social_media_displays-block_2' => array(
+          'module' => 'views',
+          'delta' => 'social_media_displays-block_2',
+          'region' => 'footer_right',
+          'weight' => '-9',
         ),
         'views-flex_blocks-block_3' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_3',
-          'region' => 'footer',
-          'weight' => '-6',
-        ),
-        'menu-menu-giving' => array(
-          'module' => 'menu',
-          'delta' => 'menu-giving',
-          'region' => 'header',
+          'region' => 'footer_bottom',
           'weight' => '-10',
         ),
       ),
@@ -98,28 +98,22 @@ function giving_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-giving_feature_blocks-block' => array(
+          'module' => 'views',
+          'delta' => 'giving_feature_blocks-block',
+          'region' => 'featured_left',
+          'weight' => '-10',
+        ),
         'views-flex_blocks-block_18' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_18',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'views-giving_feature_blocks-block' => array(
-          'module' => 'views',
-          'delta' => 'giving_feature_blocks-block',
-          'region' => 'secondary_content',
-          'weight' => '-9',
-        ),
         'views-giving_stories-block_1' => array(
           'module' => 'views',
           'delta' => 'giving_stories-block_1',
-          'region' => 'tertiary_content',
-          'weight' => '-10',
-        ),
-        'block-2' => array(
-          'module' => 'block',
-          'delta' => '2',
-          'region' => 'secondary_aside',
+          'region' => 'menu_footer_one',
           'weight' => '-10',
         ),
       ),
@@ -151,16 +145,10 @@ function giving_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-2' => array(
-          'module' => 'block',
-          'delta' => '2',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'views-giving_stories-block' => array(
+        'views-giving_stories-block_1' => array(
           'module' => 'views',
-          'delta' => 'giving_stories-block',
-          'region' => 'tertiary_content',
+          'delta' => 'giving_stories-block_1',
+          'region' => 'menu_footer_one',
           'weight' => '-10',
         ),
       ),
@@ -194,16 +182,10 @@ function giving_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-2' => array(
-          'module' => 'block',
-          'delta' => '2',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
         'views-giving_stories-block_1' => array(
           'module' => 'views',
           'delta' => 'giving_stories-block_1',
-          'region' => 'tertiary_content',
+          'region' => 'menu_footer_one',
           'weight' => '-10',
         ),
       ),
@@ -282,7 +264,7 @@ function giving_context_default_contexts() {
         'views-areas_to_support-block' => array(
           'module' => 'views',
           'delta' => 'areas_to_support-block',
-          'region' => 'postscript_content',
+          'region' => 'bottom_one',
           'weight' => '-10',
         ),
       ),

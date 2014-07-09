@@ -91,7 +91,7 @@ function mises_pathauto_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_campaign__pattern';
-  $strongarm->value = 'campaigns/[node:title]';
+  $strongarm->value = 'giving/campaigns/[node:title]';
   $export['pathauto_node_campaign__pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -133,7 +133,7 @@ function mises_pathauto_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_giving_story_pattern';
-  $strongarm->value = 'stories/[node:title]';
+  $strongarm->value = 'giving/stories/[node:title]';
   $export['pathauto_node_giving_story_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

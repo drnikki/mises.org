@@ -69,7 +69,7 @@ function mises_giving_story_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -90,7 +90,7 @@ function mises_giving_story_strongarm() {
         'custom_settings' => FALSE,
       ),
       'block_teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'list_teaser' => array(
         'custom_settings' => FALSE,
@@ -120,6 +120,12 @@ function mises_giving_story_strongarm() {
         'custom_settings' => FALSE,
       ),
       'video_block_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'simple_content' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
         'custom_settings' => FALSE,
       ),
     ),

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * giving.features.field_instance.inc
+ * mises_giving_content_types.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function giving_field_default_field_instances() {
+function mises_giving_content_types_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-giving_feature_block-body'
