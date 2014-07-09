@@ -78,17 +78,17 @@
 // and disabled options for all buttons
 
 @mixin button-variant($color, $background, $border) {
-  color: $color;
-  background-color: $background;
   border-color: $border;
+  background-color: $background;
+  color: $color;
 
   &:hover,
   &:focus,
   &:active,
   &.active {
-    color: $color;
-    background-color: darken($background, 10%);
     border-color: darken($border, 10%);
+    background-color: darken($background, 10%);
+    color: $color;
   }
   &:active,
   &.active {
@@ -102,8 +102,8 @@
     &:focus,
     &:active,
     &.active {
-      background-color: $background;
       border-color: $border;
+      background-color: $background;
     }
   }
   a {
@@ -115,8 +115,8 @@
   }
 
   .badge {
-    color: $background;
     background-color: $color;
+    color: $background;
   }
 }
 
