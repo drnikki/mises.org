@@ -34,12 +34,6 @@ function mises_giving_structure_default_fe_block_settings() {
         'theme' => 'bootsass',
         'weight' => 0,
       ),
-      'mises_giving' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'mises_giving',
-        'weight' => 0,
-      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -71,12 +65,6 @@ function mises_giving_structure_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'bootsass',
-        'weight' => 0,
-      ),
-      'mises_giving' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'mises_giving',
         'weight' => 0,
       ),
       'seven' => array(
@@ -112,12 +100,6 @@ function mises_giving_structure_default_fe_block_settings() {
         'theme' => 'bootsass',
         'weight' => 0,
       ),
-      'mises_giving' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'mises_giving',
-        'weight' => 0,
-      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -149,12 +131,6 @@ function mises_giving_structure_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'bootsass',
-        'weight' => 0,
-      ),
-      'mises_giving' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'mises_giving',
         'weight' => 0,
       ),
       'seven' => array(
@@ -190,12 +166,6 @@ function mises_giving_structure_default_fe_block_settings() {
         'theme' => 'bootsass',
         'weight' => 0,
       ),
-      'mises_giving' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'mises_giving',
-        'weight' => 0,
-      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -228,12 +198,6 @@ function mises_giving_structure_default_fe_block_settings() {
         'status' => 0,
         'theme' => 'bootsass',
         'weight' => 0,
-      ),
-      'mises_giving' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'mises_giving',
-        'weight' => -50,
       ),
       'seven' => array(
         'region' => '',
@@ -268,12 +232,6 @@ function mises_giving_structure_default_fe_block_settings() {
         'theme' => 'bootsass',
         'weight' => 0,
       ),
-      'mises_giving' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'mises_giving',
-        'weight' => 0,
-      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -305,12 +263,6 @@ function mises_giving_structure_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'bootsass',
-        'weight' => 0,
-      ),
-      'mises_giving' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'mises_giving',
         'weight' => 0,
       ),
       'seven' => array(
