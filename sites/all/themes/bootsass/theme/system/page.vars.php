@@ -11,7 +11,7 @@
  */
 function bootsass_preprocess_page(&$variables) {
   // Set theme section
-  if (isset($variables['node']) && ($variables['node']->type == 'giving_page' || $variables['node']->type == 'campaign' || $variables['node']->type == 'giving_story')) {
+  if (isset($variables['node']) && ($variables['node']->type == 'giving_page' || $variables['node']->type == 'campaign_' || $variables['node']->type == 'giving_story')) {
     $variables['site_section'] = 'giving';
   } else {
     $variables['site_section'] = 'main';

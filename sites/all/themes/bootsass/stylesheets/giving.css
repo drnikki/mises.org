@@ -3976,15 +3976,15 @@ select[multiple].input-lg,
 
 /* line 57, ../sass/bootstrap/_buttons.scss */
 .btn-default {
-  color: white;
-  background-color: #38709e;
   border-color: #38709e;
+  background-color: #38709e;
+  color: white;
 }
 /* line 88, ../sass/custom/_mixins.scss */
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
-  color: white;
-  background-color: #2b5578;
   border-color: #2b5578;
+  background-color: #2b5578;
+  color: white;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-default:active, .btn-default.active {
@@ -3992,8 +3992,8 @@ select[multiple].input-lg,
 }
 /* line 104, ../sass/custom/_mixins.scss */
 .btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
-  background-color: #38709e;
   border-color: #38709e;
+  background-color: #38709e;
 }
 /* line 109, ../sass/custom/_mixins.scss */
 .btn-default a {
@@ -4006,21 +4006,21 @@ select[multiple].input-lg,
 }
 /* line 117, ../sass/custom/_mixins.scss */
 .btn-default .badge {
-  color: #38709e;
   background-color: white;
+  color: #38709e;
 }
 
 /* line 60, ../sass/bootstrap/_buttons.scss */
 .btn-primary, #text-resizer .active {
-  color: white;
-  background-color: #00426b;
   border-color: #003252;
+  background-color: #00426b;
+  color: white;
 }
 /* line 88, ../sass/custom/_mixins.scss */
 .btn-primary:hover, #text-resizer .active:hover, .btn-primary:focus, #text-resizer .active:focus, .btn-primary:active, #text-resizer .active:active, .btn-primary.active, #text-resizer .active {
-  color: white;
-  background-color: #002338;
   border-color: #00131f;
+  background-color: #002338;
+  color: white;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-primary:active, #text-resizer .active:active, .btn-primary.active, #text-resizer .active {
@@ -4028,8 +4028,8 @@ select[multiple].input-lg,
 }
 /* line 104, ../sass/custom/_mixins.scss */
 .btn-primary.disabled, #text-resizer .disabled.active, .btn-primary.disabled:hover, #text-resizer .disabled.active:hover, .btn-primary.disabled:focus, #text-resizer .disabled.active:focus, .btn-primary.disabled:active, #text-resizer .disabled.active:active, .btn-primary.disabled.active, #text-resizer .disabled.active, .btn-primary[disabled], #text-resizer [disabled].active, .btn-primary[disabled]:hover, #text-resizer [disabled].active:hover, .btn-primary[disabled]:focus, #text-resizer [disabled].active:focus, .btn-primary[disabled]:active, #text-resizer [disabled].active:active, .btn-primary[disabled].active, #text-resizer [disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] #text-resizer .active, #text-resizer fieldset[disabled] .active, fieldset[disabled] .btn-primary:hover, fieldset[disabled] #text-resizer .active:hover, #text-resizer fieldset[disabled] .active:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] #text-resizer .active:focus, #text-resizer fieldset[disabled] .active:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] #text-resizer .active:active, #text-resizer fieldset[disabled] .active:active, fieldset[disabled] .btn-primary.active, fieldset[disabled] #text-resizer .active, #text-resizer fieldset[disabled] .active {
-  background-color: #00426b;
   border-color: #003252;
+  background-color: #00426b;
 }
 /* line 109, ../sass/custom/_mixins.scss */
 .btn-primary a, #text-resizer .active a {
@@ -4042,21 +4042,21 @@ select[multiple].input-lg,
 }
 /* line 117, ../sass/custom/_mixins.scss */
 .btn-primary .badge, #text-resizer .active .badge {
-  color: #00426b;
   background-color: white;
+  color: #00426b;
 }
 
 /* line 64, ../sass/bootstrap/_buttons.scss */
 .btn-success {
-  color: white;
-  background-color: #5cb85c;
   border-color: #4cae4c;
+  background-color: #5cb85c;
+  color: white;
 }
 /* line 88, ../sass/custom/_mixins.scss */
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active {
-  color: white;
-  background-color: #449d44;
   border-color: #3d8b3d;
+  background-color: #449d44;
+  color: white;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-success:active, .btn-success.active {
@@ -4064,8 +4064,8 @@ select[multiple].input-lg,
 }
 /* line 104, ../sass/custom/_mixins.scss */
 .btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
-  background-color: #5cb85c;
   border-color: #4cae4c;
+  background-color: #5cb85c;
 }
 /* line 109, ../sass/custom/_mixins.scss */
 .btn-success a {
@@ -4078,21 +4078,21 @@ select[multiple].input-lg,
 }
 /* line 117, ../sass/custom/_mixins.scss */
 .btn-success .badge {
-  color: #5cb85c;
   background-color: white;
+  color: #5cb85c;
 }
 
 /* line 68, ../sass/bootstrap/_buttons.scss */
 .btn-info {
-  color: white;
-  background-color: #5bc0de;
   border-color: #46b8da;
+  background-color: #5bc0de;
+  color: white;
 }
 /* line 88, ../sass/custom/_mixins.scss */
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active {
-  color: white;
-  background-color: #31b0d5;
   border-color: #28a1c5;
+  background-color: #31b0d5;
+  color: white;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-info:active, .btn-info.active {
@@ -4100,8 +4100,8 @@ select[multiple].input-lg,
 }
 /* line 104, ../sass/custom/_mixins.scss */
 .btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active {
-  background-color: #5bc0de;
   border-color: #46b8da;
+  background-color: #5bc0de;
 }
 /* line 109, ../sass/custom/_mixins.scss */
 .btn-info a {
@@ -4114,21 +4114,21 @@ select[multiple].input-lg,
 }
 /* line 117, ../sass/custom/_mixins.scss */
 .btn-info .badge {
-  color: #5bc0de;
   background-color: white;
+  color: #5bc0de;
 }
 
 /* line 72, ../sass/bootstrap/_buttons.scss */
 .btn-warning {
-  color: white;
-  background-color: #f0ad4e;
   border-color: #eea236;
+  background-color: #f0ad4e;
+  color: white;
 }
 /* line 88, ../sass/custom/_mixins.scss */
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active {
-  color: white;
-  background-color: #ec971f;
   border-color: #df8a13;
+  background-color: #ec971f;
+  color: white;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-warning:active, .btn-warning.active {
@@ -4136,8 +4136,8 @@ select[multiple].input-lg,
 }
 /* line 104, ../sass/custom/_mixins.scss */
 .btn-warning.disabled, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled:active, .btn-warning.disabled.active, .btn-warning[disabled], .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled]:active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning, fieldset[disabled] .btn-warning:hover, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning:active, fieldset[disabled] .btn-warning.active {
-  background-color: #f0ad4e;
   border-color: #eea236;
+  background-color: #f0ad4e;
 }
 /* line 109, ../sass/custom/_mixins.scss */
 .btn-warning a {
@@ -4150,21 +4150,21 @@ select[multiple].input-lg,
 }
 /* line 117, ../sass/custom/_mixins.scss */
 .btn-warning .badge {
-  color: #f0ad4e;
   background-color: white;
+  color: #f0ad4e;
 }
 
 /* line 76, ../sass/bootstrap/_buttons.scss */
 .btn-danger {
-  color: white;
-  background-color: #d9534f;
   border-color: #d43f3a;
+  background-color: #d9534f;
+  color: white;
 }
 /* line 88, ../sass/custom/_mixins.scss */
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active {
-  color: white;
-  background-color: #c9302c;
   border-color: #b52b27;
+  background-color: #c9302c;
+  color: white;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-danger:active, .btn-danger.active {
@@ -4172,8 +4172,8 @@ select[multiple].input-lg,
 }
 /* line 104, ../sass/custom/_mixins.scss */
 .btn-danger.disabled, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled]:active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.active {
-  background-color: #d9534f;
   border-color: #d43f3a;
+  background-color: #d9534f;
 }
 /* line 109, ../sass/custom/_mixins.scss */
 .btn-danger a {
@@ -4186,8 +4186,8 @@ select[multiple].input-lg,
 }
 /* line 117, ../sass/custom/_mixins.scss */
 .btn-danger .badge {
-  color: #d9534f;
   background-color: white;
+  color: #d9534f;
 }
 
 /* line 85, ../sass/bootstrap/_buttons.scss */
@@ -8753,7 +8753,7 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 /* LAYOUT */
 @media (max-width: 479px) {
   /* line 13, ../sass/custom/_styles.scss */
-  .main-content *[class*="col-"], .content-bottom *[class*="col-"], .menu-footer *[class*="col-"] {
+  .main-content *[class*="col-"], .content-bottom *[class*="col-"], .menu-footer *[class*="col-"], .giving-footer *[class*="col-"] {
     float: none;
     width: auto;
   }
@@ -8809,15 +8809,15 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 
 /* line 65, ../sass/custom/_styles.scss */
 .btn-white {
-  color: #38709e;
-  background-color: white;
   border-color: #c8cdd0;
+  background-color: white;
+  color: #38709e;
 }
 /* line 88, ../sass/custom/_mixins.scss */
 .btn-white:hover, .btn-white:focus, .btn-white:active, .btn-white.active {
-  color: #38709e;
-  background-color: #e6e6e6;
   border-color: #acb4b9;
+  background-color: #e6e6e6;
+  color: #38709e;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-white:active, .btn-white.active {
@@ -8825,8 +8825,8 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 }
 /* line 104, ../sass/custom/_mixins.scss */
 .btn-white.disabled, .btn-white.disabled:hover, .btn-white.disabled:focus, .btn-white.disabled:active, .btn-white.disabled.active, .btn-white[disabled], .btn-white[disabled]:hover, .btn-white[disabled]:focus, .btn-white[disabled]:active, .btn-white[disabled].active, fieldset[disabled] .btn-white, fieldset[disabled] .btn-white:hover, fieldset[disabled] .btn-white:focus, fieldset[disabled] .btn-white:active, fieldset[disabled] .btn-white.active {
-  background-color: white;
   border-color: #c8cdd0;
+  background-color: white;
 }
 /* line 109, ../sass/custom/_mixins.scss */
 .btn-white a {
@@ -8839,8 +8839,8 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 }
 /* line 117, ../sass/custom/_mixins.scss */
 .btn-white .badge {
-  color: white;
   background-color: #38709e;
+  color: white;
 }
 
 /* line 69, ../sass/custom/_styles.scss */
@@ -9308,31 +9308,73 @@ html[contenteditable="true"] body {
 * 
 */
 /* TYPOGRAPHY */
-/* line 6, ../sass/custom/_giving.scss */
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+/* line 7, ../sass/custom/_giving.scss */
+.main-container h1, .main-container .h1, .main-container h2, .main-container .h2, .main-container h3, .main-container .h3, .main-container h4, .main-container .h4, .main-container h5, .main-container .h5, .giving-footer h1, .giving-footer .h1, .giving-footer h2, .giving-footer .h2, .giving-footer h3, .giving-footer .h3, .giving-footer h4, .giving-footer .h4, .giving-footer h5, .giving-footer .h5 {
   font-weight: normal;
+  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+}
+
+/* line 12, ../sass/custom/_giving.scss */
+h1, .h1 {
+  font-size: 40px;
+}
+
+/* line 15, ../sass/custom/_giving.scss */
+h2, .h2 {
+  font-size: 32px;
+}
+
+/* line 18, ../sass/custom/_giving.scss */
+a {
+  color: #729949;
+}
+/* line 20, ../sass/custom/_giving.scss */
+a:hover {
+  color: #678d40;
+}
+/* line 23, ../sass/custom/_giving.scss */
+a.btn-giving, .btn-giving a {
+  display: inline-block;
+  width: 225px;
+  height: 40px;
+  background: #93b671 url("../images/giving/giving-button.jpg") right center no-repeat;
+  line-height: 40px;
+  padding: 0 20px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+}
+/* line 30, ../sass/custom/_giving.scss */
+a.btn-giving:hover, .btn-giving a:hover {
+  text-decoration: none;
+}
+/* line 33, ../sass/custom/_giving.scss */
+.text-right a.btn-giving, .more-link a.btn-giving, .text-right .btn-giving a, .more-link .btn-giving a {
+  text-align: left;
 }
 
 /* BODY */
-/* line 10, ../sass/custom/_giving.scss */
+/* line 39, ../sass/custom/_giving.scss */
 body {
   background: white;
+  font-size: 14px;
 }
 
 /* HEADER */
-/* line 14, ../sass/custom/_giving.scss */
+/* line 44, ../sass/custom/_giving.scss */
 .header {
   background: #729949;
 }
 
-/* line 17, ../sass/custom/_giving.scss */
+/* line 47, ../sass/custom/_giving.scss */
 .logo.navbar-btn {
   max-width: 380px;
   border-bottom: 7px solid #00426b;
   background: white;
 }
 
-/* line 23, ../sass/custom/_giving.scss */
+/* line 53, ../sass/custom/_giving.scss */
 #navbar.navbar-static-top {
   border-width: 0;
   text-transform: uppercase;
@@ -9340,22 +9382,44 @@ body {
   font-size: 15px;
 }
 @media (min-width: 768px) {
-  /* line 23, ../sass/custom/_giving.scss */
+  /* line 53, ../sass/custom/_giving.scss */
   #navbar.navbar-static-top {
     float: right;
   }
 }
 
 /* FOOTER */
-/* line 34, ../sass/custom/_giving.scss */
+/* line 64, ../sass/custom/_giving.scss */
 .giving-footer {
-  background: #38709e url("../images/giving-story-bg.jpg") center center repeat;
+  background: #38709e url("../images/giving/giving-story-bg.jpg") center center repeat;
   padding: 0 0 30px 0;
 }
 
 /* PRIMARY CONTENT BLOCKS */
+/* line 69, ../sass/custom/_giving.scss */
+.main-container {
+  padding-bottom: 30px;
+}
+/* line 71, ../sass/custom/_giving.scss */
+.main-container h2:nth-of-type(2n-1) {
+  color: #729949;
+}
+/* line 74, ../sass/custom/_giving.scss */
+.main-container h2:nth-of-type(2n) {
+  color: #38709e;
+}
+
+/* line 78, ../sass/custom/_giving.scss */
+.giving-bottom {
+  padding: 20px;
+}
+
 /* GIVING STORIES */
-/* line 45, ../sass/custom/_giving.scss */
+/* line 84, ../sass/custom/_giving.scss */
+.giving-footer {
+  position: relative;
+}
+/* line 86, ../sass/custom/_giving.scss */
 .giving-footer h2.block-title {
   margin-top: 50px;
   color: white;
@@ -9365,7 +9429,7 @@ body {
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 56, ../sass/custom/_giving.scss */
+/* line 97, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .view-header {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -9375,30 +9439,29 @@ body {
   top: 0;
   left: 50%;
 }
-/* line 62, ../sass/custom/_giving.scss */
+/* line 103, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .icon {
   padding: 16px;
   border: 5px solid white;
   border-radius: 50%;
   background: #00426b;
 }
-/* line 68, ../sass/custom/_giving.scss */
+/* line 109, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .panel-body {
   padding: 20px 40px;
   font-size: 13px;
 }
-/* line 72, ../sass/custom/_giving.scss */
+/* line 113, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks h3 {
   margin-top: 0;
   text-transform: uppercase;
   font-size: 23px;
-  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
-/* line 77, ../sass/custom/_giving.scss */
+/* line 117, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks h3 a {
   color: #729949;
 }
-/* line 81, ../sass/custom/_giving.scss */
+/* line 121, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .panel-footer {
   -webkit-transition: all, 0.5s;
   -o-transition: all, 0.5s;
@@ -9408,16 +9471,58 @@ body {
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 87, ../sass/custom/_giving.scss */
+/* line 127, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .panel-footer:hover {
   padding: 20px 60px;
   background: #678d40;
 }
-/* line 91, ../sass/custom/_giving.scss */
+/* line 131, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .panel-footer a {
   color: white;
 }
-/* line 93, ../sass/custom/_giving.scss */
+/* line 133, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .panel-footer a:hover {
   text-decoration: none;
+}
+
+/* MEMBERSHIP LEVELS AND  CAMPAIGNS/AREAS TO SUPPORT VIEWS */
+/* line 142, ../sass/custom/_giving.scss */
+.giving-table {
+  margin: 20px 0;
+}
+/* line 144, ../sass/custom/_giving.scss */
+.giving-table .views-row {
+  clear: both;
+  padding: 20px;
+  border-top: #CCC 1px solid;
+}
+/* line 148, ../sass/custom/_giving.scss */
+.giving-table .views-row:last-child {
+  margin-bottom: 20px;
+  border-bottom: #CCC 1px solid;
+}
+/* line 152, ../sass/custom/_giving.scss */
+.giving-table .views-row .title {
+  color: #216093;
+}
+/* line 154, ../sass/custom/_giving.scss */
+.giving-table .views-row .title h5 {
+  margin: 0;
+  font-size: 22px;
+}
+/* line 158, ../sass/custom/_giving.scss */
+.giving-table .views-row .title .cost {
+  white-space: nowrap;
+}
+/* line 162, ../sass/custom/_giving.scss */
+.giving-table .views-row .body {
+  line-height: 1.4;
+}
+/* line 164, ../sass/custom/_giving.scss */
+.giving-table .views-row .body p {
+  margin: 0;
+}
+/* line 168, ../sass/custom/_giving.scss */
+.giving-table .views-row .view-footer {
+  padding: 10px 20px 0px;
 }
