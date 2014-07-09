@@ -9,7 +9,7 @@
 
 /* LAYOUT */
 @media (max-width: $screen-xs - 1){ // adding mid-small breakpoint
-  .main-content, .content-bottom, .menu-footer {
+  .main-content, .content-bottom, .menu-footer, .giving-footer {
     *[class*="col-"]{
       float:none;
       width:auto;
