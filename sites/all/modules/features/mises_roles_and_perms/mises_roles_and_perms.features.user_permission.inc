@@ -169,6 +169,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'access site reports',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'system',
   );
