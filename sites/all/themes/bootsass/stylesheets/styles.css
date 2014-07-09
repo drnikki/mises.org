@@ -8760,7 +8760,7 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 /* LAYOUT */
 @media (max-width: 479px) {
   /* line 13, ../sass/custom/_styles.scss */
-  .main-content *[class*="col-"], .content-bottom *[class*="col-"], .menu-footer *[class*="col-"] {
+  .main-content *[class*="col-"], .content-bottom *[class*="col-"], .menu-footer *[class*="col-"], .giving-footer *[class*="col-"] {
     float: none;
     width: auto;
   }

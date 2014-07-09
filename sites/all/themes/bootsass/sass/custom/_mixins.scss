@@ -119,3 +119,12 @@
     background-color: $color;
   }
 }
+
+// For Button background images
+@mixin button-image($color, $image, $height, $width) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background: $color url($image) right center no-repeat;
+  line-height: $height;
+}
