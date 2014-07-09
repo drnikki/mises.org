@@ -182,6 +182,42 @@ function mises_giving_structure_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-giving_flex_blocks-block_8' => array(
+          'module' => 'views',
+          'delta' => 'giving_flex_blocks-block_8',
+          'region' => 'featured_left',
+          'weight' => '-10',
+        ),
+        'views-giving_flex_blocks-block_7' => array(
+          'module' => 'views',
+          'delta' => 'giving_flex_blocks-block_7',
+          'region' => 'featured_right',
+          'weight' => '-10',
+        ),
+        'views-giving_flex_blocks-block_1' => array(
+          'module' => 'views',
+          'delta' => 'giving_flex_blocks-block_1',
+          'region' => 'bottom_left',
+          'weight' => '-10',
+        ),
+        'views-giving_flex_blocks-block_20' => array(
+          'module' => 'views',
+          'delta' => 'giving_flex_blocks-block_20',
+          'region' => 'sidebar_second_top',
+          'weight' => '-10',
+        ),
+        'views-giving_flex_blocks-block_19' => array(
+          'module' => 'views',
+          'delta' => 'giving_flex_blocks-block_19',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'menu-menu-giving-sub-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-giving-sub-menu',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
         'views-giving_stories-block_1' => array(
           'module' => 'views',
           'delta' => 'giving_stories-block_1',
@@ -217,23 +253,17 @@ function mises_giving_structure_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-2' => array(
-          'module' => 'block',
-          'delta' => '2',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
+        'views-membership_levels-block' => array(
+          'module' => 'views',
+          'delta' => 'membership_levels-block',
+          'region' => 'content',
+          'weight' => '20',
         ),
         'views-flex_blocks-block_19' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_19',
           'region' => 'sidebar_second',
           'weight' => '-9',
-        ),
-        'views-membership_levels-block' => array(
-          'module' => 'views',
-          'delta' => 'membership_levels-block',
-          'region' => 'content',
-          'weight' => '-10',
         ),
       ),
     ),

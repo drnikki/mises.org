@@ -13,15 +13,16 @@ function mises_giving_structure_views_default_views() {
   $view = new view();
   $view->name = 'areas_to_support';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'giving';
   $view->base_table = 'node';
-  $view->human_name = 'Areas to Support';
+  $view->human_name = 'Giving - Areas to Support';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'giving-table';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -30,6 +31,8 @@ function mises_giving_structure_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'row';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Nodequeue: Queue */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
@@ -57,6 +60,9 @@ function mises_giving_structure_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h5';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'title col-xs-4';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['field_body']['id'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['table'] = 'field_data_field_body';
@@ -68,6 +74,9 @@ function mises_giving_structure_views_default_views() {
   $handler->display->display_options['fields']['field_body']['alter']['preserve_tags'] = '<b> <strong> <i> <em>';
   $handler->display->display_options['fields']['field_body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_body']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_body']['element_wrapper_class'] = 'body col-xs-5';
+  $handler->display->display_options['fields']['field_body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_body']['settings'] = array(
     'conditions' => array(
       0 => array(
@@ -84,8 +93,11 @@ function mises_giving_structure_views_default_views() {
   $handler->display->display_options['fields']['field_donate_link']['alter']['text'] = 'Donate Now';
   $handler->display->display_options['fields']['field_donate_link']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_donate_link']['alter']['path'] = '[field_donate_link]';
-  $handler->display->display_options['fields']['field_donate_link']['alter']['link_class'] = 'green-link-small';
+  $handler->display->display_options['fields']['field_donate_link']['alter']['link_class'] = 'btn-giving';
   $handler->display->display_options['fields']['field_donate_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_donate_link']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_donate_link']['element_wrapper_class'] = 'donate-link col-xs-3';
+  $handler->display->display_options['fields']['field_donate_link']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_donate_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_donate_link']['type'] = 'link_plain';
   $handler->display->display_options['fields']['field_donate_link']['settings'] = array(
@@ -122,9 +134,9 @@ function mises_giving_structure_views_default_views() {
   $view = new view();
   $view->name = 'giving_feature_blocks';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'giving';
   $view->base_table = 'node';
-  $view->human_name = 'Giving Feature Blocks';
+  $view->human_name = 'Giving - Feature Blocks';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -244,11 +256,247 @@ function mises_giving_structure_views_default_views() {
   $export['giving_feature_blocks'] = $view;
 
   $view = new view();
-  $view->name = 'giving_stories';
-  $view->description = '';
+  $view->name = 'giving_flex_blocks';
+  $view->description = 'Helper for Flex Block context placement.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Giving Stories';
+  $view->human_name = 'Giving - Flex Blocks';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Weight (field_weight) */
+  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'top_left' => 'top_left',
+  );
+
+  /* Display: Top Sidebar Giving */
+  $handler = $view->new_display('block', 'Top Sidebar Giving', 'block_20');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'background-secondary';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'sidebar_teaser';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'right_top' => 'right_top',
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'giving_home' => 'giving_home',
+  );
+
+  /* Display: Sidebar Giving */
+  $handler = $view->new_display('block', 'Sidebar Giving', 'block_19');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'right' => 'right',
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'giving_home' => 'giving_home',
+  );
+
+  /* Display: Featured Left Giving */
+  $handler = $view->new_display('block', 'Featured Left Giving', 'block_8');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'featured_left' => 'featured_left',
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'giving_home' => 'giving_home',
+  );
+
+  /* Display: Featured Right Giving */
+  $handler = $view->new_display('block', 'Featured Right Giving', 'block_7');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'featured_right' => 'featured_right',
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'giving_home' => 'giving_home',
+  );
+
+  /* Display: Content Bottom Left Giving */
+  $handler = $view->new_display('block', 'Content Bottom Left Giving', 'block_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'flex_block' => 'flex_block',
+  );
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'bottom_left' => 'bottom_left',
+  );
+  /* Filter criterion: Content: Section (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'giving_home' => 'giving_home',
+  );
+  $export['giving_flex_blocks'] = $view;
+
+  $view = new view();
+  $view->name = 'giving_stories';
+  $view->description = '';
+  $view->tag = 'giving';
+  $view->base_table = 'node';
+  $view->human_name = 'Giving - Giving Stories';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -382,15 +630,16 @@ function mises_giving_structure_views_default_views() {
   $view = new view();
   $view->name = 'membership_levels';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'giving';
   $view->base_table = 'node';
-  $view->human_name = 'Membership Levels';
+  $view->human_name = 'Giving - Membership Levels';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'giving-table';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -398,14 +647,16 @@ function mises_giving_structure_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'row';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Footer: Global: Unfiltered text */
   $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<p>We honor our most distinguished supporters in our Societies. Please email or phone us for more information.</p>
-<p>334-321-2100 | memberships@mises.org</p>
-<a class="green-link-small" href="/giving/now">Join Now</a>';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<p>We honor our most distinguished supporters in our Societies. Please email or phone us for more information.<br />
+334-321-2100 | memberships@mises.org</p>
+<p class="text-right"><a class="btn-giving" href="/giving/now">Join Now</a>';
   /* Relationship: Nodequeue: Queue */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
   $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
@@ -452,6 +703,8 @@ function mises_giving_structure_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h5';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'title col-xs-6';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
@@ -459,6 +712,9 @@ function mises_giving_structure_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'body col-xs-6';
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['settings'] = array(
     'conditions' => array(
       0 => array(
