@@ -27,12 +27,32 @@ function mises_book_content_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Book Content',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-book-content field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-book-content field-group-tab',
+        'description' => '<p>Book content can be organized as chapters OR as pages within chapters. If the chapter content is longer than one vertical screen or has subtitles, the chapter can (and should) be broken into pages.</p>
+<p>To add new HTML content:</p>
+<ol><li>Begin by clicking <b>"Add a new Book Chapter"</b>. Enter chapter title (required) and chapter content (optional).</li>
+<li>To add a page, click <b>"Add a new Book Page"</b> below the Chapter Content field. Enter the Page title and content. Click <b>"Create Book Page"</b> to save.</li>
+<li>Repeat for all pages in that chapter.</li>
+<li>Click <b>"Create Book Chapter"</b> to save the chapter and its pages.</li>
+</ol>
+<p>To edit existing HTML content:</p>
+<ol><li>Click <b>"Edit"</b> under the Operations column next to the chapter you would like to edit.</li>
+<li>Edit the Chapter Title and/or Chapter Content as needed. Click <b>"Update Book Chapter"</b> below the Pages list to save.</li>
+<li>To edit an existing page, click <b>"Edit"</b> under the Operations column next to the Page you would like to edit. Edit as needed. Click <b>"Update Book Page"</b> to save.</li>
+<li>To add a page, click <b>"Add a new Book Page"</b> below the Chapter Content field. Enter the Page title and content. Click <b>"Create Book Page"</b> to save.</li>
+<li>After updating all Chapter and/or Pages, click <b>"Update Book Chapter"</b> to save the chapter and its pages.</li>
+</ol>
+<p>Tips:</p>
+<ol><li>Create all of the other content for this Book/Digital Text (basic information, media and tagging) and save before entering Book Chapters and Pages. Then edit to create the Book Chapters and Pages.</li>
+<li>Enter one Chapter and/or Page at a time, saving after each page (to avoid losing any work). </li>
+<li>Remember to click <b>"Save"</b> at the bottom of the page to save all of your work.</li>
+<li>If the chapter content is longer than one vertical screen or has subtitles, the chapter can (and should) be broken into pages.</li>
+</ol>',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_book_content|node|book_digital_text|form'] = $field_group;
