@@ -63,12 +63,14 @@ function mises_book_digital_text_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Media',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-book-digi-text-media field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-book-digi-text-media field-group-tab',
+        'description' => '<p>Attach files for download using the fields below. Multiple files can be attached for each type.</p>
+<p>Enter the link to the related product in the <b>Link (to store)</b> field at the bottom.</p>',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_book_digi_text_media|node|book_digital_text|form'] = $field_group;

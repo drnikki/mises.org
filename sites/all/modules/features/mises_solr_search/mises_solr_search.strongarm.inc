@@ -63,12 +63,5 @@ function mises_solr_search_strongarm() {
   $strongarm->value = '-1';
   $export['facetapi:block_cache:apachesolr@solr'] = $strongarm;
 
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'search_api_solr_last_optimize';
-  $strongarm->value = 1403255149;
-  $export['search_api_solr_last_optimize'] = $strongarm;
-
   return $export;
 }

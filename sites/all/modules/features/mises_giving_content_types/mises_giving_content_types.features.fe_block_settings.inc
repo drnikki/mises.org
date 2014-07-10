@@ -34,12 +34,6 @@ function mises_giving_content_types_default_fe_block_settings() {
         'theme' => 'bootsass',
         'weight' => 0,
       ),
-      'mises_giving' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'mises_giving',
-        'weight' => 0,
-      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
