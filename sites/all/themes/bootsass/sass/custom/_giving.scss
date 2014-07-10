@@ -61,35 +61,56 @@ body {
   z-index: 5;
   background: $brand-contrast url('../images/giving/giving-header.jpg') center bottom repeat-x;
 }
-.navbar-header {
+.container > .navbar-header {
   position: relative;
   z-index: 10;
+  @media (max-width: $grid-float-breakpoint) {
+    text-align: center;
+  }
 }
 .logo.navbar-btn {
-  max-width: 380px;
+  max-width: 375px;
   border-bottom: 7px solid $brand-primary;
   background: $white;
+  display: inline-block;
 }
 #navbar {
   &.navbar-static-top {
     position: relative;
     z-index: 5;
     border-width: 0;
-    background: $brand-contrast;
-    background: rgba(0,0,0,0.1);
     text-transform: uppercase;
     font-weight: 200;
     font-size: 15px;
+    border: 0;
+    @include box-shadow(0 0 0);
     @media (min-width: $grid-float-breakpoint) {
       padding-top: $grid-gutter-width * 2;
+      background: $brand-contrast;
+      background: rgba(0,0,0,0.1);
       .navbar-collapse {
         float: left;
       }
     }
   }
 }
-.navbar-default .navbar-toggle .icon-bar {
-  background: $brand-contrast;
+.navbar-collapse {
+  border: 0;
+  @include box-shadow(0 0 0);
+}
+.navbar-default .navbar-toggle {
+  border-color: $brand-contrast-light;
+  background: $brand-contrast-dark;
+  &:hover, &:focus {
+    background: $brand-secondary;
+    .icon-bar {
+      background: $white;
+    }
+  }
+ .icon-bar {
+  background: $brand-contrast-light;
+}
+  
 }
 // Soft transitions for all menu items
 ul.menu {
@@ -111,17 +132,14 @@ span.glyphicon {
   background: $brand-contrast url('../images/giving/giving-bg-lg.jpg') center center no-repeat;
   background-size: cover;
   .container, .row {
-    //height: 140px;
     .giving-front & {
-      min-height: 525px;
-    }
-    .giving-inner & {
-      //height: 260px;
+      @media (min-width: $screen-md) {
+        min-height: 525px;
+      }
     }
   }
-  .col-sm-4 {
-    //top: -moz-calc(100% - 53px);
-    //top: calc(100% - 53px);
+  .col-sm-8, .col-sm-4 {
+    top: 0;
   }
   .panel {
     margin-bottom: 0;
@@ -207,7 +225,7 @@ span.glyphicon {
     }
     .body {
       margin: 0 0 15px;
-      @media (max-width: $screen-sm) {
+      @media (max-width: $screen-sm-max) {
         & {
           display: none;
         }
@@ -253,7 +271,9 @@ span.glyphicon {
 
 /* SUB-MENU */
 #block-menu-menu-giving-sub-menu {
-  margin-bottom: $grid-gutter-width;
+  .sidebar-right & {
+    margin-bottom: $grid-gutter-width;
+  }
   ul.nav {
     > li {
       border-bottom: 1px solid $gray-light;
@@ -306,7 +326,7 @@ span.glyphicon {
   h2:nth-of-type(2n) {
     color: $brand-secondary;
   }
-  .col-sm-8 {
+  > .container > .col-sm-8 {
     padding-top: $grid-gutter-width;
   }
 }
