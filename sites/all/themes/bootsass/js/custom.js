@@ -34,10 +34,11 @@ var Drupal = Drupal || {};
         $('.row.video .col-xs-6 .panel-heading .panel-title').equalHeight();
         $('.row.video .col-xs-6 .panel-body').equalHeight();
         $('.row.video .col-xs-6 .panel-footer').equalHeight();
+        $('.profile-item').equalHeight();
 
         //var sidebarHeight = $("div.region-sidebar-second").height() + $("div.region-sidebar-second-top").height();
         var sidebarHeight = $(".sidebar").height();
-        console.log('sidebarHeight ' + sidebarHeight);
+        //console.log('sidebarHeight ' + sidebarHeight);
         $("div.main-content").css({ "min-height": sidebarHeight }); // Roger's magic!
         
       };
@@ -74,6 +75,24 @@ var Drupal = Drupal || {};
         $('.block-mailchimp-lists h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
         $('#block-custom-search-blocks-1 h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
         $('a.external-link').append('<span class="glyphicon glyphicon-new-window"></span> ');
+        $('.social-media-categories a').append('<span class="glyphicon glyphicon-new-window"></span> ');
+        $('.view-giving-stories .panel-footer a').append(' <span class="glyphicon glyphicon-chevron-right"></span> ');
+        
+        // Bootstrap collapse/accordion scroll Reference: http://www.bootply.com/101026
+        $('#book-html').on('shown.bs.collapse', function () {
+          var panel = $(this).find('.in');
+          $('html, body').animate({
+                scrollTop: panel.offset().top - 100
+          }, 500);
+        });
+        
+        // Bootstrap collapse open pages and reopen chapter content when chapter is closed 
+        $('#book-html').on('hidden.bs.collapse', function () {
+          var hiddenToggle = $(this).find('h2.collapsed');
+          var hiddenPanel = $(hiddenToggle).parents('.panel');
+          $(hiddenPanel).find('.in').collapse('hide');
+          $(hiddenPanel).find('.chapter-intro').collapse('show');
+        });
         
         
       }); 

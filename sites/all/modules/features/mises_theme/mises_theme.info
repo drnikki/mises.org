@@ -118,6 +118,7 @@ features[file_display][] = video__wide_player__media_youtube_image
 features[file_display][] = video__wide_player__media_youtube_video
 features[flexslider_optionset][] = node_slideshow
 features[image][] = block_teaser
+features[image][] = footer_icon_32x32
 features[image][] = list_teaser
 features[image][] = sidebar_horizontal
 features[image][] = sidebar_vertical

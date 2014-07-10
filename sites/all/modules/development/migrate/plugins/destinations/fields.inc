@@ -12,15 +12,6 @@ class MigrateFieldsEntityHandler extends MigrateDestinationHandler {
 
   /**
    * Implementation of MigrateDestinationHandler::fields().
-   *
-   * @param $entity_type
-   *  The entity type (node, user, etc.) for which to list fields.
-   * @param $bundle
-   *  The bundle (article, blog, etc.), if any, for which to list fields.
-   * @param Migration $migration
-   *  Optionally, the migration providing the context.
-   * @return array
-   *  An array keyed by field name, with field descriptions as values.
    */
   public function fields($entity_type, $bundle, $migration = NULL) {
     $fields = array();
@@ -206,7 +197,7 @@ class MigrateDefaultFieldHandler extends MigrateFieldHandler {
       // Handle multivalue arguments (especially for subfields).
       $delta_arguments = array();
       foreach ($arguments as $name => $argument) {
-        if (is_array($argument) && isset($argument[$delta])) {
+        if (is_array($argument) && array_key_exists($delta, $argument)) {
           $delta_arguments[$name] = $argument[$delta];
         }
         else {
@@ -520,12 +511,21 @@ class MigrateTaxonomyTermReferenceFieldHandler extends MigrateFieldHandler {
       // If we're ignoring case, change both the matched term name keys and the
       // source values to lowercase.
       if (isset($arguments['ignore_case']) && $arguments['ignore_case']) {
+        $ignore_case = TRUE;
         $existing_terms = array_change_key_case($existing_terms);
-        $values = array_map('strtolower', $values);
+        foreach ($values as $value) {
+          $lower_values[$value] = strtolower($value);
+        }
+      }
+      else {
+        $ignore_case = FALSE;
       }
       foreach ($values as $value) {
         if (isset($existing_terms[$value])) {
           $tids[] = $existing_terms[$value];
+        }
+        elseif ($ignore_case && isset($existing_terms[$lower_values[$value]])) {
+          $tids[] = $existing_terms[$lower_values[$value]];
         }
         elseif (!empty($arguments['create_term'])) {
           $new_term = new stdClass();

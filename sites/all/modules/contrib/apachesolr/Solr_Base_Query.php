@@ -405,7 +405,6 @@ class SolrBaseQuery extends SolrFilterSubQuery implements DrupalSolrQueryInterfa
     'hl.regex.slop' => TRUE,
     'hl.regex.pattern' => TRUE,
     'hl.regex.maxAnalyzedChars' => TRUE,
-    'mm' => TRUE,
     'spellcheck' => TRUE,
   );
 

@@ -33,7 +33,16 @@ function mises_blog_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 5,
+      ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -46,12 +55,21 @@ function mises_blog_field_default_field_instances() {
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 120,
+          'trim_options' => array(
+            'text' => 0,
+          ),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_default',
-        'weight' => 0,
+        'type' => 'smart_trim_format',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -61,7 +79,7 @@ function mises_blog_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'trim',
-          'trim_length' => 240,
+          'trim_length' => 300,
           'trim_options' => array(
             'text' => 0,
           ),
@@ -149,7 +167,13 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 29,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -161,7 +185,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -188,7 +212,7 @@ function mises_blog_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 35,
+      'weight' => 46,
     ),
   );
 
@@ -219,6 +243,16 @@ function mises_blog_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 6,
       ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
       'sidebar_teaser' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -231,12 +265,8 @@ function mises_blog_field_default_field_instances() {
       ),
       'simple_teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -264,7 +294,7 @@ function mises_blog_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 32,
+      'weight' => 43,
     ),
   );
 
@@ -296,6 +326,17 @@ function mises_blog_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 7,
       ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'links' => 1,
+          'view_mode' => 'author_full_name',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 2,
+      ),
       'sidebar_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -306,7 +347,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -325,10 +366,78 @@ function mises_blog_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-blog-field_featured_content'
+  $field_instances['node-blog-field_featured_content'] = array(
+    'bundle' => 'blog',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
+        'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_featured_content',
+    'label' => 'Featured',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
+      'type' => 'options_buttons',
+      'weight' => 42,
     ),
   );
 
@@ -353,7 +462,13 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 28,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -365,7 +480,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -392,7 +507,7 @@ function mises_blog_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 34,
+      'weight' => 45,
     ),
   );
 
@@ -418,10 +533,24 @@ function mises_blog_field_default_field_instances() {
         'weight' => 8,
       ),
       'full' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'wide_player',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 6,
+      ),
+      'print' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'wide_player',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 6,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -433,7 +562,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -486,6 +615,16 @@ function mises_blog_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 5,
       ),
+      'print' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
       'sidebar_teaser' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -498,13 +637,9 @@ function mises_blog_field_default_field_instances() {
       ),
       'simple_teaser' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 4,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -531,7 +666,7 @@ function mises_blog_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 33,
+      'weight' => 44,
     ),
   );
 
@@ -541,6 +676,7 @@ function mises_blog_field_default_field_instances() {
   t('Austrian School');
   t('Author');
   t('Body');
+  t('Featured');
   t('Level');
   t('Media');
   t('Topics');

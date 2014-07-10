@@ -33,5 +33,14 @@ function bootsass_preprocess_html(&$variables) {
     } else {
       $variables['classes_array'][] = drupal_clean_css_identifier($alias);
     }
-  } 
+  }
+  $theme_path = drupal_get_path('theme', 'bootsass');
+  if ($aliases[0] == 'giving') {
+      drupal_add_css($theme_path . '/stylesheets/giving.css', array('weight' => CSS_THEME));
+      $variables['classes_array'][] = 'giving-theme';
+  } else {
+      drupal_add_css($theme_path . '/stylesheets/styles.css', array('weight' => CSS_THEME));
+      $variables['classes_array'][] = 'main-theme';
+  }
+
 }

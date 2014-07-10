@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mise Admin Pages feature.
+ */
+
+include_once 'mise_admin_pages.features.inc';

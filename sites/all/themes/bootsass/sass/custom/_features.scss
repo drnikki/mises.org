@@ -21,24 +21,6 @@
 /* SLIDESHOW 
 *  Override flexslide styles
 */
-.flexslider {
-  @include box-shadow(none);
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  .flex-direction-nav a {
-    text-shadow: none;
-    &:before {
-      font-size: 30px;
-    }
-  }
-
-}
-#slideshow, #media, #image {
-  margin-right: $grid-gutter-width;
-  width: 240px; // @TDOO: Check width
-}
 
 /*
 * TAGS ON TEASERS AND NODES
@@ -320,20 +302,6 @@ ul.addtocal_menu {
     }
   }
 }
-/* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
-.media-youtube-video {
-	position: relative;
-	padding-top: 25px;
-	padding-bottom: 56.25%; /* 16:9 */
-	height: 0;
-}
-.media-youtube-video iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
 
 /* LIST GROUPS AND ATTACHMENT LISTS */
 .list-group {
@@ -402,5 +370,47 @@ ul.addtocal_menu {
     @include icon-block(40px,10px,10px);
     @include icon-image('../images/icons/icon-blog.png');
     @include icon-color($brand-secondary);
+  }
+}
+/* DIRECTORY */
+.view-profile-lists {
+  .views-summary {
+    display: block;
+    text-align: center;
+    padding: $grid-gutter-width;
+    word-break: break-word;
+    span {
+      padding: 0 $padding-xs-horizontal;
+    }
+  }
+}
+.profile-item {
+  clear: right;
+}
+/* SOCIAL MEDIA PAGES */
+.social-media-submenu {
+  a {
+    font-weight: bold;
+    text-transform: uppercase;
+    &.active {
+      background: $gray-lighter;
+    }
+  }
+  img {
+    margin-right: $padding-xs-horizontal;
+  }
+}
+.social-media-categories {
+  a {
+    span.glyphicon {
+      @include glyph-size(24px);
+      margin-left: $padding-base-vertical;
+    }
+    &:hover {
+      color: $brand-secondary;
+      span.glyphicon {
+        background-color: $brand-secondary;
+      }
+    }
   }
 }

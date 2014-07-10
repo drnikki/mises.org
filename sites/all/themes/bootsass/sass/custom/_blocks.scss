@@ -319,6 +319,7 @@ ul.menu {
     margin-top: 0;
     text-transform: uppercase;
     font-size: $font-size-h5;
+    color: $white;
   }
 }
 /* SIDEBAR MENU */
@@ -337,6 +338,16 @@ ul.menu {
     }
     > li + li {
       border-top: 1px solid $gray;
+    }
+    > li.active a {
+        background-color: $gray;
+    }
+  }
+  .view-footer {
+    .nav {
+      > li {
+        border-top: 1px solid $gray;
+      }
     }
   }
 }

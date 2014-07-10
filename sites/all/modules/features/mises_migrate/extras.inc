@@ -65,4 +65,10 @@ function course_csv() {
     $rows[] = implode(',',array($result->id, '"'.$result->fullname.'"', ''));
   }
   dprint_r(implode("\n", $rows));
+  $query = db_query("SELECT old_url, new_url FROM {mises_migrate_url_map}");
+  while($result = $query->fetch()) {
+    $result->old_url = str_replace('"','', $result->old_url);
+    $items[] = implode(',',(array)$result);
+  }
+  print implode($items, "<br />");
 }

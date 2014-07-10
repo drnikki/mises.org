@@ -105,6 +105,21 @@ function mises_static_page_field_default_field_instances() {
         'type' => 'flexslider',
         'weight' => 0,
       ),
+      'vertical_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(
+            0 => array(
+              'condition' => '',
+            ),
+          ),
+          'image_link' => 'content',
+          'image_style' => 'vertical_teaser',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_image',
@@ -318,6 +333,22 @@ function mises_static_page_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(
+            0 => array(
+              'condition' => 'hide_not_empty',
+              'configuration' => array(
+                'target' => 'field_media_collection',
+              ),
+            ),
+          ),
+        ),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -415,6 +446,16 @@ function mises_static_page_field_default_field_instances() {
         'type' => 'field_collection_entity_flexslider',
         'weight' => 1,
       ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -463,6 +504,12 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 15,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -518,6 +565,16 @@ function mises_static_page_field_default_field_instances() {
         ),
         'type' => 'field_collection_fields',
         'weight' => 5,
+      ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
