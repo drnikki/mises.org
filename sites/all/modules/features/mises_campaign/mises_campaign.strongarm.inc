@@ -108,7 +108,7 @@ function mises_campaign_strongarm() {
         'custom_settings' => FALSE,
       ),
       'simple_teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'single_term' => array(
         'custom_settings' => FALSE,

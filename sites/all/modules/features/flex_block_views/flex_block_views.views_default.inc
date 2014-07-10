@@ -212,7 +212,7 @@ To find a specific block, use the filters to narrow the list of blocks. You can 
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Field: Display Title (field_display_title) */
+  /* Filter criterion: Field: Resource Sub-Title (field_display_title) */
   $handler->display->display_options['filters']['field_display_title_value']['id'] = 'field_display_title_value';
   $handler->display->display_options['filters']['field_display_title_value']['table'] = 'field_data_field_display_title';
   $handler->display->display_options['filters']['field_display_title_value']['field'] = 'field_display_title_value';
@@ -1258,6 +1258,14 @@ To find a specific block, use the filters to narrow the list of blocks. You can 
 
   /* Display: Sidebar */
   $handler = $view->new_display('block', 'Sidebar', 'block_19');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'sidebar_teaser';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1284,6 +1292,14 @@ To find a specific block, use the filters to narrow the list of blocks. You can 
 
   /* Display: Featured Left */
   $handler = $view->new_display('block', 'Featured Left', 'block_8');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'block_teaser';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

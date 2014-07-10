@@ -1,7 +1,7 @@
 // CUSTOM MIXINS
 // --------------------------------------------------
 
-// For background images
+// For text-replacement background images
 @mixin background-image($image, $height, $width) {
   display: block;
   width: $width;
@@ -120,7 +120,7 @@
   }
 }
 
-// For Button background images
+// For Button background images -- used to convert a tags to buttons
 @mixin button-image($color, $image, $height, $width) {
   display: inline-block;
   width: $width;
@@ -128,3 +128,35 @@
   background: $color url($image) right center no-repeat;
   line-height: $height;
 }
+
+// Horizontal and vertical center
+@mixin center($axis: "both"){
+    position:absolute;
+    @if $axis == "y"{
+        top:50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @if $axis == "x"{
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    @if $axis == "both"{
+        top:50%;
+        left:50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+}
+

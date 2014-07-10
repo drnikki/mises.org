@@ -27,15 +27,15 @@ function mises_giving_structure_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'fieldblock-e32400f688b5b1150d46199e8c938d47' => array(
-          'module' => 'fieldblock',
-          'delta' => 'e32400f688b5b1150d46199e8c938d47',
+        'views-giving_feature_blocks-block_1' => array(
+          'module' => 'views',
+          'delta' => 'giving_feature_blocks-block_1',
           'region' => 'featured_left',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
-        'menu-menu-giving-sub-menu' => array(
-          'module' => 'menu',
-          'delta' => 'menu-giving-sub-menu',
+        'views-giving_flex_blocks-block_7' => array(
+          'module' => 'views',
+          'delta' => 'giving_flex_blocks-block_7',
           'region' => 'featured_right',
           'weight' => '-10',
         ),
@@ -102,13 +102,13 @@ function mises_giving_structure_context_default_contexts() {
           'module' => 'views',
           'delta' => 'giving_feature_blocks-block',
           'region' => 'featured_left',
-          'weight' => '-10',
+          'weight' => '10',
         ),
-        'views-flex_blocks-block_18' => array(
-          'module' => 'views',
-          'delta' => 'flex_blocks-block_18',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
+        'menu-menu-giving-sub-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-giving-sub-menu',
+          'region' => 'featured_right',
+          'weight' => '5',
         ),
         'views-giving_stories-block_1' => array(
           'module' => 'views',
@@ -174,8 +174,6 @@ function mises_giving_structure_context_default_contexts() {
     'path' => array(
       'values' => array(
         'giving/*' => 'giving/*',
-        '~giving/impact' => '~giving/impact',
-        '~giving/now' => '~giving/now',
       ),
     ),
   );
@@ -206,17 +204,17 @@ function mises_giving_structure_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
+        'menu-menu-giving-sub-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-giving-sub-menu',
+          'region' => 'sidebar_second_top',
+          'weight' => '-9',
+        ),
         'views-giving_flex_blocks-block_19' => array(
           'module' => 'views',
           'delta' => 'giving_flex_blocks-block_19',
           'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'menu-menu-giving-sub-menu' => array(
-          'module' => 'menu',
-          'delta' => 'menu-giving-sub-menu',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-5',
         ),
         'views-giving_stories-block_1' => array(
           'module' => 'views',
@@ -258,12 +256,6 @@ function mises_giving_structure_context_default_contexts() {
           'delta' => 'membership_levels-block',
           'region' => 'content',
           'weight' => '20',
-        ),
-        'views-flex_blocks-block_19' => array(
-          'module' => 'views',
-          'delta' => 'flex_blocks-block_19',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
         ),
       ),
     ),

@@ -102,7 +102,7 @@ function mises_giving_story_strongarm() {
         'custom_settings' => FALSE,
       ),
       'simple_teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'author_full_name' => array(
         'custom_settings' => FALSE,

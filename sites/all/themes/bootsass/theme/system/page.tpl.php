@@ -137,7 +137,7 @@
 
 <div class="main-container">
 
-  <?php if (!empty($page['featured_left']) && !empty($page['featured_right'])): ?>
+  <?php if (!empty($page['featured_left']) || !empty($page['featured_right'])): ?>
     <div class="featured">
       <div class="container">
         <div class="row">
