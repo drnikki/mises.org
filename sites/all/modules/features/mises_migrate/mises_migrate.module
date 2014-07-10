@@ -310,7 +310,8 @@ class DailyArticlesMigration extends MisesMigration {
     parent::__construct($arguments);
     $query = $this->db
       ->select('dailyarticles', 'd')
-      ->fields('d');
+      ->fields('d')
+      ->orderBy('d.ArticleId', "DESC");
     $this->source = new MigrateSourceSQL($query);
     $this->destination = new MigrateDestinationNode('library_item');
     $this->map = new MigrateSQLMap($this->machineName, array(
@@ -559,8 +560,11 @@ class DailyArticlesImageMigration extends MisesImageMigration {
       }
       $row->image = $row->ThumbnailURL;
     }
-    dd($row->ThumbnailURL);
+
     return $row;
+  }
+  public function prepare($node, $row) {
+
   }
 }
 
