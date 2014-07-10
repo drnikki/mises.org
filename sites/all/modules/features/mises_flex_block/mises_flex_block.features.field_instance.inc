@@ -78,6 +78,15 @@ function mises_flex_block_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Enter a title here if this Flex Block has a title above the image. (Most Flex Blocks have no title or should enter the title in the Teaser Text field.)',
     'display' => array(
+      'block_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_plain',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -164,6 +173,17 @@ function mises_flex_block_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'block_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -257,6 +277,15 @@ function mises_flex_block_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'block_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_plain',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'link',
@@ -273,7 +302,7 @@ function mises_flex_block_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'link_plain',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -282,7 +311,7 @@ function mises_flex_block_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'link_plain',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -332,6 +361,12 @@ function mises_flex_block_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'block_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'field_collection',
@@ -347,16 +382,24 @@ function mises_flex_block_field_default_field_instances() {
         'weight' => 7,
       ),
       'sidebar_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'small_player',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'small_player',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 3,
       ),
       'video_block_teaser' => array(
         'label' => 'hidden',
@@ -393,6 +436,12 @@ function mises_flex_block_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'You can also select a specific page (or pages) where this Flex Block should appear. This functionality works only for blocks positioned in these regions: Featured Left, Featured Right, Top Right Sidebar, Right Sidebar, Content Bottom Left, and Content Bottom Right.',
     'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -407,13 +456,13 @@ function mises_flex_block_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -444,6 +493,12 @@ function mises_flex_block_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Select the region where this Flex Block will appear.',
     'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -457,13 +512,13 @@ function mises_flex_block_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 33,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -496,6 +551,12 @@ function mises_flex_block_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Specific pages/sections where this Flex Block should appear.',
     'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -509,13 +570,13 @@ function mises_flex_block_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 32,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -548,6 +609,15 @@ function mises_flex_block_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'block_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -564,7 +634,7 @@ function mises_flex_block_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -573,7 +643,7 @@ function mises_flex_block_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'video_block_teaser' => array(
         'label' => 'hidden',
@@ -645,6 +715,12 @@ If there are more than one Flex Blocks used in the same Region <br />
 and Page/Section, this field is used to sort the blocks, with the <br />
 lowest weight first.',
     'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -658,13 +734,13 @@ lowest weight first.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 34,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
