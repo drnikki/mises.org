@@ -14,7 +14,7 @@ function mises_mailchimp_configuration_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mailchimp_api_key';
-  $strongarm->value = 'fa5464b7a80aae48578944c801530dd2-us8';
+  $strongarm->value = 'e6f27109e51579a8e4a13fb997d892e4-us1';
   $export['mailchimp_api_key'] = $strongarm;
 
   $strongarm = new stdClass();
