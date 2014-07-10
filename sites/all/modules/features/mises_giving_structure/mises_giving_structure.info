@@ -7,7 +7,6 @@ project = mises_giving_structure
 dependencies[] = context
 dependencies[] = fe_block
 dependencies[] = fe_nodequeue
-dependencies[] = fieldblock
 dependencies[] = menu
 dependencies[] = strongarm
 dependencies[] = views
