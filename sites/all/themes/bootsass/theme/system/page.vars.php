@@ -41,7 +41,7 @@ function bootsass_preprocess_page(&$variables) {
   else {
     $variables['bottom_column_class'] = ' class="col-sm-3 col-xs-6"';
     $variables['menu_footer_class'] = ' class="menu-footer"';
-    $variables['menu_footer_column_class'] = ' class="col-sm-3 col-xs-6"';
+    $variables['menu_footer_column_class'] = ' class="col-xs-6"';
   }
 
   // Container layout
@@ -63,7 +63,7 @@ function bootsass_preprocess_page(&$variables) {
       // Provide default theme wrapper function.
       $variables['secondary_nav']['#theme_wrappers'] = array('menu_tree__secondary');
     }
-    $variables['front_page'] = '/giving';
+    //$variables['front_page'] = '/giving'; Use default home page instead
   } else {
     // Use Primary nav.
     if ($variables['main_menu']) {
