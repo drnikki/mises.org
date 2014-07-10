@@ -12,6 +12,21 @@ function mises_flex_block_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|flex_block|block_teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'flex_block';
+  $ds_fieldsetting->view_mode = 'block_teaser';
+  $ds_fieldsetting->settings = array(
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|flex_block|block_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|flex_block|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'flex_block';
@@ -52,6 +67,11 @@ function mises_flex_block_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_media_collection' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|flex_block|teaser'] = $ds_fieldsetting;
 
@@ -88,6 +108,50 @@ function mises_flex_block_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|flex_block|block_teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'flex_block';
+  $ds_layout->view_mode = 'block_teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_image',
+        1 => 'field_display_title',
+        2 => 'field_teaser_text',
+        3 => 'field_image_link',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'ds_content',
+      'field_display_title' => 'ds_content',
+      'field_teaser_text' => 'ds_content',
+      'field_image_link' => 'ds_content',
+    ),
+    'limit' => array(
+      'field_image' => '1',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'panel' => 'panel',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '1',
+    'page_option_title' => '',
+  );
+  $export['node|flex_block|block_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|flex_block|teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'flex_block';
@@ -99,16 +163,18 @@ function mises_flex_block_ds_layout_settings_info() {
         0 => 'field_display_title',
         1 => 'linked_box_image',
         2 => 'field_image',
-        3 => 'field_teaser_text',
+        3 => 'field_media_collection',
+        4 => 'field_teaser_text',
       ),
       'ds_hidden' => array(
-        4 => 'field_image_link',
+        5 => 'field_image_link',
       ),
     ),
     'fields' => array(
       'field_display_title' => 'ds_content',
       'linked_box_image' => 'ds_content',
       'field_image' => 'ds_content',
+      'field_media_collection' => 'ds_content',
       'field_teaser_text' => 'ds_content',
       'field_image_link' => 'ds_hidden',
     ),

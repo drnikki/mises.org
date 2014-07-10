@@ -188,6 +188,7 @@ function mises_flex_block_field_default_field_bases() {
         'press' => 'Press',
         'economist' => 'Resources for the Economist',
         'giving_home' => 'Giving Section',
+        'node' => 'Place only on the specific page(s) below',
       ),
       'allowed_values_function' => '',
     ),
