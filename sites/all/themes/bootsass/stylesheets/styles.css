@@ -9307,7 +9307,57 @@ a.external-link:hover span.glyphicon {
   color: inherit;
 }
 
-/* line 464, ../sass/custom/_styles.scss */
+/* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+/* line 463, ../sass/custom/_styles.scss */
+.media-youtube-video {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+
+/* line 469, ../sass/custom/_styles.scss */
+.media-youtube-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* SLIDESHOW 
+*  Override flexslide styles
+*/
+/* line 479, ../sass/custom/_styles.scss */
+.flexslider {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+/* line 486, ../sass/custom/_styles.scss */
+.flexslider .flex-direction-nav li {
+  background: red;
+}
+/* line 489, ../sass/custom/_styles.scss */
+.flexslider .flex-direction-nav a {
+  text-shadow: none;
+}
+/* line 491, ../sass/custom/_styles.scss */
+.flexslider .flex-direction-nav a:before {
+  font-size: 30px;
+}
+
+/* line 497, ../sass/custom/_styles.scss */
+#slideshow, #media, #image {
+  margin-right: 20px;
+  width: 240px;
+}
+
+/* line 504, ../sass/custom/_styles.scss */
 html[contenteditable="true"] body {
   background-image: none;
 }
@@ -10463,48 +10513,24 @@ ul.menu li a, ul.menu li span {
 /* SLIDESHOW 
 *  Override flexslide styles
 */
-/* line 24, ../sass/custom/_features.scss */
-.flexslider {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-}
-/* line 30, ../sass/custom/_features.scss */
-.flexslider .flex-direction-nav a {
-  text-shadow: none;
-}
-/* line 32, ../sass/custom/_features.scss */
-.flexslider .flex-direction-nav a:before {
-  font-size: 30px;
-}
-
-/* line 38, ../sass/custom/_features.scss */
-#slideshow, #media, #image {
-  margin-right: 20px;
-  width: 240px;
-}
-
 /*
 * TAGS ON TEASERS AND NODES
 */
-/* line 46, ../sass/custom/_features.scss */
+/* line 28, ../sass/custom/_features.scss */
 .tags {
   color: #788086;
   font-size: 11px;
 }
-/* line 49, ../sass/custom/_features.scss */
+/* line 31, ../sass/custom/_features.scss */
 .tags .tag-label {
   padding-right: 5px;
   text-transform: uppercase;
 }
-/* line 53, ../sass/custom/_features.scss */
+/* line 35, ../sass/custom/_features.scss */
 .tags span:not(.tag-label) + span:before {
   content: ", ";
 }
-/* line 56, ../sass/custom/_features.scss */
+/* line 38, ../sass/custom/_features.scss */
 .tags a {
   color: #788086;
 }
@@ -10512,27 +10538,27 @@ ul.menu li a, ul.menu li span {
 /*
 * DATE AUTHOR ON TEASERS AND NODES
 */
-/* line 64, ../sass/custom/_features.scss */
+/* line 46, ../sass/custom/_features.scss */
 .group-date-author .date {
   color: #00426b;
   text-transform: uppercase;
   font-weight: 600;
 }
-/* line 69, ../sass/custom/_features.scss */
+/* line 51, ../sass/custom/_features.scss */
 .group-date-author span.author {
   padding-left: 10px;
 }
-/* line 71, ../sass/custom/_features.scss */
+/* line 53, ../sass/custom/_features.scss */
 .group-date-author span.author:before {
   display: inline-block;
   width: 14px;
   content: "\2022";
 }
-/* line 76, ../sass/custom/_features.scss */
+/* line 58, ../sass/custom/_features.scss */
 .group-date-author span.author a {
   color: #00426b;
 }
-/* line 79, ../sass/custom/_features.scss */
+/* line 61, ../sass/custom/_features.scss */
 .group-date-author span.author div, .group-date-author span.author p {
   display: inline;
   color: #00426b;
@@ -10541,21 +10567,21 @@ ul.menu li a, ul.menu li span {
 /*
 * DATE LOCATION ON TEASERS AND NODES
 */
-/* line 89, ../sass/custom/_features.scss */
+/* line 71, ../sass/custom/_features.scss */
 .group-date-location span.location {
   padding-left: 10px;
 }
-/* line 91, ../sass/custom/_features.scss */
+/* line 73, ../sass/custom/_features.scss */
 .group-date-location span.location:before {
   display: inline-block;
   width: 14px;
   content: "\2022";
 }
-/* line 96, ../sass/custom/_features.scss */
+/* line 78, ../sass/custom/_features.scss */
 .group-date-location span.location a {
   color: #00426b;
 }
-/* line 100, ../sass/custom/_features.scss */
+/* line 82, ../sass/custom/_features.scss */
 .group-date-location span.reg-link {
   padding-left: 10px;
 }
@@ -10563,7 +10589,7 @@ ul.menu li a, ul.menu li span {
 /*
 *   WIDE MEDIA PLAYER
 */
-/* line 107, ../sass/custom/_features.scss */
+/* line 89, ../sass/custom/_features.scss */
 .media-player {
   clear: both;
 }
@@ -10571,21 +10597,21 @@ ul.menu li a, ul.menu li span {
 /*
 * SHARING
 */
-/* line 114, ../sass/custom/_features.scss */
+/* line 96, ../sass/custom/_features.scss */
 .group-sharing {
   clear: both;
   padding: 16px 0;
   border-bottom: 1px solid #c8cdd0;
 }
-/* line 118, ../sass/custom/_features.scss */
+/* line 100, ../sass/custom/_features.scss */
 .group-sharing .copyright {
   padding-top: 16px;
 }
-/* line 121, ../sass/custom/_features.scss */
+/* line 103, ../sass/custom/_features.scss */
 .group-sharing .print {
   padding-top: 16px;
 }
-/* line 123, ../sass/custom/_features.scss */
+/* line 105, ../sass/custom/_features.scss */
 .group-sharing .print .glyphicon, .group-sharing .print .pagination > li.prev a, .pagination > li.prev .group-sharing .print a, .group-sharing .print .pagination > li.next a, .pagination > li.next .group-sharing .print a, .group-sharing .print .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-prev .group-sharing .print a, .group-sharing .print .sidebar .pager > li.date-next a, .sidebar .pager > li.date-next .group-sharing .print a {
   top: 4px;
   width: 25px;
@@ -10595,28 +10621,28 @@ ul.menu li a, ul.menu li span {
   font-size: 25px;
 }
 
-/* line 133, ../sass/custom/_features.scss */
+/* line 115, ../sass/custom/_features.scss */
 #widgets-element-addthis-share {
   height: 62px;
 }
-/* line 135, ../sass/custom/_features.scss */
+/* line 117, ../sass/custom/_features.scss */
 #widgets-element-addthis-share .widgets-element {
   padding-right: 5px;
 }
-/* line 138, ../sass/custom/_features.scss */
+/* line 120, ../sass/custom/_features.scss */
 #widgets-element-addthis-share .addthis_counter .addthis_button_expanded {
   height: 37px;
 }
 
-/* line 142, ../sass/custom/_features.scss */
+/* line 124, ../sass/custom/_features.scss */
 #bottom-social-share {
   padding: 8px 0 24px;
 }
-/* line 144, ../sass/custom/_features.scss */
+/* line 126, ../sass/custom/_features.scss */
 #bottom-social-share .social-widget {
   display: inline-block;
 }
-/* line 146, ../sass/custom/_features.scss */
+/* line 128, ../sass/custom/_features.scss */
 #bottom-social-share .social-widget.facebook-widget {
   position: relative;
   top: -7px;
@@ -10626,14 +10652,14 @@ ul.menu li a, ul.menu li span {
 /*
 * FOOTNOTES GROUP -- MAY ABSTRACT THIS
 */
-/* line 160, ../sass/custom/_features.scss */
+/* line 142, ../sass/custom/_features.scss */
 .group-footnotes h3 {
   color: #38709e;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 15px;
 }
-/* line 166, ../sass/custom/_features.scss */
+/* line 148, ../sass/custom/_features.scss */
 .group-footnotes p {
   font-size: 13px;
 }
@@ -10641,7 +10667,7 @@ ul.menu li a, ul.menu li span {
 /*
 * COMMENTING
 */
-/* line 174, ../sass/custom/_features.scss */
+/* line 156, ../sass/custom/_features.scss */
 .comment-title h3 {
   color: #38709e;
   text-transform: uppercase;
@@ -10650,15 +10676,15 @@ ul.menu li a, ul.menu li span {
 /*
 * PHOTO ALBUM
 */
-/* line 184, ../sass/custom/_features.scss */
+/* line 166, ../sass/custom/_features.scss */
 .view-photo-album .view-content {
   padding: 16px 16px 6px;
 }
-/* line 188, ../sass/custom/_features.scss */
+/* line 170, ../sass/custom/_features.scss */
 .view-photo-album .views-row {
   padding-bottom: 6px;
 }
-/* line 191, ../sass/custom/_features.scss */
+/* line 173, ../sass/custom/_features.scss */
 .view-photo-album img {
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -10666,7 +10692,7 @@ ul.menu li a, ul.menu li span {
   border: 3px solid #c8cdd0;
   border-radius: 0%;
 }
-/* line 195, ../sass/custom/_features.scss */
+/* line 177, ../sass/custom/_features.scss */
 .view-photo-album img:hover {
   border-radius: 50%;
 }
@@ -10674,25 +10700,25 @@ ul.menu li a, ul.menu li span {
 /*
 * CALENDAR
 */
-/* line 205, ../sass/custom/_features.scss */
+/* line 187, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar a {
   color: white;
 }
-/* line 208, ../sass/custom/_features.scss */
+/* line 190, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table {
   margin-bottom: 16px;
   width: 100%;
 }
-/* line 211, ../sass/custom/_features.scss */
+/* line 193, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table th {
   text-align: center;
 }
-/* line 214, ../sass/custom/_features.scss */
+/* line 196, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td {
   vertical-align: middle;
   text-align: center;
 }
-/* line 217, ../sass/custom/_features.scss */
+/* line 199, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .month {
   margin: 2px auto;
   width: 30px;
@@ -10700,29 +10726,29 @@ ul.menu li a, ul.menu li span {
   border-radius: 50%;
   line-height: 30px;
 }
-/* line 223, ../sass/custom/_features.scss */
+/* line 205, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .month.mini-day-on {
   background-color: #729949;
 }
-/* line 228, ../sass/custom/_features.scss */
+/* line 210, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td.today .month {
   background-color: #206093;
 }
-/* line 232, ../sass/custom/_features.scss */
+/* line 214, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .calendar-empty {
   display: none;
 }
-/* line 237, ../sass/custom/_features.scss */
+/* line 219, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar .date-nav-wrapper .date-heading h3 {
   font-size: 15px;
 }
-/* line 241, ../sass/custom/_features.scss */
+/* line 223, ../sass/custom/_features.scss */
 .view-mises-calendar .pager {
   margin: 0;
 }
 
 /* overrides */
-/* line 247, ../sass/custom/_features.scss */
+/* line 229, ../sass/custom/_features.scss */
 .date-nav-wrapper .date-nav {
   margin: 0 0 16px;
   padding: 0;
@@ -10731,14 +10757,14 @@ ul.menu li a, ul.menu li span {
 /*
 * EVENT PAGE
 */
-/* line 257, ../sass/custom/_features.scss */
+/* line 239, ../sass/custom/_features.scss */
 #registration-form {
   clear: both;
   margin-top: 16px;
 }
 
 /* Add to calendar */
-/* line 262, ../sass/custom/_features.scss */
+/* line 244, ../sass/custom/_features.scss */
 .addtocal {
   position: relative;
   display: inline-block;
@@ -10749,14 +10775,14 @@ ul.menu li a, ul.menu li span {
   white-space: nowrap;
   cursor: pointer;
 }
-/* line 271, ../sass/custom/_features.scss */
+/* line 253, ../sass/custom/_features.scss */
 .addtocal:before {
   position: absolute;
   left: 999px;
   content: "\e109";
   font-family: 'Glyphicons Halflings';
 }
-/* line 277, ../sass/custom/_features.scss */
+/* line 259, ../sass/custom/_features.scss */
 .addtocal:hover:after {
   position: absolute;
   bottom: 16px;
@@ -10773,7 +10799,7 @@ ul.menu li a, ul.menu li span {
   font-size: 13px;
 }
 
-/* line 294, ../sass/custom/_features.scss */
+/* line 276, ../sass/custom/_features.scss */
 ul.addtocal_menu {
   position: absolute;
   z-index: 50;
@@ -10789,60 +10815,41 @@ ul.addtocal_menu {
   list-style-type: none;
   text-transform: none;
 }
-/* line 308, ../sass/custom/_features.scss */
+/* line 290, ../sass/custom/_features.scss */
 ul.addtocal_menu li {
   margin: 0px;
   padding: 0px;
 }
-/* line 311, ../sass/custom/_features.scss */
+/* line 293, ../sass/custom/_features.scss */
 ul.addtocal_menu li a {
   display: block;
   padding: 5px;
   color: #38709e;
   text-decoration: none;
 }
-/* line 316, ../sass/custom/_features.scss */
+/* line 298, ../sass/custom/_features.scss */
 ul.addtocal_menu li a:hover {
   background: #e4ebee;
   text-decoration: none;
 }
 
-/* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
-/* line 324, ../sass/custom/_features.scss */
-.media-youtube-video {
-  position: relative;
-  padding-top: 25px;
-  padding-bottom: 56.25%;
-  /* 16:9 */
-  height: 0;
-}
-
-/* line 330, ../sass/custom/_features.scss */
-.media-youtube-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 /* LIST GROUPS AND ATTACHMENT LISTS */
-/* line 339, ../sass/custom/_features.scss */
+/* line 307, ../sass/custom/_features.scss */
 .list-group, .attachments ul {
   overflow: hidden;
 }
-/* line 341, ../sass/custom/_features.scss */
+/* line 309, ../sass/custom/_features.scss */
 .list-group h3, .attachments ul h3 {
   margin: 0;
 }
 
 /* EXTEND BOOTSTRAP COLLAPSE */
-/* line 354, ../sass/custom/_features.scss */
+/* line 322, ../sass/custom/_features.scss */
 .accordion-toggle {
   cursor: pointer;
 }
 
-/* line 357, ../sass/custom/_features.scss */
+/* line 325, ../sass/custom/_features.scss */
 .accordion-toggle:before {
   padding-right: 5px;
   content: "\e114";
@@ -10851,7 +10858,7 @@ ul.addtocal_menu li a:hover {
   font-family: 'Glyphicons Halflings';
 }
 
-/* line 363, ../sass/custom/_features.scss */
+/* line 331, ../sass/custom/_features.scss */
 .accordion-toggle.collapsed:before {
   /* symbol for "collapsed" panels */
   content: "\e080";
@@ -10859,17 +10866,17 @@ ul.addtocal_menu li a:hover {
 }
 
 /* PROFILE */
-/* line 368, ../sass/custom/_features.scss */
+/* line 336, ../sass/custom/_features.scss */
 #profile-accordion {
   clear: both;
 }
 
-/* line 372, ../sass/custom/_features.scss */
+/* line 340, ../sass/custom/_features.scss */
 .group-contact span {
   display: inline-block;
   padding-right: 5px;
 }
-/* line 377, ../sass/custom/_features.scss */
+/* line 345, ../sass/custom/_features.scss */
 .group-contact .twitter a, .group-contact .facebook a {
   display: inline-block;
   width: 20px;
@@ -10880,12 +10887,12 @@ ul.addtocal_menu li a:hover {
   background-repeat: no-repeat;
   text-indent: -9999em;
 }
-/* line 389, ../sass/custom/_features.scss */
+/* line 357, ../sass/custom/_features.scss */
 .group-contact .facebook a {
   background-image: url(/sites/default/files/public/styles/menu_icon/public/menu_icons/menu_icon_774.png);
 }
 
-/* line 394, ../sass/custom/_features.scss */
+/* line 362, ../sass/custom/_features.scss */
 .quote {
   overflow: hidden;
   margin-bottom: 20px;
@@ -10893,7 +10900,7 @@ ul.addtocal_menu li a:hover {
   position: relative;
   background-color: #e4ebee;
 }
-/* line 401, ../sass/custom/_features.scss */
+/* line 369, ../sass/custom/_features.scss */
 .quote:before {
   position: absolute;
   top: 10px;
@@ -10911,39 +10918,39 @@ ul.addtocal_menu li a:hover {
 }
 
 /* DIRECTORY */
-/* line 409, ../sass/custom/_features.scss */
+/* line 377, ../sass/custom/_features.scss */
 .view-profile-lists .views-summary {
   display: block;
   text-align: center;
   padding: 20px;
   word-break: break-word;
 }
-/* line 414, ../sass/custom/_features.scss */
+/* line 382, ../sass/custom/_features.scss */
 .view-profile-lists .views-summary span {
   padding: 0 5px;
 }
 
-/* line 419, ../sass/custom/_features.scss */
+/* line 387, ../sass/custom/_features.scss */
 .profile-item {
   clear: right;
 }
 
 /* SOCIAL MEDIA PAGES */
-/* line 424, ../sass/custom/_features.scss */
+/* line 392, ../sass/custom/_features.scss */
 .social-media-submenu a {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 427, ../sass/custom/_features.scss */
+/* line 395, ../sass/custom/_features.scss */
 .social-media-submenu a.active {
   background: #e4ebee;
 }
-/* line 431, ../sass/custom/_features.scss */
+/* line 399, ../sass/custom/_features.scss */
 .social-media-submenu img {
   margin-right: 5px;
 }
 
-/* line 437, ../sass/custom/_features.scss */
+/* line 405, ../sass/custom/_features.scss */
 .social-media-categories a span.glyphicon {
   width: 24px;
   height: 24px;
@@ -10952,11 +10959,11 @@ ul.addtocal_menu li a:hover {
   line-height: 24px;
   margin-left: 6px;
 }
-/* line 441, ../sass/custom/_features.scss */
+/* line 409, ../sass/custom/_features.scss */
 .social-media-categories a:hover {
   color: #38709e;
 }
-/* line 443, ../sass/custom/_features.scss */
+/* line 411, ../sass/custom/_features.scss */
 .social-media-categories a:hover span.glyphicon {
   background-color: #38709e;
 }

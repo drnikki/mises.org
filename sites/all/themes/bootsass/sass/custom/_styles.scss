@@ -459,6 +459,46 @@ a.external-link {
   color: inherit;
 }
 
+/* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+.media-youtube-video {
+	position: relative;
+	padding-top: 25px;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+.media-youtube-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/* SLIDESHOW 
+*  Override flexslide styles
+*/
+.flexslider {
+  @include box-shadow(none);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  .flex-direction-nav {
+    li {
+      background: red;
+    }
+    a {
+       text-shadow: none;
+       &:before {
+         font-size: 30px;
+       }
+    }    
+  }
+}
+#slideshow, #media, #image {
+  margin-right: $grid-gutter-width;
+  width: 240px; // @TDOO: Check width
+}
+
 // CKEDITOR
 html[contenteditable="true"] {
   body {

@@ -19,13 +19,13 @@ function bootsass_preprocess_page(&$variables) {
      
 
   // Add information about the number of sidebars.
-  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+  if (!empty($variables['page']['sidebar_first']) && (!empty($variables['page']['sidebar_second']) || !empty($variables['page']['sidebar_second_top']))) {
     $variables['content_column_class'] = ' class="col-sm-6"';
   }
   elseif (!empty($variables['page']['sidebar_first'])) {
     $variables['content_column_class'] = ' class="col-sm-10"';
   }
-  elseif (!empty($variables['page']['sidebar_second'])) {
+  elseif (!empty($variables['page']['sidebar_second']) || !empty($variables['page']['sidebar_second_top'])) {
     $variables['content_column_class'] = ' class="col-sm-8"';
   }
   else {
