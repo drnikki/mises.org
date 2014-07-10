@@ -1,6 +1,8 @@
 <?php
 function mises_migrate_init() {
   require_once('mises.media.inc');
+    require_once('extras.inc');
+   // generate_url_mappings();
 }
 
 
@@ -445,6 +447,7 @@ class ProductMigration extends MisesMigration {
     $row->imageurl = 'http://store.mises.org'.str_replace("~", '',$row->imageurl);
     return $row;
   }
+
 }
 
 
@@ -472,6 +475,9 @@ class DocumentAuthorsMigration extends MisesMigration {
   public function prepareRow($row) {
     $row->name = $this->getFullName($row);
     return $row;
+  }
+  public function prepare($node, $row) {
+    $this->insert_mapping_url($node->nid, $row->AuthorId, 'Author', $node->title);
   }
 }
 

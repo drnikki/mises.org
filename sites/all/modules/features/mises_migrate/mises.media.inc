@@ -42,9 +42,9 @@ class DocumentFileDocumentMigration extends MisesFileMigration {
         // some of these image links are broken lolz, 
         // lets fix them
         if($row->URL != '/') {
-          $row->URL = '/'.$row->ThumbnailURL;
+          $row->URL = '/'.$row->URL;
         }
-        $row->URL = 'http://mises.org'.$row->ThumbnailURL;
+        $row->URL = 'http://mises.org'.$row->URL;
       }
 	$row->file = $row->URL;
     return $row;
