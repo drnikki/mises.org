@@ -63,6 +63,12 @@ function about_mises_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-7',
         ),
+        'views-7203e170e5e3e93b68848901695fed93' => array(
+          'module' => 'views',
+          'delta' => '7203e170e5e3e93b68848901695fed93',
+          'region' => 'sidebar_second',
+          'weight' => '-6',
+        ),
         'views-daily_landing-books' => array(
           'module' => 'views',
           'delta' => 'daily_landing-books',
