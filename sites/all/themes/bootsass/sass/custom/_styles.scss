@@ -267,6 +267,17 @@ body.not-logged-in {
       }
       a {
         color: $white;
+        &.subscribe {
+          color: $brand-contrast-light;
+        }
+        .glyphicon {
+          background: $brand-contrast;
+          @include glyph-size($font-size-base * 2);
+        }
+        &:hover .glyphicon {
+          background: $white;
+          color: $brand-contrast;
+        }
       }
     }
   }
