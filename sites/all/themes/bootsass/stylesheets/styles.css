@@ -9593,53 +9593,55 @@ body.section-jobs .main-content .shield .icon, body.section-profile .main-conten
 /* line 42, ../sass/custom/_landing.scss */
 .view-homepage-hero .featured-block .overlay h3 {
   margin-top: 0;
+  color: white;
+  font-size: 18px;
 }
-/* line 45, ../sass/custom/_landing.scss */
+/* line 47, ../sass/custom/_landing.scss */
 .view-homepage-hero .featured-block .overlay p {
   color: #e4ebee;
 }
 
 /* HOMEPAGE TOP RIGHT MENU */
 /* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
-/* line 55, ../sass/custom/_landing.scss */
+/* line 57, ../sass/custom/_landing.scss */
 .main-content .node-teaser {
   padding: 20px 0 0;
 }
-/* line 57, ../sass/custom/_landing.scss */
+/* line 59, ../sass/custom/_landing.scss */
 .main-content .node-teaser:after {
   display: block;
-  content: '';
   visibility: visible;
-  height: 1px;
-  width: calc(100% - 20px);
-  width: -moz-calc(100% - 20px);
-  border-bottom: 1px solid #c8cdd0;
   margin: 0 auto;
   padding-top: 20px;
+  width: calc(100% - 20px);
+  width: -moz-calc(100% - 20px);
+  height: 1px;
+  border-bottom: 1px solid #c8cdd0;
+  content: '';
 }
-/* line 68, ../sass/custom/_landing.scss */
+/* line 70, ../sass/custom/_landing.scss */
 .main-content .node-teaser .image {
   margin-top: 5px;
 }
 
 /* LANDING LISTS */
-/* line 77, ../sass/custom/_landing.scss */
+/* line 79, ../sass/custom/_landing.scss */
 .front .landing-list .node-teaser:after {
   display: none;
 }
-/* line 81, ../sass/custom/_landing.scss */
+/* line 83, ../sass/custom/_landing.scss */
 .landing-list .image {
   margin-top: 5px;
 }
-/* line 84, ../sass/custom/_landing.scss */
+/* line 86, ../sass/custom/_landing.scss */
 .landing-list .tags {
   padding-top: 5px;
 }
-/* line 87, ../sass/custom/_landing.scss */
+/* line 89, ../sass/custom/_landing.scss */
 .landing-list h2.teaser-title {
   margin-top: 0;
 }
-/* line 91, ../sass/custom/_landing.scss */
+/* line 93, ../sass/custom/_landing.scss */
 .landing-list .view-footer span.glyphicon {
   width: 22px;
   height: 22px;
@@ -9648,63 +9650,67 @@ body.section-jobs .main-content .shield .icon, body.section-profile .main-conten
   line-height: 22px;
 }
 
-/* line 98, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .views-row-1 {
+/* line 100, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .result-1 {
   background-color: #e4ebee;
 }
-/* line 100, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .views-row-1 .node-teaser {
+/* line 102, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .result-1 .node-teaser {
   padding: 0;
 }
-/* line 102, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .views-row-1 .node-teaser:after {
+/* line 104, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .result-1 .node-teaser:after {
   display: none;
 }
-/* line 107, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .views-row-1 .group-right:before {
+/* line 109, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .result-1 .group-right:before {
   display: block;
   content: "Today's Article";
 }
-/* line 112, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .views-row-1 .image {
+/* line 113, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .result-1 .group-right:first-child {
+  padding-left: 20px;
+}
+/* line 117, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .result-1 .image {
   margin-top: 0;
 }
-/* line 115, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .views-row-1 .tags {
+/* line 120, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .result-1 .tags {
   margin-top: 0;
   padding: 10px;
   background-color: #38709e;
   color: white;
 }
-/* line 120, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .views-row-1 .tags a {
+/* line 125, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .result-1 .tags a {
   color: white;
 }
-/* line 124, ../sass/custom/_landing.scss */
-.page-taxonomy-term-147 .landing-list .views-row-1 .group-right {
+/* line 129, ../sass/custom/_landing.scss */
+.page-taxonomy-term-147 .landing-list .result-1 .group-right {
   padding: 20px 10px;
 }
 
 /* LANDING PAGE */
-/* line 133, ../sass/custom/_landing.scss */
+/* line 138, ../sass/custom/_landing.scss */
 .node-landing-page.view-mode-full h2.teaser-title {
   margin-top: 6px;
 }
-/* line 136, ../sass/custom/_landing.scss */
+/* line 141, ../sass/custom/_landing.scss */
 .node-landing-page.view-mode-full .sub-heading {
   margin-top: 0;
 }
 
 /* LANDING LIBRARY PAGE */
-/* line 153, ../sass/custom/_landing.scss */
+/* line 158, ../sass/custom/_landing.scss */
 .latest-library-content.outset, .latest-library-content.resource-item.odd, .latest-library-content.group-footnotes {
-  margin-left: -10px;
   margin-right: -10px;
+  margin-left: -10px;
   padding: 0;
 }
 
 /* AUSTRIAN ECONOMICS LANDING PAGE */
-/* line 161, ../sass/custom/_landing.scss */
+/* line 166, ../sass/custom/_landing.scss */
 .austrian-econ-block img {
   border: 3px solid #788086;
 }
@@ -10976,25 +10982,25 @@ ul.addtocal_menu li a:hover {
 }
 
 /* NEWSLETTER FORM */
-/* line 456, ../sass/custom/_features.scss */
+/* line 424, ../sass/custom/_features.scss */
 .newsletter-form .mc-field-group {
   margin: 20px 0;
 }
-/* line 458, ../sass/custom/_features.scss */
+/* line 426, ../sass/custom/_features.scss */
 .newsletter-form .mc-field-group h3 {
   margin-top: 0;
 }
-/* line 462, ../sass/custom/_features.scss */
+/* line 430, ../sass/custom/_features.scss */
 .newsletter-form ul {
   list-style: none outside none;
   margin: 0;
   padding: 0;
 }
-/* line 466, ../sass/custom/_features.scss */
+/* line 434, ../sass/custom/_features.scss */
 .newsletter-form ul li {
   list-style: none outside none;
 }
-/* line 468, ../sass/custom/_features.scss */
+/* line 436, ../sass/custom/_features.scss */
 .newsletter-form ul li input {
   margin: 0 5px 0 0;
 }
