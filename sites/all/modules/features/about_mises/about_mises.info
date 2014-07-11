@@ -10,6 +10,7 @@ dependencies[] = entity
 dependencies[] = features
 dependencies[] = mailchimp_lists
 dependencies[] = menu
+dependencies[] = mises_utility
 dependencies[] = views
 features[context][] = about_mises
 features[context][] = about_mises_landing
