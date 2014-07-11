@@ -57,15 +57,9 @@ function about_mises_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
-        'mailchimp_lists-mailchimp' => array(
-          'module' => 'mailchimp_lists',
-          'delta' => 'mailchimp',
-          'region' => 'sidebar_second',
-          'weight' => '-7',
-        ),
-        'views-7203e170e5e3e93b68848901695fed93' => array(
-          'module' => 'views',
-          'delta' => '7203e170e5e3e93b68848901695fed93',
+        'mises_utility-mailchimp_custom' => array(
+          'module' => 'mises_utility',
+          'delta' => 'mailchimp_custom',
           'region' => 'sidebar_second',
           'weight' => '-6',
         ),

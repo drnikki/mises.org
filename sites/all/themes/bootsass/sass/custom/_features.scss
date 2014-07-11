@@ -446,3 +446,28 @@ ul.addtocal_menu {
     }
   }
 }
+/* NEWSLETTER FORM */
+.newsletter-form {
+  .sidebar & {
+    form {
+      @extend .padding-lg;    
+    }
+  }
+  .mc-field-group {
+    margin: $grid-gutter-width 0;
+    h3 {
+      margin-top: 0;
+    }
+  }
+  ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none outside none;
+      input {
+        margin: 0 $padding-xs-horizontal 0 0;
+      }
+    }
+  }
+}

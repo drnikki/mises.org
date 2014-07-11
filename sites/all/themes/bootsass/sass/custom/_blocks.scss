@@ -19,6 +19,9 @@
     .academy & {
       @include icon-image('../images/icons/icon-academy.png');
     }
+    .article & {
+      @include icon-image('../images/icons/icon-article.png');
+    }
     .audience &, .Biography &, .Interviews & {
       @include icon-image('../images/icons/icon-audience.png');
     }
