@@ -43,6 +43,15 @@ function mises_utility_menu() {
     'type' => MENU_NORMAL_ITEM,
   );
 
+	$url = variable_get('mises_mailchimp_custom_url', 'subscribe/mailchimp');
+	$title = variable_get('mises_mailchimp_custom_url_title', 'Subscribe to mailchimp');
+  $items[$url] = array(
+    'title' => $title,
+    'page callback' => 'mises_utility_mailchimp_page',
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
   return $items;
 }
 
@@ -72,6 +81,62 @@ function mises_utility_admin() {
     '#description' => t("Turn on the header ad region."),
   );
 
+	$form['mises_mailchimp'] = array(
+		'#type' => 'fieldset', 
+		'#title' => t('Mailchimp Settings'), 
+		'#weight' => 6, 
+		'#collapsible' => TRUE, 
+		'#collapsed' => FALSE,
+	);
+	$form['mises_mailchimp']['markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Mailchimp Settings'),
+		'#markup' => '<p>The fields below will allow you to make adjustments to the custom mailchip form.</p>',
+	);
+
+  $form['mises_mailchimp']['mises_mailchimp_custom_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Page Url'),
+    '#default_value' => variable_get('mises_mailchimp_custom_url', 'subscribe/mailchimp'),
+    '#description' => t("Set the url to the mailchimp subscribe page. No leading slash. Ex: subscribe/mailchimp"),
+  );
+
+  $form['mises_mailchimp']['mises_mailchimp_custom_url_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Page Title'),
+    '#default_value' => variable_get('mises_mailchimp_custom_url_title', 'Subscribe to Mailchimp'),
+    '#description' => t("Set the url page title for the mailchimp subscribe page."),
+  );
+/*
+  $form['mises_mailchimp']['mises_mailchimp_custom_region'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Block Region'),
+    '#default_value' => variable_get('mises_mailchimp_custom_region', 'content'),
+    '#description' => t("Set the block region to place the code on the new page."),
+  );
+ */ 
+  $form['mises_mailchimp']['mises_mailchimp_custom_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Block Subject'),
+    '#default_value' => variable_get('mises_mailchimp_custom_subject', ''),
+    '#description' => t("Set the block title."),
+  );
+
+  $form['mises_mailchimp']['mises_mailchimp_custom_style'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Addtional Block Styles'),
+    '#default_value' => variable_get('mises_mailchimp_custom_style', ''),
+    '#description' => t("Set the block styles."),
+  );
+  
+	$form['mises_mailchimp']['mises_mailchimp_custom_content'] = array(
+    '#type' => 'textarea',
+    '#title' => t('PHP/HTML Code'),
+    '#default_value' => variable_get('mises_mailchimp_custom_content', ''),
+    '#description' => t("Set the block content."),
+  );
+
+  
   return system_settings_form($form);
 }
 
@@ -147,7 +212,6 @@ function mises_utility_field_info_alter(&$info){
  * Automatically disable event registration and the event date has passed
  * 
  */
-
 function mises_utility_preprocess_node(&$variables) {
   if($variables['type'] == 'event') {
     $timestamp = strtotime($variables['field_event_date'][0]['value']);
@@ -163,4 +227,44 @@ function mises_utility_preprocess_node(&$variables) {
       //drupal_set_message('Registration is open.');
     }
   }
+}
+
+function mises_utility_mailchimp_page() {
+		$block = module_invoke("mises_utility", "block_view", "mailchimp_custom");
+		$block_style = variable_get('mises_mailchimp_custom_style', '');
+		$block['content'] = str_replace($block_style, "", $block['content']);
+		//$region = variable_get('mises_mailchimp_custom_region', 'content');
+		//drupal_add_region_content("content", theme("block", $block));
+    return render($block['content']);
+  }
+
+/**
+ * Implements hook__block_info
+ * 
+ */
+function mises_utility_block_info() {    
+  $blocks['mailchimp_custom'] = array(
+    'info' => t('Mises Custom Mailchimp'),
+  );
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view
+ * 
+ */
+function mises_utility_block_view($delta = '') {
+  switch ($delta) {
+    case 'mailchimp_custom':
+      // Create your block content here
+			$subject = variable_get('mises_mailchimp_custom_subject', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+			$block_style = variable_get('mises_mailchimp_custom_style', '');
+			$content = variable_get('mises_mailchimp_custom_content', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+      $block['subject'] = $subject;
+      $block['content'] = '<div class="newsletter-form">'.$block_style.' '.$content.'<div>';
+      break;
+  }
+
+  return $block;
 }
