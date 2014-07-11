@@ -171,7 +171,7 @@ function mises_flex_block_field_default_field_instances() {
   $field_instances['node-flex_block-field_image'] = array(
     'bundle' => 'flex_block',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<p>Image should be <b>357px width</b>. Wider images will be scaled down. Smaller images will be horizontally centered in the block.</p>',
     'display' => array(
       'block_teaser' => array(
         'label' => 'hidden',
@@ -238,32 +238,45 @@ function mises_flex_block_field_default_field_instances() {
         'weight' => 27,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_image',
     'label' => 'Image',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '',
+      'max_resolution' => '357x600',
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 0,
         ),
         'allowed_types' => array(
-          0 => 'image',
+          'audio' => 0,
+          'document' => 0,
+          'ebook' => 0,
+          'image' => 'image',
+          'video' => 0,
         ),
-        'browser_plugins' => array(),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+          'youtube' => 0,
+        ),
       ),
       'type' => 'media_generic',
       'weight' => -3,
@@ -768,6 +781,7 @@ lowest weight first.',
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<p>Image should be <b>357px width</b>. Wider images will be scaled down. Smaller images will be horizontally centered in the block.</p>');
   t('Display Title');
   t('Enter a title here if this Flex Block has a title above the image. (Most Flex Blocks have no title or should enter the title in the Teaser Text field.)');
   t('Image');
