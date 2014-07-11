@@ -1,8 +1,10 @@
 <?php
 function mises_migrate_init() {
   require_once('mises.media.inc');
-    require_once('extras.inc');
-   // generate_url_mappings();
+  require_once('extras.inc');
+
+
+
 }
 
 
@@ -547,20 +549,20 @@ class DailyArticlesImageMigration extends MisesImageMigration {
     $this->setFieldMapping($query, 'ArticleId' ,'DailyArticles', 'library_item');
   }
   public function prepareRow($row) {
-    if($row->ThumbnailURL) {
-      $row->alt = $row->Title;
-      // check to see if its a relative link
-      if(!strpos($row->ThumbnailURL,'ttp://') !== false) {
-        // some of these image links are broken lolz, 
-        // lets fix them
-        if($row->ThumbnailURL[0] != '/') {
-          $row->ThumbnailURL = '/'.$row->ThumbnailURL;
-        }
-        $row->ThumbnailURL = 'http://mises.org'.$row->ThumbnailURL;
-      }
-      $row->image = $row->ThumbnailURL;
+    $newDom = new DOMDocument();
+    @$newDom->loadHTML($row->ArticleText);
+    $tag = $newDom->getElementsByTagName('img');
+    $images = array();
+    foreach($tag as $image) {
+      $images[] = $image->getAttribute('src');
     }
 
+    if(strpos($row->ArticleText,'[image]') !== false) {
+      $row->image = 'http://images.mises.org/DailyArticleBigImages/'.$row->ArticleId.'.jpg';
+    }
+    else if(isset($images[0])) {
+      $row->image = $images[0];
+    }
     return $row;
   }
   public function prepare($node, $row) {
