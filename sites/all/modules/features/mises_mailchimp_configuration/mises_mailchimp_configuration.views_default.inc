@@ -72,12 +72,6 @@ function mises_mailchimp_configuration_views_default_views() {
   $handler->display->display_options['fields']['description']['label'] = '';
   $handler->display->display_options['fields']['description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  /* Filter criterion: MailChimp List: Status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'mailchimp_lists';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['operator'] = '!=';
-  $handler->display->display_options['filters']['status']['value']['value'] = '2';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
