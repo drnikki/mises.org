@@ -428,13 +428,16 @@ class DocumentMigration extends MisesMigration {
       ->sourceMigration('DocumentAuthors');
     // @todo - assign this
     $this->addFieldMapping('status', 'Display');
-    $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Books'));
+    $this->addFieldMapping('field_library_item_tree', 'media_type');
     $this->addFieldMapping('field_austrian_school', 'field_austrian_school');
     $this->addFieldMapping('field_topics', 'field_topics');
     $this->addFieldMapping('uid')->defaultValue(1);
   }
   public function prepareRow($row) {
-    $this->mapTags($row);
+    $map = $this->convertSubjects($this->getLegacySubjects($row->DocumentId));
+    $row->field_topics = $map->field_topics;
+    $row->field_austrian_school = $map->field_austrian_school;
+    $row->media_type = array('Books');
     /*
 
     $row->mediatype = array();
@@ -448,6 +451,70 @@ class DocumentMigration extends MisesMigration {
   }
   public function prepare($node, $row) {
     $this->insert_mapping_url($node->nid, $row->DocumentId, 'document', $node->title);
+  }
+
+  protected function convertSubjects($legacySubjects) {
+    static $vocabs;
+    static $map;
+    if(!$map) {
+      $rows = array();
+      $url = url(drupal_get_path('module', 'mises_migrate'). '/subjectmap.csv');
+
+      $contents = file_get_contents('./'.$url);
+
+      $lines = explode("\n", $contents);
+      foreach($lines as $line) {
+        $mapping = array();
+        $row = str_getcsv($line);
+        if($row[1] != '—') {
+          $mapping['field_topics'] = array_map('trim',explode(",", $row[1]));
+        }
+        if($row[2] != '—') {
+          $mapping['field_austrian_school'] = array_map('trim',explode(",", $row[2]));
+        }
+        $rows[trim($row[0])] = $mapping;
+      }
+      $map = $rows;
+    }
+    if(!$vocabs) {
+      $vocabs = array(6 => array(), 7 => array());
+      $query = db_query("SELECT name, tid, vid FROM {taxonomy_term_data} WHERE vid IN(6,7)");
+      while($result = $query->fetch()) {
+        switch($result->vid) {
+          case 6:
+            $field = 'field_topics';
+            break;
+          case 7:
+            $field = 'field_austrian_school';
+            break;
+        }
+        $vocabs[$field][$result->name] = $result->tid;
+      }
+    }
+    foreach($legacySubjects as $tag) {
+      if(isset($map[$tag])) {
+        foreach($map[$tag] as $type => $names) {
+          foreach($names as $name) {
+            if($vocabs[$type][$name]) {
+              $terms[$type][$vocabs[$type][$name]] = $vocabs[$type][$name];
+            }
+          }
+        }
+      }
+    }
+    return $terms;
+  }
+
+  protected function getLegacySubjects($documentId) {
+    $subjects = array();
+    $query = $this->db->query("SELECT ds.Subject 
+      FROM documentsubjectlink dsl 
+      INNER JOIN documentsubjects ds ON ds.SubjectID = dsl.SubjectID
+      WHERE dsl.DocumentId = $documentId");
+    while($result = $query->fetch()) {
+      $subjects[] = $result->Subject;
+    }
+    return $subjects;
   }
 }
 
