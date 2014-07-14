@@ -2,9 +2,50 @@
 function mises_migrate_init() {
   require_once('mises.media.inc');
   require_once('extras.inc');
+  mises_migrate_redirect();
+
+}
 
 
-
+function mises_migrate_redirect() {
+    switch(arg(0)) {
+      case 'daily':
+        if(is_numeric(arg(1))) {
+          $id = arg(1);
+          $type = 'daily';
+        }
+        else if(arg(1) == 'author' && is_numeric(arg(2))) {
+          $id = arg(2);
+          $type = 'Author';
+        }
+        break;
+      case 'media':
+      case 'document':
+        if(is_numeric(arg(1))) {
+          $id = arg(1);
+          $type = 'document';
+        }
+        else if(arg(1) == 'author' && is_numeric(arg(2))) {
+          $id = arg(2);
+          $type = 'Author';
+        }
+        break;
+      case 'Literature':
+        if(arg(1) == 'Author' && is_numeric(arg(2))) {
+          $id = arg(2);
+          $type = 'Author';
+        }
+        beak;
+  }
+  if($id && $type) {
+    $query = db_query("SELECT nid FROM {mises_migrate_url_map} WHERE old_type = :old_type AND old_id = :old_id", array(
+      'old_id' => $id,
+      'old_type' => $type
+    ));
+    if($result = $query->fetch()) {
+      drupal_goto('node/'.$result->nid);
+    }
+  }
 }
 
 
