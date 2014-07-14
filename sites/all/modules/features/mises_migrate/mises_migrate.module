@@ -1,9 +1,10 @@
 <?php
+
+
 function mises_migrate_init() {
   require_once('mises.media.inc');
   require_once('extras.inc');
   mises_migrate_redirect();
-
 }
 
 
@@ -231,6 +232,7 @@ class MisesTagMapper {
       }
     }
   }
+
   protected function getLegacyTags($guid) {
     $tags = array();
     $query = $this->db
@@ -240,6 +242,7 @@ class MisesTagMapper {
     }
     return $tags;
   }
+
   protected function getLegacySubjects($documentId) {
     $subjects = array();
     $query = $this->db->query("SELECT dsl.Subject 
@@ -249,9 +252,9 @@ class MisesTagMapper {
     while($result = $query->fetch()) {
       $subjects[] = $result->SubjectID;
     }
-    dd($subjects);
     return $subjects;
   }
+
   protected function processCSV1() {
     static $rows;
     if(!$row) {
@@ -364,7 +367,7 @@ class DailyArticlesMigration extends MisesMigration {
     $this->addFieldMapping('title', 'Title');
     $this->addFieldMapping('body', 'ArticleText');
     $this->addFieldMapping('body:summary', 'Description');
-    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('body:format')->defaultValue('simplified');
     $this->addFieldMapping('field_published_date', 'DatePosted'); 
     $this->addFieldMapping('field_mises_published_date', 'DatePosted'); 
     $this->addFieldMapping('field_author_1', 'AuthorId')
@@ -375,15 +378,28 @@ class DailyArticlesMigration extends MisesMigration {
     $this->addFieldMapping('created', 'CreatedDate');
     $this->addFieldMapping('changed', 'EditDate');
     $this->addFieldMapping('status', 'ShowArticle');
-    $this->addFieldMapping('field_austrian_school', 'field_austrian_school');
-    $this->addFieldMapping('field_topics', 'field_topics');
+    //$this->addFieldMapping('field_austrian_school', 'field_austrian_school');
+    //$this->addFieldMapping('field_topics', 'field_topics');
   }
   public function prepareRow($row) {
-    $this->mapTags($row);
+    $row->ArticleText = $this->cleanBody($row->ArticleText);
+    //$this->mapTags($row);
     return $row;
   }
   public function prepare($node, $row) {
     $this->insert_mapping_url($node->nid, $row->ArticleId, 'daily', $node->title);
+  }
+  private function cleanBody($content) {
+
+    $html = importDOM($content);
+    $xpath = new DOMXpath($html);
+    $remove = array('//div[@class="figure"]','//div[@class="article-author"]');
+    foreach($remove as $r) {
+      foreach($xpath->query($r) as $node) {
+        $node->parentNode->removeChild($node);
+      }
+    }
+    return exportDOM($html);
   }
 }
 
@@ -402,7 +418,7 @@ class DocumentMigration extends MisesMigration {
     );
     $this->addFieldMapping('title', 'Title');
     $this->addFieldMapping('body', 'Description');
-    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('body:format')->defaultValue('simplified');
     $this->addFieldMapping('field_published_date', 'CreateDate'); 
     $this->addFieldMapping('field_mises_published_date', 'CreateDate'); 
     $this->addFieldMapping('field_bibliography_footnote', 'PublicationInformation'); 
@@ -603,11 +619,12 @@ class DailyArticlesImageMigration extends MisesImageMigration {
     }
     else if(isset($images[0])) {
       $row->image = $images[0];
+      // someone smart thinks that '//' is acceptable shorthand for http://
+      if(substr($row->image, 0, 2) == '//') {
+        $row->image = 'http:'.$row->image;
+      }
     }
     return $row;
-  }
-  public function prepare($node, $row) {
-
   }
 }
 
