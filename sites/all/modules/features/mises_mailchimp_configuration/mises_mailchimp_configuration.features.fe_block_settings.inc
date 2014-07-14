@@ -45,5 +45,38 @@ function mises_mailchimp_configuration_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['mises_utility-mailchimp_page_description'] = array(
+    'cache' => 1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'mailchimp_page_description',
+    'module' => 'mises_utility',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootsass' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootsass',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   return $export;
 }
