@@ -300,6 +300,7 @@ function mises_utility_block_view($delta = '') {
 		//$block_style = variable_get('mises_mailchimp_custom_style', '');
 		$desc_image = file_load(variable_get('mises_mailchimp_custom_image', 'Please define in <a href="/admin/mises">Mises Utility settings</a>'))->uri;
 		$desc_image_display = '<img class="pull-right" src="' . file_create_url($desc_image) . '">';
+
 		$content =  $desc_image_display . variable_get('mises_mailchimp_custom_description', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
       	$block['subject'] = $subject;
       	$block['content'] = '<div class="newsletter-form-description">' . $content . '</div>';
