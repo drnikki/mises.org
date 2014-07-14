@@ -72,16 +72,52 @@ function mises_mailchimp_configuration_views_default_views() {
   $handler->display->display_options['fields']['description']['label'] = '';
   $handler->display->display_options['fields']['description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  /* Filter criterion: MailChimp List: Status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'mailchimp_lists';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['operator'] = '!=';
-  $handler->display->display_options['filters']['status']['value']['value'] = '2';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'subscribe';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<div id="mc_embed_signup">
+	<form action="http://mises.us1.list-manage1.com/subscribe/post?u=bf16b152ccc444bdbbcc229e4&amp;id=8b52b2e1c0" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+	<div class="mc-field-group input-group">
+	<strong>Email Subscriptions</strong>
+	<ul>
+		<li><input id="mce-group[1]-1-0" name="group[1][1]" type="checkbox" value="1"><label for="mce-group[1]-1-0">Institute News</label></li>
+		<li><input id="mce-group[1]-1-1" name="group[1][2]" type="checkbox" value="2"><label for="mce-group[1]-1-1">Events</label></li>
+		<li><input id="mce-group[1]-1-2" name="group[1][4]" type="checkbox" value="4"><label for="mce-group[1]-1-2">Academy</label></li>
+		<li><input id="mce-group[1]-1-3" name="group[1][8]" type="checkbox" value="8"><label for="mce-group[1]-1-3">Store</label></li>
+		<li><input id="mce-group[1]-1-4" name="group[1][16]" type="checkbox" value="16"><label for="mce-group[1]-1-4">Mises Daily</label></li>
+		<li><input id="mce-group[1]-1-5" name="group[1][32]" type="checkbox" value="32"><label for="mce-group[1]-1-5">Free Market</label></li>
+	</ul>
+	</div>
+         <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span> </label> <input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value=""></div>
+	<div class="clear" id="mce-responses">
+		<div class="response" id="mce-error-response" style="display:none">&nbsp;</div>
+		<div class="response" id="mce-success-response" style="display:none">&nbsp;</div>
+	</div>
+	<div class="clear">
+	<input class="button ui-button ui-widget ui-state-default ui-corner-all" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Subscribe" role="button" aria-disabled="false"></div>
+	</form>
+</div>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: MailChimp List: Description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'mailchimp_lists';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
   $export['mises_newsletter_subscribe'] = $view;
 
   return $export;

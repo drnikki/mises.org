@@ -427,15 +427,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'image',
   );
 
-  // Exported permission: 'administer mailchimp'.
-  $permissions['administer mailchimp'] = array(
-    'name' => 'administer mailchimp',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'mailchimp',
-  );
-
   // Exported permission: 'administer media browser'.
   $permissions['administer media browser'] = array(
     'name' => 'administer media browser',

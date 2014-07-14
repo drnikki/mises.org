@@ -57,11 +57,11 @@ function about_mises_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
-        'mailchimp_lists-mailchimp' => array(
-          'module' => 'mailchimp_lists',
-          'delta' => 'mailchimp',
+        'mises_utility-mailchimp_custom' => array(
+          'module' => 'mises_utility',
+          'delta' => 'mailchimp_custom',
           'region' => 'sidebar_second',
-          'weight' => '-7',
+          'weight' => '-6',
         ),
         'views-daily_landing-books' => array(
           'module' => 'views',
