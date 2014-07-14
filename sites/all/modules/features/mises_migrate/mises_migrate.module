@@ -433,24 +433,51 @@ class DocumentMigration extends MisesMigration {
     $this->addFieldMapping('field_topics', 'field_topics');
     $this->addFieldMapping('uid')->defaultValue(1);
   }
+  
   public function prepareRow($row) {
     $map = $this->convertSubjects($this->getLegacySubjects($row->DocumentId));
-    $row->field_topics = $map->field_topics;
-    $row->field_austrian_school = $map->field_austrian_school;
-    $row->media_type = array('Books');
-    /*
-
-    $row->mediatype = array();
-    $query = $this->db->query("SELECT dmt.MediaType FROM documentmediatype dmt INNER JOIN DocumentFiles df ON df.mediaTypeID = dmt.MediaTypeID WHERE df.DocumentId = $row->DocumentId");
-    while($result = $query->fetch()) {
-      $row->mediatype[] = $result->MediaType;
-    }
-    $row->mediatype = implode($row->mediatype,'|');
-    */
+    $row->field_topics = $map['field_topics'];
+    $row->field_austrian_school = $map['field_austrian_school'];
+    $row->media_type = $this->convertMediaType($row->DocumentId);
     return $row;
   }
+
   public function prepare($node, $row) {
     $this->insert_mapping_url($node->nid, $row->DocumentId, 'document', $node->title);
+  }
+
+  protected function convertMediaType($documentId) {
+    $types = array();
+    $query = $this->db->query("SELECT dmt.MediaType FROM documentmediatype dmt INNER JOIN DocumentFiles df ON df.mediaTypeID = dmt.MediaTypeID WHERE df.DocumentId = $documentId");
+    while($result = $query->fetch()) {
+      switch($result->MediaType) {
+        case 'Web Page (.html,.aspx)':
+          $types['Online Texts'] = 'Online Texts';
+          break;
+        case 'Adobe Acrobat (.pdf)':
+        case 'ebook (.epub)':
+        case 'Amazon Kindle (.mobi)':
+        case 'ebook (.epub)':
+        case 'Document (.doc, .rtf, etc.)':
+          $types['Books'] = 'Books';
+          break;
+        case 'Audio (.mp3, .wav, etc.)':
+        case 'Windows Media Video (.wmv)':
+        case 'YouTube':
+        case 'MPEG-4 Video':
+          $types['Audio/Video'] = 'Audio/Video';
+          break;
+        case 'Streaming Video':
+          $types['Audio/Video'] = 'Audio/Video';
+          $types['Live Video'] = 'Live Video';
+          break;
+        case 'Audiobook':
+          $types['Audio Books'] = 'Audio Books';
+          $types['Audio/Video'] = 'Audio/Video';
+          break;
+      }
+    }
+    return array_values($types);
   }
 
   protected function convertSubjects($legacySubjects) {
