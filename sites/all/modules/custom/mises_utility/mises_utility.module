@@ -45,7 +45,7 @@ function mises_utility_menu() {
 
 	$url = variable_get('mises_mailchimp_custom_url', 'subscribe/mailchimp');
 	$title = variable_get('mises_mailchimp_custom_url_title', 'Subscribe to mailchimp');
-  $items[$url] = array(
+  	$items[$url] = array(
     'title' => $title,
     'page callback' => 'mises_utility_mailchimp_page',
     'access arguments' => array('access content'),
@@ -91,7 +91,7 @@ function mises_utility_admin() {
 	$form['mises_mailchimp']['markup'] = array(
 		'#type' => 'item',
 		'#title' => t('Mailchimp Settings'),
-		'#markup' => '<p>The fields below will allow you to make adjustments to the custom mailchip form.</p>',
+		'#markup' => '<p>The fields below will allow you to make adjustments to the custom mailchimp form.</p>',
 	);
 
   $form['mises_mailchimp']['mises_mailchimp_custom_url'] = array(
@@ -129,14 +129,35 @@ function mises_utility_admin() {
     '#description' => t("Set the block styles."),
   );
   
-	$form['mises_mailchimp']['mises_mailchimp_custom_content'] = array(
+  $form['mises_mailchimp']['mises_mailchimp_custom_content'] = array(
     '#type' => 'textarea',
     '#title' => t('PHP/HTML Code'),
     '#default_value' => variable_get('mises_mailchimp_custom_content', ''),
     '#description' => t("Set the block content."),
   );
+  $form['mises_mailchimp']['mises_mailchimp_custom_image'] = array(
+    '#type' => 'managed_file',
+    '#name' => 'mises_mailchimp_custom_image',
+    '#title' => t('Description Image'),
+    '#size' => 40,
+    '#default_value' => variable_get('mises_mailchimp_custom_image', ''),
+    '#description' => t("Image should be less than 400 pixels wide and in JPG format."),
+    '#upload_location' => 'public://'
 
-  
+  );
+  $form['mises_mailchimp']['mises_mailchimp_custom_description'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Description'),
+    '#default_value' => variable_get('mises_mailchimp_custom_description', ''),
+    '#description' => t("Configure the description below the signup form."),
+  );
+  /*
+  $form['mises_mailchimp']['mises_mailchimp_custom_description'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Description'),
+    '#default_value' => variable_get('mises_mailchimp_custom_description', ''),
+    '#format' => 'simplified',
+  );*/
   return system_settings_form($form);
 }
 
@@ -229,22 +250,31 @@ function mises_utility_preprocess_node(&$variables) {
   }
 }
 
+/**
+ * Implements hook_page
+ * 
+ */
+
 function mises_utility_mailchimp_page() {
 		$block = module_invoke("mises_utility", "block_view", "mailchimp_custom");
+		//$page_block = module_invoke("mises_utility", "block_view", "mailchimp_page_description");
 		$block_style = variable_get('mises_mailchimp_custom_style', '');
 		$block['content'] = str_replace($block_style, "", $block['content']);
 		//$region = variable_get('mises_mailchimp_custom_region', 'content');
 		//drupal_add_region_content("content", theme("block", $block));
-    return render($block['content']);
+    	return render($block['content']);
   }
 
 /**
- * Implements hook__block_info
+ * Implements hook_block_info
  * 
  */
 function mises_utility_block_info() {    
   $blocks['mailchimp_custom'] = array(
     'info' => t('Mises Custom Mailchimp'),
+  );
+  $blocks['mailchimp_page_description'] = array(
+    'info' => t('Mises Custom Mailchimp Page Description'),
   );
   
   return $blocks;
@@ -258,13 +288,23 @@ function mises_utility_block_view($delta = '') {
   switch ($delta) {
     case 'mailchimp_custom':
       // Create your block content here
-			$subject = variable_get('mises_mailchimp_custom_subject', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
-			$block_style = variable_get('mises_mailchimp_custom_style', '');
-			$content = variable_get('mises_mailchimp_custom_content', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
-      $block['subject'] = $subject;
-      $block['content'] = '<div class="newsletter-form">'.$block_style.' '.$content.'<div>';
-      break;
-  }
+		$subject = variable_get('mises_mailchimp_custom_subject', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+		$block_style = variable_get('mises_mailchimp_custom_style', '');
+		$content = variable_get('mises_mailchimp_custom_content', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+      	$block['subject'] = $subject;
+      	$block['content'] = '<div class="newsletter-form">'.$block_style.' '.$content.'</div>';
+    break;
+    case 'mailchimp_page_description':
+      // Create your block content here
+		$subject = t('<none>');
+		//$block_style = variable_get('mises_mailchimp_custom_style', '');
+		$desc_image = file_load(variable_get('mises_mailchimp_custom_image', 'Please define in <a href="/admin/mises">Mises Utility settings</a>'))->uri;
+		$desc_image_display = '<img class="pull-right" src="' . file_create_url($desc_image) . '">';
 
+		$content =  $desc_image_display . variable_get('mises_mailchimp_custom_description', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+      	$block['subject'] = $subject;
+      	$block['content'] = '<div class="newsletter-form-description">' . $content . '</div>';
+    break;
+  }
   return $block;
 }
