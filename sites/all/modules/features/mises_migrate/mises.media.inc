@@ -1,18 +1,12 @@
 <?php
-abstract class MisesFileMigration extends MisesMigration {
-  public function __construct($arguments) {
-    parent::__construct($arguments);
-  }
-  public function setFieldMapping($query, $key, $parent_migration, $node_type) {
 
-  }
-}
-class DocumentFileDocumentMigration extends MisesFileMigration {
+class DocumentFileDocumentMigration extends MisesMigration {
   public function __construct($arguments) {
     parent::__construct($arguments);
 	$query = $this->db
 		->select('DocumentFiles', 'd')
-		->fields('d');
+		->fields('d')
+    ->where('d.MediaTypeId NOT IN(5)');
     $this->source = new MigrateSourceSQL($query);
 
     $this->destination = new MigrateDestinationFieldCollection(
@@ -46,7 +40,7 @@ class DocumentFileDocumentMigration extends MisesFileMigration {
         }
         $row->URL = 'http://mises.org'.$row->URL;
       }
-	$row->file = $row->URL;
+	   $row->file = $row->URL;
     return $row;
   }
 }

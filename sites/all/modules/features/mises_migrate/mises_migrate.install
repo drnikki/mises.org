@@ -26,15 +26,18 @@ function mises_migrate_schema() {
        'old_url' => array(
           'description' => 'The UNIX UTC timestamp when to unpublish',
           'type' => 'varchar',
-          'length' => 128,
+          'length' => 512,
         ), 
         'new_url' => array(
           'description' => 'The UNIX UTC timestamp when to unpublish',
           'type' => 'varchar',
-          'length' => 128,
+          'length' => 512,
         ),        
       ),
       'primary key' => array('nid'),
+      'indexes' => array(
+        'old_type_old_id' => array('old_id', 'old_type')
+      ),
     ),
   );
   return $schema;
@@ -51,3 +54,10 @@ function mises_migrate_update_1() {
   drupal_install_schema('mises_migrate');
 }
 
+/**
+ * Reset migration map. We gotta rebuild all the content types anyways so we'll just drop the old table.
+ */
+function mises_migrate_update_2() {
+  drupal_uninstall_schema('mises_migrate');
+  drupal_install_schema('mises_migrate');
+}
