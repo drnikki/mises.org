@@ -1,0 +1,12 @@
+name = Solr Clicks Report
+description = mises_solr_clicks_report
+core = 7.x
+package = Views
+version = 7.x-1.0
+project = solr_clicks_report
+dependencies[] = mises_solr_clicks
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = mises_solr_clicks_report
+features_exclude[dependencies][ctools] = ctools
