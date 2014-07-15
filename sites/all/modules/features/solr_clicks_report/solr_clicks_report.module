@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Solr Clicks Report feature.
+ */
+
+include_once 'solr_clicks_report.features.inc';

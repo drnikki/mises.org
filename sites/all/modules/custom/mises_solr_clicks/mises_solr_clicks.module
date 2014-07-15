@@ -1,0 +1,436 @@
+<?php
+
+/**
+ * Implements hook_permission().
+ */
+function mises_solr_clicks_permission() {
+  return array(
+    'administer mises solr clicks' => array(
+      'title' => t('Administer Mises Solr Clicks'),
+      'description' => t('Configure how Drupal periodically fetches Solr click status from Google\'s Analytics API.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * Provides a configuration page for the google click stats fetcher.
+ */
+function mises_solr_clicks_menu() {
+  $items['admin/config/mises-solr-clicks'] = array(
+    'title' => 'Solr click tracking',
+    'description' => 'Manage and test integration between Drupal and Google for fetching solr click data.' .
+      'as well as what data is queried and how often.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_mises_solr_clicks_form'),
+    'access arguments' => array('administer mises solr clicks'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_apachesolr_process_results().
+ *
+ * Add jQuery to send Solr results clicks through to Google Analytics.
+ */
+function mises_solr_clicks_apachesolr_process_results(&$results, DrupalSolrQueryInterface $query) {
+  $js = '
+    (function ($) {
+      if (typeof(_gaq) == "object") {
+        $("body.page-search-site #block-system-main .node h2.teaser-title a, " +
+          "body.page-search-site #block-system-main .node .read-more a").click(function (e) {
+          _gaq.push(["_trackEvent", "nvm_solr_click", "solr_click", $(this).attr("href")]);
+        });
+      }
+    })(jQuery);
+  ';
+  drupal_add_js($js, array('type' => 'inline', 'scope' => 'footer', 'cache' => TRUE));
+}
+
+
+/**
+ * Defines the configuration form containing:
+ * - Google access credentials
+ * - How solr click content is fetched
+ *
+ * This form also provides a button for running a test fetch.
+ */
+function _mises_solr_clicks_form() {
+  $form['manual_fetch'] = array(
+    '#type' => 'submit',
+    '#value' => 'Manually trigger solr clicks fetch',
+  );
+
+  // Define fields for Google Analytics access credentials:
+  $form['google_auth'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Google Analytics Authentication'),
+  );
+
+  $form['google_auth']['analytics_username'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Analytics Username'),
+    '#required' => TRUE,
+    '#description' => t('This is the account associated with Google Analytics for this site. ') .
+      t('It is probably an email address and may end with "@gmail.com".'),
+    '#default_value' => variable_get('mises_solr_clicks_analytics_username', ''),
+  );
+
+  $form['google_auth']['analytics_password'] = array(
+    '#type' => 'password',
+    '#title' => t('Analytics Password'),
+    '#required' => FALSE,
+    '#description' => (variable_get('mises_solr_clicks_analytics_password', '') != '' ? t('A password has been set.  Update this field to change it.') : ''),
+  );
+
+  $form['google_auth']['analytics_profile_id'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Analytics Profile ID'),
+    '#required' => TRUE,
+    '#description' => t('To find this value, log in to Analytics, browse to this website\'s section. ') .
+      t('The Profile ID is located after the "p" in the URL. ') .
+      t('Please note that this is not the Tracking ID found within the analytics JavaScript snippet.'),
+    '#default_value' => variable_get('mises_solr_clicks_analytics_profile_id', ''),
+  );
+
+  // Define fields for describing what will be fetched from Google Analytics and how often:
+  $form['analytics_fetch'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Analytics Fetch Settings'),
+  );
+
+  $form['analytics_fetch']['analytics_timespan_days'] = array(
+    '#type' => 'select',
+    '#title' => t('Timespan'),
+    '#required' => TRUE,
+    '#description' =>
+      t('How long ago, at most, can a Solr click have been tracked by Google Analytics for it to be counted toward Solr clicks per path statistics?'),
+    '#options' => array(
+      '1' => '1 day',
+      '2' => '2 days',
+      '3' => '3 days',
+      '4' => '4 days',
+      '5' => '5 days',
+      '7' => '1 week',
+      '14' => '2 weeks',
+      '21' => '3 weeks',
+      '30' => '1 month',
+      '60' => '2 months',
+      '91' => '3 months',
+      '182' => '6 months',
+      '365' => '1 year',
+      '730' => '2 years',
+    ),
+    '#default_value' => variable_get('mises_solr_clicks_analytics_timespan_days', 30),
+  );
+
+  $form['analytics_fetch']['analytics_fetch_frequency_hours'] = array(
+    '#type' => 'select',
+    '#title' => t('Frequency'),
+    '#required' => TRUE,
+    '#description' => t('How often should Drupal request an updated list of solr clicks (sorted by most-clicked) from Google Analytics? ') .
+      t('Please note that queries to Google are done when Drupal\'s "cron" process is triggered. ') .
+      t('Due to this, the frequency will not be any more frequent that the frequency of cron.'),
+    '#options' => array(
+      '1' => 'Hourly',
+      '3' => 'Every 3 hours',
+      '6' => 'Every 6 hours',
+      '8' => 'Every 8 hours',
+      '12' => 'Every 12 hours',
+      '24' => 'Daily',
+      '48' => 'Every 2 days',
+      '72' => 'Every 3 days',
+      '96' => 'Every 4 days',
+      '168' => 'Weekly',
+    ),
+    '#default_value' => variable_get('mises_solr_clicks_analytics_frequency_hours', 12),
+  );
+
+  $form['analytics_fetch']['analytics_fetch_max_results'] = array(
+    '#type' => 'select',
+    '#title' => t('Maximum Query Results'),
+    '#required' => TRUE,
+    '#description' => t('At most, how many solr click stats should be requested from Google? '),
+    '#options' => array(
+      '5' => '5 results',
+      '10' => '10 results',
+      '15' => '15 results',
+      '20' => '20 results',
+      '25' => '25 results',
+      '30' => '30 results',
+      '35' => '35 results',
+      '40' => '40 results',
+      '50' => '50 results',
+      '75' => '75 results',
+      '100' => '100 results',
+      '125' => '125 results',
+      '150' => '150 results',
+      '175' => '175 results',
+      '200' => '200 results',
+      '225' => '225 results',
+      '250' => '250 results',
+      '275' => '275 results',
+      '300' => '300 results',
+      '325' => '325 results',
+      '350' => '350 results',
+    ),
+    '#default_value' => variable_get('mises_solr_clicks_analytics_max_results', 30),
+  );
+
+  $advanced_descr = t('These settings test if the current value of "Timespan" will return a configurable minimum number of results ') .
+    t('for the specified view and, if not, a higher setting will be selected if available.');
+  $form['analytics_fetch']['dynamic_timespan_settings'] = array(
+    '#title' => t('Dynamic Timespan Field Settings'),
+    '#type' => 'fieldset',
+    '#collapsed' => !variable_get('mises_solr_clicks_dynamic_timespan_enabled', FALSE),
+    '#collapsible' => TRUE,
+    '#description' => $advanced_descr,
+  );
+
+  $form['analytics_fetch']['dynamic_timespan_settings']['enable_dynamic_timespan'] = array(
+    '#title' => t('Enable Dynamic Timespan Settings'),
+    '#type' => 'select',
+    '#options' => array(TRUE => t('Enabled'), FALSE => t('Disabled')),
+    '#default_value' => variable_get('mises_solr_clicks_dynamic_timespan_enabled', FALSE),
+  );
+  foreach (views_get_all_views(TRUE) as $view_machine_name => $view_data) {
+    foreach($view_data->display as $display_machine_name => $display) {
+      if (isset($display->display_title)) {
+        $display_title = $display->display_title;
+      } else {
+        $display_title = $display_machine_name;
+      }
+      $view_list[$view_machine_name . '___' . $display_machine_name] = $view_data->human_name . ' -- ' . $display_title;
+    }
+  }
+
+  $form['analytics_fetch']['dynamic_timespan_settings']['dynamic_timespan_target_view_display'] = array(
+    '#title' => t('Dynamic Timespan Target View Display'),
+    '#type' => 'select',
+    '#options' => $view_list,
+    '#default_value' => variable_get('mises_solr_clicks_dynamic_timespan_target_view_display', NULL),
+  );
+
+  $minimum_view_result_option = 1;
+  for ($i = $minimum_view_result_option; $i < 25; $i++) {
+    $minimum_view_results[$i] = $i . t(' view results');
+  }
+  $form['analytics_fetch']['dynamic_timespan_settings']['dynamic_timespan_minimum_view_results'] = array(
+    '#title' => t('Dynamic Timespan Minimum View Results'),
+    '#type' => 'select',
+    '#options' => $minimum_view_results,
+    '#default_value' => variable_get('mises_solr_clicks_dynamic_timespan_minimum_view_results', $minimum_view_result_option),
+    '#description' => t('At minimum, how many results should be returned for the view display selected in the ') . '"' .
+      t('Dynamic Timespan Target View Display') . '" ' . t('field in order for the latest data fetch to be saved for use by views.'),
+  );
+
+  $form['save_configuration'] = array(
+    '#type' => 'submit',
+    '#value' => 'Save configuration',
+  );
+
+  // Remove dynamic timespan feature until complete:
+  unset($form['analytics_fetch']['dynamic_timespan_settings']);
+
+  return $form;
+}
+
+/**
+ * Handles form submission of the Solr Clicks settings page.
+ *
+ * There are two expected operations:
+ * - Saving configuration
+ * - Triggering a manual query to Drupal for Solr click data
+ */
+function _mises_solr_clicks_form_submit($form, &$form_state) {
+  switch ($form_state['values']['op']) {
+    case 'Save configuration':
+      $form_field_var_map = array( // TODO: Remove this by using a standard naming convention between form item machine names and variable names.
+        'analytics_username' => 'mises_solr_clicks_analytics_username',
+        'analytics_password' => 'mises_solr_clicks_analytics_password',
+        'analytics_profile_id' => 'mises_solr_clicks_analytics_profile_id',
+        'analytics_timespan_days' => 'mises_solr_clicks_analytics_timespan_days',
+        'analytics_fetch_frequency_hours' => 'mises_solr_clicks_analytics_frequency_hours',
+        'analytics_fetch_max_results' => 'mises_solr_clicks_analytics_max_results',
+        'block_max_items' => 'mises_solr_clicks_block_max_items',
+        'block_node_view_mode' => 'mises_solr_clicks_block_view_mode',
+        'block_content_types' => 'mises_solr_clicks_block_content_types',
+        'enable_dynamic_timespan' => 'mises_solr_clicks_dynamic_timespan_enabled',
+        'dynamic_timespan_target_view_display' => 'mises_solr_clicks_dynamic_timespan_target_view_display',
+        'dynamic_timespan_minimum_view_results' => 'mises_solr_clicks_dynamic_timespan_minimum_view_results',
+      );
+      foreach ($form_field_var_map as $field_name => $variable_name) {
+        if (isset($form_state['values'][$field_name])) {
+          variable_set($variable_name, $form_state['values'][$field_name]);
+        }
+      }
+      break;
+    case 'Manually trigger solr clicks fetch':
+      drupal_set_message('Attempting solr clicks query to Google...');
+      $results = _mises_solr_clicks_query_google_analytics(TRUE);
+
+      if ($results === FALSE) {
+        drupal_set_message('Query attempt failed.  Please ensure the username, password, and profile ID values are populated and are correct.', 'error');
+      } else if (is_array($results) && empty($results)) {
+        drupal_set_message('No results were returned for your query.');
+      } else {
+        variable_set('mises_solr_clicks_results', $results);
+        variable_set('mises_solr_clicks_results_timestamp', time());
+        $filtered_results = t('Results filtered by paths associated with published nodes:') .
+          '<table><thead><tr><th>&nbsp;</th><th>Node</th><th>Number of Clicks</th></tr></thead><tbody>';
+        $count = 0;
+        foreach ($results as $clicks => $nid) {
+          $count++;
+          $node = node_load($nid);
+          $filtered_results .= '<tr><td>' . $count . '</td>' . 
+            '<td>' . l($node->title, 'node/' . $node->nid, array('attributes' => array('target' => '_blank'))) . '</td>' .
+            '<td>' . $clicks . '</td></tr>';
+        }
+        $filtered_results .= '</tbody></table>';
+        drupal_set_message($filtered_results);
+      }
+      break;
+  }
+}
+
+/**
+ * Sends a query to Google for a list of pages with the most click, ordered by number of clicks descending:
+ *
+ * @params
+ *   - $verbose - Set to TRUE to see all results returned from Google.
+ */
+function _mises_solr_clicks_query_google_analytics($verbose = FALSE) {
+  module_load_include('inc', 'mises_solr_clicks', 'includes/gapi.class.php');
+  $ga_username = variable_get('mises_solr_clicks_analytics_username', '');
+  $ga_password = variable_get('mises_solr_clicks_analytics_password', '');
+  $ga_profile_id = variable_get('mises_solr_clicks_analytics_profile_id', '');
+
+  // Abort if authentication options are not populated:
+  if (!$ga_username || !$ga_password || !$ga_profile_id) {
+    watchdog('mises_solr_clicks', 'Drupal -> Google query for Solr click content failed due to missing analytics username, password, or profile ID', array(), WATCHDOG_ERROR);
+    return FALSE;
+  }
+
+  $dimensions = array('eventCategory', 'eventLabel');
+  $metrics = array('totalEvents');
+  $sort = '-totalEvents';
+
+  $from_day_count = variable_get('mises_solr_clicks_analytics_timespan_days', 30);
+  $from_date = date('Y-m-d', time() - ($from_day_count * 24 * 60 * 60));  
+  $to_date = date('Y-m-d');
+
+  $max_results = variable_get('mises_solr_clicks_analytics_max_results', 25);
+
+  $filter = 'eventCategory=@nvm_solr_click';
+
+
+  $ga = new gapi($ga_username, $ga_password);
+  $results = $ga->requestReportData($ga_profile_id, $dimensions, $metrics, $sort, $filter, $from_date, $to_date, 1, $max_results);
+
+  $total_results = array();
+  
+  $processed_results = array();
+  foreach ($results as $gaiReportEntity) {
+    $path = $gaiReportEntity->getDimesions();
+    $clicks = $gaiReportEntity->getMetrics();
+    if (isset($clicks['totalEvents'])) {
+      $clicks = $clicks['totalEvents'];
+    }
+    if (isset($path['eventLabel'])) {
+      // Remove the leading slash:
+      $path = substr($path['eventLabel'], 1);
+    }
+
+    if ($verbose) {
+      $total_results[$clicks] = $path;
+    }
+
+    // Skip the front page:
+    if ($path == '/') {
+      continue;
+    }
+
+    $path = drupal_lookup_path("source", $path);
+    $node = menu_get_object("node", 1, $path);
+    if (isset($node->nid)) {
+      // Exclude any nodes returned twice, which can occur if a node's path has changed:
+      if (in_array($node->nid, $processed_results)) {
+        continue;
+      }
+
+      $processed_results[$clicks] = $node->nid;
+    }
+  }
+
+  if ($verbose) {
+    $verbose_output = t('Raw Analytics query response') . ':' . '<br />';
+    $verbose_output .= '<table><thead><tr><th>&nbsp;</th><th>Path</th><th>Clicks</th></tr></thead><tbody>';
+    $count = 0;
+    foreach ($total_results as $clicks => $path) {
+      $count++;
+      $verbose_output .= '<tr><td>' . $count . '</td><td>' . $path . '</td><td>' . $clicks . '</td></tr>';
+    }
+    $verbose_output .= '</tbody></table>';
+    drupal_set_message($verbose_output);
+  }
+
+  watchdog(
+    'mises_solr_clicks',
+    'Drupal -> Google query for solr click stats returned %results, with %processed_results.', 
+    array(
+      '%results' => format_plural(count($results), '1 result', '@count results'),
+      '%processed_results' => format_plural(count($processed_results), '1 being a published node', '@count being published nodes'),
+    ), 
+    WATCHDOG_INFO
+  );
+
+  // Clear the block's cache since, potentially, its data has now changed:
+  variable_del('mises_solr_clicks_results_block_cache');
+
+  // Each time this data updates, the "mises_solr_click" table will be truncated and this fresh set of data will be inserted:
+  db_truncate('mises_solr_clicks')->execute();
+
+  foreach ($processed_results as $clicks => $nid) {
+    db_insert('mises_solr_clicks')->fields(array(
+      'entity_type' => 'node',
+      'entity_id' => $nid,
+      'click_count' => $clicks,
+    ))
+    ->execute();
+  }
+
+  return $processed_results;
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * Automatically fetch data based on the frequency value defined on this module's settings page:
+ */
+function mises_solr_clicks_cron() {
+  $frequency_in_seconds = 60 * 60 * variable_get('mises_solr_clicks_analytics_frequency_hours', 24);
+  $last_attempt = variable_get('mises_solr_clicks_results_timestamp', 0);
+  $seconds_since_last_attempt = time() - $last_attempt;
+
+  if ($seconds_since_last_attempt > $frequency_in_seconds) {
+    variable_set('mises_solr_clicks_results_timestamp', time());
+    $results = _mises_solr_clicks_query_google_analytics();
+    if (is_array($results) && !empty($results)) {
+      variable_set('mises_solr_clicks_results', $results);
+    }
+  }
+}
+
+/**
+ * Implements hook_views_api().
+ *
+ * Setup for Views integration.
+ */
+function mises_solr_clicks_views_api() {
+  return array(
+    'api' => '3.0',
+    'path' => drupal_get_path('module', 'mises_solr_clicks') . '/views',
+  );
+}
