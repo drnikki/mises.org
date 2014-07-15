@@ -1,10 +1,52 @@
 <?php
+
+
 function mises_migrate_init() {
   require_once('mises.media.inc');
   require_once('extras.inc');
+  mises_migrate_redirect();
+}
 
 
-
+function mises_migrate_redirect() {
+    switch(arg(0)) {
+      case 'daily':
+        if(is_numeric(arg(1))) {
+          $id = arg(1);
+          $type = 'daily';
+        }
+        else if(arg(1) == 'author' && is_numeric(arg(2))) {
+          $id = arg(2);
+          $type = 'Author';
+        }
+        break;
+      case 'media':
+      case 'document':
+        if(is_numeric(arg(1))) {
+          $id = arg(1);
+          $type = 'document';
+        }
+        else if(arg(1) == 'author' && is_numeric(arg(2))) {
+          $id = arg(2);
+          $type = 'Author';
+        }
+        break;
+      case 'Literature':
+        if(arg(1) == 'Author' && is_numeric(arg(2))) {
+          $id = arg(2);
+          $type = 'Author';
+        }
+        beak;
+  }
+  if($id && $type) {
+    $query = db_query("SELECT nid FROM {mises_migrate_url_map} WHERE old_type = :old_type AND old_id = :old_id", array(
+      'old_id' => $id,
+      'old_type' => $type
+    ));
+    if($result = $query->fetch()) {
+      drupal_goto('node/'.$result->nid);
+    }
+  }
 }
 
 
@@ -190,6 +232,7 @@ class MisesTagMapper {
       }
     }
   }
+
   protected function getLegacyTags($guid) {
     $tags = array();
     $query = $this->db
@@ -199,6 +242,7 @@ class MisesTagMapper {
     }
     return $tags;
   }
+
   protected function getLegacySubjects($documentId) {
     $subjects = array();
     $query = $this->db->query("SELECT dsl.Subject 
@@ -208,17 +252,15 @@ class MisesTagMapper {
     while($result = $query->fetch()) {
       $subjects[] = $result->SubjectID;
     }
-    dd($subjects);
     return $subjects;
   }
+
   protected function processCSV1() {
     static $rows;
-    if(!$row) {
+    if(!$rows) {
       $rows = array();
       $url = url(drupal_get_path('module', 'mises_migrate'). '/tagmapping1.csv');
-
       $contents = file_get_contents('./'.$url);
-
       $lines = explode("\n", $contents);
       foreach($lines as $line) {
         $row = str_getcsv($line);
@@ -230,30 +272,6 @@ class MisesTagMapper {
           );
           $rows[trim($row[1])] = $mapping;
         }
-      }
-      $url = url(drupal_get_path('module', 'mises_migrate'). '/subjectmap.csv');
-
-      $contents = file_get_contents('./'.$url);
-
-      $lines = explode("\n", $contents);
-      foreach($lines as $line) {
-                /*
-        $row = str_getcsv($line);
-
-        if($row[1] != '—') {
-          $rows[trim($row[0])
-        }
-        if($row[2] != '—') {
-
-        }
-        $mapping2 = array(
-          'field_topics' => array_map('trim',explode(",",$row[1])),
-          'field_austrian_school' => array_map('trim',explode(",", $row[2]))
-        );
-        $rows[trim($row[0])] = array_merge($mapping2, $mapping1);
-        }
-
-        }        */
       }
     }
     $this->map1 = $rows;
@@ -295,7 +313,7 @@ class QuotesMigration extends MisesMigration {
     );
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('body', 'Quote');
-    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('body:format')->defaultValue('simplified');
     $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Quotes'));
     $this->addFieldMapping('status')->defaultValue(1);
   }
@@ -323,7 +341,7 @@ class DailyArticlesMigration extends MisesMigration {
     $this->addFieldMapping('title', 'Title');
     $this->addFieldMapping('body', 'ArticleText');
     $this->addFieldMapping('body:summary', 'Description');
-    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('body:format')->defaultValue('simplified');
     $this->addFieldMapping('field_published_date', 'DatePosted'); 
     $this->addFieldMapping('field_mises_published_date', 'DatePosted'); 
     $this->addFieldMapping('field_author_1', 'AuthorId')
@@ -334,15 +352,28 @@ class DailyArticlesMigration extends MisesMigration {
     $this->addFieldMapping('created', 'CreatedDate');
     $this->addFieldMapping('changed', 'EditDate');
     $this->addFieldMapping('status', 'ShowArticle');
-    $this->addFieldMapping('field_austrian_school', 'field_austrian_school');
-    $this->addFieldMapping('field_topics', 'field_topics');
+    //$this->addFieldMapping('field_austrian_school', 'field_austrian_school');
+    //$this->addFieldMapping('field_topics', 'field_topics');
   }
   public function prepareRow($row) {
-    $this->mapTags($row);
+    $row->ArticleText = $this->cleanBody($row->ArticleText);
+    //$this->mapTags($row);
     return $row;
   }
   public function prepare($node, $row) {
     $this->insert_mapping_url($node->nid, $row->ArticleId, 'daily', $node->title);
+  }
+  private function cleanBody($content) {
+
+    $html = importDOM($content);
+    $xpath = new DOMXpath($html);
+    $remove = array('//div[@class="figure"]','//div[@class="article-author"]');
+    foreach($remove as $r) {
+      foreach($xpath->query($r) as $node) {
+        $node->parentNode->removeChild($node);
+      }
+    }
+    return exportDOM($html);
   }
 }
 
@@ -361,7 +392,7 @@ class DocumentMigration extends MisesMigration {
     );
     $this->addFieldMapping('title', 'Title');
     $this->addFieldMapping('body', 'Description');
-    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('body:format')->defaultValue('simplified');
     $this->addFieldMapping('field_published_date', 'CreateDate'); 
     $this->addFieldMapping('field_mises_published_date', 'CreateDate'); 
     $this->addFieldMapping('field_bibliography_footnote', 'PublicationInformation'); 
@@ -371,26 +402,120 @@ class DocumentMigration extends MisesMigration {
       ->sourceMigration('DocumentAuthors');
     // @todo - assign this
     $this->addFieldMapping('status', 'Display');
-    $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Books'));
+    $this->addFieldMapping('field_library_item_tree', 'media_type');
     $this->addFieldMapping('field_austrian_school', 'field_austrian_school');
     $this->addFieldMapping('field_topics', 'field_topics');
     $this->addFieldMapping('uid')->defaultValue(1);
   }
-  public function prepareRow($row) {
-    $this->mapTags($row);
-    /*
 
-    $row->mediatype = array();
-    $query = $this->db->query("SELECT dmt.MediaType FROM documentmediatype dmt INNER JOIN DocumentFiles df ON df.mediaTypeID = dmt.MediaTypeID WHERE df.DocumentId = $row->DocumentId");
-    while($result = $query->fetch()) {
-      $row->mediatype[] = $result->MediaType;
-    }
-    $row->mediatype = implode($row->mediatype,'|');
-    */
+  public function prepareRow($row) {
+    $map = $this->convertSubjects($this->getLegacySubjects($row->DocumentId));
+    $row->field_topics = $map['field_topics'];
+    $row->field_austrian_school = $map['field_austrian_school'];
+    $row->media_type = $this->convertMediaType($row->DocumentId);
     return $row;
   }
+
   public function prepare($node, $row) {
     $this->insert_mapping_url($node->nid, $row->DocumentId, 'document', $node->title);
+  }
+
+  protected function convertMediaType($documentId) {
+    $types = array();
+    $query = $this->db->query("SELECT dmt.MediaType FROM documentmediatype dmt INNER JOIN DocumentFiles df ON df.mediaTypeID = dmt.MediaTypeID WHERE df.DocumentId = $documentId");
+    while($result = $query->fetch()) {
+      switch($result->MediaType) {
+        case 'Web Page (.html,.aspx)':
+          $types['Online Texts'] = 'Online Texts';
+          break;
+        case 'Adobe Acrobat (.pdf)':
+        case 'ebook (.epub)':
+        case 'Amazon Kindle (.mobi)':
+        case 'ebook (.epub)':
+        case 'Document (.doc, .rtf, etc.)':
+          $types['Books'] = 'Books';
+          break;
+        case 'Audio (.mp3, .wav, etc.)':
+        case 'Windows Media Video (.wmv)':
+        case 'YouTube':
+        case 'MPEG-4 Video':
+          $types['Audio/Video'] = 'Audio/Video';
+          break;
+        case 'Streaming Video':
+          $types['Audio/Video'] = 'Audio/Video';
+          $types['Live Video'] = 'Live Video';
+          break;
+        case 'Audiobook':
+          $types['Audio Books'] = 'Audio Books';
+          $types['Audio/Video'] = 'Audio/Video';
+          break;
+      }
+    }
+    return array_values($types);
+  }
+
+  protected function convertSubjects($legacySubjects) {
+    static $vocabs;
+    static $map;
+    if(!$map) {
+      $rows = array();
+      $url = url(drupal_get_path('module', 'mises_migrate'). '/subjectmap.csv');
+
+      $contents = file_get_contents('./'.$url);
+
+      $lines = explode("\n", $contents);
+      foreach($lines as $line) {
+        $mapping = array();
+        $row = str_getcsv($line);
+        if($row[1] != '—') {
+          $mapping['field_topics'] = array_map('trim',explode(",", $row[1]));
+        }
+        if($row[2] != '—') {
+          $mapping['field_austrian_school'] = array_map('trim',explode(",", $row[2]));
+        }
+        $rows[trim($row[0])] = $mapping;
+      }
+      $map = $rows;
+    }
+    if(!$vocabs) {
+      $vocabs = array(6 => array(), 7 => array());
+      $query = db_query("SELECT name, tid, vid FROM {taxonomy_term_data} WHERE vid IN(6,7)");
+      while($result = $query->fetch()) {
+        switch($result->vid) {
+          case 6:
+            $field = 'field_topics';
+            break;
+          case 7:
+            $field = 'field_austrian_school';
+            break;
+        }
+        $vocabs[$field][$result->name] = $result->tid;
+      }
+    }
+    foreach($legacySubjects as $tag) {
+      if(isset($map[$tag])) {
+        foreach($map[$tag] as $type => $names) {
+          foreach($names as $name) {
+            if($vocabs[$type][$name]) {
+              $terms[$type][$vocabs[$type][$name]] = $vocabs[$type][$name];
+            }
+          }
+        }
+      }
+    }
+    return $terms;
+  }
+
+  protected function getLegacySubjects($documentId) {
+    $subjects = array();
+    $query = $this->db->query("SELECT ds.Subject 
+      FROM documentsubjectlink dsl 
+      INNER JOIN documentsubjects ds ON ds.SubjectID = dsl.SubjectID
+      WHERE dsl.DocumentId = $documentId");
+    while($result = $query->fetch()) {
+      $subjects[] = $result->Subject;
+    }
+    return $subjects;
   }
 }
 
@@ -471,11 +596,14 @@ class DocumentAuthorsMigration extends MisesMigration {
     $this->addFieldMapping('field_last_name', 'AuthorLast');
     //$this->addFieldMapping('field_born', 'Born');
     //$this->addFieldMapping('field_died', 'Died');
-    $this->addFieldMapping('body', 'BioText');
-    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('field_bio_summary', 'BioText');
+    $this->addFieldMapping('field_bio_summary:format')->defaultValue('simplified');
+    $this->addFieldMapping('body', 'body');
+    $this->addFieldMapping('body:format')->defaultValue('simplified');
     $this->addFieldMapping('status')->defaultValue(1);
   }
   public function prepareRow($row) {
+    $row->body = '';
     $row->name = $this->getFullName($row);
     return $row;
   }
@@ -562,11 +690,12 @@ class DailyArticlesImageMigration extends MisesImageMigration {
     }
     else if(isset($images[0])) {
       $row->image = $images[0];
+      // someone smart thinks that '//' is acceptable shorthand for http://
+      if(substr($row->image, 0, 2) == '//') {
+        $row->image = 'http:'.$row->image;
+      }
     }
     return $row;
-  }
-  public function prepare($node, $row) {
-
   }
 }
 
