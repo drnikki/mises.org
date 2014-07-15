@@ -257,12 +257,10 @@ class MisesTagMapper {
 
   protected function processCSV1() {
     static $rows;
-    if(!$row) {
+    if(!$rows) {
       $rows = array();
       $url = url(drupal_get_path('module', 'mises_migrate'). '/tagmapping1.csv');
-
       $contents = file_get_contents('./'.$url);
-
       $lines = explode("\n", $contents);
       foreach($lines as $line) {
         $row = str_getcsv($line);
@@ -274,30 +272,6 @@ class MisesTagMapper {
           );
           $rows[trim($row[1])] = $mapping;
         }
-      }
-      $url = url(drupal_get_path('module', 'mises_migrate'). '/subjectmap.csv');
-
-      $contents = file_get_contents('./'.$url);
-
-      $lines = explode("\n", $contents);
-      foreach($lines as $line) {
-                /*
-        $row = str_getcsv($line);
-
-        if($row[1] != '—') {
-          $rows[trim($row[0])
-        }
-        if($row[2] != '—') {
-
-        }
-        $mapping2 = array(
-          'field_topics' => array_map('trim',explode(",",$row[1])),
-          'field_austrian_school' => array_map('trim',explode(",", $row[2]))
-        );
-        $rows[trim($row[0])] = array_merge($mapping2, $mapping1);
-        }
-
-        }        */
       }
     }
     $this->map1 = $rows;
@@ -339,7 +313,7 @@ class QuotesMigration extends MisesMigration {
     );
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('body', 'Quote');
-    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('body:format')->defaultValue('simplified');
     $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Quotes'));
     $this->addFieldMapping('status')->defaultValue(1);
   }
@@ -433,7 +407,7 @@ class DocumentMigration extends MisesMigration {
     $this->addFieldMapping('field_topics', 'field_topics');
     $this->addFieldMapping('uid')->defaultValue(1);
   }
-  
+
   public function prepareRow($row) {
     $map = $this->convertSubjects($this->getLegacySubjects($row->DocumentId));
     $row->field_topics = $map['field_topics'];
@@ -622,11 +596,14 @@ class DocumentAuthorsMigration extends MisesMigration {
     $this->addFieldMapping('field_last_name', 'AuthorLast');
     //$this->addFieldMapping('field_born', 'Born');
     //$this->addFieldMapping('field_died', 'Died');
-    $this->addFieldMapping('body', 'BioText');
-    $this->addFieldMapping('body:format')->defaultValue('full_html');
+    $this->addFieldMapping('field_bio_summary', 'BioText');
+    $this->addFieldMapping('field_bio_summary:format')->defaultValue('simplified');
+    $this->addFieldMapping('body', 'body');
+    $this->addFieldMapping('body:format')->defaultValue('simplified');
     $this->addFieldMapping('status')->defaultValue(1);
   }
   public function prepareRow($row) {
+    $row->body = '';
     $row->name = $this->getFullName($row);
     return $row;
   }
