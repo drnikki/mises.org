@@ -355,6 +355,15 @@ body.not-logged-in {
 .italic {
   font-style: italic;
 }
+.indent1 {
+  padding-left: $grid-gutter-width;
+}
+.indent2 {
+  padding-left: $grid-gutter-width * 2;
+}
+.indent3 {
+  padding-left: $grid-gutter-width * 3;
+}
 h1, .h1 {
   color: $brand-primary;
   text-transform: uppercase;
