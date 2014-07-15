@@ -308,3 +308,24 @@ function mises_utility_block_view($delta = '') {
   }
   return $block;
 }
+
+/**
+ * @file ckeditor_custom.module
+ *
+ * Includes tweaks to ckeditor that can't be performed through config.
+ */
+
+/**
+ * Implements hook_wysiwyg_editor_settings_alter()
+ */
+function mises_utility_wysiwyg_editor_settings_alter(&$settings, $context) {
+
+  // The $context variable contains information about the wysiwyg profile we're using
+  // In this case we just need to check that the editor being used is ckeditor
+  if ($context['profile']->editor == 'ckeditor') {
+
+    // Specify the custom config file that defines our font styles
+    $settings['customConfig'] = base_path() . drupal_get_path('module', 'mises_utility') . '/ckeditor_custom_config.js';
+
+  }
+}

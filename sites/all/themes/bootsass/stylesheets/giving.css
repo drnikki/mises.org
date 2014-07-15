@@ -9159,6 +9159,21 @@ body.not-logged-in .contextual-links-wrapper {
 }
 
 /* line 358, ../sass/custom/_styles.scss */
+.indent1 {
+  padding-left: 20px;
+}
+
+/* line 361, ../sass/custom/_styles.scss */
+.indent2 {
+  padding-left: 40px;
+}
+
+/* line 364, ../sass/custom/_styles.scss */
+.indent3 {
+  padding-left: 60px;
+}
+
+/* line 367, ../sass/custom/_styles.scss */
 h1, .h1 {
   color: #00426b;
   text-transform: uppercase;
@@ -9166,104 +9181,104 @@ h1, .h1 {
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 364, ../sass/custom/_styles.scss */
+/* line 373, ../sass/custom/_styles.scss */
 .page-header {
   border-bottom: 0 none;
 }
 
-/* line 368, ../sass/custom/_styles.scss */
+/* line 377, ../sass/custom/_styles.scss */
 h2.page-title {
   margin: 0 0 16px;
   color: #38709e;
   font-size: 25px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
-/* line 374, ../sass/custom/_styles.scss */
+/* line 383, ../sass/custom/_styles.scss */
 h2.teaser-title {
   color: #00426b;
   font-size: 23px;
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 @media (min-width: 481px) {
-  /* line 379, ../sass/custom/_styles.scss */
+  /* line 388, ../sass/custom/_styles.scss */
   h2.teaser-title {
     margin-top: 0;
   }
 }
 
-/* line 385, ../sass/custom/_styles.scss */
+/* line 394, ../sass/custom/_styles.scss */
 h3 {
   color: #729949;
 }
 
-/* line 388, ../sass/custom/_styles.scss */
+/* line 397, ../sass/custom/_styles.scss */
 h4 {
   color: #38709e;
 }
 
-/* line 391, ../sass/custom/_styles.scss */
+/* line 400, ../sass/custom/_styles.scss */
 h5 {
   color: #00426b;
 }
 
-/* line 395, ../sass/custom/_styles.scss */
+/* line 404, ../sass/custom/_styles.scss */
 h3.author, h4.author {
   margin-top: 0;
   font-size: 14px;
 }
-/* line 399, ../sass/custom/_styles.scss */
+/* line 408, ../sass/custom/_styles.scss */
 h3.sub-heading, h4.sub-heading, label {
   text-transform: uppercase;
 }
-/* line 402, ../sass/custom/_styles.scss */
+/* line 411, ../sass/custom/_styles.scss */
 h3.sidebar-title, h4.sidebar-title {
   margin-bottom: 5px;
 }
-/* line 405, ../sass/custom/_styles.scss */
+/* line 414, ../sass/custom/_styles.scss */
 h3.primary, h4.primary {
   color: #00426b;
 }
-/* line 408, ../sass/custom/_styles.scss */
+/* line 417, ../sass/custom/_styles.scss */
 h3.secondary, h4.secondary {
   color: #38709e;
 }
-/* line 411, ../sass/custom/_styles.scss */
+/* line 420, ../sass/custom/_styles.scss */
 h3.contrast, h4.contrast {
   color: #729949;
 }
-/* line 414, ../sass/custom/_styles.scss */
+/* line 423, ../sass/custom/_styles.scss */
 .outset > h3, .outset > h4 {
   margin-top: 0;
 }
 
-/* line 418, ../sass/custom/_styles.scss */
+/* line 427, ../sass/custom/_styles.scss */
 h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   vertical-align: top;
 }
-/* line 420, ../sass/custom/_styles.scss */
+/* line 429, ../sass/custom/_styles.scss */
 h2 p, .h2 p, h3 p, .h3 p, h4 p, .h4 p, h5 p, .h5 p {
   display: inline;
 }
 
-/* line 424, ../sass/custom/_styles.scss */
+/* line 433, ../sass/custom/_styles.scss */
 h5 {
   margin-bottom: 3px;
 }
 
-/* line 427, ../sass/custom/_styles.scss */
+/* line 436, ../sass/custom/_styles.scss */
 address {
   margin: 0 0 12.5px;
   line-height: 1.25;
 }
 
-/* line 432, ../sass/custom/_styles.scss */
+/* line 441, ../sass/custom/_styles.scss */
 .read-more,
 .more-link {
   text-transform: uppercase;
   font-size: 13px;
   cursor: pointer;
 }
-/* line 436, ../sass/custom/_styles.scss */
+/* line 445, ../sass/custom/_styles.scss */
 .read-more a,
 .more-link a {
   color: #788086;
@@ -9271,12 +9286,12 @@ address {
   font-size: 13px;
 }
 
-/* line 442, ../sass/custom/_styles.scss */
+/* line 451, ../sass/custom/_styles.scss */
 .more-link {
   margin: 0 16px;
   line-height: 20px;
 }
-/* line 446, ../sass/custom/_styles.scss */
+/* line 455, ../sass/custom/_styles.scss */
 .more-link span.glyphicon {
   width: 24px;
   height: 24px;
@@ -9284,16 +9299,16 @@ address {
   font-size: 12px;
   line-height: 24px;
 }
-/* line 449, ../sass/custom/_styles.scss */
+/* line 458, ../sass/custom/_styles.scss */
 .more-link a:hover {
   color: #38709e;
 }
-/* line 451, ../sass/custom/_styles.scss */
+/* line 460, ../sass/custom/_styles.scss */
 .more-link a:hover span.glyphicon {
   background-color: #38709e;
 }
 
-/* line 457, ../sass/custom/_styles.scss */
+/* line 466, ../sass/custom/_styles.scss */
 a.external-link span.glyphicon {
   width: 24px;
   height: 24px;
@@ -9302,22 +9317,22 @@ a.external-link span.glyphicon {
   line-height: 24px;
   margin-left: 6px;
 }
-/* line 461, ../sass/custom/_styles.scss */
+/* line 470, ../sass/custom/_styles.scss */
 a.external-link:hover {
   color: #38709e;
 }
-/* line 463, ../sass/custom/_styles.scss */
+/* line 472, ../sass/custom/_styles.scss */
 a.external-link:hover span.glyphicon {
   background-color: #38709e;
 }
 
-/* line 469, ../sass/custom/_styles.scss */
+/* line 478, ../sass/custom/_styles.scss */
 .author a {
   color: inherit;
 }
 
 /* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
-/* line 474, ../sass/custom/_styles.scss */
+/* line 483, ../sass/custom/_styles.scss */
 .media-youtube-video {
   position: relative;
   padding-top: 25px;
@@ -9326,7 +9341,7 @@ a.external-link:hover span.glyphicon {
   height: 0;
 }
 
-/* line 480, ../sass/custom/_styles.scss */
+/* line 489, ../sass/custom/_styles.scss */
 .media-youtube-video iframe {
   position: absolute;
   top: 0;
@@ -9338,7 +9353,7 @@ a.external-link:hover span.glyphicon {
 /* SLIDESHOW 
 *  Override flexslide styles
 */
-/* line 490, ../sass/custom/_styles.scss */
+/* line 499, ../sass/custom/_styles.scss */
 .flexslider {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -9347,26 +9362,26 @@ a.external-link:hover span.glyphicon {
   border: 0;
   background: transparent;
 }
-/* line 497, ../sass/custom/_styles.scss */
+/* line 506, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav li {
   background: red;
 }
-/* line 500, ../sass/custom/_styles.scss */
+/* line 509, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav a {
   text-shadow: none;
 }
-/* line 502, ../sass/custom/_styles.scss */
+/* line 511, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav a:before {
   font-size: 30px;
 }
 
-/* line 508, ../sass/custom/_styles.scss */
+/* line 517, ../sass/custom/_styles.scss */
 #slideshow, #media, #image {
   margin-right: 20px;
   width: 240px;
 }
 
-/* line 515, ../sass/custom/_styles.scss */
+/* line 524, ../sass/custom/_styles.scss */
 html[contenteditable="true"] body {
   background-image: none;
 }
