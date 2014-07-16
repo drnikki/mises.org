@@ -27,7 +27,7 @@ function mises_causeview_snippet_node_info() {
       'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
+      'help' => t('Only Senior Editors have permission to create and edit Causeview code snippets.'),
     ),
   );
   return $items;
