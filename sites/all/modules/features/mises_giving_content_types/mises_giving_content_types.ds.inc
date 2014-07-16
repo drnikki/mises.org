@@ -12,6 +12,21 @@ function mises_giving_content_types_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|giving_page|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'giving_page';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'field_registration_link' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|giving_page|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|giving_page|simple_teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'giving_page';
@@ -103,12 +118,12 @@ function mises_giving_content_types_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'body',
-        1 => 'field_code_snippet',
+        1 => 'field_registration_link',
       ),
     ),
     'fields' => array(
       'body' => 'ds_content',
-      'field_code_snippet' => 'ds_content',
+      'field_registration_link' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(

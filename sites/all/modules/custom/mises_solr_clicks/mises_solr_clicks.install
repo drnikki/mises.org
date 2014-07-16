@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the table where solr clicks will be mapped to entities for the purpose of views support.
+ */
+function mises_solr_clicks_schema() {
+  $schema['mises_solr_clicks'] = array(
+    'description' => 'A table for tracking click through to Solr Search Results content as captured via Google Event tracking.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for a node\'s hit count.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE),
+      'entity_type' => array(
+        'description' => 'The type type of entity being track, for example, "node".',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE),
+      'entity_id' => array(
+        'description' => 'The ID of the entity whose page received a click from via Solr Searc Results as tracked by a Google Event.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE),
+      'click_count' => array(
+        'description' => 'The number of clicks this entity\'s page received, as tracked a Google Event.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}

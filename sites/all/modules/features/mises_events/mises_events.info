@@ -18,6 +18,7 @@ dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = file_entity
 dependencies[] = image
+dependencies[] = inline_entity_form
 dependencies[] = link
 dependencies[] = list
 dependencies[] = media

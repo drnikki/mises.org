@@ -941,7 +941,17 @@ function mises_events_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<h3>Content Creators:</h3>
+<ul><li>To add a Causeview form on this page, select "Add existing Causeview form," then start typing the title of the form. A list of matching forms will appear. Select the form you wish to use.</li>
+<li>To replace an existing Causeview form, first click the "Remove" button next to the title of the form below. Then add a new one as described above.</li>
+</ul>
+<h3>Senior Editors:</h3>
+<p>You have the option to use an existing Causeview forms or add a new one:</p>
+<ul><li>To use an existing Causeview form, follow the instructions for Content Creators above.</li>
+<li>To update an an existing Causeview form, click "Edit" next to the form title, then edit as needed.  <b>NOTE! Any changes you make in the Code Snippet field will apply to all uses of that form!</b></li>
+<li>To create a new Causeview form, select "Add new Causeview form." Fill in the title, enter the code snippet provided by Causeview, set status to "Published" and click "Create Causeview form."</li>
+</ul>
+<p> </p>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1001,26 +1011,26 @@ function mises_events_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_registration_link',
-    'label' => 'Registration Link',
+    'label' => 'Registration Form',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'inline_entity_form',
       'settings' => array(
         'fields' => array(),
         'type_settings' => array(
           'allow_existing' => 1,
           'delete_references' => 0,
-          'label_plural' => 'snippets',
-          'label_singular' => 'snippet',
+          'label_plural' => 'Causeview forms',
+          'label_singular' => 'Causeview form',
           'match_operator' => 'CONTAINS',
           'override_labels' => 1,
         ),
       ),
-      'type' => 'options_select',
+      'type' => 'inline_entity_form',
       'weight' => 56,
     ),
   );
@@ -1244,6 +1254,17 @@ Select "No registration or past event" to hide the registration embed or link fi
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<h3>Content Creators:</h3>
+<ul><li>To add a Causeview form on this page, select "Add existing Causeview form," then start typing the title of the form. A list of matching forms will appear. Select the form you wish to use.</li>
+<li>To replace an existing Causeview form, first click the "Remove" button next to the title of the form below. Then add a new one as described above.</li>
+</ul>
+<h3>Senior Editors:</h3>
+<p>You have the option to use an existing Causeview forms or add a new one:</p>
+<ul><li>To use an existing Causeview form, follow the instructions for Content Creators above.</li>
+<li>To update an an existing Causeview form, click "Edit" next to the form title, then edit as needed.  <b>NOTE! Any changes you make in the Code Snippet field will apply to all uses of that form!</b></li>
+<li>To create a new Causeview form, select "Add new Causeview form." Fill in the title, enter the code snippet provided by Causeview, set status to "Published" and click "Create Causeview form."</li>
+</ul>
+<p> </p>');
   t('Audience');
   t('Austrian School');
   t('Award');
@@ -1257,7 +1278,7 @@ Select "No registration or past event" to hide the registration embed or link fi
   t('Live Feed');
   t('Location');
   t('Public/Private');
-  t('Registration Link');
+  t('Registration Form');
   t('Registration Link (External)');
   t('Registration Type');
   t('Select how the user can register for this event. Based on the type selected, the appropriate field will appear.
