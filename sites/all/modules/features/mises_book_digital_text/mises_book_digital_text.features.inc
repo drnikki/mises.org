@@ -25,7 +25,7 @@ function mises_book_digital_text_ctools_plugin_api($module = NULL, $api = NULL) 
 function mises_book_digital_text_node_info() {
   $items = array(
     'book_digital_text' => array(
-      'name' => t('Book / Digital Text'),
+      'name' => t('Online Text'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
