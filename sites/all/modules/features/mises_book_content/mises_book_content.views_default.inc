@@ -39,9 +39,16 @@ function mises_book_content_views_default_views() {
   );
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_online_text_target_id']['id'] = 'field_online_text_target_id';
+  $handler->display->display_options['relationships']['field_online_text_target_id']['table'] = 'field_data_field_online_text';
+  $handler->display->display_options['relationships']['field_online_text_target_id']['field'] = 'field_online_text_target_id';
+  $handler->display->display_options['relationships']['field_online_text_target_id']['label'] = 'Online Text Reference';
+  $handler->display->display_options['relationships']['field_online_text_target_id']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_book_chapter_target_id']['id'] = 'field_book_chapter_target_id';
   $handler->display->display_options['relationships']['field_book_chapter_target_id']['table'] = 'field_data_field_book_chapter';
   $handler->display->display_options['relationships']['field_book_chapter_target_id']['field'] = 'field_book_chapter_target_id';
+  $handler->display->display_options['relationships']['field_book_chapter_target_id']['relationship'] = 'field_online_text_target_id';
   $handler->display->display_options['relationships']['field_book_chapter_target_id']['label'] = 'chapter';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_book_pages_target_id']['id'] = 'field_book_pages_target_id';
@@ -126,6 +133,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['sorts']['delta_1']['id'] = 'delta_1';
   $handler->display->display_options['sorts']['delta_1']['table'] = 'field_data_field_book_chapter';
   $handler->display->display_options['sorts']['delta_1']['field'] = 'delta';
+  $handler->display->display_options['sorts']['delta_1']['relationship'] = 'field_online_text_target_id';
   /* Sort criterion: Book Chapter: Pages (field_book_pages:delta) */
   $handler->display->display_options['sorts']['delta']['id'] = 'delta';
   $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_book_pages';
@@ -158,13 +166,15 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['relationship'] = 'field_online_text_target_id';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'field_online_text_target_id';
   $handler->display->display_options['filters']['type']['value'] = array(
     'book_digital_text' => 'book_digital_text',
   );
@@ -483,6 +493,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_online_text_target_id';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -491,6 +502,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['delta']['id'] = 'delta';
   $handler->display->display_options['fields']['delta']['table'] = 'field_data_field_book_chapter';
   $handler->display->display_options['fields']['delta']['field'] = 'delta';
+  $handler->display->display_options['fields']['delta']['relationship'] = 'field_online_text_target_id';
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
