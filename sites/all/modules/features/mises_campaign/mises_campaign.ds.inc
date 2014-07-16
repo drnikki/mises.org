@@ -128,15 +128,13 @@ function mises_campaign_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_image',
         1 => 'field_body',
-        2 => 'field_form_frame',
-        3 => 'field_donate_link',
+        2 => 'field_registration_link',
       ),
     ),
     'fields' => array(
       'field_image' => 'ds_content',
       'field_body' => 'ds_content',
-      'field_form_frame' => 'ds_content',
-      'field_donate_link' => 'ds_content',
+      'field_registration_link' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(

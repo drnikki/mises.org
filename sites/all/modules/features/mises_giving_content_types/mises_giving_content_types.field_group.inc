@@ -20,19 +20,20 @@ function mises_giving_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Code Snippet',
+    'label' => 'Causeview Form',
     'weight' => '2',
     'children' => array(
-      0 => 'field_code_snippet',
+      0 => 'field_registration_link',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Causeview Form',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-giving-code-snippet field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-giving-code-snippet field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_giving_code_snippet|node|giving_page|form'] = $field_group;

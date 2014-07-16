@@ -887,7 +887,6 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['create causeview_snippet content'] = array(
     'name' => 'create causeview_snippet content',
     'roles' => array(
-      'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
@@ -929,6 +928,26 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'create flex_block content'.
   $permissions['create flex_block content'] = array(
     'name' => 'create flex_block content',
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create giving_feature_block content'.
+  $permissions['create giving_feature_block content'] = array(
+    'name' => 'create giving_feature_block content',
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create giving_page content'.
+  $permissions['create giving_page content'] = array(
+    'name' => 'create giving_page content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
@@ -992,6 +1011,15 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create membership_level content'.
+  $permissions['create membership_level content'] = array(
+    'name' => 'create membership_level content',
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
     ),
     'module' => 'node',
   );
@@ -1209,6 +1237,24 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any giving_feature_block content'.
+  $permissions['delete any giving_feature_block content'] = array(
+    'name' => 'delete any giving_feature_block content',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any giving_page content'.
+  $permissions['delete any giving_page content'] = array(
+    'name' => 'delete any giving_page content',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any giving_story content'.
   $permissions['delete any giving_story content'] = array(
     'name' => 'delete any giving_story content',
@@ -1270,6 +1316,13 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any membership_level content'.
+  $permissions['delete any membership_level content'] = array(
+    'name' => 'delete any membership_level content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1469,6 +1522,24 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own giving_feature_block content'.
+  $permissions['delete own giving_feature_block content'] = array(
+    'name' => 'delete own giving_feature_block content',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own giving_page content'.
+  $permissions['delete own giving_page content'] = array(
+    'name' => 'delete own giving_page content',
+    'roles' => array(
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own giving_story content'.
   $permissions['delete own giving_story content'] = array(
     'name' => 'delete own giving_story content',
@@ -1530,6 +1601,13 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own membership_level content'.
+  $permissions['delete own membership_level content'] = array(
+    'name' => 'delete own membership_level content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1858,6 +1936,20 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'ds_extras',
   );
 
+  // Exported permission: 'ds_switch giving_feature_block'.
+  $permissions['ds_switch giving_feature_block'] = array(
+    'name' => 'ds_switch giving_feature_block',
+    'roles' => array(),
+    'module' => 'ds_extras',
+  );
+
+  // Exported permission: 'ds_switch giving_page'.
+  $permissions['ds_switch giving_page'] = array(
+    'name' => 'ds_switch giving_page',
+    'roles' => array(),
+    'module' => 'ds_extras',
+  );
+
   // Exported permission: 'ds_switch giving_story'.
   $permissions['ds_switch giving_story'] = array(
     'name' => 'ds_switch giving_story',
@@ -1896,6 +1988,13 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'ds_switch library_item'.
   $permissions['ds_switch library_item'] = array(
     'name' => 'ds_switch library_item',
+    'roles' => array(),
+    'module' => 'ds_extras',
+  );
+
+  // Exported permission: 'ds_switch membership_level'.
+  $permissions['ds_switch membership_level'] = array(
+    'name' => 'ds_switch membership_level',
     'roles' => array(),
     'module' => 'ds_extras',
   );
@@ -1960,6 +2059,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['eck add book_chapter book_chapter entities'] = array(
     'name' => 'eck add book_chapter book_chapter entities',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'eck',
@@ -1978,6 +2078,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['eck add book_page book_page entities'] = array(
     'name' => 'eck add book_page book_page entities',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'eck',
@@ -2141,6 +2242,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['eck edit book_chapter book_chapter entities'] = array(
     'name' => 'eck edit book_chapter book_chapter entities',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'eck',
@@ -2159,6 +2261,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['eck edit book_page book_page entities'] = array(
     'name' => 'eck edit book_page book_page entities',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'eck',
@@ -2351,7 +2454,6 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['edit any causeview_snippet content'] = array(
     'name' => 'edit any causeview_snippet content',
     'roles' => array(
-      'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
@@ -2412,6 +2514,26 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'edit any flex_block content'.
   $permissions['edit any flex_block content'] = array(
     'name' => 'edit any flex_block content',
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any giving_feature_block content'.
+  $permissions['edit any giving_feature_block content'] = array(
+    'name' => 'edit any giving_feature_block content',
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any giving_page content'.
+  $permissions['edit any giving_page content'] = array(
+    'name' => 'edit any giving_page content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
@@ -2485,6 +2607,15 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any membership_level content'.
+  $permissions['edit any membership_level content'] = array(
+    'name' => 'edit any membership_level content',
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
     ),
     'module' => 'node',
   );
@@ -2650,7 +2781,6 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['edit own causeview_snippet content'] = array(
     'name' => 'edit own causeview_snippet content',
     'roles' => array(
-      'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'node',
@@ -2712,6 +2842,26 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'edit own flex_block content'.
   $permissions['edit own flex_block content'] = array(
     'name' => 'edit own flex_block content',
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own giving_feature_block content'.
+  $permissions['edit own giving_feature_block content'] = array(
+    'name' => 'edit own giving_feature_block content',
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own giving_page content'.
+  $permissions['edit own giving_page content'] = array(
+    'name' => 'edit own giving_page content',
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
@@ -2785,6 +2935,15 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own membership_level content'.
+  $permissions['edit own membership_level content'] = array(
+    'name' => 'edit own membership_level content',
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
     ),
     'module' => 'node',
   );
@@ -3127,6 +3286,20 @@ function mises_roles_and_perms_user_default_permissions() {
       'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
     ),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-giving'.
+  $permissions['menu edit menu-giving'] = array(
+    'name' => 'menu edit menu-giving',
+    'roles' => array(),
+    'module' => 'menu_editor',
+  );
+
+  // Exported permission: 'menu edit menu-giving-sub-menu'.
+  $permissions['menu edit menu-giving-sub-menu'] = array(
+    'name' => 'menu edit menu-giving-sub-menu',
+    'roles' => array(),
     'module' => 'menu_editor',
   );
 
