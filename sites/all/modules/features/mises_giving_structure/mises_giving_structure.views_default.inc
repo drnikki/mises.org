@@ -573,7 +573,7 @@ function mises_giving_structure_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<div class="icon"><img src="/sites/all/themes/mises_giving/css/images/giving-story-icon.png" alt="Giving Stories"></div>';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div class="icon"><img src="/sites/all/themes/bootsass/images/giving/giving-story-icon.png" alt="Giving Stories"></div>';
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
