@@ -360,10 +360,10 @@ ul.addtocal_menu {
   }
 }
 .quote {
+  position: relative;
   overflow: hidden;
   margin-bottom: $grid-gutter-width;
   padding: $grid-gutter-width $grid-gutter-width $grid-gutter-width $grid-gutter-width * 3;
-  position: relative;
   background-color: $gray-lighter;
   //font-size: $font-size-large;
   &:before {
@@ -376,8 +376,8 @@ ul.addtocal_menu {
 .view-profile-lists {
   .views-summary {
     display: block;
-    text-align: center;
     padding: $grid-gutter-width;
+    text-align: center;
     word-break: break-word;
     span {
       padding: 0 $padding-xs-horizontal;
@@ -390,8 +390,8 @@ ul.addtocal_menu {
 /* SOCIAL MEDIA PAGES */
 .social-media-submenu {
   a {
-    font-weight: bold;
     text-transform: uppercase;
+    font-weight: bold;
     &.active {
       background: $gray-lighter;
     }
@@ -428,10 +428,13 @@ ul.addtocal_menu {
     }
   }
   ul {
-    list-style: none outside none;
-    margin: 0;
+    @extend .row;
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
+    list-style: none outside none;
     li {
+      @extend .col-xs-6;
       list-style: none outside none;
       input {
         margin: 0 $padding-xs-horizontal 0 0;
