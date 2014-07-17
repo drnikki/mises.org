@@ -4550,6 +4550,7 @@ function display_suite_shared_ds_layout_settings_info() {
       'field_citation' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'group_footnotes' => 'ds_content',
+      'follow_mises_institute' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
       'field_pdf' => 'ds_content',
       'field_level' => 'ds_hidden',
