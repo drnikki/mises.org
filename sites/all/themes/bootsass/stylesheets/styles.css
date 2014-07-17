@@ -2071,22 +2071,22 @@ pre code {
 }
 
 /* line 39, ../sass/bootstrap/_grid.scss */
-.row, .view-photo-album .view-content {
+.row, .view-photo-album .view-content, .newsletter-form ul {
   margin-left: -10px;
   margin-right: -10px;
 }
 /* line 15, ../sass/bootstrap/mixins/_clearfix.scss */
-.row:before, .view-photo-album .view-content:before, .row:after, .view-photo-album .view-content:after {
+.row:before, .view-photo-album .view-content:before, .newsletter-form ul:before, .row:after, .view-photo-album .view-content:after, .newsletter-form ul:after {
   content: " ";
   display: table;
 }
 /* line 19, ../sass/bootstrap/mixins/_clearfix.scss */
-.row:after, .view-photo-album .view-content:after {
+.row:after, .view-photo-album .view-content:after, .newsletter-form ul:after {
   clear: both;
 }
 
 /* line 14, ../sass/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .newsletter-form ul li, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 10px;
@@ -2094,7 +2094,7 @@ pre code {
 }
 
 /* line 33, ../sass/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .newsletter-form ul li, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
 }
 
@@ -2124,7 +2124,7 @@ pre code {
 }
 
 /* line 41, ../sass/bootstrap/mixins/_grid-framework.scss */
-.col-xs-6 {
+.col-xs-6, .newsletter-form ul li {
   width: 50%;
 }
 
@@ -9585,7 +9585,7 @@ body.section-jobs .main-content .shield .icon, body.section-profile .main-conten
 */
 /* TOP FEATURED REGION */
 /* line 8, ../sass/custom/_landing.scss */
-.featured .container .row, .featured .container .view-photo-album .view-content, .view-photo-album .featured .container .view-content {
+.featured .container .row, .featured .container .view-photo-album .view-content, .view-photo-album .featured .container .view-content, .featured .container .newsletter-form ul, .newsletter-form .featured .container ul {
   margin-right: 0;
   margin-left: 0;
   background: white;
@@ -10940,10 +10940,10 @@ ul.addtocal_menu li a:hover {
 
 /* line 362, ../sass/custom/_features.scss */
 .quote {
+  position: relative;
   overflow: hidden;
   margin-bottom: 20px;
   padding: 20px 20px 20px 60px;
-  position: relative;
   background-color: #e4ebee;
 }
 /* line 369, ../sass/custom/_features.scss */
@@ -10967,8 +10967,8 @@ ul.addtocal_menu li a:hover {
 /* line 377, ../sass/custom/_features.scss */
 .view-profile-lists .views-summary {
   display: block;
-  text-align: center;
   padding: 20px;
+  text-align: center;
   word-break: break-word;
 }
 /* line 382, ../sass/custom/_features.scss */
@@ -10984,8 +10984,8 @@ ul.addtocal_menu li a:hover {
 /* SOCIAL MEDIA PAGES */
 /* line 392, ../sass/custom/_features.scss */
 .social-media-submenu a {
-  font-weight: bold;
   text-transform: uppercase;
+  font-weight: bold;
 }
 /* line 395, ../sass/custom/_features.scss */
 .social-media-submenu a.active {
@@ -11025,15 +11025,16 @@ ul.addtocal_menu li a:hover {
 }
 /* line 430, ../sass/custom/_features.scss */
 .newsletter-form ul {
-  list-style: none outside none;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 0;
-}
-/* line 434, ../sass/custom/_features.scss */
-.newsletter-form ul li {
   list-style: none outside none;
 }
 /* line 436, ../sass/custom/_features.scss */
+.newsletter-form ul li {
+  list-style: none outside none;
+}
+/* line 439, ../sass/custom/_features.scss */
 .newsletter-form ul li input {
   margin: 0 5px 0 0;
 }
