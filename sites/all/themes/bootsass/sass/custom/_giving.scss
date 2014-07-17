@@ -253,6 +253,7 @@ span.glyphicon {
       &:hover {
         background-color: $brand-contrast;
         color: $white;
+        text-decoration: none;
       }
     }
   }  
