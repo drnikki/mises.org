@@ -11,6 +11,7 @@ function mises_migrate_init() {
 function mises_migrate_redirect() {
   $id = NULL;
   $type = NULL;
+  $entity_type = 'node';
   switch(arg(0)) {
     case 'daily':
       if(is_numeric(arg(1))) {
@@ -41,12 +42,13 @@ function mises_migrate_redirect() {
       break;
   }
   if($id && $type) {
-    $query = db_query("SELECT nid FROM {mises_migrate_url_map} WHERE old_type = :old_type AND old_id = :old_id", array(
+    $query = db_query("SELECT entity_id FROM {mises_migrate_url_map} WHERE old_type = :old_type AND old_id = :old_id AND entity_type = :entity_type", array(
       'old_id' => $id,
-      'old_type' => $type
+      'old_type' => $type,
+      'entity_type' => $entity_type
     ));
     if($result = $query->fetch()) {
-      drupal_goto('node/'.$result->nid);
+      drupal_goto($entity_type . '/' . $result->entity_id);
     }
   }
 }
@@ -67,26 +69,27 @@ abstract class MisesMigration extends Migration {
       $row->field_topics = $terms['field_topics'];
       $row->field_austrian_school = $terms['field_austrian_school'];
     }
-    function insert_mapping_url($nid, $old_id, $old_type, $title) {
-      $result = db_query("SELECT * FROM {mises_migrate_url_map} WHERE nid = :nid", array(
-        'nid' => $nid
+    public function insert_mapping_url($id, $old_id, $old_type, $title, $entity_type = 'node') {
+      $result = db_query("SELECT * FROM {mises_migrate_url_map} WHERE entity_id = :id AND entity_type = :type AND old_type = :old_type AND old_id = :old_id", array(
+        'id' => $id,
+        'old_id' => $old_id,
+        'old_type' => $old_type,
+        'type' => $entity_type
       ));
-      $new_url = drupal_get_path_alias('node/'.$nid);
+      $new_url = drupal_get_path_alias($entity_type .'/' . $id);
       $title = str_replace(array('-',':','?','"', "'", ",", '!', '(',')','%','$'),'', $title);
       $title = str_replace(' ', '-', $title);
       $title = str_replace("&", 'amp', $title);
       $old_url = 'http://www.mises.org/'.$old_type.'/'.$old_id.'/'.$title;
       $record = array(
-        'nid' => $nid, 
+        'entity_id' => $id, 
+        'entity_type' => $entity_type,
         'old_id' => $old_id, 
         'old_type' => $old_type, 
         'old_url' => $old_url,
         'new_url' => $new_url
       );
-      if($result->fetch()) {
-        drupal_write_record('mises_migrate_url_map', $record, 'nid');
-      }
-      else {
+      if(!$result->fetch()) {
         drupal_write_record('mises_migrate_url_map', $record);
       }
     }
@@ -392,7 +395,9 @@ class DailyArticlesMigration extends MisesMigration {
 
 
 class DocumentMigration extends MisesMigration {
+  protected $mediaIds;
   public function __construct($arguments) {
+    $this->mediaIds = array();
     parent::__construct($arguments);
     $query = $this->db
       ->select('documents', 'd')
@@ -436,6 +441,11 @@ class DocumentMigration extends MisesMigration {
 
   public function prepare($node, $row) {
     $this->insert_mapping_url($node->nid, $row->DocumentId, 'document', $node->title);
+    if(isset($this->mediaIds)) {
+      foreach($this->mediaIds as $mediaId) {
+        $this->insert_mapping_url($node->nid, $mediaId, 'media', $node->title);  
+      }
+    }
   }
 
   protected function processMediaTypes(&$row) {
@@ -444,6 +454,8 @@ class DocumentMigration extends MisesMigration {
       'DocumentId' => $row->DocumentId
     ));
     while($result = $query->fetch()) {
+      $this->mediaIds[$result->FileId] = $result->FileId;
+      dd($result);
       switch($result->MediaType) {
         case 'Web Page (.html,.aspx)':
           $types['Online Texts'] = 'Online Texts';
