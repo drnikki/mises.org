@@ -74,9 +74,9 @@ function mises_giving_story_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'ds_code' => 'ds_code',
+          'ds_code' => 0,
           'filtered_html' => 0,
-          'full_html' => 'full_html',
+          'full_html' => 0,
           'php_code' => 0,
           'plain_text' => 0,
           'simplified' => 'simplified',

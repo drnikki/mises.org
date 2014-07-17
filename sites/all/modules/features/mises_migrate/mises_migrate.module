@@ -9,34 +9,36 @@ function mises_migrate_init() {
 
 
 function mises_migrate_redirect() {
-    switch(arg(0)) {
-      case 'daily':
-        if(is_numeric(arg(1))) {
-          $id = arg(1);
-          $type = 'daily';
-        }
-        else if(arg(1) == 'author' && is_numeric(arg(2))) {
-          $id = arg(2);
-          $type = 'Author';
-        }
-        break;
-      case 'media':
-      case 'document':
-        if(is_numeric(arg(1))) {
-          $id = arg(1);
-          $type = 'document';
-        }
-        else if(arg(1) == 'author' && is_numeric(arg(2))) {
-          $id = arg(2);
-          $type = 'Author';
-        }
-        break;
-      case 'Literature':
-        if(arg(1) == 'Author' && is_numeric(arg(2))) {
-          $id = arg(2);
-          $type = 'Author';
-        }
-        beak;
+  $id = NULL;
+  $type = NULL;
+  switch(arg(0)) {
+    case 'daily':
+      if(is_numeric(arg(1))) {
+        $id = arg(1);
+        $type = 'daily';
+      }
+      else if(arg(1) == 'author' && is_numeric(arg(2))) {
+        $id = arg(2);
+        $type = 'Author';
+      }
+      break;
+    case 'media':
+    case 'document':
+      if(is_numeric(arg(1))) {
+        $id = arg(1);
+        $type = 'document';
+      }
+      else if(arg(1) == 'author' && is_numeric(arg(2))) {
+        $id = arg(2);
+        $type = 'Author';
+      }
+      break;
+    case 'Literature':
+      if(arg(1) == 'Author' && is_numeric(arg(2))) {
+        $id = arg(2);
+        $type = 'Author';
+      }
+      break;
   }
   if($id && $type) {
     $query = db_query("SELECT nid FROM {mises_migrate_url_map} WHERE old_type = :old_type AND old_id = :old_id", array(
@@ -717,91 +719,3 @@ class DocumentAuthorsImageMigration extends MisesImageMigration {
     return $row;
   }
 }
-
-
-class TagsMigration extends MisesMigration {
-  public function __construct($arguments) {
-    parent::__construct($arguments);
-    $query = $this->db
-      ->select('tag', 't')
-      ->fields('t')
-      ->distinct('TagId', 't');
-      $query->join('TagMap', 'm', 't.TagId=m.TagId');
-      $query->where("m.TaggedBy NOT IN('MisesBot', 'SearchEngineBot')");
-
-      $this->source = new MigrateSourceSQL($query);
-      $this->destination = new MigrateDestinationTerm('legacy_tags');
-      $this->map = new MigrateSQLMap($this->machineName, array(
-        'TagId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE, 'alias' => 't')),
-        MigrateDestinationNode::getKeySchema()
-      );
-      $this->addFieldMapping('name', 'Tag');
-  }
-}
-
-
-class DocumentMediaTypeMigration extends MisesMigration {
-  public function __construct($arguments) {
-    parent::__construct($arguments);
-    $query = $this->db
-      ->select('DocumentMediaType', 'd')
-      ->fields('d');
-    $this->source = new MigrateSourceSQL($query);
-    $this->destination = new MigrateDestinationTerm('legacy_media_type');
-    $this->map = new MigrateSQLMap($this->machineName, array(
-      'MediaTypeID' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
-      MigrateDestinationNode::getKeySchema()
-    );
-    $this->addFieldMapping('name', 'MediaType');
-    $this->addFieldMapping('field_image', 'image');
-    // Indicate that we want each file to maintain its name, replacing any
-    // previous file of the same name (as opposed to being renamed to avoid
-    // collisions, which is the default).
-    $this->addFieldMapping('field_image:file_replace')
-         ->defaultValue(FILE_EXISTS_REPLACE);
-    $this->addFieldMapping('field_image:alt', 'Subject');
-    $this->addFieldMapping('field_image:title', 'Subject');
-  }
-  public function prepareRow($row) {
-    $row->image = 'http://mises.org'.$row->MediaIconPath;
-    return $row;
-  }
-  public function prepare($row, $node) {
-
-  }
-}
-
-
-class DocumentSubjectsMigration extends MisesMigration {
-  public function __construct($arguments) {
-    parent::__construct($arguments);
-    $query = $this->db
-      ->select('documentsubjects', 'd')
-      ->fields('d');
-    $this->source = new MigrateSourceSQL($query);
-    $this->destination = new MigrateDestinationTerm('subject');
-    $this->map = new MigrateSQLMap($this->machineName, array(
-      'SubjectId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
-      MigrateDestinationNode::getKeySchema()
-    );
-    $this->addFieldMapping('name', 'Subject');
-    $this->addFieldMapping('field_short_name', 'ShortSubject');
-    $this->addFieldMapping('field_subject_image', 'image');
-    // Indicate that we want each file to maintain its name, replacing any
-    // previous file of the same name (as opposed to being renamed to avoid
-    // collisions, which is the default).
-    $this->addFieldMapping('field_subject_image:file_replace')
-         ->defaultValue(FILE_EXISTS_REPLACE);
-    $this->addFieldMapping('field_subject_image:alt', 'Subject');
-    $this->addFieldMapping('field_subject_image:title', 'Subject');
-  }
-  public function prepareRow($row) {
-    $row->image = 'http://mises.org'.$row->Photo;
-    return $row;
-  }
-  public function prepare($row, $node) {
-
-  }
-}
-
-

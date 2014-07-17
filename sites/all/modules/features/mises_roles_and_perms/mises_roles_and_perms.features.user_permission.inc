@@ -1095,16 +1095,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'path',
   );
 
-  // Exported permission: 'create webform content'.
-  $permissions['create webform content'] = array(
-    'name' => 'create webform content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create working_papers content'.
   $permissions['create working_papers content'] = array(
     'name' => 'create working_papers content',
@@ -1391,15 +1381,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: 'delete any webform content'.
-  $permissions['delete any webform content'] = array(
-    'name' => 'delete any webform content',
-    'roles' => array(
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any working_papers content'.
   $permissions['delete any working_papers content'] = array(
     'name' => 'delete any working_papers content',
@@ -1674,15 +1655,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
-  );
-
-  // Exported permission: 'delete own webform content'.
-  $permissions['delete own webform content'] = array(
-    'name' => 'delete own webform content',
-    'roles' => array(
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: 'delete own working_papers content'.
@@ -2037,13 +2009,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'ds_switch social_media'.
   $permissions['ds_switch social_media'] = array(
     'name' => 'ds_switch social_media',
-    'roles' => array(),
-    'module' => 'ds_extras',
-  );
-
-  // Exported permission: 'ds_switch webform'.
-  $permissions['ds_switch webform'] = array(
-    'name' => 'ds_switch webform',
     'roles' => array(),
     'module' => 'ds_extras',
   );
@@ -2691,16 +2656,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: 'edit any webform content'.
-  $permissions['edit any webform content'] = array(
-    'name' => 'edit any webform content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any working_papers content'.
   $permissions['edit any working_papers content'] = array(
     'name' => 'edit any working_papers content',
@@ -3018,16 +2973,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
-  );
-
-  // Exported permission: 'edit own webform content'.
-  $permissions['edit own webform content'] = array(
-    'name' => 'edit own webform content',
-    'roles' => array(
-      'Content Creator' => 'Content Creator',
-      'Senior Editor' => 'Senior Editor',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: 'edit own working_papers content'.
@@ -3477,21 +3422,32 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'show format selection for book_chapter'.
   $permissions['show format selection for book_chapter'] = array(
     'name' => 'show format selection for book_chapter',
-    'roles' => array(),
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'better_formats',
   );
 
   // Exported permission: 'show format selection for book_page'.
   $permissions['show format selection for book_page'] = array(
     'name' => 'show format selection for book_page',
-    'roles' => array(),
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'better_formats',
   );
 
   // Exported permission: 'show format selection for entityform'.
   $permissions['show format selection for entityform'] = array(
     'name' => 'show format selection for entityform',
-    'roles' => array(),
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'better_formats',
   );
 
@@ -3499,7 +3455,9 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['show format selection for field_collection_item'] = array(
     'name' => 'show format selection for field_collection_item',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'better_formats',
   );
@@ -3508,7 +3466,9 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['show format selection for file'] = array(
     'name' => 'show format selection for file',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'better_formats',
   );
@@ -3517,7 +3477,9 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['show format selection for node'] = array(
     'name' => 'show format selection for node',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'better_formats',
   );
