@@ -90,7 +90,7 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -303,7 +303,7 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'entityreference_entity_id',
-        'weight' => 17,
+        'weight' => 15,
       ),
       'print' => array(
         'label' => 'above',
@@ -1129,7 +1129,7 @@ function mises_library_item_field_default_field_instances() {
           'text' => 'Download [file:name]',
         ),
         'type' => 'file_download_link',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'print' => array(
         'label' => 'above',
@@ -1236,7 +1236,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 39,
       ),
       'print' => array(
         'label' => 'above',
@@ -1306,6 +1306,119 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_item-field_epub'
+  $field_instances['node-library_item-field_epub'] = array(
+    'bundle' => 'library_item',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 38,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 16,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_epub',
+    'label' => 'ePub',
+    'required' => 0,
+    'settings' => array(
+      'file_extensions' => 'epub',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'ebook' => 'ebook',
+          'image' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+          'youtube' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 25,
+    ),
+  );
+
   // Exported field_instance: 'node-library_item-field_featured_content'
   $field_instances['node-library_item-field_featured_content'] = array(
     'bundle' => 'library_item',
@@ -1335,7 +1448,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 40,
       ),
       'print' => array(
         'label' => 'above',
@@ -1431,7 +1544,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 45,
       ),
       'print' => array(
         'label' => 'above',
@@ -1629,6 +1742,119 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_item-field_kindle'
+  $field_instances['node-library_item-field_kindle'] = array(
+    'bundle' => 'library_item',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 40,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 17,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_kindle',
+    'label' => 'Kindle',
+    'required' => 0,
+    'settings' => array(
+      'file_extensions' => 'azw',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'ebook' => 'ebook',
+          'image' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+          'youtube' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 26,
+    ),
+  );
+
   // Exported field_instance: 'node-library_item-field_level'
   $field_instances['node-library_item-field_level'] = array(
     'bundle' => 'library_item',
@@ -1661,7 +1887,7 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'entityreference_entity_id',
-        'weight' => 15,
+        'weight' => 14,
       ),
       'print' => array(
         'label' => 'above',
@@ -1769,7 +1995,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 42,
       ),
       'print' => array(
         'label' => 'above',
@@ -1850,6 +2076,114 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_item-field_link_to_external_listing_'
+  $field_instances['node-library_item-field_link_to_external_listing_'] = array(
+    'bundle' => 'library_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
+        'weight' => 42,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
+        'weight' => 19,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_link_to_external_listing_',
+    'label' => 'Link (to store)',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => 'external-link',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'value',
+      'title_maxlength' => 128,
+      'title_value' => 'Buy Now from Mises Store',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 29,
+    ),
+  );
+
   // Exported field_instance: 'node-library_item-field_media_collection'
   $field_instances['node-library_item-field_media_collection'] = array(
     'bundle' => 'library_item',
@@ -1883,7 +2217,7 @@ function mises_library_item_field_default_field_instances() {
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'print' => array(
         'label' => 'above',
@@ -2090,6 +2424,212 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_item-field_mobi'
+  $field_instances['node-library_item-field_mobi'] = array(
+    'bundle' => 'library_item',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 41,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 15,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_mobi',
+    'label' => 'Mobi',
+    'required' => 0,
+    'settings' => array(
+      'file_extensions' => 'mobi',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'ebook' => 'ebook',
+          'image' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+          'youtube' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 27,
+    ),
+  );
+
+  // Exported field_instance: 'node-library_item-field_online_text'
+  $field_instances['node-library_item-field_online_text'] = array(
+    'bundle' => 'library_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 43,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_online_text',
+    'label' => 'Online text',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 28,
+    ),
+  );
+
   // Exported field_instance: 'node-library_item-field_original_publication_link'
   $field_instances['node-library_item-field_original_publication_link'] = array(
     'bundle' => 'library_item',
@@ -2119,7 +2659,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 44,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -2232,7 +2772,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 43,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -2302,6 +2842,119 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_item-field_pdf'
+  $field_instances['node-library_item-field_pdf'] = array(
+    'bundle' => 'library_item',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 39,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'media',
+        'weight' => 14,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_pdf',
+    'label' => 'PDF',
+    'required' => 0,
+    'settings' => array(
+      'file_extensions' => 'pdf',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'ebook' => 'ebook',
+          'image' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+          'youtube' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 24,
+    ),
+  );
+
   // Exported field_instance: 'node-library_item-field_published_date'
   $field_instances['node-library_item-field_published_date'] = array(
     'bundle' => 'library_item',
@@ -2330,7 +2983,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 37,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -2441,7 +3094,7 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 6,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -2570,7 +3223,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 38,
       ),
       'print' => array(
         'label' => 'above',
@@ -2729,7 +3382,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 41,
       ),
       'print' => array(
         'label' => 'above',
@@ -2939,7 +3592,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 36,
       ),
       'print' => array(
         'label' => 'above',
@@ -3060,12 +3713,17 @@ function mises_library_item_field_default_field_instances() {
   t('Featured Content');
   t('ID');
   t('Image');
+  t('Kindle');
   t('Level');
   t('Library Item Type');
+  t('Link (to store)');
   t('Media');
   t('Mises Published Date');
+  t('Mobi');
+  t('Online text');
   t('Original Publication Link');
   t('Original Title');
+  t('PDF');
   t('Primary or Original Author');
   t('Published Date');
   t('Subtitle');
@@ -3073,6 +3731,7 @@ function mises_library_item_field_default_field_instances() {
   t('Timely Content');
   t('Topics');
   t('Transcript');
+  t('ePub');
 
   return $field_instances;
 }
