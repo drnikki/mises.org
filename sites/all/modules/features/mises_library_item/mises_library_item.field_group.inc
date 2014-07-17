@@ -170,7 +170,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '13',
+    'weight' => '10',
     'children' => array(
       0 => 'field_bibliography_footnote',
       1 => 'field_citation',
@@ -313,7 +313,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '33',
+    'weight' => '32',
     'children' => array(
       0 => 'field_copyright_info',
       1 => 'print_link',

@@ -3477,21 +3477,32 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'show format selection for book_chapter'.
   $permissions['show format selection for book_chapter'] = array(
     'name' => 'show format selection for book_chapter',
-    'roles' => array(),
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'better_formats',
   );
 
   // Exported permission: 'show format selection for book_page'.
   $permissions['show format selection for book_page'] = array(
     'name' => 'show format selection for book_page',
-    'roles' => array(),
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'better_formats',
   );
 
   // Exported permission: 'show format selection for entityform'.
   $permissions['show format selection for entityform'] = array(
     'name' => 'show format selection for entityform',
-    'roles' => array(),
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+    ),
     'module' => 'better_formats',
   );
 
@@ -3499,7 +3510,9 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['show format selection for field_collection_item'] = array(
     'name' => 'show format selection for field_collection_item',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'better_formats',
   );
@@ -3508,7 +3521,9 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['show format selection for file'] = array(
     'name' => 'show format selection for file',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'better_formats',
   );
@@ -3517,7 +3532,9 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['show format selection for node'] = array(
     'name' => 'show format selection for node',
     'roles' => array(
+      'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
     ),
     'module' => 'better_formats',
   );
