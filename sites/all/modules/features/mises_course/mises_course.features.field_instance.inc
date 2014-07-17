@@ -118,7 +118,7 @@ function mises_course_field_default_field_instances() {
         'allowed_formats' => array(
           'ds_code' => 0,
           'filtered_html' => 0,
-          'full_html' => 'full_html',
+          'full_html' => 0,
           'php_code' => 0,
           'plain_text' => 0,
           'simplified' => 'simplified',

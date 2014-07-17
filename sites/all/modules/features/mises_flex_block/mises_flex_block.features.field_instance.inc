@@ -677,9 +677,11 @@ function mises_flex_block_field_default_field_instances() {
       'better_formats' => array(
         'allowed_formats' => array(
           'ds_code' => 0,
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
+          'simplified' => 'simplified',
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -694,8 +696,14 @@ function mises_flex_block_field_default_field_instances() {
             'full_html' => array(
               'weight' => 1,
             ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
             'plain_text' => array(
               'weight' => 10,
+            ),
+            'simplified' => array(
+              'weight' => -7,
             ),
           ),
         ),
