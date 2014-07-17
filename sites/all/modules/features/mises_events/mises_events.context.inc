@@ -48,12 +48,6 @@ function mises_events_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'views-photo_album-block' => array(
-          'module' => 'views',
-          'delta' => 'photo_album-block',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
         'views-upcoming_courses-block' => array(
           'module' => 'views',
           'delta' => 'upcoming_courses-block',

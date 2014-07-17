@@ -75,6 +75,39 @@ function mises_library_item_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_book_digi_text_media|node|library_item|form';
+  $field_group->group_name = 'group_book_digi_text_media';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Documents / Links',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_epub',
+      1 => 'field_pdf',
+      2 => 'field_kindle',
+      3 => 'field_mobi',
+      4 => 'field_link_to_external_listing_',
+      5 => 'field_online_text',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Documents / Links',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-book-digi-text-media field-group-tab',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_book_digi_text_media|node|library_item|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_content|node|library_item|form';
   $field_group->group_name = 'group_content';
   $field_group->entity_type = 'node';
@@ -170,7 +203,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '10',
+    'weight' => '12',
     'children' => array(
       0 => 'field_bibliography_footnote',
       1 => 'field_citation',
@@ -189,6 +222,41 @@ function mises_library_item_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_links|node|library_item|full';
+  $field_group->group_name = 'group_links';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Links',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_epub',
+      1 => 'field_pdf',
+      2 => 'field_kindle',
+      3 => 'field_mobi',
+      4 => 'field_link_to_external_listing_',
+      5 => 'dynamic_field_1',
+      6 => 'dynamic_field_2',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Links',
+      'instance_settings' => array(
+        'classes' => 'group-links list-group',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_links|node|library_item|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_media|node|library_item|form';
   $field_group->group_name = 'group_media';
   $field_group->entity_type = 'node';
@@ -197,7 +265,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_media_collection',
       1 => 'field_transcript',
@@ -313,7 +381,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '32',
+    'weight' => '35',
     'children' => array(
       0 => 'field_copyright_info',
       1 => 'print_link',
