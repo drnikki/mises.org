@@ -342,7 +342,7 @@ function mises_utility_wysiwyg_editor_settings_alter(&$settings, $context) {
  * Implements hook_ds_fields_info_alter to allow HTML in titles
  * 
  */
-function mises_utility_fields_info_alter(&$fields, $entity_type) {
+function mises_utility_ds_fields_info_alter(&$fields, $entity_type) {
   if ($entity_type == 'node') {
    $fields['title']['function'] = 'mises_utility_custom_render_function';
   }
