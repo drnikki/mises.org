@@ -3,6 +3,7 @@
 
 function mises_migrate_init() {
   require_once('mises.media.inc');
+  require_once('mises.journals.inc');
   require_once('extras.inc');
   mises_migrate_redirect();
 }
@@ -38,6 +39,21 @@ function mises_migrate_redirect() {
       if(arg(1) == 'Author' && is_numeric(arg(2))) {
         $id = arg(2);
         $type = 'Author';
+      }
+      break;
+    case 'periodical.aspx';
+      if(!isset($_GET['Id'])) {
+
+      }
+      else {
+        switch($_GET['Id']) {
+          case 3:
+            drupal_goto('taxonomy/term/137');
+            break;
+          case 4:
+            drupal_goto('taxonomy/term/151');
+            break;
+        }
       }
       break;
   }

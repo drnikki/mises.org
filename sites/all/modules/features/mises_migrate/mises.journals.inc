@@ -4,51 +4,46 @@ abstract class MisesJournalMigration extends MisesMigration {
   public function lookupAuthors($authors, &$row) {
     $i = 1;
     foreach($authors as $author) {
+      dd($author);
       $query = db_query("SELECT nid FROM {node} WHERE type = 'person_profile' AND title = :title", array('title' => $author));
       if($result = $query->fetch()) {
-        $row->author_.$i = $result->nid;
+        $field = 'author_'.$i;
+        $row->$field = $result->nid;
         $i++;
       }
     }
   }
-}
-
-class JLSMigration extends MisesJournalMigration  {
-  public function __construct($arguments) {
-    $this->mediaIds = array();
-    parent::__construct($arguments);
-    $query = $this->db
-      ->select('documents', 'd')
-      ->fields('d');
+  public function mapFields($query) {
     $this->source = new MigrateSourceSQL($query);
     $this->destination = new MigrateDestinationNode('library_item');
     $this->map = new MigrateSQLMap($this->machineName, array(
-      'DocumentId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
+      'GUID' => array(
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+      'description' => 'category ID')),
       MigrateDestinationNode::getKeySchema()
     );
-    $this->addFieldMapping('title', 'Title');
-    $this->addFieldMapping('body', 'Description');
-    $this->addFieldMapping('body:format')->defaultValue('simplified');
-    $this->addFieldMapping('field_published_date', 'CreateDate'); 
-    $this->addFieldMapping('field_mises_published_date', 'CreateDate'); 
-    $this->addFieldMapping('field_bibliography_footnote', 'PublicationInformation'); 
+    $this->addFieldMapping('title', 'title');
+    //$this->addFieldMapping('body', 'Description');
+    //$this->addFieldMapping('body:format')->defaultValue('simplified');
+    //$this->addFieldMapping('field_published_date', 'CreateDate'); 
+    //$this->addFieldMapping('field_mises_published_date', 'CreateDate'); 
+    //this->addFieldMapping('field_bibliography_footnote', 'PublicationInformation'); 
     $this->addFieldMapping('field_author_1', 'author_1')
       ->sourceMigration('DocumentAuthors');
     $this->addFieldMapping('field_author_2', 'author_2')
       ->sourceMigration('DocumentAuthors');
     // @todo - assign this
-    $this->addFieldMapping('status', 'Display');
-    $this->addFieldMapping('field_library_item_tree', 'media_type');
-    $this->addFieldMapping('field_austrian_school', 'field_austrian_school');
-    $this->addFieldMapping('field_topics', 'field_topics');
+    $this->addFieldMapping('status', 'status');
+    $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Journal/Periodical', 'Institute Publications', $this->journal_name));
     $this->addFieldMapping('field_pdf', 'pdf');
-    $this->addFieldMapping('field_mobi', 'mobi');
-    $this->addFieldMapping('field_epub', 'epub');
-    $this->addFieldMapping('field_online_text', 'online_text');
-    $this->addFieldMapping('field_link_to_external_listing_', 'store_link');
     $this->addFieldMapping('uid')->defaultValue(1);
+    $this->addFieldMapping('field_journal_issue_control', 'control');
+    $this->addFieldMapping('field_journal_issue', 'journal_issue');
+    $this->addFieldMapping('field_journal_issue:create_term')
+     ->defaultValue(TRUE);
   }
-
   public function prepareRow($row) {
     if($row->display == 'Yes') {
       $row->status = 1;
@@ -63,18 +58,53 @@ class JLSMigration extends MisesJournalMigration  {
     if($row->authorFirst2) {
       $authors[] = $row->authorFirst2.' '.$row->authorLast2;
     }
+    $this->lookupAuthors($authors, $row);
+    $row->pdf = $this->buildDownloadPath($row);
+    $row->journal_issue = $this->journal_name.' - Vol. '.$row->volume.' Num. '.$row->number;
     return $row;
   }
+  public function buildDownloadPath($row) {
 
+  }
   public function prepare($node, $row) {
-    $this->insert_mapping_url($node->nid, $row->DocumentId, 'document', $node->title);
-    if(isset($this->mediaIds)) {
-      foreach($this->mediaIds as $mediaId) {
-        $this->insert_mapping_url($node->nid, $mediaId, 'media', $node->title);  
-      }
-    }
+    dd($node);
   }
 }
+
+class JLSMigration extends MisesJournalMigration  {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $query = $this->db
+      ->select('JLS', 'j')
+      ->fields('j');
+    $this->journal_name = 'The Journal of Libertarian Studies';
+    $this->mapFields($query);
+  }
+  public function buildDownloadPath($row) {
+    return 'http://mises.org/journals/jls/'.$row->volume.'_'.$row->number.'/'.$row->volume.'_'.$row->number.'_'.$row->articleNum.'.pdf';
+  }
+}
+
+class QJAEMigration extends MisesJournalMigration  {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $query = $this->db
+      ->select('QJAEdb', 'q')
+      ->fields('q');
+    $this->journal_name = 'Quarterly Journal of Austrian Economics';
+    $this->mapFields($query);
+  }
+  public function buildDownloadPath($row) {
+    return 'http://mises.org/journals/qjae/pdf/qjae'.$row->volume.'_'.$row->number.'_'.$row->articleNum.'.pdf';
+  }
+}
+
+
+
+
+
+
+
 
 class MisesReviewMigration extends MisesJournalMigration  {
   public function __construct($arguments) {
