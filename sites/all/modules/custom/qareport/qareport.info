@@ -1,0 +1,9 @@
+name = QA Report
+description = QA Report Module
+core = 7.x
+package = Quality Assurance
+version = 7.x-1.0
+project = qareport
+configure = admin/config/development/qa
+
+
