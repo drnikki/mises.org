@@ -11,7 +11,6 @@ function mises_migrate_migrate_api() {
       'Product' => array('class_name' => 'ProductMigration', 'group_name' => 'mises'),
       'Course' => array('class_name' => 'CourseMigration', 'group_name' => 'mises'),
       'Biography' => array('class_name' => 'BiographyMigration', 'group_name' => 'mises'),
-      'Review' => array('class_name' => 'ReviewMigration', 'group_name' => 'mises'),
       'Quotes' => array('class_name' => 'QuotesMigration', 'group_name' => 'mises'),
       'DailyArticles' => array('class_name' => 'DailyArticlesMigration', 'group_name' => 'mises'),
       'DailyArticlesImage' => array('class_name' => 'DailyArticlesImageMigration', 'group_name' => 'mises images'),
@@ -23,6 +22,7 @@ function mises_migrate_migrate_api() {
       'JLS' => array('class_name' => 'JLSMigration', 'group_name' => 'mises journals'),
       'QJAE' => array('class_name' => 'QJAEMigration', 'group_name' => 'mises journals'),
       'RAE' => array('class_name' => 'QJAEMigration', 'group_name' => 'mises journals'),
+      'AEN' => array('class_name' => 'AENMigration', 'group_name' => 'mises journals'),
     ),
   );
   return $api;

@@ -4,7 +4,6 @@ abstract class MisesJournalMigration extends MisesMigration {
   public function lookupAuthors($authors, &$row) {
     $i = 1;
     foreach($authors as $author) {
-      dd($author);
       $query = db_query("SELECT nid FROM {node} WHERE type = 'person_profile' AND title = :title", array('title' => $author));
       if($result = $query->fetch()) {
         $field = 'author_'.$i;
@@ -13,15 +12,10 @@ abstract class MisesJournalMigration extends MisesMigration {
       }
     }
   }
-  public function mapFields($query) {
+  public function mapFields($query, $key = array('GUID' => array('type' => 'varchar','length' => 255,'not null' => TRUE,'description' => 'category ID'))) {
     $this->source = new MigrateSourceSQL($query);
     $this->destination = new MigrateDestinationNode('library_item');
-    $this->map = new MigrateSQLMap($this->machineName, array(
-      'GUID' => array(
-      'type' => 'varchar',
-      'length' => 255,
-      'not null' => TRUE,
-      'description' => 'category ID')),
+    $this->map = new MigrateSQLMap($this->machineName, $key,
       MigrateDestinationNode::getKeySchema()
     );
     $this->addFieldMapping('title', 'title');
@@ -67,7 +61,7 @@ abstract class MisesJournalMigration extends MisesMigration {
 
   }
   public function prepare($node, $row) {
-    dd($node);
+    //dd($node);
   }
 }
 
@@ -114,6 +108,23 @@ class RAEMigration extends MisesJournalMigration  {
   public function prepareRow($row) {
     $this->journal_name = 'Review of Austrian Economics';
     $row = parent::prepareRow($row);
+  }
+}
+
+class AENMigration extends MisesJournalMigration  {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $query = $this->db
+      ->select('AENdb', 'a')
+      ->fields('a');
+    $this->journal_name = 'Austrian Economics Newsletter';
+    $key = array(
+      'control' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)
+    );
+    $this->mapFields($query, $key);
+  }
+  public function buildDownloadPath($row) {
+    return 'http://mises.org/journals/aen/aen'.$row->volume.'_'.$row->number.'_'.$row->articleNum.'.pdf';
   }
 }
 

@@ -41,6 +41,7 @@ function mises_migrate_redirect() {
         $type = 'Author';
       }
       break;
+    // journal redirects
     case 'periodical.aspx';
       if(!isset($_GET['Id'])) {
         //@todo
@@ -55,6 +56,9 @@ function mises_migrate_redirect() {
             break;
           case 5:
             drupal_goto('taxonomy/term/171');
+            break;
+          case 6:
+            drupal_goto('taxonomy/term/175');
             break;
         }
       }
