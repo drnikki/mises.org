@@ -99,6 +99,23 @@ class QJAEMigration extends MisesJournalMigration  {
   }
 }
 
+class RAEMigration extends MisesJournalMigration  {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $query = $this->db
+      ->select('RAEdb', 'r')
+      ->fields('r');
+    $this->journal_name = 'Review of Austrian Economics, Volumes 1-10';
+    $this->mapFields($query);
+  }
+  public function buildDownloadPath($row) {
+    return 'http://mises.org/journals/rae/pdf/RAE'.$row->volume.'_'.$row->number.'_'.$row->articleNum.'.pdf';
+  }
+  public function prepareRow($row) {
+    $this->journal_name = 'Review of Austrian Economics';
+    $row = parent::prepareRow($row);
+  }
+}
 
 
 

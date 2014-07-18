@@ -43,7 +43,7 @@ function mises_migrate_redirect() {
       break;
     case 'periodical.aspx';
       if(!isset($_GET['Id'])) {
-
+        //@todo
       }
       else {
         switch($_GET['Id']) {
@@ -52,6 +52,9 @@ function mises_migrate_redirect() {
             break;
           case 4:
             drupal_goto('taxonomy/term/151');
+            break;
+          case 5:
+            drupal_goto('taxonomy/term/171');
             break;
         }
       }

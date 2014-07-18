@@ -22,6 +22,7 @@ function mises_migrate_migrate_api() {
       'DocumentAuthorsImage' => array('class_name' => 'DocumentAuthorsImageMigration', 'group_name' => 'mises images'),
       'JLS' => array('class_name' => 'JLSMigration', 'group_name' => 'mises journals'),
       'QJAE' => array('class_name' => 'QJAEMigration', 'group_name' => 'mises journals'),
+      'RAE' => array('class_name' => 'QJAEMigration', 'group_name' => 'mises journals'),
     ),
   );
   return $api;
