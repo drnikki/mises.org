@@ -227,9 +227,17 @@ function mises_utility_update_projects_alter(&$projects) {
 function mises_utility_field_info_alter(&$info){
   $info['creative_commons']['default_formatter'] = 'creative_commons_large_image';
 }
-
 /**
  * Implements hook_preprocess_page
+ * 
+ */
+function mises_utility_preprocess_page(&$variables) {
+  // Ensure that tags are stripped from head_title.
+  $vars['head_title'] = strip_tags(html_entity_decode($vars['head_title']));
+}
+
+/**
+ * Implements hook_preprocess_node
  * Automatically disable event registration and the event date has passed
  * 
  */
@@ -328,4 +336,57 @@ function mises_utility_wysiwyg_editor_settings_alter(&$settings, $context) {
     $settings['customConfig'] = base_path() . drupal_get_path('module', 'mises_utility') . '/ckeditor_custom_config.js';
 
   }
+}
+
+/**
+ * Implements hook_ds_fields_info_alter to allow HTML in titles
+ * 
+ */
+function mises_utility_fields_info_alter(&$fields, $entity_type) {
+  if ($entity_type == 'node') {
+   $fields['title']['function'] = 'mises_utility_custom_render_function';
+  }
+}
+function mises_utility_custom_render_function($field) {
+  $output = '';
+  $settings = isset($field['formatter_settings']) ? $field['formatter_settings'] : array();
+  $settings += $field['properties']['default'];
+  // Basic string.
+  if (isset($settings['link text'])) {
+    $output = t($settings['link text']);
+  }
+  elseif (isset($field['properties']['entity_render_key']) && isset($field['entity']->{$field['properties']['entity_render_key']})) {
+    if ($field['entity_type'] == 'user' && $field['properties']['entity_render_key'] == 'name') {
+      $output = format_username($field['entity']);
+    }
+    else {
+      $output = $field['entity']->{$field['properties']['entity_render_key']};
+    }
+  }
+
+  if (empty($output)) {
+    return;
+  }
+
+  $output = filter_xss($output, array('b','i','em', 'strong'));
+
+  // Link.
+  if ($settings['link']) {
+    if (isset($field['entity']->uri['path'])) {
+      $path = $field['entity']->uri['path'];
+    }
+    else {
+      $uri_info = entity_uri($field['entity_type'], $field['entity']);
+      $path = $uri_info['path'];
+    }
+    $output = l($output, $path, array('html' => TRUE));
+  }
+
+  // Wrapper and class.
+  if (!empty($settings['wrapper'])) {
+    $wrapper = check_plain($settings['wrapper']);
+    $class = (!empty($settings['class'])) ? ' class="' . check_plain($settings['class']) . '"' : '';
+    $output = '<' . $wrapper . $class . '>' . $output . '</' . $wrapper . '>';
+  }
+  return $output;
 }
