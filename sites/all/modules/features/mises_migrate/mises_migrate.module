@@ -48,6 +48,12 @@ function mises_migrate_redirect() {
       }
       else {
         switch($_GET['Id']) {
+          case 1:
+            drupal_goto('taxonomy/term/156');
+            break;
+          case 2:
+            drupal_goto('taxonomy/term/154');
+            break;
           case 3:
             drupal_goto('taxonomy/term/137');
             break;
@@ -61,6 +67,17 @@ function mises_migrate_redirect() {
             drupal_goto('taxonomy/term/175');
             break;
         }
+      }
+      break;
+    case 'misesreview_detail.aspx';
+      if(isset($_GET['control'])) {
+        $type = 'mises_review';
+        $id = $_GET['control'];  
+      }
+    case 'freemarket_detail.aspx';
+      if(isset($_GET['control'])) {
+        $type = 'freemarket';
+        $id = $_GET['control'];  
       }
       break;
   }

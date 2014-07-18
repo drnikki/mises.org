@@ -23,6 +23,8 @@ function mises_migrate_migrate_api() {
       'QJAE' => array('class_name' => 'QJAEMigration', 'group_name' => 'mises journals'),
       'RAE' => array('class_name' => 'QJAEMigration', 'group_name' => 'mises journals'),
       'AEN' => array('class_name' => 'AENMigration', 'group_name' => 'mises journals'),
+      'MisesReview' => array('class_name' => 'MisesReviewMigration', 'group_name' => 'mises journals'),
+      'FreeMarket' => array('class_name' => 'FreeMarketMigration', 'group_name' => 'mises journals'),
     ),
   );
   return $api;

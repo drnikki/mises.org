@@ -55,6 +55,7 @@ abstract class MisesJournalMigration extends MisesMigration {
     $this->lookupAuthors($authors, $row);
     $row->pdf = $this->buildDownloadPath($row);
     $row->journal_issue = $this->journal_name.' - Vol. '.$row->volume.' Num. '.$row->number;
+    $this->title = strip_tags($row->title);
     return $row;
   }
   public function buildDownloadPath($row) {
@@ -130,60 +131,124 @@ class AENMigration extends MisesJournalMigration  {
 
 
 
-
-
-
-
-class MisesReviewMigration extends MisesJournalMigration  {
+class MisesReviewMigration extends MisesJournalMigration {
   public function __construct($arguments) {
-    $this->mediaIds = array();
     parent::__construct($arguments);
     $query = $this->db
-      ->select('documents', 'd')
-      ->fields('d');
+      ->select('misesreview', 'm')
+      ->fields('m');
+    $this->journal_name = 'Mises Review';
     $this->source = new MigrateSourceSQL($query);
     $this->destination = new MigrateDestinationNode('library_item');
     $this->map = new MigrateSQLMap($this->machineName, array(
-      'DocumentId' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)),
-      MigrateDestinationNode::getKeySchema()
+      'control' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)
+    ),MigrateDestinationNode::getKeySchema()
     );
-    $this->addFieldMapping('title', 'Title');
-    $this->addFieldMapping('body', 'Description');
+    $this->addFieldMapping('title', 'title');
+    $this->addFieldMapping('body', 'body');
     $this->addFieldMapping('body:format')->defaultValue('simplified');
-    $this->addFieldMapping('field_published_date', 'CreateDate'); 
-    $this->addFieldMapping('field_mises_published_date', 'CreateDate'); 
-    $this->addFieldMapping('field_bibliography_footnote', 'PublicationInformation'); 
-    $this->addFieldMapping('field_author_1', 'Author1')
+    $this->addFieldMapping('field_published_date', 'created'); 
+    $this->addFieldMapping('field_mises_published_date', 'created'); 
+    //this->addFieldMapping('field_bibliography_footnote', 'PublicationInformation'); 
+    $this->addFieldMapping('field_author_1', 'author_1')
       ->sourceMigration('DocumentAuthors');
-    $this->addFieldMapping('field_author_2', 'Author2')
+    $this->addFieldMapping('field_author_2', 'author_2')
       ->sourceMigration('DocumentAuthors');
     // @todo - assign this
-    $this->addFieldMapping('status', 'Display');
-    $this->addFieldMapping('field_library_item_tree', 'media_type');
-    $this->addFieldMapping('field_austrian_school', 'field_austrian_school');
-    $this->addFieldMapping('field_topics', 'field_topics');
-    $this->addFieldMapping('field_pdf', 'pdf');
-    $this->addFieldMapping('field_mobi', 'mobi');
-    $this->addFieldMapping('field_epub', 'epub');
-    $this->addFieldMapping('field_online_text', 'online_text');
-    $this->addFieldMapping('field_link_to_external_listing_', 'store_link');
+    $this->addFieldMapping('status')->defaultValue(1);
+    $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Journal/Periodical', 'Institute Publications', $this->journal_name));
     $this->addFieldMapping('uid')->defaultValue(1);
+    $this->addFieldMapping('field_journal_issue_control', 'control');
+    $this->addFieldMapping('field_journal_issue', 'journal_issue');
+    $this->addFieldMapping('field_journal_issue:create_term')
+     ->defaultValue(TRUE);
   }
-
   public function prepareRow($row) {
-    $map = $this->convertSubjects($this->getLegacySubjects($row->DocumentId));
-    $row->field_topics = $map['field_topics'];
-    $row->field_austrian_school = $map['field_austrian_school'];
-    $this->processMediaTypes($row);
+    $authors = array();
+    if($row->authorfirst) {
+      $authors[] = $row->authorfirst.' '.$row->authorlast;
+    }
+    if($row->authorfirst2) {
+      $authors[] = $row->authorfirst2.' '.$row->authorfirst2;
+    }
+    $this->lookupAuthors($authors, $row);
+    $row->journal_issue = $this->journal_name.' - '.$row->issue;
+    switch($row->issue_season) {
+      case 1:
+        $month = 4;
+        break;
+      case 2: 
+        $month = 7;
+        break;
+      case 3:
+        $month = 10;
+        break;
+      case 4:
+        $month = 12;
+        break;
+    }
+    $row->created = strtotime($month.'/1/'.$row->issue_year);
     return $row;
   }
 
   public function prepare($node, $row) {
-    $this->insert_mapping_url($node->nid, $row->DocumentId, 'document', $node->title);
-    if(isset($this->mediaIds)) {
-      foreach($this->mediaIds as $mediaId) {
-        $this->insert_mapping_url($node->nid, $mediaId, 'media', $node->title);  
-      }
+    $this->insert_mapping_url($node->nid, $row->control, 'mises_review', $node->title);
+  }
+}
+
+
+class FreeMarketMigration extends MisesJournalMigration {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+    $query = $this->db
+      ->select('FreeMarket', 'f')
+      ->fields('f');
+    $this->journal_name = 'The Free Market';
+    $this->source = new MigrateSourceSQL($query);
+    $this->destination = new MigrateDestinationNode('library_item');
+    $this->map = new MigrateSQLMap($this->machineName, array(
+      'control' => array('type' => 'int','unsigned' => TRUE,'not null' => TRUE)
+    ),MigrateDestinationNode::getKeySchema()
+    );
+    $this->addFieldMapping('title', 'title');
+    $this->addFieldMapping('body', 'body');
+    $this->addFieldMapping('body:format')->defaultValue('simplified');
+    $this->addFieldMapping('field_published_date', 'articledate'); 
+    $this->addFieldMapping('field_mises_published_date', 'articledate'); 
+    //this->addFieldMapping('field_bibliography_footnote', 'PublicationInformation'); 
+    $this->addFieldMapping('field_author_1', 'author_1')
+      ->sourceMigration('DocumentAuthors');
+    $this->addFieldMapping('field_author_2', 'author_2')
+      ->sourceMigration('DocumentAuthors');
+    // @todo - assign this
+    $this->addFieldMapping('status')->defaultValue(1);
+    $this->addFieldMapping('field_library_item_tree')->defaultValue(array('Journal/Periodical', 'Institute Publications', $this->journal_name));
+    $this->addFieldMapping('uid')->defaultValue(1);
+    $this->addFieldMapping('field_journal_issue_control', 'control');
+    $this->addFieldMapping('field_journal_issue', 'journal_issue');
+    $this->addFieldMapping('field_journal_issue:create_term')
+     ->defaultValue(TRUE);
+    $this->addFieldMapping('field_pdf', 'pdf');
+  }
+  public function prepareRow($row) {
+    $authors = array();
+    if($row->authorfirst) {
+      $authors[] = $row->authorfirst.' '.$row->authorlast;
     }
+    if($row->authorfirst2) {
+      $authors[] = $row->authorfirst2.' '.$row->authorfirst2;
+    }
+    $this->lookupAuthors($authors, $row);
+
+    $row->journal_issue = $this->journal_name.' - '.format_date(strtotime($row->articledate), 'custom', 'M Y');
+    if($row->PDFurl) {
+      $row->pdf = 'http://mises.org/'.$row->PDFurl;
+    }
+    return $row;
+  }
+
+  public function prepare($node, $row) {
+    $this->insert_mapping_url($node->nid, $row->control, 'freemarket', $node->title);
+    dd($node);
   }
 }
