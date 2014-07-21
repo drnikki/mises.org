@@ -40,25 +40,8 @@ var Drupal = Drupal || {};
         $("div.main-content").css({ "min-height": sidebarHeight }); // Roger's magic!
       };
       
-      var givingFeaturedBlock = function(block) {
-        if ($(window).width() > 768) {
-          var bHeight = $(block).height();
-          var PHeight = $(block).parent().height();
-          var bTop = PHeight - bHeight;
-          $(block).css({ top: bTop });
-          //console.log('block ' + block);
-          //console.log('wrapper ' + PHeight);
-          //console.log('block' + bHeight);
-        } else {
-          $(block).css({ top: 0 });
-        }
-      };
-      
-      
       $(document).ready(function() {
         implementEqualHeight();
-        givingFeaturedBlock('.featured .col-sm-8');
-        givingFeaturedBlock('.featured .col-sm-4');
         
         //glyphicons
         $('.latest-library-content .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
@@ -80,8 +63,6 @@ var Drupal = Drupal || {};
 
       $(window).resize(function() {
         implementEqualHeight();
-        givingFeaturedBlock('.featured .col-sm-8');
-        givingFeaturedBlock('.featured .col-sm-4');
       });      
       
       
