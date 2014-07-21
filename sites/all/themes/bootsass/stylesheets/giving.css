@@ -9511,40 +9511,44 @@ body {
     float: left;
   }
 }
+/* line 97, ../sass/custom/_giving.scss */
+#navbar .navbar-nav > li > a {
+  padding: 10px;
+}
 
-/* line 98, ../sass/custom/_giving.scss */
+/* line 101, ../sass/custom/_giving.scss */
 .navbar-collapse {
   -webkit-box-shadow: 0 0 0;
   box-shadow: 0 0 0;
   border: 0;
 }
 
-/* line 102, ../sass/custom/_giving.scss */
+/* line 105, ../sass/custom/_giving.scss */
 .navbar-default .navbar-toggle {
   border-color: #81a957;
   background: #46763a;
 }
-/* line 105, ../sass/custom/_giving.scss */
+/* line 108, ../sass/custom/_giving.scss */
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
   background: #38709e;
 }
-/* line 107, ../sass/custom/_giving.scss */
+/* line 110, ../sass/custom/_giving.scss */
 .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
   background: white;
 }
-/* line 111, ../sass/custom/_giving.scss */
+/* line 114, ../sass/custom/_giving.scss */
 .navbar-default .navbar-toggle .icon-bar {
   background: #81a957;
 }
 
-/* line 119, ../sass/custom/_giving.scss */
+/* line 122, ../sass/custom/_giving.scss */
 ul.menu li a, ul.menu li span {
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
-/* line 124, ../sass/custom/_giving.scss */
+/* line 127, ../sass/custom/_giving.scss */
 span.glyphicon {
   margin-right: 10px;
   border-radius: 50%;
@@ -9552,46 +9556,46 @@ span.glyphicon {
 }
 
 /* FEATURED */
-/* line 131, ../sass/custom/_giving.scss */
+/* line 134, ../sass/custom/_giving.scss */
 .featured {
   background: #729949 url("../images/giving/giving-bg-lg.jpg") center center no-repeat;
   background-size: cover;
 }
 @media (min-width: 768px) {
-  /* line 135, ../sass/custom/_giving.scss */
+  /* line 138, ../sass/custom/_giving.scss */
   .giving-front .featured .container, .giving-front .featured .row {
     min-height: 400px;
   }
 }
 @media (min-width: 992px) {
-  /* line 135, ../sass/custom/_giving.scss */
+  /* line 138, ../sass/custom/_giving.scss */
   .giving-front .featured .container, .giving-front .featured .row {
     min-height: 525px;
   }
 }
-/* line 144, ../sass/custom/_giving.scss */
+/* line 147, ../sass/custom/_giving.scss */
 .featured .row {
   position: relative;
 }
 @media (min-width: 768px) {
-  /* line 149, ../sass/custom/_giving.scss */
+  /* line 152, ../sass/custom/_giving.scss */
   .giving-front .featured .col-sm-8 {
     position: absolute;
     left: 0;
     bottom: 0;
   }
-  /* line 155, ../sass/custom/_giving.scss */
+  /* line 158, ../sass/custom/_giving.scss */
   .featured .col-sm-4 {
     position: absolute;
     right: 0;
     bottom: 0;
   }
 }
-/* line 162, ../sass/custom/_giving.scss */
+/* line 165, ../sass/custom/_giving.scss */
 .featured .panel {
   margin-bottom: 0;
 }
-/* line 166, ../sass/custom/_giving.scss */
+/* line 169, ../sass/custom/_giving.scss */
 .featured .view-flex-blocks-node-specific .panel {
   padding: 20px;
   background: #38709e;
@@ -9599,12 +9603,12 @@ span.glyphicon {
 }
 
 /* BANNER */
-/* line 174, ../sass/custom/_giving.scss */
+/* line 177, ../sass/custom/_giving.scss */
 .view-mode-simple_teaser {
   position: relative;
   min-height: 140px;
 }
-/* line 177, ../sass/custom/_giving.scss */
+/* line 180, ../sass/custom/_giving.scss */
 .view-mode-simple_teaser h1.banner {
   margin: 0;
   padding: 30px 40px;
@@ -9613,31 +9617,31 @@ span.glyphicon {
   color: white;
 }
 @media (min-width: 992px) {
-  /* line 184, ../sass/custom/_giving.scss */
+  /* line 187, ../sass/custom/_giving.scss */
   .view-mode-simple_teaser h1.banner {
     background: rgba(114, 153, 73, 0.85);
   }
-  /* line 186, ../sass/custom/_giving.scss */
+  /* line 189, ../sass/custom/_giving.scss */
   .giving-inner .view-mode-simple_teaser h1.banner {
     position: absolute;
     bottom: 0;
     left: 0;
   }
 }
-/* line 193, ../sass/custom/_giving.scss */
+/* line 196, ../sass/custom/_giving.scss */
 .giving-front .view-mode-simple_teaser h1.banner {
   padding: 15px;
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 197, ../sass/custom/_giving.scss */
+  /* line 200, ../sass/custom/_giving.scss */
   .giving-front .view-mode-simple_teaser h1.banner {
     background: #81a957;
   }
 }
 
 /* FEATURED BLOCKS */
-/* line 205, ../sass/custom/_giving.scss */
+/* line 208, ../sass/custom/_giving.scss */
 #block-views-giving-feature-blocks-block {
   padding: 5px 0 16px;
   background: rgba(114, 153, 73, 0.85);
@@ -9653,24 +9657,24 @@ span.glyphicon {
 #block-views-giving-feature-blocks-block:after {
   clear: both;
 }
-/* line 212, ../sass/custom/_giving.scss */
+/* line 215, ../sass/custom/_giving.scss */
 #block-views-giving-feature-blocks-block .views-row .content {
   padding: 5px 10px 0;
   margin-top: 30px;
 }
-/* line 217, ../sass/custom/_giving.scss */
+/* line 220, ../sass/custom/_giving.scss */
 #block-views-giving-feature-blocks-block .views-row.views-row-2 .content {
   border-right: 1px solid white;
   border-left: 1px solid white;
 }
-/* line 222, ../sass/custom/_giving.scss */
+/* line 225, ../sass/custom/_giving.scss */
 #block-views-giving-feature-blocks-block .views-row .image {
   position: absolute;
   top: -35px;
   left: 50%;
   margin-left: -17px;
 }
-/* line 228, ../sass/custom/_giving.scss */
+/* line 231, ../sass/custom/_giving.scss */
 #block-views-giving-feature-blocks-block .views-row .image a {
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 -1px 5px 0;
   box-shadow: rgba(0, 0, 0, 0.25) 0 -1px 5px 0;
@@ -9681,7 +9685,7 @@ span.glyphicon {
   background: none repeat scroll 0% 0% #FFF;
   line-height: 1;
 }
-/* line 236, ../sass/custom/_giving.scss */
+/* line 239, ../sass/custom/_giving.scss */
 #block-views-giving-feature-blocks-block .views-row .image a img {
   position: absolute;
   top: 50%;
@@ -9692,32 +9696,32 @@ span.glyphicon {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 242, ../sass/custom/_giving.scss */
+/* line 245, ../sass/custom/_giving.scss */
 #block-views-giving-feature-blocks-block .views-row .title h3 {
   margin: 3px 0 7px;
   text-transform: uppercase;
 }
-/* line 247, ../sass/custom/_giving.scss */
+/* line 250, ../sass/custom/_giving.scss */
 #block-views-giving-feature-blocks-block .views-row .body {
   margin: 0 0 15px;
 }
 @media (max-width: 991px) {
-  /* line 250, ../sass/custom/_giving.scss */
+  /* line 253, ../sass/custom/_giving.scss */
   #block-views-giving-feature-blocks-block .views-row .body {
     display: none;
   }
 }
-/* line 255, ../sass/custom/_giving.scss */
+/* line 258, ../sass/custom/_giving.scss */
 #block-views-giving-feature-blocks-block .views-row a {
   color: #FFF;
 }
 
 /* GIVE TODAY BUTTON */
-/* line 262, ../sass/custom/_giving.scss */
+/* line 265, ../sass/custom/_giving.scss */
 .give-today-block h3.give {
   margin: 0;
 }
-/* line 264, ../sass/custom/_giving.scss */
+/* line 267, ../sass/custom/_giving.scss */
 .give-today-block h3.give a {
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -9731,7 +9735,7 @@ span.glyphicon {
   font-size: 30px;
   line-height: 60px;
 }
-/* line 274, ../sass/custom/_giving.scss */
+/* line 277, ../sass/custom/_giving.scss */
 .give-today-block h3.give a:hover {
   background-color: #729949;
   color: white;
@@ -9739,15 +9743,15 @@ span.glyphicon {
 }
 
 /* SUB-MENU */
-/* line 285, ../sass/custom/_giving.scss */
+/* line 288, ../sass/custom/_giving.scss */
 .sidebar-right #block-menu-menu-giving-sub-menu {
   margin-bottom: 20px;
 }
-/* line 289, ../sass/custom/_giving.scss */
+/* line 292, ../sass/custom/_giving.scss */
 #block-menu-menu-giving-sub-menu ul.nav > li {
   border-top: 1px solid #c8cdd0;
 }
-/* line 291, ../sass/custom/_giving.scss */
+/* line 294, ../sass/custom/_giving.scss */
 #block-menu-menu-giving-sub-menu ul.nav > li > a {
   background: #81a957;
   color: white;
@@ -9755,11 +9759,11 @@ span.glyphicon {
   letter-spacing: 0.5px;
   font-size: 18px;
 }
-/* line 297, ../sass/custom/_giving.scss */
+/* line 300, ../sass/custom/_giving.scss */
 #block-menu-menu-giving-sub-menu ul.nav > li > a:hover {
   background: #729949;
 }
-/* line 300, ../sass/custom/_giving.scss */
+/* line 303, ../sass/custom/_giving.scss */
 #block-menu-menu-giving-sub-menu ul.nav > li > a span.glyphicon {
   width: 20px;
   height: 20px;
@@ -9772,7 +9776,7 @@ span.glyphicon {
 }
 
 /* SIDEBAR BLOCKS */
-/* line 313, ../sass/custom/_giving.scss */
+/* line 316, ../sass/custom/_giving.scss */
 .region-sidebar-second-top .view-giving-flex-blocks .panel {
   margin-bottom: 0;
   padding: 20px;
@@ -9780,47 +9784,47 @@ span.glyphicon {
   color: white;
 }
 
-/* line 321, ../sass/custom/_giving.scss */
+/* line 324, ../sass/custom/_giving.scss */
 .region-sidebar-second {
   padding-top: 20px;
 }
 
 /* FOOTER */
-/* line 326, ../sass/custom/_giving.scss */
+/* line 329, ../sass/custom/_giving.scss */
 .giving-footer {
   background: #38709e url("../images/giving/giving-story-bg.jpg") center center repeat;
   padding: 0 0 30px 0;
 }
 
 /* PRIMARY CONTENT BLOCKS */
-/* line 331, ../sass/custom/_giving.scss */
+/* line 334, ../sass/custom/_giving.scss */
 .main-container {
   padding-bottom: 30px;
 }
-/* line 333, ../sass/custom/_giving.scss */
+/* line 336, ../sass/custom/_giving.scss */
 .main-container h2:nth-of-type(2n-1) {
   color: #729949;
 }
-/* line 336, ../sass/custom/_giving.scss */
+/* line 339, ../sass/custom/_giving.scss */
 .main-container h2:nth-of-type(2n) {
   color: #38709e;
 }
-/* line 339, ../sass/custom/_giving.scss */
+/* line 342, ../sass/custom/_giving.scss */
 .main-container > .container > .col-sm-8 {
   padding-top: 20px;
 }
 
-/* line 343, ../sass/custom/_giving.scss */
+/* line 346, ../sass/custom/_giving.scss */
 .giving-bottom {
   padding: 20px;
 }
 
 /* GIVING STORIES */
-/* line 349, ../sass/custom/_giving.scss */
+/* line 352, ../sass/custom/_giving.scss */
 .giving-footer {
   position: relative;
 }
-/* line 351, ../sass/custom/_giving.scss */
+/* line 354, ../sass/custom/_giving.scss */
 .giving-footer h2.block-title {
   margin-top: 50px;
   color: white;
@@ -9830,7 +9834,7 @@ span.glyphicon {
   font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 362, ../sass/custom/_giving.scss */
+/* line 365, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .view-header {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -9840,29 +9844,29 @@ span.glyphicon {
   top: 0;
   left: 50%;
 }
-/* line 368, ../sass/custom/_giving.scss */
+/* line 371, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .icon {
   padding: 16px;
   border: 5px solid white;
   border-radius: 50%;
   background: #00426b;
 }
-/* line 374, ../sass/custom/_giving.scss */
+/* line 377, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .panel-body {
   padding: 20px 40px;
   font-size: 13px;
 }
-/* line 378, ../sass/custom/_giving.scss */
+/* line 381, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks h3 {
   margin-top: 0;
   text-transform: uppercase;
   font-size: 23px;
 }
-/* line 382, ../sass/custom/_giving.scss */
+/* line 385, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks h3 a {
   color: #729949;
 }
-/* line 386, ../sass/custom/_giving.scss */
+/* line 389, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .panel-footer {
   -webkit-transition: all, 0.5s;
   -o-transition: all, 0.5s;
@@ -9872,63 +9876,63 @@ span.glyphicon {
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 392, ../sass/custom/_giving.scss */
+/* line 395, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .panel-footer:hover {
   background: #729949;
 }
-/* line 395, ../sass/custom/_giving.scss */
+/* line 398, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .panel-footer a {
   color: white;
 }
-/* line 397, ../sass/custom/_giving.scss */
+/* line 400, ../sass/custom/_giving.scss */
 .view-giving-stories.bottom-blocks .panel-footer a:hover {
   text-decoration: none;
 }
 
 /* MEMBERSHIP LEVELS AND  CAMPAIGNS/AREAS TO SUPPORT VIEWS */
-/* line 406, ../sass/custom/_giving.scss */
+/* line 409, ../sass/custom/_giving.scss */
 .giving-table {
   margin: 20px 0;
 }
-/* line 408, ../sass/custom/_giving.scss */
+/* line 411, ../sass/custom/_giving.scss */
 .giving-table .views-row {
   clear: both;
   padding: 20px;
   border-top: #CCC 1px solid;
 }
-/* line 412, ../sass/custom/_giving.scss */
+/* line 415, ../sass/custom/_giving.scss */
 .giving-table .views-row:last-child {
   margin-bottom: 20px;
   border-bottom: #CCC 1px solid;
 }
-/* line 416, ../sass/custom/_giving.scss */
+/* line 419, ../sass/custom/_giving.scss */
 .giving-table .views-row .title {
   color: #216093;
 }
-/* line 418, ../sass/custom/_giving.scss */
+/* line 421, ../sass/custom/_giving.scss */
 .giving-table .views-row .title h5 {
   margin: 0;
   font-size: 22px;
 }
-/* line 422, ../sass/custom/_giving.scss */
+/* line 425, ../sass/custom/_giving.scss */
 .giving-table .views-row .title .cost {
   white-space: nowrap;
 }
-/* line 426, ../sass/custom/_giving.scss */
+/* line 429, ../sass/custom/_giving.scss */
 .giving-table .views-row .body {
   line-height: 1.4;
 }
-/* line 428, ../sass/custom/_giving.scss */
+/* line 431, ../sass/custom/_giving.scss */
 .giving-table .views-row .body p {
   margin: 0;
 }
-/* line 432, ../sass/custom/_giving.scss */
+/* line 435, ../sass/custom/_giving.scss */
 .giving-table .views-row .view-footer {
   padding: 10px 20px 0px;
 }
 
 /* PAGE ELEMENTS */
-/* line 438, ../sass/custom/_giving.scss */
+/* line 441, ../sass/custom/_giving.scss */
 .media-player {
   clear: both;
   padding: 20px 0;
