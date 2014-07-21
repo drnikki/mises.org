@@ -307,6 +307,9 @@ span.glyphicon {
           color: $brand-contrast-light;
         }
       }
+      &.active a {
+        background: $brand-contrast;
+      }
     }
   }
 }
