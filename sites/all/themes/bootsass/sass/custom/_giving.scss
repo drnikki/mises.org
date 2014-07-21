@@ -52,7 +52,7 @@ a {
 /* BODY */
 body {
   background: $white;
-  font-weight: 300;
+  font-weight: 400;
   font-size: $font-size-giving;
 }
 /* HEADER */
@@ -69,21 +69,22 @@ body {
   }
 }
 .logo.navbar-btn {
+  display: inline-block;
   max-width: 375px;
   border-bottom: 7px solid $brand-primary;
   background: $white;
-  display: inline-block;
 }
 #navbar {
   &.navbar-static-top {
+    @include box-shadow(0 0 0);
     position: relative;
     z-index: 5;
+    border: 0;
     border-width: 0;
     text-transform: uppercase;
     font-weight: 200;
+    font-weight: 600;
     font-size: 15px;
-    border: 0;
-    @include box-shadow(0 0 0);
     @media (min-width: $grid-float-breakpoint) {
       padding-top: $grid-gutter-width * 2;
       background: $brand-contrast;
@@ -95,8 +96,8 @@ body {
   }
 }
 .navbar-collapse {
-  border: 0;
   @include box-shadow(0 0 0);
+  border: 0;
 }
 .navbar-default .navbar-toggle {
   border-color: $brand-contrast-light;
@@ -128,19 +129,36 @@ span.glyphicon {
 
 /* FEATURED */
 .featured {
-  position: relative;
   background: $brand-contrast url('../images/giving/giving-bg-lg.jpg') center center no-repeat;
   background-size: cover;
   .container, .row {
     .giving-front & {
+      @media (min-width: $screen-sm) {
+        min-height: 400px;
+      }
       @media (min-width: $screen-md) {
         min-height: 525px;
       }
     }
   }
-  .col-sm-8, .col-sm-4 {
-    top: 0;
+  .row {
+    position: relative;
   }
+  @media (min-width: $screen-sm) {
+    .col-sm-8 {
+      .giving-front & {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+    .col-sm-4 {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  
   .panel {
     margin-bottom: 0;
   }
@@ -160,8 +178,8 @@ span.glyphicon {
     margin: 0;
     padding: $grid-gutter-width * 1.5 $grid-gutter-width * 2;
     width: 100%;
-    color: $white;
     background: $brand-secondary;
+    color: $white;
     @media (min-width: $screen-md) {
       & {
         background: $brand-contrast-trans;
@@ -173,8 +191,8 @@ span.glyphicon {
       }
     }
     .giving-front & {
-      text-align: center;
       padding: $grid-gutter-width * .75;
+      text-align: center;
       @media (min-width: $screen-sm) {
         & {
           background: $brand-contrast-light;
@@ -192,7 +210,8 @@ span.glyphicon {
   text-align: center;
   .views-row {
     .content {
-      padding: 5px 20px 0;
+      padding: 5px 10px 0;
+      margin-top: 30px;
     }
 
     &.views-row-2 .content {
@@ -201,9 +220,10 @@ span.glyphicon {
     }
 
     .image {
-      position: relative;
-      display: inline-block;
-      margin-top: -35px;
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      margin-left: -17px;
 
       a {
         @include box-shadow(rgba(0,0,0,0.25) 0 -1px 5px 0);
@@ -221,6 +241,7 @@ span.glyphicon {
     .title {
       h3 {
         margin: 3px 0 7px;
+        text-transform: uppercase;
       }
     }
     .body {
@@ -243,13 +264,13 @@ span.glyphicon {
     a {
       @include transition(all 0.2s ease);
       display: block;
+      padding: 0 20px;
       height: 60px;
+      background: url(../images/giving/giving-arrow-green.png) calc(100% - 20px) center no-repeat;
+      text-align: left;
       text-transform: uppercase;
       font-size: 30px;
       line-height: 60px;
-      padding: 0 20px;
-      text-align: left;
-      background: url(../images/giving/giving-arrow-green.png) calc(100% - 20px) center no-repeat;
       &:hover {
         background-color: $brand-contrast;
         color: $white;
@@ -266,7 +287,7 @@ span.glyphicon {
   }
   ul.nav {
     > li {
-      border-bottom: 1px solid $gray-light;
+      border-top: 1px solid $gray-light;
       > a {
         background: $brand-contrast-light;
         color: $white;
