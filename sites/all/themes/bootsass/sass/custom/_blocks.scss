@@ -302,7 +302,7 @@ ul.menu {
     padding: 10px 20px;
   }
   .view-content {
-    p {
+    p:last-child {
       margin: 0;
     }
   }
@@ -322,6 +322,9 @@ ul.menu {
     margin-top: 0;
     text-transform: uppercase;
     font-size: $font-size-h5;
+    color: $white;
+  }
+  a {
     color: $white;
   }
 }
