@@ -4,13 +4,18 @@ function mises_migrate_schema() {
     'mises_migrate_url_map' => array(
       'description' => 'The main table to hold the scheduler data.',
       'fields' => array(
-        'nid' => array(
+        'entity_id' => array(
           'description' => 'The {user}.uid of the user.',
           'type' => 'int',
           'unsigned' => TRUE,
           'not null' => TRUE,
           'default' => 0,
         ),
+        'entity_type' => array(
+          'description' => 'The UNIX UTC timestamp when to unpublish',
+          'type' => 'varchar',
+          'length' => 32,
+        ),   
         'old_id' => array(
           'description' => 'The {user}.uid of the user.',
           'type' => 'int',
@@ -21,7 +26,7 @@ function mises_migrate_schema() {
         'old_type' => array(
           'description' => 'The UNIX UTC timestamp when to unpublish',
           'type' => 'varchar',
-          'length' => 128,
+          'length' => 32,
         ), 
        'old_url' => array(
           'description' => 'The UNIX UTC timestamp when to unpublish',
@@ -34,10 +39,7 @@ function mises_migrate_schema() {
           'length' => 512,
         ),        
       ),
-      'primary key' => array('nid'),
-      'indexes' => array(
-        'old_type_old_id' => array('old_id', 'old_type')
-      ),
+      'primary key' => array('entity_id', 'entity_type', 'old_id', 'old_type'),
     ),
   );
   return $schema;
@@ -61,3 +63,12 @@ function mises_migrate_update_2() {
   drupal_uninstall_schema('mises_migrate');
   drupal_install_schema('mises_migrate');
 }
+
+/**
+ * Allow migration mapppings for everything not just content
+ */
+function mises_migrate_update_3() {
+  drupal_uninstall_schema('mises_migrate');
+  drupal_install_schema('mises_migrate');
+}
+
