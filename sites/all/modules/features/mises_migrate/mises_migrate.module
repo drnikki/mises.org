@@ -3,6 +3,7 @@
 
 function mises_migrate_init() {
   require_once('mises.media.inc');
+  require_once('mises.journals.inc');
   require_once('extras.inc');
   mises_migrate_redirect();
 }
@@ -11,6 +12,7 @@ function mises_migrate_init() {
 function mises_migrate_redirect() {
   $id = NULL;
   $type = NULL;
+  $entity_type = 'node';
   switch(arg(0)) {
     case 'daily':
       if(is_numeric(arg(1))) {
@@ -39,14 +41,54 @@ function mises_migrate_redirect() {
         $type = 'Author';
       }
       break;
+    // journal redirects
+    case 'periodical.aspx';
+      if(!isset($_GET['Id'])) {
+        //@todo
+      }
+      else {
+        switch($_GET['Id']) {
+          case 1:
+            drupal_goto('taxonomy/term/156');
+            break;
+          case 2:
+            drupal_goto('taxonomy/term/154');
+            break;
+          case 3:
+            drupal_goto('taxonomy/term/137');
+            break;
+          case 4:
+            drupal_goto('taxonomy/term/151');
+            break;
+          case 5:
+            drupal_goto('taxonomy/term/171');
+            break;
+          case 6:
+            drupal_goto('taxonomy/term/175');
+            break;
+        }
+      }
+      break;
+    case 'misesreview_detail.aspx';
+      if(isset($_GET['control'])) {
+        $type = 'mises_review';
+        $id = $_GET['control'];  
+      }
+    case 'freemarket_detail.aspx';
+      if(isset($_GET['control'])) {
+        $type = 'freemarket';
+        $id = $_GET['control'];  
+      }
+      break;
   }
   if($id && $type) {
-    $query = db_query("SELECT nid FROM {mises_migrate_url_map} WHERE old_type = :old_type AND old_id = :old_id", array(
+    $query = db_query("SELECT entity_id FROM {mises_migrate_url_map} WHERE old_type = :old_type AND old_id = :old_id AND entity_type = :entity_type", array(
       'old_id' => $id,
-      'old_type' => $type
+      'old_type' => $type,
+      'entity_type' => $entity_type
     ));
     if($result = $query->fetch()) {
-      drupal_goto('node/'.$result->nid);
+      drupal_goto($entity_type . '/' . $result->entity_id);
     }
   }
 }
@@ -67,26 +109,27 @@ abstract class MisesMigration extends Migration {
       $row->field_topics = $terms['field_topics'];
       $row->field_austrian_school = $terms['field_austrian_school'];
     }
-    function insert_mapping_url($nid, $old_id, $old_type, $title) {
-      $result = db_query("SELECT * FROM {mises_migrate_url_map} WHERE nid = :nid", array(
-        'nid' => $nid
+    public function insert_mapping_url($id, $old_id, $old_type, $title, $entity_type = 'node') {
+      $result = db_query("SELECT * FROM {mises_migrate_url_map} WHERE entity_id = :id AND entity_type = :type AND old_type = :old_type AND old_id = :old_id", array(
+        'id' => $id,
+        'old_id' => $old_id,
+        'old_type' => $old_type,
+        'type' => $entity_type
       ));
-      $new_url = drupal_get_path_alias('node/'.$nid);
+      $new_url = drupal_get_path_alias($entity_type .'/' . $id);
       $title = str_replace(array('-',':','?','"', "'", ",", '!', '(',')','%','$'),'', $title);
       $title = str_replace(' ', '-', $title);
       $title = str_replace("&", 'amp', $title);
       $old_url = 'http://www.mises.org/'.$old_type.'/'.$old_id.'/'.$title;
       $record = array(
-        'nid' => $nid, 
+        'entity_id' => $id, 
+        'entity_type' => $entity_type,
         'old_id' => $old_id, 
         'old_type' => $old_type, 
         'old_url' => $old_url,
         'new_url' => $new_url
       );
-      if($result->fetch()) {
-        drupal_write_record('mises_migrate_url_map', $record, 'nid');
-      }
-      else {
+      if(!$result->fetch()) {
         drupal_write_record('mises_migrate_url_map', $record);
       }
     }
@@ -106,6 +149,17 @@ abstract class MisesMigration extends Migration {
       }
       return implode($name, ' ');
     }
+  public function fixFilePath($path) {
+    if(!strpos($path,'ttp://') !== false) {
+      // some of these image links are broken lolz, 
+      // lets fix them
+      if($path != '/') {
+        $path = '/'.$path;
+      }
+      $path = 'http://mises.org'.$path;
+    }
+    return $path;
+  }
 }
 
 
@@ -381,7 +435,9 @@ class DailyArticlesMigration extends MisesMigration {
 
 
 class DocumentMigration extends MisesMigration {
+  protected $mediaIds;
   public function __construct($arguments) {
+    $this->mediaIds = array();
     parent::__construct($arguments);
     $query = $this->db
       ->select('documents', 'd')
@@ -407,6 +463,11 @@ class DocumentMigration extends MisesMigration {
     $this->addFieldMapping('field_library_item_tree', 'media_type');
     $this->addFieldMapping('field_austrian_school', 'field_austrian_school');
     $this->addFieldMapping('field_topics', 'field_topics');
+    $this->addFieldMapping('field_pdf', 'pdf');
+    $this->addFieldMapping('field_mobi', 'mobi');
+    $this->addFieldMapping('field_epub', 'epub');
+    $this->addFieldMapping('field_online_text', 'online_text');
+    $this->addFieldMapping('field_link_to_external_listing_', 'store_link');
     $this->addFieldMapping('uid')->defaultValue(1);
   }
 
@@ -414,18 +475,27 @@ class DocumentMigration extends MisesMigration {
     $map = $this->convertSubjects($this->getLegacySubjects($row->DocumentId));
     $row->field_topics = $map['field_topics'];
     $row->field_austrian_school = $map['field_austrian_school'];
-    $row->media_type = $this->convertMediaType($row->DocumentId);
+    $this->processMediaTypes($row);
     return $row;
   }
 
   public function prepare($node, $row) {
     $this->insert_mapping_url($node->nid, $row->DocumentId, 'document', $node->title);
+    if(isset($this->mediaIds)) {
+      foreach($this->mediaIds as $mediaId) {
+        $this->insert_mapping_url($node->nid, $mediaId, 'media', $node->title);  
+      }
+    }
   }
 
-  protected function convertMediaType($documentId) {
+  protected function processMediaTypes(&$row) {
     $types = array();
-    $query = $this->db->query("SELECT dmt.MediaType FROM documentmediatype dmt INNER JOIN DocumentFiles df ON df.mediaTypeID = dmt.MediaTypeID WHERE df.DocumentId = $documentId");
+    $query = $this->db->query("SELECT df.*, dmt.MediaType, dmt.Extensions FROM DocumentFiles df INNER JOIN documentmediatype dmt ON df.mediaTypeID = dmt.MediaTypeID WHERE df.DocumentId = :DocumentId", array(
+      'DocumentId' => $row->DocumentId
+    ));
     while($result = $query->fetch()) {
+      $this->mediaIds[$result->FileId] = $result->FileId;
+      dd($result);
       switch($result->MediaType) {
         case 'Web Page (.html,.aspx)':
           $types['Online Texts'] = 'Online Texts';
@@ -452,8 +522,50 @@ class DocumentMigration extends MisesMigration {
           $types['Audio/Video'] = 'Audio/Video';
           break;
       }
+      switch($result->Extensions) {
+        case '.pdf':
+          $row->pdf = $this->fixFilePath($result->URL);
+          break;
+        case '.mobi':
+          $row->mobi = $this->fixFilePath($result->URL);
+          break;
+        case '.epub':
+          $row->epub = $this->fixFilePath($result->URL);
+          break;
+        case '.html, .htm':
+          $query = db_query("SELECT nid FROM {node} WHERE title = :title AND type = 'book_digital_text'", array(
+            'title' => $row->Title
+          ));
+          // if a old online text node exist, lets overwrite data...
+          // this version was hand crafted
+          if($node = $query->fetch()) {
+            $node = node_load($node->nid);
+            $row->online_text = $node->nid;
+            $row->store_link = $node->field_link_to_external_listing_[LANGUAGE_NONE][0]['url'];
+            $file_types = array(
+              'mobi',
+              'pdf',
+              'epub'
+            );
+            foreach($file_types as $file_type) {
+              $field = 'field_'.$file_type;
+              $field = $node->$field;
+              if(isset($field[LANGUAGE_NONE])) {
+                $file_paths = array();
+                foreach($field[LANGUAGE_NONE] as $file) {
+                  $file = file_load($file['fid']);
+                  $file_paths[] = drupal_realpath($file->uri);
+                }
+                $row->$file_type = $file_paths;
+              }
+            }
+          }
+          break;
+      }
     }
-    return array_values($types);
+    if(isset($types)) {
+      $row->media_type = array_values($types);
+    }
   }
 
   protected function convertSubjects($legacySubjects) {

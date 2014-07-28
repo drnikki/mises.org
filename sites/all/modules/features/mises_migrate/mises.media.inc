@@ -33,15 +33,15 @@ class DocumentFileDocumentMigration extends MisesMigration {
          ->defaultValue(FILE_EXISTS_REPLACE);
   }
   public function prepareRow($row) {
-  	   if(!strpos($row->URL,'ttp://') !== false) {
-        // some of these image links are broken lolz, 
-        // lets fix them
-        if($row->URL != '/') {
-          $row->URL = '/'.$row->URL;
-        }
-        $row->URL = 'http://mises.org'.$row->URL;
+    if(!strpos($row->URL,'ttp://') !== false) {
+      // some of these image links are broken lolz, 
+      // lets fix them
+      if($row->URL != '/') {
+        $row->URL = '/'.$row->URL;
       }
-	   $row->file = $row->URL;
+      $row->URL = 'http://mises.org'.$row->URL;
+    }
+	  $row->file = $row->URL;
     return $row;
   }
 }
