@@ -1,9 +1,12 @@
 name = Mises Generic Landing Page
 core = 7.x
 package = Landing Pages
-version = 7.x-1.0
+version = 7.x-1.1
 project = mises_generic_landing_page
-dependencies[] = fe_nodequeue
-dependencies[] = nodequeue
-features[fe_nodequeue][] = generic_lp_recommended_resources
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = custom_search_blocks
+dependencies[] = views
+features[context][] = generic_term
+features[ctools][] = context:context:3
 features[features_api][] = api:2
