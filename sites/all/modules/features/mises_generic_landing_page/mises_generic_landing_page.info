@@ -9,4 +9,6 @@ dependencies[] = custom_search_blocks
 dependencies[] = views
 features[context][] = generic_term
 features[ctools][] = context:context:3
+features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
+features[views_view][] = flex_blocks_term_specific
