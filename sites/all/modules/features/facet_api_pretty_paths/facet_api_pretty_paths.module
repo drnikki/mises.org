@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Facet API Pretty Paths feature.
+ */
+
+include_once 'facet_api_pretty_paths.features.inc';
