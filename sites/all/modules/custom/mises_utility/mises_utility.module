@@ -233,7 +233,7 @@ function mises_utility_field_info_alter(&$info){
  */
 function mises_utility_preprocess_page(&$variables) {
   // Ensure that tags are stripped from head_title.
-  $vars['head_title'] = strip_tags(html_entity_decode($vars['head_title']));
+  $variables['head_title'] = strip_tags(html_entity_decode($vars['head_title']));
 }
 
 /**

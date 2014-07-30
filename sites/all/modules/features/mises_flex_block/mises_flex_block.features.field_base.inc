@@ -186,12 +186,63 @@ function mises_flex_block_field_default_field_bases() {
         'press' => 'Press',
         'economist' => 'Resources for the Economist',
         'giving_home' => 'Giving Section',
+        'term' => 'Term/Category page (select below; used for term/category descriptions)',
         'node' => 'Place only on the specific page(s) below',
       ),
       'allowed_values_function' => '',
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_term_page'
+  $field_bases['field_term_page'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_term_page',
+    'foreign keys' => array(
+      'taxonomy_term_data' => array(
+        'columns' => array(
+          'target_id' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'award_type' => 'award_type',
+          'currents_trends' => 'currents_trends',
+          'events' => 'events',
+          'level' => 'level',
+          'media_type' => 'media_type',
+          'profile_type' => 'profile_type',
+          'reading_group' => 'reading_group',
+          'the_austrian_school_of_economics' => 'the_austrian_school_of_economics',
+        ),
+      ),
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_weight'
