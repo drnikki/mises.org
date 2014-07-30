@@ -164,27 +164,27 @@ function search_blocks_strongarm() {
   $strongarm->value = array(
     'award' => 0,
     'blog' => 0,
-    'book_digital_text' => 0,
     'campaign_' => 0,
     'causeview_snippet' => 0,
     'course' => 0,
-    'document' => 0,
     'event' => 0,
     'flex_block' => 0,
+    'giving_feature_block' => 0,
+    'giving_page' => 0,
     'giving_story' => 0,
     'homepage_hero' => 0,
     'institute_fellowship' => 0,
     'job_posting_' => 0,
     'landing_page' => 0,
-    'legacy_book' => 0,
     'library_item' => 0,
+    'membership_level' => 0,
+    'book_digital_text' => 0,
     'person_profile' => 0,
     'photo_gallery' => 0,
     'product' => 0,
     'scholarship_' => 0,
     'social_media' => 0,
     'page' => 0,
-    'webform' => 0,
     'working_papers' => 0,
   );
   $export['custom_search_blocks_1_node_types'] = $strongarm;
@@ -196,27 +196,27 @@ function search_blocks_strongarm() {
   $strongarm->value = array(
     'award' => 0,
     'blog' => 0,
-    'book_digital_text' => 0,
     'campaign_' => 0,
     'causeview_snippet' => 0,
     'course' => 0,
-    'document' => 0,
     'event' => 0,
     'flex_block' => 0,
+    'giving_feature_block' => 0,
+    'giving_page' => 0,
     'giving_story' => 0,
     'homepage_hero' => 0,
     'institute_fellowship' => 0,
     'job_posting_' => 0,
     'landing_page' => 0,
-    'legacy_book' => 0,
     'library_item' => 0,
+    'membership_level' => 0,
+    'book_digital_text' => 0,
     'person_profile' => 0,
     'photo_gallery' => 0,
     'product' => 0,
     'scholarship_' => 0,
     'social_media' => 0,
     'page' => 0,
-    'webform' => 0,
     'working_papers' => 0,
   );
   $export['custom_search_blocks_1_node_types_excluded'] = $strongarm;
@@ -269,7 +269,7 @@ function search_blocks_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_blocks_1_paths';
-  $strongarm->value = 'search/site/[key]?f[0]=im_field_library_item_tree%253A147&f[1]=bundle%3Alibrary_item';
+  $strongarm->value = 'search/site/[key]?f[0]=im_field_library_item_tree%253A147&f[1]=bundle%3Alibrary_item&f[2]=[current-page:query:?]';
   $export['custom_search_blocks_1_paths'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -374,7 +374,7 @@ function search_blocks_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_delta';
-  $strongarm->value = 'blocks_1_';
+  $strongarm->value = '';
   $export['custom_search_delta'] = $strongarm;
 
   return $export;
