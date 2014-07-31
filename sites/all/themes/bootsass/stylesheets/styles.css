@@ -9733,9 +9733,13 @@ body.section-jobs .main-content .shield .icon, body.section-profile .main-conten
 .node-landing-page.view-mode-full .sub-heading {
   margin-top: 0;
 }
+/* line 144, ../sass/custom/_landing.scss */
+.node-landing-page.view-mode-full .row, .node-landing-page.view-mode-full .view-photo-album .view-content, .view-photo-album .node-landing-page.view-mode-full .view-content, .node-landing-page.view-mode-full .newsletter-form ul, .newsletter-form .node-landing-page.view-mode-full ul {
+  margin-bottom: 20px;
+}
 
 /* LANDING LIBRARY PAGE */
-/* line 158, ../sass/custom/_landing.scss */
+/* line 161, ../sass/custom/_landing.scss */
 .latest-library-content.outset, .latest-library-content.resource-item.odd, .latest-library-content.group-footnotes {
   margin-right: -10px;
   margin-left: -10px;
@@ -9743,7 +9747,7 @@ body.section-jobs .main-content .shield .icon, body.section-profile .main-conten
 }
 
 /* AUSTRIAN ECONOMICS LANDING PAGE */
-/* line 166, ../sass/custom/_landing.scss */
+/* line 169, ../sass/custom/_landing.scss */
 .austrian-econ-block img {
   border: 3px solid #788086;
 }
