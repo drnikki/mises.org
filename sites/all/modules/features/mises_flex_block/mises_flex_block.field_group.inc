@@ -59,6 +59,7 @@ function mises_flex_block_field_group_info() {
       1 => 'field_section',
       2 => 'field_weight',
       3 => 'field_on_page',
+      4 => 'field_term_page',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -41,7 +41,7 @@ function search_blocks_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Search Articles',
+    'title' => 'Search [current-page:page-title]',
     'visibility' => 0,
   );
 
