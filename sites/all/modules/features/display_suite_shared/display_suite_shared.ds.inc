@@ -1632,31 +1632,7 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_pdf' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'list-group-item',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
     'field_kindle' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'list-group-item',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_mobi' => array(
       'formatter_settings' => array(
         'ft' => array(
           'fi' => TRUE,
@@ -1679,6 +1655,30 @@ function display_suite_shared_ds_field_settings_info() {
           'fi' => TRUE,
           'fi-el' => 'h3',
           'fi-cl' => 'sub-heading',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_mobi' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'list-group-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_pdf' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'list-group-item',
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
@@ -2075,17 +2075,10 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'person_profile';
   $ds_fieldsetting->view_mode = 'author_full_name';
   $ds_fieldsetting->settings = array(
-    'title' => array(
+    'author_full_name' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '1',
-        'wrapper' => '',
-        'class' => '',
-        'ft' => array(),
-        'conditions' => array(),
-      ),
     ),
   );
   $export['node|person_profile|author_full_name'] = $ds_fieldsetting;
@@ -2811,7 +2804,7 @@ function display_suite_shared_ds_custom_fields_info() {
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
   $ds_field->field = 'author_full_name';
-  $ds_field->label = 'DEPRECATED Author Full Name';
+  $ds_field->label = 'Author Linked RelAuthor';
   $ds_field->field_type = 5;
   $ds_field->entities = array(
     'node' => 'node',
@@ -2819,7 +2812,7 @@ function display_suite_shared_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<a href="[node:url]">[node:field-first-name] [node:title]</a>',
+      'value' => '<a href="[node:url]" rel="author">[node:title]</a>',
       'format' => 'ds_code',
     ),
     'use_token' => 1,
@@ -4502,23 +4495,23 @@ function display_suite_shared_ds_layout_settings_info() {
         3 => 'field_image_collection',
         4 => 'group_date_author',
         5 => 'field_mises_published_date',
-        6 => 'group_tags',
-        7 => 'field_author_1',
-        8 => 'field_subtitle',
-        9 => 'field_author_2',
-        10 => 'group_links',
-        11 => 'field_topics',
+        6 => 'field_author_1',
+        7 => 'group_tags',
+        8 => 'field_author_2',
+        9 => 'field_subtitle',
+        10 => 'field_topics',
+        11 => 'group_links',
         12 => 'field_austrian_school',
         13 => 'body',
-        14 => 'field_media_collection',
-        15 => 'field_bibliography_footnote',
-        16 => 'field_document_attachment',
-        17 => 'field_citation',
+        14 => 'field_bibliography_footnote',
+        15 => 'field_media_collection',
+        16 => 'field_citation',
+        17 => 'field_document_attachment',
         18 => 'follow_mises_institute',
         19 => 'group_footnotes',
         20 => 'dynamic_field_1',
         21 => 'field_pdf',
-        23 => 'field_mobi',
+        24 => 'field_mobi',
         25 => 'field_epub',
         26 => 'field_kindle',
         27 => 'dynamic_field_2',
@@ -4526,7 +4519,7 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
       'ds_hidden' => array(
         22 => 'field_level',
-        24 => 'field_audience',
+        23 => 'field_audience',
       ),
     ),
     'fields' => array(
@@ -4536,26 +4529,25 @@ function display_suite_shared_ds_layout_settings_info() {
       'field_image_collection' => 'ds_content',
       'group_date_author' => 'ds_content',
       'field_mises_published_date' => 'ds_content',
-      'group_tags' => 'ds_content',
       'field_author_1' => 'ds_content',
-      'field_subtitle' => 'ds_content',
+      'group_tags' => 'ds_content',
       'field_author_2' => 'ds_content',
-      'group_links' => 'ds_content',
+      'field_subtitle' => 'ds_content',
       'field_topics' => 'ds_content',
+      'group_links' => 'ds_content',
       'field_austrian_school' => 'ds_content',
       'body' => 'ds_content',
-      'field_media_collection' => 'ds_content',
       'field_bibliography_footnote' => 'ds_content',
-      'field_document_attachment' => 'ds_content',
+      'field_media_collection' => 'ds_content',
       'field_citation' => 'ds_content',
+      'field_document_attachment' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'group_footnotes' => 'ds_content',
-      'follow_mises_institute' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
       'field_pdf' => 'ds_content',
       'field_level' => 'ds_hidden',
-      'field_mobi' => 'ds_content',
       'field_audience' => 'ds_hidden',
+      'field_mobi' => 'ds_content',
       'field_epub' => 'ds_content',
       'field_kindle' => 'ds_content',
       'dynamic_field_2' => 'ds_content',
@@ -4837,11 +4829,11 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
+        0 => 'author_full_name',
       ),
     ),
     'fields' => array(
-      'title' => 'ds_content',
+      'author_full_name' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(
