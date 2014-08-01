@@ -141,6 +141,9 @@
   .sub-heading {
     margin-top: 0;
   }
+  .row {
+    margin-bottom: $grid-gutter-width;
+  }
 }
 .field-collection-item-field-resources {
   .read-more {

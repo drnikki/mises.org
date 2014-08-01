@@ -485,5 +485,23 @@ function mises_theme_strongarm() {
   );
   $export['field_bundle_settings_field_collection_item__field_media_collection'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'html_title_allowed_elements';
+  $strongarm->value = array(
+    'b' => 'b',
+    'em' => 'em',
+    'i' => 'i',
+    'strong' => 'strong',
+    'sub' => 'sub',
+    'sup' => 'sup',
+    'bdi' => 0,
+    'cite' => 0,
+    'code' => 0,
+    'wbr' => 0,
+  );
+  $export['html_title_allowed_elements'] = $strongarm;
+
   return $export;
 }
