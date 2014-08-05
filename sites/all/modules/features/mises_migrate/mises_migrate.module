@@ -6,6 +6,7 @@ function mises_migrate_init() {
   require_once('mises.journals.inc');
   require_once('extras.inc');
   mises_migrate_redirect();
+  //generate_media_csv();
 }
 
 
@@ -495,7 +496,6 @@ class DocumentMigration extends MisesMigration {
     ));
     while($result = $query->fetch()) {
       $this->mediaIds[$result->FileId] = $result->FileId;
-      dd($result);
       switch($result->MediaType) {
         case 'Web Page (.html,.aspx)':
           $types['Online Texts'] = 'Online Texts';
@@ -561,6 +561,12 @@ class DocumentMigration extends MisesMigration {
             }
           }
           break;
+      }
+    }
+    if($row->CategoryId) {
+      $query = $this->db->query("SELECT Category FROM {MediaCategory} WHERE CategoryId = :CategoryId", array('CategoryId' => $row->CategoryId));
+      if($result = $query->fetch()) {
+        $types[$result->Category] = $result->Category;
       }
     }
     if(isset($types)) {
