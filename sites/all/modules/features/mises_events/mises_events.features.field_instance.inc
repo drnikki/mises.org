@@ -93,7 +93,7 @@ function mises_events_field_default_field_instances() {
           'link' => 0,
         ),
         'type' => 'entityreference_label',
-        'weight' => 8,
+        'weight' => 2,
       ),
       'print' => array(
         'label' => 'above',
@@ -1204,14 +1204,14 @@ Select "No registration or past event" to hide the registration embed or link fi
         'weight' => 9,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 7,
+        'weight' => 1,
       ),
       'print' => array(
         'label' => 'above',
