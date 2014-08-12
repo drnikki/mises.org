@@ -204,6 +204,7 @@ function mises_events_field_group_info() {
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
+      2 => 'tags_title',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
