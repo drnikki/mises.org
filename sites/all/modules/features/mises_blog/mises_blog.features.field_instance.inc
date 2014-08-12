@@ -241,7 +241,7 @@ function mises_blog_field_default_field_instances() {
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -606,14 +606,14 @@ function mises_blog_field_default_field_instances() {
         'weight' => 4,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 1,
       ),
       'print' => array(
         'label' => 'inline',

@@ -203,7 +203,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'field_bibliography_footnote',
       1 => 'field_citation',
@@ -230,13 +230,13 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Links',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_epub',
-      1 => 'field_pdf',
-      2 => 'field_kindle',
+      1 => 'field_kindle',
+      2 => 'field_link_to_external_listing_',
       3 => 'field_mobi',
-      4 => 'field_link_to_external_listing_',
+      4 => 'field_pdf',
       5 => 'dynamic_field_1',
       6 => 'dynamic_field_2',
     ),
@@ -381,7 +381,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '35',
+    'weight' => '32',
     'children' => array(
       0 => 'field_copyright_info',
       1 => 'print_link',
@@ -446,6 +446,7 @@ function mises_library_item_field_group_info() {
     'children' => array(
       0 => 'field_topics',
       1 => 'field_austrian_school',
+      2 => 'tags_title',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -474,6 +475,7 @@ function mises_library_item_field_group_info() {
     'children' => array(
       0 => 'field_topics',
       1 => 'field_austrian_school',
+      2 => 'tags_title',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
