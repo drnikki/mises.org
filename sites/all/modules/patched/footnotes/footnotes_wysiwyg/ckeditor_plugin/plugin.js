@@ -41,8 +41,13 @@ CKEDITOR.plugins.add( 'footnotes',
           var attr_value = null;
 
           element.editMode = true;
-          content = element.getText();
           attr_value = element.getAttribute('value');
+          var is_html = element.getAttribute('data-is-html');
+          is_html = is_html && is_html == '1';
+          if( is_html )
+            content = element.getHtml().replace('data-cke-saved-', '');
+          else
+            content = element.getText();
 
         if ( content.length > 0 )
          this.setValueOf( 'info','footnote', content );
@@ -52,6 +57,7 @@ CKEDITOR.plugins.add( 'footnotes',
          this.setValueOf( 'info','value', attr_value );
         else
          this.setValueOf( 'info','value', "" );
+        this.setValueOf( 'info', 'is_html', ( is_html && is_html == '1' ) );
        };
         return {
           title : Drupal.t('Footnotes Dialog'),
@@ -75,6 +81,12 @@ CKEDITOR.plugins.add( 'footnotes',
                   label : Drupal.t('Value :'),
                   labelLayout : 'horizontal',
                   style : 'float:left;width:100px;',
+                },
+                {
+                  id : 'is_html',
+                  type : 'checkbox',
+                  labelLayout : 'horizontal',
+                  label : Drupal.t('Footnote is HTML?')
                 }
               ]
             }
@@ -108,12 +120,19 @@ CKEDITOR.plugins.add( 'footnotes',
             var editor = this.getParentEditor();
             var content = this.getValueOf( 'info', 'footnote' );
             var value = this.getValueOf( 'info', 'value' );
+            var is_html = this.getValueOf( 'info', 'is_html' ) ? true : false;
             if ( content.length > 0 || value.length > 0 ) {
               var realElement = CKEDITOR.dom.element.createFromHtml('<fn></fn>');
-              if ( content.length > 0 )
-                realElement.setText(content);
+              if ( content.length > 0 ) {
+                if( is_html )
+                  realElement.setHtml(content);
+                else
+                  realElement.setText(content);
+              }
               if ( value.length > 0 )
                 realElement.setAttribute('value',value);
+              if( is_html )
+                realElement.setAttribute('data-is-html', '1');
               var fakeElement = editor.createFakeElement( realElement , 'cke_footnote', 'fn', false );
               editor.insertElement(fakeElement);
             }
