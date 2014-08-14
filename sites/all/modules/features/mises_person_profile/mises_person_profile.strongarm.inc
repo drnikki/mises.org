@@ -138,13 +138,13 @@ function mises_person_profile_strongarm() {
           'weight' => '5',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '7',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '6',
         ),
       ),
       'display' => array(),

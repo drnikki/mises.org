@@ -56,6 +56,7 @@ features[field_group][] = group_tags|node|person_profile|full
 features[field_group][] = group_works|node|person_profile|form
 features[field_instance][] = node-person_profile-body
 features[field_instance][] = node-person_profile-field_austrian_school
+features[field_instance][] = node-person_profile-field_award_type
 features[field_instance][] = node-person_profile-field_bio_summary
 features[field_instance][] = node-person_profile-field_contact_email
 features[field_instance][] = node-person_profile-field_contributions

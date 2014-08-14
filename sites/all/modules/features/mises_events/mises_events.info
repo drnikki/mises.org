@@ -59,7 +59,6 @@ features[field_group][] = group_event_registration|node|event|form
 features[field_group][] = group_tags|node|event|full
 features[field_instance][] = node-event-field_audience
 features[field_instance][] = node-event-field_austrian_school
-features[field_instance][] = node-event-field_award_type
 features[field_instance][] = node-event-field_description
 features[field_instance][] = node-event-field_event_date
 features[field_instance][] = node-event-field_event_location

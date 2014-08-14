@@ -293,7 +293,6 @@ function mises_seo_settings_metatag_export_default() {
   // Exported Metatag config instance: global:403.
   $config['global:403'] = array(
     'instance' => 'global:403',
-    'disabled' => FALSE,
     'config' => array(
       'canonical' => array(
         'value' => '[site:url]',
@@ -331,7 +330,6 @@ function mises_seo_settings_metatag_export_default() {
   // Exported Metatag config instance: global:404.
   $config['global:404'] = array(
     'instance' => 'global:404',
-    'disabled' => FALSE,
     'config' => array(
       'canonical' => array(
         'value' => '[site:url]',
@@ -369,7 +367,6 @@ function mises_seo_settings_metatag_export_default() {
   // Exported Metatag config instance: global:frontpage.
   $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name]',
@@ -593,13 +590,13 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '[term:name] | [site:name]',
       ),
       'description' => array(
-        'value' => '[term:description] [term:field_related_block]',
+        'value' => '[term:description]',
       ),
       'dcterms.title' => array(
         'value' => '[term:name]',
       ),
       'dcterms.description' => array(
-        'value' => '[term:description] [term:field_related_block]',
+        'value' => '[term:description]',
       ),
       'dcterms.identifier' => array(
         'value' => '[current-page:url:absolute]',
@@ -608,13 +605,13 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '[term:name]',
       ),
       'og:description' => array(
-        'value' => '[term:description] [term:field_related_block]',
+        'value' => '[term:description]',
       ),
       'twitter:title' => array(
         'value' => '[term:name]',
       ),
       'twitter:description' => array(
-        'value' => '[term:field_related_block]',
+        'value' => '[term:description]',
       ),
     ),
   );
@@ -622,7 +619,6 @@ function mises_seo_settings_metatag_export_default() {
   // Exported Metatag config instance: user.
   $config['user'] = array(
     'instance' => 'user',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[user:name] | [site:name]',
@@ -654,7 +650,6 @@ function mises_seo_settings_metatag_export_default() {
   // Exported Metatag config instance: view.
   $config['view'] = array(
     'instance' => 'view',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[view:title] | [site:name]',

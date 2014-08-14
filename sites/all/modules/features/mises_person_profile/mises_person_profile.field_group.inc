@@ -90,6 +90,7 @@ function mises_person_profile_field_group_info() {
       0 => 'body',
       1 => 'field_bio_summary',
       2 => 'field_contributions',
+      3 => 'field_award_type',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

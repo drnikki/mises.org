@@ -134,64 +134,6 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_award_type'
-  $field_instances['node-event-field_award_type'] = array(
-    'bundle' => 'event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 6,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 39,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 40,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_award_type',
-    'label' => 'Award',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 54,
-    ),
-  );
-
   // Exported field_instance: 'node-event-field_description'
   $field_instances['node-event-field_description'] = array(
     'bundle' => 'event',
@@ -1267,7 +1209,6 @@ Select "No registration or past event" to hide the registration embed or link fi
 <p> </p>');
   t('Audience');
   t('Austrian School');
-  t('Award');
   t('Date');
   t('Description');
   t('Event Image');
