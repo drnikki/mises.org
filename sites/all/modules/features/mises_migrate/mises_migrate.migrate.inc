@@ -25,6 +25,8 @@ function mises_migrate_migrate_api() {
       'AEN' => array('class_name' => 'AENMigration', 'group_name' => 'mises journals'),
       'MisesReview' => array('class_name' => 'MisesReviewMigration', 'group_name' => 'mises journals'),
       'FreeMarket' => array('class_name' => 'FreeMarketMigration', 'group_name' => 'mises journals'),
+      'Youtube' => array('class_name' => 'YoutubeMigration', 'group_name' => 'mises youtube'),
+      'DocumentFileYoutube' => array('class_name' => 'DocumentFileYoutubeMigration', 'group_name' => 'mises youtube'),
     ),
   );
   return $api;
