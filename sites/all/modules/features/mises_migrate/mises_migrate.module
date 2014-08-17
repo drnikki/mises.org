@@ -438,7 +438,7 @@ class DailyArticlesMigration extends MisesMigration {
 class DocumentMigration extends MisesMigration {
   protected $mediaIds;
   public function __construct($arguments) {
-    $this->mediaIds = array();
+
     parent::__construct($arguments);
     $query = $this->db
       ->select('documents', 'd')
@@ -490,6 +490,7 @@ class DocumentMigration extends MisesMigration {
   }
 
   protected function processMediaTypes(&$row) {
+    $this->mediaIds = array();
     $types = array();
     $query = $this->db->query("SELECT df.*, dmt.MediaType, dmt.Extensions FROM DocumentFiles df INNER JOIN documentmediatype dmt ON df.mediaTypeID = dmt.MediaTypeID WHERE df.DocumentId = :DocumentId", array(
       'DocumentId' => $row->DocumentId
@@ -572,6 +573,7 @@ class DocumentMigration extends MisesMigration {
     if(isset($types)) {
       $row->media_type = array_values($types);
     }
+    dd($this->mediaIds, $row->DocumentId);
   }
 
   protected function convertSubjects($legacySubjects) {
