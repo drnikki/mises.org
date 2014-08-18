@@ -14,7 +14,6 @@ dependencies[] = mises_landing_page
 dependencies[] = mises_popular_content
 dependencies[] = mises_static_page
 dependencies[] = top_bar_ads
-dependencies[] = uuid_features
 dependencies[] = views
 dependencies[] = views_limit_grouping
 __drupal_alter_by_ref[][node][flex_block] = flex_block
