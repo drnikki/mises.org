@@ -7,7 +7,7 @@ class DocumentFileDocumentMigration extends MisesMigration {
 	$query = $this->db
 		->select('DocumentFiles', 'd')
 		->fields('d')
-    ->where('d.MediaTypeId NOT IN(5,16)');
+    ->where('d.MediaTypeId NOT IN(5,16,4,3,9,6)');
     $this->source = new MigrateSourceSQL($query);
 
     $this->destination = new MigrateDestinationFieldCollection(
