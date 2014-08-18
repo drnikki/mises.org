@@ -573,7 +573,6 @@ class DocumentMigration extends MisesMigration {
     if(isset($types)) {
       $row->media_type = array_values($types);
     }
-    dd($this->mediaIds, $row->DocumentId);
   }
 
   protected function convertSubjects($legacySubjects) {
