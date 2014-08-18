@@ -15,6 +15,5 @@ features[ctools][] = context:context:3
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
-features[uuid_node][] = 6c5ae0d2-5547-48d1-b23a-6b739fa874c2
 features[views_view][] = daily_landing
 features_exclude[dependencies][ctools] = ctools
