@@ -12,7 +12,7 @@ function mises_blog_landing_views_default_views() {
 
   $view = new view();
   $view->name = 'blog';
-  $view->description = '';
+  $view->description = 'Visit the Mises Blog to see our thoughts on the latest news and events around the world through the lens of Austrian economics.';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Blog';
