@@ -215,6 +215,9 @@ span.glyphicon {
     .content {
       padding: 5px 10px 0;
       margin-top: 30px;
+      @media (max-width: $screen-sm-max) {
+        padding: 5px 5px 0;
+      }
     }
 
     &.views-row-2 .content {
@@ -245,6 +248,9 @@ span.glyphicon {
       h3 {
         margin: 3px 0 7px;
         text-transform: uppercase;
+        @media (max-width: $screen-sm-max) {
+          font-size: 15px;
+        }
       }
     }
     .body {

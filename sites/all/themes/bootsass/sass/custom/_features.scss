@@ -389,6 +389,9 @@ ul.addtocal_menu {
 }
 .profile-item {
   clear: right;
+  &:nth-of-type(3n+1) {
+    clear: left;
+  }
 }
 /* SOCIAL MEDIA PAGES */
 .social-media-submenu {
@@ -437,7 +440,7 @@ ul.addtocal_menu {
     padding: 0;
     list-style: none outside none;
     li {
-      @extend .col-xs-6;
+      @extend .col-sm-6;
       list-style: none outside none;
       input {
         margin: 0 $padding-xs-horizontal 0 0;
