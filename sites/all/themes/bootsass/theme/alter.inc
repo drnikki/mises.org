@@ -165,8 +165,8 @@ function bootsass_js_alter(&$js) {
     }
   }
 
-  // Always add bootsass.js last.
-  $bootsass = $theme_path . '/js/bootsass.js';
+  // Always add bootstrap.js last.
+  $bootsass = $theme_path . '/js/bootstrap.js';
   $js[$bootsass] = drupal_js_defaults($bootsass);
   $js[$bootsass]['group'] = JS_THEME;
   $js[$bootsass]['scope'] = 'footer';

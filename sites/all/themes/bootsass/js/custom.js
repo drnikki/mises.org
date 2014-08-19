@@ -34,7 +34,6 @@ var Drupal = Drupal || {};
         $('.row.video .col-xs-6 .panel-heading .panel-title').equalHeight();
         $('.row.video .col-xs-6 .panel-body').equalHeight();
         $('.row.video .col-xs-6 .panel-footer').equalHeight();
-        $('.profile-item').equalHeight();
 
         //var sidebarHeight = $("div.region-sidebar-second").height() + $("div.region-sidebar-second-top").height();
         var sidebarHeight = $(".sidebar").height();
@@ -99,6 +98,11 @@ var Drupal = Drupal || {};
 
 
       $(window).resize(function() {
+        implementEqualHeight();
+      });      
+
+      $(document).ajaxComplete(function() {
+        console.log("Ajax complete");
         implementEqualHeight();
       });      
       

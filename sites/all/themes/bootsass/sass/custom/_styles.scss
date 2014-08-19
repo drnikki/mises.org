@@ -92,6 +92,8 @@ body.media {
 }
 // Pagination
 .pagination {
+  display: block;
+  clear: both;
   border-radius: $pager-border-radius;
   > li {
     display: inline-block;
@@ -269,10 +271,14 @@ body.not-logged-in {
         color: $white;
         &.subscribe {
           color: $brand-contrast-light;
+          @media (max-width: $screen-xs) {
+            display: block;
+            text-align: right;
+          }
         }
         .glyphicon {
-          background: $brand-contrast;
           @include glyph-size($font-size-base * 2);
+          background: $brand-contrast;
         }
         &:hover .glyphicon {
           background: $white;
@@ -309,7 +315,12 @@ body.not-logged-in {
 /* PRIMARY CONTENT BLOCKS */
 .main-content {
   position: relative;
-  padding: $padding-base-vertical $grid-gutter-width *1.5 $padding-large-horizontal * 1.5;
+  @media (min-width: $screen-xs) {
+    padding: $padding-base-vertical $grid-gutter-width *1.5 $padding-large-horizontal * 1.5;
+  }
+  @media (max-width: $screen-xs) {
+    padding: $padding-base-vertical $grid-gutter-width / 2 $padding-large-horizontal * 1.5;
+  }
 }
 #text-resizer {
   .large {
@@ -480,13 +491,15 @@ a.external-link {
 }
 
 /* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
-.media-youtube-video {
+.media-youtube-video,
+.file-video {
 	position: relative;
 	padding-top: 25px;
 	padding-bottom: 56.25%; /* 16:9 */
 	height: 0;
 }
-.media-youtube-video iframe {
+.media-youtube-video iframe,
+.file-video video {
 	position: absolute;
 	top: 0;
 	left: 0;
