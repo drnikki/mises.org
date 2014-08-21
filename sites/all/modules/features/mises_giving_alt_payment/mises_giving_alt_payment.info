@@ -1,0 +1,9 @@
+name = Mises Giving Alternate Payment
+description = Provides support and display logic for Alternate Payments for the Giving Section
+core = 7.x
+package = Mises
+version = 7.x-1.0
+project = mises_giving_alt_payment
+dependencies[] = mises_giving_content_types
+dependencies[] = mises_giving_structure
+features[features_api][] = api:2
