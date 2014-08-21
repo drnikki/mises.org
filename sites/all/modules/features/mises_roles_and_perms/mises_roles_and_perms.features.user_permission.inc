@@ -72,6 +72,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'contextual',
   );

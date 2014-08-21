@@ -22,36 +22,42 @@ function library_item_node_context_context_default_contexts() {
         'library_item' => 'library_item',
       ),
       'options' => array(
-        'node_form' => '1',
+        'node_form' => '0',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-library_items_menu-block' => array(
+          'module' => 'views',
+          'delta' => 'library_items_menu-block',
+          'region' => 'sidebar_second_top',
+          'weight' => '-10',
+        ),
         'views-term_landing-popular' => array(
           'module' => 'views',
           'delta' => 'term_landing-popular',
           'region' => 'sidebar_second',
-          'weight' => '-8',
+          'weight' => '-9',
         ),
         'views-term_landing-featured_author' => array(
           'module' => 'views',
           'delta' => 'term_landing-featured_author',
           'region' => 'sidebar_second',
-          'weight' => '-7',
+          'weight' => '-8',
         ),
         'views-flex_blocks-block_6' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_6',
           'region' => 'sidebar_second',
-          'weight' => '-6',
+          'weight' => '-7',
         ),
         'views-term_landing-columnist' => array(
           'module' => 'views',
           'delta' => 'term_landing-columnist',
           'region' => 'sidebar_second',
-          'weight' => '-5',
+          'weight' => '-6',
         ),
         'views-related_blocks_node-topics' => array(
           'module' => 'views',
@@ -78,6 +84,9 @@ function library_item_node_context_context_default_contexts() {
           'weight' => '-10',
         ),
       ),
+    ),
+    'theme_html' => array(
+      'class' => 'test-library-item-context',
     ),
   );
   $context->condition_mode = 0;

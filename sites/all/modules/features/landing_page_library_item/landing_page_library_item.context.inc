@@ -46,6 +46,12 @@ function landing_page_library_item_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
+        'views-library_items_menu-block' => array(
+          'module' => 'views',
+          'delta' => 'library_items_menu-block',
+          'region' => 'sidebar_second_top',
+          'weight' => '-9',
+        ),
         'views-term_landing-popular' => array(
           'module' => 'views',
           'delta' => 'term_landing-popular',

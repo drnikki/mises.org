@@ -41,6 +41,7 @@ function bootsass_preprocess_html(&$variables) {
       $variables['classes_array'][] = 'giving-theme';
   } else {
       drupal_add_css($theme_path . '/stylesheets/styles.css', array('weight' => CSS_THEME));
+      drupal_add_js($theme_path . '/js/misc/jquery.nestedAccordion.js', array('weight' => CSS_THEME));
       drupal_add_js($theme_path . '/js/custom.js', array('weight' => CSS_THEME));
       $variables['classes_array'][] = 'main-theme';
   }
