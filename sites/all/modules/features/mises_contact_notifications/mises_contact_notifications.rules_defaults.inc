@@ -21,7 +21,7 @@ function mises_contact_notifications_default_rules_configuration() {
       },
       "IF" : [
         { "data_is" : { "data" : [ "entity:type" ], "value" : "contact_us" } },
-        { "data_is" : { "data" : [ "entity:field-reason-for-contact" ], "value" : "239" } }
+        { "data_is" : { "data" : [ "entity:field-reason-for-contact" ], "value" : "444" } }
       ],
       "DO" : [
         { "component_rules_entityform_notification_email_admin" : {
