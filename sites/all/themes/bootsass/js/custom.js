@@ -92,7 +92,15 @@ var Drupal = Drupal || {};
           $(hiddenPanel).find('.in').collapse('hide');
           $(hiddenPanel).find('.chapter-intro').collapse('show');
         });
-        
+        // jQuery Nested Accordion on Library Item Menu http://www.adipalaz.com/experiments/jquery/nested_accordion.html
+        $('.view-library-items-menu').attr('id','library-menu').find('ul').addClass('accordion nav');
+        $('#library-menu').accordion({
+          iconTrigger: true,
+          activeLink: true,
+          initShow: "#current",
+          uri: 'relative',
+          splitUrl: '/'
+        });
         
       }); 
 

@@ -47,6 +47,12 @@ function landing_page_daily_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-9',
         ),
+        'views-library_items_menu-block' => array(
+          'module' => 'views',
+          'delta' => 'library_items_menu-block',
+          'region' => 'sidebar_second_top',
+          'weight' => '-8',
+        ),
         'views-flex_blocks-block_9' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_9',

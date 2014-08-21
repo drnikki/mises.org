@@ -479,3 +479,4 @@ features[user_role][] = Drupal Developer
 features[user_role][] = Senior Editor
 features[user_role][] = Site Administrator
 features[variable][] = roleassign_roles
+project path = sites/all/modules/features

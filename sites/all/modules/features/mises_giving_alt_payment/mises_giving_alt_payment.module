@@ -1,0 +1,97 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+/*
+* Implements hook_views_node_view
+*/
+
+function mises_giving_alt_payment_node_view($node, $view_mode) {
+    if ($node->type=="giving_page"){
+        if ($view_mode == 'full'){
+        	drupal_add_css(drupal_get_path('module', 'mises_giving_alt_payment') . '/css/mises-alt-payment.css'); // Add conditional css only on the project view page.
+           }
+         return $node;
+    }    
+}
+
+/*
+* Implements hook_admin
+*/
+
+function mises_giving_alt_payment_admin() {
+  $form = array();
+  $form['bitcoin_accept_image'] = array(
+    '#name' => 'files[' . implode('_', $element['#parents']) . ']',
+    '#type' => 'file',
+    '#title' => t('Bitcoin Acceptance Image'),
+    '#title_display' => 'before',
+    '#size' => 22,
+    '#description' => variable_get('bitcoin_accept_image') . t('Upload images in the following formats: png gif jpg jpeg'),
+    '#weight' => -10,
+  );
+  return system_settings_form($form);
+}
+
+/*
+* Implements hook_menu
+*/
+
+function mises_giving_alt_payment_menu() {
+  $items = array();
+  $items['admin/mises/giving'] = array(
+    'title' => 'Giving Section Settings',
+    'description' => 'Administer settings for the Giving Section.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mises_giving_alt_payment_admin'),
+    'access arguments' => array('giving payment admin'),
+    'type' => MENU_NORMAL_ITEM,
+   );
+  return $items;
+}
+
+/*
+* Implements hook_permission
+*/
+
+function mises_giving_alt_payment_permission() {
+  return array(
+    'giving payment admin' => array(
+      'title' => t('Administer Giving Section Payment Settings'),
+      'description' => t('Administer Giving Section Payment Settings.'),
+    ),
+  );
+}
+
+
+/*
+* Implements hook_validate
+*//*
+
+function mises_giving_alt_payment_validate($form, &$form_state) {
+  $maxdisp = $form_state['values']['bitcoin_accept_image'];
+  // This is not needed, I use this to use the same validate function
+  // for several fields.
+  $key = $form['#key'];
+  $file = file_save_upload($key, array(
+    'file_validate_is_image' => array(),
+    'file_validate_extensions' => array('png gif jpg jpeg'),
+  ));
+  if ($file) {
+    // Get the image info to get the correct extension for the uploaded file.
+    $info = image_get_info($file->filepath);
+    if (file_move($file, 'destination/filename'. $info['extension'], FILE_EXISTS_REPLACE)) {
+      // Mark the file for permanent storage.
+      file_set_status($file, FILE_STATUS_PERMANENT);
+      // Update the files table.
+      drupal_write_record('files', $file, 'fid');
+      $form_state['values'][$key] = $file->filepath;
+    }
+    else {
+      form_set_error($key, t('Failed to write the uploaded file to the site’s files folder.'));
+    }
+  }
+}
+*/
