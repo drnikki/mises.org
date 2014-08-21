@@ -10,6 +10,45 @@
 function mises_contact_us_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'entityform-contact_us-field_contact_file_upload'
+  $field_instances['entityform-contact_us-field_contact_file_upload'] = array(
+    'bundle' => 'contact_us',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'file_default',
+        'weight' => 5,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_contact_file_upload',
+    'label' => 'File Upload',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 1,
+      'file_directory' => 'contact-file-upload',
+      'file_extensions' => 'pdf doc txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'bar',
+      ),
+      'type' => 'file_generic',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'entityform-contact_us-field_contact_message'
   $field_instances['entityform-contact_us-field_contact_message'] = array(
     'bundle' => 'contact_us',
@@ -69,7 +108,7 @@ function mises_contact_us_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -249,6 +288,7 @@ function mises_contact_us_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Email Address');
+  t('File Upload');
   t('Message');
   t('Name');
   t('Phone Number');
