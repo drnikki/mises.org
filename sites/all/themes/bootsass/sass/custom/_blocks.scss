@@ -320,9 +320,9 @@ ul.menu {
   }
   h3 {
     margin-top: 0;
+    color: $white;
     text-transform: uppercase;
     font-size: $font-size-h5;
-    color: $white;
   }
   a {
     color: $white;
@@ -563,8 +563,8 @@ ul.menu {
     border-radius: 0;
   }
   button {
-    border-radius: 0;
     width: 15%;
+    border-radius: 0;
   }
 }
 /* SEARCH SIDEBAR */
@@ -594,4 +594,87 @@ ul.menu {
       text-transform: uppercase;
     }
   }
+}
+/* ACCORDION MENU */
+ul.accordion {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    list-style: none;
+  }
+}
+
+/* a.trigger {
+  padding-left:20px; 
+  background-image: url(../images/plus.gif); 
+  background-repeat: no-repeat; 
+  background-position: 0 50%;  
+  font-weight:700;
+  &.open {
+  }
+  .last-child & {
+    padding-left:1px; 
+    background-image:none; 
+    font-weight:normal;
+  }
+} */
+#library-menu .nav {
+  > li {
+    position: relative;
+    ul > li > a {
+      background-color: $gray-darker;
+    }
+    ul ul > li > a {
+      background: $gray-dark;
+    }
+    > a {
+      @include transition(all 0.2s ease);
+    }
+    > a.active{
+      background-color: $brand-primary;
+      color: $white; 
+      text-decoration:none;
+      font-weight:700;
+    }
+    > a.link {
+      vertical-align:middle;
+    }
+    > a.icon.trigger{ 
+      position:absolute;
+      top: 10px; 
+      right: 15px;
+      z-index: 10; 
+      padding:0;
+      width:20px; 
+      height:20px; 
+      border:0 none; 
+      border-radius:50%;
+      background-color: $white;
+      color: $brand-secondary; 
+      vertical-align:middle;
+      font-size: 12px;
+      font-family: 'Glyphicons Halflings';
+      &:before {
+        position: relative;
+        left: 4px;
+        content: "\e080";
+      }
+      &.open {
+        @include rotate(90deg);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $brand-primary;
+        color: $white;
+      }
+    }
+    &.last-child {
+      a {
+        background-image:none; 
+        font-weight:normal;
+      }
+    }
+  }  
 }

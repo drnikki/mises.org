@@ -10275,9 +10275,9 @@ ul.menu li a, ul.menu li span {
 /* line 321, ../sass/custom/_blocks.scss */
 .region-sidebar-second-top h3 {
   margin-top: 0;
+  color: white;
   text-transform: uppercase;
   font-size: 15px;
-  color: white;
 }
 /* line 327, ../sass/custom/_blocks.scss */
 .region-sidebar-second-top a {
@@ -10553,8 +10553,8 @@ ul.menu li a, ul.menu li span {
 }
 /* line 565, ../sass/custom/_blocks.scss */
 #block-custom-search-blocks-1 button {
-  border-radius: 0;
   width: 15%;
+  border-radius: 0;
 }
 
 /* SEARCH SIDEBAR */
@@ -10584,6 +10584,102 @@ ul.menu li a, ul.menu li span {
 .section-search .sidebar .region a.facetapi-limit-link {
   display: block;
   text-transform: uppercase;
+}
+
+/* ACCORDION MENU */
+/* line 599, ../sass/custom/_blocks.scss */
+ul.accordion {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 603, ../sass/custom/_blocks.scss */
+ul.accordion li {
+  list-style: none;
+}
+
+/* a.trigger {
+  padding-left:20px; 
+  background-image: url(../images/plus.gif); 
+  background-repeat: no-repeat; 
+  background-position: 0 50%;  
+  font-weight:700;
+  &.open {
+  }
+  .last-child & {
+    padding-left:1px; 
+    background-image:none; 
+    font-weight:normal;
+  }
+} */
+/* line 623, ../sass/custom/_blocks.scss */
+#library-menu .nav > li {
+  position: relative;
+}
+/* line 625, ../sass/custom/_blocks.scss */
+#library-menu .nav > li ul > li > a {
+  background-color: #222222;
+}
+/* line 628, ../sass/custom/_blocks.scss */
+#library-menu .nav > li ul ul > li > a {
+  background: #494e54;
+}
+/* line 631, ../sass/custom/_blocks.scss */
+#library-menu .nav > li > a {
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+/* line 634, ../sass/custom/_blocks.scss */
+#library-menu .nav > li > a.active {
+  background-color: #00426b;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+/* line 640, ../sass/custom/_blocks.scss */
+#library-menu .nav > li > a.link {
+  vertical-align: middle;
+}
+/* line 643, ../sass/custom/_blocks.scss */
+#library-menu .nav > li > a.icon.trigger {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 10;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border: 0 none;
+  border-radius: 50%;
+  background-color: white;
+  color: #38709e;
+  vertical-align: middle;
+  font-size: 12px;
+  font-family: 'Glyphicons Halflings';
+}
+/* line 658, ../sass/custom/_blocks.scss */
+#library-menu .nav > li > a.icon.trigger:before {
+  position: relative;
+  left: 4px;
+  content: "\e080";
+}
+/* line 663, ../sass/custom/_blocks.scss */
+#library-menu .nav > li > a.icon.trigger.open {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+/* line 668, ../sass/custom/_blocks.scss */
+#library-menu .nav > li > a.icon.trigger:hover, #library-menu .nav > li > a.icon.trigger:focus, #library-menu .nav > li > a.icon.trigger:active {
+  background-color: #00426b;
+  color: white;
+}
+/* line 674, ../sass/custom/_blocks.scss */
+#library-menu .nav > li.last-child a {
+  background-image: none;
+  font-weight: normal;
 }
 
 /*
