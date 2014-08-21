@@ -60,6 +60,12 @@ function mises_library_landing_context_default_contexts() {
           'module' => 'views',
           'delta' => 'flex_blocks-block_12',
           'region' => 'sidebar_second_top',
+          'weight' => '-10',
+        ),
+        'views-library_items_menu-block' => array(
+          'module' => 'views',
+          'delta' => 'library_items_menu-block',
+          'region' => 'sidebar_second_top',
           'weight' => '-9',
         ),
         'menu-menu-library-sub-menu' => array(

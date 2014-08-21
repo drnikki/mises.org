@@ -89,6 +89,8 @@ function landing_page_library_item_uuid_features_default_content() {
     ),
   ),
   'field_media_collection' => array(),
+  'field_on_page' => array(),
+  'field_term_page' => array(),
   'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
