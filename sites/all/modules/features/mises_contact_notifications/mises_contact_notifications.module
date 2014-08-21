@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Contact Us Notifications feature.
+ */
+
+include_once 'mises_contact_notifications.features.inc';
