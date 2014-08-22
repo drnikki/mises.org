@@ -1,11 +1,21 @@
 .alt-payment-paypal-header {
+	padding-bottom: 15px;
 }
 
 .alt-payment-paypal {
 }
 
 .alt-payment-paypal-cost {
-	float: left;
+}
+
+div.alt-payment-paypal-cost {
+  float: left;
+  padding-right: 10px;
+  min-width: 60px;
+}
+
+.alt-payment-paypal-interval {
+	padding-left: 15px;
 }
 
 .alt-payment-paypal-form {
