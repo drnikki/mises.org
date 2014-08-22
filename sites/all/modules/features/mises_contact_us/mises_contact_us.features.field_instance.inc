@@ -42,6 +42,16 @@ function mises_contact_us_field_default_field_instances() {
       'active' => 1,
       'module' => 'file',
       'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => FALSE,
+        'insert_class' => '',
+        'insert_default' => array(
+          0 => 'auto',
+        ),
+        'insert_styles' => array(
+          0 => 'auto',
+        ),
+        'insert_width' => '',
         'progress_indicator' => 'bar',
       ),
       'type' => 'file_generic',
