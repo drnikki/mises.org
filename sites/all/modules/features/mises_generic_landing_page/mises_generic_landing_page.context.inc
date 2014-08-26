@@ -66,11 +66,17 @@ function mises_generic_landing_page_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
+        'views-term_description-block' => array(
+          'module' => 'views',
+          'delta' => 'term_description-block',
+          'region' => 'sidebar_second_top',
+          'weight' => '-9',
+        ),
         'views-a881a51cee516bce16966206118b160b' => array(
           'module' => 'views',
           'delta' => 'a881a51cee516bce16966206118b160b',
           'region' => 'sidebar_second_top',
-          'weight' => '-9',
+          'weight' => '0',
         ),
         'views-term_landing-popular' => array(
           'module' => 'views',
