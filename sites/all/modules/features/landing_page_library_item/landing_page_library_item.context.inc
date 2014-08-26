@@ -50,7 +50,7 @@ function landing_page_library_item_context_default_contexts() {
           'module' => 'views',
           'delta' => 'library_items_menu-block',
           'region' => 'sidebar_second_top',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'views-term_landing-popular' => array(
           'module' => 'views',
@@ -102,6 +102,7 @@ function landing_page_library_item_context_default_contexts() {
         ),
       ),
     ),
+    'menu' => 'node/786',
   );
   $context->condition_mode = 0;
 

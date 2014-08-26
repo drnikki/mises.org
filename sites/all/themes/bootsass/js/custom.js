@@ -61,9 +61,16 @@ var Drupal = Drupal || {};
       };
       
       $(document).ready(function() {
-        implementEqualHeight();
-        textResizer();
-        
+        // jQuery Nested Accordion on Library Item Menu http://www.adipalaz.com/experiments/jquery/nested_accordion.html
+        $('.view-library-items-menu').attr('id','library-menu').find('ul').addClass('accordion nav');
+        $('#library-menu').accordion({
+          iconTrigger: true,
+          activeLink: true,
+          initShow: "#current",
+          uri: 'relative',
+          splitUrl: '/'
+        }).show();
+
         //glyphicons
         $('.latest-library-content .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
         $('.row.featured .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
@@ -92,15 +99,10 @@ var Drupal = Drupal || {};
           $(hiddenPanel).find('.in').collapse('hide');
           $(hiddenPanel).find('.chapter-intro').collapse('show');
         });
-        // jQuery Nested Accordion on Library Item Menu http://www.adipalaz.com/experiments/jquery/nested_accordion.html
-        $('.view-library-items-menu').attr('id','library-menu').find('ul').addClass('accordion nav');
-        $('#library-menu').accordion({
-          iconTrigger: true,
-          activeLink: true,
-          initShow: "#current",
-          uri: 'relative',
-          splitUrl: '/'
-        });
+        
+        // Run height sizer last
+        implementEqualHeight();
+        textResizer();
         
       }); 
 

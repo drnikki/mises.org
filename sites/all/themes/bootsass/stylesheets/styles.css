@@ -10536,112 +10536,118 @@ ul.menu li a, ul.menu li span {
 }
 /* line 551, ../sass/custom/_blocks.scss */
 #block-custom-search-blocks-1 .panel-heading .panel-title {
+  overflow: hidden;
   color: white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-/* line 555, ../sass/custom/_blocks.scss */
+/* line 558, ../sass/custom/_blocks.scss */
 #block-custom-search-blocks-1 form {
   padding: 0 20px;
 }
-/* line 558, ../sass/custom/_blocks.scss */
+/* line 561, ../sass/custom/_blocks.scss */
 #block-custom-search-blocks-1 .form-group {
   float: left;
   width: 85%;
 }
-/* line 562, ../sass/custom/_blocks.scss */
+/* line 565, ../sass/custom/_blocks.scss */
 #block-custom-search-blocks-1 .form-control {
   border-radius: 0;
 }
-/* line 565, ../sass/custom/_blocks.scss */
+/* line 568, ../sass/custom/_blocks.scss */
 #block-custom-search-blocks-1 button {
   width: 15%;
   border-radius: 0;
 }
 
 /* SEARCH SIDEBAR */
-/* line 572, ../sass/custom/_blocks.scss */
+/* line 575, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region {
   padding: 0 12px;
   background-color: white;
 }
-/* line 576, ../sass/custom/_blocks.scss */
+/* line 579, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region h2.block-title {
   font-size: 15px;
 }
-/* line 581, ../sass/custom/_blocks.scss */
+/* line 584, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region ul {
   padding-left: 0;
 }
-/* line 583, ../sass/custom/_blocks.scss */
+/* line 586, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region ul li {
   padding-left: 16px;
   text-indent: -16px;
 }
-/* line 588, ../sass/custom/_blocks.scss */
+/* line 591, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region input.facetapi-checkbox {
   margin-right: 5px;
 }
-/* line 591, ../sass/custom/_blocks.scss */
+/* line 594, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region a.facetapi-limit-link {
   display: block;
   text-transform: uppercase;
 }
 
 /* ACCORDION MENU */
-/* line 599, ../sass/custom/_blocks.scss */
+/* line 602, ../sass/custom/_blocks.scss */
+.view-library-items-menu {
+  display: none;
+}
+
+/* line 605, ../sass/custom/_blocks.scss */
 ul.accordion {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 603, ../sass/custom/_blocks.scss */
+/* line 609, ../sass/custom/_blocks.scss */
 ul.accordion li {
   list-style: none;
 }
 
-/* a.trigger {
-  padding-left:20px; 
-  background-image: url(../images/plus.gif); 
-  background-repeat: no-repeat; 
-  background-position: 0 50%;  
-  font-weight:700;
-  &.open {
-  }
-  .last-child & {
-    padding-left:1px; 
-    background-image:none; 
-    font-weight:normal;
-  }
-} */
-/* line 623, ../sass/custom/_blocks.scss */
+/* line 613, ../sass/custom/_blocks.scss */
+#library-menu {
+  border-top: 5px solid #38709e;
+}
+/* line 616, ../sass/custom/_blocks.scss */
 #library-menu .nav > li {
   position: relative;
 }
-/* line 625, ../sass/custom/_blocks.scss */
+/* line 618, ../sass/custom/_blocks.scss */
 #library-menu .nav > li ul > li > a {
-  background-color: #222222;
+  background-color: #206093;
 }
-/* line 628, ../sass/custom/_blocks.scss */
+/* line 620, ../sass/custom/_blocks.scss */
+#library-menu .nav > li ul > li > a:hover {
+  background-color: #788086;
+}
+/* line 624, ../sass/custom/_blocks.scss */
 #library-menu .nav > li ul ul > li > a {
-  background: #494e54;
+  background: #38709e;
 }
-/* line 631, ../sass/custom/_blocks.scss */
+/* line 626, ../sass/custom/_blocks.scss */
+#library-menu .nav > li ul ul > li > a:hover {
+  background-color: #788086;
+}
+/* line 630, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a {
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 634, ../sass/custom/_blocks.scss */
+/* line 633, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.active {
   background-color: #00426b;
   color: white;
   text-decoration: none;
   font-weight: 700;
 }
-/* line 640, ../sass/custom/_blocks.scss */
+/* line 639, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.link {
   vertical-align: middle;
 }
-/* line 643, ../sass/custom/_blocks.scss */
+/* line 642, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.icon.trigger {
   position: absolute;
   top: 10px;
@@ -10658,25 +10664,25 @@ ul.accordion li {
   font-size: 12px;
   font-family: 'Glyphicons Halflings';
 }
-/* line 658, ../sass/custom/_blocks.scss */
+/* line 657, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.icon.trigger:before {
   position: relative;
   left: 4px;
   content: "\e080";
 }
-/* line 663, ../sass/custom/_blocks.scss */
+/* line 662, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.icon.trigger.open {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-/* line 668, ../sass/custom/_blocks.scss */
+/* line 667, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.icon.trigger:hover, #library-menu .nav > li > a.icon.trigger:focus, #library-menu .nav > li > a.icon.trigger:active {
   background-color: #00426b;
   color: white;
 }
-/* line 674, ../sass/custom/_blocks.scss */
+/* line 673, ../sass/custom/_blocks.scss */
 #library-menu .nav > li.last-child a {
   background-image: none;
   font-weight: normal;
