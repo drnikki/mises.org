@@ -549,7 +549,10 @@ ul.menu {
   .panel-heading {
     background: transparent;
     .panel-title {
+      overflow: hidden;
       color: $white;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
   form {
@@ -596,6 +599,9 @@ ul.menu {
   }
 }
 /* ACCORDION MENU */
+.view-library-items-menu {
+  display: none;
+}
 ul.accordion {
   margin: 0;
   padding: 0;
@@ -604,77 +610,71 @@ ul.accordion {
     list-style: none;
   }
 }
-
-/* a.trigger {
-  padding-left:20px; 
-  background-image: url(../images/plus.gif); 
-  background-repeat: no-repeat; 
-  background-position: 0 50%;  
-  font-weight:700;
-  &.open {
-  }
-  .last-child & {
-    padding-left:1px; 
-    background-image:none; 
-    font-weight:normal;
-  }
-} */
-#library-menu .nav {
-  > li {
-    position: relative;
-    ul > li > a {
-      background-color: $gray-darker;
-    }
-    ul ul > li > a {
-      background: $gray-dark;
-    }
-    > a {
-      @include transition(all 0.2s ease);
-    }
-    > a.active{
-      background-color: $brand-primary;
-      color: $white; 
-      text-decoration:none;
-      font-weight:700;
-    }
-    > a.link {
-      vertical-align:middle;
-    }
-    > a.icon.trigger{ 
-      position:absolute;
-      top: 10px; 
-      right: 15px;
-      z-index: 10; 
-      padding:0;
-      width:20px; 
-      height:20px; 
-      border:0 none; 
-      border-radius:50%;
-      background-color: $white;
-      color: $brand-secondary; 
-      vertical-align:middle;
-      font-size: 12px;
-      font-family: 'Glyphicons Halflings';
-      &:before {
-        position: relative;
-        left: 4px;
-        content: "\e080";
+#library-menu {
+  border-top: 5px solid $brand-secondary;
+  .nav {
+    > li {
+      position: relative;
+      ul > li > a {
+        background-color: $brand-medium;
+        &:hover {
+          background-color: $gray;
+        }
       }
-      &.open {
-        @include rotate(90deg);
+      ul ul > li > a {
+        background: $brand-secondary;
+        &:hover {
+          background-color: $gray; 
+        }
       }
-      &:hover,
-      &:focus,
-      &:active {
+      > a {
+        @include transition(all 0.2s ease);
+      }
+      > a.active{
         background-color: $brand-primary;
-        color: $white;
+        color: $white; 
+        text-decoration:none;
+        font-weight:700;
       }
-    }
-    &.last-child {
-      a {
-        background-image:none; 
-        font-weight:normal;
+      > a.link {
+        vertical-align:middle;
       }
-    }
-  }  
+      > a.icon.trigger{ 
+        position:absolute;
+        top: 10px; 
+        right: 15px;
+        z-index: 10; 
+        padding:0;
+        width:20px; 
+        height:20px; 
+        border:0 none; 
+        border-radius:50%;
+        background-color: $white;
+        color: $brand-secondary; 
+        vertical-align:middle;
+        font-size: 12px;
+        font-family: 'Glyphicons Halflings';
+        &:before {
+          position: relative;
+          left: 4px;
+          content: "\e080";
+        }
+        &.open {
+          @include rotate(90deg);
+        }
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: $brand-primary;
+          color: $white;
+        }
+      }
+      &.last-child {
+        a {
+          background-image:none; 
+          font-weight:normal;
+        }
+      }
+    }  
+  }
 }
