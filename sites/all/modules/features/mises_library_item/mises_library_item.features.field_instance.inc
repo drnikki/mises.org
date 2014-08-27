@@ -2107,7 +2107,7 @@ function mises_library_item_field_default_field_instances() {
       'settings' => array(
         'cascading_selection' => 0,
         'filter_view' => '',
-        'leaves_only' => 0,
+        'leaves_only' => 1,
         'max_depth' => '',
         'parent_term_id' => '',
         'select_parents' => 1,
