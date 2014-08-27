@@ -175,7 +175,7 @@ function mises_campaign_field_default_field_instances() {
   $field_instances['node-campaign_-field_image'] = array(
     'bundle' => 'campaign_',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This image will be used as the banner. Image display size: 753x260. Please upload an image that matches that ratio (large horizontal).',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -247,6 +247,7 @@ function mises_campaign_field_default_field_instances() {
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
+          'ebook' => 0,
           'image' => 'image',
           'video' => 0,
         ),
@@ -357,6 +358,7 @@ function mises_campaign_field_default_field_instances() {
   t('Causeview Form');
   t('Donate Link');
   t('Image');
+  t('This image will be used as the banner. Image display size: 753x260. Please upload an image that matches that ratio (large horizontal).');
 
   return $field_instances;
 }
