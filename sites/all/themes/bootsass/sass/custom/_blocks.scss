@@ -622,6 +622,12 @@ ul.accordion {
         }
       }
       ul ul > li > a {
+        background: $brand-contrast-dark;
+        &:hover {
+          background-color: $gray; 
+        }
+      }
+      ul ul ul > li > a {
         background: $brand-secondary;
         &:hover {
           background-color: $gray; 
