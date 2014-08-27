@@ -9365,13 +9365,12 @@ a.external-link:hover span.glyphicon {
 .media-youtube-video,
 .file-video {
   position: relative;
-  padding-top: 25px;
   padding-bottom: 56.25%;
   /* 16:9 */
   height: 0;
 }
 
-/* line 502, ../sass/custom/_styles.scss */
+/* line 501, ../sass/custom/_styles.scss */
 .media-youtube-video iframe,
 .file-video video {
   position: absolute;
@@ -9384,7 +9383,7 @@ a.external-link:hover span.glyphicon {
 /* SLIDESHOW 
 *  Override flexslide styles
 */
-/* line 512, ../sass/custom/_styles.scss */
+/* line 511, ../sass/custom/_styles.scss */
 .flexslider {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -9393,26 +9392,26 @@ a.external-link:hover span.glyphicon {
   border: 0;
   background: transparent;
 }
-/* line 519, ../sass/custom/_styles.scss */
+/* line 518, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav li {
   background: red;
 }
-/* line 522, ../sass/custom/_styles.scss */
+/* line 521, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav a {
   text-shadow: none;
 }
-/* line 524, ../sass/custom/_styles.scss */
+/* line 523, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav a:before {
   font-size: 30px;
 }
 
-/* line 530, ../sass/custom/_styles.scss */
+/* line 529, ../sass/custom/_styles.scss */
 #slideshow, #media, #image {
   margin-right: 20px;
   width: 240px;
 }
 
-/* line 537, ../sass/custom/_styles.scss */
+/* line 536, ../sass/custom/_styles.scss */
 html[contenteditable="true"] body {
   background-image: none;
 }
