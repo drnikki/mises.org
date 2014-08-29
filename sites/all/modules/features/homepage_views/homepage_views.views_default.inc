@@ -138,7 +138,7 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/taxonomy/term/17"><span class="glyphicon glyphicon-chevron-right"></span> Visit Press Room</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/press-room"><span class="glyphicon glyphicon-chevron-right"></span> Visit Press Room</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
@@ -189,7 +189,7 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/taxonomy/term/144"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises Academy</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/search/site//type/course"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises Academy</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -205,23 +205,15 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'library_item' => 'library_item',
+    'course' => 'course',
   );
-  /* Filter criterion: Content: Library Item Type (field_library_item_tree) */
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['value'] = array(
-    144 => '144',
-  );
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Image (field_image_collection) */
   $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
 
   /* Display: Mises View HP Block */
   $handler = $view->new_display('block', 'Mises View HP Block', 'mises_view');
@@ -245,7 +237,7 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/taxonomy/term/185"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises View</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library/mises-view"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises View</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -301,7 +293,7 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Browse Library</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library"><span class="glyphicon glyphicon-chevron-right"></span> Browse Library</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
