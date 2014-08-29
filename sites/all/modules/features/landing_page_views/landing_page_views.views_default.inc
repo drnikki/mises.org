@@ -91,7 +91,7 @@ function landing_page_views_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="padding-lg"><p class="read-more"><a href="search/job-postings">All Job Postings</a></p></div>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="padding-lg"><p class="read-more"><a href="/search/site//type/job_posting_">All Job Postings</a></p></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $export['job_postings'] = $view;
 
