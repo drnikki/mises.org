@@ -84,29 +84,18 @@ function mises_giving_structure_views_default_views() {
       ),
     ),
   );
-  /* Field: Content: Donate Link */
-  $handler->display->display_options['fields']['field_donate_link']['id'] = 'field_donate_link';
-  $handler->display->display_options['fields']['field_donate_link']['table'] = 'field_data_field_donate_link';
-  $handler->display->display_options['fields']['field_donate_link']['field'] = 'field_donate_link';
-  $handler->display->display_options['fields']['field_donate_link']['label'] = '';
-  $handler->display->display_options['fields']['field_donate_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_donate_link']['alter']['text'] = 'Donate Now';
-  $handler->display->display_options['fields']['field_donate_link']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_donate_link']['alter']['path'] = '[field_donate_link]';
-  $handler->display->display_options['fields']['field_donate_link']['alter']['link_class'] = 'btn-giving';
-  $handler->display->display_options['fields']['field_donate_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_donate_link']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_donate_link']['element_wrapper_class'] = 'donate-link col-xs-3';
-  $handler->display->display_options['fields']['field_donate_link']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_donate_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_donate_link']['type'] = 'link_plain';
-  $handler->display->display_options['fields']['field_donate_link']['settings'] = array(
-    'conditions' => array(
-      0 => array(
-        'condition' => '',
-      ),
-    ),
-  );
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['link_class'] = 'btn-giving';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'donate-link col-xs-3';
+  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Donate Now';
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
