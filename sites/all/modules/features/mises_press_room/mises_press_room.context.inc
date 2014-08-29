@@ -19,7 +19,7 @@ function mises_press_room_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'press-room' => 'press-room',
+        'press-room*' => 'press-room*',
       ),
     ),
   );
