@@ -92,7 +92,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/taxonomy/term/170"><span class="glyphicon glyphicon-chevron-right"></span> Browse Bookstore</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library/books"><span class="glyphicon glyphicon-chevron-right"></span> Browse Bookstore</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -137,7 +137,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/taxonomy/term/144"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises Academy</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/search/site//type/course"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises Academy</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -193,7 +193,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/taxonomy/term/185"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises View</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library/mises-view"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises View</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -249,7 +249,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Browse Library</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library"><span class="glyphicon glyphicon-chevron-right"></span> Browse Library</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
