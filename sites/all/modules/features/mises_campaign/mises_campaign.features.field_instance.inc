@@ -102,75 +102,6 @@ function mises_campaign_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-campaign_-field_donate_link'
-  $field_instances['node-campaign_-field_donate_link'] = array(
-    'bundle' => 'campaign_',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'link',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'link_default',
-        'weight' => 4,
-      ),
-      'full' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-      'simple_teaser' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_donate_link',
-    'label' => 'Donate Link',
-    'required' => 1,
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => '_blank',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'value',
-      'title_maxlength' => 128,
-      'title_value' => 'Give Now',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-campaign_-field_image'
   $field_instances['node-campaign_-field_image'] = array(
     'bundle' => 'campaign_',
@@ -356,7 +287,6 @@ function mises_campaign_field_default_field_instances() {
 <p> </p>');
   t('Body');
   t('Causeview Form');
-  t('Donate Link');
   t('Image');
   t('This image will be used as the banner. Image display size: 753x260. Please upload an image that matches that ratio (large horizontal).');
 
