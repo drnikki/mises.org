@@ -98,7 +98,7 @@ function mises_giving_story_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'simple_teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -107,18 +107,6 @@ function mises_giving_story_ds_field_settings_info() {
         'class' => 'banner',
         'ft' => array(),
         'conditions' => array(),
-      ),
-    ),
-    'field_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'image img-responsive',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
       ),
     ),
   );
@@ -232,16 +220,11 @@ function mises_giving_story_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_image',
-        1 => 'title',
+        0 => 'title',
       ),
     ),
     'fields' => array(
-      'field_image' => 'ds_content',
       'title' => 'ds_content',
-    ),
-    'limit' => array(
-      'field_image' => '1',
     ),
     'classes' => array(
       'layout_class' => array(

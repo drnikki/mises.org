@@ -57,7 +57,7 @@ function mises_giving_story_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -157,7 +157,7 @@ function mises_giving_story_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -231,14 +231,9 @@ function mises_giving_story_field_default_field_instances() {
       ),
       'simple_teaser' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'conditions' => array(),
-          'image_link' => '',
-          'image_style' => 'giving_header',
-        ),
-        'type' => 'image',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -332,7 +327,7 @@ function mises_giving_story_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
