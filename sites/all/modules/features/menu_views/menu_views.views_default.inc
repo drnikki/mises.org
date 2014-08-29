@@ -82,7 +82,36 @@ function menu_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'library/featured';
+  $handler->display->display_options['path'] = 'library/featured-posts';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Timely Content (field_timely_content) */
+  $handler->display->display_options['filters']['field_timely_content_value']['id'] = 'field_timely_content_value';
+  $handler->display->display_options['filters']['field_timely_content_value']['table'] = 'field_data_field_timely_content';
+  $handler->display->display_options['filters']['field_timely_content_value']['field'] = 'field_timely_content_value';
+  $handler->display->display_options['filters']['field_timely_content_value']['value'] = array(
+    'timely' => 'timely',
+  );
+  $handler->display->display_options['filters']['field_timely_content_value']['group'] = 1;
+  $handler->display->display_options['path'] = 'library/current-topics';
   $export['featured_timely_posts'] = $view;
 
   $view = new view();
