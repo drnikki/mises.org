@@ -51,6 +51,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'facet_missing' => 0,
     'flatten' => 0,
     'query_type' => 'term',
+    'pretty_paths_alias' => 'type',
   );
   $export['apachesolr@solr::bundle'] = $facet;
 
@@ -121,6 +122,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'flatten' => 0,
     'query_type' => 'date',
     'date_granularity' => 'MONTH',
+    'pretty_paths_alias' => 'date-published',
   );
   $export['apachesolr@solr::dm_field_mises_published_date'] = $facet;
 
@@ -209,6 +211,9 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'facet_missing' => 0,
     'flatten' => '0',
     'query_type' => 'term',
+    'pretty_paths_alias' => 'media-type',
+    'pretty_paths_taxonomy_pathauto' => 0,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'media_type',
   );
   $export['apachesolr@solr::im_field_library_item_tree'] = $facet;
 
@@ -288,11 +293,14 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
+    'pretty_paths_alias' => 'audience',
   );
   $export['apachesolr@solr::sm_field_audience'] = $facet;
 
@@ -351,6 +359,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
+    'pretty_paths_alias' => 'austrian-school',
   );
   $export['apachesolr@solr::sm_field_austrian_school'] = $facet;
 
@@ -397,6 +406,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
+    'pretty_paths_alias' => 'author',
   );
   $export['apachesolr@solr::sm_field_author_1'] = $facet;
 
@@ -443,6 +453,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
+    'pretty_paths_alias' => 'event-type',
   );
   $export['apachesolr@solr::sm_field_event_type'] = $facet;
 
@@ -596,6 +607,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
+    'pretty_paths_alias' => 'topics',
   );
   $export['apachesolr@solr::sm_field_topics'] = $facet;
 
