@@ -269,7 +269,7 @@ function search_blocks_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_blocks_1_paths';
-  $strongarm->value = 'search/site/[key]?f[0]=im_field_library_item_tree%253A147&f[1]=bundle%3Alibrary_item&f[2]=[current-page:query:?]';
+  $strongarm->value = 'search/site/[key]/[current_path]';
   $export['custom_search_blocks_1_paths'] = $strongarm;
 
   $strongarm = new stdClass();
