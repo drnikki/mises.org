@@ -42,7 +42,7 @@ function mises_person_profile_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -286,10 +286,14 @@ function mises_person_profile_field_default_field_instances() {
         'weight' => 21,
       ),
       'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 0,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
       ),
       'print' => array(
         'label' => 'above',
@@ -373,7 +377,7 @@ function mises_person_profile_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -525,7 +529,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 33,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -921,7 +925,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 35,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -1392,7 +1396,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 36,
       ),
       'print' => array(
         'label' => 'above',
@@ -1573,7 +1577,7 @@ function mises_person_profile_field_default_field_instances() {
           'view_mode' => 'simple_content',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -1663,7 +1667,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 34,
       ),
       'print' => array(
         'label' => 'above',
