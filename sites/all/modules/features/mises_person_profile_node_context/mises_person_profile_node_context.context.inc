@@ -29,29 +29,29 @@ function mises_person_profile_node_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-author_articles-block_2' => array(
+        'views-library_items_menu-block_1' => array(
           'module' => 'views',
-          'delta' => 'author_articles-block_2',
+          'delta' => 'library_items_menu-block_1',
           'region' => 'sidebar_second_top',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-author_articles-block_1' => array(
           'module' => 'views',
           'delta' => 'author_articles-block_1',
           'region' => 'sidebar_second',
-          'weight' => '-90',
+          'weight' => '-9',
         ),
         'views-faaeb062562ec6d9c97848d39a52d510' => array(
           'module' => 'views',
           'delta' => 'faaeb062562ec6d9c97848d39a52d510',
           'region' => 'sidebar_second',
-          'weight' => '-89',
+          'weight' => '-8',
         ),
         'views-flex_blocks-block_6' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_6',
           'region' => 'sidebar_second',
-          'weight' => '-88',
+          'weight' => '-7',
         ),
         'views-related_blocks_node-topics' => array(
           'module' => 'views',
