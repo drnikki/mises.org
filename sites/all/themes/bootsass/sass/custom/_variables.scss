@@ -60,10 +60,46 @@ $link-hover-color:      darken($link-color, 15%) !default;
 //## Font, line-height, and color for body text, headings, and more.
 
 //@import "compass/css3/font-face";
-@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,600);
+//@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,600);
+@font-face {
+  font-family: 'crimson_text';
+  src: url('../fonts/crimsontext-italic-webfont.eot');
+  src: url('../fonts/crimsontext-italic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/crimsontext-italic-webfont.woff') format('woff'),
+       url('../fonts/crimsontext-italic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'crimson_text';
+  src: url('../fonts/crimsontext-roman-webfont.eot');
+  src: url('../fonts/crimsontext-roman-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/crimsontext-roman-webfont.woff') format('woff'),
+       url('../fonts/crimsontext-roman-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'crimson_text';
+  src: url('../fonts/crimsontext-semibold-webfont.eot');
+  src: url('../fonts/crimsontext-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/crimsontext-semibold-webfont.woff') format('woff'),
+       url('../fonts/crimsontext-semibold-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'crimson_text';
+  src: url('../fonts/crimsontext-semibolditalic-webfont.eot');
+  src: url('../fonts/crimsontext-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/crimsontext-semibolditalic-webfont.woff') format('woff'),
+       url('../fonts/crimsontext-semibolditalic-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
 
 $font-family-sans-serif:  "myriad-pro","Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       "Crimson Text",Georgia, "Times New Roman", Times, serif !default;
+$font-family-serif:       "crimson_text",Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;

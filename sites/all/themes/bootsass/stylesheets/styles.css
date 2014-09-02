@@ -5,7 +5,38 @@
 /***********************
 * Core Bootstrap
 ***********************/
-@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,600);
+@font-face {
+  font-family: 'crimson_text';
+  src: url("../fonts/crimsontext-italic-webfont.eot");
+  src: url("../fonts/crimsontext-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/crimsontext-italic-webfont.woff") format("woff"), url("../fonts/crimsontext-italic-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'crimson_text';
+  src: url("../fonts/crimsontext-roman-webfont.eot");
+  src: url("../fonts/crimsontext-roman-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/crimsontext-roman-webfont.woff") format("woff"), url("../fonts/crimsontext-roman-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'crimson_text';
+  src: url("../fonts/crimsontext-semibold-webfont.eot");
+  src: url("../fonts/crimsontext-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/crimsontext-semibold-webfont.woff") format("woff"), url("../fonts/crimsontext-semibold-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'crimson_text';
+  src: url("../fonts/crimsontext-semibolditalic-webfont.eot");
+  src: url("../fonts/crimsontext-semibolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/crimsontext-semibolditalic-webfont.woff") format("woff"), url("../fonts/crimsontext-semibolditalic-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /* line 9, ../sass/bootstrap/_normalize.scss */
 html {
@@ -9205,7 +9236,7 @@ h1, .h1 {
   color: #00426b;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+  font-family: "crimson_text", Georgia, "Times New Roman", Times, serif;
 }
 
 /* line 384, ../sass/custom/_styles.scss */
@@ -9218,13 +9249,13 @@ h2.page-title, .main-content .date-nav-wrapper .date-heading h3 {
   margin: 0 0 16px;
   color: #38709e;
   font-size: 25px;
-  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+  font-family: "crimson_text", Georgia, "Times New Roman", Times, serif;
 }
 /* line 394, ../sass/custom/_styles.scss */
 h2.teaser-title {
   color: #00426b;
   font-size: 23px;
-  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+  font-family: "crimson_text", Georgia, "Times New Roman", Times, serif;
 }
 @media (min-width: 481px) {
   /* line 399, ../sass/custom/_styles.scss */
@@ -10147,7 +10178,7 @@ ul.menu li a, ul.menu li span {
   color: white;
   text-transform: uppercase;
   font-size: 20px;
-  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+  font-family: "crimson_text", Georgia, "Times New Roman", Times, serif;
 }
 /* line 239, ../sass/custom/_blocks.scss */
 .content-bottom .panel-body h4,
@@ -10334,7 +10365,7 @@ ul.menu li a, ul.menu li span {
 #block-views-flex-blocks-block-7 .panel h2 {
   margin: 0;
   color: white;
-  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+  font-family: "crimson_text", Georgia, "Times New Roman", Times, serif;
 }
 /* line 379, ../sass/custom/_blocks.scss */
 #block-views-flex-blocks-block-7 .panel h2 span {
@@ -10493,7 +10524,7 @@ ul.menu li a, ul.menu li span {
   color: white;
   text-transform: uppercase;
   font-size: 20px;
-  font-family: "Crimson Text", Georgia, "Times New Roman", Times, serif;
+  font-family: "crimson_text", Georgia, "Times New Roman", Times, serif;
 }
 /* line 520, ../sass/custom/_blocks.scss */
 .view-mode-video_block_teaser .panel-body h4 {
