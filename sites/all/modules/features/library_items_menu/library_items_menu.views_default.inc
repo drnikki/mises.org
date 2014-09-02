@@ -85,14 +85,74 @@ function library_items_menu_views_default_views() {
     'media_type' => 'media_type',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Library Menu */
+  $handler = $view->new_display('block', 'Library Menu', 'block');
 
   /* Display: Page (with Page Title) */
   $handler = $view->new_display('page_with_page_title', 'Page (with Page Title)', 'page_with_page_title_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Library Item Menu Demo';
   $handler->display->display_options['path'] = 'library/menu';
+
+  /* Display: Profile Menu */
+  $handler = $view->new_display('block', 'Profile Menu', 'block_1');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Taxonomy term: Content using Library Item Type */
+  $handler->display->display_options['relationships']['reverse_field_library_item_tree_node']['id'] = 'reverse_field_library_item_tree_node';
+  $handler->display->display_options['relationships']['reverse_field_library_item_tree_node']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_library_item_tree_node']['field'] = 'reverse_field_library_item_tree_node';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_author_1_target_id']['id'] = 'field_author_1_target_id';
+  $handler->display->display_options['relationships']['field_author_1_target_id']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['relationships']['field_author_1_target_id']['field'] = 'field_author_1_target_id';
+  $handler->display->display_options['relationships']['field_author_1_target_id']['relationship'] = 'reverse_field_library_item_tree_node';
+  /* Relationship: Taxonomy term: Parent term */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Term with Parent Relationship */
+  $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
+  $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid_1']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['tid_1']['ui_name'] = 'Term with Parent Relationship';
+  $handler->display->display_options['fields']['tid_1']['label'] = '';
+  $handler->display->display_options['fields']['tid_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'search/site//author/node:!1/media-type/[name]-[tid]';
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_author_1_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $export['library_items_menu'] = $view;
 
   return $export;
