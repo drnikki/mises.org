@@ -98,8 +98,14 @@ body {
     background-image: url('../images/icons/shield-bg.png');
     .icon {
       @include icon-block(55px,6px,6px);
-      @include icon-image('../images/icons/icon-daily.png');
-      // Daily is default icon, custom shield icons based on path
+      @include icon-image('../images/icons/icon-library.png');
+      // Library is default icon, custom shield icons based on path or taxonomy
+      body.mises-daily &,
+      body.icon-mises-daily &,
+      body.audio-mises-daily &,
+      body.icon-audio-mises-daily & {
+        @include icon-image('../images/icons/icon-daily.png');
+      }
       body.section-press-room & {
         @include icon-image('../images/icons/icon-press.png');
       }
@@ -109,7 +115,9 @@ body {
       body.section-blog & {
         @include icon-image('../images/icons/icon-blog.png');
       }
-      body.section-books & {
+      body.section-books,
+      body.books &,
+      body.icon-books & {
         @include icon-image('../images/icons/icon-books.png');
       }
       body.section-courses & {
@@ -118,6 +126,22 @@ body {
       body.section-jobs &,
       body.section-profile & {
         @include icon-image('../images/icons/icon-audience.png');
+      }
+      body.lectures &,
+      body.icon-lectures & {
+        @include icon-image('../images/icons/icon-lecture.png');
+      }
+      body.interviews &,
+      body.icon-interviews & {
+        @include icon-image('../images/icons/icon-interview.png');
+      }
+      body.mises-view &,
+      body.icon-mises-view & {
+        @include icon-image('../images/icons/icon-view.png');
+      }
+      body.audio-books &,
+      body.icon-audio-books & {
+        @include icon-image('../images/icons/icon-audio.png');
       }
     }
   }

@@ -9577,74 +9577,109 @@ body {
   height: 55px;
   border-radius: 50%;
   content: '';
+  background-image: url("../images/icons/icon-library.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 106, ../sass/custom/_main.scss */
+body.mises-daily .main-content .shield .icon, body.icon-mises-daily .main-content .shield .icon, body.audio-mises-daily .main-content .shield .icon, body.icon-audio-mises-daily .main-content .shield .icon {
   background-image: url("../images/icons/icon-daily.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 103, ../sass/custom/_main.scss */
+/* line 109, ../sass/custom/_main.scss */
 body.section-press-room .main-content .shield .icon {
   background-image: url("../images/icons/icon-press.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 106, ../sass/custom/_main.scss */
+/* line 112, ../sass/custom/_main.scss */
 body.section-events .main-content .shield .icon {
   background-image: url("../images/icons/icon-event.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 109, ../sass/custom/_main.scss */
+/* line 115, ../sass/custom/_main.scss */
 body.section-blog .main-content .shield .icon {
   background-image: url("../images/icons/icon-blog.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 112, ../sass/custom/_main.scss */
-body.section-books .main-content .shield .icon {
+/* line 120, ../sass/custom/_main.scss */
+.main-content .shield .icon body.section-books, body.books .main-content .shield .icon, body.icon-books .main-content .shield .icon {
   background-image: url("../images/icons/icon-books.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 115, ../sass/custom/_main.scss */
+/* line 123, ../sass/custom/_main.scss */
 body.section-courses .main-content .shield .icon {
   background-image: url("../images/icons/icon-online.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 119, ../sass/custom/_main.scss */
+/* line 127, ../sass/custom/_main.scss */
 body.section-jobs .main-content .shield .icon, body.section-profile .main-content .shield .icon {
   background-image: url("../images/icons/icon-audience.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 125, ../sass/custom/_main.scss */
+/* line 131, ../sass/custom/_main.scss */
+body.lectures .main-content .shield .icon, body.icon-lectures .main-content .shield .icon {
+  background-image: url("../images/icons/icon-lecture.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 135, ../sass/custom/_main.scss */
+body.interviews .main-content .shield .icon, body.icon-interviews .main-content .shield .icon {
+  background-image: url("../images/icons/icon-interview.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 139, ../sass/custom/_main.scss */
+body.mises-view .main-content .shield .icon, body.icon-mises-view .main-content .shield .icon {
+  background-image: url("../images/icons/icon-view.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 143, ../sass/custom/_main.scss */
+body.audio-books .main-content .shield .icon, body.icon-audio-books .main-content .shield .icon {
+  background-image: url("../images/icons/icon-audio.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 149, ../sass/custom/_main.scss */
 .front .main-content {
   padding: 6px 24px;
 }
-/* line 129, ../sass/custom/_main.scss */
+/* line 153, ../sass/custom/_main.scss */
 .main-content .body-content.normal {
   font-size: 15px;
 }
-/* line 132, ../sass/custom/_main.scss */
+/* line 156, ../sass/custom/_main.scss */
 .main-content .body-content.large {
   font-size: 18px;
 }
 
 @media (min-width: 481px) {
-  /* line 138, ../sass/custom/_main.scss */
+  /* line 162, ../sass/custom/_main.scss */
   .page-header {
     padding-left: 100px;
   }
 }
 @media (max-width: 480px) {
-  /* line 138, ../sass/custom/_main.scss */
+  /* line 162, ../sass/custom/_main.scss */
   .page-header {
     padding: 65px 0 15px;
     margin: 0;
