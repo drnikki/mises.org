@@ -100,6 +100,7 @@ body {
       @include icon-block(55px,6px,6px);
       @include icon-image('../images/icons/icon-library.png');
       // Library is default icon, custom shield icons based on path or taxonomy
+      body.front &,
       body.mises-daily &,
       body.icon-mises-daily &,
       body.audio-mises-daily &,
