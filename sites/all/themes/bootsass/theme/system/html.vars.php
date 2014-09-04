@@ -46,4 +46,31 @@ function bootsass_preprocess_html(&$variables) {
       $variables['classes_array'][] = 'main-theme';
   }
 
+  // Add the terms to the body classes based on terms.
+  if ($node = menu_get_object()) {
+    // Return an array of taxonomy term ID's.
+    $libraryids = field_get_items('node', $node, 'field_library_item_tree');
+    $audienceids = field_get_items('node', $node, 'field_audience');
+    if ($libraryids && $audienceids) {
+      $termids =  array_merge($libraryids, $audienceids);
+    } elseif ($audienceids) {
+      $termids = $audienceids;
+    } else {
+      $termids = $libraryids;
+    }
+    // Load all the terms to get the name and vocab.
+    if ($termids) {
+      foreach ($termids as $termid) {
+        $terms[] = isset($termid['tid']) ? taxonomy_term_load($termid['tid']) : taxonomy_term_load($termid['target_id']);
+      }
+      // Assign the taxonomy values for Library Item Type.
+      foreach ($terms as $term) {
+        $class = strtolower(drupal_clean_css_identifier($term->name));
+        $vocabulary = drupal_clean_css_identifier($term->vocabulary_machine_name);
+        //$variables['classes_array'][] = 'icon-' . $vocabulary . '-' . $class;
+        $variables['classes_array'][] = 'icon-' . $class;
+      }
+    }
+  }
+
 }
