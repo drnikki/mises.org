@@ -375,7 +375,7 @@ function custom_search_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * Alter the search to respect the search modes selected.
+ * Alter the search to respect the search modes selected. PATCH TO ADD ALIAS_PATH
  */
 function custom_search_submit($form, &$form_state) {
   // Save delta for later use (exclusion & refresh).
@@ -502,6 +502,20 @@ function custom_search_submit($form, &$form_state) {
   if (isset($form_state['values']['custom_search_paths']) && $form_state['values']['custom_search_paths'] != '') {
     $custom_path = str_replace('[key]', $form_state['values'][$form_state['values']['form_id']], $form_state['values']['custom_search_paths']);
     $custom_path = str_replace('[current_path]', current_path(), $custom_path);
+    // Begin patch to allow alias_path token.
+    if (strpos($form_state['values']['custom_search_paths'], '[alias_path]') !== FALSE) {
+      $path = current_path();
+      $args = explode('/', $path);
+      $alias = drupal_get_path_alias($_GET['q']);
+      $segments = explode('/', $alias);
+      if ($segments[0] == 'library') {
+        $alias_path = $alias . '-' . $args[2];
+      } else {
+        $alias_path = $segments[0] . '/taxonomy_term:' . $args[2];
+      }
+    }
+    $custom_path = str_replace('[alias_path]', $alias_path, $custom_path);
+    // End patch.
     if (strpos($form_state['values']['custom_search_paths'], '[terms]') !== FALSE) {
       $custom_path = str_replace('[terms]', (count($terms)) ? implode($form_state['values']['custom_search_paths_terms_separator'], $terms) : '', $custom_path);
     }

@@ -269,7 +269,7 @@ function search_blocks_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_blocks_1_paths';
-  $strongarm->value = 'search/site/[key]/[current_path]';
+  $strongarm->value = 'search/site/[key]/[alias_path]';
   $export['custom_search_blocks_1_paths'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -374,7 +374,7 @@ function search_blocks_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_delta';
-  $strongarm->value = '';
+  $strongarm->value = 'blocks_1_';
   $export['custom_search_delta'] = $strongarm;
 
   return $export;
