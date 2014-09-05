@@ -190,6 +190,9 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'media_internet',
   );
