@@ -211,7 +211,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'facet_missing' => 0,
     'flatten' => '0',
     'query_type' => 'term',
-    'pretty_paths_alias' => 'media-type',
+    'pretty_paths_alias' => 'library',
     'pretty_paths_taxonomy_pathauto' => 0,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'media_type',
   );
