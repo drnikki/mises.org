@@ -72,7 +72,8 @@ col-xs-12
 panel
 panel-heading
 panel-body
-single';
+single
+node-teaser';
   $export['ds_classes_regions'] = $strongarm;
 
   $strongarm = new stdClass();
