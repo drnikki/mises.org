@@ -316,10 +316,10 @@ body.not-logged-in {
 .main-content {
   position: relative;
   @media (min-width: $screen-xs) {
-    padding: $padding-base-vertical $grid-gutter-width *1.5 $padding-large-horizontal * 1.5;
+    padding: $padding-large-horizontal $grid-gutter-width *1.5 $padding-large-horizontal * 1.5;
   }
   @media (max-width: $screen-xs) {
-    padding: $padding-base-vertical $grid-gutter-width / 2 $padding-large-horizontal * 1.5;
+    padding: $padding-large-horizontal $grid-gutter-width / 2 $padding-large-horizontal * 1.5;
   }
 }
 #text-resizer {

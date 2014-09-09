@@ -9147,13 +9147,13 @@ body.not-logged-in .contextual-links-wrapper {
 @media (min-width: 480px) {
   /* line 316, ../sass/custom/_styles.scss */
   .main-content {
-    padding: 6px 30px 24px;
+    padding: 16px 30px 24px;
   }
 }
 @media (max-width: 480px) {
   /* line 316, ../sass/custom/_styles.scss */
   .main-content {
-    padding: 6px 10px 24px;
+    padding: 16px 10px 24px;
   }
 }
 

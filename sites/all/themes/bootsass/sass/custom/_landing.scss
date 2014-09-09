@@ -54,21 +54,24 @@
 /* HOMEPAGE TOP RIGHT MENU */
 
 /* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
-.main-content .node-teaser {
-  padding: $grid-gutter-width 0 0;
-  &:after {
-    display: block;
-    visibility: visible;
-    margin: 0 auto;
-    padding-top: $grid-gutter-width;
-    width: calc(100% - 20px);
-    width: -moz-calc(100% - 20px);
-    height: 1px;
-    border-bottom: 1px solid $gray-light;
-    content: '';
-  }
-  .image {
-    margin-top: 5px;
+.main-content {
+  .node-teaser,
+  .view-mode-audio_teaser {
+    padding: $grid-gutter-width 0 0;
+    &:after {
+      display: block;
+      visibility: visible;
+      margin: 0 auto;
+      padding-top: $grid-gutter-width;
+      width: calc(100% - 20px);
+      width: -moz-calc(100% - 20px);
+      height: 1px;
+      border-bottom: 1px solid $gray-light;
+      content: '';
+    }
+    .image {
+      margin-top: 5px;
+    }
   }
 }
 

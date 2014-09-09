@@ -466,6 +466,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'administer mises code',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'mises_utility',
   );
@@ -485,6 +486,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'administer mises settings',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'mises_utility',
   );
@@ -683,6 +685,16 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'administer taxonomy views integrator'.
+  $permissions['administer taxonomy views integrator'] = array(
+    'name' => 'administer taxonomy views integrator',
+    'roles' => array(
+      'Drupal Developer' => 'Drupal Developer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'tvi',
   );
 
   // Exported permission: 'administer themes'.
@@ -1116,6 +1128,152 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'shortcut',
+  );
+
+  // Exported permission: 'define view for terms in award_type'.
+  $permissions['define view for terms in award_type'] = array(
+    'name' => 'define view for terms in award_type',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for terms in currents_trends'.
+  $permissions['define view for terms in currents_trends'] = array(
+    'name' => 'define view for terms in currents_trends',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for terms in events'.
+  $permissions['define view for terms in events'] = array(
+    'name' => 'define view for terms in events',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for terms in level'.
+  $permissions['define view for terms in level'] = array(
+    'name' => 'define view for terms in level',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for terms in media_type'.
+  $permissions['define view for terms in media_type'] = array(
+    'name' => 'define view for terms in media_type',
+    'roles' => array(
+      'Drupal Developer' => 'Drupal Developer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for terms in profile_type'.
+  $permissions['define view for terms in profile_type'] = array(
+    'name' => 'define view for terms in profile_type',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for terms in reading_group'.
+  $permissions['define view for terms in reading_group'] = array(
+    'name' => 'define view for terms in reading_group',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for terms in reason_for_contact'.
+  $permissions['define view for terms in reason_for_contact'] = array(
+    'name' => 'define view for terms in reason_for_contact',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for terms in tags'.
+  $permissions['define view for terms in tags'] = array(
+    'name' => 'define view for terms in tags',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for terms in the_austrian_school_of_economics'.
+  $permissions['define view for terms in the_austrian_school_of_economics'] = array(
+    'name' => 'define view for terms in the_austrian_school_of_economics',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for vocabulary award_type'.
+  $permissions['define view for vocabulary award_type'] = array(
+    'name' => 'define view for vocabulary award_type',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for vocabulary currents_trends'.
+  $permissions['define view for vocabulary currents_trends'] = array(
+    'name' => 'define view for vocabulary currents_trends',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for vocabulary events'.
+  $permissions['define view for vocabulary events'] = array(
+    'name' => 'define view for vocabulary events',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for vocabulary level'.
+  $permissions['define view for vocabulary level'] = array(
+    'name' => 'define view for vocabulary level',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for vocabulary media_type'.
+  $permissions['define view for vocabulary media_type'] = array(
+    'name' => 'define view for vocabulary media_type',
+    'roles' => array(
+      'Drupal Developer' => 'Drupal Developer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for vocabulary profile_type'.
+  $permissions['define view for vocabulary profile_type'] = array(
+    'name' => 'define view for vocabulary profile_type',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for vocabulary reading_group'.
+  $permissions['define view for vocabulary reading_group'] = array(
+    'name' => 'define view for vocabulary reading_group',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for vocabulary reason_for_contact'.
+  $permissions['define view for vocabulary reason_for_contact'] = array(
+    'name' => 'define view for vocabulary reason_for_contact',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for vocabulary tags'.
+  $permissions['define view for vocabulary tags'] = array(
+    'name' => 'define view for vocabulary tags',
+    'roles' => array(),
+    'module' => 'tvi',
+  );
+
+  // Exported permission: 'define view for vocabulary the_austrian_school_of_economics'.
+  $permissions['define view for vocabulary the_austrian_school_of_economics'] = array(
+    'name' => 'define view for vocabulary the_austrian_school_of_economics',
+    'roles' => array(),
+    'module' => 'tvi',
   );
 
   // Exported permission: 'delete any audio files'.
