@@ -9154,13 +9154,13 @@ body.not-logged-in .contextual-links-wrapper {
 @media (min-width: 480px) {
   /* line 316, ../sass/custom/_styles.scss */
   .main-content {
-    padding: 6px 30px 24px;
+    padding: 16px 30px 24px;
   }
 }
 @media (max-width: 480px) {
   /* line 316, ../sass/custom/_styles.scss */
   .main-content {
-    padding: 6px 10px 24px;
+    padding: 16px 10px 24px;
   }
 }
 
@@ -9652,34 +9652,41 @@ body.mises-view .main-content .shield .icon, body.icon-mises-view .main-content 
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 144, ../sass/custom/_main.scss */
-body.audio-books .main-content .shield .icon, body.icon-audio-books .main-content .shield .icon {
+/* line 146, ../sass/custom/_main.scss */
+body.audiovideo .main-content .shield .icon, body.icon-audiovideo .main-content .shield .icon, body.audio-books .main-content .shield .icon, body.icon-audio-books .main-content .shield .icon {
   background-image: url("../images/icons/icon-audio.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 /* line 150, ../sass/custom/_main.scss */
+body.live-video .main-content .shield .icon, body.icon-live-video .main-content .shield .icon {
+  background-image: url("../images/icons/icon-video.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 156, ../sass/custom/_main.scss */
 .front .main-content {
   padding: 6px 24px;
 }
-/* line 154, ../sass/custom/_main.scss */
+/* line 160, ../sass/custom/_main.scss */
 .main-content .body-content.normal {
   font-size: 15px;
 }
-/* line 157, ../sass/custom/_main.scss */
+/* line 163, ../sass/custom/_main.scss */
 .main-content .body-content.large {
   font-size: 18px;
 }
 
 @media (min-width: 481px) {
-  /* line 163, ../sass/custom/_main.scss */
+  /* line 169, ../sass/custom/_main.scss */
   .page-header {
     padding-left: 100px;
   }
 }
 @media (max-width: 480px) {
-  /* line 163, ../sass/custom/_main.scss */
+  /* line 169, ../sass/custom/_main.scss */
   .page-header {
     padding: 65px 0 15px;
     margin: 0;
@@ -9743,12 +9750,14 @@ body.audio-books .main-content .shield .icon, body.icon-audio-books .main-conten
 
 /* HOMEPAGE TOP RIGHT MENU */
 /* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
-/* line 57, ../sass/custom/_landing.scss */
-.main-content .node-teaser {
+/* line 59, ../sass/custom/_landing.scss */
+.main-content .node-teaser,
+.main-content .view-mode-audio_teaser {
   padding: 20px 0 0;
 }
-/* line 59, ../sass/custom/_landing.scss */
-.main-content .node-teaser:after {
+/* line 61, ../sass/custom/_landing.scss */
+.main-content .node-teaser:after,
+.main-content .view-mode-audio_teaser:after {
   display: block;
   visibility: visible;
   margin: 0 auto;
@@ -9759,29 +9768,30 @@ body.audio-books .main-content .shield .icon, body.icon-audio-books .main-conten
   border-bottom: 1px solid #c8cdd0;
   content: '';
 }
-/* line 70, ../sass/custom/_landing.scss */
-.main-content .node-teaser .image {
+/* line 72, ../sass/custom/_landing.scss */
+.main-content .node-teaser .image,
+.main-content .view-mode-audio_teaser .image {
   margin-top: 5px;
 }
 
 /* LANDING LISTS */
-/* line 79, ../sass/custom/_landing.scss */
+/* line 82, ../sass/custom/_landing.scss */
 .front .landing-list .node-teaser:after {
   display: none;
 }
-/* line 83, ../sass/custom/_landing.scss */
+/* line 86, ../sass/custom/_landing.scss */
 .landing-list .image {
   margin-top: 5px;
 }
-/* line 86, ../sass/custom/_landing.scss */
+/* line 89, ../sass/custom/_landing.scss */
 .landing-list .tags {
   padding-top: 5px;
 }
-/* line 89, ../sass/custom/_landing.scss */
+/* line 92, ../sass/custom/_landing.scss */
 .landing-list h2.teaser-title {
   margin-top: 0;
 }
-/* line 93, ../sass/custom/_landing.scss */
+/* line 96, ../sass/custom/_landing.scss */
 .landing-list .view-footer span.glyphicon {
   width: 22px;
   height: 22px;
@@ -9790,63 +9800,63 @@ body.audio-books .main-content .shield .icon, body.icon-audio-books .main-conten
   line-height: 22px;
 }
 
-/* line 100, ../sass/custom/_landing.scss */
+/* line 103, ../sass/custom/_landing.scss */
 .page-taxonomy-term-147 .landing-list .result-1 {
   background-color: #e4ebee;
 }
-/* line 102, ../sass/custom/_landing.scss */
+/* line 105, ../sass/custom/_landing.scss */
 .page-taxonomy-term-147 .landing-list .result-1 .node-teaser {
   padding: 0;
 }
-/* line 104, ../sass/custom/_landing.scss */
+/* line 107, ../sass/custom/_landing.scss */
 .page-taxonomy-term-147 .landing-list .result-1 .node-teaser:after {
   display: none;
 }
-/* line 109, ../sass/custom/_landing.scss */
+/* line 112, ../sass/custom/_landing.scss */
 .page-taxonomy-term-147 .landing-list .result-1 .group-right:before {
   display: block;
   content: "Today's Article";
 }
-/* line 113, ../sass/custom/_landing.scss */
+/* line 116, ../sass/custom/_landing.scss */
 .page-taxonomy-term-147 .landing-list .result-1 .group-right:first-child {
   padding-left: 20px;
 }
-/* line 117, ../sass/custom/_landing.scss */
+/* line 120, ../sass/custom/_landing.scss */
 .page-taxonomy-term-147 .landing-list .result-1 .image {
   margin-top: 0;
 }
-/* line 120, ../sass/custom/_landing.scss */
+/* line 123, ../sass/custom/_landing.scss */
 .page-taxonomy-term-147 .landing-list .result-1 .tags {
   margin-top: 0;
   padding: 10px;
   background-color: #38709e;
   color: white;
 }
-/* line 125, ../sass/custom/_landing.scss */
+/* line 128, ../sass/custom/_landing.scss */
 .page-taxonomy-term-147 .landing-list .result-1 .tags a {
   color: white;
 }
-/* line 129, ../sass/custom/_landing.scss */
+/* line 132, ../sass/custom/_landing.scss */
 .page-taxonomy-term-147 .landing-list .result-1 .group-right {
   padding: 20px 10px;
 }
 
 /* LANDING PAGE */
-/* line 138, ../sass/custom/_landing.scss */
+/* line 141, ../sass/custom/_landing.scss */
 .node-landing-page.view-mode-full h2.teaser-title {
   margin-top: 6px;
 }
-/* line 141, ../sass/custom/_landing.scss */
+/* line 144, ../sass/custom/_landing.scss */
 .node-landing-page.view-mode-full .sub-heading {
   margin-top: 0;
 }
-/* line 144, ../sass/custom/_landing.scss */
+/* line 147, ../sass/custom/_landing.scss */
 .node-landing-page.view-mode-full .row, .node-landing-page.view-mode-full .view-photo-album .view-content, .view-photo-album .node-landing-page.view-mode-full .view-content, .node-landing-page.view-mode-full .newsletter-form ul, .newsletter-form .node-landing-page.view-mode-full ul {
   margin-bottom: 20px;
 }
 
 /* LANDING LIBRARY PAGE */
-/* line 161, ../sass/custom/_landing.scss */
+/* line 164, ../sass/custom/_landing.scss */
 .latest-library-content.outset, .latest-library-content.resource-item.odd, .latest-library-content.group-footnotes {
   margin-right: -10px;
   margin-left: -10px;
@@ -9854,7 +9864,7 @@ body.audio-books .main-content .shield .icon, body.icon-audio-books .main-conten
 }
 
 /* AUSTRIAN ECONOMICS LANDING PAGE */
-/* line 169, ../sass/custom/_landing.scss */
+/* line 172, ../sass/custom/_landing.scss */
 .austrian-econ-block img {
   border: 3px solid #788086;
 }

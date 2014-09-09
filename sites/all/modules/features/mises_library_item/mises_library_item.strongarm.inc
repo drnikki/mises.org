@@ -128,6 +128,9 @@ function mises_library_item_strongarm() {
       'vertical_teaser' => array(
         'custom_settings' => FALSE,
       ),
+      'audio_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

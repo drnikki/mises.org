@@ -140,9 +140,15 @@ body {
       body.icon-mises-view & {
         @include icon-image('../images/icons/icon-view.png');
       }
+      body.audiovideo &,
+      body.icon-audiovideo &,
       body.audio-books &,
       body.icon-audio-books & {
         @include icon-image('../images/icons/icon-audio.png');
+      }
+      body.live-video &,
+      body.icon-live-video & {
+        @include icon-image('../images/icons/icon-video.png');
       }
     }
   }
