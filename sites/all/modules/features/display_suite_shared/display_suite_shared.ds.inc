@@ -1158,6 +1158,117 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|library_item|audio_teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'library_item';
+  $ds_fieldsetting->view_mode = 'audio_teaser';
+  $ds_fieldsetting->settings = array(
+    'tags_title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'title' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'teaser-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'node_link' => array(
+      'weight' => '10',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => 'p',
+        'class' => 'read-more',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'field_mises_published_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'date',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_author_1' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'author',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_image_collection' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'image img-responsive border-secondary',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_topics' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_austrian_school' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_media_collection' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'media',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|library_item|audio_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|library_item|author_teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'library_item';
@@ -4377,6 +4488,78 @@ function display_suite_shared_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|library_item|audio_teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'library_item';
+  $ds_layout->view_mode = 'audio_teaser';
+  $ds_layout->layout = '2col_custom_fluid';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'tags_title',
+        1 => 'field_topics',
+        2 => 'field_image_collection',
+        3 => 'group_tags',
+        4 => 'field_austrian_school',
+      ),
+      'right' => array(
+        5 => 'title',
+        6 => 'field_mises_published_date',
+        7 => 'group_date_author',
+        8 => 'field_author_1',
+        9 => 'field_teaser_text',
+        10 => 'body',
+        11 => 'field_media_collection',
+        12 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'tags_title' => 'left',
+      'field_topics' => 'left',
+      'field_image_collection' => 'left',
+      'group_tags' => 'left',
+      'field_austrian_school' => 'left',
+      'title' => 'right',
+      'field_mises_published_date' => 'right',
+      'group_date_author' => 'right',
+      'field_author_1' => 'right',
+      'field_teaser_text' => 'right',
+      'body' => 'right',
+      'field_media_collection' => 'right',
+      'node_link' => 'right',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'row' => 'row',
+      ),
+      'left' => array(
+        'col-xs-4' => 'col-xs-4',
+      ),
+      'right' => array(
+        'col-xs-8' => 'col-xs-8',
+      ),
+    ),
+    'wrappers' => array(
+      'header' => 'div',
+      'top' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'bottom' => 'div',
+      'footer' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|library_item|audio_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|library_item|author_teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'library_item';
@@ -5430,12 +5613,7 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'classes' => array(
-      'layout_class' => array(
-        'landing-list' => 'landing-list',
-      ),
-      'ds_content' => array(
-        'landing-list' => 'landing-list',
-      ),
+      'layout_class' => array(),
     ),
     'wrappers' => array(
       'ds_content' => 'div',
