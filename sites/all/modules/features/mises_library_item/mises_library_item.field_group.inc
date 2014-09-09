@@ -140,6 +140,36 @@ function mises_library_item_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_date_author|node|library_item|audio_teaser';
+  $field_group->group_name = 'group_date_author';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'audio_teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Date Author',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_mises_published_date',
+      1 => 'field_author_1',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Date Author',
+      'instance_settings' => array(
+        'classes' => 'group-date-author',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_date_author|node|library_item|audio_teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_date_author|node|library_item|full';
   $field_group->group_name = 'group_date_author';
   $field_group->entity_type = 'node';
@@ -434,6 +464,37 @@ function mises_library_item_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|library_item|audio_teaser';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'audio_teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => '',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_topics',
+      1 => 'field_austrian_school',
+      2 => 'tags_title',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => '',
+      'instance_settings' => array(
+        'classes' => 'tags',
+        'element' => 'p',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_tags|node|library_item|audio_teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_tags|node|library_item|full';
   $field_group->group_name = 'group_tags';
   $field_group->entity_type = 'node';
@@ -470,7 +531,7 @@ function mises_library_item_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Tags',
+    'label' => '',
     'weight' => '1',
     'children' => array(
       0 => 'field_topics',
@@ -479,10 +540,12 @@ function mises_library_item_field_group_info() {
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
-      'label' => 'Tags',
+      'label' => '',
       'instance_settings' => array(
         'classes' => 'tags',
         'element' => 'p',
+        'show_label' => '0',
+        'label_element' => 'div',
         'attributes' => '',
       ),
     ),

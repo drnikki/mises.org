@@ -1,10 +1,11 @@
 name = Library Item (Media) Type
 core = 7.x
 package = Taxonomy
-version = 7.x-1.0-dev
+version = 7.x-1.1
 project = library_item_media_type
 dependencies[] = features
 dependencies[] = taxonomy
+dependencies[] = tvi
 dependencies[] = uuid
 features[features_api][] = api:2
 features[taxonomy][] = media_type
