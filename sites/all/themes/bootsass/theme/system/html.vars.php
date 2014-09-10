@@ -72,5 +72,19 @@ function bootsass_preprocess_html(&$variables) {
       }
     }
   }
+  // Add special icons to nested term pages based on parents
+  if (arg(0) == 'taxonomy' && arg(1) == 'term') {
+    $term_tid = arg(2);
+    $top_parent_term = null;
+    $parent_terms = taxonomy_get_parents_all($term_tid);
+    foreach($parent_terms as $parent) {
+      if ($parent->tid == '367') {
+        $variables['classes_array'][] = 'icon-interviews';
+        break;
+      } else if ($parent->tid == '442') {
+        $variables['classes_array'][] = 'icon-audiovideo';
+      }
+    }
+  }
 
 }
