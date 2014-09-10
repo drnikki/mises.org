@@ -71,7 +71,9 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'access contextual links',
     'roles' => array(
       'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
       'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'contextual',
@@ -93,6 +95,20 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
     ),
     'module' => 'devel',
+  );
+
+  // Exported permission: 'access draggableviews'.
+  $permissions['access draggableviews'] = array(
+    'name' => 'access draggableviews',
+    'roles' => array(
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'draggableviews',
   );
 
   // Exported permission: 'access media browser'.
