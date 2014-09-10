@@ -9652,41 +9652,41 @@ body.mises-view .main-content .shield .icon, body.icon-mises-view .main-content 
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 146, ../sass/custom/_main.scss */
-body.audiovideo .main-content .shield .icon, body.icon-audiovideo .main-content .shield .icon, body.audio-books .main-content .shield .icon, body.icon-audio-books .main-content .shield .icon {
+/* line 147, ../sass/custom/_main.scss */
+body.audiovideo .main-content .shield .icon, body.icon-audiovideo .main-content .shield .icon, body.icon-audio-video .main-content .shield .icon, body.audio-books .main-content .shield .icon, body.icon-audio-books .main-content .shield .icon {
   background-image: url("../images/icons/icon-audio.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 150, ../sass/custom/_main.scss */
+/* line 151, ../sass/custom/_main.scss */
 body.live-video .main-content .shield .icon, body.icon-live-video .main-content .shield .icon {
   background-image: url("../images/icons/icon-video.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 156, ../sass/custom/_main.scss */
+/* line 157, ../sass/custom/_main.scss */
 .front .main-content {
   padding: 6px 24px;
 }
-/* line 160, ../sass/custom/_main.scss */
+/* line 161, ../sass/custom/_main.scss */
 .main-content .body-content.normal {
   font-size: 15px;
 }
-/* line 163, ../sass/custom/_main.scss */
+/* line 164, ../sass/custom/_main.scss */
 .main-content .body-content.large {
   font-size: 18px;
 }
 
 @media (min-width: 481px) {
-  /* line 169, ../sass/custom/_main.scss */
+  /* line 170, ../sass/custom/_main.scss */
   .page-header {
     padding-left: 100px;
   }
 }
 @media (max-width: 480px) {
-  /* line 169, ../sass/custom/_main.scss */
+  /* line 170, ../sass/custom/_main.scss */
   .page-header {
     padding: 65px 0 15px;
     margin: 0;

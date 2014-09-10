@@ -142,6 +142,7 @@ body {
       }
       body.audiovideo &,
       body.icon-audiovideo &,
+      body.icon-audio-video &,
       body.audio-books &,
       body.icon-audio-books & {
         @include icon-image('../images/icons/icon-audio.png');
