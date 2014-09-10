@@ -132,6 +132,13 @@ body {
       body.icon-lectures & {
         @include icon-image('../images/icons/icon-lecture.png');
       }
+      body.audiovideo &,
+      body.icon-audiovideo &,
+      body.icon-audio-video &,
+      body.audio-books &,
+      body.icon-audio-books & {
+        @include icon-image('../images/icons/icon-audio.png');
+      }
       body.interviews &,
       body.icon-interviews & {
         @include icon-image('../images/icons/icon-interview.png');
@@ -139,13 +146,6 @@ body {
       body.mises-view &,
       body.icon-mises-view & {
         @include icon-image('../images/icons/icon-view.png');
-      }
-      body.audiovideo &,
-      body.icon-audiovideo &,
-      body.icon-audio-video &,
-      body.audio-books &,
-      body.icon-audio-books & {
-        @include icon-image('../images/icons/icon-audio.png');
       }
       body.live-video &,
       body.icon-live-video & {

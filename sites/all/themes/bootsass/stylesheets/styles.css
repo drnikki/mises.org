@@ -9638,23 +9638,23 @@ body.lectures .main-content .shield .icon, body.icon-lectures .main-content .shi
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 136, ../sass/custom/_main.scss */
+/* line 139, ../sass/custom/_main.scss */
+body.audiovideo .main-content .shield .icon, body.icon-audiovideo .main-content .shield .icon, body.icon-audio-video .main-content .shield .icon, body.audio-books .main-content .shield .icon, body.icon-audio-books .main-content .shield .icon {
+  background-image: url("../images/icons/icon-audio.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 143, ../sass/custom/_main.scss */
 body.interviews .main-content .shield .icon, body.icon-interviews .main-content .shield .icon {
   background-image: url("../images/icons/icon-interview.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 140, ../sass/custom/_main.scss */
+/* line 147, ../sass/custom/_main.scss */
 body.mises-view .main-content .shield .icon, body.icon-mises-view .main-content .shield .icon {
   background-image: url("../images/icons/icon-view.png");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-/* line 147, ../sass/custom/_main.scss */
-body.audiovideo .main-content .shield .icon, body.icon-audiovideo .main-content .shield .icon, body.icon-audio-video .main-content .shield .icon, body.audio-books .main-content .shield .icon, body.icon-audio-books .main-content .shield .icon {
-  background-image: url("../images/icons/icon-audio.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
