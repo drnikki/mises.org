@@ -1135,7 +1135,11 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
-          'conditions' => array(),
+          'conditions' => array(
+            0 => array(
+              'condition' => '',
+            ),
+          ),
           'view_mode' => 'list_teaser',
         ),
         'type' => 'field_collection_fields',
