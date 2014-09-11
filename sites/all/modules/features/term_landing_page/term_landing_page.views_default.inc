@@ -272,17 +272,14 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Library Item Type (field_library_item_tree) */
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['value'] = array(
-    144 => '144',
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'course' => 'course',
   );
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Image (field_image_collection) */
   $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
