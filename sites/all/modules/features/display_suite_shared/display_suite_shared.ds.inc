@@ -260,23 +260,13 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blog';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'follow_mises_institute' => array(
-      'weight' => '7',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'tags_title' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'custom_breadcrumb' => array(
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'dynamic_field_1' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -294,6 +284,16 @@ function display_suite_shared_ds_field_settings_info() {
         ),
         'conditions' => array(),
       ),
+    ),
+    'follow_mises_institute' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'tags_title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
     'text_resizer' => array(
       'weight' => '0',
@@ -403,6 +403,18 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_image_collection' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'image border-secondary pull-left',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="slideshow"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['node|blog|full'] = $ds_fieldsetting;
 
@@ -464,9 +476,16 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
-    'body' => array(
+    'field_image_collection' => array(
       'formatter_settings' => array(
-        'ft' => array(),
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'image img-responsive border-secondary',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
       ),
     ),
   );
@@ -3830,14 +3849,15 @@ function display_suite_shared_ds_layout_settings_info() {
         3 => 'custom_breadcrumb',
         4 => 'field_austrian_school',
         5 => 'title',
-        6 => 'group_date_author',
-        7 => 'group_tags',
-        8 => 'body',
+        6 => 'field_image_collection',
+        7 => 'group_date_author',
+        8 => 'group_tags',
         9 => 'post_date',
-        10 => 'field_media_collection',
-        11 => 'follow_mises_institute',
-        12 => 'field_author_1',
-        13 => 'dynamic_field_1',
+        10 => 'body',
+        11 => 'field_author_1',
+        12 => 'field_media_collection',
+        13 => 'follow_mises_institute',
+        14 => 'dynamic_field_1',
       ),
     ),
     'fields' => array(
@@ -3847,13 +3867,14 @@ function display_suite_shared_ds_layout_settings_info() {
       'custom_breadcrumb' => 'ds_content',
       'field_austrian_school' => 'ds_content',
       'title' => 'ds_content',
+      'field_image_collection' => 'ds_content',
       'group_date_author' => 'ds_content',
       'group_tags' => 'ds_content',
-      'body' => 'ds_content',
       'post_date' => 'ds_content',
+      'body' => 'ds_content',
+      'field_author_1' => 'ds_content',
       'field_media_collection' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
-      'field_author_1' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
     ),
     'classes' => array(
@@ -3923,12 +3944,16 @@ function display_suite_shared_ds_layout_settings_info() {
     'regions' => array(
       'right' => array(
         0 => 'title',
-        1 => 'body',
-        2 => 'node_link',
+        2 => 'body',
+        3 => 'node_link',
+      ),
+      'left' => array(
+        1 => 'field_image_collection',
       ),
     ),
     'fields' => array(
       'title' => 'right',
+      'field_image_collection' => 'left',
       'body' => 'right',
       'node_link' => 'right',
     ),

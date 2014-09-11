@@ -33,7 +33,7 @@ function mises_blog_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -167,7 +167,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 30,
       ),
       'print' => array(
         'label' => 'above',
@@ -397,7 +397,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 28,
       ),
       'print' => array(
         'label' => 'above',
@@ -441,6 +441,86 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-blog-field_image_collection'
+  $field_instances['node-blog-field_image_collection'] = array(
+    'bundle' => 'blog',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'conditions' => array(),
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'flexslider_field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'optionset' => 'node_slideshow',
+          'thumbnail_image_field' => '',
+          'thumbnail_image_style' => '',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_entity_flexslider',
+        'weight' => 3,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'list_teaser',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_image_collection',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-blog-field_level'
   $field_instances['node-blog-field_level'] = array(
     'bundle' => 'blog',
@@ -462,7 +542,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 29,
       ),
       'print' => array(
         'label' => 'above',
@@ -540,7 +620,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'above',
@@ -584,7 +664,7 @@ function mises_blog_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -677,6 +757,7 @@ function mises_blog_field_default_field_instances() {
   t('Author');
   t('Body');
   t('Featured');
+  t('Image');
   t('Level');
   t('Media');
   t('Topics');
