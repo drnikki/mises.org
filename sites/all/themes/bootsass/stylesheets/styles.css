@@ -9693,6 +9693,22 @@ body.live-video .main-content .shield .icon, body.icon-live-video .main-content 
   }
 }
 
+/* line 182, ../sass/custom/_main.scss */
+.section-search .main-content .group-left {
+  display: none;
+}
+/* line 185, ../sass/custom/_main.scss */
+.section-search .main-content .group-right {
+  width: 100%;
+}
+/* line 188, ../sass/custom/_main.scss */
+.section-search .main-content blockquote {
+  padding: inherit;
+  margin: inherit;
+  font-size: inherit;
+  border-left: 0 none;
+}
+
 /*
 * Custom Styles for Home and Landing Pages
 * 

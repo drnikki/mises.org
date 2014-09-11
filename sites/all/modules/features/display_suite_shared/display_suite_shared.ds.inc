@@ -2807,6 +2807,11 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'field_image' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -3959,7 +3964,13 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        '' => '',
+        'row' => 'row',
+      ),
+      'left' => array(
+        'col-sm-4' => 'col-sm-4',
+      ),
+      'right' => array(
+        'col-sm-8' => 'col-sm-8',
       ),
     ),
     'wrappers' => array(
@@ -5394,7 +5405,7 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'person_profile';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
       'right' => array(
@@ -5426,8 +5437,12 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
     ),
     'wrappers' => array(
+      'header' => 'div',
+      'top' => 'div',
       'left' => 'div',
       'right' => 'div',
+      'bottom' => 'div',
+      'footer' => 'div',
       'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
@@ -5532,21 +5547,31 @@ function display_suite_shared_ds_layout_settings_info() {
       'right' => array(
         0 => 'course_title_linked',
         1 => 'body',
-        2 => 'field_link_to_external_listing_',
+        3 => 'field_link_to_external_listing_',
+      ),
+      'ds_hidden' => array(
+        2 => 'field_product_id',
       ),
       'left' => array(
-        3 => 'field_image',
+        4 => 'field_image',
       ),
     ),
     'fields' => array(
       'course_title_linked' => 'right',
       'body' => 'right',
+      'field_product_id' => 'ds_hidden',
       'field_link_to_external_listing_' => 'right',
       'field_image' => 'left',
     ),
     'classes' => array(
       'layout_class' => array(
-        '' => '',
+        'row' => 'row',
+      ),
+      'left' => array(
+        'col-sm-4' => 'col-sm-4',
+      ),
+      'right' => array(
+        'col-sm-8' => 'col-sm-8',
       ),
     ),
     'wrappers' => array(

@@ -503,5 +503,19 @@ function mises_theme_strongarm() {
   );
   $export['html_title_allowed_elements'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'tvi_all_default';
+  $strongarm->value = array(
+    'is_default' => FALSE,
+    'type' => 'all',
+    'xid' => 'default',
+    'status' => 1,
+    'view_name' => 'term_landing',
+    'display' => 'page',
+  );
+  $export['tvi_all_default'] = $strongarm;
+
   return $export;
 }
