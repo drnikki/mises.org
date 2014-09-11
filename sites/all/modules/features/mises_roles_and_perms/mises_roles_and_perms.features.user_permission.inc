@@ -1179,6 +1179,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'define view for terms in media_type',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'tvi',
@@ -1252,6 +1253,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'define view for vocabulary media_type',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'tvi',
