@@ -466,7 +466,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<p class="read-more text-right padding-lg"><a href="/profile-type/columnist">More</a></p>
-<p class="read-more text-right padding-lg">[name]</p>';
+';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -763,8 +763,8 @@ function term_landing_page_views_default_views() {
     'popular' => 0,
   );
 
-  /* Display: Audio Book Landing */
-  $handler = $view->new_display('page', 'Audio Book Landing', 'page_1');
+  /* Display: Sortable Term Landing */
+  $handler = $view->new_display('page', 'Sortable Term Landing', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = '%1';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
@@ -827,10 +827,6 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -863,27 +859,10 @@ function term_landing_page_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Taxonomy term: Parent term */
-  $handler->display->display_options['filters']['parent']['id'] = 'parent';
-  $handler->display->display_options['filters']['parent']['table'] = 'taxonomy_term_hierarchy';
-  $handler->display->display_options['filters']['parent']['field'] = 'parent';
-  $handler->display->display_options['filters']['parent']['relationship'] = 'field_library_item_tree_tid';
-  $handler->display->display_options['filters']['parent']['group'] = 2;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid']['id'] = 'tid';
-  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['relationship'] = 'field_library_item_tree_tid';
-  $handler->display->display_options['filters']['tid']['value'] = array(
-    158 => '158',
-  );
-  $handler->display->display_options['filters']['tid']['group'] = 2;
-  $handler->display->display_options['filters']['tid']['type'] = 'select';
-  $handler->display->display_options['filters']['tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['path'] = 'taxonomy/term/%';
 
-  /* Display: Audio Book Order */
-  $handler = $view->new_display('page', 'Audio Book Order', 'page_2');
+  /* Display: Sortable Term Order */
+  $handler = $view->new_display('page', 'Sortable Term Order', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = '%1';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
@@ -970,10 +949,6 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -1006,23 +981,6 @@ function term_landing_page_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Taxonomy term: Parent term */
-  $handler->display->display_options['filters']['parent']['id'] = 'parent';
-  $handler->display->display_options['filters']['parent']['table'] = 'taxonomy_term_hierarchy';
-  $handler->display->display_options['filters']['parent']['field'] = 'parent';
-  $handler->display->display_options['filters']['parent']['relationship'] = 'field_library_item_tree_tid';
-  $handler->display->display_options['filters']['parent']['group'] = 2;
-  /* Filter criterion: Taxonomy term: Term */
-  $handler->display->display_options['filters']['tid']['id'] = 'tid';
-  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['relationship'] = 'field_library_item_tree_tid';
-  $handler->display->display_options['filters']['tid']['value'] = array(
-    158 => '158',
-  );
-  $handler->display->display_options['filters']['tid']['group'] = 2;
-  $handler->display->display_options['filters']['tid']['type'] = 'select';
-  $handler->display->display_options['filters']['tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['path'] = 'admin/audiobook-order/%';
   $export['term_landing'] = $view;
 
