@@ -21,7 +21,7 @@ function mises_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tagging',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
@@ -57,8 +57,7 @@ function mises_blog_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_author_1',
-      2 => 'field_media_collection',
-      3 => 'title',
+      2 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -83,7 +82,7 @@ function mises_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Author',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_author_1',
       1 => 'post_date',
@@ -104,6 +103,34 @@ function mises_blog_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_media|node|blog|form';
+  $field_group->group_name = 'group_media';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'blog';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Image / Media',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_media_collection',
+      1 => 'field_image_collection',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-media field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_media|node|blog|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_tags|node|blog|full';
   $field_group->group_name = 'group_tags';
   $field_group->entity_type = 'node';
@@ -112,7 +139,7 @@ function mises_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
