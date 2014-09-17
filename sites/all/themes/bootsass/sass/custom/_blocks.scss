@@ -52,7 +52,7 @@
     .market & {
       @include icon-image('../images/icons/icon-market.png');
     }
-    .mises-view &, .Mises-View {
+    .mises-view &, .Mises-View & {
       @include icon-image('../images/icons/icon-view.png');
     }
     .online-courses & {
