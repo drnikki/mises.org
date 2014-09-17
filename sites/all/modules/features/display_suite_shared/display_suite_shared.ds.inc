@@ -3338,10 +3338,10 @@ if ($entity->field_link_to_external_listing_) {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<?php if (isset($entity->field_image_link[LANGUAGE_NONE][0][\'url\'] ) && isset($entity->field_image)) : ?> 
+      'value' => '<?php if (isset($entity->field_image_link[LANGUAGE_NONE][0][\'url\'] ) && isset($entity->field_image)) { ?> 
   <?php $image_link =$entity->field_image_link[LANGUAGE_NONE][0][\'url\'] ; ?>
   <a href="<?php print $image_link; ?>"><img class="img-responsive" src="[node:field_image]"></a>
-<? endif ?>
+<?php } ?>
 ',
       'format' => 'ds_code',
     ),
