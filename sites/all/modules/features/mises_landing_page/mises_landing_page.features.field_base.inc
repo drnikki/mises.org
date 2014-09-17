@@ -217,7 +217,13 @@ function mises_landing_page_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
+          'blog' => 'blog',
+          'course' => 'course',
+          'event' => 'event',
+          'landing_page' => 'landing_page',
           'library_item' => 'library_item',
+          'page' => 'page',
+          'working_papers' => 'working_papers',
         ),
       ),
       'target_type' => 'node',

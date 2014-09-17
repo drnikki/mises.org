@@ -10002,7 +10002,7 @@ body.live-video .main-content .shield .icon, body.icon-live-video .main-content 
   background-repeat: no-repeat;
 }
 /* line 55, ../sass/custom/_blocks.scss */
-.mises-view .panel-heading:before, .panel-heading:before .Mises-View {
+.mises-view .panel-heading:before, .Mises-View .panel-heading:before {
   background-image: url("../images/icons/icon-view.png");
   background-position: center center;
   background-size: cover;
