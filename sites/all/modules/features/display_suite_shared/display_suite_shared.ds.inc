@@ -5129,6 +5129,38 @@ function display_suite_shared_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|page|list_teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'page';
+  $ds_layout->view_mode = 'list_teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'body',
+        1 => 'field_image_collection',
+        2 => 'field_media_collection',
+        3 => 'field_insert_after',
+      ),
+    ),
+    'fields' => array(
+      'body' => 'ds_content',
+      'field_image_collection' => 'ds_content',
+      'field_media_collection' => 'ds_content',
+      'field_insert_after' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['node|page|list_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|person_profile|author_full_name';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'person_profile';
@@ -5687,6 +5719,15 @@ function display_suite_shared_ds_layout_settings_info() {
  */
 function display_suite_shared_ds_view_modes_info() {
   $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'audio_teaser';
+  $ds_view_mode->label = 'Audio Teaser';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['audio_teaser'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;

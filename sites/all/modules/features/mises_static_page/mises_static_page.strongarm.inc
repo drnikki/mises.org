@@ -48,7 +48,7 @@ function mises_static_page_strongarm() {
         'custom_settings' => FALSE,
       ),
       'list_teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'sidebar_author' => array(
         'custom_settings' => FALSE,
