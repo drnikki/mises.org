@@ -333,6 +333,15 @@ function mises_static_page_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'list_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'print' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -454,6 +463,16 @@ function mises_static_page_field_default_field_instances() {
         'type' => 'field_collection_entity_flexslider',
         'weight' => 1,
       ),
+      'list_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 1,
+      ),
       'print' => array(
         'label' => 'hidden',
         'module' => 'field_collection',
@@ -512,6 +531,19 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 15,
+      ),
+      'list_teaser' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'conditions' => array(),
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 4,
       ),
       'print' => array(
         'label' => 'above',
@@ -573,6 +605,16 @@ function mises_static_page_field_default_field_instances() {
         ),
         'type' => 'field_collection_fields',
         'weight' => 5,
+      ),
+      'list_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 3,
       ),
       'print' => array(
         'label' => 'hidden',

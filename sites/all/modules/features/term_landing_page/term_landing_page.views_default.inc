@@ -763,8 +763,8 @@ function term_landing_page_views_default_views() {
     'popular' => 0,
   );
 
-  /* Display: Sortable Term Landing */
-  $handler = $view->new_display('page', 'Sortable Term Landing', 'page_1');
+  /* Display: Sortable Term Landing - Audio */
+  $handler = $view->new_display('page', 'Sortable Term Landing - Audio', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = '%1';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
@@ -783,6 +783,103 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'audio_teaser';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Analytics Page Hits: Analytics Hits Entity */
+  $handler->display->display_options['relationships']['entity_id']['id'] = 'entity_id';
+  $handler->display->display_options['relationships']['entity_id']['table'] = 'mises_analytics_hits';
+  $handler->display->display_options['relationships']['entity_id']['field'] = 'entity_id';
+  /* Relationship: Content: Library Item Type (field_library_item_tree) */
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = '';
+  $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  /* Field: Draggableviews: Weight */
+  $handler->display->display_options['fields']['weight']['id'] = 'weight';
+  $handler->display->display_options['fields']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['fields']['weight']['field'] = 'weight';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight_1']['id'] = 'weight_1';
+  $handler->display->display_options['sorts']['weight_1']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight_1']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight_1']['draggableviews_setting_view'] = 'term_landing:page_2';
+  $handler->display->display_options['sorts']['weight_1']['draggableviews_setting_new_items_bottom_list'] = 0;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+    'course' => 'course',
+    'event' => 'event',
+    'library_item' => 'library_item',
+    'person_profile' => 'person_profile',
+    'product' => 'product',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['path'] = 'taxonomy/term/%';
+
+  /* Display: Sortable Term Landing - Other */
+  $handler = $view->new_display('page', 'Sortable Term Landing - Other', 'page_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '%1';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'landing-list';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'landing-list result-[counter]';
+  $handler->display->display_options['style_options']['uses_fields'] = TRUE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
