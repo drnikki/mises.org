@@ -70,8 +70,7 @@ body {
     }
     button {
       border-radius: 0;
-      padding: 2px 7px;
-      font-size: 20px;
+      padding: 6px 11px;
     }
   }
 }
@@ -191,5 +190,11 @@ body {
       font-size: inherit;
       border-left: 0 none;
     }
+  }
+}
+.search-form {
+  input.form-text {
+    padding-right: 37px;
+    background: $white url('../images/icons/icon-search-field.png') right center no-repeat;
   }
 }

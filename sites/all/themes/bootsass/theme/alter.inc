@@ -97,8 +97,26 @@ function bootsass_form_alter(array &$form, array &$form_state = array(), $form_i
         // icon directly after the input element.
         $form['basic']['keys']['#theme_wrappers'] = array('bootsass_search_form_wrapper');
         $form['basic']['keys']['#title'] = '';
-        $form['basic']['keys']['#attributes']['placeholder'] = t('Search');
+        $form['basic']['keys']['#attributes']['placeholder'] = t('SEARCH MISES');
         break;
+
+      case 'apachesolr_search_custom_page_search_form':
+        // Add a clearfix class so the results don't overflow onto the form.
+        $form['#attributes']['class'][] = 'clearfix';
+
+        // Remove container-inline from the container classes.
+        $form['basic']['#attributes']['class'] = array();
+
+        // Hide the default button from display.
+        $form['basic']['submit']['#attributes']['class'][] = 'element-invisible';
+
+        // Implement a theme wrapper to add a submit button containing a search
+        // icon directly after the input element.
+        $form['basic']['keys']['#theme_wrappers'] = array('bootsass_search_form_wrapper');
+        $form['basic']['keys']['#title'] = '';
+        $form['basic']['keys']['#attributes']['placeholder'] = t('SEARCH MISES');
+        break;
+
 
       case 'search_block_form':
         $form['#attributes']['class'][] = 'form-search';
