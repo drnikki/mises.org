@@ -9713,6 +9713,10 @@ body.live-video .main-content .shield .icon, body.icon-live-video .main-content 
   padding-right: 37px;
   background: white url("../images/icons/icon-search-field.png") right center no-repeat;
 }
+/* line 201, ../sass/custom/_main.scss */
+.search-form#search-form .input-group {
+  width: 60%;
+}
 
 /*
 * Custom Styles for Home and Landing Pages

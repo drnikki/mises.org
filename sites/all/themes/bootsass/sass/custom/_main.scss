@@ -197,4 +197,9 @@ body {
     padding-right: 37px;
     background: $white url('../images/icons/icon-search-field.png') right center no-repeat;
   }
+  &#search-form {
+    .input-group {
+      width: 60%;
+    }
+  }
 }
