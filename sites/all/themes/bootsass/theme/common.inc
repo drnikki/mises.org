@@ -166,11 +166,13 @@ function _bootsass_colorize_button($text) {
   );
   // Text values containing these generic strings, which are matches last.
   $generic_strings = array(
+    'btn-default' => array(
+      t('Search'),
+    ),
     'btn-primary' => array(
       t('Save'),
       t('Confirm'),
       t('Submit'),
-      t('Search'),
     ),
     'btn-success' => array(
       t('Add'),
