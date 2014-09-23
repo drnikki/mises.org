@@ -101,6 +101,9 @@ function bootsass_form_alter(array &$form, array &$form_state = array(), $form_i
         break;
 
       case 'apachesolr_search_custom_page_search_form':
+				if(isset($form['basic']['retain-filters'])) {
+					unset($form['basic']['retain-filters']);
+				}
         // Add a clearfix class so the results don't overflow onto the form.
         $form['#attributes']['class'][] = 'clearfix';
 
