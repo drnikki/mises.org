@@ -114,6 +114,7 @@ function bootsass_form_alter(array &$form, array &$form_state = array(), $form_i
         // icon directly after the input element.
         $form['basic']['keys']['#theme_wrappers'] = array('bootsass_search_form_wrapper');
         $form['basic']['keys']['#title'] = '';
+        $form['basic']['keys']['#size'] = '60';
         $form['basic']['keys']['#attributes']['placeholder'] = t('SEARCH MISES');
         break;
 
