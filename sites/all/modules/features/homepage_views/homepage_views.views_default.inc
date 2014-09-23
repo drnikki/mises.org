@@ -103,11 +103,11 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer text-right"><a href="/taxonomy/term/147"><span class="glyphicon glyphicon-chevron-right"></span> More Articles</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Mises Published Date (field_mises_published_date) */
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['id'] = 'field_mises_published_date_value';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['table'] = 'field_data_field_mises_published_date';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['field'] = 'field_mises_published_date_value';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['order'] = 'DESC';
   $handler->display->display_options['path'] = 'homepage';
 
   /* Display: Press Room HP Block */
