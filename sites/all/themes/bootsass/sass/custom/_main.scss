@@ -47,8 +47,8 @@ body {
 .region-navigation {
   position: relative;
   .block {
-    height: 50px;
     width: 258px;
+    height: 50px;
     &.block-views {
       @extend .pull-right;
     }
@@ -65,12 +65,12 @@ body {
   }
   #block-search-form {
     .form-control {
-      border-radius: 0;
       border-right: 0 none;
+      border-radius: 0;
     }
     button {
-      border-radius: 0;
       padding: 6px 11px;
+      border-radius: 0;
     }
   }
 }
@@ -171,8 +171,8 @@ body {
     padding-left: 100px;
   }
   @media (max-width: $screen-xs) {
-    padding: 65px 0 15px;
     margin: 0;
+    padding: 65px 0 15px;
   }
   
 }
@@ -185,10 +185,10 @@ body {
       width: 100%;
     }
     blockquote {
-      padding: inherit;
       margin: inherit;
-      font-size: inherit;
+      padding: inherit;
       border-left: 0 none;
+      font-size: inherit;
     }
   }
 }
@@ -199,6 +199,8 @@ body {
   }
   &#search-form {
     .input-group {
+      float: left;
+      margin-right: $padding-base-horizontal;
       width: 60%;
     }
   }
