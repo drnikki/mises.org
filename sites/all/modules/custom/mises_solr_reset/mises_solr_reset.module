@@ -10,7 +10,8 @@ function mises_solr_reset_form_alter(&$form, &$form_state, $form_id) {
     if ($form['basic']['get']['#default_value'] != '[]' || !empty($form['basic']['keys']['#default_value'])) {
       $form['reset'] = array(
         '#type' => 'submit',
-        '#value' => 'New Search',
+        '#value' => 'Reset',
+        '#attributes' => array('class' => array('btn-white')),
       );
       $form['#submit'][] = '_mises_solr_reset_redirect';
     }
@@ -21,7 +22,7 @@ function mises_solr_reset_form_alter(&$form, &$form_state, $form_id) {
  * Apply redirect to search results:
  */
 function _mises_solr_reset_redirect(&$form, &$form_state) {
-  if ($form_state['input']['op'] == 'New Search') {
+  if ($form_state['input']['op'] == 'Reset') {
     drupal_goto('search/site');
   }
 }

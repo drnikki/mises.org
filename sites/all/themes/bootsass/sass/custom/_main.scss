@@ -47,8 +47,8 @@ body {
 .region-navigation {
   position: relative;
   .block {
-    height: 50px;
     width: 258px;
+    height: 50px;
     &.block-views {
       @extend .pull-right;
     }
@@ -65,13 +65,12 @@ body {
   }
   #block-search-form {
     .form-control {
-      border-radius: 0;
       border-right: 0 none;
+      border-radius: 0;
     }
     button {
+      padding: 6px 11px;
       border-radius: 0;
-      padding: 2px 7px;
-      font-size: 20px;
     }
   }
 }
@@ -172,11 +171,11 @@ body {
     padding-left: 100px;
   }
   @media (max-width: $screen-xs) {
-    padding: 65px 0 15px;
     margin: 0;
+    padding: 65px 0 15px;
   }
-  
 }
+/* Search Customization */
 .section-search {
   .main-content {
     .group-left {
@@ -186,10 +185,36 @@ body {
       width: 100%;
     }
     blockquote {
-      padding: inherit;
       margin: inherit;
-      font-size: inherit;
+      padding: inherit;
       border-left: 0 none;
+      font-size: inherit;
+    }
+  }
+}
+.search-form {
+  .form-group {
+    margin-bottom: 0;
+  }
+  input.form-text {
+    padding-right: 37px;
+    background: $white url('../images/icons/icon-search-field.png') right center no-repeat;
+  }
+  &#search-form {
+    .input-group {
+      float: left;
+      margin-right: $padding-base-horizontal;
+      width: 60%;
+    }
+  }
+}
+#solr-facet-tags {
+  margin-bottom: $padding-base-vertical;
+  > .facet-tag {
+    margin-right: $padding-xs-horizontal;
+    padding-left: $padding-xs-horizontal;
+    .glyphicon-remove {
+      background: transparent;
     }
   }
 }

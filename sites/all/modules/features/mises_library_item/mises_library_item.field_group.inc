@@ -411,7 +411,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '32',
+    'weight' => '31',
     'children' => array(
       0 => 'field_copyright_info',
       1 => 'print_link',
