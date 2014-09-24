@@ -9710,28 +9710,33 @@ body.live-video .main-content .shield .icon, body.icon-live-video .main-content 
 }
 
 /* line 196, ../sass/custom/_main.scss */
+.search-form .form-group {
+  margin-bottom: 0;
+}
+/* line 199, ../sass/custom/_main.scss */
 .search-form input.form-text {
   padding-right: 37px;
   background: white url("../images/icons/icon-search-field.png") right center no-repeat;
 }
-/* line 201, ../sass/custom/_main.scss */
+/* line 204, ../sass/custom/_main.scss */
 .search-form#search-form .input-group {
   float: left;
   margin-right: 12px;
   width: 60%;
 }
 
-/* line 206, ../sass/custom/_main.scss */
+/* line 211, ../sass/custom/_main.scss */
 #solr-facet-tags {
   margin-bottom: 6px;
 }
-/* line 208, ../sass/custom/_main.scss */
+/* line 213, ../sass/custom/_main.scss */
 #solr-facet-tags > .facet-tag {
   margin-right: 5px;
+  padding-left: 5px;
 }
-/* line 210, ../sass/custom/_main.scss */
+/* line 216, ../sass/custom/_main.scss */
 #solr-facet-tags > .facet-tag .glyphicon-remove {
-  padding: 5px;
+  background: transparent;
 }
 
 /*

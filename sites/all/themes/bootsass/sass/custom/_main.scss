@@ -193,6 +193,9 @@ body {
   }
 }
 .search-form {
+  .form-group {
+    margin-bottom: 0;
+  }
   input.form-text {
     padding-right: 37px;
     background: $white url('../images/icons/icon-search-field.png') right center no-repeat;
@@ -209,8 +212,9 @@ body {
   margin-bottom: $padding-base-vertical;
   > .facet-tag {
     margin-right: $padding-xs-horizontal;
+    padding-left: $padding-xs-horizontal;
     .glyphicon-remove {
-      padding: $padding-xs-horizontal;
+      background: transparent;
     }
   }
 }
