@@ -18,8 +18,8 @@ var Drupal = Drupal || {};
          if ($(this).hasClass('facetapi-active')) {
            var facetParent = $(this).parent();
            facetParent.contents().each(function () {
-             if ($(this).prop('tagName') == undefined) {
-               $('#solr-facet-tags').append('<div id="facet-tag-' + facetCount + '" class="facet-tag">' + $(this).text() + '</div>');
+             if ($(this).prop('tagName') === undefined) {
+               $('#solr-facet-tags').append('<div id="facet-tag-' + facetCount + '" class="facet-tag btn btn-white btn-sm"> <span class="glyphicon glyphicon-remove"></span>' + $(this).text() + '</div>');
                $('#facet-tag-' + facetCount).click(function () {
                  facetParent.children('input.facetapi-checkbox').click();
                });

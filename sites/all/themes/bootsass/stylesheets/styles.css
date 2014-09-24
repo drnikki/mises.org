@@ -8847,15 +8847,15 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 
 /* line 65, ../sass/custom/_styles.scss */
 .btn-white {
-  border-color: #c8cdd0;
-  background-color: white;
-  color: #38709e;
+  border-color: #788086;
+  background-color: #788086;
+  color: white;
 }
 /* line 88, ../sass/custom/_mixins.scss */
 .btn-white:hover, .btn-white:focus, .btn-white:active, .btn-white.active {
-  border-color: #acb4b9;
-  background-color: #e6e6e6;
-  color: #38709e;
+  border-color: #60666b;
+  background-color: #60666b;
+  color: white;
 }
 /* line 94, ../sass/custom/_mixins.scss */
 .btn-white:active, .btn-white.active {
@@ -8863,22 +8863,22 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 }
 /* line 104, ../sass/custom/_mixins.scss */
 .btn-white.disabled, .btn-white.disabled:hover, .btn-white.disabled:focus, .btn-white.disabled:active, .btn-white.disabled.active, .btn-white[disabled], .btn-white[disabled]:hover, .btn-white[disabled]:focus, .btn-white[disabled]:active, .btn-white[disabled].active, fieldset[disabled] .btn-white, fieldset[disabled] .btn-white:hover, fieldset[disabled] .btn-white:focus, fieldset[disabled] .btn-white:active, fieldset[disabled] .btn-white.active {
-  border-color: #c8cdd0;
-  background-color: white;
+  border-color: #788086;
+  background-color: #788086;
 }
 /* line 109, ../sass/custom/_mixins.scss */
 .btn-white a {
-  color: #38709e;
+  color: white;
 }
 /* line 111, ../sass/custom/_mixins.scss */
 .btn-white a:hover {
-  color: #38709e;
+  color: white;
   text-decoration: none;
 }
 /* line 117, ../sass/custom/_mixins.scss */
 .btn-white .badge {
-  background-color: #38709e;
-  color: white;
+  background-color: white;
+  color: #788086;
 }
 
 /* line 69, ../sass/custom/_styles.scss */
@@ -9692,6 +9692,7 @@ body.live-video .main-content .shield .icon, body.icon-live-video .main-content 
   }
 }
 
+/* Search Customization */
 /* line 181, ../sass/custom/_main.scss */
 .section-search .main-content .group-left {
   display: none;
@@ -9716,6 +9717,19 @@ body.live-video .main-content .shield .icon, body.icon-live-video .main-content 
 /* line 201, ../sass/custom/_main.scss */
 .search-form#search-form .input-group {
   width: 60%;
+}
+
+/* line 206, ../sass/custom/_main.scss */
+#solr-facet-tags {
+  margin-bottom: 6px;
+}
+/* line 208, ../sass/custom/_main.scss */
+#solr-facet-tags > .facet-tag {
+  margin-right: 5px;
+}
+/* line 210, ../sass/custom/_main.scss */
+#solr-facet-tags > .facet-tag .glyphicon-remove {
+  padding: 5px;
 }
 
 /*

@@ -174,8 +174,8 @@ body {
     padding: 65px 0 15px;
     margin: 0;
   }
-  
 }
+/* Search Customization */
 .section-search {
   .main-content {
     .group-left {
@@ -200,6 +200,15 @@ body {
   &#search-form {
     .input-group {
       width: 60%;
+    }
+  }
+}
+#solr-facet-tags {
+  margin-bottom: $padding-base-vertical;
+  > .facet-tag {
+    margin-right: $padding-xs-horizontal;
+    .glyphicon-remove {
+      padding: $padding-xs-horizontal;
     }
   }
 }
