@@ -11328,3 +11328,10 @@ ul.addtocal_menu li a:hover {
 .newsletter-form ul li input {
   margin: 0 5px 0 0;
 }
+
+/* FANCY MEDIA HANDLING */
+/* line 453, ../sass/custom/_features.scss */
+.body-content.embedded-media p + .file {
+  margin-bottom: 16px;
+  text-align: center;
+}
