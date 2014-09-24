@@ -23,16 +23,16 @@
 
 @font-face {
   font-family: 'crimson_text';
-  src: url("../fonts/crimsontext-semibold-webfont.eot");
-  src: url("../fonts/crimsontext-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/crimsontext-semibold-webfont.woff") format("woff"), url("../fonts/crimsontext-semibold-webfont.ttf") format("truetype");
+  src: url("../fonts/CrimsonText-Semibold.eot");
+  src: url("../fonts/CrimsonText-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/CrimsonText-Semibold.woff") format("woff"), url("../fonts/CrimsonText-Semibold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'crimson_text';
-  src: url("../fonts/crimsontext-semibolditalic-webfont.eot");
-  src: url("../fonts/crimsontext-semibolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/crimsontext-semibolditalic-webfont.woff") format("woff"), url("../fonts/crimsontext-semibolditalic-webfont.ttf") format("truetype");
+  src: url("../fonts/CrimsonText-SemiboldItalic.eot");
+  src: url("../fonts/CrimsonText-SemiboldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/CrimsonText-SemiboldItalic.woff") format("woff"), url("../fonts/CrimsonText-SemiboldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
 }
