@@ -250,13 +250,13 @@
   margin-left: 8px;
   width: 15px;
   height: 15px;
-  text-indent: -999px;
   white-space: nowrap;
+  font-size: 0;
   cursor: pointer;
   &:before {
-    position: absolute;
-    left: 999px;
+    color: $brand-primary;
     content: "\e109";
+    font-size: 15px;
     font-family: 'Glyphicons Halflings';
   }
   &:hover:after{

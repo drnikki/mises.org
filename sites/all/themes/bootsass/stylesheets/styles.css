@@ -11103,15 +11103,15 @@ ul.accordion li {
   margin-left: 8px;
   width: 15px;
   height: 15px;
-  text-indent: -999px;
   white-space: nowrap;
+  font-size: 0;
   cursor: pointer;
 }
 /* line 256, ../sass/custom/_features.scss */
 .addtocal:before {
-  position: absolute;
-  left: 999px;
+  color: #00426b;
   content: "\e109";
+  font-size: 15px;
   font-family: 'Glyphicons Halflings';
 }
 /* line 262, ../sass/custom/_features.scss */
