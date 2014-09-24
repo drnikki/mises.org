@@ -448,3 +448,10 @@ ul.addtocal_menu {
     }
   }
 }
+/* FANCY MEDIA HANDLING */
+.body-content.embedded-media {
+  p + .file {
+    margin-bottom: $padding-large-vertical;
+    text-align: center;
+  }
+}

@@ -156,6 +156,83 @@ function mises_static_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_media_collection-field_insert_after'
+  $field_instances['field_collection_item-field_media_collection-field_insert_after'] = array(
+    'bundle' => 'field_media_collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'To embed media files within the content of the body, add a number in this field. If no value is entered, it will appear below the body of the page.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'number',
+        'settings' => array(
+          'conditions' => array(),
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'semantic_field_format' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'conditions' => array(),
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'semantic_field_format' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 1,
+      ),
+      'small_player' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'conditions' => array(),
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'semantic_field_format' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 1,
+      ),
+      'wide_player' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_insert_after',
+    'label' => 'Insert After Paragraph #',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_media_collection-field_media'
   $field_instances['field_collection_item-field_media_collection-field_media'] = array(
     'bundle' => 'field_media_collection',
@@ -168,6 +245,7 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'small_player',
+          'semantic_field_format' => 0,
         ),
         'type' => 'media',
         'weight' => 0,
@@ -178,6 +256,7 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'full',
+          'semantic_field_format' => 0,
         ),
         'type' => 'media',
         'weight' => 0,
@@ -188,6 +267,7 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'small_player',
+          'semantic_field_format' => 0,
         ),
         'type' => 'media',
         'weight' => 0,
@@ -198,6 +278,7 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'wide_player',
+          'semantic_field_format' => 'clear',
         ),
         'type' => 'media',
         'weight' => 0,
@@ -255,18 +336,8 @@ function mises_static_page_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'smart_trim',
-        'settings' => array(
-          'conditions' => array(),
-          'more_link' => FALSE,
-          'more_text' => 'Read more',
-          'summary_handler' => 'full',
-          'trim_length' => 300,
-          'trim_options' => array(),
-          'trim_suffix' => '...',
-          'trim_type' => 'chars',
-        ),
-        'type' => 'smart_trim_format',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'preview' => array(
@@ -280,6 +351,12 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'wide_player' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'file',
@@ -506,79 +583,6 @@ function mises_static_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_insert_after'
-  $field_instances['node-page-field_insert_after'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Enter a number to indicate after which paragraph in the Body the Media player should appear. If left empty, the Media player will appear midway in the body. ',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'conditions' => array(),
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 4,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'list_teaser' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'conditions' => array(),
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 4,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 27,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_insert_after',
-    'label' => 'Insert After',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 31,
-    ),
-  );
-
   // Exported field_instance: 'node-page-field_media_collection'
   $field_instances['node-page-field_media_collection'] = array(
     'bundle' => 'page',
@@ -654,10 +658,10 @@ function mises_static_page_field_default_field_instances() {
   t('Alt Text');
   t('Alternative text is used by screen readers, search engines, and when the image cannot be loaded. By adding alt text you improve accessibility and search engine optimization.');
   t('Body');
-  t('Enter a number to indicate after which paragraph in the Body the Media player should appear. If left empty, the Media player will appear midway in the body. ');
   t('Image');
-  t('Insert After');
+  t('Insert After Paragraph #');
   t('Media');
+  t('To embed media files within the content of the body, add a number in this field. If no value is entered, it will appear below the body of the page.');
 
   return $field_instances;
 }

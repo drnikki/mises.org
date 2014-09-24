@@ -129,3 +129,4 @@ features[variable][] = node_submitted_library_item
 features_exclude[field_base][body] = body
 features_exclude[field_base][field_austrian_school_of_economi] = field_austrian_school_of_economi
 features_exclude[field_instance][node-library_item-field_austrian_school_of_economi] = node-library_item-field_austrian_school_of_economi
+features_exclude[field_instance][field_collection_item-field_media_collection-field_insert_after] = field_collection_item-field_media_collection-field_insert_after

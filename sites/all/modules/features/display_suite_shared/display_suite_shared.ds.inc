@@ -1514,6 +1514,29 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'library_item';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'body_with_media_embedded' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-content embedded-media',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(
+          0 => array(
+            'condition' => 'hide_if_empty',
+            'configuration' => array(
+              'target' => 'field_media_collection',
+            ),
+          ),
+        ),
+      ),
+    ),
     'custom_breadcrumb' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -3017,25 +3040,22 @@ function display_suite_shared_ds_custom_fields_info() {
     'code' => array(
       'value' => '<?php
 
-//print \'<pre>\';
-//print_r($entity);
-//print \'</pre>\';
-
-$display = array (\'type\' => \'field_collection_fields\', \'settings\'=>array(\'view_mode\' => \'small_player\'));
-$media = render(field_view_field(\'node\',$entity,\'field_media_collection\',\'full\'));
-$media_insert = $entity->field_insert_after[\'und\'][0][\'value\'] ? $entity->field_insert_after[\'und\'][0][\'value\'] : count($content_array) / 2;
+$media = field_get_items(\'node\', $entity, \'field_media_collection\');
 $content_array = explode("<p>", $entity->body[\'und\'][0][\'value\']);
-//$content_array_half_size = count($content_array) / 2;
-//array_splice($content_array, $content_array_half_size, 0, $media);
-array_splice($content_array, $media_insert, 0, $media);
+foreach ($media as $key => $itemid) {
+  $medium = field_collection_field_get_entity($itemid);
+  $insertAfter = $medium->field_insert_after[LANGUAGE_NONE][0][\'value\'] ? $medium->field_insert_after[LANGUAGE_NONE][0][\'value\'] : count($content_array);
+  $mediumValue = render(field_view_field(\'field_collection_item\',$medium,\'field_media\',\'wide_player\'));
+  //dpm($insertAfter);
+  //dpm($medium);
+  //dpm($content_array);
+  array_splice($content_array, $insertAfter + $key + 1, 0, $mediumValue);
 
-$final_content = implode("<p>", $content_array);
+  $final_content = implode("<p>", $content_array);
+}
 
 print $final_content;
 
-//field_collection_fields
-
-//print_r($entity->field_media_collection);
 ?>',
       'format' => 'ds_code',
     ),
@@ -3731,6 +3751,32 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['field_collection_item|field_resources|list_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'file|image|full';
+  $ds_layout->entity_type = 'file';
+  $ds_layout->bundle = 'image';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_reset';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'file',
+      ),
+    ),
+    'fields' => array(
+      'file' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['file|image|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -4800,32 +4846,33 @@ function display_suite_shared_ds_layout_settings_info() {
         4 => 'field_pdf',
         5 => 'field_image_collection',
         6 => 'field_mobi',
-        7 => 'group_date_author',
-        8 => 'field_mises_published_date',
+        7 => 'field_mises_published_date',
+        8 => 'group_date_author',
         9 => 'field_epub',
         10 => 'field_author_1',
         11 => 'field_kindle',
         12 => 'group_tags',
-        13 => 'dynamic_field_2',
-        14 => 'group_links',
-        15 => 'field_author_2',
-        16 => 'field_link_to_external_listing_',
-        17 => 'field_subtitle',
-        18 => 'body',
+        13 => 'group_links',
+        14 => 'field_author_2',
+        15 => 'dynamic_field_2',
+        16 => 'field_subtitle',
+        17 => 'field_link_to_external_listing_',
+        18 => 'body_with_media_embedded',
         19 => 'tags_title',
-        20 => 'field_media_collection',
+        20 => 'body',
         21 => 'field_bibliography_footnote',
         22 => 'field_topics',
         23 => 'field_document_attachment',
-        24 => 'field_austrian_school',
-        25 => 'field_citation',
-        26 => 'dynamic_3',
+        24 => 'field_citation',
+        25 => 'dynamic_3',
+        26 => 'field_austrian_school',
         27 => 'follow_mises_institute',
         28 => 'group_footnotes',
       ),
       'ds_hidden' => array(
         29 => 'field_level',
-        30 => 'field_audience',
+        30 => 'field_media_collection',
+        31 => 'field_audience',
       ),
     ),
     'fields' => array(
@@ -4836,29 +4883,30 @@ function display_suite_shared_ds_layout_settings_info() {
       'field_pdf' => 'ds_content',
       'field_image_collection' => 'ds_content',
       'field_mobi' => 'ds_content',
-      'group_date_author' => 'ds_content',
       'field_mises_published_date' => 'ds_content',
+      'group_date_author' => 'ds_content',
       'field_epub' => 'ds_content',
       'field_author_1' => 'ds_content',
       'field_kindle' => 'ds_content',
       'group_tags' => 'ds_content',
-      'dynamic_field_2' => 'ds_content',
       'group_links' => 'ds_content',
       'field_author_2' => 'ds_content',
-      'field_link_to_external_listing_' => 'ds_content',
+      'dynamic_field_2' => 'ds_content',
       'field_subtitle' => 'ds_content',
-      'body' => 'ds_content',
+      'field_link_to_external_listing_' => 'ds_content',
+      'body_with_media_embedded' => 'ds_content',
       'tags_title' => 'ds_content',
-      'field_media_collection' => 'ds_content',
+      'body' => 'ds_content',
       'field_bibliography_footnote' => 'ds_content',
       'field_topics' => 'ds_content',
       'field_document_attachment' => 'ds_content',
-      'field_austrian_school' => 'ds_content',
       'field_citation' => 'ds_content',
       'dynamic_3' => 'ds_content',
+      'field_austrian_school' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'group_footnotes' => 'ds_content',
       'field_level' => 'ds_hidden',
+      'field_media_collection' => 'ds_hidden',
       'field_audience' => 'ds_hidden',
     ),
     'classes' => array(
