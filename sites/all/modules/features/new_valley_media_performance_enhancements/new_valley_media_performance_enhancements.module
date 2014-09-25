@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the New Valley Media Performance Enhancements feature.
+ */
+
+include_once 'new_valley_media_performance_enhancements.features.inc';
