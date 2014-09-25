@@ -1,0 +1,15 @@
+name = Mises iTunes RSS Feed
+description = Adds a RSS Feed to media content in a format that can be ingested by iTunes.
+core = 7.x
+package = Mises
+version = 7.x-1.1
+project = mises_itunes_rss_feed
+dependencies[] = ctools
+dependencies[] = getid3
+dependencies[] = views
+dependencies[] = views_rss
+dependencies[] = views_rss_core
+dependencies[] = views_rss_itunes
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = mises_itunes_rss_feeds
