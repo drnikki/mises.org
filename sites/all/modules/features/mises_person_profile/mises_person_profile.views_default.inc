@@ -47,6 +47,11 @@ function mises_person_profile_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Mises Published Date (field_mises_published_date) */
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['id'] = 'field_mises_published_date_value';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['table'] = 'field_data_field_mises_published_date';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['field'] = 'field_mises_published_date_value';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['order'] = 'DESC';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -69,6 +74,17 @@ function mises_person_profile_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Library Item Type (field_library_item_tree) */
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['value'] = array(
+    162 => '162',
+  );
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
 
   /* Display: Profile Articles */
   $handler = $view->new_display('block', 'Profile Articles', 'block');
