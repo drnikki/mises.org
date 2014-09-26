@@ -386,10 +386,15 @@ ul.addtocal_menu {
       padding: 0 $padding-xs-horizontal;
     }
   }
+  h3 {
+    @extend .col-sm-12;
+    font-size: $font-size-h2;
+    font-family: $font-family-serif;
+  }
 }
 .profile-item {
   clear: right;
-  &:nth-of-type(3n+1) {
+  &:nth-of-type(4n+1) {
     clear: left;
   }
 }
