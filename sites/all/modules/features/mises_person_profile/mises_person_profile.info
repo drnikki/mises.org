@@ -1,7 +1,7 @@
 name = Mises Person Profile
 core = 7.x
 package = Content Types
-version = 7.x-1.5
+version = 7.x-1.6
 project = mises_person_profile
 dependencies[] = austrian_school
 dependencies[] = ctools
