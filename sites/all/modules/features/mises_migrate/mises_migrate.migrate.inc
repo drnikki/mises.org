@@ -6,6 +6,15 @@ function mises_migrate_migrate_api() {
       'mises' => array(
         'title' => t('Mises'),
       ),
+      'mises youtube' => array(
+        'title' => t('Mises Youtube'),
+      ),
+      'mises images' => array(
+        'title' => t('Mises Images'),
+      ),
+      'mises journals' => array(
+        'title' => t('Mises Journals'),
+      ),
     ),
     'migrations' => array(
       'Product' => array('class_name' => 'ProductMigration', 'group_name' => 'mises'),

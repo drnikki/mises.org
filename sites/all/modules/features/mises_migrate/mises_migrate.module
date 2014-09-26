@@ -166,7 +166,10 @@ abstract class MisesMigration extends Migration {
 
 class BiographyMigration extends MisesMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('biography', 'r')
       ->fields('r');
@@ -196,7 +199,10 @@ class BiographyMigration extends MisesMigration {
 
 class ReviewMigration extends MisesMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('misesreview', 'r')
       ->fields('r');
@@ -358,7 +364,10 @@ class MisesTagMapper {
 
 class QuotesMigration extends MisesMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('Quotes', 'q')
       ->fields('q');
@@ -384,7 +393,10 @@ class QuotesMigration extends MisesMigration {
 
 class DailyArticlesMigration extends MisesMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('dailyarticles', 'd')
       ->fields('d')
@@ -438,8 +450,10 @@ class DailyArticlesMigration extends MisesMigration {
 class DocumentMigration extends MisesMigration {
   protected $mediaIds;
   public function __construct($arguments) {
-
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('documents', 'd')
       ->fields('d');
@@ -643,7 +657,10 @@ class DocumentMigration extends MisesMigration {
 
 class CourseMigration extends MisesMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $this->db = Database::getConnection('default', 'course');
     $query = $this->db
       ->select('mdl_course', 'p')
@@ -665,7 +682,10 @@ class CourseMigration extends MisesMigration {
 
 class ProductMigration extends MisesMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $this->db = Database::getConnection('default', 'product');
     $query = $this->db
       ->select('agd_temp_products', 'p')
@@ -702,7 +722,10 @@ class ProductMigration extends MisesMigration {
 
 class DocumentAuthorsMigration extends MisesMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('documentauthors', 'd')
       ->fields('d');
@@ -735,9 +758,7 @@ class DocumentAuthorsMigration extends MisesMigration {
 
 
 abstract class MisesImageMigration extends MisesMigration {
-  public function __construct($arguments) {
-    parent::__construct($arguments);
-  }
+
   public function setFieldMapping($query, $key, $parent_migration, $node_type) {
     $this->source = new MigrateSourceSQL($query);
     $this->destination = new MigrateDestinationFieldCollection(
@@ -769,7 +790,9 @@ abstract class MisesImageMigration extends MisesMigration {
 
 class DocumentImageMigration extends MisesImageMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    parent::__construct($group);
     $query = $this->db
       ->select('documents', 'd')
       ->fields('d');
@@ -789,7 +812,10 @@ class DocumentImageMigration extends MisesImageMigration {
 
 class DailyArticlesImageMigration extends MisesImageMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('dailyarticles', 'd')
       ->fields('d');
@@ -823,7 +849,10 @@ class DailyArticlesImageMigration extends MisesImageMigration {
 
 class DocumentAuthorsImageMigration extends MisesImageMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('documentauthors', 'd')
       ->fields('d');
