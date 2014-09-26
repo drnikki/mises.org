@@ -256,7 +256,7 @@ body.not-logged-in {
         color: $gray-lighter;
         font-size: $font-size-h3;
       }
-      p {
+      p,address {
         padding: 0  $padding-xs-horizontal;
       }
       .logo {
