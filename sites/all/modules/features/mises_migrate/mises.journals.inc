@@ -68,7 +68,10 @@ abstract class MisesJournalMigration extends MisesMigration {
 
 class JLSMigration extends MisesJournalMigration  {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('JLS', 'j')
       ->fields('j');
@@ -82,7 +85,10 @@ class JLSMigration extends MisesJournalMigration  {
 
 class QJAEMigration extends MisesJournalMigration  {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('QJAEdb', 'q')
       ->fields('q');
@@ -114,7 +120,10 @@ class RAEMigration extends MisesJournalMigration  {
 
 class AENMigration extends MisesJournalMigration  {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('AENdb', 'a')
       ->fields('a');
@@ -133,7 +142,10 @@ class AENMigration extends MisesJournalMigration  {
 
 class MisesReviewMigration extends MisesJournalMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('misesreview', 'm')
       ->fields('m');
@@ -199,7 +211,10 @@ class MisesReviewMigration extends MisesJournalMigration {
 
 class FreeMarketMigration extends MisesJournalMigration {
   public function __construct($arguments) {
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $query = $this->db
       ->select('FreeMarket', 'f')
       ->fields('f');

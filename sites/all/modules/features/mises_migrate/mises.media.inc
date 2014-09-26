@@ -3,7 +3,10 @@
 class DocumentFileDocumentMigration extends MisesMigration {
   public function __construct($arguments) {
     ini_set('max_execution_time', 4000);
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
 	$query = $this->db
 		->select('DocumentFiles', 'd')
 		->fields('d')
@@ -52,7 +55,10 @@ class DocumentFileDocumentMigration extends MisesMigration {
 class DocumentFileYoutubeMigration extends MisesMigration {
   public function __construct($arguments) {
     ini_set('max_execution_time', 4000);
-    parent::__construct($arguments);
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
   $query = $this->db
     ->select('DocumentFiles', 'd')
     ->fields('d')
@@ -88,7 +94,10 @@ class DocumentFileYoutubeMigration extends MisesMigration {
 
 class YoutubeMigration extends MisesMigration {
   public function __construct() {
-    parent::__construct();
+    // get an instance of the group to pass into parent constructor
+    $group = MigrateGroup::getInstance($arguments['group_name']);
+    // pass $group instead of $arguments
+    parent::__construct($group);
     $this->description = t('Example migration of Youtube videos');
     $query = $this->db
     ->select('DocumentFiles', 'd')
