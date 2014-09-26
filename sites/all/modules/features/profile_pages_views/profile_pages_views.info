@@ -1,7 +1,7 @@
 name = Profile Pages Views
 core = 7.x
 package = Views
-version = 7.x-1.0
+version = 7.x-1.1
 project = profile_pages_views
 dependencies[] = ctools
 dependencies[] = page_title
