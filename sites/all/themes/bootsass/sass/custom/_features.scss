@@ -386,9 +386,9 @@ ul.addtocal_menu {
       padding: 0 $padding-xs-horizontal;
     }
   }
-  h3 {
+  h2 {
     @extend .col-sm-12;
-    font-size: $font-size-h2;
+    color: $brand-secondary;
     font-family: $font-family-serif;
   }
 }

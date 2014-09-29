@@ -2276,8 +2276,8 @@ function display_suite_shared_ds_field_settings_info() {
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
-        'wrapper' => 'h2',
-        'class' => 'teaser-title',
+        'wrapper' => 'h3',
+        'class' => 'list-title',
         'ft' => array(),
         'conditions' => array(),
       ),
