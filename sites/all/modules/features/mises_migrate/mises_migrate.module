@@ -433,7 +433,7 @@ class DailyArticlesMigration extends MisesMigration {
     $this->insert_mapping_url($node->nid, $row->ArticleId, 'daily', $node->title);
   }
   private function cleanBody($content) {
-
+    libxml_use_internal_errors(true);
     $html = importDOM($content);
     $xpath = new DOMXpath($html);
     $remove = array('//div[@class="figure"]','//div[@class="article-author"]');
