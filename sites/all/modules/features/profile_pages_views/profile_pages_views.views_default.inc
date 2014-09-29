@@ -103,6 +103,14 @@ function profile_pages_views_views_default_views() {
       ),
     ),
   );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_profile_type_target_id_1';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Last name (field_last_name) */
   $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
   $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
@@ -475,7 +483,7 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['title'] = 'Faculty and Staff';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '16';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -485,7 +493,14 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = '';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'profile-item col-sm-4 col-xs-6';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'name',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['row_class'] = 'profile-item col-sm-3 col-xs-6';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
@@ -508,6 +523,20 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['relationships']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['relationships']['field_topics_target_id']['table'] = 'field_data_field_topics';
   $handler->display->display_options['relationships']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'field_profile_type_target_id_1';
+  /* Sort criterion: Content: Last name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Last name (field_last_name) */
   $handler->display->display_options['arguments']['field_last_name_value']['id'] = 'field_last_name_value';
@@ -565,6 +594,7 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['filters']['tid']['relationship'] = 'field_profile_type_target_id_1';
   $handler->display->display_options['filters']['tid']['value'] = array(
     199 => '199',
+    200 => '200',
     206 => '206',
   );
   $handler->display->display_options['filters']['tid']['group'] = 1;
@@ -585,6 +615,7 @@ function profile_pages_views_views_default_views() {
     5 => 0,
   );
   $handler->display->display_options['filters']['tid']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'profile_type';
   /* Filter criterion: Taxonomy term: Term ID */
@@ -594,6 +625,13 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['filters']['tid_raw']['relationship'] = 'field_profile_type_target_id_1';
   $handler->display->display_options['filters']['tid_raw']['value']['value'] = '199';
   $handler->display->display_options['filters']['tid_raw']['group'] = 2;
+  /* Filter criterion: Taxonomy term: Term ID */
+  $handler->display->display_options['filters']['tid_raw_2']['id'] = 'tid_raw_2';
+  $handler->display->display_options['filters']['tid_raw_2']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['tid_raw_2']['field'] = 'tid_raw';
+  $handler->display->display_options['filters']['tid_raw_2']['relationship'] = 'field_profile_type_target_id_1';
+  $handler->display->display_options['filters']['tid_raw_2']['value']['value'] = '200';
+  $handler->display->display_options['filters']['tid_raw_2']['group'] = 2;
   /* Filter criterion: Taxonomy term: Term ID */
   $handler->display->display_options['filters']['tid_raw_1']['id'] = 'tid_raw_1';
   $handler->display->display_options['filters']['tid_raw_1']['table'] = 'taxonomy_term_data';
