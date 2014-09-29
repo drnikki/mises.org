@@ -2117,7 +2117,7 @@ pre code {
 }
 
 /* line 14, ../sass/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .newsletter-form ul li, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .newsletter-form ul li, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .view-profile-lists h3, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 10px;
@@ -2386,7 +2386,7 @@ pre code {
 
 @media (min-width: 768px) {
   /* line 33, ../sass/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .newsletter-form ul li, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .newsletter-form ul li, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .view-profile-lists h3 {
     float: left;
   }
 
@@ -2446,7 +2446,7 @@ pre code {
   }
 
   /* line 41, ../sass/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-12 {
+  .col-sm-12, .view-profile-lists h3 {
     width: 100%;
   }
 
@@ -9076,7 +9076,7 @@ body.not-logged-in .contextual-links-wrapper {
   font-size: 15px;
 }
 /* line 259, ../sass/custom/_styles.scss */
-.footer .region-footer-right .panel p {
+.footer .region-footer-right .panel p, .footer .region-footer-right .panel address {
   padding: 0 5px;
 }
 /* line 262, ../sass/custom/_styles.scss */
@@ -11261,32 +11261,37 @@ ul.addtocal_menu li a:hover {
 .view-profile-lists .views-summary span {
   padding: 0 5px;
 }
+/* line 389, ../sass/custom/_features.scss */
+.view-profile-lists h3 {
+  font-size: 25px;
+  font-family: "crimson_text", Georgia, "Times New Roman", Times, serif;
+}
 
-/* line 390, ../sass/custom/_features.scss */
+/* line 395, ../sass/custom/_features.scss */
 .profile-item {
   clear: right;
 }
-/* line 392, ../sass/custom/_features.scss */
-.profile-item:nth-of-type(3n+1) {
+/* line 397, ../sass/custom/_features.scss */
+.profile-item:nth-of-type(4n+1) {
   clear: left;
 }
 
 /* SOCIAL MEDIA PAGES */
-/* line 398, ../sass/custom/_features.scss */
+/* line 403, ../sass/custom/_features.scss */
 .social-media-submenu a {
   text-transform: uppercase;
   font-weight: bold;
 }
-/* line 401, ../sass/custom/_features.scss */
+/* line 406, ../sass/custom/_features.scss */
 .social-media-submenu a.active {
   background: #e4ebee;
 }
-/* line 405, ../sass/custom/_features.scss */
+/* line 410, ../sass/custom/_features.scss */
 .social-media-submenu img {
   margin-right: 5px;
 }
 
-/* line 411, ../sass/custom/_features.scss */
+/* line 416, ../sass/custom/_features.scss */
 .social-media-categories a span.glyphicon {
   width: 24px;
   height: 24px;
@@ -11295,42 +11300,42 @@ ul.addtocal_menu li a:hover {
   line-height: 24px;
   margin-left: 6px;
 }
-/* line 415, ../sass/custom/_features.scss */
+/* line 420, ../sass/custom/_features.scss */
 .social-media-categories a:hover {
   color: #38709e;
 }
-/* line 417, ../sass/custom/_features.scss */
+/* line 422, ../sass/custom/_features.scss */
 .social-media-categories a:hover span.glyphicon {
   background-color: #38709e;
 }
 
 /* NEWSLETTER FORM */
-/* line 430, ../sass/custom/_features.scss */
+/* line 435, ../sass/custom/_features.scss */
 .newsletter-form .mc-field-group {
   margin: 20px 0;
 }
-/* line 432, ../sass/custom/_features.scss */
+/* line 437, ../sass/custom/_features.scss */
 .newsletter-form .mc-field-group h3 {
   margin-top: 0;
 }
-/* line 436, ../sass/custom/_features.scss */
+/* line 441, ../sass/custom/_features.scss */
 .newsletter-form ul {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
   list-style: none outside none;
 }
-/* line 442, ../sass/custom/_features.scss */
+/* line 447, ../sass/custom/_features.scss */
 .newsletter-form ul li {
   list-style: none outside none;
 }
-/* line 445, ../sass/custom/_features.scss */
+/* line 450, ../sass/custom/_features.scss */
 .newsletter-form ul li input {
   margin: 0 5px 0 0;
 }
 
 /* FANCY MEDIA HANDLING */
-/* line 453, ../sass/custom/_features.scss */
+/* line 458, ../sass/custom/_features.scss */
 .body-content.embedded-media p + .file {
   margin-bottom: 16px;
   text-align: center;
