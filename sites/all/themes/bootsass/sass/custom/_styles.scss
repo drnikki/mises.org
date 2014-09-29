@@ -404,6 +404,11 @@ h2 {
 }
 h3 {
   color: $brand-contrast;
+  &.list-title {
+    margin-top: $padding-base-vertical;
+    font-size: $font-size-h3 * 1.25;
+    font-family: $font-family-serif;
+  }
 }
 h4 {
   color: $brand-secondary;
