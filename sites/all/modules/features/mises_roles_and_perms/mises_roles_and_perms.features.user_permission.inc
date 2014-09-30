@@ -276,6 +276,16 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'socialmedia',
   );
 
+  // Exported permission: 'administer any_menu_path'.
+  $permissions['administer any_menu_path'] = array(
+    'name' => 'administer any_menu_path',
+    'roles' => array(
+      'Site Administrator' => 'Site Administrator',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'any_menu_path',
+  );
+
   // Exported permission: 'administer block classes'.
   $permissions['administer block classes'] = array(
     'name' => 'administer block classes',
@@ -466,6 +476,13 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu',
+  );
+
+  // Exported permission: 'administer menu attributes'.
+  $permissions['administer menu attributes'] = array(
+    'name' => 'administer menu attributes',
+    'roles' => array(),
+    'module' => 'menu_attributes',
   );
 
   // Exported permission: 'administer meta tags'.
