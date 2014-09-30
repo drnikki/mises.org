@@ -86,11 +86,11 @@ function mises_library_item_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'field_epub',
-      1 => 'field_pdf',
-      2 => 'field_kindle',
+      1 => 'field_kindle',
+      2 => 'field_link_to_external_listing_',
       3 => 'field_mobi',
-      4 => 'field_link_to_external_listing_',
-      5 => 'field_online_text',
+      4 => 'field_online_text',
+      5 => 'field_pdf',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
