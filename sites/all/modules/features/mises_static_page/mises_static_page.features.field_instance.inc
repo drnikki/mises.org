@@ -116,6 +116,21 @@ function mises_static_page_field_default_field_instances() {
         'type' => 'image',
         'weight' => 0,
       ),
+      'wide_player' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(
+            0 => array(
+              'condition' => '',
+            ),
+          ),
+          'image_link' => '',
+          'image_style' => 'large',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_image',
@@ -301,7 +316,8 @@ function mises_static_page_field_default_field_instances() {
         'allowed_types' => array(
           'audio' => 'audio',
           'document' => 0,
-          'image' => 0,
+          'ebook' => 0,
+          'image' => 'image',
           'video' => 'video',
         ),
         'browser_plugins' => array(
@@ -352,7 +368,7 @@ function mises_static_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'file',

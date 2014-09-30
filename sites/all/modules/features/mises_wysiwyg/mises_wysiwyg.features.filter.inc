@@ -37,5 +37,15 @@ function mises_wysiwyg_filter_default_formats() {
     ),
   );
 
+  // Exported format: Straight HTML.
+  $formats['straight_html'] = array(
+    'format' => 'straight_html',
+    'name' => 'Straight HTML',
+    'cache' => 1,
+    'status' => 1,
+    'weight' => 0,
+    'filters' => array(),
+  );
+
   return $formats;
 }

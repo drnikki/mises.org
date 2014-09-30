@@ -17,6 +17,7 @@ dependencies[] = page_title
 dependencies[] = strongarm
 dependencies[] = subpathauto
 dependencies[] = text
+dependencies[] = viewfield
 dependencies[] = views
 features[context][] = book_content
 features[context][] = book_html

@@ -2659,9 +2659,9 @@ function mises_library_item_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '1500:+3',
       ),
-      'type' => 'date_select',
+      'type' => 'date_popup',
       'weight' => 7,
     ),
   );
@@ -2786,7 +2786,7 @@ function mises_library_item_field_default_field_instances() {
     'bundle' => 'library_item',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter title of the Online Text node that contains the HTML version of this Library Item. If a valid value is entered here, the "View HTML Version" link will appear in the "Get this Book/Digital Text" table.',
     'display' => array(
       'audio_teaser' => array(
         'label' => 'above',
@@ -2814,8 +2814,12 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 32,
       ),
       'print' => array(
@@ -3321,7 +3325,7 @@ function mises_library_item_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '1500:+3',
       ),
       'type' => 'date_popup',
       'weight' => 6,
@@ -4105,6 +4109,7 @@ function mises_library_item_field_default_field_instances() {
   t('Copyright Info');
   t('Document Attachment');
   t('Editor’s Note');
+  t('Enter title of the Online Text node that contains the HTML version of this Library Item. If a valid value is entered here, the "View HTML Version" link will appear in the "Get this Book/Digital Text" table.');
   t('Featured Content');
   t('ID');
   t('Image');

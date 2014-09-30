@@ -12,14 +12,265 @@ function mises_theme_file_default_displays() {
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_enclosure_file';
+  $file_display->weight = -50;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['audio__wide_player__file_field_enclosure_file'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_epub_cover';
+  $file_display->weight = -42;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'width' => '100%',
+  );
+  $export['audio__wide_player__file_field_epub_cover'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_epub_default';
+  $file_display->weight = -40;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'width' => '100%',
+    'height' => 'auto',
+  );
+  $export['audio__wide_player__file_field_epub_default'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_epub_js';
+  $file_display->weight = -39;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'unzipped' => 1,
+    'width' => '100%',
+    'height' => '600px',
+  );
+  $export['audio__wide_player__file_field_epub_js'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_epub_js_reader';
+  $file_display->weight = -38;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'unzipped' => TRUE,
+  );
+  $export['audio__wide_player__file_field_epub_js_reader'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_epub_toc';
+  $file_display->weight = -43;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['audio__wide_player__file_field_epub_toc'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_file_audio';
+  $file_display->weight = -45;
+  $file_display->status = TRUE;
+  $file_display->settings = array(
+    'controls' => 1,
+    'autoplay' => 0,
+    'loop' => 0,
+    'multiple_file_behavior' => 'tags',
+  );
+  $export['audio__wide_player__file_field_file_audio'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_file_default';
+  $file_display->weight = -44;
+  $file_display->status = TRUE;
+  $file_display->settings = '';
+  $export['audio__wide_player__file_field_file_default'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_file_download_link';
+  $file_display->weight = -41;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'text' => 'Download [file:name]',
+  );
+  $export['audio__wide_player__file_field_file_download_link'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_file_table';
+  $file_display->weight = -47;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['audio__wide_player__file_field_file_table'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_file_url_plain';
+  $file_display->weight = -46;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['audio__wide_player__file_field_file_url_plain'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_itunes:duration';
+  $file_display->weight = -48;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['audio__wide_player__file_field_itunes:duration'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'audio__wide_player__file_field_media_large_icon';
+  $file_display->weight = -49;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['audio__wide_player__file_field_media_large_icon'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_enclosure_file';
+  $file_display->weight = -48;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__default__file_field_enclosure_file'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_enclosure_image';
+  $file_display->weight = -47;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__default__file_field_enclosure_image'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_epub_cover';
+  $file_display->weight = -41;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'width' => '100%',
+  );
+  $export['image__default__file_field_epub_cover'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_epub_default';
+  $file_display->weight = -42;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'width' => '100%',
+    'height' => 'auto',
+  );
+  $export['image__default__file_field_epub_default'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_epub_js';
+  $file_display->weight = -40;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'unzipped' => 1,
+    'width' => '100%',
+    'height' => '600px',
+  );
+  $export['image__default__file_field_epub_js'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_epub_js_reader';
+  $file_display->weight = -39;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'unzipped' => TRUE,
+  );
+  $export['image__default__file_field_epub_js_reader'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_epub_toc';
+  $file_display->weight = -38;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__default__file_field_epub_toc'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_file_download_link';
+  $file_display->weight = -44;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'text' => 'Download [file:name]',
+  );
+  $export['image__default__file_field_file_download_link'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_file_table';
+  $file_display->weight = -37;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__default__file_field_file_table'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_file_url_plain';
+  $file_display->weight = -49;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__default__file_field_file_url_plain'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_flexslider';
+  $file_display->weight = -43;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'optionset' => 'default',
+    'image_style' => '',
+    'caption' => 0,
+  );
+  $export['image__default__file_field_flexslider'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
   $file_display->name = 'image__default__file_field_image';
-  $file_display->weight = 50;
+  $file_display->weight = -36;
   $file_display->status = TRUE;
   $file_display->settings = array(
     'image_style' => '',
     'image_link' => '',
   );
   $export['image__default__file_field_image'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_itunes:duration';
+  $file_display->weight = -45;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__default__file_field_itunes:duration'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_itunes:image';
+  $file_display->weight = -46;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__default__file_field_itunes:image'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__default__file_field_media_large_icon';
+  $file_display->weight = -50;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__default__file_field_media_large_icon'] = $file_display;
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
@@ -163,6 +414,154 @@ function mises_theme_file_default_displays() {
     'image_link' => 'content',
   );
   $export['image__teaser__file_field_image'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_enclosure_file';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__wide_player__file_field_enclosure_file'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_enclosure_image';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__wide_player__file_field_enclosure_image'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_epub_cover';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'width' => '100%',
+  );
+  $export['image__wide_player__file_field_epub_cover'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_epub_default';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'width' => '100%',
+    'height' => 'auto',
+  );
+  $export['image__wide_player__file_field_epub_default'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_epub_js';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'unzipped' => 1,
+    'width' => '100%',
+    'height' => '600px',
+  );
+  $export['image__wide_player__file_field_epub_js'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_epub_js_reader';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'unzipped' => TRUE,
+  );
+  $export['image__wide_player__file_field_epub_js_reader'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_epub_toc';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__wide_player__file_field_epub_toc'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_file_default';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__wide_player__file_field_file_default'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_file_download_link';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'text' => 'Download [file:name]',
+  );
+  $export['image__wide_player__file_field_file_download_link'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_file_table';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__wide_player__file_field_file_table'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_file_url_plain';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__wide_player__file_field_file_url_plain'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_flexslider';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'optionset' => 'default',
+    'image_style' => '',
+    'caption' => 0,
+  );
+  $export['image__wide_player__file_field_flexslider'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_image';
+  $file_display->weight = 0;
+  $file_display->status = TRUE;
+  $file_display->settings = array(
+    'image_style' => 'full_width',
+    'image_link' => '',
+  );
+  $export['image__wide_player__file_field_image'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_itunes:duration';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__wide_player__file_field_itunes:duration'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_itunes:image';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__wide_player__file_field_itunes:image'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__wide_player__file_field_media_large_icon';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = '';
+  $export['image__wide_player__file_field_media_large_icon'] = $file_display;
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
