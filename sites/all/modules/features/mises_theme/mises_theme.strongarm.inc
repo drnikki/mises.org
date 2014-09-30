@@ -422,7 +422,7 @@ function mises_theme_strongarm() {
         'custom_settings' => FALSE,
       ),
       'wide_player' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'vertical_teaser' => array(
         'custom_settings' => TRUE,

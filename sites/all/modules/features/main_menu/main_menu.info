@@ -1,8 +1,9 @@
 name = Main menu
 core = 7.x
 package = Menus
-version = 7.x-1.1
+version = 7.x-1.2
 project = main_menu
+dependencies[] = any_menu_path
 dependencies[] = features
 dependencies[] = menu
 dependencies[] = menu_attributes

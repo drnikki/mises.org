@@ -51,6 +51,12 @@ function mises_flex_block_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'wide_player' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
     ),
     'entity_type' => 'file',
     'field_name' => 'field_file_image_title_text',
@@ -682,6 +688,7 @@ function mises_flex_block_field_default_field_instances() {
           'php_code' => 0,
           'plain_text' => 0,
           'simplified' => 'simplified',
+          'straight_html' => 'straight_html',
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -704,6 +711,9 @@ function mises_flex_block_field_default_field_instances() {
             ),
             'simplified' => array(
               'weight' => -7,
+            ),
+            'straight_html' => array(
+              'weight' => 0,
             ),
           ),
         ),
