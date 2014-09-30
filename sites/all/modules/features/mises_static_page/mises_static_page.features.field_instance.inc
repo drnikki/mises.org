@@ -109,12 +109,8 @@ function mises_static_page_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'conditions' => array(
-            0 => array(
-              'condition' => '',
-            ),
-          ),
-          'image_link' => 'content',
+          'conditions' => array(),
+          'image_link' => '',
           'image_style' => 'vertical_teaser',
         ),
         'type' => 'image',

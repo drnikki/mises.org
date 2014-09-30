@@ -35,12 +35,11 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = 36;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'profile-item col-sm-4 col-xs-6';
+  $handler->display->display_options['style_options']['row_class'] = 'profile-item col-sm-3 col-xs-6';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'block_teaser';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -65,6 +64,9 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['fields']['field_image_collection']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['fields']['field_image_collection']['field'] = 'field_image_collection';
   $handler->display->display_options['fields']['field_image_collection']['label'] = '';
+  $handler->display->display_options['fields']['field_image_collection']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image_collection']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_image_collection']['alter']['text'] = '<div class="image img-responsive border-gray">[field_image_collection]</div>';
   $handler->display->display_options['fields']['field_image_collection']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_collection']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_image_collection']['element_wrapper_class'] = 'image img-responsive border-gray';
@@ -85,9 +87,10 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[field_image_collection]
+<h3 class="list-title">[title]</h3>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
-  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'teaser-title';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Content: Last name */
   $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
@@ -503,12 +506,10 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['style_options']['row_class'] = 'profile-item col-sm-3 col-xs-6';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['style_options']['uses_fields'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'block_teaser';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
