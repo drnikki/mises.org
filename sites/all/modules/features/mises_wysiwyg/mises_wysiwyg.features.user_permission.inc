@@ -25,5 +25,15 @@ function mises_wysiwyg_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'use text format straight_html'.
+  $permissions['use text format straight_html'] = array(
+    'name' => 'use text format straight_html',
+    'roles' => array(
+      'Drupal Developer' => 'Drupal Developer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'filter',
+  );
+
   return $permissions;
 }

@@ -21,9 +21,10 @@ function mises_book_content_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Book Content',
-    'weight' => '3',
+    'weight' => '0',
     'children' => array(
       0 => 'field_book_chapter',
+      1 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
