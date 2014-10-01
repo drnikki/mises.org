@@ -544,8 +544,8 @@ ul.menu {
   }
 }
 /* SIDEBAR SEARCH BLOCK */
-#block-custom-search-blocks-1 {
-  padding: $padding-small-vertical;
+.block-custom-search-blocks {
+  padding: $padding-small-vertical $padding-small-vertical $padding-large-vertical;
   .panel-heading {
     background: transparent;
     .panel-title {
@@ -568,6 +568,12 @@ ul.menu {
   button {
     width: 15%;
     border-radius: 0;
+  }
+}
+/* OVERRIDING CUSTOM SEARCH BLOCK 1 ON DAILY LANDING PAGE */
+body.mises-daily {
+  #block-custom-search-blocks-1 {
+    display: none;
   }
 }
 /* SEARCH SIDEBAR */
