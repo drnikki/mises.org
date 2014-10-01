@@ -72,10 +72,10 @@ var Drupal = Drupal || {};
         }).show();
 
         //glyphicons
-        $('.latest-library-content .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
-        $('.row.featured .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
-        $('.row.video .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
-        $('.featured-block.video .panel-footer a,').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.latest-library-content .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.row.featured .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.row.video .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.featured-block.video .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
         $('.field-collection-item-field-resources .read-more a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
         $('.more-link a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
         $('.block-mailchimp-lists h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
