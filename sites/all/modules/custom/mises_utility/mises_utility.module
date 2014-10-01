@@ -187,6 +187,12 @@ function mises_utility_code() {
     '#description' => t("Turn on job scheduler debug."),
   );
 
+  $form['mises_code']['mises_set_input_filter'] = array(
+    '#type'  => 'submit',
+    '#value' =>  t('Set missing input filters'),
+    '#submit' => array('mises_utility_set_input'),
+  );
+
   return system_settings_form($form);
 }
 
@@ -393,3 +399,10 @@ function mises_utility_custom_render_function($field) {
   return $output;
 }
 
+
+/**
+ * Implements mises_utility_set_input().
+ */
+function mises_utility_set_input() {
+  drupal_set_message('Set missing input filters');
+}

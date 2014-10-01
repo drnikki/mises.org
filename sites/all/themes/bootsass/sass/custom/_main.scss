@@ -153,9 +153,6 @@ body {
     }
   }
   // Add customizations for specific pages here
-  .front & {
-    padding: $padding-base-vertical $padding-large-horizontal * 1.5;
-  }
   .body-content {
     &.normal {
       font-size: $font-size-base;

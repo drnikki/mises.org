@@ -580,7 +580,7 @@ body.mises-daily {
 .section-search {
   .sidebar .region {
     @extend .border-secondary;
-    padding: 0 $padding-base-horizontal;
+    padding: 0 $padding-base-horizontal $padding-large-vertical;
     background-color: $white;
     h2.block-title {
       @extend h3.sub-heading;
