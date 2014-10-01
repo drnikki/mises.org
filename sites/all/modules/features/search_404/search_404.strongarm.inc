@@ -14,7 +14,7 @@ function search_404_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search404_custom_search_path';
-  $strongarm->value = 'search/@keys';
+  $strongarm->value = 'search/site/@keys';
   $export['search404_custom_search_path'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -28,7 +28,7 @@ function search_404_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search404_do_custom_search';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['search404_do_custom_search'] = $strongarm;
 
   $strongarm = new stdClass();
