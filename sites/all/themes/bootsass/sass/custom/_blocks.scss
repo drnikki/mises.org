@@ -544,8 +544,8 @@ ul.menu {
   }
 }
 /* SIDEBAR SEARCH BLOCK */
-#block-custom-search-blocks-1 {
-  padding: $padding-small-vertical;
+.block-custom-search-blocks {
+  padding: $padding-small-vertical $padding-small-vertical $padding-large-vertical;
   .panel-heading {
     background: transparent;
     .panel-title {

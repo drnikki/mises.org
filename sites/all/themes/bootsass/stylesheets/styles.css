@@ -10654,35 +10654,35 @@ ul.menu li a, ul.menu li span {
 /* MAILCHIMP SIGNUP FORM */
 /* SIDEBAR SEARCH BLOCK */
 /* line 547, ../sass/custom/_blocks.scss */
-#block-custom-search-blocks-1 {
-  padding: 5px;
+.block-custom-search-blocks {
+  padding: 5px 5px 16px;
 }
 /* line 549, ../sass/custom/_blocks.scss */
-#block-custom-search-blocks-1 .panel-heading {
+.block-custom-search-blocks .panel-heading {
   background: transparent;
 }
 /* line 551, ../sass/custom/_blocks.scss */
-#block-custom-search-blocks-1 .panel-heading .panel-title {
+.block-custom-search-blocks .panel-heading .panel-title {
   overflow: hidden;
   color: white;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 /* line 558, ../sass/custom/_blocks.scss */
-#block-custom-search-blocks-1 form {
+.block-custom-search-blocks form {
   padding: 0 20px;
 }
 /* line 561, ../sass/custom/_blocks.scss */
-#block-custom-search-blocks-1 .form-group {
+.block-custom-search-blocks .form-group {
   float: left;
   width: 85%;
 }
 /* line 565, ../sass/custom/_blocks.scss */
-#block-custom-search-blocks-1 .form-control {
+.block-custom-search-blocks .form-control {
   border-radius: 0;
 }
 /* line 568, ../sass/custom/_blocks.scss */
-#block-custom-search-blocks-1 button {
+.block-custom-search-blocks button {
   width: 15%;
   border-radius: 0;
 }
