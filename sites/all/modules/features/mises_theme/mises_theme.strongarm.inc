@@ -477,6 +477,12 @@ function mises_theme_strongarm() {
       'wide_player' => array(
         'custom_settings' => TRUE,
       ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
