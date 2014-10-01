@@ -18,4 +18,4 @@
   </div>
 <?php endforeach; ?>
 </div>
-<p class="clearfix read-more text-right"><a href="#faculty-top">Back To Top</a></p>
+<p class="clearfix read-more text-right"><a href="#main-content">Back To Top</a></p>
