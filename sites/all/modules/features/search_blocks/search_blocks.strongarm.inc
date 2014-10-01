@@ -373,8 +373,15 @@ function search_blocks_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'custom_search_blocks_number';
+  $strongarm->value = '2';
+  $export['custom_search_blocks_number'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_delta';
-  $strongarm->value = 'blocks_1_';
+  $strongarm->value = 'blocks_2_';
   $export['custom_search_delta'] = $strongarm;
 
   return $export;

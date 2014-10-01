@@ -10687,102 +10687,108 @@ ul.menu li a, ul.menu li span {
   border-radius: 0;
 }
 
-/* SEARCH SIDEBAR */
+/* OVERRIDING CUSTOM SEARCH BLOCK 1 ON DAILY LANDING PAGE */
 /* line 575, ../sass/custom/_blocks.scss */
+body.mises-daily #block-custom-search-blocks-1 {
+  display: none;
+}
+
+/* SEARCH SIDEBAR */
+/* line 581, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region {
   padding: 0 12px;
   background-color: white;
 }
-/* line 579, ../sass/custom/_blocks.scss */
+/* line 585, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region h2.block-title {
   font-size: 15px;
 }
-/* line 584, ../sass/custom/_blocks.scss */
+/* line 590, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region ul {
   padding-left: 0;
 }
-/* line 586, ../sass/custom/_blocks.scss */
+/* line 592, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region ul li {
   padding-left: 16px;
   text-indent: -16px;
 }
-/* line 591, ../sass/custom/_blocks.scss */
+/* line 597, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region input.facetapi-checkbox {
   margin-right: 5px;
 }
-/* line 594, ../sass/custom/_blocks.scss */
+/* line 600, ../sass/custom/_blocks.scss */
 .section-search .sidebar .region a.facetapi-limit-link {
   display: block;
   text-transform: uppercase;
 }
 
 /* ACCORDION MENU */
-/* line 602, ../sass/custom/_blocks.scss */
+/* line 608, ../sass/custom/_blocks.scss */
 .view-library-items-menu {
   display: none;
 }
 
-/* line 605, ../sass/custom/_blocks.scss */
+/* line 611, ../sass/custom/_blocks.scss */
 ul.accordion {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 609, ../sass/custom/_blocks.scss */
+/* line 615, ../sass/custom/_blocks.scss */
 ul.accordion li {
   list-style: none;
 }
 
-/* line 613, ../sass/custom/_blocks.scss */
+/* line 619, ../sass/custom/_blocks.scss */
 #library-menu {
   border-top: 5px solid #38709e;
 }
-/* line 616, ../sass/custom/_blocks.scss */
+/* line 622, ../sass/custom/_blocks.scss */
 #library-menu .nav > li {
   position: relative;
 }
-/* line 618, ../sass/custom/_blocks.scss */
+/* line 624, ../sass/custom/_blocks.scss */
 #library-menu .nav > li ul > li > a {
   background-color: #206093;
 }
-/* line 620, ../sass/custom/_blocks.scss */
+/* line 626, ../sass/custom/_blocks.scss */
 #library-menu .nav > li ul > li > a:hover {
   background-color: #788086;
 }
-/* line 624, ../sass/custom/_blocks.scss */
+/* line 630, ../sass/custom/_blocks.scss */
 #library-menu .nav > li ul ul > li > a {
   background: #46763a;
 }
-/* line 626, ../sass/custom/_blocks.scss */
+/* line 632, ../sass/custom/_blocks.scss */
 #library-menu .nav > li ul ul > li > a:hover {
   background-color: #788086;
 }
-/* line 630, ../sass/custom/_blocks.scss */
+/* line 636, ../sass/custom/_blocks.scss */
 #library-menu .nav > li ul ul ul > li > a {
   background: #38709e;
 }
-/* line 632, ../sass/custom/_blocks.scss */
+/* line 638, ../sass/custom/_blocks.scss */
 #library-menu .nav > li ul ul ul > li > a:hover {
   background-color: #788086;
 }
-/* line 636, ../sass/custom/_blocks.scss */
+/* line 642, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a {
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 639, ../sass/custom/_blocks.scss */
+/* line 645, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.active {
   background-color: #00426b;
   color: white;
   text-decoration: none;
   font-weight: 700;
 }
-/* line 645, ../sass/custom/_blocks.scss */
+/* line 651, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.link {
   vertical-align: middle;
 }
-/* line 648, ../sass/custom/_blocks.scss */
+/* line 654, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.icon.trigger {
   position: absolute;
   top: 10px;
@@ -10799,25 +10805,25 @@ ul.accordion li {
   font-size: 12px;
   font-family: 'Glyphicons Halflings';
 }
-/* line 663, ../sass/custom/_blocks.scss */
+/* line 669, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.icon.trigger:before {
   position: relative;
   left: 4px;
   content: "\e080";
 }
-/* line 668, ../sass/custom/_blocks.scss */
+/* line 674, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.icon.trigger.open {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-/* line 673, ../sass/custom/_blocks.scss */
+/* line 679, ../sass/custom/_blocks.scss */
 #library-menu .nav > li > a.icon.trigger:hover, #library-menu .nav > li > a.icon.trigger:focus, #library-menu .nav > li > a.icon.trigger:active {
   background-color: #00426b;
   color: white;
 }
-/* line 679, ../sass/custom/_blocks.scss */
+/* line 685, ../sass/custom/_blocks.scss */
 #library-menu .nav > li.last-child a {
   background-image: none;
   font-weight: normal;
