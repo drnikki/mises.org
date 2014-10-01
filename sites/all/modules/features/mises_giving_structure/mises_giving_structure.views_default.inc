@@ -726,7 +726,7 @@ function mises_giving_structure_views_default_views() {
   $handler->display->display_options['fields']['field_membership_cost']['alter']['text'] = '<span class="dash"> - </span><span class="cost">[field_membership_cost]</span>';
   $handler->display->display_options['fields']['field_membership_cost']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_membership_cost']['settings'] = array(
-    'thousand_separator' => ' ',
+    'thousand_separator' => ',',
     'prefix_suffix' => 1,
     'conditions' => array(
       0 => array(
