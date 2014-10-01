@@ -41,7 +41,7 @@ function landing_page_daily_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Search Mises Daily',
     'visibility' => 0,
   );
 

@@ -570,6 +570,12 @@ ul.menu {
     border-radius: 0;
   }
 }
+/* OVERRIDING CUSTOM SEARCH BLOCK 1 ON DAILY LANDING PAGE */
+body.mises-daily {
+  #block-custom-search-blocks-1 {
+    display: none;
+  }
+}
 /* SEARCH SIDEBAR */
 .section-search {
   .sidebar .region {

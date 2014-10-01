@@ -269,7 +269,7 @@ function landing_page_daily_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_blocks_2_paths';
-  $strongarm->value = 'earch/site//library/mises-daily-147';
+  $strongarm->value = 'search/site/[key]/library/mises-daily-147';
   $export['custom_search_blocks_2_paths'] = $strongarm;
 
   $strongarm = new stdClass();
