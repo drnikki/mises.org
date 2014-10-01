@@ -74,7 +74,9 @@ var Drupal = Drupal || {};
         //glyphicons
         $('.latest-library-content .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
         $('.row.featured .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
-        $('.row.video .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.row.video .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ').append(' Videos');
+        $('.latest-mises-video .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
+        $('.featured-video .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
         $('.featured-block.video .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
         $('.field-collection-item-field-resources .read-more a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
         $('.more-link a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
