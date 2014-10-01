@@ -9436,10 +9436,11 @@ a.external-link:hover span.glyphicon {
 /* line 534, ../sass/custom/_styles.scss */
 #slideshow, #media, #image {
   margin-right: 20px;
+  padding-bottom: 6px;
   width: 240px;
 }
 
-/* line 541, ../sass/custom/_styles.scss */
+/* line 542, ../sass/custom/_styles.scss */
 html[contenteditable="true"] body {
   background-image: none;
 }

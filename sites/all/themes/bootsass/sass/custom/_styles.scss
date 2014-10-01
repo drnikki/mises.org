@@ -533,7 +533,8 @@ a.external-link {
 }
 #slideshow, #media, #image {
   margin-right: $grid-gutter-width;
-  width: 240px; // @TDOO: Check width
+  padding-bottom: $padding-base-vertical;
+  width: 240px; 
 }
 
 // CKEDITOR
