@@ -187,6 +187,12 @@ function mises_utility_code() {
     '#description' => t("Turn on job scheduler debug."),
   );
 
+  $form['mises_code']['mises_set_input_filter'] = array(
+    '#type'  => 'submit',
+    '#value' =>  t('Set missing input filters'),
+    '#submit' => array('mises_utility_set_input'),
+  );
+
   return system_settings_form($form);
 }
 
@@ -393,3 +399,15 @@ function mises_utility_custom_render_function($field) {
   return $output;
 }
 
+
+/**
+ * Implements mises_utility_set_input().
+ */
+function mises_utility_set_input() {
+  db_query("UPDATE {field_data_field_bibliography_footnote} SET field_bibliography_footnote_format = 'simplified' WHERE field_bibliography_footnote_format != 'simplified' AND bundle = 'library_item'");
+  db_query("UPDATE {field_data_field_citation} SET field_citation_format = 'simplified' WHERE field_citation_format != 'simplified' AND field_citation_format != 'full_html' AND bundle = 'library_item'");
+  db_query("UPDATE {field_data_field_teaser_text} SET field_teaser_text_format = 'simplified' WHERE field_teaser_text_format != 'simplified' AND field_teaser_text_format != 'full_html' AND bundle = 'library_item'");
+  db_query("UPDATE {field_data_field_body} SET field_body_format = 'simplified' WHERE field_body_format != 'simplified' AND field_body_format != 'full_html' AND bundle = 'library_item'");
+  db_query("UPDATE {field_data_body} SET body_format = 'simplified' WHERE body_format != 'simplified' AND body_format != 'full_html' AND bundle = 'library_item'");
+  drupal_set_message('Set missing input filters');
+}

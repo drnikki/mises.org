@@ -45,7 +45,7 @@ function mises_solr_search_default_search_api_server() {
       "highlight_data" : 0,
       "http_method" : "AUTO"
     },
-    "enabled" : "0",
+    "enabled" : "1",
     "rdf_mapping" : []
   }');
   return $items;

@@ -176,44 +176,20 @@ function mises_static_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'number',
-        'settings' => array(
-          'conditions' => array(),
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'semantic_field_format' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'conditions' => array(),
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'semantic_field_format' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 1,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'small_player' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'conditions' => array(),
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'semantic_field_format' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'wide_player' => array(
@@ -256,7 +232,6 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'small_player',
-          'semantic_field_format' => 0,
         ),
         'type' => 'media',
         'weight' => 0,
@@ -267,7 +242,6 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'full',
-          'semantic_field_format' => 0,
         ),
         'type' => 'media',
         'weight' => 0,
@@ -278,7 +252,6 @@ function mises_static_page_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'small_player',
-          'semantic_field_format' => 0,
         ),
         'type' => 'media',
         'weight' => 0,

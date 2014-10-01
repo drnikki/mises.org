@@ -27,18 +27,6 @@ function mises_solr_node_results_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'facetapi-GiIy4zr9Gu0ZSa0bumw1Y9qIIpIDf1wu' => array(
-          'module' => 'facetapi',
-          'delta' => 'GiIy4zr9Gu0ZSa0bumw1Y9qIIpIDf1wu',
-          'region' => 'sidebar_first',
-          'weight' => '-10',
-        ),
-        'facetapi-wcg0Iab3Ypt1CaVQSYrNwXPAUmV70Pkt' => array(
-          'module' => 'facetapi',
-          'delta' => 'wcg0Iab3Ypt1CaVQSYrNwXPAUmV70Pkt',
-          'region' => 'sidebar_first',
-          'weight' => '-9',
-        ),
         'facetapi-HKDC1cgxSxGM5l01Zl6ib89vWJGQP3se' => array(
           'module' => 'facetapi',
           'delta' => 'HKDC1cgxSxGM5l01Zl6ib89vWJGQP3se',
@@ -51,15 +39,15 @@ function mises_solr_node_results_context_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-7',
         ),
-        'facetapi-KbVB7FlF9uXEFwXVzYeesVHZTFryrT7k' => array(
+        'facetapi-6Ue6uHhAOBfNeZJvRpyIseGm5c0vygyU' => array(
           'module' => 'facetapi',
-          'delta' => 'KbVB7FlF9uXEFwXVzYeesVHZTFryrT7k',
+          'delta' => '6Ue6uHhAOBfNeZJvRpyIseGm5c0vygyU',
           'region' => 'sidebar_first',
           'weight' => '-6',
         ),
-        'facetapi-mMxEw4F0XQAJbYdowwPSbgF1qyNau1xO' => array(
+        'facetapi-wcg0Iab3Ypt1CaVQSYrNwXPAUmV70Pkt' => array(
           'module' => 'facetapi',
-          'delta' => 'mMxEw4F0XQAJbYdowwPSbgF1qyNau1xO',
+          'delta' => 'wcg0Iab3Ypt1CaVQSYrNwXPAUmV70Pkt',
           'region' => 'sidebar_first',
           'weight' => '-5',
         ),
@@ -69,23 +57,17 @@ function mises_solr_node_results_context_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-4',
         ),
-        'facetapi-6Ue6uHhAOBfNeZJvRpyIseGm5c0vygyU' => array(
-          'module' => 'facetapi',
-          'delta' => '6Ue6uHhAOBfNeZJvRpyIseGm5c0vygyU',
-          'region' => 'sidebar_first',
-          'weight' => '-3',
-        ),
         'facetapi-9vkTcu3AKyIRnRQDvEwlVpiijxfi0aAK' => array(
           'module' => 'facetapi',
           'delta' => '9vkTcu3AKyIRnRQDvEwlVpiijxfi0aAK',
           'region' => 'sidebar_first',
-          'weight' => '-2',
+          'weight' => '-3',
         ),
         'facetapi-eFdsYzKmdlm3KMMSqDCo0IlN2zMmq0Tw' => array(
           'module' => 'facetapi',
           'delta' => 'eFdsYzKmdlm3KMMSqDCo0IlN2zMmq0Tw',
           'region' => 'sidebar_first',
-          'weight' => '-1',
+          'weight' => '-2',
         ),
       ),
     ),
