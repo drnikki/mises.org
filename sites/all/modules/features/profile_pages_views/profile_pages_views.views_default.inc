@@ -586,6 +586,18 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Last name (field_last_name) */
+  $handler->display->display_options['arguments']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['arguments']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['arguments']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['arguments']['field_last_name_value']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_last_name_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_last_name_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_last_name_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_last_name_value']['glossary'] = TRUE;
+  $handler->display->display_options['arguments']['field_last_name_value']['limit'] = '1';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -606,7 +618,7 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Search by Name';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
