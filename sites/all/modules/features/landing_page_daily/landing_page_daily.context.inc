@@ -35,23 +35,23 @@ function landing_page_daily_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'custom_search_blocks-1' => array(
+        'custom_search_blocks-2' => array(
           'module' => 'custom_search_blocks',
-          'delta' => '1',
+          'delta' => '2',
           'region' => 'sidebar_second_top',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-flex_blocks-block_11' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_11',
           'region' => 'sidebar_second_top',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'views-library_items_menu-block' => array(
           'module' => 'views',
           'delta' => 'library_items_menu-block',
           'region' => 'sidebar_second_top',
-          'weight' => '-8',
+          'weight' => '-7',
         ),
         'views-flex_blocks-block_9' => array(
           'module' => 'views',
