@@ -381,7 +381,7 @@ function search_blocks_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_delta';
-  $strongarm->value = 'blocks_2_';
+  $strongarm->value = '';
   $export['custom_search_delta'] = $strongarm;
 
   return $export;
