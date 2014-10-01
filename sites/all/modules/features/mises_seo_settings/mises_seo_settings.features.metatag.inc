@@ -446,19 +446,69 @@ function mises_seo_settings_metatag_export_default() {
     'instance' => 'node:book_digital_text',
     'config' => array(
       'description' => array(
-        'value' => '[node:field_body]',
+        'value' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'noindex' => 'noindex',
+          'nofollow' => 'nofollow',
+          'noarchive' => 'noarchive',
+          'nosnippet' => 'nosnippet',
+          'noodp' => 'noodp',
+          'noydir' => 'noydir',
+          'noimageindex' => 'noimageindex',
+          'notranslate' => 'notranslate',
+          'index' => 0,
+          'follow' => 0,
+        ),
+      ),
+      'copyright' => array(
+        'value' => '',
+      ),
+      'canonical' => array(
+        'value' => '',
+      ),
+      'shortlink' => array(
+        'value' => '',
       ),
       'dcterms.creator' => array(
         'value' => '',
       ),
-      'dcterms.description' => array(
-        'value' => '[node:field_body]',
+      'dcterms.date' => array(
+        'value' => '',
+      ),
+      'dcterms.type' => array(
+        'value' => '',
+      ),
+      'dcterms.format' => array(
+        'value' => '',
+      ),
+      'dcterms.identifier' => array(
+        'value' => '',
+      ),
+      'dcterms.language' => array(
+        'value' => '',
+      ),
+      'og:title' => array(
+        'value' => '',
       ),
       'og:description' => array(
-        'value' => '[node:field_body]',
+        'value' => '',
+      ),
+      'og:url' => array(
+        'value' => '',
+      ),
+      'twitter:card' => array(
+        'value' => '',
+      ),
+      'twitter:url' => array(
+        'value' => '',
+      ),
+      'twitter:title' => array(
+        'value' => '',
       ),
       'twitter:description' => array(
-        'value' => '[node:field_body]',
+        'value' => '',
       ),
     ),
   );
