@@ -138,7 +138,7 @@ function library_items_menu_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'search/site//author/node:!1/media-type/[name]-[tid]';
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'search/site//author/node:!1/library/[name]-[tid]';
   $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
