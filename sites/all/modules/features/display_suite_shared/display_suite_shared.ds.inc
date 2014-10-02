@@ -4304,7 +4304,10 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        '' => '',
+        'row' => 'row',
+      ),
+      'right' => array(
+        'col-xs-12' => 'col-xs-12',
       ),
     ),
     'wrappers' => array(
