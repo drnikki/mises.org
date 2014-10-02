@@ -15,22 +15,27 @@ var Drupal = Drupal || {};
       // Custom scrips here.
       
       var implementEqualHeight = function() {
+        $('.content-bottom .region .img-responsive').equalHeight();
         $('.content-bottom .region .panel-heading .panel-title').equalHeight();
         $('.content-bottom .region .panel-body').equalHeight();
         $('.content-bottom .region .panel-footer').equalHeight();
+        $('.bottom-blocks .img-responsive').equalHeight();
         $('.bottom-blocks .panel-heading .panel-title').equalHeight();
         $('.bottom-blocks .panel-body').equalHeight();
         $('.bottom-blocks .panel-footer').equalHeight();
         $('.latest-library-content .views-row > .col-sm-4').equalHeight();
+        $('.latest-library-content .views-row > .col-sm-4 .img-responsive').equalHeight();
         $('.latest-library-content .views-row > .col-sm-4 .panel-heading .panel-title').equalHeight();
         $('.latest-library-content .views-row > .col-sm-4 .panel-body').equalHeight();
         $('.latest-library-content .views-row > .col-sm-4 .panel-footer').equalHeight();
         $('.bottom-blocks .view-mises-library').equalHeight();
         $('.row.featured .col-xs-6').equalHeight();
+        $('.row.featured .col-xs-6 .img-responsive').equalHeight();
         $('.row.featured .col-xs-6 .panel-heading .panel-title').equalHeight();
         $('.row.featured .col-xs-6 .panel-body').equalHeight();
         $('.row.featured .col-xs-6 .panel-footer').equalHeight();
         $('.row.video .col-xs-6').equalHeight();
+        $('.row.video .col-xs-6 .img-responsive').equalHeight();
         $('.row.video .col-xs-6 .panel-heading .panel-title').equalHeight();
         $('.row.video .col-xs-6 .panel-body').equalHeight();
         $('.row.video .col-xs-6 .panel-footer').equalHeight();
@@ -164,7 +169,7 @@ var Drupal = Drupal || {};
           //set the height to auto which releases the boxes heights
           children.css('height', 'auto');
           //loop though the elements and get their heights
-          children.each(function () {            
+          children.each(function () {
               //if bigger than the default set to default
               if ($(this).outerHeight() > options.minHeight) options.minHeight= $(this).outerHeight();
               //if maxheight is set
