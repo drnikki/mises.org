@@ -420,6 +420,24 @@ function mises_static_page_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'simple_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'trim',
+          'trim_length' => 120,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'smart_trim',
@@ -545,6 +563,12 @@ function mises_static_page_field_default_field_instances() {
         'type' => 'field_collection_fields',
         'weight' => 1,
       ),
+      'simple_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'field_collection',
@@ -618,6 +642,12 @@ function mises_static_page_field_default_field_instances() {
         ),
         'type' => 'field_collection_fields',
         'weight' => 3,
+      ),
+      'simple_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
