@@ -3041,21 +3041,21 @@ function display_suite_shared_ds_custom_fields_info() {
       'value' => '<?php
 
 $media = field_get_items(\'node\', $entity, \'field_media_collection\');
-$content_array = explode("<p>", $entity->body[\'und\'][0][\'value\']);
-foreach ($media as $key => $itemid) {
-  $medium = field_collection_field_get_entity($itemid);
-  $insertAfter = $medium->field_insert_after[LANGUAGE_NONE][0][\'value\'] ? $medium->field_insert_after[LANGUAGE_NONE][0][\'value\'] : count($content_array);
-  $mediumValue = render(field_view_field(\'field_collection_item\',$medium,\'field_media\',\'wide_player\'));
-  //dpm($insertAfter);
-  //dpm($medium);
-  //dpm($content_array);
-  array_splice($content_array, $insertAfter + $key + 1, 0, $mediumValue);
+$content_array = explode("<p>", check_markup($entity->body[\'und\'][0][\'value\'],\'simplified\',\'\',FALSE));
+if (!empty($media)) {
+  foreach ($media as $key => $itemid) {
+    $medium = field_collection_field_get_entity($itemid);
+    $insertAfter = $medium->field_insert_after[LANGUAGE_NONE][0][\'value\'] ? $medium->field_insert_after[LANGUAGE_NONE][0][\'value\'] : count($content_array);
+    $mediumValue = render(field_view_field(\'field_collection_item\',$medium,\'field_media\',\'wide_player\'));
+    //dpm($insertAfter);
+    //dpm($medium);
+    //dpm($content_array);
+    array_splice($content_array, $insertAfter + $key + 1, 0, $mediumValue);
 
-  $final_content = implode("<p>", $content_array);
+    $final_content = implode("<p>", $content_array);
+  }
+  print $final_content;
 }
-
-print $final_content;
-
 ?>',
       'format' => 'ds_code',
     ),
