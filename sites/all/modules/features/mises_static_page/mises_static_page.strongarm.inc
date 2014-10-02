@@ -57,7 +57,7 @@ function mises_static_page_strongarm() {
         'custom_settings' => FALSE,
       ),
       'simple_teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'author_full_name' => array(
         'custom_settings' => FALSE,
@@ -84,6 +84,9 @@ function mises_static_page_strongarm() {
         'custom_settings' => FALSE,
       ),
       'video_block_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'audio_teaser' => array(
         'custom_settings' => FALSE,
       ),
     ),
