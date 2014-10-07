@@ -25,9 +25,9 @@ var Drupal = Drupal || {};
            var facetParent = $(this).parent();
            facetParent.contents().each(function () {
              if ($(this).prop('tagName') === undefined) {
-               if (facetName != 'Content type' && facetName != 'Audience' &&
+               if ($(this).text().length > 1 && facetName != 'Content type' && facetName != 'Audience' &&
                  !(facetName == 'Media type' && ($(this).text() == 'Quotes' || $(this).text() == 'Online Texts'))
-               ) {
+               ) { 
                  $('#solr-facet-tags').append('<div id="facet-tag-' + facetCount +
                    '" class="facet-tag btn btn-white btn-sm"> <span class="glyphicon glyphicon-remove"></span>' + $(this).text() + '</div>');
                  $('#facet-tag-' + facetCount).click(function () {
