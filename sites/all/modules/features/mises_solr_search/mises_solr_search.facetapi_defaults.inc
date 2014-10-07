@@ -694,7 +694,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
   $facet->facet = 'bundle';
-  $facet->enabled = FALSE;
+  $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_checkbox_links',
@@ -1399,7 +1399,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
   $facet->facet = 'sm_field_audience';
-  $facet->enabled = FALSE;
+  $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_checkbox_links',
