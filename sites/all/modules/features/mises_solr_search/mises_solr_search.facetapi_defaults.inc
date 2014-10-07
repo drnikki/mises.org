@@ -694,7 +694,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
   $facet->facet = 'bundle';
-  $facet->enabled = TRUE;
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_checkbox_links',
@@ -1187,7 +1187,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '5',
+    'soft_limit' => '0',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
@@ -1399,7 +1399,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
   $facet->facet = 'sm_field_audience';
-  $facet->enabled = TRUE;
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_checkbox_links',
