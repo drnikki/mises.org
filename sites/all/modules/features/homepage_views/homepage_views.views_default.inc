@@ -108,6 +108,11 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['sorts']['field_mises_published_date_value']['table'] = 'field_data_field_mises_published_date';
   $handler->display->display_options['sorts']['field_mises_published_date_value']['field'] = 'field_mises_published_date_value';
   $handler->display->display_options['sorts']['field_mises_published_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['path'] = 'homepage';
 
   /* Display: Press Room HP Block */
