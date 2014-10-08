@@ -601,6 +601,13 @@ function mises_events_views_default_views() {
   $handler->display->display_options['filters']['field_media_collection_value']['field'] = 'field_media_collection_value';
   $handler->display->display_options['filters']['field_media_collection_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_media_collection_value']['group'] = 1;
+  /* Filter criterion: Content: Live Feed (field_live_feed) */
+  $handler->display->display_options['filters']['field_live_feed_value']['id'] = 'field_live_feed_value';
+  $handler->display->display_options['filters']['field_live_feed_value']['table'] = 'field_data_field_live_feed';
+  $handler->display->display_options['filters']['field_live_feed_value']['field'] = 'field_live_feed_value';
+  $handler->display->display_options['filters']['field_live_feed_value']['value'] = array(
+    1 => '1',
+  );
   $handler->display->display_options['path'] = 'events/watch';
   $handler->display->display_options['menu']['title'] = 'Events';
   $handler->display->display_options['menu']['weight'] = '-45';

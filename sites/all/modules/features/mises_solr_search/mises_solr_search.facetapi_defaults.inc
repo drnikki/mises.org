@@ -1187,7 +1187,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '5',
+    'soft_limit' => '0',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
