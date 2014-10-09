@@ -1,0 +1,136 @@
+<?php
+
+
+
+/**
+ * Implements hook_menu().
+ *
+ */
+function mises_solr_author_fix_menu() {
+  $items['admin/content/solr-author-copy'] = array(
+    'title' => 'Solr Author Copy',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_mises_solr_author_fix_form'),
+    'access arguments' => array('administer content'),
+  );
+
+  return $items;
+}
+
+
+/**
+ * Defines the XML import form:
+ */
+function _mises_solr_author_fix_form() {
+  $lib_count = '';
+  $lib_count_query = db_query("SELECT count(1) count FROM node WHERE type='library_item'");
+  foreach ($lib_count_query as $lib_data) {
+    $lib_count = 'There are currenitly ' . $lib_data->count . ' Library Item nodes.';
+  }
+  $form['author_copy'] = array(
+    '#type' => 'fieldset',
+    '#description' => $lib_count,
+  );
+  $form['author_copy']['limit'] = array(
+    '#title' => 'Limit',
+    '#type' => 'textfield',
+    '#default_value' => variable_get('mises_solr_auth_fix_limit', 500),
+  );
+  $form['author_copy']['offset'] = array(
+    '#title' => 'Offset',
+    '#type' => 'textfield',
+    '#default_value' => variable_get('mises_solr_auth_fix_offset', 0),
+  );
+  $form['author_copy']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Run Author Copy',
+  );
+  return $form;
+}
+
+/**
+ * Submit function for solr author copying:
+ */
+function _mises_solr_author_fix_form_submit($form, &$form_state) {
+  $offset = $form_state['values']['offset'];
+  $limit = $form_state['values']['limit'];
+  variable_set('mises_solr_auth_fix_offset', $offset); 
+  variable_set('mises_solr_auth_fix_limit', $limit); 
+  _mises_solr_author_fix_execute_copy($offset, $limit, TRUE);
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * Applies author fix to recently saved library items on cron run.
+ */
+function mises_solr_author_fix_cron() {
+  $offset = variable_set('mises_solr_auth_fix_offset', 0);
+  $limit = variable_set('mises_solr_auth_fix_limit', 50);
+  _mises_solr_author_fix_execute_copy($offset, $limit);
+}
+
+/**
+ * Query all authors and insert their data into the associated hidden text field:
+ */
+function _mises_solr_author_fix_execute_copy($offset, $limit, $show_output = FALSE) {
+  $start = time();
+  
+  if (!is_numeric($offset) || !is_numeric($limit)) {
+    return;
+  }
+
+  $library_item_query = db_query("SELECT nid,title FROM node WHERE type='library_item' AND status=1 AND nid=13165 " .
+    "ORDER BY changed DESC " .
+    "LIMIT $limit OFFSET $offset;");
+  foreach ($library_item_query as $lib_item_result) {
+    $author_save_happened = FALSE;
+    $node = node_load($lib_item_result->nid);
+    // drupal_set_message('<pre>' . print_r($node->field_author_1[LANGUAGE_NONE][0]['target_id'], 1) . '</pre>');
+    if (isset($node->field_author_1[LANGUAGE_NONE][0]['target_id'])) {
+      $auth1_profile_node = node_load($node->field_author_1[LANGUAGE_NONE][0]['target_id']);
+      $author_name = _mises_solr_author_fix_fetch_profile_author_name($auth1_profile_node);
+      if (!empty($author_name) && (!isset($node->field_hidden_solr_content[LANGUAGE_NONE][0]['value']) ||
+        strpos($node->field_hidden_solr_content[LANGUAGE_NONE][0]['value'], $author_name) === FALSE)) {
+        $node->field_hidden_solr_content[LANGUAGE_NONE][0]['value'] = ' ' . $author_name;
+        $author_save_happened = TRUE;
+      }
+    }
+    if (isset($node->field_author_2[LANGUAGE_NONE][0]['target_id'])) {
+      $auth2_profile_node = node_load($node->field_author_2[LANGUAGE_NONE][0]['target_id']);
+      $author_name = _mises_solr_author_fix_fetch_profile_author_name($auth2_profile_node);
+      if (!empty($author_name) && (!isset($node->field_hidden_solr_content[LANGUAGE_NONE][0]['value']) ||
+        strpos($node->field_hidden_solr_content[LANGUAGE_NONE][0]['value'], $author_name) === FALSE)) {
+        $node->field_hidden_solr_content[LANGUAGE_NONE][0]['value'] = ' ' . $author_name;
+        $author_save_happened = TRUE;
+      }
+    }
+    if ($author_save_happened) {
+      $node->field_hidden_solr_content[LANGUAGE_NONE][0]['value'] = trim($node->field_hidden_solr_content[LANGUAGE_NONE][0]['value']);
+      node_save($node);
+      $fix_count++;
+    }
+  }
+  if ($show_output) {
+    drupal_set_message($fix_count  . ' author names saved into the hidden field.');
+    drupal_set_message('Duration: ' . (time() - $start) . ' seconds.');
+  }
+}
+
+
+
+/**
+ * Fetch author name from profile node:
+ */
+function _mises_solr_author_fix_fetch_profile_author_name($author_node) {
+  $author_name = '';
+  if (isset($author_node->field_first_name[LANGUAGE_NONE][0]['value'])) {
+    $author_name = $author_node->field_first_name[LANGUAGE_NONE][0]['value'];
+  } 
+  if (isset($author_node->field_last_name[LANGUAGE_NONE][0]['value'])) {
+    $author_name .= ' ' . $author_node->field_last_name[LANGUAGE_NONE][0]['value'];
+  } 
+  $author_name = trim($author_name);
+  return $author_name;
+}
+
