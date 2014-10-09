@@ -43,6 +43,17 @@
 * DATE AUTHOR ON TEASERS AND NODES
 */
 .group-date-author {
+  span.type {
+    padding-right: 5px;
+    color: $brand-primary;
+    text-transform: uppercase;
+    &:after {
+      display: inline-block;
+      width: 14px;
+      content: "\2022";
+      text-align: center;
+    }
+  }
   .date {
     color: $brand-primary;
     text-transform: uppercase;
@@ -77,6 +88,15 @@
     }
     a {
       color: $brand-primary;
+    }
+  }
+  span.type {
+    padding-right: 5px;
+    &:after {
+      display: inline-block;
+      width: 14px;
+      content: "\2022";
+      text-align: center;
     }
   }
   span.reg-link {
@@ -456,9 +476,9 @@ ul.addtocal_menu {
 /* FANCY MEDIA HANDLING */
 .body-content.embedded-media {
   p + .file {
+    clear: both;
     margin-bottom: $padding-large-vertical;
     text-align: center;
-    clear: both;
   }
   img {
     width: auto !important;
@@ -469,8 +489,8 @@ ul.addtocal_menu {
 .node-type-job-posting- {
   .tags {
     span:not(.tag-label) {
-      font-size: $font-size-base;
       color: $gray-dark;
+      font-size: $font-size-base;
     }
   }
 }

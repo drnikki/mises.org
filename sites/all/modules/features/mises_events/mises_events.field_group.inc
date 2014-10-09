@@ -83,10 +83,11 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Location',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
       0 => 'field_event_date',
       1 => 'field_event_location',
+      2 => 'dynamic_field_1',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
