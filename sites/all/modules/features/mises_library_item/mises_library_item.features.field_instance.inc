@@ -227,7 +227,6 @@ function mises_library_item_field_default_field_instances() {
           ),
           'more_link' => 0,
           'more_text' => 'Read more',
-          'semantic_field_format' => 0,
           'summary_handler' => 'trim',
           'trim_length' => 300,
           'trim_options' => array(
@@ -550,7 +549,6 @@ function mises_library_item_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
-          'semantic_field_format' => 0,
         ),
         'type' => 'entityreference_label',
         'weight' => 2,
@@ -680,11 +678,10 @@ function mises_library_item_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'links' => 0,
-          'semantic_field_format' => 0,
           'view_mode' => 'author_full_name',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -1893,7 +1890,6 @@ function mises_library_item_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
-          'semantic_field_format' => 0,
           'view_mode' => 'list_teaser',
         ),
         'type' => 'field_collection_fields',
@@ -2236,10 +2232,10 @@ function mises_library_item_field_default_field_instances() {
         'weight' => 42,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 1,
       ),
       'token' => array(
         'label' => 'above',
@@ -2620,10 +2616,9 @@ function mises_library_item_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'semantic_field_format' => 0,
         ),
         'type' => 'date_default',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'token' => array(
         'label' => 'above',
@@ -3622,7 +3617,6 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
           'more_link' => 0,
           'more_text' => 'Read more',
-          'semantic_field_format' => 0,
           'summary_handler' => 'full',
           'trim_length' => 300,
           'trim_options' => array(
@@ -3916,7 +3910,6 @@ function mises_library_item_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
-          'semantic_field_format' => 0,
         ),
         'type' => 'entityreference_label',
         'weight' => 1,
