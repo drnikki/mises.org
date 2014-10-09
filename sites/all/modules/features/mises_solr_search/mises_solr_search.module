@@ -22,8 +22,8 @@ function _mises_solr_search_manage_solr_write_access() {
   }
 
   // Do nothing if this is not hosted on devmises.org or is the master-content site:
-  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE ||
-    strpos($_SERVER['HTTP_HOST'], 'master-content.mises.devmises.org') !== FALSE) {
+  if (stripos($_SERVER['HTTP_HOST'], 'ourdrop.com') === FALSE &&
+    stripos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE)
     return;
   }
 
