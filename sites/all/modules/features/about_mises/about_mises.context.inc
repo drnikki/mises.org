@@ -17,6 +17,14 @@ function about_mises_context_default_contexts() {
   $context->description = 'Context and blocks for About Mises section (based on path)';
   $context->tag = 'Sections';
   $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'job_posting_' => 'job_posting_',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
     'path' => array(
       'values' => array(
         'about-mises' => 'about-mises',
