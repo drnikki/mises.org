@@ -166,6 +166,11 @@ function mises_job_posting_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'field_full_description' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'field_teaser' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -180,6 +185,40 @@ function mises_job_posting_ds_field_settings_info() {
     ),
   );
   $export['node|job_posting_|simple_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|job_posting_|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'job_posting_';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'teaser-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'node_link' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => 'p',
+        'class' => 'read-more',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['node|job_posting_|teaser'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -300,11 +339,13 @@ function mises_job_posting_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'title',
         1 => 'field_teaser',
+        2 => 'field_full_description',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_teaser' => 'ds_content',
+      'field_full_description' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(

@@ -1,7 +1,7 @@
 name = Mises Job Posting
 core = 7.x
 package = Content Types
-version = 7.x-1.2
+version = 7.x-1.3
 project = mises_job_posting
 dependencies[] = ctools
 dependencies[] = date
@@ -17,6 +17,7 @@ features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
 features[ds_field_settings][] = node|job_posting_|full
 features[ds_field_settings][] = node|job_posting_|simple_teaser
+features[ds_field_settings][] = node|job_posting_|teaser
 features[ds_layout_settings][] = node|job_posting_|full
 features[ds_layout_settings][] = node|job_posting_|print
 features[ds_layout_settings][] = node|job_posting_|simple_teaser
