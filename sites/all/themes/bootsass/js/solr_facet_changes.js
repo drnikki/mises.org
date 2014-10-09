@@ -16,7 +16,7 @@ var Drupal = Drupal || {};
       $('.block-facetapi ul li a').each(function () {
         $(this).contents().each(function () {
           if ($(this).prop('tagName') === undefined) {
-            if ($(this).text().indexOf('Online Texts') != -1 || $(this).text().indexOf('Quotes') != -1) {
+            if ($(this).text().indexOf('Online Text') != -1 || $(this).text().indexOf('Quotes') != -1) {
               $(this).parent().parent().remove();
             }
           }

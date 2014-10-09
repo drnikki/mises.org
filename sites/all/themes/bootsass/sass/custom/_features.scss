@@ -465,3 +465,21 @@ ul.addtocal_menu {
     height: auto !important;
   }
 }
+/* JOB POSTING */
+.node-type-job-posting- {
+  .tags {
+    span:not(.tag-label) {
+      font-size: $font-size-base;
+      color: $gray-dark;
+    }
+  }
+}
+.job-detail {
+  margin-bottom: ($line-height-computed / 2);
+  p {
+    margin-bottom: 0;
+    &:not(.tags) {
+      padding-left: $padding-base-horizontal;
+    }
+  }
+}

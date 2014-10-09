@@ -86,9 +86,10 @@ body.media {
   .panel-body {
     word-break: break-word;
   }
-  .sidebar .block:last-child & {
+  .sidebar .block:last-child &,
+  .sidebar &:last-child {
     margin-bottom: 0;
-  }
+  }    
 }
 // Pagination
 .pagination {
