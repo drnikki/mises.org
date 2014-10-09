@@ -31,11 +31,11 @@ function mises_job_posting_field_default_field_instances() {
         'weight' => 4,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'conditions' => array(),
-          'format_type' => 'long',
+          'format_type' => 'month_day_year',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -504,11 +504,11 @@ function mises_job_posting_field_default_field_instances() {
         'weight' => 3,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'conditions' => array(),
-          'format_type' => 'long',
+          'format_type' => 'month_day_year',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -593,11 +593,11 @@ function mises_job_posting_field_default_field_instances() {
         'weight' => 2,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'conditions' => array(),
-          'format_type' => 'long',
+          'format_type' => 'month_day_year',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
