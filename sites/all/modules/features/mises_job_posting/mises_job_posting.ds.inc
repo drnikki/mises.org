@@ -366,5 +366,54 @@ function mises_job_posting_ds_layout_settings_info() {
   );
   $export['node|job_posting_|simple_teaser'] = $ds_layout;
 
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|job_posting_|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'job_posting_';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = '2col_custom_fluid';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'title',
+        1 => 'field_teaser',
+        2 => 'field_full_description',
+        3 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'right',
+      'field_teaser' => 'right',
+      'field_full_description' => 'right',
+      'node_link' => 'right',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'row' => 'row',
+      ),
+      'right' => array(
+        'col-xs-12' => 'col-xs-12',
+      ),
+    ),
+    'wrappers' => array(
+      'header' => 'div',
+      'top' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'bottom' => 'div',
+      'footer' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|job_posting_|teaser'] = $ds_layout;
+
   return $export;
 }
