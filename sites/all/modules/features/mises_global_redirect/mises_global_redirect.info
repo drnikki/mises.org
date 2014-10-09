@@ -1,0 +1,7 @@
+name = Mises Global Redirect
+core = 7.x
+package = Settings
+version = 7.x-1.0
+project = mises_global_redirect
+dependencies[] = globalredirect
+features[features_api][] = api:2
