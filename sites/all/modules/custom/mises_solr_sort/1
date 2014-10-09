@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_apachesolr_query_prepare().
+ */
+function mises_solr_sort_apachesolr_query_prepare($query) {
+  drupal_set_message('<pre>' . print_r($query, 1) . '</pre>');
+  //$query->addParam('defType', 'edismax');
+  //$query->addParam('bf','recip(ms(NOW,ds_changed),3.16e-11,1,1)^94');
+  //drupal_set_message('<pre>' . print_r($query->getParam('q'), 1) . '</pre>');
+  $key = arg(2);
+  if (empty($key)) {
+    $query->setSolrsort('ds_created', 'desc');
+  }
+}

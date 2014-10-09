@@ -1,0 +1,5 @@
+name = Mises Solr Sort
+description = Adjust Solr results order so that results are ordered with newest items first when no keywords are submitted.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0
