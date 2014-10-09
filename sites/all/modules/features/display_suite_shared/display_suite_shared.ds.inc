@@ -452,6 +452,19 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blog';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
+    'dynamic_field_1' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:0:"";s:5:"title";s:0:"";s:4:"body";s:73:"<p class="search-label tags"><span class="tag-label bold">Blog</span></p>";s:6:"format";s:9:"full_html";s:10:"substitute";i:0;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
+        'load_terms' => 0,
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -957,8 +970,28 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'event';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
+    'dynamic_field_1' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:0:"";s:5:"title";s:0:"";s:4:"body";s:5:"Event";s:6:"format";s:9:"full_html";s:10:"substitute";i:1;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
+        'load_terms' => 0,
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'search-label type',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -970,7 +1003,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '3',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -1964,10 +1997,21 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'library_item';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'tags_title' => array(
+    'top_term' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'search-label type bold',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
     ),
     'title' => array(
       'weight' => '3',
@@ -3453,6 +3497,43 @@ print \'<div class="panel-heading \' . $random_class . \'"><div class="panel-tit
   );
   $export['text_resizer'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'top_term';
+  $ds_field->label = 'Top Term';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+foreach($entity->field_library_item_tree[\'und\'] as $term) {
+  $term_tid = $term[\'tid\'];
+  //this will be your top parent term if any was found
+  $top_parent_term = array();
+  $parent_terms = taxonomy_get_parents_all($term_tid);
+  //top parent term has no parents so find it out by checking if it has parents
+  foreach($parent_terms as $parent) {
+    $parent_parents = taxonomy_get_parents_all($parent->tid);
+    if ($parent_parents != false) {
+      //this is top parent term
+      $top_parent_term = $parent;
+    }
+  }
+  //dpm($top_parent_term, \'Parent Top\');
+  if(isset($top_parent_term->name)) {
+     print $top_parent_term->name;
+  }
+}
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['top_term'] = $ds_field;
+
   return $export;
 }
 
@@ -3995,8 +4076,9 @@ function display_suite_shared_ds_layout_settings_info() {
     'regions' => array(
       'right' => array(
         0 => 'title',
-        2 => 'body',
-        3 => 'node_link',
+        2 => 'dynamic_field_1',
+        3 => 'body',
+        4 => 'node_link',
       ),
       'left' => array(
         1 => 'field_image_collection',
@@ -4005,6 +4087,7 @@ function display_suite_shared_ds_layout_settings_info() {
     'fields' => array(
       'title' => 'right',
       'field_image_collection' => 'left',
+      'dynamic_field_1' => 'right',
       'body' => 'right',
       'node_link' => 'right',
     ),
@@ -4407,26 +4490,28 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
-      'right' => array(
-        0 => 'title',
-        2 => 'group_date_location',
-        3 => 'field_description',
-        4 => 'node_link',
-        5 => 'field_event_date',
-        6 => 'field_event_location',
-      ),
       'left' => array(
-        1 => 'field_image',
+        0 => 'field_image',
+      ),
+      'right' => array(
+        1 => 'title',
+        2 => 'dynamic_field_1',
+        3 => 'field_event_date',
+        4 => 'group_date_location',
+        5 => 'field_description',
+        6 => 'field_event_location',
+        7 => 'node_link',
       ),
     ),
     'fields' => array(
-      'title' => 'right',
       'field_image' => 'left',
+      'title' => 'right',
+      'dynamic_field_1' => 'right',
+      'field_event_date' => 'right',
       'group_date_location' => 'right',
       'field_description' => 'right',
-      'node_link' => 'right',
-      'field_event_date' => 'right',
       'field_event_location' => 'right',
+      'node_link' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(

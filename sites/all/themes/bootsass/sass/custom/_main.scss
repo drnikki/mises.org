@@ -173,6 +173,9 @@ body {
   }
 }
 /* Search Customization */
+.search-label {
+  display: none;
+}
 .section-search {
   .main-content {
     .group-left {
@@ -187,6 +190,12 @@ body {
       border-left: 0 none;
       font-size: inherit;
     }
+  }
+  span.search-label {
+    display: inline;
+  }
+  p.search-label {
+    display: block;
   }
 }
 .search-form {
@@ -214,4 +223,7 @@ body {
       background: transparent;
     }
   }
+}
+.form-item-retain-filters {
+  display: none;
 }

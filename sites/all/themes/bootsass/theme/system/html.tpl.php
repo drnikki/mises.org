@@ -52,8 +52,9 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <!-- typekit -->
-  <script type="text/javascript" src="//use.typekit.net/wkr0yie.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>  <?php print $styles; ?>
+  <script src="//use.typekit.net/dnx0qjf.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <?php print $styles; ?>
   <!-- HTML5 element support for IE6-8 -->
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
