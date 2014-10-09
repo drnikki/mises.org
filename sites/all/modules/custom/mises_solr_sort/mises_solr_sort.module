@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_apachesolr_query_prepare().
+ */
+function mises_solr_sort_apachesolr_query_prepare($query) {
+  $keywords = $query->getParam('q');
+  if (empty($keywords)) {
+    $query->setSolrsort('ds_created', 'desc');
+  }
+}
