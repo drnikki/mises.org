@@ -378,16 +378,16 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '[site:url]',
       ),
       'dcterms.title' => array(
-        'value' => '[site:name]',
+        'value' => '[site:name] | [current-page:title]',
       ),
       'dcterms.identifier' => array(
         'value' => '[site:url]',
       ),
-      'og:type' => array(
-        'value' => 'website',
-      ),
       'og:title' => array(
         'value' => '[site:name]',
+      ),
+      'og:type' => array(
+        'value' => 'website',
       ),
       'og:url' => array(
         'value' => '[site:url]',
