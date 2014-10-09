@@ -21,6 +21,7 @@ features[ds_field_settings][] = node|job_posting_|teaser
 features[ds_layout_settings][] = node|job_posting_|full
 features[ds_layout_settings][] = node|job_posting_|print
 features[ds_layout_settings][] = node|job_posting_|simple_teaser
+features[ds_layout_settings][] = node|job_posting_|teaser
 features[features_api][] = api:2
 features[field_base][] = field_closing_date
 features[field_base][] = field_contact_information
