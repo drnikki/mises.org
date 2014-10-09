@@ -22,10 +22,12 @@ function _mises_solr_search_manage_solr_write_access() {
   }
 
   // Do nothing if this is not hosted on devmises.org or is the master-content site:
-  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE ||
-    strpos($_SERVER['HTTP_HOST'], 'master-content.mises.devmises.org') !== FALSE) {
+  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE && 
+    (strpos($_SERVER['HTTP_HOST'], 'dev.mises.org.468elmp01.blackmesh.com') !== FALSE ||
+     strpos($_SERVER['HTTP_HOST'], 'mises.org') !== FALSE)) {
     return;
-  }
+  } 
+
 
   // Load the Solr environment(s) (Please note that this function handles caches.):
   $solr_environments = apachesolr_load_all_environments();
@@ -65,8 +67,9 @@ function mises_solr_search_init() {
  */
 function mises_solr_search_form_apachesolr_environment_edit_form_alter(&$form, &$form_state, $form_id) {
   // Do nothing if this is not hosted on devmises.org or if this is master-content.mises.devmises.org:
-  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE ||
-    strpos($_SERVER['HTTP_HOST'], 'master-content.mises.devmises.org') !== FALSE) {
+  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE &&
+    (strpos($_SERVER['HTTP_HOST'], 'dev.mises.org.468elmp01.blackmesh.com') !== FALSE ||
+     strpos($_SERVER['HTTP_HOST'], 'mises.org') !== FALSE)) {
     return;
   }
   
