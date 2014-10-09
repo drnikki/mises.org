@@ -1,0 +1,5 @@
+name = Mises Solr Author Fix
+description = Provides process for copying author data into a hidden text field for indexing.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0
