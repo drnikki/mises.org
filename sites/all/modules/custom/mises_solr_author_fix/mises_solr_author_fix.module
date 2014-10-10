@@ -80,7 +80,7 @@ function _mises_solr_author_fix_execute_copy($offset, $limit, $show_output = FAL
     return;
   }
 
-  $library_item_query = db_query("SELECT nid,title FROM node WHERE type='library_item' AND status=1 AND nid=13165 " .
+  $library_item_query = db_query("SELECT nid,title FROM node WHERE type='library_item' AND status=1 " .
     "ORDER BY changed DESC " .
     "LIMIT $limit OFFSET $offset;");
   foreach ($library_item_query as $lib_item_result) {
