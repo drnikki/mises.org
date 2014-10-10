@@ -13,10 +13,24 @@ var Drupal = Drupal || {};
   Drupal.behaviors.solrFacetChanges = {
     attach: function(context) {
       var staticLabelApplied = false;
+      var hiddenFacets = [
+        "Online Text",
+        "Online Texts",
+        "Quotes",
+        "Online Text",
+        "Static Page",
+        "Institute Fellowship",
+        "Campaign",
+        "Membership Level",
+        "Scholarship",
+        "Job Posting"];
       $('.block-facetapi ul li a').each(function () {
         $(this).contents().each(function () {
           if ($(this).prop('tagName') === undefined) {
-            if ($(this).text().indexOf('Online Text') != -1 || $(this).text().indexOf('Quotes') != -1) {
+            var facet = $(this).text().split('(');
+            facet = $.trim(facet[0]);
+            var inHide = $.inArray(facet,hiddenFacets);
+            if (inHide != -1) {
               $(this).parent().parent().remove();
             }
           }
