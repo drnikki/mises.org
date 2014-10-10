@@ -1625,7 +1625,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Media type',
+    'title' => 'Library type',
     'visibility' => 0,
   );
 

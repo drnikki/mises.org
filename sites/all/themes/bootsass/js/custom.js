@@ -108,7 +108,7 @@ var Drupal = Drupal || {};
         });
         
         // Run height sizer last
-        implementEqualHeight();
+        //implementEqualHeight();
         textResizer();
         
         //Smooth scrolling
@@ -128,7 +128,9 @@ var Drupal = Drupal || {};
         });
         
       }); 
-
+      $(window).load(function() {
+        implementEqualHeight();
+      });      
 
       $(window).resize(function() {
         implementEqualHeight();
