@@ -3509,8 +3509,9 @@ print \'<div class="panel-heading \' . $random_class . \'"><div class="panel-tit
   $ds_field->properties = array(
     'code' => array(
       'value' => '<?php
-foreach($entity->field_library_item_tree[\'und\'] as $term) {
-  $term_tid = $term[\'tid\'];
+//foreach($entity->field_library_item_tree[\'und\'] as $term) {
+  //$term_tid = $term[\'tid\'];
+  $term_tid = $entity->field_library_item_tree[\'und\'][0][\'tid\'];
   //this will be your top parent term if any was found
   $top_parent_term = array();
   $parent_terms = taxonomy_get_parents_all($term_tid);
@@ -3526,7 +3527,7 @@ foreach($entity->field_library_item_tree[\'und\'] as $term) {
   if(isset($top_parent_term->name)) {
      print $top_parent_term->name;
   }
-}
+//}
 ?>',
       'format' => 'ds_code',
     ),
