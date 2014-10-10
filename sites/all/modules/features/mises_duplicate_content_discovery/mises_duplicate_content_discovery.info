@@ -1,0 +1,7 @@
+name = Mises Duplicate Content Discovery
+core = 7.x
+package = Debugging
+version = 7.x-1.0
+project = mises_duplicate_content_discovery
+dependencies[] = remove_duplicates
+features[features_api][] = api:2
