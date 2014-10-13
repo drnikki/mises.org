@@ -33,7 +33,8 @@
     text-transform: uppercase;
   }
   span:not(.tag-label) + span:before {
-    content: ", ";
+    content: ",";
+    padding-right: 3px;
   }
   a {
     color: $gray;

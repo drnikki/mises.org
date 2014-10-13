@@ -453,20 +453,27 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'dynamic_field_1' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'show_title' => 0,
         'title_wrapper' => '',
-        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:0:"";s:5:"title";s:0:"";s:4:"body";s:73:"<p class="search-label tags"><span class="tag-label bold">Blog</span></p>";s:6:"format";s:9:"full_html";s:10:"substitute";i:0;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:0:"";s:5:"title";s:0:"";s:4:"body";s:4:"Blog";s:6:"format";s:7:"ds_code";s:10:"substitute";i:0;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
         'load_terms' => 0,
-        'ft' => array(),
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'search-label type bold',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
         'conditions' => array(),
       ),
     ),
     'title' => array(
-      'weight' => '0',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -478,7 +485,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '2',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -487,6 +494,34 @@ function display_suite_shared_ds_field_settings_info() {
         'class' => 'read-more',
         'ft' => array(),
         'conditions' => array(),
+      ),
+    ),
+    'post_date' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'ds_post_date_month_day_year',
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'date',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'field_author_1' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'author',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
       ),
     ),
     'field_image_collection' => array(
@@ -4075,20 +4110,26 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
-      'right' => array(
-        0 => 'title',
-        2 => 'dynamic_field_1',
-        3 => 'body',
-        4 => 'node_link',
-      ),
       'left' => array(
-        1 => 'field_image_collection',
+        0 => 'field_image_collection',
+      ),
+      'right' => array(
+        1 => 'dynamic_field_1',
+        2 => 'post_date',
+        3 => 'title',
+        4 => 'field_author_1',
+        5 => 'group_date_author',
+        6 => 'body',
+        7 => 'node_link',
       ),
     ),
     'fields' => array(
-      'title' => 'right',
       'field_image_collection' => 'left',
       'dynamic_field_1' => 'right',
+      'post_date' => 'right',
+      'title' => 'right',
+      'field_author_1' => 'right',
+      'group_date_author' => 'right',
       'body' => 'right',
       'node_link' => 'right',
     ),
