@@ -681,7 +681,7 @@ function mises_library_item_field_default_field_instances() {
           'view_mode' => 'author_full_name',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -2753,7 +2753,7 @@ function mises_library_item_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'token' => array(
         'label' => 'above',
