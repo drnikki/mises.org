@@ -1,0 +1,9 @@
+name = Mises Caching Layer Settings
+description = Varnish / Memcached
+core = 7.x
+package = Performance Enhancements
+version = 7.x-1.0
+project = mises_caching_layer_settings
+dependencies[] = memcache_admin
+dependencies[] = varnish
+features[features_api][] = api:2
