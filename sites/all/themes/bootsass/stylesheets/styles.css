@@ -10854,9 +10854,10 @@ ul.accordion li {
 }
 /* line 35, ../sass/custom/_features.scss */
 .tags span:not(.tag-label) + span:before {
-  content: ", ";
+  content: ",";
+  padding-right: 3px;
 }
-/* line 38, ../sass/custom/_features.scss */
+/* line 39, ../sass/custom/_features.scss */
 .tags a {
   color: #788086;
 }
@@ -10864,40 +10865,40 @@ ul.accordion li {
 /*
 * DATE AUTHOR ON TEASERS AND NODES
 */
-/* line 46, ../sass/custom/_features.scss */
+/* line 47, ../sass/custom/_features.scss */
 .group-date-author span.type {
   padding-right: 5px;
   color: #00426b;
   text-transform: uppercase;
 }
-/* line 50, ../sass/custom/_features.scss */
+/* line 51, ../sass/custom/_features.scss */
 .group-date-author span.type:after {
   display: inline-block;
   width: 14px;
   content: "\2022";
   text-align: center;
 }
-/* line 57, ../sass/custom/_features.scss */
+/* line 58, ../sass/custom/_features.scss */
 .group-date-author .date {
   color: #00426b;
   text-transform: uppercase;
   font-weight: 600;
 }
-/* line 62, ../sass/custom/_features.scss */
+/* line 63, ../sass/custom/_features.scss */
 .group-date-author span.author {
   padding-left: 10px;
 }
-/* line 64, ../sass/custom/_features.scss */
+/* line 65, ../sass/custom/_features.scss */
 .group-date-author span.author:before {
   display: inline-block;
   width: 14px;
   content: "\2022";
 }
-/* line 69, ../sass/custom/_features.scss */
+/* line 70, ../sass/custom/_features.scss */
 .group-date-author span.author a {
   color: #00426b;
 }
-/* line 72, ../sass/custom/_features.scss */
+/* line 73, ../sass/custom/_features.scss */
 .group-date-author span.author div, .group-date-author span.author p {
   display: inline;
   color: #00426b;
@@ -10906,32 +10907,32 @@ ul.accordion li {
 /*
 * DATE LOCATION ON TEASERS AND NODES
 */
-/* line 82, ../sass/custom/_features.scss */
+/* line 83, ../sass/custom/_features.scss */
 .group-date-location span.location {
   padding-left: 10px;
 }
-/* line 84, ../sass/custom/_features.scss */
+/* line 85, ../sass/custom/_features.scss */
 .group-date-location span.location:before {
   display: inline-block;
   width: 14px;
   content: "\2022";
 }
-/* line 89, ../sass/custom/_features.scss */
+/* line 90, ../sass/custom/_features.scss */
 .group-date-location span.location a {
   color: #00426b;
 }
-/* line 93, ../sass/custom/_features.scss */
+/* line 94, ../sass/custom/_features.scss */
 .group-date-location span.type {
   padding-right: 5px;
 }
-/* line 95, ../sass/custom/_features.scss */
+/* line 96, ../sass/custom/_features.scss */
 .group-date-location span.type:after {
   display: inline-block;
   width: 14px;
   content: "\2022";
   text-align: center;
 }
-/* line 102, ../sass/custom/_features.scss */
+/* line 103, ../sass/custom/_features.scss */
 .group-date-location span.reg-link {
   padding-left: 10px;
 }
@@ -10939,7 +10940,7 @@ ul.accordion li {
 /*
 *   WIDE MEDIA PLAYER
 */
-/* line 109, ../sass/custom/_features.scss */
+/* line 110, ../sass/custom/_features.scss */
 .media-player {
   clear: both;
 }
@@ -10947,21 +10948,21 @@ ul.accordion li {
 /*
 * SHARING
 */
-/* line 116, ../sass/custom/_features.scss */
+/* line 117, ../sass/custom/_features.scss */
 .group-sharing {
   clear: both;
   padding: 16px 0;
   border-bottom: 1px solid #c8cdd0;
 }
-/* line 120, ../sass/custom/_features.scss */
+/* line 121, ../sass/custom/_features.scss */
 .group-sharing .copyright {
   padding-top: 16px;
 }
-/* line 123, ../sass/custom/_features.scss */
+/* line 124, ../sass/custom/_features.scss */
 .group-sharing .print {
   padding-top: 16px;
 }
-/* line 125, ../sass/custom/_features.scss */
+/* line 126, ../sass/custom/_features.scss */
 .group-sharing .print .glyphicon, .group-sharing .print .pagination > li.prev a, .pagination > li.prev .group-sharing .print a, .group-sharing .print .pagination > li.next a, .pagination > li.next .group-sharing .print a, .group-sharing .print .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-prev .group-sharing .print a, .group-sharing .print .sidebar .pager > li.date-next a, .sidebar .pager > li.date-next .group-sharing .print a {
   top: 4px;
   width: 25px;
@@ -10971,34 +10972,34 @@ ul.accordion li {
   font-size: 25px;
 }
 
-/* line 135, ../sass/custom/_features.scss */
+/* line 136, ../sass/custom/_features.scss */
 #widgets-element-addthis-share {
   height: 62px;
 }
-/* line 137, ../sass/custom/_features.scss */
+/* line 138, ../sass/custom/_features.scss */
 #widgets-element-addthis-share .widgets-element {
   padding-right: 5px;
 }
-/* line 140, ../sass/custom/_features.scss */
+/* line 141, ../sass/custom/_features.scss */
 #widgets-element-addthis-share .addthis_counter .addthis_button_expanded {
   height: 37px;
 }
 
-/* line 144, ../sass/custom/_features.scss */
+/* line 145, ../sass/custom/_features.scss */
 #bottom-social-share {
   padding: 8px 0 24px;
 }
-/* line 146, ../sass/custom/_features.scss */
+/* line 147, ../sass/custom/_features.scss */
 #bottom-social-share .social-widget {
   display: inline-block;
 }
-/* line 148, ../sass/custom/_features.scss */
+/* line 149, ../sass/custom/_features.scss */
 #bottom-social-share .social-widget.facebook-widget {
   position: relative;
   top: -7px;
   width: 85px;
 }
-/* line 153, ../sass/custom/_features.scss */
+/* line 154, ../sass/custom/_features.scss */
 #bottom-social-share .social-widget.twitter-widget {
   width: 110px;
 }
@@ -11006,14 +11007,14 @@ ul.accordion li {
 /*
 * FOOTNOTES GROUP -- MAY ABSTRACT THIS
 */
-/* line 165, ../sass/custom/_features.scss */
+/* line 166, ../sass/custom/_features.scss */
 .group-footnotes h3 {
   color: #38709e;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 15px;
 }
-/* line 171, ../sass/custom/_features.scss */
+/* line 172, ../sass/custom/_features.scss */
 .group-footnotes p {
   font-size: 13px;
 }
@@ -11021,7 +11022,7 @@ ul.accordion li {
 /*
 * COMMENTING
 */
-/* line 179, ../sass/custom/_features.scss */
+/* line 180, ../sass/custom/_features.scss */
 .comment-title h3 {
   color: #38709e;
   text-transform: uppercase;
@@ -11030,15 +11031,15 @@ ul.accordion li {
 /*
 * PHOTO ALBUM
 */
-/* line 189, ../sass/custom/_features.scss */
+/* line 190, ../sass/custom/_features.scss */
 .view-photo-album .view-content {
   padding: 16px 16px 6px;
 }
-/* line 193, ../sass/custom/_features.scss */
+/* line 194, ../sass/custom/_features.scss */
 .view-photo-album .views-row {
   padding-bottom: 6px;
 }
-/* line 196, ../sass/custom/_features.scss */
+/* line 197, ../sass/custom/_features.scss */
 .view-photo-album img {
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -11046,7 +11047,7 @@ ul.accordion li {
   border: 3px solid #c8cdd0;
   border-radius: 0%;
 }
-/* line 200, ../sass/custom/_features.scss */
+/* line 201, ../sass/custom/_features.scss */
 .view-photo-album img:hover {
   border-radius: 50%;
 }
@@ -11054,25 +11055,25 @@ ul.accordion li {
 /*
 * CALENDAR
 */
-/* line 210, ../sass/custom/_features.scss */
+/* line 211, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar a {
   color: #fff;
 }
-/* line 213, ../sass/custom/_features.scss */
+/* line 214, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table {
   margin-bottom: 16px;
   width: 100%;
 }
-/* line 216, ../sass/custom/_features.scss */
+/* line 217, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table th {
   text-align: center;
 }
-/* line 219, ../sass/custom/_features.scss */
+/* line 220, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td {
   vertical-align: middle;
   text-align: center;
 }
-/* line 222, ../sass/custom/_features.scss */
+/* line 223, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .month {
   margin: 2px auto;
   width: 30px;
@@ -11080,29 +11081,29 @@ ul.accordion li {
   border-radius: 50%;
   line-height: 30px;
 }
-/* line 228, ../sass/custom/_features.scss */
+/* line 229, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .month.mini-day-on {
   background-color: #729949;
 }
-/* line 233, ../sass/custom/_features.scss */
+/* line 234, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td.today .month {
   background-color: #206093;
 }
-/* line 237, ../sass/custom/_features.scss */
+/* line 238, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar table td .calendar-empty {
   display: none;
 }
-/* line 242, ../sass/custom/_features.scss */
+/* line 243, ../sass/custom/_features.scss */
 .view-mises-calendar.sidebar .date-nav-wrapper .date-heading h3 {
   font-size: 15px;
 }
-/* line 246, ../sass/custom/_features.scss */
+/* line 247, ../sass/custom/_features.scss */
 .view-mises-calendar .pager {
   margin: 0;
 }
 
 /* overrides */
-/* line 252, ../sass/custom/_features.scss */
+/* line 253, ../sass/custom/_features.scss */
 .date-nav-wrapper .date-nav {
   margin: 0 0 16px;
   padding: 0;
@@ -11111,14 +11112,14 @@ ul.accordion li {
 /*
 * EVENT PAGE
 */
-/* line 262, ../sass/custom/_features.scss */
+/* line 263, ../sass/custom/_features.scss */
 #registration-form {
   clear: both;
   margin-top: 16px;
 }
 
 /* Add to calendar */
-/* line 267, ../sass/custom/_features.scss */
+/* line 268, ../sass/custom/_features.scss */
 .addtocal {
   position: relative;
   display: inline-block;
@@ -11129,14 +11130,14 @@ ul.accordion li {
   font-size: 0;
   cursor: pointer;
 }
-/* line 276, ../sass/custom/_features.scss */
+/* line 277, ../sass/custom/_features.scss */
 .addtocal:before {
   color: #00426b;
   content: "\e109";
   font-size: 15px;
   font-family: 'Glyphicons Halflings';
 }
-/* line 282, ../sass/custom/_features.scss */
+/* line 283, ../sass/custom/_features.scss */
 .addtocal:hover:after {
   position: absolute;
   bottom: 16px;
@@ -11153,7 +11154,7 @@ ul.accordion li {
   font-size: 13px;
 }
 
-/* line 299, ../sass/custom/_features.scss */
+/* line 300, ../sass/custom/_features.scss */
 ul.addtocal_menu {
   position: absolute;
   z-index: 50;
@@ -11169,41 +11170,41 @@ ul.addtocal_menu {
   list-style-type: none;
   text-transform: none;
 }
-/* line 313, ../sass/custom/_features.scss */
+/* line 314, ../sass/custom/_features.scss */
 ul.addtocal_menu li {
   margin: 0px;
   padding: 0px;
 }
-/* line 316, ../sass/custom/_features.scss */
+/* line 317, ../sass/custom/_features.scss */
 ul.addtocal_menu li a {
   display: block;
   padding: 5px;
   color: #38709e;
   text-decoration: none;
 }
-/* line 321, ../sass/custom/_features.scss */
+/* line 322, ../sass/custom/_features.scss */
 ul.addtocal_menu li a:hover {
   background: #e4ebee;
   text-decoration: none;
 }
 
 /* LIST GROUPS AND ATTACHMENT LISTS */
-/* line 330, ../sass/custom/_features.scss */
+/* line 331, ../sass/custom/_features.scss */
 .list-group, .attachments ul {
   overflow: hidden;
 }
-/* line 332, ../sass/custom/_features.scss */
+/* line 333, ../sass/custom/_features.scss */
 .list-group h3, .attachments ul h3 {
   margin: 0;
 }
 
 /* EXTEND BOOTSTRAP COLLAPSE */
-/* line 345, ../sass/custom/_features.scss */
+/* line 346, ../sass/custom/_features.scss */
 .accordion-toggle {
   cursor: pointer;
 }
 
-/* line 348, ../sass/custom/_features.scss */
+/* line 349, ../sass/custom/_features.scss */
 .accordion-toggle:before {
   padding-right: 5px;
   content: "\e114";
@@ -11212,7 +11213,7 @@ ul.addtocal_menu li a:hover {
   font-family: 'Glyphicons Halflings';
 }
 
-/* line 354, ../sass/custom/_features.scss */
+/* line 355, ../sass/custom/_features.scss */
 .accordion-toggle.collapsed:before {
   /* symbol for "collapsed" panels */
   content: "\e080";
@@ -11220,17 +11221,17 @@ ul.addtocal_menu li a:hover {
 }
 
 /* PROFILE */
-/* line 359, ../sass/custom/_features.scss */
+/* line 360, ../sass/custom/_features.scss */
 #profile-accordion {
   clear: both;
 }
 
-/* line 363, ../sass/custom/_features.scss */
+/* line 364, ../sass/custom/_features.scss */
 .group-contact span {
   display: inline-block;
   padding-right: 5px;
 }
-/* line 368, ../sass/custom/_features.scss */
+/* line 369, ../sass/custom/_features.scss */
 .group-contact .twitter a, .group-contact .facebook a {
   display: inline-block;
   width: 20px;
@@ -11241,12 +11242,12 @@ ul.addtocal_menu li a:hover {
   background-repeat: no-repeat;
   text-indent: -9999em;
 }
-/* line 380, ../sass/custom/_features.scss */
+/* line 381, ../sass/custom/_features.scss */
 .group-contact .facebook a {
   background-image: url(/sites/default/files/public/styles/menu_icon/public/menu_icons/menu_icon_774.png);
 }
 
-/* line 385, ../sass/custom/_features.scss */
+/* line 386, ../sass/custom/_features.scss */
 .quote {
   position: relative;
   overflow: hidden;
@@ -11254,7 +11255,7 @@ ul.addtocal_menu li a:hover {
   padding: 20px 20px 20px 60px;
   background-color: #e4ebee;
 }
-/* line 392, ../sass/custom/_features.scss */
+/* line 393, ../sass/custom/_features.scss */
 .quote:before {
   position: absolute;
   top: 10px;
@@ -11272,48 +11273,48 @@ ul.addtocal_menu li a:hover {
 }
 
 /* DIRECTORY */
-/* line 400, ../sass/custom/_features.scss */
+/* line 401, ../sass/custom/_features.scss */
 .view-profile-lists .views-summary {
   display: block;
   padding: 20px;
   text-align: center;
   word-break: break-word;
 }
-/* line 405, ../sass/custom/_features.scss */
+/* line 406, ../sass/custom/_features.scss */
 .view-profile-lists .views-summary span {
   padding: 0 5px;
 }
-/* line 409, ../sass/custom/_features.scss */
+/* line 410, ../sass/custom/_features.scss */
 .view-profile-lists h2 {
   color: #38709e;
   font-family: "crimson_text", Georgia, "Times New Roman", Times, serif;
 }
 
-/* line 415, ../sass/custom/_features.scss */
+/* line 416, ../sass/custom/_features.scss */
 .profile-item {
   clear: right;
 }
-/* line 417, ../sass/custom/_features.scss */
+/* line 418, ../sass/custom/_features.scss */
 .profile-item:nth-of-type(4n+1) {
   clear: left;
 }
 
 /* SOCIAL MEDIA PAGES */
-/* line 423, ../sass/custom/_features.scss */
+/* line 424, ../sass/custom/_features.scss */
 .social-media-submenu a {
   text-transform: uppercase;
   font-weight: bold;
 }
-/* line 426, ../sass/custom/_features.scss */
+/* line 427, ../sass/custom/_features.scss */
 .social-media-submenu a.active {
   background: #e4ebee;
 }
-/* line 430, ../sass/custom/_features.scss */
+/* line 431, ../sass/custom/_features.scss */
 .social-media-submenu img {
   margin-right: 5px;
 }
 
-/* line 436, ../sass/custom/_features.scss */
+/* line 437, ../sass/custom/_features.scss */
 .social-media-categories a span.glyphicon {
   width: 24px;
   height: 24px;
@@ -11322,69 +11323,69 @@ ul.addtocal_menu li a:hover {
   line-height: 24px;
   margin-left: 6px;
 }
-/* line 440, ../sass/custom/_features.scss */
+/* line 441, ../sass/custom/_features.scss */
 .social-media-categories a:hover {
   color: #38709e;
 }
-/* line 442, ../sass/custom/_features.scss */
+/* line 443, ../sass/custom/_features.scss */
 .social-media-categories a:hover span.glyphicon {
   background-color: #38709e;
 }
 
 /* NEWSLETTER FORM */
-/* line 455, ../sass/custom/_features.scss */
+/* line 456, ../sass/custom/_features.scss */
 .newsletter-form .mc-field-group {
   margin: 20px 0;
 }
-/* line 457, ../sass/custom/_features.scss */
+/* line 458, ../sass/custom/_features.scss */
 .newsletter-form .mc-field-group h3 {
   margin-top: 0;
 }
-/* line 461, ../sass/custom/_features.scss */
+/* line 462, ../sass/custom/_features.scss */
 .newsletter-form ul {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
   list-style: none outside none;
 }
-/* line 467, ../sass/custom/_features.scss */
+/* line 468, ../sass/custom/_features.scss */
 .newsletter-form ul li {
   list-style: none outside none;
 }
-/* line 470, ../sass/custom/_features.scss */
+/* line 471, ../sass/custom/_features.scss */
 .newsletter-form ul li input {
   margin: 0 5px 0 0;
 }
 
 /* FANCY MEDIA HANDLING */
-/* line 478, ../sass/custom/_features.scss */
+/* line 479, ../sass/custom/_features.scss */
 .body-content.embedded-media p + .file {
   clear: both;
   margin-bottom: 16px;
   text-align: center;
 }
-/* line 483, ../sass/custom/_features.scss */
+/* line 484, ../sass/custom/_features.scss */
 .body-content.embedded-media img {
   width: auto !important;
   height: auto !important;
 }
 
 /* JOB POSTING */
-/* line 491, ../sass/custom/_features.scss */
+/* line 492, ../sass/custom/_features.scss */
 .node-type-job-posting- .tags span:not(.tag-label) {
   color: #494e54;
   font-size: 15px;
 }
 
-/* line 497, ../sass/custom/_features.scss */
+/* line 498, ../sass/custom/_features.scss */
 .job-detail {
   margin-bottom: 12.5px;
 }
-/* line 499, ../sass/custom/_features.scss */
+/* line 500, ../sass/custom/_features.scss */
 .job-detail p {
   margin-bottom: 0;
 }
-/* line 501, ../sass/custom/_features.scss */
+/* line 502, ../sass/custom/_features.scss */
 .job-detail p:not(.tags) {
   padding-left: 12px;
 }

@@ -103,6 +103,37 @@ function mises_blog_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_date_author|node|blog|teaser';
+  $field_group->group_name = 'group_date_author';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'blog';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Date Author',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_author_1',
+      1 => 'dynamic_field_1',
+      2 => 'post_date',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Date Author',
+      'instance_settings' => array(
+        'classes' => 'group-date-author',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_date_author|node|blog|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_media|node|blog|form';
   $field_group->group_name = 'group_media';
   $field_group->entity_type = 'node';

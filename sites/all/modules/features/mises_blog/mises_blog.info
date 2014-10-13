@@ -29,6 +29,7 @@ features[features_api][] = api:2
 features[field_group][] = group_addit_blog_information|node|blog|form
 features[field_group][] = group_blog_information|node|blog|form
 features[field_group][] = group_date_author|node|blog|full
+features[field_group][] = group_date_author|node|blog|teaser
 features[field_group][] = group_media|node|blog|form
 features[field_group][] = group_tags|node|blog|full
 features[field_instance][] = node-blog-body
