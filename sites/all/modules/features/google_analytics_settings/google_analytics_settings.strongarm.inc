@@ -14,14 +14,14 @@ function google_analytics_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'googleanalytics_account';
-  $strongarm->value = 'UA-50803333-1';
+  $strongarm->value = 'UA-293348-1';
   $export['googleanalytics_account'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'googleanalytics_cache';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['googleanalytics_cache'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -133,7 +133,12 @@ user/*/*';
     1 => 0,
     2 => 0,
     3 => 0,
+    7 => 0,
     4 => 0,
+    9 => 0,
+    8 => 0,
+    6 => 0,
+    5 => 0,
   );
   $export['googleanalytics_roles'] = $strongarm;
 
