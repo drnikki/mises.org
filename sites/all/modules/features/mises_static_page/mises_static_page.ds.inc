@@ -228,7 +228,13 @@ function mises_static_page_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        '' => '',
+        'row' => 'row',
+      ),
+      'left' => array(
+        'col-sm-4' => 'col-sm-4',
+      ),
+      'right' => array(
+        'col-sm-8' => 'col-sm-8',
       ),
     ),
     'wrappers' => array(

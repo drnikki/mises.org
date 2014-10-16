@@ -743,7 +743,7 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'course_title_linked' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -754,6 +754,26 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'dynamic_field_1' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:0:"";s:5:"title";s:0:"";s:4:"body";s:13:"Online Course";s:6:"format";s:7:"ds_code";s:10:"substitute";i:0;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
+        'load_terms' => 0,
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'search-label date bold',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
         ),
         'conditions' => array(),
       ),
@@ -1146,7 +1166,7 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'follow_mises_institute' => array(
-      'weight' => '33',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -2733,8 +2753,28 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'person_profile';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
+    'dynamic_field_1' => array(
+      'weight' => '12',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:0:"";s:5:"title";s:0:"";s:4:"body";s:7:"PROFILE";s:6:"format";s:7:"ds_code";s:10:"substitute";i:0;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
+        'load_terms' => 0,
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'search-label bold',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -2746,7 +2786,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '4',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -2894,7 +2934,7 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'course_title_linked' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -2909,9 +2949,24 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
-    'body' => array(
+    'dynamic_field_1' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
       'formatter_settings' => array(
-        'ft' => array(),
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:0:"";s:5:"title";s:0:"";s:4:"body";s:9:"Bookstore";s:6:"format";s:7:"ds_code";s:10:"substitute";i:0;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
+        'load_terms' => 0,
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'search-label date bold',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+        'conditions' => array(),
       ),
     ),
     'field_image' => array(
@@ -4412,20 +4467,24 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
-      'right' => array(
-        0 => 'course_title_linked',
-        1 => 'body',
-        2 => 'field_link_to_external_listing_',
-      ),
       'left' => array(
-        3 => 'field_image_collection',
+        0 => 'field_image_collection',
+      ),
+      'right' => array(
+        1 => 'dynamic_field_1',
+        2 => 'course_title_linked',
+        3 => 'group_date_author',
+        4 => 'body',
+        5 => 'field_link_to_external_listing_',
       ),
     ),
     'fields' => array(
+      'field_image_collection' => 'left',
+      'dynamic_field_1' => 'right',
       'course_title_linked' => 'right',
+      'group_date_author' => 'right',
       'body' => 'right',
       'field_link_to_external_listing_' => 'right',
-      'field_image_collection' => 'left',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -5620,22 +5679,26 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
-      'right' => array(
-        0 => 'title',
-        2 => 'field_bio_summary',
-        3 => 'body',
-        4 => 'node_link',
-      ),
       'left' => array(
-        1 => 'field_image_collection',
+        0 => 'field_image_collection',
+      ),
+      'right' => array(
+        1 => 'title',
+        2 => 'group_date_author',
+        3 => 'field_bio_summary',
+        4 => 'body',
+        5 => 'node_link',
+        6 => 'dynamic_field_1',
       ),
     ),
     'fields' => array(
-      'title' => 'right',
       'field_image_collection' => 'left',
+      'title' => 'right',
+      'group_date_author' => 'right',
       'field_bio_summary' => 'right',
       'body' => 'right',
       'node_link' => 'right',
+      'dynamic_field_1' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -5756,24 +5819,28 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
+      'left' => array(
+        0 => 'field_image',
+      ),
       'right' => array(
-        0 => 'course_title_linked',
-        1 => 'body',
-        3 => 'field_link_to_external_listing_',
+        1 => 'dynamic_field_1',
+        2 => 'course_title_linked',
+        3 => 'group_date_author',
+        4 => 'body',
+        5 => 'field_link_to_external_listing_',
       ),
       'ds_hidden' => array(
-        2 => 'field_product_id',
-      ),
-      'left' => array(
-        4 => 'field_image',
+        6 => 'field_product_id',
       ),
     ),
     'fields' => array(
-      'course_title_linked' => 'right',
-      'body' => 'right',
-      'field_product_id' => 'ds_hidden',
-      'field_link_to_external_listing_' => 'right',
       'field_image' => 'left',
+      'dynamic_field_1' => 'right',
+      'course_title_linked' => 'right',
+      'group_date_author' => 'right',
+      'body' => 'right',
+      'field_link_to_external_listing_' => 'right',
+      'field_product_id' => 'ds_hidden',
     ),
     'classes' => array(
       'layout_class' => array(
