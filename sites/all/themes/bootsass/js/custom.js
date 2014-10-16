@@ -173,7 +173,8 @@ var Drupal = Drupal || {};
           //loop though the elements and get their heights
           children.each(function () {
               //if bigger than the default set to default
-              if ($(this).outerHeight() > options.minHeight) options.minHeight= $(this).outerHeight();
+              console.log($(this).height(), '<height outerHeight>', $(this).outerHeight());
+              if ($(this).height() > options.minHeight) options.minHeight= $(this).height();
               //if maxheight is set
               if(options.maxHeight !== null){
                   if(options.minHeight > options.maxHeight) options.minHeight= options.maxHeight;
