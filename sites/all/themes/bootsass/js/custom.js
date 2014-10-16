@@ -23,22 +23,22 @@ var Drupal = Drupal || {};
         $('.bottom-blocks .panel-heading .panel-title').equalHeight();
         $('.bottom-blocks .panel-body').equalHeight();
         $('.bottom-blocks .panel-footer').equalHeight();
-        $('.latest-library-content .views-row > .col-sm-4').equalHeight();
         $('.latest-library-content .views-row > .col-sm-4 .img-responsive').equalHeight();
         $('.latest-library-content .views-row > .col-sm-4 .panel-heading .panel-title').equalHeight();
         $('.latest-library-content .views-row > .col-sm-4 .panel-body').equalHeight();
         $('.latest-library-content .views-row > .col-sm-4 .panel-footer').equalHeight();
+        $('.latest-library-content .views-row > .col-sm-4').equalHeight();
         $('.bottom-blocks .view-mises-library').equalHeight();
-        $('.row.featured .col-xs-6').equalHeight();
         $('.row.featured .col-xs-6 .img-responsive').equalHeight();
         $('.row.featured .col-xs-6 .panel-heading .panel-title').equalHeight();
         $('.row.featured .col-xs-6 .panel-body').equalHeight();
         $('.row.featured .col-xs-6 .panel-footer').equalHeight();
-        $('.row.video .col-xs-6').equalHeight();
+        $('.row.featured .col-xs-6').equalHeight();
         $('.row.video .col-xs-6 .img-responsive').equalHeight();
         $('.row.video .col-xs-6 .panel-heading .panel-title').equalHeight();
         $('.row.video .col-xs-6 .panel-body').equalHeight();
         $('.row.video .col-xs-6 .panel-footer').equalHeight();
+        $('.row.video .col-xs-6').equalHeight();
 
         //var sidebarHeight = $("div.region-sidebar-second").height() + $("div.region-sidebar-second-top").height();
         var sidebarHeight = $(".sidebar").height();
@@ -173,7 +173,8 @@ var Drupal = Drupal || {};
           //loop though the elements and get their heights
           children.each(function () {
               //if bigger than the default set to default
-              if ($(this).outerHeight() > options.minHeight) options.minHeight= $(this).outerHeight();
+              console.log($(this).height(), '<height outerHeight>', $(this).outerHeight());
+              if ($(this).height() > options.minHeight) options.minHeight= $(this).height();
               //if maxheight is set
               if(options.maxHeight !== null){
                   if(options.minHeight > options.maxHeight) options.minHeight= options.maxHeight;
