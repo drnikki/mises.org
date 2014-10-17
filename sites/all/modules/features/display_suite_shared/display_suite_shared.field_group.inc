@@ -13,6 +13,123 @@ function display_suite_shared_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_date_author|node|course|teaser';
+  $field_group->group_name = 'group_date_author';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'course';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Date Autho',
+    'weight' => '2',
+    'children' => array(
+      0 => 'dynamic_field_1',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Date Autho',
+      'instance_settings' => array(
+        'classes' => 'group-date-author',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_date_author|node|course|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_date_author|node|person_profile|teaser';
+  $field_group->group_name = 'group_date_author';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'person_profile';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Date Author',
+    'weight' => '2',
+    'children' => array(
+      0 => 'dynamic_field_1',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Date Author',
+      'instance_settings' => array(
+        'classes' => 'group-date-author',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_date_author|node|person_profile|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_date_author|node|product|teaser';
+  $field_group->group_name = 'group_date_author';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'product';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Date Author',
+    'weight' => '3',
+    'children' => array(
+      0 => 'dynamic_field_1',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Date Author',
+      'instance_settings' => array(
+        'classes' => 'group-date-author',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_date_author|node|product|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_date_author|node|working_papers|teaser';
+  $field_group->group_name = 'group_date_author';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'working_papers';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Date Author',
+    'weight' => '1',
+    'children' => array(
+      0 => 'dynamic_field_1',
+      1 => 'post_date',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Date Author',
+      'instance_settings' => array(
+        'classes' => 'group-date-author',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_date_author|node|working_papers|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_heading|node|course|sidebar_teaser';
   $field_group->group_name = 'group_heading';
   $field_group->entity_type = 'node';
