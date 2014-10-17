@@ -512,6 +512,18 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-content',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'field_author_1' => array(
       'formatter_settings' => array(
         'ft' => array(
