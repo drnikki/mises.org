@@ -358,8 +358,8 @@ body.not-logged-in {
   border: 3px solid $gray-lighter;
 }
 
-/* FONTS AND TYPOGRAPHY 
-* @TODO: CONSIDER SEPARATE STYLESHEET
+/*
+* FONTS AND TYPOGRAPHY 
 */
 .bold {
   font-weight: 600;
@@ -494,6 +494,11 @@ a.external-link {
 
 .author a {
   color: inherit;
+}
+blockquote {
+  .body-content & {
+    @extend .clearfix;
+  }
 }
 
 /* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */

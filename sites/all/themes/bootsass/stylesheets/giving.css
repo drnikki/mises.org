@@ -7603,12 +7603,12 @@ button.close {
   }
 }
 /* line 14, ../sass/bootstrap/mixins/_clearfix.scss */
-.clearfix:before, .clearfix:after {
+.clearfix:before, .body-content blockquote:before, .clearfix:after, .body-content blockquote:after {
   content: " ";
   display: table;
 }
 /* line 19, ../sass/bootstrap/mixins/_clearfix.scss */
-.clearfix:after {
+.clearfix:after, .body-content blockquote:after {
   clear: both;
 }
 
@@ -9167,8 +9167,8 @@ body.not-logged-in .contextual-links-wrapper {
   border: 3px solid #e4ebee;
 }
 
-/* FONTS AND TYPOGRAPHY 
-* @TODO: CONSIDER SEPARATE STYLESHEET
+/*
+* FONTS AND TYPOGRAPHY 
 */
 /* line 364, ../sass/custom/_styles.scss */
 .bold {
@@ -9360,7 +9360,7 @@ a.external-link:hover span.glyphicon {
 }
 
 /* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
-/* line 500, ../sass/custom/_styles.scss */
+/* line 505, ../sass/custom/_styles.scss */
 .media-youtube-video,
 .file-video {
   position: relative;
@@ -9369,7 +9369,7 @@ a.external-link:hover span.glyphicon {
   height: 0;
 }
 
-/* line 506, ../sass/custom/_styles.scss */
+/* line 511, ../sass/custom/_styles.scss */
 .media-youtube-video iframe,
 .file-video video {
   position: absolute;
@@ -9382,7 +9382,7 @@ a.external-link:hover span.glyphicon {
 /* SLIDESHOW 
 *  Override flexslide styles
 */
-/* line 517, ../sass/custom/_styles.scss */
+/* line 522, ../sass/custom/_styles.scss */
 .flexslider {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -9391,27 +9391,27 @@ a.external-link:hover span.glyphicon {
   border: 0;
   background: transparent;
 }
-/* line 524, ../sass/custom/_styles.scss */
+/* line 529, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav li {
   background: red;
 }
-/* line 527, ../sass/custom/_styles.scss */
+/* line 532, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav a {
   text-shadow: none;
 }
-/* line 529, ../sass/custom/_styles.scss */
+/* line 534, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav a:before {
   font-size: 30px;
 }
 
-/* line 535, ../sass/custom/_styles.scss */
+/* line 540, ../sass/custom/_styles.scss */
 #slideshow, #media, #image {
   margin-right: 20px;
   padding-bottom: 6px;
   width: 240px;
 }
 
-/* line 543, ../sass/custom/_styles.scss */
+/* line 548, ../sass/custom/_styles.scss */
 html[contenteditable="true"] body {
   background-image: none;
 }
