@@ -1486,7 +1486,7 @@ img {
 }
 
 /* line 81, ../sass/bootstrap/_scaffolding.scss */
-.img-responsive, .img-responsive img {
+.img-responsive, .img-responsive img, .node-type-blog .body-content p img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -2113,7 +2113,7 @@ pre code {
 }
 
 /* line 14, ../sass/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .newsletter-form ul li, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .view-profile-lists h2, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .node-type-blog .body-content p img, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .newsletter-form ul li, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .view-profile-lists h2, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 10px;
@@ -2382,7 +2382,7 @@ pre code {
 
 @media (min-width: 768px) {
   /* line 33, ../sass/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .newsletter-form ul li, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .view-profile-lists h2 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .node-type-blog .body-content p img, .col-sm-6, .newsletter-form ul li, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .view-profile-lists h2 {
     float: left;
   }
 
@@ -2407,7 +2407,7 @@ pre code {
   }
 
   /* line 41, ../sass/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-5 {
+  .col-sm-5, .node-type-blog .body-content p img {
     width: 41.66667%;
   }
 
@@ -7610,12 +7610,12 @@ button.close {
   }
 }
 /* line 14, ../sass/bootstrap/mixins/_clearfix.scss */
-.clearfix:before, .clearfix:after {
+.clearfix:before, .body-content blockquote:before, .clearfix:after, .body-content blockquote:after {
   content: " ";
   display: table;
 }
 /* line 19, ../sass/bootstrap/mixins/_clearfix.scss */
-.clearfix:after {
+.clearfix:after, .body-content blockquote:after {
   clear: both;
 }
 
@@ -8726,7 +8726,7 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] {
 * Drupal based overrides
 ********************/
 /* line 4, ../sass/drupal/_drupal.scss */
-.img-responsive img {
+.img-responsive img, .node-type-blog .body-content p img img {
   width: 100%;
 }
 
@@ -9174,8 +9174,8 @@ body.not-logged-in .contextual-links-wrapper {
   border: 3px solid #e4ebee;
 }
 
-/* FONTS AND TYPOGRAPHY 
-* @TODO: CONSIDER SEPARATE STYLESHEET
+/*
+* FONTS AND TYPOGRAPHY 
 */
 /* line 364, ../sass/custom/_styles.scss */
 .bold {
@@ -9369,7 +9369,7 @@ a.external-link:hover span.glyphicon {
 }
 
 /* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
-/* line 500, ../sass/custom/_styles.scss */
+/* line 505, ../sass/custom/_styles.scss */
 .media-youtube-video,
 .file-video {
   position: relative;
@@ -9378,7 +9378,7 @@ a.external-link:hover span.glyphicon {
   height: 0;
 }
 
-/* line 506, ../sass/custom/_styles.scss */
+/* line 511, ../sass/custom/_styles.scss */
 .media-youtube-video iframe,
 .file-video video {
   position: absolute;
@@ -9391,7 +9391,7 @@ a.external-link:hover span.glyphicon {
 /* SLIDESHOW 
 *  Override flexslide styles
 */
-/* line 517, ../sass/custom/_styles.scss */
+/* line 522, ../sass/custom/_styles.scss */
 .flexslider {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -9400,27 +9400,27 @@ a.external-link:hover span.glyphicon {
   border: 0;
   background: transparent;
 }
-/* line 524, ../sass/custom/_styles.scss */
+/* line 529, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav li {
   background: red;
 }
-/* line 527, ../sass/custom/_styles.scss */
+/* line 532, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav a {
   text-shadow: none;
 }
-/* line 529, ../sass/custom/_styles.scss */
+/* line 534, ../sass/custom/_styles.scss */
 .flexslider .flex-direction-nav a:before {
   font-size: 30px;
 }
 
-/* line 535, ../sass/custom/_styles.scss */
+/* line 540, ../sass/custom/_styles.scss */
 #slideshow, #media, #image {
   margin-right: 20px;
   padding-bottom: 6px;
   width: 240px;
 }
 
-/* line 543, ../sass/custom/_styles.scss */
+/* line 548, ../sass/custom/_styles.scss */
 html[contenteditable="true"] body {
   background-image: none;
 }
@@ -10109,7 +10109,7 @@ ul.menu li a, ul.menu li span {
 }
 
 /* line 105, ../sass/custom/_blocks.scss */
-.border-secondary, .section-search .sidebar .region {
+.border-secondary, .section-search .sidebar .region, .node-type-blog .body-content p img {
   border-top: 8px solid #38709e;
 }
 
@@ -10133,15 +10133,15 @@ ul.menu li a, ul.menu li span {
 }
 
 /* line 129, ../sass/custom/_blocks.scss */
-.border-secondary .panel-heading:before, .section-search .sidebar .region .panel-heading:before {
+.border-secondary .panel-heading:before, .section-search .sidebar .region .panel-heading:before, .node-type-blog .body-content p img .panel-heading:before {
   background-color: #38709e;
 }
 /* line 132, ../sass/custom/_blocks.scss */
-.border-secondary .panel-heading .panel-title, .section-search .sidebar .region .panel-heading .panel-title {
+.border-secondary .panel-heading .panel-title, .section-search .sidebar .region .panel-heading .panel-title, .node-type-blog .body-content p img .panel-heading .panel-title {
   color: #38709e;
 }
 /* line 136, ../sass/custom/_blocks.scss */
-.border-secondary h4, .section-search .sidebar .region h4 {
+.border-secondary h4, .section-search .sidebar .region h4, .node-type-blog .body-content p img h4 {
   color: #38709e;
 }
 
@@ -11388,4 +11388,16 @@ ul.addtocal_menu li a:hover {
 /* line 502, ../sass/custom/_features.scss */
 .job-detail p:not(.tags) {
   padding-left: 12px;
+}
+
+/* BLOG */
+/* line 510, ../sass/custom/_features.scss */
+.node-type-blog .group-date-author {
+  margin-bottom: 6px;
+}
+/* line 515, ../sass/custom/_features.scss */
+.node-type-blog .body-content p img {
+  display: block;
+  margin-right: 16px;
+  padding: 0 0 6px;
 }

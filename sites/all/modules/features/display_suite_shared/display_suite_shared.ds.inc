@@ -326,7 +326,7 @@ function display_suite_shared_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '6',
       'label' => 'hidden',
-      'format' => 'ds_post_date_long',
+      'format' => 'ds_post_date_month_day_year',
       'formatter_settings' => array(
         'ft' => array(
           'ow' => TRUE,
@@ -4066,10 +4066,10 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'text_resizer',
-        1 => 'tags_title',
-        2 => 'field_topics',
-        3 => 'custom_breadcrumb',
+        0 => 'tags_title',
+        1 => 'text_resizer',
+        2 => 'custom_breadcrumb',
+        3 => 'field_topics',
         4 => 'field_austrian_school',
         5 => 'title',
         6 => 'field_image_collection',
@@ -4084,10 +4084,10 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'text_resizer' => 'ds_content',
       'tags_title' => 'ds_content',
-      'field_topics' => 'ds_content',
+      'text_resizer' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
+      'field_topics' => 'ds_content',
       'field_austrian_school' => 'ds_content',
       'title' => 'ds_content',
       'field_image_collection' => 'ds_content',
