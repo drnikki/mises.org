@@ -506,7 +506,7 @@ ul.addtocal_menu {
 }
 /* BLOG */
 // CUSTOM IMAGE STYLES FOR INLINE IMAGES IN LEGACY POSTS
-.node-type-blog {
+.node-blog {
   .group-date-author {
     margin-bottom: $padding-base-vertical;
   }
@@ -519,6 +519,15 @@ ul.addtocal_menu {
         @extend .col-sm-5;
         @extend .border-secondary;
         @extend .img-responsive;
+      }
+    }
+  }
+  &.view-mode-teaser {
+    .body-content {
+      p {
+        img {
+          width: 218px;
+        }
       }
     }
   }
