@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Solr Authors feature.
+ */
+
+include_once 'mises_solr_authors.features.inc';
