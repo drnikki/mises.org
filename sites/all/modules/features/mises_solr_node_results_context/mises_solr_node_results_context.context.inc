@@ -27,6 +27,12 @@ function mises_solr_node_results_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-mises_solr_authors-block' => array(
+          'module' => 'views',
+          'delta' => 'mises_solr_authors-block',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'facetapi-HKDC1cgxSxGM5l01Zl6ib89vWJGQP3se' => array(
           'module' => 'facetapi',
           'delta' => 'HKDC1cgxSxGM5l01Zl6ib89vWJGQP3se',

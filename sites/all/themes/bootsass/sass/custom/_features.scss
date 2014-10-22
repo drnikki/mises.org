@@ -504,3 +504,31 @@ ul.addtocal_menu {
     }
   }
 }
+/* BLOG */
+// CUSTOM IMAGE STYLES FOR INLINE IMAGES IN LEGACY POSTS
+.node-blog {
+  .group-date-author {
+    margin-bottom: $padding-base-vertical;
+  }
+  .body-content {
+    p {
+      img {
+        display: block;
+        margin-right: $padding-large-horizontal;
+        padding: 0 0 $padding-base-vertical;
+        @extend .col-sm-5;
+        @extend .border-secondary;
+        @extend .img-responsive;
+      }
+    }
+  }
+  &.view-mode-teaser {
+    .body-content {
+      p {
+        img {
+          width: 218px;
+        }
+      }
+    }
+  }
+}
