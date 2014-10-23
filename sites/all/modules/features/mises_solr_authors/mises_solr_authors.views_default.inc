@@ -88,13 +88,13 @@ foreach ($keys as $key) {
   $node = node_load($row->nid);
   if (isset($node->field_last_name[LANGUAGE_NONE][0][\'value\'])) {
     $last = $node->field_last_name[LANGUAGE_NONE][0][\'value\'];
-     if (stripos($last, $key) !== FALSE) {
+     if (strtolower($last) == strtolower($key)) {
       return FALSE;
     }
   }
   if (isset($node->field_first_name[LANGUAGE_NONE][0][\'value\'])) {
     $first = $node->field_first_name[LANGUAGE_NONE][0][\'value\'];
-     if (stripos($first, $key) !== FALSE) {
+     if (strtolower($first) == strtolower($key)) {
       return FALSE;
     }
   }
