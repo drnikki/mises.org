@@ -11236,7 +11236,7 @@ ul.addtocal_menu li a:hover {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url(/sites/default/files/public/styles/menu_icon/public/menu_icons/menu_icon_775.png);
+  background-image: url(../images/icons/icon-twitter.png);
   background-position: 0 0;
   background-size: contain;
   background-repeat: no-repeat;
@@ -11244,7 +11244,7 @@ ul.addtocal_menu li a:hover {
 }
 /* line 381, ../sass/custom/_features.scss */
 .group-contact .facebook a {
-  background-image: url(/sites/default/files/public/styles/menu_icon/public/menu_icons/menu_icon_774.png);
+  background-image: url(../images/icons/icon-facebook.png);
 }
 
 /* line 386, ../sass/custom/_features.scss */
