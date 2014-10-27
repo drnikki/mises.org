@@ -384,7 +384,7 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['path'] = 'mediafeeds/admin/%/%';
 
   /* Display: Events Feed */
-  $handler = $view->new_display('feed', 'Events Feed', 'feed_1');
+  $handler = $view->new_display('feed', 'Events Feed', 'feed_events');
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
