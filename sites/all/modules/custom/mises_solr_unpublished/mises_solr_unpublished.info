@@ -1,0 +1,5 @@
+name = Mises Solr Unpublished
+description = Prevents unpublished content from appearing in search results.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0
