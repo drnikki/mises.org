@@ -1,0 +1,10 @@
+name = Solr Featured Items
+description = Defines a nodequeue to allow the mises_solr_featured_nodes module to display matching featured items at the top of results.
+core = 7.x
+package = Search
+version = 7.x-1.0
+project = mises_solr_featured_items
+dependencies[] = fe_nodequeue
+dependencies[] = mises_solr_featured_nodes
+features[fe_nodequeue][] = top_results_list
+features[features_api][] = api:2

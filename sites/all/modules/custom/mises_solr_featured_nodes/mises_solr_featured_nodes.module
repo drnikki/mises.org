@@ -1,0 +1,126 @@
+<?php
+
+/**
+ * Implements hook_apachesolr_search_page_alter().
+ */
+function mises_solr_featured_nodes_apachesolr_search_page_alter(&$build, $search_page) {
+ $query = apachesolr_current_query(apachesolr_default_environment());
+ $query_filters = $query->getFilters();
+
+  $queue = nodequeue_load_queue_by_name('top_results_list');
+  $queue_nodes = nodequeue_load_nodes($queue->qid);
+
+  $search_keys = $build['search_form']['basic']['keys']['#default_value'];
+    //drupal_set_message('<pre>' . print_r($build, 1) . '</pre>');
+
+  
+
+  $js = '';
+  foreach ($queue_nodes as $queue_node) {
+    $nid = $queue_node->nid;
+    $queue_node_exists = FALSE;
+
+    // If a content type facet is enabled, do not show result unless the type matches:
+ /*   $arg3 = arg(3); $arg4 = arg(4);
+    if (!empty($arg3) && $arg3 == 'type' && !empty($arg4) && $arg4 != $queue_node->type) {
+      continue;
+    } */
+
+    // Do not show non-published queue nodes:
+    if ($queue_node->status == 0) {
+      continue;
+    }
+
+    // Account for query facet filter:
+    $match_not_found = FALSE;
+    foreach ($query_filters as $filter) {
+      // Handle taxonomy filters:
+      if (stripos($filter['#value'], 'taxonomy_term') !== FALSE) {
+        $term_value = explode(':', $filter['#value']);
+        if (isset($term_value[1])) {
+          $tid = $term_value[1];
+          $term_query = db_query("SELECT tid FROM taxonomy_index WHERE tid = :tid AND nid = :nid",
+            array(
+              ':tid' => $tid,
+              ':nid' => $nid,
+            )
+          );
+          $term_found = FALSE;
+          foreach ($term_query as $term_data) {
+            $term_found = TRUE;
+            break;
+          }
+          if (!$term_found) {
+            $match_not_found = TRUE;
+          }
+        }
+      }
+      else if ($filter['#name'] == 'bundle') {
+        if ($queue_node->type != $filter['#value']) {
+          $match_not_found = TRUE;
+        }
+      }
+      else if ($filter['#name'] == 'sm_field_author_1') {
+        $author_exists = FALSE;
+        $nid_value = explode(':', $filter['#value']);
+        if (isset($nid_value[1])) {
+          $author_nid = $nid_value[1];
+          if (isset($queue_node->field_author_1[LANGUAGE_NONE][0]['target_id'])) {
+            if ($queue_node->field_author_1[LANGUAGE_NONE][0]['target_id'] == $author_nid) {
+              $author_exists = TRUE;
+            }
+          } 
+        }
+        if (!$author_exists) {
+          $match_not_found = TRUE;
+        }
+      }
+
+
+      // Skip to the next nodequeue item if any facet filters out the current item:
+      if ($match_not_found) {
+        continue 2;
+      }
+    }
+
+    // Do not show unless one of the keywords matches this result:
+    if (!empty($search_keys)) {
+    $key_found = FALSE;
+        $node_content = print_r($queue_node, 1);
+        foreach (explode(' ', $search_keys) as $search_key) {
+         if (stripos($node_content, $search_key) !== FALSE) {
+           $key_found = TRUE;
+           break;
+        }
+      }
+      if (!$key_found) {
+        continue;
+      }
+    }
+
+    // Remove the queue node from it's current position if it exists:
+    foreach ($build['search_results']['search_results'] as $key => $result) {
+      if ($result['body']['#object']->nid == $nid) {
+        $queue_node_exists = TRUE;
+        unset($build['search_results']['search_results'][$key]);
+        break;
+      }
+    }
+
+    // Add queue node content to the top of search results via jQuery:
+    $rendered_result = drupal_render(node_view($queue_node, 'teaser'));
+    $new_js_item = '
+      $("#block-system-main #search-form").after("' . str_replace(array('"', "\n", "\r"), array('\\"', ' ', ' '), $rendered_result) . '");
+    ';
+    $js = $new_js_item . $js;
+  }
+
+  if ($js) {
+    // Adjust position of "did you mean" if it appears;
+    $js .= '
+      $("#block-system-main .spelling-suggestions").insertAfter("#block-system-main #search-form");
+    ';
+    $js = '(function ($) { ' . $js . ' })(jQuery);';
+  }
+  drupal_add_js($js, array('type' => 'inline', 'scope' => 'footer', 'cache' => TRUE));  
+}
