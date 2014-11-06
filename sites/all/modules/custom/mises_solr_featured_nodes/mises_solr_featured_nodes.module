@@ -4,27 +4,23 @@
  * Implements hook_apachesolr_search_page_alter().
  */
 function mises_solr_featured_nodes_apachesolr_search_page_alter(&$build, $search_page) {
- $query = apachesolr_current_query(apachesolr_default_environment());
- $query_filters = $query->getFilters();
-
+  $query = apachesolr_current_query(apachesolr_default_environment());
+  $query_filters = $query->getFilters();
   $queue = nodequeue_load_queue_by_name('top_results_list');
   $queue_nodes = nodequeue_load_nodes($queue->qid);
 
-  $search_keys = $build['search_form']['basic']['keys']['#default_value'];
-    //drupal_set_message('<pre>' . print_r($build, 1) . '</pre>');
+  $search_keys = trim($build['search_form']['basic']['keys']['#default_value']);
 
+  // Do nothing if no results are returned:
+  if (count($build['search_results']['search_results']) === 1) {
+    return;
+  }
   
 
   $js = '';
   foreach ($queue_nodes as $queue_node) {
     $nid = $queue_node->nid;
     $queue_node_exists = FALSE;
-
-    // If a content type facet is enabled, do not show result unless the type matches:
- /*   $arg3 = arg(3); $arg4 = arg(4);
-    if (!empty($arg3) && $arg3 == 'type' && !empty($arg4) && $arg4 != $queue_node->type) {
-      continue;
-    } */
 
     // Do not show non-published queue nodes:
     if ($queue_node->status == 0) {
@@ -34,7 +30,7 @@ function mises_solr_featured_nodes_apachesolr_search_page_alter(&$build, $search
     // Account for query facet filter:
     $match_not_found = FALSE;
     foreach ($query_filters as $filter) {
-      // Handle taxonomy filters:
+      // Check for taxonomy filters:
       if (stripos($filter['#value'], 'taxonomy_term') !== FALSE) {
         $term_value = explode(':', $filter['#value']);
         if (isset($term_value[1])) {
@@ -55,11 +51,50 @@ function mises_solr_featured_nodes_apachesolr_search_page_alter(&$build, $search
           }
         }
       }
+      // Check for content type:
       else if ($filter['#name'] == 'bundle') {
         if ($queue_node->type != $filter['#value']) {
           $match_not_found = TRUE;
         }
       }
+      // Check for library item type field:
+      else if ($filter['#name'] == 'im_field_library_item_tree') {
+        // Only one matching library item type is needed:
+        if ($lib_type_found) {
+          continue;
+        }
+        $lib_type_found = FALSE;
+        if (is_array($queue_node->field_library_item_tree[LANGUAGE_NONE])) {
+          foreach ($queue_node->field_library_item_tree[LANGUAGE_NONE] as $type_tid) {
+            if ($type_tid['tid'] == $filter['#value']) {
+              $lib_type_found = TRUE;
+              break;
+            }
+          }
+        }
+        if (!$lib_type_found) {
+          $match_not_found = TRUE;
+        }
+      }
+      // Check for published date field:
+      else if ($filter['#name'] == 'dm_field_mises_published_date') {
+        $date_match_found = FALSE;
+        if(isset($queue_node->field_published_date[LANGUAGE_NONE][0]['value'])) {
+          $node_timestamp = strtotime($queue_node->field_published_date[LANGUAGE_NONE][0]['value']);
+          $date_range_data = str_replace(array('[', ']'), '', explode(' TO ', $filter['#value']));
+          if (isset($date_range_data[0]) && isset($date_range_data[1])) {
+            $start_timestamp = strtotime($date_range_data[0]);
+            $end_timestamp = strtotime($date_range_data[1]);
+            if ($node_timestamp >= $start_timestamp && $node_timestamp <= $end_timestamp) {
+              $date_match_found = TRUE;
+            }
+          }
+        }
+        if (!$date_match_found) {
+          $match_not_found = TRUE;
+        }
+      }
+      // Check for author:
       else if ($filter['#name'] == 'sm_field_author_1') {
         $author_exists = FALSE;
         $nid_value = explode(':', $filter['#value']);
