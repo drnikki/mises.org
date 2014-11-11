@@ -10854,8 +10854,8 @@ ul.accordion li {
 }
 /* line 35, ../sass/custom/_features.scss */
 .tags span:not(.tag-label) + span:before {
-  content: ",";
   padding-right: 3px;
+  content: ",";
 }
 /* line 39, ../sass/custom/_features.scss */
 .tags a {
@@ -11366,42 +11366,43 @@ ul.addtocal_menu li a:hover {
 }
 /* line 484, ../sass/custom/_features.scss */
 .body-content.embedded-media img {
+  margin: auto;
   width: auto !important;
   height: auto !important;
 }
 
 /* JOB POSTING */
-/* line 492, ../sass/custom/_features.scss */
+/* line 493, ../sass/custom/_features.scss */
 .node-type-job-posting- .tags span:not(.tag-label) {
   color: #494e54;
   font-size: 15px;
 }
 
-/* line 498, ../sass/custom/_features.scss */
+/* line 499, ../sass/custom/_features.scss */
 .job-detail {
   margin-bottom: 12.5px;
 }
-/* line 500, ../sass/custom/_features.scss */
+/* line 501, ../sass/custom/_features.scss */
 .job-detail p {
   margin-bottom: 0;
 }
-/* line 502, ../sass/custom/_features.scss */
+/* line 503, ../sass/custom/_features.scss */
 .job-detail p:not(.tags) {
   padding-left: 12px;
 }
 
 /* BLOG */
-/* line 510, ../sass/custom/_features.scss */
+/* line 511, ../sass/custom/_features.scss */
 .node-blog .group-date-author {
   margin-bottom: 6px;
 }
-/* line 515, ../sass/custom/_features.scss */
+/* line 516, ../sass/custom/_features.scss */
 .node-blog .body-content p img {
   display: block;
   margin-right: 16px;
   padding: 0 0 6px;
 }
-/* line 528, ../sass/custom/_features.scss */
+/* line 529, ../sass/custom/_features.scss */
 .node-blog.view-mode-teaser .body-content p img {
   width: 218px;
 }
