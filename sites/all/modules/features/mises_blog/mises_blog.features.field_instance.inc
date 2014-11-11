@@ -28,12 +28,9 @@ function mises_blog_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'text_default',
-        'weight' => 6,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -167,7 +164,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 31,
       ),
       'print' => array(
         'label' => 'above',
@@ -402,7 +399,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 29,
       ),
       'print' => array(
         'label' => 'above',
@@ -547,7 +544,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 30,
       ),
       'print' => array(
         'label' => 'above',
@@ -619,13 +616,9 @@ function mises_blog_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'field_collection',
-        'settings' => array(
-          'conditions' => array(),
-          'view_mode' => 'wide_player',
-        ),
-        'type' => 'field_collection_fields',
-        'weight' => 7,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'above',
@@ -755,14 +748,95 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_insert_after'
+  $field_instances['node-page-field_insert_after'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter a number to indicate after which paragraph in the Body the Media player should appear. If left empty, the Media player will appear midway in the body. ',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'conditions' => array(),
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'list_teaser' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'conditions' => array(),
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 4,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_insert_after',
+    'label' => 'Insert After',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 31,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Audience');
   t('Austrian School');
   t('Author');
   t('Body');
+  t('Enter a number to indicate after which paragraph in the Body the Media player should appear. If left empty, the Media player will appear midway in the body. ');
   t('Featured');
   t('Image');
+  t('Insert After');
   t('Level');
   t('Media');
   t('Topics');

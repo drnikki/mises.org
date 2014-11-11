@@ -260,13 +260,29 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blog';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'body_with_media_embedded' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-content body-content embedded-media',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
     'custom_breadcrumb' => array(
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'dynamic_field_1' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -286,7 +302,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'follow_mises_institute' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -339,18 +355,6 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'body-content',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
     'field_austrian_school' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -381,22 +385,6 @@ function display_suite_shared_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => 'author',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_media_collection' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'Play',
-          'lb-el' => 'h4',
-          'lb-cl' => 'sub-heading contrast',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'media-player clearfix',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -4082,17 +4070,16 @@ function display_suite_shared_ds_layout_settings_info() {
         1 => 'text_resizer',
         2 => 'custom_breadcrumb',
         3 => 'field_topics',
-        4 => 'field_austrian_school',
-        5 => 'title',
+        4 => 'title',
+        5 => 'field_austrian_school',
         6 => 'field_image_collection',
         7 => 'group_date_author',
         8 => 'group_tags',
-        9 => 'post_date',
-        10 => 'body',
+        9 => 'body_with_media_embedded',
+        10 => 'post_date',
         11 => 'field_author_1',
-        12 => 'field_media_collection',
-        13 => 'follow_mises_institute',
-        14 => 'dynamic_field_1',
+        12 => 'follow_mises_institute',
+        13 => 'dynamic_field_1',
       ),
     ),
     'fields' => array(
@@ -4100,15 +4087,14 @@ function display_suite_shared_ds_layout_settings_info() {
       'text_resizer' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
       'field_topics' => 'ds_content',
-      'field_austrian_school' => 'ds_content',
       'title' => 'ds_content',
+      'field_austrian_school' => 'ds_content',
       'field_image_collection' => 'ds_content',
       'group_date_author' => 'ds_content',
       'group_tags' => 'ds_content',
+      'body_with_media_embedded' => 'ds_content',
       'post_date' => 'ds_content',
-      'body' => 'ds_content',
       'field_author_1' => 'ds_content',
-      'field_media_collection' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
     ),
