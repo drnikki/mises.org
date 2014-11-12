@@ -388,6 +388,7 @@ function mises_library_item_field_group_info() {
       1 => 'field_original_publication_link',
       2 => 'field_editor_s_note',
       3 => 'field_copyright_info',
+      4 => 'field_hidden_solr_content',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
