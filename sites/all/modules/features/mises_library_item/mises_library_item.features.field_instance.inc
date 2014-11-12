@@ -1812,7 +1812,7 @@ function mises_library_item_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 30,
+      'weight' => 21,
     ),
   );
 
