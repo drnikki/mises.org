@@ -7,7 +7,7 @@ function mises_solr_featured_nodes_apachesolr_search_page_alter(&$build, $search
   $query = apachesolr_current_query(apachesolr_default_environment());
   $query_filters = $query->getFilters();
   $queue = nodequeue_load_queue_by_name('top_results_list');
-  $queue_nodes = nodequeue_load_nodes($queue->qid);
+  $queue_nodes = nodequeue_load_nodes($queue->qid, FALSE, 0, 0);
 
   $search_keys = trim($build['search_form']['basic']['keys']['#default_value']);
 
@@ -21,11 +21,6 @@ function mises_solr_featured_nodes_apachesolr_search_page_alter(&$build, $search
   foreach ($queue_nodes as $queue_node) {
     $nid = $queue_node->nid;
     $queue_node_exists = FALSE;
-
-    // Do not show non-published queue nodes:
-    if ($queue_node->status == 0) {
-      continue;
-    }
 
     // Account for query facet filter:
     $match_not_found = FALSE;
