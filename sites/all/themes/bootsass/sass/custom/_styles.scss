@@ -21,6 +21,7 @@
   .container {
     width: 100%;
   }
+
 }
 @media (min-width: $screen-md) {
   .container {
@@ -548,4 +549,11 @@ html[contenteditable="true"] {
   body {
     background-image: none;
   }
+}
+
+@media (max-width: $screen-sm) {
+	/* tommy removing breadcrumbs on mobile */
+	.easy-breadcrumb {
+	  display: none;
+	}
 }
