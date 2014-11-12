@@ -273,7 +273,14 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-at' => '',
           'ow-def-at' => FALSE,
         ),
-        'conditions' => array(),
+        'conditions' => array(
+          0 => array(
+            'condition' => 'hide_if_empty',
+            'configuration' => array(
+              'target' => 'field_media_collection',
+            ),
+          ),
+        ),
       ),
     ),
     'custom_breadcrumb' => array(
@@ -282,7 +289,7 @@ function display_suite_shared_ds_field_settings_info() {
       'format' => 'default',
     ),
     'dynamic_field_1' => array(
-      'weight' => '10',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -302,7 +309,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'follow_mises_institute' => array(
-      'weight' => '9',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -353,6 +360,18 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-def-at' => FALSE,
         ),
         'conditions' => array(),
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-content',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
       ),
     ),
     'field_austrian_school' => array(
@@ -4078,8 +4097,12 @@ function display_suite_shared_ds_layout_settings_info() {
         9 => 'body_with_media_embedded',
         10 => 'post_date',
         11 => 'field_author_1',
-        12 => 'follow_mises_institute',
-        13 => 'dynamic_field_1',
+        12 => 'body',
+        13 => 'follow_mises_institute',
+        14 => 'dynamic_field_1',
+      ),
+      'ds_hidden' => array(
+        15 => 'field_media_collection',
       ),
     ),
     'fields' => array(
@@ -4095,8 +4118,10 @@ function display_suite_shared_ds_layout_settings_info() {
       'body_with_media_embedded' => 'ds_content',
       'post_date' => 'ds_content',
       'field_author_1' => 'ds_content',
+      'body' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
+      'field_media_collection' => 'ds_hidden',
     ),
     'classes' => array(
       'layout_class' => array(

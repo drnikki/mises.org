@@ -28,8 +28,18 @@ function mises_blog_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(
+            0 => array(
+              'condition' => 'hide_not_empty',
+              'configuration' => array(
+                'target' => 'field_media_collection',
+              ),
+            ),
+          ),
+        ),
+        'type' => 'text_default',
         'weight' => 7,
       ),
       'print' => array(
@@ -616,9 +626,13 @@ function mises_blog_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 10,
       ),
       'print' => array(
         'label' => 'above',
