@@ -13,6 +13,40 @@ function library_item_node_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'daily_menu_active';
+  $context->description = '';
+  $context->tag = 'Menu State';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'library_item' => 'library_item',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+    'node_taxonomy' => array(
+      'values' => array(
+        147 => 147,
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'menu' => 'taxonomy/term/147',
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Menu State');
+  $export['daily_menu_active'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'library_items';
   $context->description = 'Blocks for Library Item node pages';
   $context->tag = 'Content Types';
@@ -96,6 +130,45 @@ function library_item_node_context_context_default_contexts() {
   t('Blocks for Library Item node pages');
   t('Content Types');
   $export['library_items'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'library_menu_active';
+  $context->description = 'Active menu item for Library Items except Mises Daily';
+  $context->tag = 'Menu State';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'library_item' => 'library_item',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
+    'node_taxonomy' => array(
+      'values' => array(
+        162 => 162,
+        167 => 167,
+        170 => 170,
+        178 => 178,
+        442 => 442,
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'menu' => 'node/786',
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Active menu item for Library Items except Mises Daily');
+  t('Menu State');
+  $export['library_menu_active'] = $context;
 
   return $export;
 }
