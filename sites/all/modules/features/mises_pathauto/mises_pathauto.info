@@ -52,7 +52,6 @@ features[variable][] = pathauto_taxonomy_term_media_type_pattern
 features[variable][] = pathauto_taxonomy_term_pattern
 features[variable][] = pathauto_taxonomy_term_profile_type_pattern
 features[variable][] = pathauto_taxonomy_term_reading_group_pattern
-features[variable][] = pathauto_taxonomy_term_reason_for_contact_pattern
 features[variable][] = pathauto_taxonomy_term_tags_pattern
 features[variable][] = pathauto_taxonomy_term_the_austrian_school_of_economics_pattern
 features[variable][] = pathauto_user_pattern
