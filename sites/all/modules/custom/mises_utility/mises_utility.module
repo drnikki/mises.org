@@ -292,6 +292,9 @@ function mises_utility_block_info() {
   $blocks['mailchimp_page_description'] = array(
     'info' => t('Mises Custom Mailchimp Page Description'),
   );
+  $blocks['mises_related_profiles'] = array(
+    'info' => t('Mises Related Profiles'),
+  );
   
   return $blocks;
 }
@@ -303,24 +306,60 @@ function mises_utility_block_info() {
 function mises_utility_block_view($delta = '') {
   switch ($delta) {
     case 'mailchimp_custom':
-      // Create your block content here
-		$subject = variable_get('mises_mailchimp_custom_subject', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
-		$block_style = variable_get('mises_mailchimp_custom_style', '');
-		$content = variable_get('mises_mailchimp_custom_content', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+        // Create your block content here
+		  $subject = variable_get('mises_mailchimp_custom_subject', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+		  $block_style = variable_get('mises_mailchimp_custom_style', '');
+		  $content = variable_get('mises_mailchimp_custom_content', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
       	$block['subject'] = $subject;
       	$block['content'] = '<div class="newsletter-form">'.$block_style.' '.$content.'</div>';
     break;
     case 'mailchimp_page_description':
       // Create your block content here
-		$subject = t('<none>');
-		//$block_style = variable_get('mises_mailchimp_custom_style', '');
-		$desc_image = file_load(variable_get('mises_mailchimp_custom_image', 'Please define in <a href="/admin/mises">Mises Utility settings</a>'))->uri;
-		$desc_image_display = '<img class="pull-right" src="' . file_create_url($desc_image) . '">';
-
-		$content =  $desc_image_display . variable_get('mises_mailchimp_custom_description', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
-      	$block['subject'] = $subject;
-      	$block['content'] = '<div class="newsletter-form-description">' . $content . '</div>';
+      $subject = t('<none>');
+      //$block_style = variable_get('mises_mailchimp_custom_style', '');
+      $desc_image_var = variable_get('mises_mailchimp_custom_image');
+      if($desc_image_var != 0) {
+        $desc_image = file_load()->uri;
+        $desc_image_url = file_create_url($desc_image);
+      } else {
+        $desc_image_url = '/sites/default/files/styles/list_teaser/public/Subscribe_750x516.jpg';
+      }
+      $desc_image_display = '<img class="pull-right" src="' . $desc_image_url . '">';
+      $desc_text = variable_get('mises_mailchimp_custom_description', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+      $desc_text = check_markup($desc_text, 'filtered_html', '', FALSE);
+      $content =  $desc_image_display . $desc_text;
+      $block['subject'] = $subject;
+      $block['content'] = '<div class="newsletter-form-description">' . $content . '</div>';
     break;
+    case 'mises_related_profiles':
+      // Custom related profiles block.
+      $path = current_path();
+      $url = explode( '/', $path );
+      if(isset($url[2])) {
+        $results = (new EntityFieldQuery())
+          ->entityCondition('entity_type', 'node')
+          ->entityCondition('bundle', 'person_profile')
+          ->propertyCondition('status', 1, '=')
+          ->propertyCondition('title', "%". $url[2] ."%","LIKE")
+          ->execute();
+
+        if (isset($results['node'])) {
+          $content = "";
+          foreach($results['node'] as $result) {
+            $author = node_load($result->nid);
+            $alias = drupal_get_path_alias('node/'.$author->nid);
+            $content .= "<a href='/". $alias ."'>" . $author->title . "</a> </br>";
+          }
+
+          $subject = t('Related Profiles');
+          $block['subject'] = $subject;
+          $block['content'] = '<div class="mises-related-profiles">' . $content . '</div>';
+        }
+      } else {
+        $block['subject'] = '';
+        $block['content'] = '';
+      }
+      break;
   }
   return $block;
 }
