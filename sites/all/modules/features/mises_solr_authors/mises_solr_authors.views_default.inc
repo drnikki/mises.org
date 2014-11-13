@@ -40,12 +40,17 @@ function mises_solr_authors_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['title']['empty_zero'] = TRUE;
   /* Field: Content: Biography Summary */
   $handler->display->display_options['fields']['field_bio_summary']['id'] = 'field_bio_summary';
   $handler->display->display_options['fields']['field_bio_summary']['table'] = 'field_data_field_bio_summary';
   $handler->display->display_options['fields']['field_bio_summary']['field'] = 'field_bio_summary';
   $handler->display->display_options['fields']['field_bio_summary']['label'] = '';
   $handler->display->display_options['fields']['field_bio_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_bio_summary']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_bio_summary']['type'] = 'text_trimmed';
   $handler->display->display_options['fields']['field_bio_summary']['settings'] = array(
     'trim_length' => '400',
@@ -62,6 +67,8 @@ function mises_solr_authors_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['nid']['empty_zero'] = TRUE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
