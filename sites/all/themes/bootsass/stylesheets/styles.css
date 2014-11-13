@@ -9924,6 +9924,12 @@ body.live-video .main-content .shield .icon, body.icon-live-video .main-content 
   border: 3px solid #788086;
 }
 
+/* DAILY LANDING PAGE */
+/* line 178, ../sass/custom/_landing.scss */
+body.mises-daily #block-views-term-description-block {
+  display: none;
+}
+
 /*
 * Custom Styles for Blocks
 * 
