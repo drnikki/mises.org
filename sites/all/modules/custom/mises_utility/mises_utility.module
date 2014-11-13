@@ -336,12 +336,13 @@ function mises_utility_block_view($delta = '') {
       $path = current_path();
       $url = explode( '/', $path );
       if(isset($url[2])) {
-        $results = (new EntityFieldQuery())
+        $query = new EntityFieldQuery();
+        $query
           ->entityCondition('entity_type', 'node')
           ->entityCondition('bundle', 'person_profile')
           ->propertyCondition('status', 1, '=')
-          ->propertyCondition('title', "%". $url[2] ."%","LIKE")
-          ->execute();
+          ->propertyCondition('title', "%". $url[2] ."%","LIKE");
+        $results =  $query->execute();
 
         if (isset($results['node'])) {
           $content = "";
