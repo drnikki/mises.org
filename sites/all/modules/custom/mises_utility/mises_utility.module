@@ -318,12 +318,12 @@ function mises_utility_block_view($delta = '') {
       $subject = t('<none>');
       //$block_style = variable_get('mises_mailchimp_custom_style', '');
       $desc_image_var = variable_get('mises_mailchimp_custom_image');
-      if($desc_image_var != 0) {
-        $desc_image = file_load()->uri;
-        $desc_image_url = file_create_url($desc_image);
-      } else {
+      //if($desc_image_var != 0) {
+      //  $desc_image = file_load()->uri;
+      //  $desc_image_url = file_create_url($desc_image);
+      //} else {
         $desc_image_url = '/sites/default/files/styles/list_teaser/public/Subscribe_750x516.jpg';
-      }
+      //}
       $desc_image_display = '<img class="pull-right" src="' . $desc_image_url . '">';
       $desc_text = variable_get('mises_mailchimp_custom_description', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
       $desc_text = check_markup($desc_text, 'filtered_html', '', FALSE);
