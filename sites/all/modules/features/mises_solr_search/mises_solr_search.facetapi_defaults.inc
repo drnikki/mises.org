@@ -521,6 +521,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
+    'pretty_paths_alias' => 'level',
   );
   $export['apachesolr@solr::sm_field_level'] = $facet;
 
