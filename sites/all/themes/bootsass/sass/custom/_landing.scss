@@ -173,3 +173,9 @@
     border: 3px solid $gray;
   }
 }
+/* DAILY LANDING PAGE */
+body.mises-daily {
+  #block-views-term-description-block {
+    display: none;  
+  }
+}
