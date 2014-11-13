@@ -314,13 +314,6 @@ function mises_pathauto_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_reason_for_contact_pattern';
-  $strongarm->value = '';
-  $export['pathauto_taxonomy_term_reason_for_contact_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_tags_pattern';
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_tags_pattern'] = $strongarm;

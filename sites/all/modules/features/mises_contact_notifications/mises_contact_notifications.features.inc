@@ -14,20 +14,16 @@ function mises_contact_notifications_ctools_plugin_api($module = NULL, $api = NU
 }
 
 /**
- * Implements hook_default_entity_rule_setting().
+ * Implements hook_eck_bundle_info().
  */
-function mises_contact_notifications_default_entity_rule_setting() {
-  $items = array();
-  $items['2'] = entity_import('entity_rule_setting', '{
-    "id" : "2",
-    "entity_type" : "entityform",
-    "bundle" : "contact_us",
-    "op" : "entityform_submission",
-    "rules_config" : "rules_article_submission_admin_email",
-    "weight" : "0",
-    "args" : null,
-    "false_msg" : null,
-    "rdf_mapping" : []
-  }');
+function mises_contact_notifications_eck_bundle_info() {
+  $items = array(
+    'reason_for_contact_reason_for_contact' => array(
+      'machine_name' => 'reason_for_contact_reason_for_contact',
+      'entity_type' => 'reason_for_contact',
+      'name' => 'reason_for_contact',
+      'label' => 'Reason for Contact',
+    ),
+  );
   return $items;
 }

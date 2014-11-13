@@ -170,11 +170,11 @@ function mises_contact_us_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_reason_for_contact',
     'foreign keys' => array(
-      'taxonomy_term_data' => array(
+      'eck_reason_for_contact' => array(
         'columns' => array(
-          'target_id' => 'tid',
+          'target_id' => 'id',
         ),
-        'table' => 'taxonomy_term_data',
+        'table' => 'eck_reason_for_contact',
       ),
     ),
     'indexes' => array(
@@ -199,7 +199,7 @@ function mises_contact_us_field_default_field_bases() {
           'reason_for_contact' => 'reason_for_contact',
         ),
       ),
-      'target_type' => 'taxonomy_term',
+      'target_type' => 'reason_for_contact',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
