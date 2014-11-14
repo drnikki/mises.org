@@ -531,6 +531,311 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   $handler->display->display_options['path'] = 'mediafeeds/events';
+
+  /* Display: Media Feed */
+  $handler = $view->new_display('feed', 'Media Feed', 'feed_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'rss_fields';
+  $handler->display->display_options['style_options']['channel'] = array(
+    'core' => array(
+      'views_rss_core' => array(
+        'description' => 'The Mises Institute was founded in 1982 as the research and education center of classical liberalism, libertarian political theory, and the Austrian School of economics.  It serves as the world\'s leading provider of educational materials, conferences, media, and literature in the support of traditional through represented by Ludwig von Mises and the school of thought he enlivened and carried forward during the 20th century.',
+        'language' => 'en-US',
+        'category' => '',
+        'image' => '',
+        'copyright' => '',
+        'managingEditor' => '',
+        'webMaster' => '',
+        'generator' => '',
+        'docs' => '',
+        'cloud' => '',
+        'ttl' => '',
+        'skipHours' => '',
+        'skipDays' => '',
+      ),
+    ),
+    'itunes' => array(
+      'views_rss_itunes' => array(
+        'subtitle' => '',
+        'summary' => '',
+        'category' => array(),
+        'keywords' => '',
+        'image' => '',
+        'author' => '',
+        'explicit' => '',
+        'block' => '',
+        'complete' => '',
+        'new-feed-url' => '',
+        'owner' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['style_options']['item'] = array(
+    'core' => array(
+      'views_rss_core' => array(
+        'title' => 'title',
+        'link' => 'path',
+        'description' => 'body',
+        'author' => 'nothing',
+        'category' => 'field_library_item_tree',
+        'comments' => '',
+        'enclosure' => '',
+        'guid' => '',
+        'pubDate' => 'field_published_date',
+      ),
+    ),
+    'itunes' => array(
+      'views_rss_itunes' => array(
+        'subtitle' => 'field_subtitle',
+        'summary' => 'body',
+        'duration' => '',
+        'keywords' => 'field_topics',
+        'image' => '',
+        'author' => 'nothing',
+        'isClosedCaptioned' => '',
+        'explicit' => '',
+        'block' => '',
+        'order' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['style_options']['feed_settings'] = array(
+    'absolute_paths' => 1,
+    'feed_in_links' => 0,
+  );
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Field: Content: Published Date */
+  $handler->display->display_options['fields']['field_published_date']['id'] = 'field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['label'] = '';
+  $handler->display->display_options['fields']['field_published_date']['alter']['text'] = '© [field_published_date] [php]';
+  $handler->display->display_options['fields']['field_published_date']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_published_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_published_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_published_date']['settings'] = array(
+    'format_type' => 'rfc_822_date_time',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['path'] = 'mediafeeds/all';
+
+  /* Display: Library Feed */
+  $handler = $view->new_display('feed', 'Library Feed', 'feed_2');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'rss_fields';
+  $handler->display->display_options['style_options']['channel'] = array(
+    'core' => array(
+      'views_rss_core' => array(
+        'description' => 'The Mises Institute was founded in 1982 as the research and education center of classical liberalism, libertarian political theory, and the Austrian School of economics.  It serves as the world\'s leading provider of educational materials, conferences, media, and literature in the support of traditional through represented by Ludwig von Mises and the school of thought he enlivened and carried forward during the 20th century.',
+        'language' => 'en-US',
+        'category' => '',
+        'image' => '',
+        'copyright' => '',
+        'managingEditor' => '',
+        'webMaster' => '',
+        'generator' => '',
+        'docs' => '',
+        'cloud' => '',
+        'ttl' => '',
+        'skipHours' => '',
+        'skipDays' => '',
+      ),
+    ),
+    'itunes' => array(
+      'views_rss_itunes' => array(
+        'subtitle' => '',
+        'summary' => '',
+        'category' => array(),
+        'keywords' => '',
+        'image' => '',
+        'author' => '',
+        'explicit' => '',
+        'block' => '',
+        'complete' => '',
+        'new-feed-url' => '',
+        'owner' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['style_options']['item'] = array(
+    'core' => array(
+      'views_rss_core' => array(
+        'title' => 'title',
+        'link' => 'path',
+        'description' => 'body',
+        'author' => 'nothing',
+        'category' => 'field_library_item_tree',
+        'comments' => '',
+        'enclosure' => '',
+        'guid' => '',
+        'pubDate' => 'field_published_date',
+      ),
+    ),
+    'itunes' => array(
+      'views_rss_itunes' => array(
+        'subtitle' => 'field_subtitle',
+        'summary' => 'body',
+        'duration' => '',
+        'keywords' => 'field_topics',
+        'image' => '',
+        'author' => 'nothing',
+        'isClosedCaptioned' => '',
+        'explicit' => '',
+        'block' => '',
+        'order' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['style_options']['feed_settings'] = array(
+    'absolute_paths' => 1,
+    'feed_in_links' => 0,
+  );
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Library Item Type (field_library_item_tree) */
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Field: Content: Published Date */
+  $handler->display->display_options['fields']['field_published_date']['id'] = 'field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['label'] = '';
+  $handler->display->display_options['fields']['field_published_date']['alter']['text'] = '© [field_published_date] [php]';
+  $handler->display->display_options['fields']['field_published_date']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_published_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_published_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_published_date']['settings'] = array(
+    'format_type' => 'rfc_822_date_time',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Library Item Type (field_library_item_tree) */
+  $handler->display->display_options['arguments']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['arguments']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['arguments']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['arguments']['field_library_item_tree_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_library_item_tree_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_library_item_tree_tid']['default_argument_options']['argument'] = '147';
+  $handler->display->display_options['arguments']['field_library_item_tree_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_library_item_tree_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_library_item_tree_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['path'] = 'mediafeeds/library';
   $export['mises_itunes_rss_feeds'] = $view;
 
   return $export;
