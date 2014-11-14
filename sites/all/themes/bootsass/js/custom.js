@@ -52,12 +52,12 @@ var Drupal = Drupal || {};
           //$(this).toggleClass('active');
           //$(this).siblings('.btn').toggleClass('active');
           if ($(this).hasClass('small')) {
-            console.log('small on');
+            //console.log('small on');
             $(this).addClass('active');
             $(this).siblings('.large').removeClass('active');
             $('.body-content').removeClass('large').addClass('normal');
           } else {
-            console.log('large on');
+            //console.log('large on');
             $(this).addClass('active');
             $(this).siblings('.small').removeClass('active');
             $('.body-content').removeClass('normal').addClass('large');
@@ -183,7 +183,7 @@ var Drupal = Drupal || {};
           //loop though the elements and get their heights
           children.each(function () {
               //if bigger than the default set to default
-              console.log($(this).height(), '<height outerHeight>', $(this).outerHeight());
+              //console.log($(this).height(), '<height outerHeight>', $(this).outerHeight());
               if ($(this).height() > options.minHeight) options.minHeight= $(this).height();
               //if maxheight is set
               if(options.maxHeight !== null){
