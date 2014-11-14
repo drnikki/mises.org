@@ -21,32 +21,3 @@ function mises_solr_search_ctools_plugin_api($module = NULL, $api = NULL) {
     return array("version" => "1");
   }
 }
-
-/**
- * Implements hook_default_search_api_server().
- */
-function mises_solr_search_default_search_api_server() {
-  $items = array();
-  $items['solr'] = entity_import('search_api_server', '{
-    "name" : "Solr",
-    "machine_name" : "solr",
-    "description" : "",
-    "class" : "search_api_solr_service",
-    "options" : {
-      "clean_ids" : true,
-      "scheme" : "http",
-      "host" : "localhost",
-      "port" : "8983",
-      "path" : "\\/solr",
-      "http_user" : "",
-      "http_pass" : "",
-      "excerpt" : 0,
-      "retrieve_data" : 0,
-      "highlight_data" : 0,
-      "http_method" : "AUTO"
-    },
-    "enabled" : "1",
-    "rdf_mapping" : []
-  }');
-  return $items;
-}
