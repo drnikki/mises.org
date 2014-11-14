@@ -337,7 +337,7 @@ function mises_utility_block_view($delta = '') {
       $path = current_path();
       $url = explode('/', current_path());
 
-      if(isset($url[2])) {
+      if(isset($url[2]) && $url[2] != '') {
         $query = new EntityFieldQuery();
         $query
           ->entityCondition('entity_type', 'node')
