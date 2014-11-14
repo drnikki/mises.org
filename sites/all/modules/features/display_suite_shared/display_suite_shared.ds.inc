@@ -3348,13 +3348,14 @@ product|*';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<?php
-//print_r($entity);
+//print_r($entity->title);
 if ($entity->field_link_to_external_listing_) {
   $link = "[node:field-link-to-external-listing-:url]";
+  $title = strip_tags($entity->title);
 } else if ($entity->type == \'product\') { $link = "http://store.mises.org";
 } else { $link = "http://academy.mises.org";}
 ?>
-<a href="<?php print $link; ?>" target="_blank" title="[node:title]">[node:title]</a>',
+<a href="<?php print $link; ?>" target="_blank" title="<?php print $entity->title; ?>"><?php print $entity->title; ?></a>',
       'format' => 'ds_code',
     ),
     'use_token' => 1,
