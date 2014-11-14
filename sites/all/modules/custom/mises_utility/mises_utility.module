@@ -294,6 +294,7 @@ function mises_utility_block_info() {
   );
   $blocks['mises_related_profiles'] = array(
     'info' => t('Mises Related Profiles'),
+    'cache' => DRUPAL_NO_CACHE,
   );
   
   return $blocks;
@@ -334,7 +335,8 @@ function mises_utility_block_view($delta = '') {
     case 'mises_related_profiles':
       // Custom related profiles block.
       $path = current_path();
-      $url = explode( '/', $path );
+      $url = explode('/', current_path());
+
       if(isset($url[2])) {
         $query = new EntityFieldQuery();
         $query
