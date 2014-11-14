@@ -23,13 +23,12 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => 0,
     'flatten' => 0,
     'query_type' => 'term',
+    'pretty_paths_alias' => 'is_uid',
   );
   $export['apachesolr@solr::author'] = $facet;
 
@@ -51,7 +50,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'facet_missing' => 0,
     'flatten' => 0,
     'query_type' => 'term',
-    'pretty_paths_alias' => 'type',
+    'pretty_paths_alias' => 'bundle',
   );
   $export['apachesolr@solr::bundle'] = $facet;
 
@@ -74,6 +73,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'flatten' => 0,
     'query_type' => 'date',
     'date_granularity' => 'MINUTE',
+    'pretty_paths_alias' => 'ds_changed',
   );
   $export['apachesolr@solr::changed'] = $facet;
 
@@ -90,14 +90,13 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => 0,
     'flatten' => 0,
     'query_type' => 'date',
     'date_granularity' => 'MINUTE',
+    'pretty_paths_alias' => 'ds_created',
   );
   $export['apachesolr@solr::created'] = $facet;
 
@@ -114,82 +113,15 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => 0,
     'flatten' => 0,
     'query_type' => 'date',
-    'date_granularity' => 'MONTH',
-    'pretty_paths_alias' => 'date-published',
+    'date_granularity' => 'MINUTE',
+    'pretty_paths_alias' => 'dm_field_mises_published_date',
   );
   $export['apachesolr@solr::dm_field_mises_published_date'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::dm_field_published_date';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'dm_field_published_date';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-    ),
-    'facet_mincount' => 1,
-    'facet_missing' => 0,
-    'flatten' => 0,
-    'query_type' => 'date',
-    'date_granularity' => 'MINUTE',
-  );
-  $export['apachesolr@solr::dm_field_published_date'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::dm_field_year';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'dm_field_year';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-    ),
-    'facet_mincount' => 1,
-    'facet_missing' => 0,
-    'flatten' => 0,
-    'query_type' => 'date',
-    'date_granularity' => 'MINUTE',
-  );
-  $export['apachesolr@solr::dm_field_year'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::im_field_level';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'im_field_level';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-    ),
-    'facet_mincount' => '1',
-    'facet_missing' => 0,
-    'flatten' => '0',
-    'query_type' => 'term',
-  );
-  $export['apachesolr@solr::im_field_level'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -204,81 +136,16 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => 0,
     'flatten' => '0',
     'query_type' => 'term',
-    'pretty_paths_alias' => 'library',
+    'pretty_paths_alias' => 'im_field_library_item_tree',
     'pretty_paths_taxonomy_pathauto' => 0,
-    'pretty_paths_taxonomy_pathauto_vocabulary' => 'media_type',
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'award_type',
   );
   $export['apachesolr@solr::im_field_library_item_tree'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::im_field_media_type';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'im_field_media_type';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-    ),
-    'facet_mincount' => '1',
-    'facet_missing' => 0,
-    'flatten' => '0',
-    'query_type' => 'term',
-  );
-  $export['apachesolr@solr::im_field_media_type'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::im_field_tags';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'im_field_tags';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-    ),
-    'facet_mincount' => '1',
-    'facet_missing' => 0,
-    'flatten' => '0',
-    'query_type' => 'term',
-  );
-  $export['apachesolr@solr::im_field_tags'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::language';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'language';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-    ),
-    'facet_mincount' => '1',
-    'facet_missing' => 0,
-    'flatten' => 0,
-    'query_type' => 'term',
-  );
-  $export['apachesolr@solr::language'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -293,14 +160,12 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
-    'pretty_paths_alias' => 'audience',
+    'pretty_paths_alias' => 'sm_field_audience',
   );
   $export['apachesolr@solr::sm_field_audience'] = $facet;
 
@@ -316,50 +181,13 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'operator' => 'and',
     'hard_limit' => '50',
     'dependencies' => array(
-      'bundle' => 'none',
-      'bundle_selected' => array(
-        'award' => 0,
-        'blog' => 0,
-        'book_digital_text' => 0,
-        'campaign_' => 0,
-        'causeview_snippet' => 0,
-        'course' => 0,
-        'document' => 0,
-        'event' => 0,
-        'flex_block' => 0,
-        'giving_story' => 0,
-        'homepage_hero' => 0,
-        'institute_fellowship' => 0,
-        'job_posting_' => 0,
-        'landing_page' => 0,
-        'legacy_book' => 0,
-        'library_item' => 0,
-        'person_profile' => 0,
-        'photo_gallery' => 0,
-        'product' => 0,
-        'scholarship_' => 0,
-        'social_media' => 0,
-        'page' => 0,
-        'webform' => 0,
-        'working_papers' => 0,
-      ),
-      'roles' => array(
-        1 => 0,
-        2 => 0,
-        3 => 0,
-        7 => 0,
-        4 => 0,
-        9 => 0,
-        8 => 0,
-        6 => 0,
-        5 => 0,
-      ),
+      'roles' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
-    'pretty_paths_alias' => 'austrian-school',
+    'pretty_paths_alias' => 'sm_field_austrian_school',
   );
   $export['apachesolr@solr::sm_field_austrian_school'] = $facet;
 
@@ -376,13 +204,12 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
+    'pretty_paths_alias' => 'sm_field_author',
   );
   $export['apachesolr@solr::sm_field_author'] = $facet;
 
@@ -399,107 +226,14 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
-    'pretty_paths_alias' => 'author',
+    'pretty_paths_alias' => 'sm_field_author_1',
   );
   $export['apachesolr@solr::sm_field_author_1'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::sm_field_author_2';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'sm_field_author_2';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
-    ),
-    'facet_mincount' => 1,
-    'facet_missing' => '0',
-    'flatten' => 0,
-    'query_type' => 'term',
-  );
-  $export['apachesolr@solr::sm_field_author_2'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::sm_field_event_type';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'sm_field_event_type';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
-    ),
-    'facet_mincount' => 1,
-    'facet_missing' => '0',
-    'flatten' => 0,
-    'query_type' => 'term',
-    'pretty_paths_alias' => 'event-type',
-  );
-  $export['apachesolr@solr::sm_field_event_type'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::sm_field_featured_content';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'sm_field_featured_content';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
-    ),
-    'facet_mincount' => 1,
-    'facet_missing' => '0',
-    'flatten' => 0,
-    'query_type' => 'term',
-  );
-  $export['apachesolr@solr::sm_field_featured_content'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::sm_field_id';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'sm_field_id';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-    ),
-    'facet_mincount' => 1,
-    'facet_missing' => '0',
-    'flatten' => 0,
-    'query_type' => 'term',
-  );
-  $export['apachesolr@solr::sm_field_id'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -521,72 +255,9 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
-    'pretty_paths_alias' => 'level',
+    'pretty_paths_alias' => 'sm_field_level',
   );
   $export['apachesolr@solr::sm_field_level'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::sm_field_mises_today';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'sm_field_mises_today';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-    ),
-    'facet_mincount' => 1,
-    'facet_missing' => '0',
-    'flatten' => 0,
-    'query_type' => 'term',
-  );
-  $export['apachesolr@solr::sm_field_mises_today'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::sm_field_original_title';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'sm_field_original_title';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-    ),
-    'facet_mincount' => 1,
-    'facet_missing' => '0',
-    'flatten' => 0,
-    'query_type' => 'term',
-  );
-  $export['apachesolr@solr::sm_field_original_title'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr::sm_field_timely_content';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = '';
-  $facet->facet = 'sm_field_timely_content';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'roles' => array(),
-    ),
-    'facet_mincount' => 1,
-    'facet_missing' => '0',
-    'flatten' => 0,
-    'query_type' => 'term',
-  );
-  $export['apachesolr@solr::sm_field_timely_content'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -601,14 +272,12 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
-      'bundle' => 'none',
-      'bundle_selected' => array(),
     ),
     'facet_mincount' => 1,
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
-    'pretty_paths_alias' => 'topics',
+    'pretty_paths_alias' => 'sm_field_topics',
   );
   $export['apachesolr@solr::sm_field_topics'] = $facet;
 
@@ -648,7 +317,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'show_expanded' => 0,
     'empty_text' => array(
       'value' => '',
-      'format' => 'filtered_html',
+      'format' => 'simplified',
     ),
     'submit_realm' => 'Save and go back to realm settings',
   );
@@ -699,12 +368,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_checkbox_links',
-    'filters' => array(
-      'active_items' => array(
-        'status' => 0,
-        'weight' => '-50',
-      ),
-    ),
+    'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
@@ -729,7 +393,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'show_expanded' => 0,
     'empty_text' => array(
       'value' => '',
-      'format' => 'filtered_html',
+      'format' => 'simplified',
     ),
     'submit_realm' => 'Save and go back to realm settings',
   );
@@ -771,7 +435,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'show_expanded' => 0,
     'empty_text' => array(
       'value' => '',
-      'format' => 'filtered_html',
+      'format' => 'simplified',
     ),
     'submit_realm' => 'Save and go back to realm settings',
   );
@@ -813,7 +477,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'show_expanded' => 0,
     'empty_text' => array(
       'value' => '',
-      'format' => 'filtered_html',
+      'format' => 'simplified',
     ),
     'submit_realm' => 'Save and go back to realm settings',
   );
@@ -914,7 +578,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'sort_order' => array(
       'active' => '3',
       'count' => '3',
-      'display' => '3',
+      'display' => '4',
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
@@ -923,7 +587,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'show_expanded' => 0,
     'empty_text' => array(
       'value' => '',
-      'format' => 'filtered_html',
+      'format' => 'simplified',
     ),
     'submit_realm' => 'Save and go back to realm settings',
   );
@@ -973,35 +637,27 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
+    'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
-      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
+      'active' => -50,
+      'count' => -49,
+      'display' => -48,
     ),
     'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
+      'active' => 3,
+      'count' => 3,
+      'display' => 4,
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['apachesolr@solr:block:dm_field_published_date'] = $facet;
 
@@ -1049,35 +705,27 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
+    'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
-      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
+      'active' => -50,
+      'count' => -49,
+      'display' => -48,
     ),
     'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
+      'active' => 3,
+      'count' => 3,
+      'display' => 4,
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'simplified',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['apachesolr@solr:block:dm_field_year'] = $facet;
 
@@ -1118,48 +766,6 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:im_field_level';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = 'block';
-  $facet->facet = 'im_field_level';
-  $facet->enabled = TRUE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-      'indexed' => 0,
-    ),
-    'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
-    ),
-    'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => '20',
-    'nofollow' => 1,
-    'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
-  );
-  $export['apachesolr@solr:block:im_field_level'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
   $facet->name = 'apachesolr@solr:block:im_field_library_item_tree';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
@@ -1188,7 +794,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '0',
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
@@ -1198,90 +804,6 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'submit_realm' => 'Save and go back to realm settings',
   );
   $export['apachesolr@solr:block:im_field_library_item_tree'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:im_field_media_type';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = 'block';
-  $facet->facet = 'im_field_media_type';
-  $facet->enabled = TRUE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-      'indexed' => 0,
-    ),
-    'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
-    ),
-    'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => '20',
-    'nofollow' => 1,
-    'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
-  );
-  $export['apachesolr@solr:block:im_field_media_type'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:im_field_tags';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = 'block';
-  $facet->facet = 'im_field_tags';
-  $facet->enabled = TRUE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-      'indexed' => 0,
-    ),
-    'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
-    ),
-    'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => '20',
-    'nofollow' => 1,
-    'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
-  );
-  $export['apachesolr@solr:block:im_field_tags'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -1361,35 +883,27 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
+    'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
-      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
+      'active' => -50,
+      'count' => -49,
+      'display' => -48,
     ),
     'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
+      'active' => 3,
+      'count' => 3,
+      'display' => 4,
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['apachesolr@solr:block:language'] = $facet;
 
@@ -1513,7 +1027,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'show_expanded' => 0,
     'empty_text' => array(
       'value' => '',
-      'format' => 'filtered_html',
+      'format' => 'simplified',
     ),
     'submit_realm' => 'Save and go back to realm settings',
   );
@@ -1526,48 +1040,6 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
   $facet->facet = 'sm_field_author_1';
-  $facet->enabled = TRUE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'count' => 'count',
-      'display' => 'display',
-      'active' => 0,
-      'indexed' => 0,
-    ),
-    'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
-    ),
-    'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => '5',
-    'nofollow' => 1,
-    'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'simplified',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
-  );
-  $export['apachesolr@solr:block:sm_field_author_1'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:sm_field_author_2';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = 'block';
-  $facet->facet = 'sm_field_author_2';
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
@@ -1592,7 +1064,7 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '3',
+    'soft_limit' => '10',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
@@ -1600,6 +1072,40 @@ function mises_solr_search_facetapi_default_facet_settings() {
       'format' => 'simplified',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+  );
+  $export['apachesolr@solr:block:sm_field_author_1'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'apachesolr@solr:block:sm_field_author_2';
+  $facet->searcher = 'apachesolr@solr';
+  $facet->realm = 'block';
+  $facet->facet = 'sm_field_author_2';
+  $facet->enabled = TRUE;
+  $facet->settings = array(
+    'weight' => 0,
+    'widget' => 'facetapi_links',
+    'filters' => array(),
+    'active_sorts' => array(
+      'active' => 'active',
+      'count' => 'count',
+      'display' => 'display',
+    ),
+    'sort_weight' => array(
+      'active' => -50,
+      'count' => -49,
+      'display' => -48,
+    ),
+    'sort_order' => array(
+      'active' => 3,
+      'count' => 3,
+      'display' => 4,
+    ),
+    'empty_behavior' => 'none',
+    'soft_limit' => 20,
+    'nofollow' => 1,
+    'show_expanded' => 0,
   );
   $export['apachesolr@solr:block:sm_field_author_2'] = $facet;
 
@@ -1817,35 +1323,27 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
+    'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
-      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
+      'active' => -50,
+      'count' => -49,
+      'display' => -48,
     ),
     'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
+      'active' => 3,
+      'count' => 3,
+      'display' => 4,
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '5',
+    'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'simplified',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['apachesolr@solr:block:sm_field_event_type'] = $facet;
 
@@ -1859,35 +1357,27 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
+    'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
-      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
+      'active' => -50,
+      'count' => -49,
+      'display' => -48,
     ),
     'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
+      'active' => 3,
+      'count' => 3,
+      'display' => 4,
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '5',
+    'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['apachesolr@solr:block:sm_field_featured_content'] = $facet;
 
@@ -2003,35 +1493,27 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
+    'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
-      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
+      'active' => -50,
+      'count' => -49,
+      'display' => -48,
     ),
     'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
+      'active' => 3,
+      'count' => 3,
+      'display' => 4,
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['apachesolr@solr:block:sm_field_id'] = $facet;
 
@@ -2148,48 +1630,6 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@solr:block:sm_field_mises_today';
-  $facet->searcher = 'apachesolr@solr';
-  $facet->realm = 'block';
-  $facet->facet = 'sm_field_mises_today';
-  $facet->enabled = TRUE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-      'indexed' => 0,
-    ),
-    'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
-    ),
-    'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => '20',
-    'nofollow' => 1,
-    'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
-  );
-  $export['apachesolr@solr:block:sm_field_mises_today'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
   $facet->name = 'apachesolr@solr:block:sm_field_original_title';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';
@@ -2197,35 +1637,27 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
+    'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
-      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
+      'active' => -50,
+      'count' => -49,
+      'display' => -48,
     ),
     'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
+      'active' => 3,
+      'count' => 3,
+      'display' => 4,
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['apachesolr@solr:block:sm_field_original_title'] = $facet;
 
@@ -2579,35 +2011,27 @@ function mises_solr_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
+    'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
-      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
+      'active' => -50,
+      'count' => -49,
+      'display' => -48,
     ),
     'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
+      'active' => 3,
+      'count' => 3,
+      'display' => 4,
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => '20',
+    'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['apachesolr@solr:block:sm_field_timely_content'] = $facet;
 
@@ -2652,413 +2076,6 @@ function mises_solr_search_facetapi_default_facet_settings() {
     'submit_realm' => 'Save and go back to realm settings',
   );
   $export['apachesolr@solr:block:sm_field_topics'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index::field_media_type';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = '';
-  $facet->facet = 'field_media_type';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'operator' => 'and',
-    'hard_limit' => '50',
-    'dependencies' => array(
-      'bundle' => 'none',
-      'bundle_selected' => array(),
-    ),
-    'facet_mincount' => '1',
-    'facet_missing' => '0',
-    'flatten' => '0',
-    'query_type' => 'term',
-    'default_true' => TRUE,
-    'facet_search_ids' => array(),
-    'exclude' => 0,
-  );
-  $export['search_api@default_node_index::field_media_type'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:author';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'author';
-  $facet->enabled = TRUE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-    ),
-    'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
-    ),
-    'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => 20,
-    'nofollow' => 1,
-    'show_expanded' => 0,
-  );
-  $export['search_api@default_node_index:block:author'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:body:value';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'body:value';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-    ),
-    'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
-    ),
-    'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => 20,
-    'nofollow' => 1,
-    'show_expanded' => 0,
-  );
-  $export['search_api@default_node_index:block:body:value'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:changed';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'changed';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-    ),
-    'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
-    ),
-    'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => 20,
-    'nofollow' => 1,
-    'show_expanded' => 0,
-  );
-  $export['search_api@default_node_index:block:changed'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:comment_count';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'comment_count';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-    ),
-    'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
-    ),
-    'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => 20,
-    'nofollow' => 1,
-    'show_expanded' => 0,
-  );
-  $export['search_api@default_node_index:block:comment_count'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:created';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'created';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-    ),
-    'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
-    ),
-    'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => 20,
-    'nofollow' => 1,
-    'show_expanded' => 0,
-  );
-  $export['search_api@default_node_index:block:created'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:field_media_type';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'field_media_type';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-      'indexed' => 0,
-    ),
-    'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
-    ),
-    'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
-      'display' => '4',
-      'indexed' => '4',
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => '20',
-    'nofollow' => 1,
-    'show_expanded' => 0,
-    'empty_text' => array(
-      'value' => '',
-      'format' => 'filtered_html',
-    ),
-    'submit_realm' => 'Save and go back to realm settings',
-  );
-  $export['search_api@default_node_index:block:field_media_type'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:promote';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'promote';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-    ),
-    'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
-    ),
-    'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => 20,
-    'nofollow' => 1,
-    'show_expanded' => 0,
-  );
-  $export['search_api@default_node_index:block:promote'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:search_api_language';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'search_api_language';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-    ),
-    'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
-    ),
-    'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => 20,
-    'nofollow' => 1,
-    'show_expanded' => 0,
-  );
-  $export['search_api@default_node_index:block:search_api_language'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:sticky';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'sticky';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-    ),
-    'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
-    ),
-    'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => 20,
-    'nofollow' => 1,
-    'show_expanded' => 0,
-  );
-  $export['search_api@default_node_index:block:sticky'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:title';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'title';
-  $facet->enabled = FALSE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-    ),
-    'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
-    ),
-    'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => 20,
-    'nofollow' => 1,
-    'show_expanded' => 0,
-  );
-  $export['search_api@default_node_index:block:title'] = $facet;
-
-  $facet = new stdClass();
-  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
-  $facet->api_version = 1;
-  $facet->name = 'search_api@default_node_index:block:type';
-  $facet->searcher = 'search_api@default_node_index';
-  $facet->realm = 'block';
-  $facet->facet = 'type';
-  $facet->enabled = TRUE;
-  $facet->settings = array(
-    'weight' => 0,
-    'widget' => 'facetapi_links',
-    'filters' => array(),
-    'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
-      'display' => 'display',
-    ),
-    'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
-    ),
-    'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
-    ),
-    'empty_behavior' => 'none',
-    'soft_limit' => 20,
-    'nofollow' => 1,
-    'show_expanded' => 0,
-  );
-  $export['search_api@default_node_index:block:type'] = $facet;
 
   return $export;
 }
