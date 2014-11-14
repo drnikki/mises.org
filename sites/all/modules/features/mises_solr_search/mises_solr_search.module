@@ -21,10 +21,9 @@ function _mises_solr_search_manage_solr_write_access() {
     return;
   }
 
-  // Do nothing if this is not hosted on devmises.org or is the master-content site:
-  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE && 
-    (strpos($_SERVER['HTTP_HOST'], 'dev.mises.org.468elmp01.blackmesh.com') !== FALSE ||
-     strpos($_SERVER['HTTP_HOST'], 'mises.org') !== FALSE)) {
+  // Do nothing if this is mises.org or is the Blackmesh site:
+  if (stripos($_SERVER['HTTP_HOST'], 'dev.mises.org.468elmp01.blackmesh.com') === TURE ||
+      stripos($_SERVER['HTTP_HOST'], 'mises.org') === TRUE) {
     return;
   } 
 
@@ -66,13 +65,12 @@ function mises_solr_search_init() {
  * make it clear that "Read only" access to the index is being enforced:
  */
 function mises_solr_search_form_apachesolr_environment_edit_form_alter(&$form, &$form_state, $form_id) {
-  // Do nothing if this is not hosted on devmises.org or if this is master-content.mises.devmises.org:
-  if (strpos($_SERVER['HTTP_HOST'], 'devmises.org') === FALSE &&
-    (strpos($_SERVER['HTTP_HOST'], 'dev.mises.org.468elmp01.blackmesh.com') !== FALSE ||
-     strpos($_SERVER['HTTP_HOST'], 'mises.org') !== FALSE)) {
+  // Do nothing if this is mises.org or is the Blackmesh site:
+  if (stripos($_SERVER['HTTP_HOST'], 'dev.mises.org.468elmp01.blackmesh.com') === TURE ||
+      stripos($_SERVER['HTTP_HOST'], 'mises.org') === TRUE) {
     return;
   }
-  
+
   // Disable modification of the "Index write access" field:
   $form['conf']['apachesolr_read_only']['#disabled'] = TRUE;
   $form['conf']['apachesolr_read_only']['#description'] .= '<br /><br />' . '<span style="color:#f00;">' .
