@@ -719,8 +719,8 @@ function mises_itunes_rss_feed_views_default_views() {
         'title' => 'title',
         'link' => 'path',
         'description' => 'body',
-        'author' => 'nothing',
-        'category' => 'field_library_item_tree',
+        'author' => 'field_author_1',
+        'category' => '',
         'comments' => '',
         'enclosure' => '',
         'guid' => '',
@@ -729,12 +729,12 @@ function mises_itunes_rss_feed_views_default_views() {
     ),
     'itunes' => array(
       'views_rss_itunes' => array(
-        'subtitle' => 'field_subtitle',
+        'subtitle' => '',
         'summary' => 'body',
         'duration' => '',
-        'keywords' => 'field_topics',
+        'keywords' => '',
         'image' => '',
-        'author' => 'nothing',
+        'author' => '',
         'isClosedCaptioned' => '',
         'explicit' => '',
         'block' => '',
@@ -763,12 +763,44 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Related Profile */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['label'] = '';
+  $handler->display->display_options['fields']['field_author_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image_collection']['id'] = 'field_image_collection';
+  $handler->display->display_options['fields']['field_image_collection']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['fields']['field_image_collection']['field'] = 'field_image_collection';
+  $handler->display->display_options['fields']['field_image_collection']['label'] = '';
+  $handler->display->display_options['fields']['field_image_collection']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_collection']['type'] = 'field_collection_fields';
+  $handler->display->display_options['fields']['field_image_collection']['settings'] = array(
+    'view_mode' => 'full',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_image_collection']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_image_collection']['delta_offset'] = '0';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['text'] = '[field_image_collection] [body]';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_plain';
   $handler->display->display_options['fields']['body']['settings'] = array(
