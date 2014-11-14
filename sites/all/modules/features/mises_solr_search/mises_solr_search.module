@@ -22,8 +22,8 @@ function _mises_solr_search_manage_solr_write_access() {
   }
 
   // Do nothing if this is mises.org or is the Blackmesh site:
-  if (stripos($_SERVER['HTTP_HOST'], 'dev.mises.org.468elmp01.blackmesh.com') === TURE ||
-      stripos($_SERVER['HTTP_HOST'], 'mises.org') === TRUE) {
+  if (stripos($_SERVER['HTTP_HOST'], 'dev.mises.org.468elmp01.blackmesh.com') !== FALSE ||
+      stripos($_SERVER['HTTP_HOST'], 'mises.org') !== FALSE) {
     return;
   } 
 
