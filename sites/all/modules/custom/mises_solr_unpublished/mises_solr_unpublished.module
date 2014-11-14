@@ -7,7 +7,7 @@
  */
 function mises_solr_unpublished_apachesolr_search_page_alter(&$build, $search_page) {
   foreach ($build['search_results']['search_results'] as $key => $result) {
-    if ($result['body']['#object']->status == 0) {
+    if ($result['#node']->status == 0) {
       unset($build['search_results']['search_results'][$key]);
     }
   }
