@@ -638,6 +638,22 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'course';
   $ds_fieldsetting->view_mode = 'block_teaser';
   $ds_fieldsetting->settings = array(
+    'contextual_block_title_with_icon' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'panel-heading',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
     'course_title_linked' => array(
       'weight' => '4',
       'label' => 'hidden',
@@ -654,20 +670,16 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
-    'contextual_block_title_with_icon' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
+    'body' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'panel-heading',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'p',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
         ),
-        'conditions' => array(),
       ),
     ),
     'field_image_collection' => array(
