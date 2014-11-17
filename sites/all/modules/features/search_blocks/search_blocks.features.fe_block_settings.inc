@@ -74,7 +74,7 @@ function search_blocks_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Search Blog',
     'visibility' => 0,
   );
 
