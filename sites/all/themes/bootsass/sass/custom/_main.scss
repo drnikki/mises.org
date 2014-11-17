@@ -16,6 +16,9 @@ body {
   @include background-texture($brand-primary,'../images/top-bar.jpg');
   padding-top: 28px;
   height: 110px;
+  img {
+    max-height: 63px;
+  }
 }
 
 .navbar-header {
