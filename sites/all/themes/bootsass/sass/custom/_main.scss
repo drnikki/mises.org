@@ -147,7 +147,9 @@ body {
         @include icon-image('../images/icons/icon-interview.png');
       }
       body.mises-view &,
-      body.icon-mises-view & {
+      body.icon-mises-view &,
+      body.mises-weekends &,
+      body.icon-mises-weekends & {
         @include icon-image('../images/icons/icon-view.png');
       }
       body.live-video &,
