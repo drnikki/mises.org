@@ -128,23 +128,6 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'googleanalytics_roles';
-  $strongarm->value = array(
-    1 => 0,
-    2 => 0,
-    3 => 0,
-    7 => 0,
-    4 => 0,
-    9 => 0,
-    8 => 0,
-    6 => 0,
-    5 => 0,
-  );
-  $export['googleanalytics_roles'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'googleanalytics_site_search';
   $strongarm->value = 0;
   $export['googleanalytics_site_search'] = $strongarm;

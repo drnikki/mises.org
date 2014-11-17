@@ -20,7 +20,6 @@ features[variable][] = googleanalytics_domain_mode
 features[variable][] = googleanalytics_js_scope
 features[variable][] = googleanalytics_pages
 features[variable][] = googleanalytics_privacy_donottrack
-features[variable][] = googleanalytics_roles
 features[variable][] = googleanalytics_site_search
 features[variable][] = googleanalytics_trackadsense
 features[variable][] = googleanalytics_trackdoubleclick
