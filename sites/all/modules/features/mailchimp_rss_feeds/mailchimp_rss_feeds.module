@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MailChimp RSS Feeds feature.
+ */
+
+include_once 'mailchimp_rss_feeds.features.inc';
