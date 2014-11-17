@@ -177,7 +177,12 @@ function mises_flex_block_field_default_field_instances() {
   $field_instances['node-flex_block-field_image'] = array(
     'bundle' => 'flex_block',
     'deleted' => 0,
-    'description' => '<p>Image should be <b>357px width</b>. Wider images will be scaled down. Smaller images will be horizontally centered in the block.</p>',
+    'description' => '<p>Follow these guidelines for images. Using images different from these sizes may cause display issues, so please follow these guidelines.</p>
+<ul>
+<li>LEFT top ad block image should be <b>656px width by 63px height</b>.</li>
+<li>RIGHT top ad block image should be <b>463px width by 63px height</b>.</li>
+<li>SIDEBAR block images should be <b>357px width</b> or less. Smaller images will be horizontally centered in the block.</li>
+</ul>',
     'display' => array(
       'block_teaser' => array(
         'label' => 'hidden',
@@ -255,7 +260,7 @@ function mises_flex_block_field_default_field_instances() {
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '357x600',
+      'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
@@ -855,7 +860,12 @@ lowest weight first.',
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('<p>Image should be <b>357px width</b>. Wider images will be scaled down. Smaller images will be horizontally centered in the block.</p>');
+  t('<p>Follow these guidelines for images. Using images different from these sizes may cause display issues, so please follow these guidelines.</p>
+<ul>
+<li>LEFT top ad block image should be <b>656px width by 63px height</b>.</li>
+<li>RIGHT top ad block image should be <b>463px width by 63px height</b>.</li>
+<li>SIDEBAR block images should be <b>357px width</b> or less. Smaller images will be horizontally centered in the block.</li>
+</ul>');
   t('Display Title');
   t('Enter a title here if this Flex Block has a title above the image. (Most Flex Blocks have no title or should enter the title in the Teaser Text field.)');
   t('Image');
