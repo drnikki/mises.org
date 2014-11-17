@@ -1501,39 +1501,17 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'library_item';
   $ds_fieldsetting->view_mode = 'block_teaser_term';
   $ds_fieldsetting->settings = array(
-    'dynamic_field_2' => array(
+    'block_teaser_panel_header' => array(
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'show_title' => 0,
-        'title_wrapper' => '',
-        'ctools' => 'a:3:{s:4:"conf";a:9:{s:5:"label";s:6:"hidden";s:9:"formatter";s:29:"taxonomy_term_reference_plain";s:11:"delta_limit";s:1:"1";s:12:"delta_offset";s:1:"0";s:14:"delta_reversed";i:0;s:18:"formatter_settings";a:0:{}s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";}s:4:"type";s:12:"entity_field";s:7:"subtype";s:28:"node:field_library_item_tree";}',
-        'load_terms' => 1,
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => '[node:field-library-item-tree:0]',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fis' => TRUE,
-          'fis-el' => 'div',
-          'fis-cl' => 'panel-heading',
-          'fis-at' => '',
-          'fis-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'panel-title',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
+        'ft' => array(),
         'conditions' => array(),
       ),
     ),
     'title' => array(
-      'weight' => '3',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -3190,6 +3168,48 @@ function display_suite_shared_ds_custom_fields_info() {
     'use_token' => 1,
   );
   $export['author_full_name'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'block_teaser_panel_header';
+  $ds_field->label = 'Block Teaser Panel Header';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+  $term_tid = $entity->field_library_item_tree[LANGUAGE_NONE][0][\'tid\'];
+  //this will be your top parent term if any was found
+  $parent_terms = taxonomy_get_parents_all($term_tid);
+  $top_parent_term = array();
+  //top parent term has no parents so find it out by checking if it has parents
+    foreach($parent_terms as $parent) {
+      $parent_parents = taxonomy_get_parents_all($parent->tid);
+      // if Mises Weekends, use that and break
+     if ($parent->tid == 434) {
+       $top_parent_term = $parent;
+       break;
+     } else if ($parent_parents != false) {
+        //this is top parent term
+        $top_parent_term = $parent;
+      }
+    }
+  if(isset($top_parent_term->name)) {
+      $termName= $top_parent_term->name;
+      $termClass= strtolower(preg_replace("/[^a-zA-Z0-9-]/", "-", $termName));
+     print \'<div class="\' . $termClass . \'">\';
+     print \'<div class="panel-heading"><div class="panel-title">\' . $termName . \'</div></div>\';
+     print \'</div>\';
+  }
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['block_teaser_panel_header'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -4967,22 +4987,22 @@ function display_suite_shared_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_image_collection',
-        1 => 'dynamic_field_2',
-        2 => 'group_body',
-        3 => 'field_library_item_tree',
-        4 => 'title',
-        5 => 'field_teaser_text',
-        6 => 'body',
+        1 => 'title',
+        2 => 'block_teaser_panel_header',
+        3 => 'group_body',
+        4 => 'field_teaser_text',
+        5 => 'body',
+        6 => 'field_library_item_tree',
       ),
     ),
     'fields' => array(
       'field_image_collection' => 'ds_content',
-      'dynamic_field_2' => 'ds_content',
-      'group_body' => 'ds_content',
-      'field_library_item_tree' => 'ds_content',
       'title' => 'ds_content',
+      'block_teaser_panel_header' => 'ds_content',
+      'group_body' => 'ds_content',
       'field_teaser_text' => 'ds_content',
       'body' => 'ds_content',
+      'field_library_item_tree' => 'ds_content',
     ),
     'limit' => array(
       'field_image_collection' => '1',

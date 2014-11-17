@@ -52,7 +52,8 @@
     .market & {
       @include icon-image('../images/icons/icon-market.png');
     }
-    .mises-view &, .Mises-View & {
+    .mises-view &, .Mises-View &,
+    .mises-weekends &, .Mises-Weekends &, .Mises.Weekends & {
       @include icon-image('../images/icons/icon-view.png');
     }
     .online-courses & {
@@ -73,7 +74,7 @@
     .topic & {
       @include icon-image('../images/icons/icon-topic.png');
     }
-    .video &, .AudioVideo &, .Audio.Video & {
+    .video &, .AudioVideo &, .Audio.Video &, .audio-video & {
       @include icon-image('../images/icons/icon-video.png');
     }
   }
