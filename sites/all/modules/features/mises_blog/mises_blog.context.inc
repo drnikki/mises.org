@@ -29,11 +29,17 @@ function mises_blog_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'custom_search_blocks-3' => array(
+          'module' => 'custom_search_blocks',
+          'delta' => 3,
+          'region' => 'sidebar_second_top',
+          'weight' => '-10',
+        ),
         'views-flex_blocks-block_24' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_24',
           'region' => 'sidebar_second_top',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-blog-block_featured' => array(
           'module' => 'views',
