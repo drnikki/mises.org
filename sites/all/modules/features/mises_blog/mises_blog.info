@@ -1,9 +1,10 @@
 name = Mises Blog
 core = 7.x
 package = Content Types
-version = 7.x-1.5
+version = 7.x-1.6
 project = mises_blog
 dependencies[] = ctools
+dependencies[] = custom_search_blocks
 dependencies[] = ds
 dependencies[] = entityreference
 dependencies[] = features
