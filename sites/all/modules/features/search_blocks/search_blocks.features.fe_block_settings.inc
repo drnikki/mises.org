@@ -45,6 +45,39 @@ function search_blocks_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['custom_search_blocks-3'] = array(
+    'cache' => -1,
+    'css_class' => 'border-secondary bg-darkgray search',
+    'custom' => 0,
+    'delta' => 3,
+    'module' => 'custom_search_blocks',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootsass' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootsass',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['search-form'] = array(
     'cache' => -1,
     'css_class' => '',
