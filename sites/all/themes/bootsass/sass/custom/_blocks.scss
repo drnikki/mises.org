@@ -40,7 +40,10 @@
     .interview &, .Interviews & {
       @include icon-image('../images/icons/icon-interview.png');
     }
-    .lecture &, .Lectures & {
+    .journal &, .journals &, .Journals & {
+      @include icon-image('../images/icons/icon-journal.png');
+    }
+    .lecture &, .lectures &,.Lectures & {
       @include icon-image('../images/icons/icon-lecture.png');
     }
     .level & {

@@ -19,8 +19,8 @@ function austrian_economics_landing_page_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'austrian-school' => 'austrian-school',
-        'node/819' => 'node/819',
+        'austrian-economics' => 'austrian-economics',
+        'node/877' => 'node/877',
       ),
     ),
   );
@@ -37,7 +37,7 @@ function austrian_economics_landing_page_context_default_contexts() {
           'module' => 'menu',
           'delta' => 'menu-austrian-economics-sub-menu',
           'region' => 'sidebar_second_top',
-          'weight' => '-10',
+          'weight' => '10',
         ),
       ),
     ),
