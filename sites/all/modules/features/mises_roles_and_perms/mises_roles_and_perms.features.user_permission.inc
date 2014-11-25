@@ -794,15 +794,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'xmlsitemap',
   );
 
-  // Exported permission: 'advanced migration information'.
-  $permissions['advanced migration information'] = array(
-    'name' => 'advanced migration information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'migrate',
-  );
-
   // Exported permission: 'assign node weight'.
   $permissions['assign node weight'] = array(
     'name' => 'assign node weight',
@@ -1216,13 +1207,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'tvi',
   );
 
-  // Exported permission: 'define view for terms in reason_for_contact'.
-  $permissions['define view for terms in reason_for_contact'] = array(
-    'name' => 'define view for terms in reason_for_contact',
-    'roles' => array(),
-    'module' => 'tvi',
-  );
-
   // Exported permission: 'define view for terms in tags'.
   $permissions['define view for terms in tags'] = array(
     'name' => 'define view for terms in tags',
@@ -1286,13 +1270,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'define view for vocabulary reading_group'.
   $permissions['define view for vocabulary reading_group'] = array(
     'name' => 'define view for vocabulary reading_group',
-    'roles' => array(),
-    'module' => 'tvi',
-  );
-
-  // Exported permission: 'define view for vocabulary reason_for_contact'.
-  $permissions['define view for vocabulary reason_for_contact'] = array(
-    'name' => 'define view for vocabulary reason_for_contact',
     'roles' => array(),
     'module' => 'tvi',
   );
@@ -1919,13 +1896,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete terms in reading_group'.
   $permissions['delete terms in reading_group'] = array(
     'name' => 'delete terms in reading_group',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in reason_for_contact'.
-  $permissions['delete terms in reason_for_contact'] = array(
-    'name' => 'delete terms in reason_for_contact',
     'roles' => array(),
     'module' => 'taxonomy',
   );
@@ -3231,13 +3201,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'edit terms in reason_for_contact'.
-  $permissions['edit terms in reason_for_contact'] = array(
-    'name' => 'edit terms in reason_for_contact',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'edit terms in tags'.
   $permissions['edit terms in tags'] = array(
     'name' => 'edit terms in tags',
@@ -3520,15 +3483,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
-  );
-
-  // Exported permission: 'migration information'.
-  $permissions['migration information'] = array(
-    'name' => 'migration information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'migrate',
   );
 
   // Exported permission: 'notify of path changes'.
