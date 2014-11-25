@@ -57,7 +57,8 @@ function mises_blog_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_author_1',
-      2 => 'title',
+      2 => 'field_teaser_text',
+      3 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -111,7 +112,7 @@ function mises_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Author',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_author_1',
       1 => 'dynamic_field_1',
