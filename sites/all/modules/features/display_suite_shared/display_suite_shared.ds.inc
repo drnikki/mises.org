@@ -444,11 +444,6 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['node|blog|simple_teaser'] = $ds_fieldsetting;
 
@@ -480,7 +475,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'title' => array(
-      'weight' => '2',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -549,6 +544,18 @@ function display_suite_shared_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'image img-responsive border-secondary',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_teaser_text' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-content',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -4186,11 +4193,13 @@ function display_suite_shared_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'body',
+        1 => 'field_teaser_text',
+        2 => 'body',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
+      'field_teaser_text' => 'ds_content',
       'body' => 'ds_content',
     ),
     'classes' => array(
@@ -4225,22 +4234,24 @@ function display_suite_shared_ds_layout_settings_info() {
         0 => 'field_image_collection',
       ),
       'right' => array(
-        1 => 'dynamic_field_1',
-        2 => 'post_date',
-        3 => 'title',
-        4 => 'field_author_1',
-        5 => 'group_date_author',
-        6 => 'body',
-        7 => 'node_link',
+        1 => 'title',
+        2 => 'dynamic_field_1',
+        3 => 'post_date',
+        4 => 'group_date_author',
+        5 => 'field_author_1',
+        6 => 'field_teaser_text',
+        7 => 'body',
+        8 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_image_collection' => 'left',
+      'title' => 'right',
       'dynamic_field_1' => 'right',
       'post_date' => 'right',
-      'title' => 'right',
-      'field_author_1' => 'right',
       'group_date_author' => 'right',
+      'field_author_1' => 'right',
+      'field_teaser_text' => 'right',
       'body' => 'right',
       'node_link' => 'right',
     ),
