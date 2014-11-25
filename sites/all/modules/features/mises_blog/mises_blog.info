@@ -1,7 +1,7 @@
 name = Mises Blog
 core = 7.x
 package = Content Types
-version = 7.x-1.6
+version = 7.x-1.7
 project = mises_blog
 dependencies[] = ctools
 dependencies[] = custom_search_blocks
@@ -44,6 +44,7 @@ features[field_instance][] = node-blog-field_featured_content
 features[field_instance][] = node-blog-field_image_collection
 features[field_instance][] = node-blog-field_level
 features[field_instance][] = node-blog-field_media_collection
+features[field_instance][] = node-blog-field_teaser_text
 features[field_instance][] = node-blog-field_topics
 features[field_instance][] = node-page-field_insert_after
 features[node][] = blog
