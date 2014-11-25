@@ -19,11 +19,8 @@ function mises_contact_notifications_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'email',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'email_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(

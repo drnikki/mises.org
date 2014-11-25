@@ -88,15 +88,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'dashboard',
   );
 
-  // Exported permission: 'access devel information'.
-  $permissions['access devel information'] = array(
-    'name' => 'access devel information',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'access draggableviews'.
   $permissions['access draggableviews'] = array(
     'name' => 'access draggableviews',
@@ -3217,15 +3208,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'execute php code'.
-  $permissions['execute php code'] = array(
-    'name' => 'execute php code',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'flush caches'.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
@@ -3706,24 +3688,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'shortcut',
   );
 
-  // Exported permission: 'switch users'.
-  $permissions['switch users'] = array(
-    'name' => 'switch users',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'devel',
-  );
-
-  // Exported permission: 'use PHP for settings'.
-  $permissions['use PHP for settings'] = array(
-    'name' => 'use PHP for settings',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'php',
-  );
-
   // Exported permission: 'use PHP for tracking visibility'.
   $permissions['use PHP for tracking visibility'] = array(
     'name' => 'use PHP for tracking visibility',
@@ -3803,13 +3767,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
     ),
-    'module' => 'filter',
-  );
-
-  // Exported permission: 'use text format php_code'.
-  $permissions['use text format php_code'] = array(
-    'name' => 'use text format php_code',
-    'roles' => array(),
     'module' => 'filter',
   );
 

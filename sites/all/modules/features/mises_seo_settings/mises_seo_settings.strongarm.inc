@@ -183,13 +183,6 @@ function mises_seo_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'xmlsitemap_generated_last';
-  $strongarm->value = 1416293243;
-  $export['xmlsitemap_generated_last'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_rebuild_needed';
   $strongarm->value = FALSE;
   $export['xmlsitemap_rebuild_needed'] = $strongarm;
