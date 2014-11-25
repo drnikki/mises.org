@@ -88,15 +88,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'dashboard',
   );
 
-  // Exported permission: 'access devel information'.
-  $permissions['access devel information'] = array(
-    'name' => 'access devel information',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'access draggableviews'.
   $permissions['access draggableviews'] = array(
     'name' => 'access draggableviews',
@@ -115,6 +106,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['access media browser'] = array(
     'name' => 'access media browser',
     'roles' => array(
+      'Blog Author' => 'Blog Author',
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
@@ -204,6 +196,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['add media from remote sources'] = array(
     'name' => 'add media from remote sources',
     'roles' => array(
+      'Blog Author' => 'Blog Author',
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
@@ -794,15 +787,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'xmlsitemap',
   );
 
-  // Exported permission: 'advanced migration information'.
-  $permissions['advanced migration information'] = array(
-    'name' => 'advanced migration information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'migrate',
-  );
-
   // Exported permission: 'assign node weight'.
   $permissions['assign node weight'] = array(
     'name' => 'assign node weight',
@@ -1216,13 +1200,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'tvi',
   );
 
-  // Exported permission: 'define view for terms in reason_for_contact'.
-  $permissions['define view for terms in reason_for_contact'] = array(
-    'name' => 'define view for terms in reason_for_contact',
-    'roles' => array(),
-    'module' => 'tvi',
-  );
-
   // Exported permission: 'define view for terms in tags'.
   $permissions['define view for terms in tags'] = array(
     'name' => 'define view for terms in tags',
@@ -1286,13 +1263,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'define view for vocabulary reading_group'.
   $permissions['define view for vocabulary reading_group'] = array(
     'name' => 'define view for vocabulary reading_group',
-    'roles' => array(),
-    'module' => 'tvi',
-  );
-
-  // Exported permission: 'define view for vocabulary reason_for_contact'.
-  $permissions['define view for vocabulary reason_for_contact'] = array(
-    'name' => 'define view for vocabulary reason_for_contact',
     'roles' => array(),
     'module' => 'tvi',
   );
@@ -1919,13 +1889,6 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'delete terms in reading_group'.
   $permissions['delete terms in reading_group'] = array(
     'name' => 'delete terms in reading_group',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in reason_for_contact'.
-  $permissions['delete terms in reason_for_contact'] = array(
-    'name' => 'delete terms in reason_for_contact',
     'roles' => array(),
     'module' => 'taxonomy',
   );
@@ -3231,13 +3194,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'edit terms in reason_for_contact'.
-  $permissions['edit terms in reason_for_contact'] = array(
-    'name' => 'edit terms in reason_for_contact',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'edit terms in tags'.
   $permissions['edit terms in tags'] = array(
     'name' => 'edit terms in tags',
@@ -3250,15 +3206,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit terms in the_austrian_school_of_economics',
     'roles' => array(),
     'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'execute php code'.
-  $permissions['execute php code'] = array(
-    'name' => 'execute php code',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'devel',
   );
 
   // Exported permission: 'flush caches'.
@@ -3522,15 +3469,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'menu_editor',
   );
 
-  // Exported permission: 'migration information'.
-  $permissions['migration information'] = array(
-    'name' => 'migration information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'migrate',
-  );
-
   // Exported permission: 'notify of path changes'.
   $permissions['notify of path changes'] = array(
     'name' => 'notify of path changes',
@@ -3750,24 +3688,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'shortcut',
   );
 
-  // Exported permission: 'switch users'.
-  $permissions['switch users'] = array(
-    'name' => 'switch users',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'devel',
-  );
-
-  // Exported permission: 'use PHP for settings'.
-  $permissions['use PHP for settings'] = array(
-    'name' => 'use PHP for settings',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'php',
-  );
-
   // Exported permission: 'use PHP for tracking visibility'.
   $permissions['use PHP for tracking visibility'] = array(
     'name' => 'use PHP for tracking visibility',
@@ -3847,13 +3767,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
     ),
-    'module' => 'filter',
-  );
-
-  // Exported permission: 'use text format php_code'.
-  $permissions['use text format php_code'] = array(
-    'name' => 'use text format php_code',
-    'roles' => array(),
     'module' => 'filter',
   );
 

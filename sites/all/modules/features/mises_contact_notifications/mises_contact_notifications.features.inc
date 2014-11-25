@@ -47,27 +47,3 @@ function mises_contact_notifications_eck_entity_type_info() {
   );
   return $items;
 }
-
-/**
- * Implements hook_default_entity_rule_setting().
- */
-function mises_contact_notifications_default_entity_rule_setting() {
-  $items = array();
-  $items['3'] = entity_import('entity_rule_setting', '{
-    "id" : "3",
-    "entity_type" : "entityform",
-    "bundle" : "contact_us",
-    "op" : "entityform_submission",
-    "rules_config" : "entityform_notifications_contact_form_submission_admin",
-    "weight" : "0",
-    "args" : {
-      "email_subject" : "",
-      "email_body" : "",
-      "show_submission" : 1,
-      "to_email" : ""
-    },
-    "false_msg" : null,
-    "rdf_mapping" : []
-  }');
-  return $items;
-}

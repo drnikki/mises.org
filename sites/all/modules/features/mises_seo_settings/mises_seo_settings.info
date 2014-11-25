@@ -1,7 +1,7 @@
 name = Mises SEO Settings
 core = 7.x
 package = Settings
-version = 7.x-1.4
+version = 7.x-1.5
 project = mises_seo_settings
 dependencies[] = ctools
 dependencies[] = metatag
@@ -52,7 +52,6 @@ features[variable][] = site_map_show_rss_links
 features[variable][] = site_map_show_titles
 features[variable][] = site_map_show_vocabularies
 features[variable][] = site_map_term_threshold
-features[variable][] = xmlsitemap_generated_last
 features[variable][] = xmlsitemap_rebuild_needed
 features[variable][] = xmlsitemap_regenerate_needed
 features[variable][] = xmlsitemap_settings_menu_link_main-menu

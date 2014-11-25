@@ -2,13 +2,17 @@
  * @file
  * custom.js
  *
- * Custom js for .
+ * Custom js for Giving Pages.
  */
+
+// To overcome conflict with Causeview jquery version
+jQuery.noConflict();
 
 var Drupal = Drupal || {};
 
 (function($, Drupal){
   "use strict";
+      
 
   Drupal.behaviors.givingScript = {
     attach: function(context) {
@@ -97,7 +101,7 @@ var Drupal = Drupal || {};
           //loop though the elements and get their heights
           children.each(function () {            
               //if bigger than the default set to default
-              if ($(this).outerHeight() > options.minHeight) options.minHeight= $(this).outerHeight();
+              if ($(this).height() > options.minHeight) options.minHeight= $(this).height();
               //if maxheight is set
               if(options.maxHeight !== null){
                   if(options.minHeight > options.maxHeight) options.minHeight= options.maxHeight;

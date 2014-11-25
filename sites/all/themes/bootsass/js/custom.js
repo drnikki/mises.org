@@ -2,8 +2,11 @@
  * @file
  * custom.js
  *
- * Custom js for .
+ * Custom js for Mises main site.
  */
+
+// To overcome conflict with Causeview jquery version
+jQuery.noConflict();
 
 var Drupal = Drupal || {};
 
