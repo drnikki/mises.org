@@ -30,7 +30,17 @@ function mises_contact_us_default_entityform_type() {
       "submissions_view" : "default",
       "user_submissions_view" : "default",
       "form_status" : "ENTITYFORM_OPEN",
-      "roles" : { "1" : "1", "2" : "2", "3" : "3", "4" : "4" },
+      "roles" : {
+        "1" : "1",
+        "2" : "2",
+        "3" : "3",
+        "7" : "7",
+        "4" : "4",
+        "9" : "9",
+        "8" : "8",
+        "6" : "6",
+        "5" : "5"
+      },
       "resubmit_action" : "new",
       "redirect_path" : "",
       "instruction_pre" : { "value" : "", "format" : "filtered_html" }
