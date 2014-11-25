@@ -115,6 +115,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['access media browser'] = array(
     'name' => 'access media browser',
     'roles' => array(
+      'Blog Author' => 'Blog Author',
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
@@ -204,6 +205,7 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['add media from remote sources'] = array(
     'name' => 'add media from remote sources',
     'roles' => array(
+      'Blog Author' => 'Blog Author',
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
