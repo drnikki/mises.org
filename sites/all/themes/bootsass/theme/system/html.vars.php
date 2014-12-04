@@ -36,13 +36,28 @@ function bootsass_preprocess_html(&$variables) {
   }
   $theme_path = drupal_get_path('theme', 'bootsass');
   if ($aliases[0] == 'giving') {
-      drupal_add_css($theme_path . '/stylesheets/giving.css', array('weight' => CSS_THEME));
-      drupal_add_js($theme_path . '/js/giving.js', array('weight' => CSS_THEME));
+      drupal_add_css($theme_path . '/stylesheets/giving.css', array(
+        'group' => CSS_THEME,
+        'preprocess' => FALSE
+      ));
+      drupal_add_js($theme_path . '/js/giving.js', array(
+        'group' => JS_THEME,
+        'preprocess' => FALSE
+      ));
       $variables['classes_array'][] = 'giving-theme';
   } else {
-      drupal_add_css($theme_path . '/stylesheets/styles.css', array('weight' => CSS_THEME));
-      drupal_add_js($theme_path . '/js/misc/jquery.nestedAccordion.js', array('weight' => CSS_THEME));
-      drupal_add_js($theme_path . '/js/custom.js', array('weight' => CSS_THEME));
+      drupal_add_css($theme_path . '/stylesheets/styles.css', array(
+        'group' => CSS_THEME,
+        'preprocess' => FALSE
+      ));
+      drupal_add_js($theme_path . '/js/misc/jquery.nestedAccordion.js', array(
+        'group' => JS_THEME,
+        'preprocess' => FALSE
+      ));
+      drupal_add_js($theme_path . '/js/custom.js', array(
+        'group' => JS_THEME,
+        'preprocess' => FALSE
+      ));
       $variables['classes_array'][] = 'main-theme';
   }
 
