@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function mises_itunes_rss_changes_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name != 'mises_itunes_rss_feeds' || $display_id != 'itunes_feed') {
+    return;
+  }
+
+  $tid = arg(1);
+  if (is_numeric($tid)) {
+    $term = taxonomy_term_load($tid);
+
+    // Update the description to match the taxonomy contextual filter:
+    if (isset($term->description)) {
+      $descr = $term->description;
+      $view->display_handler
+        ->options['style_options']['channel']['core']['views_rss_core']['description'] = $descr;
+    }
+  }
+}
+
+/**
+ * Implements hook_views_post_render().
+ */
+function mises_itunes_rss_changes_views_post_render(&$view, &$output, &$cache) {
+  $tid = arg(1);
+  if (is_numeric($tid)) {
+    $term = taxonomy_term_load($tid);
+
+    // Add an element for the feed's image:
+    if (isset($term->field_itunes_image[LANGUAGE_NONE][0]['uri'])) {
+      $image_url = file_create_url($term->field_itunes_image[LANGUAGE_NONE][0]['uri']);
+      $image_element = "\n " . '<itunes:image href="' .  $image_url . '" />';
+      $output = str_replace('</language>',  '</language>' . $image_element, $output);
+    }
+  }
+}
