@@ -14,7 +14,7 @@ function mises_itunes_rss_changes_views_pre_view(&$view, &$display_id, &$args) {
 
     // Update the description to match the taxonomy contextual filter:
     if (isset($term->description)) {
-      $descr = $term->description;
+      $descr = strip_tags($term->description);
       $view->display_handler
         ->options['style_options']['channel']['core']['views_rss_core']['description'] = $descr;
     }
