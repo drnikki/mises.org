@@ -1148,6 +1148,8 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
   $handler->display->display_options['arguments']['tid']['relationship'] = 'field_library_item_tree_tid';
   $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['title'] = '%1';
   $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'raw';
   $handler->display->display_options['arguments']['tid']['default_argument_options']['index'] = '1';
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
