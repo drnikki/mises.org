@@ -14,7 +14,7 @@ function library_item_media_type_field_default_field_instances() {
   $field_instances['taxonomy_term-media_type-field_itunes_image'] = array(
     'bundle' => 'media_type',
     'deleted' => 0,
-    'description' => 'Please provide an image for this category to be displayed within iTunes.',
+    'description' => 'Please provide an image for this category to be displayed within iTunes.  The image should be at least (300x300) and, ideally, should be square-shaped.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -35,7 +35,7 @@ function library_item_media_type_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '300x300',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -70,7 +70,7 @@ function library_item_media_type_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Please provide an image for this category to be displayed within iTunes.');
+  t('Please provide an image for this category to be displayed within iTunes.  The image should be at least (300x300) and, ideally, should be square-shaped.');
   t('iTunes Image');
 
   return $field_instances;
