@@ -441,6 +441,22 @@ function mises_seo_settings_metatag_export_default() {
     ),
   );
 
+  // Exported Metatag config instance: node:blog.
+  $config['node:blog'] = array(
+    'instance' => 'node:blog',
+    'config' => array(
+      'image_src' => array(
+        'value' => '[node:field_image]',
+      ),
+      'og:image' => array(
+        'value' => '[node:field_image]',
+      ),
+      'twitter:image' => array(
+        'value' => '[node:field_image]',
+      ),
+    ),
+  );
+
   // Exported Metatag config instance: node:book_digital_text.
   $config['node:book_digital_text'] = array(
     'instance' => 'node:book_digital_text',
