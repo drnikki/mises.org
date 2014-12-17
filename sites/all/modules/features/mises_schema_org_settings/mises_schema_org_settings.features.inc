@@ -86,7 +86,7 @@ function mises_schema_org_settings_rdf_default_mappings() {
     ),
     'title' => array(
       'predicates' => array(
-        0 => 'dc:title',
+        0 => 'schema:name',
       ),
     ),
     'created' => array(
@@ -117,7 +117,7 @@ function mises_schema_org_settings_rdf_default_mappings() {
     ),
     'name' => array(
       'predicates' => array(
-        0 => 'foaf:name',
+        0 => 'schema:name',
       ),
     ),
     'comment_count' => array(
@@ -132,6 +132,24 @@ function mises_schema_org_settings_rdf_default_mappings() {
       ),
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
+    ),
+    'field_author_1' => array(
+      'predicates' => array(),
+    ),
+    'field_teaser_text' => array(
+      'predicates' => array(),
+    ),
+    'field_image' => array(
+      'predicates' => array(
+        0 => 'schema:primaryImageOfPage',
+      ),
+      'type' => 'rel',
+    ),
+    'url' => array(
+      'predicates' => array(
+        0 => 'schema:url',
+      ),
+      'type' => 'rel',
     ),
   );
 
@@ -941,6 +959,9 @@ function mises_schema_org_settings_rdf_default_mappings() {
       ),
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
+    ),
+    'field_hidden_solr_content' => array(
+      'predicates' => array(),
     ),
   );
 

@@ -147,6 +147,7 @@ function mises_blog_field_group_info() {
     'children' => array(
       0 => 'field_media_collection',
       1 => 'field_image_collection',
+      2 => 'field_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
