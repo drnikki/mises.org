@@ -82,7 +82,7 @@ function featured_latest_view_blocks_views_default_views() {
   $handler->display->display_options['relationships']['field_media_collection_value']['table'] = 'field_data_field_media_collection';
   $handler->display->display_options['relationships']['field_media_collection_value']['field'] = 'field_media_collection_value';
   $handler->display->display_options['relationships']['field_media_collection_value']['delta'] = '-1';
-  /* Relationship: Field: Media (field_media:fid) */
+  /* Relationship: Field collection item: Media (field_media:fid) */
   $handler->display->display_options['relationships']['field_media_fid']['id'] = 'field_media_fid';
   $handler->display->display_options['relationships']['field_media_fid']['table'] = 'field_data_field_media';
   $handler->display->display_options['relationships']['field_media_fid']['field'] = 'field_media_fid';
