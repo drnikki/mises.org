@@ -23,8 +23,9 @@ function mises_book_content_field_group_info() {
     'label' => 'Book Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_book_chapter',
-      1 => 'title',
+      0 => 'field_citation',
+      1 => 'field_book_chapter',
+      2 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

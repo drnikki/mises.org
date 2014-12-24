@@ -485,7 +485,8 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<p class="read-more text-right">[view_node]</p>';
+  $handler->display->display_options['footer']['area']['content'] = '[field_citation]
+<p class="read-more text-right">[view_node]</p>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -577,6 +578,24 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Return to Book';
+  /* Field: Content: Citation */
+  $handler->display->display_options['fields']['field_citation']['id'] = 'field_citation';
+  $handler->display->display_options['fields']['field_citation']['table'] = 'field_data_field_citation';
+  $handler->display->display_options['fields']['field_citation']['field'] = 'field_citation';
+  $handler->display->display_options['fields']['field_citation']['relationship'] = 'field_online_text_target_id';
+  $handler->display->display_options['fields']['field_citation']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_citation']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_citation']['alter']['text'] = '<div class="group-footnotes">
+  <h3 class="label-above">Book Information</h3>
+  <p>[field_citation]</p>
+</div>';
+  $handler->display->display_options['fields']['field_citation']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
