@@ -444,7 +444,7 @@ function mises_book_digital_text_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_citation',
-    'label' => 'Citation',
+    'label' => 'Book Information',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -455,6 +455,7 @@ function mises_book_digital_text_field_default_field_instances() {
           'php_code' => 0,
           'plain_text' => 0,
           'simplified' => 'simplified',
+          'straight_html' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -478,6 +479,9 @@ function mises_book_digital_text_field_default_field_instances() {
             'simplified' => array(
               'weight' => -7,
             ),
+            'straight_html' => array(
+              'weight' => 0,
+            ),
           ),
         ),
       ),
@@ -491,7 +495,7 @@ function mises_book_digital_text_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -1350,7 +1354,7 @@ function mises_book_digital_text_field_default_field_instances() {
   t('Author');
   t('Body');
   t('Book Chapter');
-  t('Citation');
+  t('Book Information');
   t('Image');
   t('Kindle');
   t('Level');
