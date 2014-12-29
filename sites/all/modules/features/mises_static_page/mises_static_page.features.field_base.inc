@@ -62,7 +62,7 @@ function mises_static_page_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 34503,
+      'default_image' => 0,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
