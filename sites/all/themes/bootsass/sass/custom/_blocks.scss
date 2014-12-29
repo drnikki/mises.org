@@ -694,3 +694,10 @@ ul.accordion {
     }  
   }
 }
+/* Flex-block image */
+.node-flex-block {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
