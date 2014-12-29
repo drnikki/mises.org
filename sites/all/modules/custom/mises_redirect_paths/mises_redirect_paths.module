@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_url_inbound_alter().
+ *
+ * Replaces certain incoming paths:
+ *
+ */
+function mises_redirect_paths_url_inbound_alter(&$path, $original_path, $path_language) {
+  if (!isset($_GET['q'])) {
+    return;
+  }
+
+  switch ($_GET['q']) {
+    case 'media/1189/The-Biblical-Prophet-He-Told-It-Like-It-Is':
+      drupal_goto('node/15557', array(), 301);
+      break;
+  }
+}

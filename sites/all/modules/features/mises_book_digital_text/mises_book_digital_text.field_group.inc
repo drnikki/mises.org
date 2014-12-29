@@ -25,9 +25,8 @@ function mises_book_digital_text_field_group_info() {
     'children' => array(
       0 => 'field_author_1',
       1 => 'field_body',
-      2 => 'field_citation',
-      3 => 'field_image',
-      4 => 'field_video_review',
+      2 => 'field_image',
+      3 => 'field_video_review',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

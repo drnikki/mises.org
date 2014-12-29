@@ -1,0 +1,6 @@
+name = Mises iTunes RSS Changes
+description = Modifies output of the Views-based iTunes RSS feed.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0
+dependencies[] = views

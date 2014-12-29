@@ -1,7 +1,7 @@
 name = Mises SEO Settings
 core = 7.x
 package = Settings
-version = 7.x-1.5
+version = 7.x-1.6
 project = mises_seo_settings
 dependencies[] = ctools
 dependencies[] = metatag
@@ -24,6 +24,7 @@ features[metatag][] = global:403
 features[metatag][] = global:404
 features[metatag][] = global:frontpage
 features[metatag][] = node
+features[metatag][] = node:blog
 features[metatag][] = node:book_digital_text
 features[metatag][] = node:campaign_
 features[metatag][] = node:giving_story
