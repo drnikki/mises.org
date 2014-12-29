@@ -2786,6 +2786,9 @@ ul.accordion li { list-style: none; }
 #library-menu .nav > li > a.icon.trigger:hover, #library-menu .nav > li > a.icon.trigger:focus, #library-menu .nav > li > a.icon.trigger:active { background-color: #00426b; color: #fff; }
 #library-menu .nav > li.last-child a { background-image: none; font-weight: normal; }
 
+/* Flex-block image */
+.node-flex-block img { max-width: 100%; height: auto; }
+
 /*
 * Custom Styles for Special Features
 * 
