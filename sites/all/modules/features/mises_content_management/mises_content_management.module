@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Content Management feature.
+ */
+
+include_once 'mises_content_management.features.inc';
