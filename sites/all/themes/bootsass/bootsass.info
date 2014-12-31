@@ -50,6 +50,7 @@ scripts[] = 'js/bootstrap/tab.js'
 ;scripts[] = 'js/custom.js'
 scripts[] = 'js/solr_facet_changes.js'
 scripts[] = 'js/solr_top_facets.js'
+scripts[] = 'js/accordion-fix.js'
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Theme Settings
