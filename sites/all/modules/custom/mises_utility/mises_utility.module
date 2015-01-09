@@ -453,3 +453,10 @@ function mises_utility_set_input() {
   db_query("UPDATE {field_data_body} SET body_format = 'simplified' WHERE body_format != 'simplified' AND body_format != 'full_html' AND bundle = 'library_item'");
   drupal_set_message('Set missing input filters');
 }
+
+function mises_utility_url_inbound_alter(&$path, $original_path, $path_language) {
+  // Redirect odd url path to the correct path
+  if($path == 'media/2602/A-New-Currency-for-the-World') {
+    drupal_goto('/node/12371');
+  }
+}
