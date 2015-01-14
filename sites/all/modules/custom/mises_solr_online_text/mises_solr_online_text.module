@@ -38,7 +38,7 @@ function mises_solr_online_text_entity_update($entity, $type) {
 /**
  * Implements hook_entity_delete().
  */
-function mises_solr_online_text_entity_update($entity, $type) {
+function mises_solr_online_text_entity_delete($entity, $type) {
   switch ($type) {
     case 'book_chapter':
       break;
