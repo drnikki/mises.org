@@ -763,7 +763,7 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Author */
+  /* Field: Content: Related Profile */
   $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
   $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
   $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
@@ -871,6 +871,8 @@ function mises_itunes_rss_feed_views_default_views() {
 
   /* Display: iTunes Feed */
   $handler = $view->new_display('feed', 'iTunes Feed', 'itunes_feed');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
@@ -1068,6 +1070,7 @@ function mises_itunes_rss_feed_views_default_views() {
       ),
     ),
   );
+  $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -1179,6 +1182,28 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['filters']['field_contact_email_value']['relationship'] = 'field_author_1_target_id';
   $handler->display->display_options['filters']['field_contact_email_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_contact_email_value']['group'] = 1;
+  /* Filter criterion: Content: Published Date (field_published_date) */
+  $handler->display->display_options['filters']['field_published_date_value']['id'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['filters']['field_published_date_value']['field'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['operator_id'] = 'field_published_date_value_op';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['label'] = 'Published Date (field_published_date)';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['operator'] = 'field_published_date_value_op';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['identifier'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    7 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    6 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_published_date_value']['granularity'] = 'second';
+  $handler->display->display_options['filters']['field_published_date_value']['default_date'] = '-30 day';
   $handler->display->display_options['path'] = 'itunes/%';
   $export['mises_itunes_rss_feeds'] = $view;
 
