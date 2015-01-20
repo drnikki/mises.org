@@ -3498,6 +3498,21 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'save draft'.
+  $permissions['save draft'] = array(
+    'name' => 'save draft',
+    'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'save_draft',
+  );
+
   // Exported permission: 'schedule (un)publishing of nodes'.
   $permissions['schedule (un)publishing of nodes'] = array(
     'name' => 'schedule (un)publishing of nodes',
