@@ -243,26 +243,6 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['value'] = array(
-    442 => '442',
-    149 => '149',
-    158 => '158',
-    148 => '148',
-    153 => '153',
-    367 => '367',
-    364 => '364',
-    145 => '145',
-    174 => '174',
-    186 => '186',
-    188 => '188',
-    178 => '178',
-    184 => '184',
-    181 => '181',
-    147 => '147',
-    170 => '170',
-    167 => '167',
-    162 => '162',
-  );
   $handler->display->display_options['filters']['field_library_item_tree_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_library_item_tree_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_library_item_tree_tid']['expose']['operator_id'] = 'field_library_item_tree_tid_op';
@@ -280,7 +260,6 @@ function mises_content_management_views_default_views() {
     6 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
@@ -375,26 +354,6 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['value'] = array(
-    442 => '442',
-    149 => '149',
-    158 => '158',
-    148 => '148',
-    153 => '153',
-    367 => '367',
-    364 => '364',
-    145 => '145',
-    174 => '174',
-    186 => '186',
-    188 => '188',
-    178 => '178',
-    184 => '184',
-    181 => '181',
-    147 => '147',
-    170 => '170',
-    167 => '167',
-    162 => '162',
-  );
   $handler->display->display_options['filters']['field_library_item_tree_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_library_item_tree_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_library_item_tree_tid']['expose']['operator_id'] = 'field_library_item_tree_tid_op';
@@ -412,7 +371,6 @@ function mises_content_management_views_default_views() {
     6 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_library_item_tree_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
