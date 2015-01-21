@@ -138,6 +138,10 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Type */
+  $handler->display->display_options['sorts']['type']['id'] = 'type';
+  $handler->display->display_options['sorts']['type']['table'] = 'node';
+  $handler->display->display_options['sorts']['type']['field'] = 'type';
   /* Sort criterion: Content: Mises Published Date (field_mises_published_date) */
   $handler->display->display_options['sorts']['field_mises_published_date_value']['id'] = 'field_mises_published_date_value';
   $handler->display->display_options['sorts']['field_mises_published_date_value']['table'] = 'field_data_field_mises_published_date';
@@ -165,6 +169,7 @@ function term_landing_page_views_default_views() {
     'blog' => 'blog',
     'course' => 'course',
     'event' => 'event',
+    'library_collection' => 'library_collection',
     'library_item' => 'library_item',
     'person_profile' => 'person_profile',
     'product' => 'product',
