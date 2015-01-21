@@ -5,23 +5,27 @@
  */
 function mises_solr_online_text_node_insert($node) {
   if ($node->type == 'library_item') {
-    _mises_solr_online_text_update_solr_nodes($node, 'insert');
+    _mises_solr_online_text_sync_child_page_and_chapter_nodes($node->nid);
   }
 }
+
 
 /**
  * Implements hook_node_update().
  */
 function mises_solr_online_text_node_update($node) {
   if ($node->type == 'library_item') {
-    _mises_solr_online_text_update_solr_nodes($node, 'update');
+    _mises_solr_online_text_sync_child_page_and_chapter_nodes($node->nid);
   }
   elseif ($node->type == 'book_digital_text') {
     // Locate all Library items from which this Online Text node is referenced:
     $library_item_nids = _mises_solr_online_text_get_parent_library_items($node->nid);
-    drupal_set_message('<pre>' . print_r($library_item_nids, 1) . '</pre>');
+    foreach ($library_item_nids as $library_item_nid) {
+      _mises_solr_online_text_sync_child_page_and_chapter_nodes($library_item_nid);
+    }
   }
 }
+
 
 /**
  * Implements hook_entity_update().
@@ -29,11 +33,19 @@ function mises_solr_online_text_node_update($node) {
 function mises_solr_online_text_entity_update($entity, $type) {
   switch ($type) {
     case 'book_chapter':
+      $parent_lib_items = _mises_solr_online_text_get_book_chapter_parent_lib_items($entity->entity_id);
       break;
     case 'book_page':
+      $parent_lib_items = _mises_solr_online_text_get_book_page_parent_lib_items($entity->entity_id);
       break;
+    default:
+      return;
+  }
+  foreach ($parent_lib_items as $parent_lib_nid) {
+    _mises_solr_online_text_sync_child_page_and_chapter_nodes($parent_lib_nid);
   }
 }
+
 
 /**
  * Implements hook_entity_delete().
@@ -41,12 +53,33 @@ function mises_solr_online_text_entity_update($entity, $type) {
 function mises_solr_online_text_entity_delete($entity, $type) {
   switch ($type) {
     case 'book_chapter':
-      break;
+      // Delete all solr_online_text_chapter nodes associate with this Book Chapter:
+      $solr_chapters_query = db_query("SELECT n.nid FROM node n, field_data_field_chapter_reference ch " .
+        "WHERE n.type = 'solr_online_text_chapter' AND " .
+        "n.nid = ch.entity_id AND " .
+        "ch.field_chapter_reference_target_id = :chapter_entity_id",
+        array(
+          ':chapter_entity_id' => $entity->entity_id,
+        )
+      );
+      foreach ($solr_chapters_query as $result) {
+        node_delete($result->nid);
+      }
     case 'book_page':
-      break;
+      // Delete all solr_online_text_page nodes associate with this Book Page:
+      $solr_pages_query = db_query("SELECT n.nid FROM node n, field_data_field_page_reference pg " .
+        "WHERE n.type = 'solr_online_text_page' AND " .
+        "n.nid = pg.entity_id AND " .
+        "pg.field_page_reference_target_id = :page_entity_id",
+        array(
+          ':page_entity_id' => $entity->entity_id,
+        )
+      );
+      foreach ($solr_pages_query as $result) {
+        node_delete($result->nid);
+      }
   }
 }
-
 
 
 /**
@@ -54,87 +87,113 @@ function mises_solr_online_text_entity_delete($entity, $type) {
  */
 function mises_solr_online_text_node_delete($node) {
   if ($node->type == 'library_item') {
-    _mises_solr_online_text_update_solr_nodes($node, 'delete');
+    $library_item_nids[] = $node->nid;
   }
   elseif ($node->type == 'book_digital_text') {
     // Locate all Library items from which this Online Text node is referenced:
     $library_item_nids = _mises_solr_online_text_get_parent_library_items($node->nid);
-    drupal_set_message('<pre>' . print_r($library_item_nids, 1) . '</pre>');
+  }
+
+  foreach ($library_item_nids as $library_item_nid) {
+    // Get and delete solr page and solr chapter nodes referencing this library item:
+    $solr_nodes_query = db_query("SELECT n.nid FROM node n, field_data_field_library_item_reference sol " .
+      "WHERE (n.type = 'solr_online_text_chapter' OR n.type = 'solr_online_text_page') AND " .
+      "sol.entity_id = n.nid AND sol.field_library_item_reference_target_id = :library_item_nid",
+      array(
+        ':library_item_nid' => $library_item_nid,
+      )
+    );
+    foreach ($solr_nodes_query as $result) {
+      node_delete($result->nid);
+    }
+  } 
+}
+
+
+function _mises_solr_online_text_sync_child_page_and_chapter_nodes($lib_item_nid) {
+  // Get chapters entities associated with this library item and create solr chapters to match:
+  $chapters_query = db_query("SELECT ch.field_book_chapter_target_id " .
+    "FROM field_data_field_book_chapter ch, field_data_field_online_text otxt " .
+    "WHERE otxt.entity_id = :lib_item_nid AND ch.entity_id = otxt.field_online_text_target_id",
+    array(
+      ':lib_item_nid' => $lib_item_nid,
+    )
+  );
+  foreach ($chapters_query as $ch_result) {
+    _mises_solr_online_text_sync_lib_solr_chapters($ch_result->field_book_chapter_target_id, $lib_item_nid); 
+
+    // Get child pages for this chapter and create solr pages to match:
+    $pages_query = db_query("SELECT pg.field_book_pages_target_id FROM field_data_field_book_pages pg " .
+      "WHERE pg.entity_id = :chapter_entity_id",
+      array(
+        ':chapter_entity_id' => $ch_result->field_book_chapter_target_id,
+      )
+    );
+    foreach ($pages_query as $pg_result) {
+      _mises_solr_online_text_sync_lib_solr_pages($pg_result->field_book_pages_target_id, $lib_item_nid);
+    } 
+
   }
 }
 
-/**
- * Inserts, updates, and deletes solr_online_text_chapter and solr_online_text_page nodes
- * to match the online text node content of each library item:
- *
- * @param $lib_node
- *   - Library item $node from which solr chapter and page nodes will be generated.
- * @param $operation
- *   - Indicates whether this library item is being inserted, updated, or deleted.
- */
-function _mises_solr_online_text_update_solr_nodes($lib_node, $operation) {
-
-  switch ($operation) {
-    case 'insert':
-      // Get this Library Item's Online Text node if it exists; otherwise, no actions are needed:
-      if (isset($lib_node->field_online_text[LANGUAGE_NONE][0]['target_id'])) {
-        $otxt_node = node_load($lib_node->field_online_text[LANGUAGE_NONE][0]['target_id']);
-      } else {
-        return;
-      }
-
-      // Iterate over book chapter entities or stop if none exist:
-      if (empty($otxt_node->field_book_chapter)) {
-        return;
-      }
-      foreach ($otxt_node->field_book_chapter[LANGUAGE_NONE] as $chapter_entity_id) {
-        _mises_solr_online_text_update_solr_chapter_and_pages($chapter_entity_id, $lib_nid, $operation);
-      }
-      break;
-    case 'update':
-      // Get this Library Item's Online Text node if it exists; otherwise, no actions are needed:
-      if (isset($lib_node->field_online_text[LANGUAGE_NONE][0]['target_id'])) {
-        $otxt_node = node_load($lib_node->field_online_text[LANGUAGE_NONE][0]['target_id']);
-      } else {
-        return;
-      }
-  
-      // Iterate over book chapter entities or stop if none exist:
-      if (empty($otxt_node->field_book_chapter)) {
-        return;
-      }
-      
-      // TODO - Delete any non-existant Chapters and Pages associated with this Library item node + Online Text node;
-
-      foreach ($otxt_node->field_book_chapter[LANGUAGE_NONE] as $chapter_entity_id) {
-        _mises_solr_online_text_update_solr_chapter_and_pages($chapter_entity_id, $lib_nid, $operation);
-      }
-      break;
-    case 'delete':
-      // TODO - Delete all Chapters and Pages associated with this Library item node + Online Text node:
-      break;
-  }
-}
 
 /**
- * Handle insert/update/delete activities to reflect the current state of a given Chapter and its Pages:
+ * Insert/update solr_online_text_chapter node for this book chapter/lib item pair:
  *
- * @param $chapter_entity_id 
- *   - Entity ID of the Book Chapter entity for which a solr_online_text_chapter node will be updated to
- *     match as well as any solr_onine_text_page nodes for any Book Page entities within this chapter.
+ * @param $chapter_entity_id
+ *  - The Book Chapter entity from which solr_online_text_chapter will be created.
+ *
  * @param $lib_nid
- *   - Node ID of the Library Item node in which this chapter exists.
- * @param $operation
- *   - Indicating whether this Book Chapter is being inserted, updated, or deleted.
+ * - The Node ID of the Library Item with which this new solr_online_text_chapter will be associated.
  */
-function _mises_solr_online_text_update_solr_chapter_and_pages($chapter_entity_id, $lib_nid, $operation) {
-  drupal_set_message($operation);
-  $chapter = entity_load('book_chapter', $chapter_entity_id, array(), TRUE);
-  drupal_set_message('<pre>' . print_r($chapter, 1) . '</pre>');
+function _mises_solr_online_text_sync_lib_solr_chapters($chapter_entity_id, $lib_nid) {
+  // Load the solr_online_text_chapter for this Book Chapter / Library Item pair:
+  $solr_chapter_query = db_query("SELECT n.nid FROM node n, field_data_field_chapter_reference ch " .
+    "WHERE n.type = 'solr_online_text_chapter' AND n.nid = ch.entity_id AND " .
+    "ch.field_chapter_reference_target_id = :chapter_entity_id",
+    array(
+      ':chapter_entity_id' => $chapter_entity_id,
+    )
+  );
+  foreach ($solr_chapter_query as $result) {
+    $solr_chapter_nid = $result->nid;
+  }
+
+  if (isset($solr_chapter_nid)) {
+    $solr_node = node_load($solr_chapter_nid);
+  } else {
+    drupal_set_message('solr_online_text_chapter would have been created for book chapter ' . $chapter_entity_id);
+    // $solr_node = new stdClass();
+    // $solr_node->type = 'solr_online_text_chapter';
+    // node_object_prepare($solr_chapter_node);
+    return;
+  }
+
+  drupal_set_message('updates would happen for solr_online_text_chapter nid=' . $solr_chapter_nid);
+  drupal_set_message('<pre>' . print_r($solr_node, 1) . '</pre>');
+
 }
 
 /**
- * Get all Library Items at refrence a given Online Text node:
+ * Insert/update solr_online_text_page node for this book page/lib item pair:
+ * 
+ * @param $page_entity_id
+ *  - The Book Page entity from which solr_online_text_page will be created.
+ *  
+ * @param $lib_nid
+ * - The Node ID of the Library Item with which this new solr_online_text_page will be associated.
+ */
+function _mises_solr_online_text_sync_lib_solr_pages($page_entity_id, $lib_nid) {
+
+}
+
+
+
+
+// INFO FUNCTIONS:
+
+/**
+ * Get all Library Items that reference a given Online Text node:
  *
  * @param $otxt_nid
  *   - The Node ID of the child Online Text node from which to gather parent Library Item Node IDs.
@@ -145,11 +204,69 @@ function _mises_solr_online_text_get_parent_library_items($otxt_nid) {
     array(
       ':otxt_nid' => $otxt_nid,
     )
-  );  
+  );
   $library_item_nids = array();
   foreach ($lib_items_query as $result) {
     $library_item_nids[] = $result->entity_id;
   }
 
   return $library_item_nids;
+}
+
+
+
+/**
+ * Returns an array of parent Library Item node IDs for this book chapter:
+ *
+ * @param $chapter_entity_id
+ *  - Entity ID of the Book Chapter in question.
+ */
+function _mises_solr_online_text_get_book_chapter_parent_lib_items($chapter_entity_id) {
+  $parent_lib_item_nids = array();
+  $parent_lib_items_query = db_query("SELECT n.nid FROM " .
+    "node n, field_data_field_online_text otxt, field_data_field_book_chapter ch " .
+    "WHERE n.type = 'library_item' AND n.nid = otxt.entity_id AND " .
+    "otxt.field_online_text_target_id = ch.entity_id AND " . 
+    "ch.field_book_chapter_target_id = :chapter_entity_id",
+    array(
+      ':chapter_entity_id' => $chapter_entity_id,
+    )
+  );
+  foreach ($parent_lib_items_query as $result) {
+    $parent_lib_item_nids[] = $result->nid;
+  }
+
+  return $parent_lib_item_nids;
+}
+
+
+/**
+ * Returns an array of parent Library Item node IDs for this book page:
+ *
+ * @param $page_entity_id
+ *  - Entity ID of the Book Page in question.
+ */
+function _mises_solr_online_text_get_book_page_parent_lib_items($page_entity_id) {
+  $parent_lib_item_nids = array();
+  $parent_lib_items_query = db_query("SELECT n.nid FROM " .
+    "node n, field_data_field_online_text otxt, field_data_field_book_chapter ch, field_data_field_book_pages pg " .
+    "WHERE n.type = 'library_item' AND n.nid = otxt.entity_id AND " .
+    "otxt.field_online_text_target_id = ch.entity_id AND " .
+    "ch.field_book_chapter_target_id = pg.entity_id AND pg.field_book_pages_target_id = :page_entity_id",
+    array(
+      ':page_entity_id' => $page_entity_id,
+    )
+  );
+  foreach ($parent_lib_items_query as $result) {
+    $parent_lib_item_nids[] = $result->nid;
+  }
+
+  return $parent_lib_item_nids;
+}
+
+
+
+function mises_solr_online_text_init() {
+//  $parent_library_item_nids = _mises_solr_online_text_get_book_page_parent_lib_items(519);
+//  drupal_set_message('<pre>' . print_r($parent_library_item_nids, 1) . '</pre>');
 }
