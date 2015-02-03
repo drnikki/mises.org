@@ -62,6 +62,8 @@ function mises_blog_landing_views_default_views() {
 
   /* Display: Landing Page */
   $handler = $view->new_display('page', 'Landing Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Mises Wire';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'landing-list';
   $handler->display->display_options['path'] = 'blog';
