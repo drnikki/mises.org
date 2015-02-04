@@ -2,6 +2,82 @@
 
 
 /**
+ * Implements hook_menu().
+ */
+function mises_solr_online_text_menu() {
+  $items['admin/bulk-process-lib-items'] = array(
+    'title' => 'Bulk Process Library Items',
+    'description' => 'Generate solr_online_text_page and solr_online_text_chapter nodes for each library item to allow book content ' .
+      'to appear in search results.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_mises_solr_online_text_lib_update_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+  return $items;
+}
+
+/**
+ * Defines bulk library item update form:
+ */
+function _mises_solr_online_text_lib_update_form() {
+  $form = array();
+  $page_entity_count = db_select('eck_book_page')->countQuery()->execute()->fetchField();
+  $chap_entity_count = db_select('eck_book_chapter')->countQuery()->execute()->fetchField();
+  $solr_page_count = db_select('node')->condition('type', 'solr_online_text_page')->countQuery()->execute()->fetchField();
+  $solr_chap_count = db_select('node')->condition('type', 'solr_online_text_chapter')->countQuery()->execute()->fetchField();
+ 
+  $lib_items =  _mises_solr_online_text_get_lib_items_to_process();
+  $status = 'Number of Library Items with child pages or chapters: ' . count($lib_items) . '<br /><br />' .
+            'Number of Book Chapter entities: '. $chap_entity_count . '<br /><br />' .
+            'Number of Solr Book Chapter nodes: ' . $solr_chap_count . '<br /><br />' .
+            'Number of Book Page entities: ' . $page_entity_count . '<br /><br />' .
+            'Number of Solr Book Page nodes: ' . $solr_page_count . '<br /><br />';
+  $form['lib_items'] = array(
+    '#type' => 'fieldset',
+    '#description' => $status,
+  );
+  $form['lib_items']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Process Items',
+  );
+  return $form;
+}
+
+function _mises_solr_online_text_lib_update_form_submit($form, &$form_state) {
+  $count = 0;
+  foreach(_mises_solr_online_text_get_lib_items_to_process() as $lib_nid => $true) {
+    $lib_node = node_load($lib_nid);
+    drupal_set_message('Processing Library Item: ' . l($lib_node->title, 'node/' . $lib_node->nid)); 
+    _mises_solr_online_text_sync_child_page_and_chapter_nodes($lib_node);
+    $count++;
+  }
+  drupal_set_message($count . ' Library Items were processed.'); 
+}
+
+function _mises_solr_online_text_get_lib_items_to_process() {
+  $lib_items = array();
+
+  // Gather all page entities:
+  $pg_query = db_query("SELECT id FROM eck_book_page");
+  foreach ($pg_query as $result) {
+    foreach(_mises_solr_online_text_get_book_page_parent_lib_items($result->id) as $lib_id) {
+      $lib_items[$lib_id] = TRUE;
+    }
+  }
+
+  // Gather all chapter entities:
+  $ch_query = db_query("SELECT id FROM eck_book_chapter");
+  foreach ($ch_query as $result) {
+    foreach(_mises_solr_online_text_get_book_chapter_parent_lib_items($result->id) as $lib_id) {
+      $lib_items[$lib_id] = TRUE;
+    }
+  }
+
+  return $lib_items;
+}
+
+
+/**
  * Implements hook_url_inbound_alter().
  */
 function mises_solr_online_text_url_inbound_alter(&$path, $original_path, $path_language) {
