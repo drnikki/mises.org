@@ -26,7 +26,7 @@ function mises_book_digital_text_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_index' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_result' => array(
         'custom_settings' => FALSE,
@@ -77,6 +77,9 @@ function mises_book_digital_text_strongarm() {
         'custom_settings' => FALSE,
       ),
       'vertical_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'audio_teaser' => array(
         'custom_settings' => FALSE,
       ),
     ),

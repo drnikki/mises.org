@@ -3,3 +3,4 @@ description = Automates creation, update, and deletion of solr_online_text_chapt
 core = 7.x
 package = Mises Custom
 version = 7.x-1.0
+
