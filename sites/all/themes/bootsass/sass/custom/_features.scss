@@ -505,6 +505,15 @@ ul.addtocal_menu {
     }
   }
 }
+.file.view-mode-wide_player {
+  audio {
+    vertical-align: middle;
+  }
+  .btn {
+    @include button-size($padding-small-vertical + 1, $padding-small-horizontal, $font-size-small, $line-height-small, 5px);
+  }
+}
+
 /* BLOG */
 // CUSTOM IMAGE STYLES FOR INLINE IMAGES IN LEGACY POSTS
 .node-blog {
