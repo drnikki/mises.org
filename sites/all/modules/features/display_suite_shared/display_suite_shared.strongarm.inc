@@ -478,6 +478,9 @@ node-teaser';
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'download_link' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -492,6 +495,10 @@ node-teaser';
             'visible' => TRUE,
           ),
           'wide_player' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'download_link' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),

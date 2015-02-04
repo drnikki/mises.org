@@ -141,6 +141,34 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'file|audio|wide_player';
+  $ds_fieldsetting->entity_type = 'file';
+  $ds_fieldsetting->bundle = 'audio';
+  $ds_fieldsetting->view_mode = 'wide_player';
+  $ds_fieldsetting->settings = array(
+    'download_link' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'file_dynamic_1' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:4:"link";i:0;s:9:"view_mode";s:13:"download_link";s:7:"context";s:25:"argument_entity_id:file_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";}s:4:"type";s:12:"file_content";s:7:"subtype";s:12:"file_content";}',
+        'load_terms' => 0,
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+  );
+  $export['file|audio|wide_player'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|award|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'award';
@@ -3418,6 +3446,36 @@ if ($entity->field_link_to_external_listing_) {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'download_link';
+  $ds_field->label = 'Download Link';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'file' => 'file',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+  $uri = $entity->uri;
+  global $base_url;
+  $wrapper = file_stream_wrapper_get_instance_by_uri($uri);
+  if ($wrapper instanceof DrupalLocalStreamWrapper) {
+    $path = $base_url . \'/\' . $wrapper->getDirectoryPath() . \'/\' . file_uri_target($uri);
+  }
+  else {
+    $path = $uri;
+  }
+  print \'<p><a class="btn btn-default" href="\' . $path . \'">Download \' . $entity->type . \' file</a></p>\';
+?>
+',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['download_link'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'dynamic_3';
   $ds_field->label = 'Dynamic 3';
   $ds_field->field_type = 7;
@@ -3982,6 +4040,46 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['field_collection_item|field_resources|list_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'file|audio|wide_player';
+  $ds_layout->entity_type = 'file';
+  $ds_layout->bundle = 'audio';
+  $ds_layout->view_mode = 'wide_player';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'file',
+        1 => 'download_link',
+      ),
+      'ds_hidden' => array(
+        0 => 'file_dynamic_1',
+      ),
+    ),
+    'fields' => array(
+      'file' => 'ds_content',
+      'download_link' => 'ds_content',
+      'file_dynamic_1' => 'ds_hidden',
+    ),
+  );
+  $export['file|audio|wide_player'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -6070,6 +6168,15 @@ function display_suite_shared_ds_view_modes_info() {
     'node' => 'node',
   );
   $export['block_teaser_term'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'download_link';
+  $ds_view_mode->label = 'Download Link';
+  $ds_view_mode->entities = array(
+    'file' => 'file',
+  );
+  $export['download_link'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
