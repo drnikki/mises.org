@@ -1,0 +1,5 @@
+name = Mises Solr Online Text
+description = Automates creation, update, and deletion of solr_online_text_chapter and solr_online_text_page which are used to allow online text entities to appear as search results.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0
