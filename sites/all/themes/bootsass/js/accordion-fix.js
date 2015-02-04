@@ -4,7 +4,7 @@
 
 var Drupal = Drupal || {};
 
-(function($, Drupal){
+  (function($, Drupal){
   "use strict";
       
   Drupal.behaviors.accordFix = {
@@ -19,6 +19,24 @@ var Drupal = Drupal || {};
           });
         }
       });
+      var tmpFrag = window.location.hash.replace('#', '');
+      tmpFrag = decodeURIComponent((tmpFrag + '').replace(/\+/g, '%20'));
+      $('h2.teaser-title').each(function () {
+        if ($(this).text() == tmpFrag) {
+          $(this).click();
+          return;
+        }
+      });
+
+      $('h3.sub-heading').each(function () {
+        if ($(this).text() == tmpFrag) {
+          $(this).parent().parent().parent().parent().parent().find('h2').click();
+          $(this).click();
+          return;
+        }
+      });
+
+       
     }
   };
 

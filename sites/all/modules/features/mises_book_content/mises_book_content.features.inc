@@ -43,6 +43,12 @@ function mises_book_content_eck_bundle_info() {
       'name' => 'book_page',
       'label' => 'Book Page',
     ),
+    'book_sub_page_book_sub_page' => array(
+      'machine_name' => 'book_sub_page_book_sub_page',
+      'entity_type' => 'book_sub_page',
+      'name' => 'book_sub_page',
+      'label' => 'Book Sub Page',
+    ),
   );
   return $items;
 }
