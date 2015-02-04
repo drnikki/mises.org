@@ -2960,6 +2960,9 @@ ul.addtocal_menu li a:hover { background: #e4ebee; text-decoration: none; }
 .job-detail p { margin-bottom: 0; }
 .job-detail p:not(.tags) { padding-left: 12px; }
 
+.file.view-mode-wide_player audio { vertical-align: middle; }
+.file.view-mode-wide_player .btn { padding: 6px 10px; font-size: 13px; line-height: 1.25; border-radius: 5px; }
+
 /* BLOG */
 .node-blog .group-date-author { margin-bottom: 6px; }
 .node-blog .body-content p img { display: block; margin-right: 16px; padding: 0 0 6px; }
