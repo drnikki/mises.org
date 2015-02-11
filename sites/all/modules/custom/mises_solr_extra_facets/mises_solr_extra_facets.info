@@ -1,0 +1,5 @@
+name = Mises Solr Extra Facets
+description = Auto-populate taxonomy field to match the presents of html book content or media field content.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0
