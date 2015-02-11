@@ -3465,7 +3465,7 @@ if ($entity->field_link_to_external_listing_) {
   else {
     $path = $uri;
   }
-  print \'<p><a class="btn btn-default" href="\' . $path . \'">Download \' . $entity->type . \' file</a></p>\';
+  print \' <a class="btn btn-default btn-sm" href="\' . $path . \'">Download \' . $entity->type . \' file</a>\';
 ?>
 ',
       'format' => 'ds_code',
