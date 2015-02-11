@@ -804,6 +804,39 @@ function mises_solr_search_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['facetapi-WFKXiU1LbIFJ8PzI3XStD4EAB8A8yVrR'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'WFKXiU1LbIFJ8PzI3XStD4EAB8A8yVrR',
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootsass' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootsass',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Book',
+    'visibility' => 0,
+  );
+
   $export['facetapi-WtseAVugB1EhxGslwR3XIwoa0sVTttYt'] = array(
     'cache' => -1,
     'css_class' => '',
