@@ -81,7 +81,7 @@ function _mises_solr_online_text_get_lib_items_to_process() {
  * Implements hook_url_inbound_alter().
  */
 function mises_solr_online_text_url_inbound_alter(&$path, $original_path, $path_language) {
-  $args = split('/', $path);
+  $args = explode('/', $path);
   if (isset($args[0]) && $args[0] == 'node' && isset($args[1]) && is_numeric($args[1]) && !isset($args[2])) {
     $type_query = db_query("SELECT type FROM node where nid = :nid", array(':nid' => $args[1]));
     foreach ($type_query as $result) {
