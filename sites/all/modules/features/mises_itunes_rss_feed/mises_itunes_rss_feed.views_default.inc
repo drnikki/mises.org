@@ -924,7 +924,7 @@ function mises_itunes_rss_feed_views_default_views() {
         'category' => 'field_library_item_tree',
         'comments' => '',
         'enclosure' => '',
-        'guid' => '',
+        'guid' => 'php_1',
         'pubDate' => 'field_published_date',
       ),
     ),
@@ -971,6 +971,13 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_author_2_target_id']['field'] = 'field_author_2_target_id';
   $handler->display->display_options['relationships']['field_author_2_target_id']['label'] = 'author 2';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1144,6 +1151,29 @@ function mises_itunes_rss_feed_views_default_views() {
       ),
     ),
   );
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['label'] = 'MEDIA LINK';
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_value'] = 'if (isset($row->nid)) {
+  $node = node_load($row->nid);
+  if (isset($node->field_media_collection[LANGUAGE_NONE][0][\'value\'])) {
+    $id = $node->field_media_collection[LANGUAGE_NONE][0][\'value\'];
+    $entity = array_shift(entity_load(\'field_collection_item\', array($id)));
+    if (isset($entity->field_media[LANGUAGE_NONE][0][\'fid\'])) {
+      $file = file_load($entity->field_media[LANGUAGE_NONE][0][\'fid\']);
+      return file_create_url($file->uri);
+    } else {
+      return FALSE;
+    }
+  }
+}
+
+return FALSE;';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -1203,8 +1233,8 @@ function mises_itunes_rss_feed_views_default_views() {
     5 => 0,
   );
   $handler->display->display_options['filters']['field_published_date_value']['granularity'] = 'second';
-  $handler->display->display_options['filters']['field_published_date_value']['default_date'] = '-30 day';
-  $handler->display->display_options['path'] = 'itunes/%';
+  $handler->display->display_options['filters']['field_published_date_value']['default_date'] = '-3000 day';
+  $handler->display->display_options['path'] = 'itunes-old/%';
   $export['mises_itunes_rss_feeds'] = $view;
 
   return $export;
