@@ -981,6 +981,106 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_item-field_books'
+  $field_instances['node-library_item-field_books'] = array(
+    'bundle' => 'library_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This field will be auto-populated to reflect the types of books available to this Library Item.',
+    'display' => array(
+      'audio_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 45,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_books',
+    'label' => 'Books',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 30,
+    ),
+  );
+
   // Exported field_instance: 'node-library_item-field_citation'
   $field_instances['node-library_item-field_citation'] = array(
     'bundle' => 'library_item',
@@ -4255,6 +4355,7 @@ function mises_library_item_field_default_field_instances() {
   t('Author 2');
   t('Bibliography Footnote');
   t('Body');
+  t('Books');
   t('Citation');
   t('Copyright Info');
   t('Document Attachment');
@@ -4279,6 +4380,7 @@ function mises_library_item_field_default_field_instances() {
   t('Published Date');
   t('Subtitle');
   t('Teaser Text');
+  t('This field will be auto-populated to reflect the types of books available to this Library Item.');
   t('Timely Content');
   t('Topics');
   t('Transcript');

@@ -1,0 +1,161 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function mises_solr_extra_facets_menu() {
+  $items['admin/config/search/extra-facets-update'] = array(
+    'title' => 'Extra Facets Update',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_mises_solr_extra_facets_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+  return $items;
+}
+
+/**
+ * Bulk update form:
+ */
+function _mises_solr_extra_facets_form() {
+  $lib_count = db_select('node')
+    ->condition('type', 'library_item')
+    ->countQuery()->execute()->fetchField();
+  $status = '<p>The are a total of ' . $lib_count . ' Library Items.</p>';
+
+  $lib_changed = db_select('node')
+    ->condition('type', 'library_item')
+    ->condition('changed', time() - (60 * 60), '>')
+    ->countQuery()->execute()->fetchField();
+  $status .= '<p>' . $lib_changed . ' Library Items have been updated in the past hour.</p>';
+  $form['fac_items'] = array(
+    '#type' => 'fieldset',
+    '#description' => $status,
+  );
+  $form['fac_items']['limit'] = array(
+    '#title' => 'Number of items to process',
+    '#type' => 'textfield',
+    '#default_value' => variable_get('mises_solr_extra_facets_limit', 2000),
+  );
+  $form['fac_items']['offset'] = array(
+    '#title' => 'Starting offset',
+    '#type' => 'textfield',
+    '#default_value' => variable_get('mises_solr_extra_facets_offset', 0),
+  );
+  $form['fac_items']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Process Library Items',
+  );
+  return $form;
+}
+
+
+function _mises_solr_extra_facets_form_submit($form, &$form_state) {
+  $start = time();
+  $limit = $form_state['values']['limit'];
+  $offset = $form_state['values']['offset'];
+  variable_set('mises_solr_extra_facets_limit', $limit);
+  variable_set('mises_solr_extra_facets_offset', $offset);
+  // Only process items updated over an hour ago.
+  $lib_items_query = db_query("SELECT nid FROM node WHERE type = 'library_item' ORDER BY changed DESC LIMIT $limit OFFSET $offset");
+  $count = 0;
+  foreach ($lib_items_query as $lib_item_nid) {
+    if (_mises_solr_extra_facets_needs_processing($lib_item_nid->nid)) {
+      $node = node_load($lib_item_nid->nid);
+      drupal_set_message('Processing Library Item ' . l($node->title, 'node/' . $node->nid));
+      _mises_solr_extra_facets_process_item($node);
+      $count++;
+    }
+  }
+  drupal_set_message($count . ' items process in ' . (time() - $start) . ' seconds.');
+}
+
+
+/**
+ * Implements hook_cron().
+ */
+function mises_solr_extra_facets_cron() {
+  $start = time();
+  // Process the 30 most recently updated Library Items
+  $limit = 50; $count = 0;
+  $last_updated = variable_get('mises_solr_extra_facets_last_updated', array());
+  $exclude = '';
+  if (!empty($last_updated)) {
+    $exclude = 'AND nid NOT IN (' . implode(',', $last_updated) . ')';
+  }
+  $lib_items_query = db_query("SELECT nid FROM node WHERE type = 'library_item' $exclude ORDER BY changed DESC");
+  $last_updated = array();
+  foreach ($lib_items_query as $lib_item_nid) {
+    if (_mises_solr_extra_facets_needs_processing($lib_item_nid->nid)) {
+      if ($count == $limit) {
+        break;
+      }
+      $count++;
+      $node = node_load($lib_item_nid->nid);
+      $last_updated[] = $lib_item_nid->nid;
+      // drupal_set_message('Processing Library Item ' . l($node->title, 'node/' . $node->nid));
+      _mises_solr_extra_facets_process_item($node);
+    }
+  }
+  variable_set('mises_solr_extra_facets_last_updated', $last_updated);
+}
+
+/**
+ * Checks whether any pdf, epub, or html content exists
+ */
+function _mises_solr_extra_facets_needs_processing($lib_item_nid) {
+  $pdf_count = 0; $epub_count = 0; $html_count = 0;
+  $pdf_count = db_select('field_data_field_pdf')->condition('entity_id', $lib_item_nid)->countQuery()->execute()->fetchField();
+  $epub_count = db_select('field_data_field_epub')->condition('entity_id', $lib_item_nid)->countQuery()->execute()->fetchField();
+  $html_count = db_select('field_data_field_online_text')->condition('entity_id', $lib_item_nid)->countQuery()->execute()->fetchField();
+  if ($pdf_count || $epub_count || $html_count) {
+    return TRUE;
+  }
+
+  // Check if the Books taxonomy is currently populated:
+  $books_query = db_query("SELECT DISTINCT i.tid FROM " .
+    "taxonomy_index i, taxonomy_vocabulary v, taxonomy_term_data t " .
+    "WHERE v.machine_name='books' AND v.vid = t.vid AND t.tid = i.tid AND i.nid = :nid",
+    array(
+      ':nid' => $lib_item_nid,
+    )
+  );
+  foreach ($books_query as $book_result) {
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Process taxonomy population for a given library item:
+ */
+function _mises_solr_extra_facets_process_item($node) {
+  $pdf_count = 0; $epub_count = 0; $html_count = 0;
+
+
+  // Check for media fields:
+  $pdf_count = db_select('field_data_field_pdf')->condition('entity_id', $node->nid)->countQuery()->execute()->fetchField();
+  $epub_count = db_select('field_data_field_epub')->condition('entity_id', $node->nid)->countQuery()->execute()->fetchField();
+
+  // Check for HTML books:
+  $html_count = db_select('field_data_field_online_text')->condition('entity_id', $node->nid)->countQuery()->execute()->fetchField();
+
+  // drupal_set_message('<pre>' . print_r($node, 1) . '</pre>');
+
+  $node->field_books[LANGUAGE_NONE] = array();
+  if ($pdf_count) {
+    $term = array_shift(taxonomy_get_term_by_name('PDF', 'books'));
+    $node->field_books[LANGUAGE_NONE][] = array('target_id' => $term->tid);
+  }
+  if ($epub_count) {
+    $term = array_shift(taxonomy_get_term_by_name('EPUB', 'books'));
+    $node->field_books[LANGUAGE_NONE][] = array('target_id' => $term->tid);
+  }
+  if ($html_count) {
+    $term = array_shift(taxonomy_get_term_by_name('Online Book', 'books'));
+    $node->field_books[LANGUAGE_NONE][] = array('target_id' => $term->tid);
+  }
+
+  node_save($node);
+}
+
