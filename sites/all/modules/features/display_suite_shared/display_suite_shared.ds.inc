@@ -4223,17 +4223,17 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'tags_title',
-        1 => 'text_resizer',
+        0 => 'text_resizer',
+        1 => 'tags_title',
         2 => 'custom_breadcrumb',
         3 => 'field_topics',
-        4 => 'title',
-        5 => 'field_austrian_school',
+        4 => 'field_austrian_school',
+        5 => 'title',
         6 => 'field_image_collection',
         7 => 'group_date_author',
         8 => 'group_tags',
-        9 => 'body_with_media_embedded',
-        10 => 'post_date',
+        9 => 'post_date',
+        10 => 'body_with_media_embedded',
         11 => 'field_author_1',
         12 => 'body',
         13 => 'follow_mises_institute',
@@ -4244,17 +4244,17 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'tags_title' => 'ds_content',
       'text_resizer' => 'ds_content',
+      'tags_title' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
       'field_topics' => 'ds_content',
-      'title' => 'ds_content',
       'field_austrian_school' => 'ds_content',
+      'title' => 'ds_content',
       'field_image_collection' => 'ds_content',
       'group_date_author' => 'ds_content',
       'group_tags' => 'ds_content',
-      'body_with_media_embedded' => 'ds_content',
       'post_date' => 'ds_content',
+      'body_with_media_embedded' => 'ds_content',
       'field_author_1' => 'ds_content',
       'body' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
@@ -4276,7 +4276,7 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'hide_page_title' => '2',
-    'page_option_title' => 'Blog',
+    'page_option_title' => 'Mises Wire',
   );
   $export['node|blog|full'] = $ds_layout;
 
