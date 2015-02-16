@@ -98,7 +98,9 @@ function _mises_solr_author_fix_rss($tid) {
     $item_out[] = '<guid isPermaLink="false">' . url('node/' . $node->nid, array('absolute' => TRUE)) . '</guid>';
     if (isset($node->body[LANGUAGE_NONE][0]['value'])) {
       $item_out[] = '<description><![CDATA[' . strip_tags($node->body[LANGUAGE_NONE][0]['value']) . ']]></description>';
-      $item_out[] = '<itunes:summary><![CDATA[' . strip_tags($node->field_teaser_text[LANGUAGE_NONE][0]['value']) . ']]></itunes:summary>';
+      if (isset($node->field_teaser_text[LANGUAGE_NONE][0]['value'])) {
+        $item_out[] = '<itunes:summary><![CDATA[' . strip_tags($node->field_teaser_text[LANGUAGE_NONE][0]['value']) . ']]></itunes:summary>';
+      }
     } else {
       $default_summary = 'A Mises podcast.';
       $item_out[] = '<description><![CDATA[' . $default_summary . ']]></description>';
