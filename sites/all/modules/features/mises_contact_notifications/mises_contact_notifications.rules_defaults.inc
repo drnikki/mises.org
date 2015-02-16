@@ -41,12 +41,20 @@ function mises_contact_notifications_default_rules_configuration() {
             "PROVIDE" : { "variable_added" : { "contact_admin_email" : "Contact Admin Email" } }
           }
         },
+        { "entity_fetch" : {
+            "USING" : {
+              "type" : "file",
+              "id" : [ "entity:field-contact-file-upload:file:fid" ]
+            },
+            "PROVIDE" : { "entity_fetched" : { "file_attachment" : "File Attachment" } }
+          }
+        },
         { "component_rules_entityform_notifications_email_send" : {
             "entityform" : [ "entity" ],
             "email_address" : [ "contact-admin-email" ],
             "show_submission" : [ "show-submission" ],
             "email_subject" : [ "email-subject" ],
-            "email_body" : [ "email-body" ]
+            "email_body" : "File Attachment:  [file-attachment:url]"
           }
         }
       ],
