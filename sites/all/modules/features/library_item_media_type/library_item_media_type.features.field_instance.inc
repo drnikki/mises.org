@@ -10,6 +10,45 @@
 function library_item_media_type_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'taxonomy_term-media_type-field_author_1'
+  $field_instances['taxonomy_term-media_type-field_author_1'] = array(
+    'bundle' => 'media_type',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_author_1',
+    'label' => 'iTunes Author',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-media_type-field_itunes_image'
   $field_instances['taxonomy_term-media_type-field_itunes_image'] = array(
     'bundle' => 'media_type',
@@ -71,6 +110,7 @@ function library_item_media_type_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Please provide an image for this category to be displayed within iTunes.  The image should be at least (300x300) and, ideally, should be square-shaped.');
+  t('iTunes Author');
   t('iTunes Image');
 
   return $field_instances;
