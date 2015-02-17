@@ -1,5 +1,74 @@
 <?php
 
+
+/**
+ * Implements hook_menu().
+ */
+function mises_redirect_paths_menu() {
+
+  $items['admin/config/redirects-fix'] = array(
+    'title' => 'Enforce 301 Redirects',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_mises_redirect_paths_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+  return $items;
+}
+
+/**
+ * Defines the redirects settings page:
+ */
+function _mises_redirect_paths_form() {
+  $form['redirects'] = array(
+    '#type' => 'fieldset',
+  );
+  $redirects = variable_get('mises_redirects_paths_map', array());
+  $redirects_text = '';
+  foreach ($redirects as $from => $to) {
+    $from = trim($from);
+    $to = trim($to);
+    if (!empty($from) && !empty($to)) {
+      $redirects_text .= $from . '|' . $to . "\n";
+    }
+  }
+
+  // Capture the redirect that was previously hardcoded in this module:
+  if (!$redirects_text) {
+    $redirects_text = 'media/1189/The-Biblical-Prophet-He-Told-It-Like-It-Is|node/15557';
+  }
+  $redirects_text = trim($redirects_text);
+ 
+  $form['redirects']['list_redirects'] = array(
+    '#type' => 'textarea',
+    '#description' => 'On each line, supply a redirect like this: original/path|redirected/path',
+    '#default_value' => $redirects_text,
+  );
+  $form['redirects']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Save Redirects',
+  );
+  return $form;
+}
+
+function _mises_redirect_paths_form_submit($form, &$form_state) {
+  if (isset($form_state['values']['list_redirects'])) {
+
+    $redirects = array();
+    $redirect_rows = explode("\n", $form_state['values']['list_redirects']);
+    foreach ($redirect_rows as $row_text) {
+      list($from, $to) = explode('|', $row_text);
+      $from = trim($from);
+      $to = trim($to);
+      if (!empty($from) && !empty($to)) {          
+        $redirects[$from] = $to;
+      }
+    }
+    variable_set('mises_redirects_paths_map', $redirects);
+    drupal_set_message('Redirects have been updated.');
+  }
+}
+
+
 /**
  * Implements hook_url_inbound_alter().
  *
@@ -11,9 +80,10 @@ function mises_redirect_paths_url_inbound_alter(&$path, $original_path, $path_la
     return;
   }
 
-  switch ($_GET['q']) {
-    case 'media/1189/The-Biblical-Prophet-He-Told-It-Like-It-Is':
-      drupal_goto('node/15557', array(), 301);
-      break;
+  $redirects = variable_get('mises_redirects_paths_map', array());
+  foreach ($redirects as $from => $to) {
+    if (strtolower($_GET['q']) == strtolower($from)) {
+      drupal_goto($to, array(), 301);
+    }
   }
 }
