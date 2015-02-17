@@ -56,6 +56,11 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['relationships']['field_book_pages_target_id']['field'] = 'field_book_pages_target_id';
   $handler->display->display_options['relationships']['field_book_pages_target_id']['relationship'] = 'field_book_chapter_target_id';
   $handler->display->display_options['relationships']['field_book_pages_target_id']['label'] = 'page';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_sub_page_target_id']['id'] = 'field_sub_page_target_id';
+  $handler->display->display_options['relationships']['field_sub_page_target_id']['table'] = 'field_data_field_sub_page';
+  $handler->display->display_options['relationships']['field_sub_page_target_id']['field'] = 'field_sub_page_target_id';
+  $handler->display->display_options['relationships']['field_sub_page_target_id']['relationship'] = 'field_book_pages_target_id';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -477,7 +482,8 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2 class="page-title">[title]</h2>
-<p class="read-more text-right">[view_node]</p>';
+<p class="read-more text-right">[view_node]</p>
+<style>h4.sub-heading { color: #4F80A9; }</style>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -489,6 +495,31 @@ function mises_book_content_views_default_views() {
 <p class="read-more text-right">[view_node]</p>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_online_text_target_id']['id'] = 'field_online_text_target_id';
+  $handler->display->display_options['relationships']['field_online_text_target_id']['table'] = 'field_data_field_online_text';
+  $handler->display->display_options['relationships']['field_online_text_target_id']['field'] = 'field_online_text_target_id';
+  $handler->display->display_options['relationships']['field_online_text_target_id']['label'] = 'Online Text Reference';
+  $handler->display->display_options['relationships']['field_online_text_target_id']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_book_chapter_target_id']['id'] = 'field_book_chapter_target_id';
+  $handler->display->display_options['relationships']['field_book_chapter_target_id']['table'] = 'field_data_field_book_chapter';
+  $handler->display->display_options['relationships']['field_book_chapter_target_id']['field'] = 'field_book_chapter_target_id';
+  $handler->display->display_options['relationships']['field_book_chapter_target_id']['relationship'] = 'field_online_text_target_id';
+  $handler->display->display_options['relationships']['field_book_chapter_target_id']['label'] = 'chapter';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_book_pages_target_id']['id'] = 'field_book_pages_target_id';
+  $handler->display->display_options['relationships']['field_book_pages_target_id']['table'] = 'field_data_field_book_pages';
+  $handler->display->display_options['relationships']['field_book_pages_target_id']['field'] = 'field_book_pages_target_id';
+  $handler->display->display_options['relationships']['field_book_pages_target_id']['relationship'] = 'field_book_chapter_target_id';
+  $handler->display->display_options['relationships']['field_book_pages_target_id']['label'] = 'page';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_sub_page_target_id']['id'] = 'field_sub_page_target_id';
+  $handler->display->display_options['relationships']['field_sub_page_target_id']['table'] = 'field_data_field_sub_page';
+  $handler->display->display_options['relationships']['field_sub_page_target_id']['field'] = 'field_sub_page_target_id';
+  $handler->display->display_options['relationships']['field_sub_page_target_id']['relationship'] = 'field_book_pages_target_id';
+  $handler->display->display_options['relationships']['field_sub_page_target_id']['label'] = 'Sub-Pages';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -515,6 +546,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['field_book_chapter_content']['label'] = '';
   $handler->display->display_options['fields']['field_book_chapter_content']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_book_chapter_content']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_book_chapter_content']['element_wrapper_class'] = 'chapter-content-container';
   $handler->display->display_options['fields']['field_book_chapter_content']['settings'] = array(
     'conditions' => array(
       0 => array(
@@ -553,6 +585,36 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['page_title']['alter']['text'] = '<h3 class="sub-heading contrast accordion-toggle" data-toggle="collapse" data-parent="#chapter-[delta]" data-target="#page-[delta]-[delta_1]">[page_title]</h3>';
   $handler->display->display_options['fields']['page_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['page_title']['element_default_classes'] = FALSE;
+  /* Field: Book Page: Page Title */
+  $handler->display->display_options['fields']['page_title_1']['id'] = 'page_title_1';
+  $handler->display->display_options['fields']['page_title_1']['table'] = 'eck_book_page';
+  $handler->display->display_options['fields']['page_title_1']['field'] = 'page_title';
+  $handler->display->display_options['fields']['page_title_1']['relationship'] = 'field_sub_page_target_id';
+  $handler->display->display_options['fields']['page_title_1']['label'] = '';
+  $handler->display->display_options['fields']['page_title_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['page_title_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['page_title_1']['alter']['text'] = '<h4 class="sub-heading contrast accordion-toggle">[page_title_1]</h4>';
+  $handler->display->display_options['fields']['page_title_1']['element_label_colon'] = FALSE;
+  /* Field: Field: Page Content */
+  $handler->display->display_options['fields']['field_book_page_content_1']['id'] = 'field_book_page_content_1';
+  $handler->display->display_options['fields']['field_book_page_content_1']['table'] = 'field_data_field_book_page_content';
+  $handler->display->display_options['fields']['field_book_page_content_1']['field'] = 'field_book_page_content';
+  $handler->display->display_options['fields']['field_book_page_content_1']['relationship'] = 'field_sub_page_target_id';
+  $handler->display->display_options['fields']['field_book_page_content_1']['label'] = '';
+  $handler->display->display_options['fields']['field_book_page_content_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_book_page_content_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_book_page_content_1']['alter']['text'] = '<div class="panel subpage">
+[page_title_1]
+<div class="collapse subpage-content">[field_book_page_content_1-value]</div>
+</div>';
+  $handler->display->display_options['fields']['field_book_page_content_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_book_page_content_1']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   /* Field: Field: Page Content */
   $handler->display->display_options['fields']['field_book_page_content']['id'] = 'field_book_page_content';
   $handler->display->display_options['fields']['field_book_page_content']['table'] = 'field_data_field_book_page_content';
@@ -560,7 +622,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['field_book_page_content']['relationship'] = 'field_book_pages_target_id';
   $handler->display->display_options['fields']['field_book_page_content']['label'] = '';
   $handler->display->display_options['fields']['field_book_page_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_book_page_content']['alter']['text'] = '<div class="collapse" id="page-[delta]-[delta_1]">[field_book_page_content]</div>';
+  $handler->display->display_options['fields']['field_book_page_content']['alter']['text'] = '<div class="collapse" id="page-[delta]-[delta_1]"><div class="page-content">[field_book_page_content]</div>[field_book_page_content_1]</div>';
   $handler->display->display_options['fields']['field_book_page_content']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_book_page_content']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_book_page_content']['settings'] = array(
@@ -578,7 +640,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Return to Book';
-  /* Field: Content: Citation */
+  /* Field: Content: Book Information */
   $handler->display->display_options['fields']['field_citation']['id'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['table'] = 'field_data_field_citation';
   $handler->display->display_options['fields']['field_citation']['field'] = 'field_citation';
