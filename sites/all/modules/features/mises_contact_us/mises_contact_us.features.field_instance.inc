@@ -18,11 +18,8 @@ function mises_contact_us_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'file_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
     ),

@@ -269,6 +269,13 @@ body.not-logged-in {
         background-position: 5px 0;
         background-size: contain;
       }
+      .motto {
+        margin-bottom: 0;
+        font-style: italic;
+        font-size: 18px;
+        font-family: $font-family-serif;
+        opacity: 0.6;
+      }
       a {
         color: $white;
         &.subscribe {
