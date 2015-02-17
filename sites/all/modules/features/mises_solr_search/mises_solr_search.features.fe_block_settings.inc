@@ -833,7 +833,7 @@ function mises_solr_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Book Format',
+    'title' => 'Book Type',
     'visibility' => 0,
   );
 
