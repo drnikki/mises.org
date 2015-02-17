@@ -345,7 +345,6 @@ function _mises_solr_online_text_sync_lib_solr_chapters($chapter_entity_id, $lib
   );
   foreach ($chap_entity_text_query as $result) {
     $solr_chapter_node->body[LANGUAGE_NONE][0]['value'] = $result->value;
-    $solr_chapter_node->body[LANGUAGE_NONE][0]['safe_value'] = _text_sanitize($result->value);
     $solr_chapter_node->body[LANGUAGE_NONE][0]['format'] = $result->format;
   }
   node_save($solr_chapter_node);
@@ -410,7 +409,6 @@ function _mises_solr_online_text_sync_lib_solr_pages($page_entity_id, $lib_node)
   );
   foreach ($page_entity_text_query as $result) {
     $solr_page_node->body[LANGUAGE_NONE][0]['value'] = $result->value;
-    $solr_page_node->body[LANGUAGE_NONE][0]['safe_value'] = _text_sanitize($result->value);
     $solr_page_node->body[LANGUAGE_NONE][0]['format'] = $result->format;
   }
 
