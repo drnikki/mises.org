@@ -158,11 +158,11 @@ function mises_book_content_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_sub_page',
     'foreign keys' => array(
-      'eck_book_sub_page' => array(
+      'eck_book_page' => array(
         'columns' => array(
           'target_id' => 'id',
         ),
-        'table' => 'eck_book_sub_page',
+        'table' => 'eck_book_page',
       ),
     ),
     'indexes' => array(
@@ -183,11 +183,9 @@ function mises_book_content_field_default_field_bases() {
         'sort' => array(
           'type' => 'none',
         ),
-        'target_bundles' => array(
-          'book_sub_page' => 'book_sub_page',
-        ),
+        'target_bundles' => array(),
       ),
-      'target_type' => 'book_sub_page',
+      'target_type' => 'book_page',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
