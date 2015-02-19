@@ -2958,8 +2958,8 @@ ul.addtocal_menu li a:hover { background: #e4ebee; text-decoration: none; }
 .node-type-job-posting- .tags span:not(.tag-label) { color: #494e54; font-size: 15px; }
 
 .job-detail { margin-bottom: 12.5px; }
-.job-detail p { margin-bottom: 0; }
-.job-detail p:not(.tags) { padding-left: 12px; }
+.job-detail p { display: inline; margin-bottom: 0; }
+.job-detail .tags { padding-right: 5px; }
 
 .file.view-mode-wide_player audio { vertical-align: middle; }
 .file.view-mode-wide_player .btn { padding: 6px 10px; font-size: 13px; line-height: 1.25; border-radius: 5px; }
