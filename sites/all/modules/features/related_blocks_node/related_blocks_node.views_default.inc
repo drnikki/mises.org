@@ -214,7 +214,7 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['empty']['view']['table'] = 'views';
   $handler->display->display_options['empty']['view']['field'] = 'view';
   $handler->display->display_options['empty']['view']['empty'] = TRUE;
-  $handler->display->display_options['empty']['view']['view_to_insert'] = 'daily_landing:mises_view';
+  $handler->display->display_options['empty']['view']['view_to_insert'] = 'daily_landing:mises_weekends';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_audience_target_id']['id'] = 'field_audience_target_id';
