@@ -75,9 +75,9 @@ function homepage_context_default_contexts() {
           'region' => 'bottom_two',
           'weight' => '-10',
         ),
-        'views-homepage-mises_view' => array(
+        'views-homepage-mises_weekends' => array(
           'module' => 'views',
-          'delta' => 'homepage-mises_view',
+          'delta' => 'homepage-mises_weekends',
           'region' => 'bottom_three',
           'weight' => '-10',
         ),

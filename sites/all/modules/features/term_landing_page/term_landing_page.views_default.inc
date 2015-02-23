@@ -318,7 +318,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['empty']['view']['table'] = 'views';
   $handler->display->display_options['empty']['view']['field'] = 'view';
   $handler->display->display_options['empty']['view']['empty'] = TRUE;
-  $handler->display->display_options['empty']['view']['view_to_insert'] = 'daily_landing:mises_view';
+  $handler->display->display_options['empty']['view']['view_to_insert'] = 'daily_landing:mises_weekends';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
