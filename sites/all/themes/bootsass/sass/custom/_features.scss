@@ -499,10 +499,14 @@ ul.addtocal_menu {
 .job-detail {
   margin-bottom: ($line-height-computed / 2);
   p {
+    display: inline;
     margin-bottom: 0;
     &:not(.tags) {
-      padding-left: $padding-base-horizontal;
+      // padding-left: $padding-base-horizontal;
     }
+  }
+  .tags {
+    padding-right: $padding-xs-horizontal;
   }
 }
 .file.view-mode-wide_player {
