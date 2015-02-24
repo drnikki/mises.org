@@ -22,7 +22,7 @@ function mises_solr_online_text_chapter_ctools_plugin_api($module = NULL, $api =
 function mises_solr_online_text_chapter_node_info() {
   $items = array(
     'solr_online_text_page' => array(
-      'name' => t('Solr Online Text Page'),
+      'name' => t('Online Text Page'),
       'base' => 'node_content',
       'description' => t('Defines a content type for the purpose of indexing and facilitating results click-thru to a given Online Text node\'s Chapter entity\'s Page entity\'s HTML page.'),
       'has_title' => '1',
