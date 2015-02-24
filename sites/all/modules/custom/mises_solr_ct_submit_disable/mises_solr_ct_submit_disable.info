@@ -1,0 +1,5 @@
+name = Mises Solr Content Type Submit Disable
+description = Disables form submission of Solr-related content type node edit forms and displays a related message.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0
