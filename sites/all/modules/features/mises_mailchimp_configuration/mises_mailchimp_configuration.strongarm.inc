@@ -26,7 +26,7 @@ function mises_mailchimp_configuration_strongarm() {
 		<li><input id="mce-group[1]-1-2" name="group[1][4]" type="checkbox" value="4"> <label for="mce-group[1]-1-2">Academy</label></li>
 		<li><input id="mce-group[1]-1-3" name="group[1][8]" type="checkbox" value="8"> <label for="mce-group[1]-1-3">Store</label></li>
 		<li><input id="mce-group[1]-1-4" name="group[1][16]" type="checkbox" value="16"> <label for="mce-group[1]-1-4">Mises Daily</label></li>
-		<li><input id="mce-group[1]-1-5" name="group[1][32]" type="checkbox" value="32"> <label for="mce-group[1]-1-5">Free Market</label></li>
+		<li><input id="mce-group[1]-1-5" name="group[1][32]" type="checkbox" value="32"> <label for="mce-group[1]-1-5">The Austrian</label></li>
 	</ul>
 	</div>
 	<div class="clear" id="mce-responses">

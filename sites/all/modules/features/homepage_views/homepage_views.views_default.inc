@@ -403,6 +403,62 @@ function homepage_views_views_default_views() {
     'course' => 'course',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+
+  /* Display: Mises Weekends HP Block */
+  $handler = $view->new_display('block', 'Mises Weekends HP Block', 'mises_weekends');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'mises-view';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'block_teaser';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library/mises-weekends "><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises Weekends</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  /* Filter criterion: Content: Library Item Type (field_library_item_tree) */
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['value'] = array(
+    434 => '434',
+  );
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Image (field_image_collection) */
+  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
   $export['homepage'] = $view;
 
   return $export;

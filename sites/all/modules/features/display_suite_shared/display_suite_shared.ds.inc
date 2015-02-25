@@ -3387,6 +3387,9 @@ switch ($view_display) {
   case "faculty": 
     $ctitle = "Meet Our Faculty and Scholars"; 
     break;
+  case "mises_weekends":
+    $ctitle = "Mises Weekends"; 
+    break;
   default: 
     $ctitle = "Add case"; 
 }

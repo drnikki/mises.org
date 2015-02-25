@@ -62,9 +62,9 @@ function social_media_context_context_default_contexts() {
           'region' => 'bottom_two',
           'weight' => '-10',
         ),
-        'views-daily_landing-mises_view' => array(
+        'views-daily_landing-mises_weekends' => array(
           'module' => 'views',
-          'delta' => 'daily_landing-mises_view',
+          'delta' => 'daily_landing-mises_weekends',
           'region' => 'bottom_three',
           'weight' => '-10',
         ),

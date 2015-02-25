@@ -110,11 +110,11 @@ function mises_library_landing_context_default_contexts() {
           'region' => 'bottom_two',
           'weight' => '-10',
         ),
-        'views-daily_landing-mises_view' => array(
+        'views-daily_landing-mises_weekends' => array(
           'module' => 'views',
-          'delta' => 'daily_landing-mises_view',
+          'delta' => 'daily_landing-mises_weekends',
           'region' => 'bottom_three',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-daily_landing-library_block' => array(
           'module' => 'views',
