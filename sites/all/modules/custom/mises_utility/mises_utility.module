@@ -42,6 +42,15 @@ function mises_utility_menu() {
     'access arguments' => array('administer mises code'),
     'type' => MENU_NORMAL_ITEM,
   );
+  
+  $items['admin/mises/development/update-authors'] = array(
+    'title' => 'Mises Update Authors',
+		'description' => t('Collection of editable settings for the mises code options'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mises_utility_update_authors_form'),
+    'access arguments' => array('administer mises code'),
+    'type' => MENU_NORMAL_ITEM,
+  );
 
 	$url = variable_get('mises_mailchimp_custom_url', 'subscribe/mailchimp');
 	$title = variable_get('mises_mailchimp_custom_url_title', 'Subscribe to mailchimp');
@@ -459,4 +468,55 @@ function mises_utility_url_inbound_alter(&$path, $original_path, $path_language)
   if($path == 'media/2602/A-New-Currency-for-the-World') {
     drupal_goto('/node/12371');
   }
+}
+
+/**
+ * Implements mises_utility_update_authors() form callback
+ */
+function mises_utility_update_authors_form() {
+  $form = array();
+
+	$form['mises_update_authors_submit'] = array(
+		'#type' => 'submit', 
+		'#title' => t('Update all authors 1 to have authors 2'), 
+    '#value' => t('Run Update'),
+	);
+
+  return $form;
+}
+
+/**
+ * Implements mises_utility_update_authors() form submit handler
+ */
+function mises_utility_update_authors_form_submit() {
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'library_item')
+    ->fieldCondition('field_author_2', 'target_id', 'NULL', '!=');
+
+  $result = $query->execute();
+  //dpm($result);
+  $count = 0;
+  foreach ($result['node'] as $key => $value) {
+    $node = node_load($value->nid);
+    //dpm($node);
+    foreach ($node->field_author_1[LANGUAGE_NONE] as $k => $v) {
+      $authors = 0;
+      if ($v['target_id'] == $node->field_author_2[LANGUAGE_NONE][0]['target_id']) {
+      $authors++;
+      }
+    } 
+    
+    if ($authors == 0) {
+      $node->field_author_1[LANGUAGE_NONE][]['target_id'] = $node->field_author_2[LANGUAGE_NONE][0]['target_id'];
+      node_save($node);
+      $count++;
+    }
+    
+    
+  }
+  drupal_set_message('You have updated ' . $count . ' nodes');
+  
+  return $form;
 }
