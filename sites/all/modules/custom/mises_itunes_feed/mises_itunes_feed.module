@@ -20,6 +20,7 @@ function mises_itunes_feed_menu() {
  */
 function _mises_solr_author_fix_rss($tid) {
 
+  $start_time = time();
   if (!is_numeric($tid)) {
     drupal_set_message('Invalid iTunes feed URL; bad argument.', 'error');
     drupal_goto('<front>');
@@ -29,6 +30,15 @@ function _mises_solr_author_fix_rss($tid) {
   if (!$term) {
     drupal_set_message('Invalid iTunes feed URL; bad term argument.', 'error');
     drupal_goto('<front>');
+  }
+  $last_gen_time = variable_get('mises_itunes_feed_time_' . $tid, 'x');
+  $cache_duration = 60 * 15;
+  if (time() - $last_gen_time <= $cache_duration) {
+    $cached_data = variable_get('mises_itunes_feed_cache_' . $tid, '');
+    if ($cached_data) {
+      echo $cached_data;
+      return;
+    }
   }
 
   $feed_img_url = '';
@@ -87,6 +97,11 @@ function _mises_solr_author_fix_rss($tid) {
     )
   );
   foreach ($term_query as $result) {
+    // Stop if processing time exceeds a limit:
+    $max_processing_seconds = 10;
+    if (time() - $start_time > $max_processing_seconds) {
+      break;
+    }
     $item_out = array();
     $node = node_load($result->nid);
     #    drupal_set_message('<pre>' . print_r($node, 1) . '</pre>');
@@ -170,6 +185,11 @@ function _mises_solr_author_fix_rss($tid) {
   }
   $out[] = '</channel>';
   $out[] = '</rss>';
-  echo implode("\n", $out);
+  $output = implode("\n", $out);
+  variable_set('mises_itunes_feed_time_' . $tid, time());
+  variable_set('mises_itunes_feed_cache_' . $tid, $output);
+   
+
+  echo $output;
 }
 
