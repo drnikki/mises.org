@@ -1200,39 +1200,6 @@ function mises_solr_search_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-gdgDH18BA6cAGm0TMfFizrwQnCdgdzFH'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'gdgDH18BA6cAGm0TMfFizrwQnCdgdzFH',
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootsass' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootsass',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Second author',
-    'visibility' => 0,
-  );
-
   $export['facetapi-iPEJ3yDpFeYs3VTS0wJ47jBa0E1eosI0'] = array(
     'cache' => -1,
     'css_class' => '',
