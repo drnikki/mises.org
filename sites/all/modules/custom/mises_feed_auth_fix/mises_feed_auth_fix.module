@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * Implements hook_views_post_render().
+ */
+function mises_feed_auth_fix_views_post_render(&$view, &$output, &$cache) {
+  // Adjust the author in mises rss feed views /feed/[tid]/blog.rss and /feed/blog.rss:
+  if ($view->name != 'rss_feed' || !in_array($view->current_display, array('feed_9', 'feed_10'))) {
+    return;
+  }
+  foreach ($view->result as $result) {
+    $nid = $result->nid;
+    $node = node_load($nid);
+    $user = user_load($node->uid);
+    if (isset($node->field_author_1[LANGUAGE_NONE][0]['entity']->title)) {
+      $output = str_replace(
+        '<dc:creator>' . $user->name . '</dc:creator>', 
+        '<dc:creator>' . $node->field_author_1[LANGUAGE_NONE][0]['entity']->title . '</dc:creator>', 
+        $output
+      );
+    }
+  }
+}
