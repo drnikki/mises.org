@@ -65,9 +65,9 @@ function mises_landing_page_context_default_contexts() {
           'region' => 'bottom_two',
           'weight' => '-10',
         ),
-        'views-homepage-mises_weekends' => array(
+        'views-daily_landing-mises_weekends' => array(
           'module' => 'views',
-          'delta' => 'homepage-mises_weekends',
+          'delta' => 'daily_landing-mises_weekends',
           'region' => 'bottom_three',
           'weight' => '-10',
         ),
