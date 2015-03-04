@@ -375,39 +375,6 @@ function mises_solr_search_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-9vkTcu3AKyIRnRQDvEwlVpiijxfi0aAK'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => '9vkTcu3AKyIRnRQDvEwlVpiijxfi0aAK',
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'bartik',
-        'weight' => -11,
-      ),
-      'bootsass' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootsass',
-        'weight' => -20,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Date published',
-    'visibility' => 0,
-  );
-
   $export['facetapi-GINTagU90gzBoSCTBakEjEFdiUMdjI8a'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -573,39 +540,6 @@ function mises_solr_search_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-NXnDvpoGaH1v5jQoelDcn3VxNO613bbg'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'NXnDvpoGaH1v5jQoelDcn3VxNO613bbg',
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootsass' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootsass',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['facetapi-ObEAOfrQE4NEazlZdAr5fAl41Zn5DS0t'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -705,39 +639,6 @@ function mises_solr_search_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-VL8yoQ9ntAcDoCwY7lI7Cx1KrkSx4OvG'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'VL8yoQ9ntAcDoCwY7lI7Cx1KrkSx4OvG',
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootsass' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootsass',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['facetapi-Vr5VLliO0oKnOlR0zFmOGwmAxVNp2vcW'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -768,72 +669,6 @@ function mises_solr_search_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['facetapi-W6Ysae1gUJ0ZnzWMb7E51YAiVKvE5pdk'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'W6Ysae1gUJ0ZnzWMb7E51YAiVKvE5pdk',
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => -6,
-      ),
-      'bootsass' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootsass',
-        'weight' => -6,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['facetapi-WFKXiU1LbIFJ8PzI3XStD4EAB8A8yVrR'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'WFKXiU1LbIFJ8PzI3XStD4EAB8A8yVrR',
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootsass' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootsass',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Book Type',
     'visibility' => 0,
   );
 
@@ -1246,39 +1081,6 @@ function mises_solr_search_default_fe_block_settings() {
       'bartik' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootsass' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootsass',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['facetapi-mm4suP6E3JtZnuQOvdI8Za6Ic1I8RcUJ'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'mm4suP6E3JtZnuQOvdI8Za6Ic1I8RcUJ',
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
         'theme' => 'bartik',
         'weight' => 0,
       ),
