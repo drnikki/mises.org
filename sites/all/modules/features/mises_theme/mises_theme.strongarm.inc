@@ -429,7 +429,11 @@ function mises_theme_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'redirect' => array(
+          'weight' => '30',
+        ),
+      ),
       'display' => array(),
     ),
   );
@@ -526,7 +530,20 @@ function mises_theme_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'filename' => array(
+          'weight' => '-10',
+        ),
+        'preview' => array(
+          'weight' => '-5',
+        ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+      ),
       'display' => array(
         'file' => array(
           'default' => array(
