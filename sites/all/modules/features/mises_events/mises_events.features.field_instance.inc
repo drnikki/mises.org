@@ -31,7 +31,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 40,
       ),
       'print' => array(
         'label' => 'inline',
@@ -157,7 +157,7 @@ function mises_events_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -461,7 +461,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 38,
       ),
       'print' => array(
         'label' => 'above',
@@ -518,7 +518,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 37,
       ),
       'print' => array(
         'label' => 'above',
@@ -664,7 +664,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 39,
       ),
       'print' => array(
         'label' => 'inline',
@@ -725,7 +725,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 36,
       ),
       'print' => array(
         'label' => 'above',
@@ -846,7 +846,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 35,
       ),
       'print' => array(
         'label' => 'above',
@@ -922,7 +922,7 @@ function mises_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'above',
@@ -1008,7 +1008,7 @@ function mises_events_field_default_field_instances() {
           ),
         ),
         'type' => 'link_default',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -1096,7 +1096,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 33,
       ),
       'print' => array(
         'label' => 'above',
