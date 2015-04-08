@@ -1,0 +1,186 @@
+<?php
+
+ /** 
+  * Implements hook_menu().
+  */
+function mises_itunes_author_feed_menu() {
+  $items['itunes/author/%'] = array(
+    'title' => 'Mises iTunes Feed',
+    'page callback' => '_mises_itunes_author_feed_output',
+    'page arguments' => array(2),
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+
+/**
+ * RSS output of Libary Item feeds based on the person profile node ID passed:
+ */
+function _mises_itunes_author_feed_output($person_profile_nid) {
+
+  $start_time = time();
+  if (!is_numeric($person_profile_nid)) {
+    drupal_set_message('Invalid iTunes author feed URL; bad argument.', 'error');
+    drupal_goto('<front>');
+  }
+
+  $last_gen_time = variable_get('mises_itunes_author_feed_time_' . $person_profile_nid, '');
+  $cache_duration = 60 * 60 * 1;
+  // $cache_duration = 60;
+  if (time() - $last_gen_time <= $cache_duration) {
+    $cached_data = variable_get('mises_itunes_author_feed_cache_' . $person_profile_nid, '');
+    if ($cached_data) {
+      echo $cached_data;
+      return;
+    }
+  }
+
+  $author_node = node_load($person_profile_nid);
+  if (!$author_node) {
+    drupal_set_message('Invalid iTunes author feed data; bad argument.', 'error');
+    drupal_goto('<front>');
+  }
+
+  $feed_img_url = '';
+  if (isset($author_node->field_image_collection[LANGUAGE_NONE][0]['value'])) {
+    $file_query = db_query("SELECT field_image_fid FROM field_data_field_image WHERE entity_id = :entity_id",
+      array(
+        ':entity_id' => $author_node->field_image_collection[LANGUAGE_NONE][0]['value'],
+      )
+    );
+    foreach ($file_query as $result) {
+      $file = file_load($result->field_image_fid);
+      $feed_img_url = file_create_url($file->uri);
+    }
+  }
+  $feed_img_text = $author_node->title;
+
+  $out = array();
+  $out[] = '<?xml version="1.0" encoding="UTF-8"?>';
+  $out[] = '<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2enclosuresfull.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>';
+  $out[] = '<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">';
+  $out[] = '<channel>';
+  $out[] = '<title>Mises - ' . $author_node->title . '</title>';  
+  $out[] = '<description><![CDATA[Podcasts by ' . strip_tags($author_node->title) . '.]]></description>';
+  $out[] = '<language>en-US</language>';
+  $out[] = '<itunes:summary><![CDATA[' . strip_tags($author_node->title)  . ' podcasts.]]></itunes:summary>';
+  /* if (isset($author_node->title)) {
+    $out[] = '<itunes:author>' . $author_node->title . '</itunes:author>';
+  } */
+  $out[] = '<itunes:explicit>no</itunes:explicit>';
+  if (isset($feed_img_url)) {
+    $out[] = '<itunes:image href="' . $feed_img_url . '" />';
+  }
+  if (isset($feed_img_url)) {
+    $out[] = '<image>';
+    if (isset($feed_img_text)) {
+      $out[] = '<title>' . $feed_img_text . '</title>';
+    }
+    $out[] = '<url>' . $feed_img_url . '</url>';
+    $out[] = '<link>http://mises.org</link>';
+    $out[] = '</image>';
+  }
+  $total_result_count = 0;
+  // Fetch Library Items with this person profile:
+  $author_query = db_query("SELECT n.nid, d.field_published_date_value " .
+    "FROM node n, field_data_field_published_date d, field_data_field_author_1 a " .
+    "WHERE d.entity_id = n.nid AND a.entity_id = n.nid AND " .
+    "a.field_author_1_target_id = :person_profile_nid " .
+    "ORDER BY d.field_published_date_value DESC",
+    array(
+      ':person_profile_nid' => $author_node->nid,
+    )
+  );
+  foreach ($author_query as $result) {
+    // Stop if processing time exceeds a limit:
+    $max_processing_seconds = 5;
+    if (time() - $start_time > $max_processing_seconds) {
+      break;
+    }
+    $item_out = array();
+    $node = node_load($result->nid);
+    #    drupal_set_message('<pre>' . print_r($node, 1) . '</pre>');
+    #    return 'x';
+    $item_out[] = '<item>';
+    $item_out[] = '<title>' . $node->title . '</title>';
+    $item_out[] = '<link>' . url('node/' . $node->nid, array('absolute' => TRUE)) . '</link>';
+    $item_out[] = '<pubDate>' . date("r", strtotime($result->field_published_date_value)) . '</pubDate>';
+    $item_out[] = '<guid isPermaLink="false">' . url('node/' . $node->nid, array('absolute' => TRUE)) . '</guid>';
+    if (isset($node->body[LANGUAGE_NONE][0]['value'])) {
+      $item_out[] = '<description><![CDATA[' . strip_tags($node->body[LANGUAGE_NONE][0]['value']) . ']]></description>';
+      if (isset($node->field_teaser_text[LANGUAGE_NONE][0]['value'])) {
+        $item_out[] = '<itunes:summary><![CDATA[' . strip_tags($node->field_teaser_text[LANGUAGE_NONE][0]['value']) . ']]></itunes:summary>';
+      } else {
+        $item_out[] = '<itunes:summary><![CDATA[' . strip_tags(text_summary($node->body[LANGUAGE_NONE][0]['value'])) . ']]></itunes:summary>';
+      }
+    } else {
+      $default_summary = 'A Mises podcast.';
+      $item_out[] = '<description><![CDATA[' . $default_summary . ']]></description>';
+      $item_out[] = '<itunes:summary><![CDATA[' . $default_summary . ']]></itunes:summary>';
+    }
+    /* if (isset($author_node->title)) {
+      $item_out[] = '<itunes:author>' . $author_node->title . '</itunes:author>';
+    } */
+    $item_out[] = '<itunes:explicit>no</itunes:explicit>';
+  
+    // Use any "Topic" or "Austrian School" taxonomy terms associated with this node as its keywords:
+    $vocabs_to_use = "('currents_trends', 'the_austrian_school_of_economics')";
+    $keywords_query = db_query("SELECT DISTINCT t.name FROM taxonomy_vocabulary v, taxonomy_term_data t, taxonomy_index i " .
+      "WHERE v.machine_name IN $vocabs_to_use AND v.vid = t.vid AND t.tid = i.tid AND i.nid = :nid " .
+      "ORDER BY t.name",
+      array(
+        ':nid' => $node->nid, 
+      )
+    );
+    $keywords = array();
+    foreach ($keywords_query as $keywords_result) {
+      $keywords[] = $keywords_result->name;
+    }  
+    if (!empty($keywords)) {
+      $item_out[] = '<itunes:keywords>' . implode(", ", $keywords) . '</itunes:keywords>';
+    }
+    unset($audio_file_url);
+    unset($file);
+    if (isset($node->field_media_collection[LANGUAGE_NONE][0]['value'])) {
+      $file_query = db_query("SELECT field_media_fid FROM field_data_field_media WHERE entity_id = :entity_id",
+        array(
+          ':entity_id' => $node->field_media_collection[LANGUAGE_NONE][0]['value'],
+        )
+      );
+      foreach ($file_query as $result) {
+        $file = file_load($result->field_media_fid);
+        //drupal_set_message('<pre>' . print_r($file, 1) . '</pre>');
+        //return 'x'; 
+        $audio_file_url = file_create_url($file->uri);
+      }
+    }
+
+    // Do not return this item if the file isn't an mp3 or mp4:
+    if (!isset($file->filemime) || !in_array(strtolower($file->filemime), array('audio/mpeg', 'audio/mp4'))) {
+       continue;
+    }  
+    if ($audio_file_url) {
+      $item_out[] = '<enclosure url="' . $audio_file_url . '" length="' . $file->filesize . '" type="' . $file->filemime . '" />';
+    }
+
+
+    $item_out[] = '</item>';
+    $total_result_count++;
+    /* if ($total_result_count =< 10) {
+      $out = array_merge($out, $item_out);
+    } */
+
+    $out = array_merge($out, $item_out);
+  }
+  $out[] = '</channel>';
+  $out[] = '</rss>';
+  $output = implode("\n", $out);
+  variable_set('mises_itunes_author_feed_time_' . $person_profile_nid, time());
+  variable_set('mises_itunes_author_feed_cache_' . $person_profile_nid, $output);
+   
+
+  echo $output;
+}
+
