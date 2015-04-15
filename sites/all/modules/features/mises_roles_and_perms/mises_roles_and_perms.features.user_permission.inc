@@ -809,6 +809,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
     ),
     'module' => 'roleassign',
   );
