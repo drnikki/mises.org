@@ -13,13 +13,13 @@ function mises_roles_and_perms_user_default_roles() {
   // Exported role: Blog Author.
   $roles['Blog Author'] = array(
     'name' => 'Blog Author',
-    'weight' => 9,
+    'weight' => 2,
   );
 
   // Exported role: Content Creator.
   $roles['Content Creator'] = array(
     'name' => 'Content Creator',
-    'weight' => 8,
+    'weight' => 3,
   );
 
   // Exported role: Content Manager.
@@ -31,25 +31,25 @@ function mises_roles_and_perms_user_default_roles() {
   // Exported role: Drupal Developer.
   $roles['Drupal Developer'] = array(
     'name' => 'Drupal Developer',
-    'weight' => 3,
+    'weight' => 8,
   );
 
   // Exported role: Senior Editor.
   $roles['Senior Editor'] = array(
     'name' => 'Senior Editor',
-    'weight' => 7,
-  );
-
-  // Exported role: Senior Editor Plus.
-  $roles['Senior Editor Plus'] = array(
-    'name' => 'Senior Editor Plus',
-    'weight' => 6,
+    'weight' => 5,
   );
 
   // Exported role: Site Administrator.
   $roles['Site Administrator'] = array(
     'name' => 'Site Administrator',
-    'weight' => 5,
+    'weight' => 7,
+  );
+
+  // Exported role: User Administrator.
+  $roles['User Administrator'] = array(
+    'name' => 'User Administrator',
+    'weight' => 6,
   );
 
   return $roles;

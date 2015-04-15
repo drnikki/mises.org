@@ -18,7 +18,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'admin_menu',
@@ -29,7 +28,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'system',
@@ -63,7 +61,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -77,7 +74,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Manager' => 'Content Manager',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'contextual',
@@ -100,7 +96,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Manager' => 'Content Manager',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
@@ -115,7 +110,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
@@ -206,7 +200,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
@@ -419,7 +412,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -552,7 +544,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -619,7 +610,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'redirect',
@@ -694,7 +684,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'system',
   );
@@ -760,8 +749,8 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'administer users',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
     ),
     'module' => 'user',
   );
@@ -819,7 +808,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'assign roles',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'roleassign',
@@ -850,7 +838,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -898,7 +885,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -910,7 +896,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Blog Author' => 'Blog Author',
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -921,7 +906,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -932,7 +916,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -942,7 +925,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'create causeview_snippet content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -953,7 +935,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -964,7 +945,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -977,7 +957,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -989,7 +968,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1000,7 +978,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1011,7 +988,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1022,7 +998,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1033,7 +1008,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1044,7 +1018,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1055,7 +1028,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1066,7 +1038,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1077,7 +1048,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1097,7 +1067,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1108,7 +1077,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1119,7 +1087,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1130,7 +1097,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1141,7 +1107,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1152,7 +1117,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1163,7 +1127,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'path',
@@ -1175,7 +1138,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1329,7 +1291,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -1340,7 +1301,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any award content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1350,7 +1310,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any blog content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1360,7 +1319,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any book_digital_text content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1370,7 +1328,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any campaign_ content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1380,7 +1337,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any causeview_snippet content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1390,7 +1346,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any course content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1401,7 +1356,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -1412,7 +1366,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any ebook files',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -1432,7 +1385,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any event content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1442,7 +1394,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any flex_block content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1452,7 +1403,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any giving_feature_block content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1462,7 +1412,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any giving_page content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1472,7 +1421,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any giving_story content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1482,7 +1430,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any homepage_hero content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1493,7 +1440,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -1503,7 +1449,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any institute_fellowship content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1513,7 +1458,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any job_posting_ content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1523,7 +1467,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any landing_page content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1533,7 +1476,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any library_item content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1550,7 +1492,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any page content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1560,7 +1501,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any person_profile content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1570,7 +1510,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any photo_gallery content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1580,7 +1519,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any product content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1590,7 +1528,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any scholarship_ content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1600,7 +1537,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any social_media content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1611,7 +1547,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -1622,7 +1557,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete any working_papers content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1633,7 +1567,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -1644,7 +1577,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own award content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1654,7 +1586,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own blog content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1664,7 +1595,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own book_digital_text content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1674,7 +1604,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own campaign_ content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1684,7 +1613,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own causeview_snippet content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1694,7 +1622,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own course content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1705,7 +1632,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -1716,7 +1642,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own ebook files',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -1736,7 +1661,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own event content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1746,7 +1670,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own flex_block content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1756,7 +1679,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own giving_feature_block content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1766,7 +1688,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own giving_page content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1776,7 +1697,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own giving_story content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1786,7 +1706,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own homepage_hero content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1797,7 +1716,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -1807,7 +1725,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own institute_fellowship content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1817,7 +1734,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own job_posting_ content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1827,7 +1743,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own landing_page content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1837,7 +1752,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own library_item content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1854,7 +1768,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own page content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1864,7 +1777,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own person_profile content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1874,7 +1786,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own photo_gallery content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1884,7 +1795,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own product content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1894,7 +1804,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own scholarship_ content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1904,7 +1813,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own social_media content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1915,7 +1823,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -1926,7 +1833,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'delete own working_papers content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -1937,7 +1843,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -2012,7 +1917,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'admin_menu',
@@ -2024,7 +1928,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -2035,7 +1938,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -2053,7 +1955,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -2064,7 +1965,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -2075,7 +1975,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -2086,7 +1985,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -2104,7 +2002,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -2115,7 +2012,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -2294,7 +2190,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2304,7 +2199,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'eck add book_chapter bundles',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2315,7 +2209,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2325,7 +2218,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'eck add book_page bundles',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2417,7 +2309,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'eck delete book_chapter book_chapter entities',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2427,7 +2318,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'eck delete book_chapter bundles',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2437,7 +2327,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'eck delete book_page book_page entities',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2447,7 +2336,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'eck delete book_page bundles',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2485,7 +2373,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2495,7 +2382,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'eck edit book_chapter bundles',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2506,7 +2392,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2516,7 +2401,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'eck edit book_page bundles',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2615,7 +2499,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'eck view book_chapter bundles',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2632,7 +2515,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'eck view book_page bundles',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'eck',
   );
@@ -2652,7 +2534,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -2664,7 +2545,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2675,7 +2555,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2686,7 +2565,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2697,7 +2575,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2707,7 +2584,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any causeview_snippet content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2718,7 +2594,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2729,7 +2604,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -2740,7 +2614,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit any ebook files',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -2752,7 +2625,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'entityform',
@@ -2764,7 +2636,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2775,7 +2646,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2786,7 +2656,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2797,7 +2666,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2808,7 +2676,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2819,7 +2686,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2830,7 +2696,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -2841,7 +2706,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2852,7 +2716,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2863,7 +2726,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2874,7 +2736,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2894,7 +2755,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2905,7 +2765,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2916,7 +2775,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2927,7 +2785,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2938,7 +2795,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2949,7 +2805,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2960,7 +2815,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -2972,7 +2826,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -2985,7 +2838,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'metatag',
@@ -2998,7 +2850,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -3010,7 +2861,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3022,7 +2872,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Blog Author' => 'Blog Author',
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3033,7 +2882,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3044,7 +2892,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3054,7 +2901,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own causeview_snippet content',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3065,7 +2911,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3077,7 +2922,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -3088,7 +2932,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'edit own ebook files',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -3100,7 +2943,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'entityform',
@@ -3112,7 +2954,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3123,7 +2964,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3134,7 +2974,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3145,7 +2984,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3156,7 +2994,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3167,7 +3004,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3178,7 +3014,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'file_entity',
   );
@@ -3189,7 +3024,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3200,7 +3034,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3211,7 +3044,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3222,7 +3054,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3242,7 +3073,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3253,7 +3083,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3264,7 +3093,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3275,7 +3103,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3286,7 +3113,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3297,7 +3123,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3309,7 +3134,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -3321,7 +3145,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'node',
   );
@@ -3395,7 +3218,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'admin_menu',
@@ -3440,7 +3262,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'nodequeue',
@@ -3453,7 +3274,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'nodequeue',
@@ -3482,7 +3302,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit main-menu',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3509,7 +3328,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit menu-about-the-mises-institute',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3520,7 +3338,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit menu-austrian-economics-sub-menu',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3540,7 +3357,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit menu-browse-library',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3551,7 +3367,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit menu-economist-resources-sub-men',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3562,7 +3377,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit menu-event-menu',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3587,7 +3401,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit menu-homeschool-sub-menu',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3598,7 +3411,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit menu-library-sub-menu',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3609,7 +3421,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit menu-mises-social-icons',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3620,7 +3431,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit menu-new-to-mises',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3631,7 +3441,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'menu edit menu-press-room',
     'roles' => array(
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'menu_editor',
@@ -3688,7 +3497,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -3703,7 +3511,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Manager' => 'Content Manager',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
@@ -3748,7 +3555,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'print_mail',
@@ -3762,7 +3568,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'page_title',
@@ -3774,7 +3579,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Content Creator' => 'Content Creator',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'better_formats',
   );
@@ -3786,7 +3590,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'better_formats',
   );
@@ -3798,7 +3601,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'better_formats',
   );
@@ -3810,7 +3612,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'better_formats',
   );
@@ -3822,7 +3623,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'better_formats',
   );
@@ -3834,7 +3634,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'better_formats',
   );
@@ -3872,7 +3671,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'better_formats',
@@ -3895,7 +3693,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'captcha',
@@ -3988,7 +3785,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
     ),
     'module' => 'filter',
   );
@@ -4000,7 +3796,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'entityform',
@@ -4026,7 +3821,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'entityform',
@@ -4040,7 +3834,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -4053,7 +3846,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -4067,7 +3859,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Content Creator' => 'Content Creator',
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -4079,7 +3870,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'file_entity',
@@ -4091,7 +3881,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Senior Editor Plus' => 'Senior Editor Plus',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
