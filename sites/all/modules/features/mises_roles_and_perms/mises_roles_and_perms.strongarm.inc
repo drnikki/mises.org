@@ -19,7 +19,7 @@ function mises_roles_and_perms_strongarm() {
     6 => '6',
     4 => '4',
     8 => '8',
-    11 => '11',
+    10 => '10',
     9 => '9',
     7 => 0,
     3 => 0,
