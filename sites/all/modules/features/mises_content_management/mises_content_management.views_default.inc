@@ -286,9 +286,221 @@ function mises_content_management_views_default_views() {
     6 => 0,
     5 => 0,
   );
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_featured_content_value']['expose']['operator_id'] = 'field_featured_content_value_op';
+  $handler->display->display_options['filters']['field_featured_content_value']['expose']['label'] = 'Featured Status';
+  $handler->display->display_options['filters']['field_featured_content_value']['expose']['operator'] = 'field_featured_content_value_op';
+  $handler->display->display_options['filters']['field_featured_content_value']['expose']['identifier'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
+    'title' => 'title',
+    'page_title' => 'page_title',
+    'changed' => 'changed',
+    'type' => 'type',
+    'field_library_item_tree' => 'field_library_item_tree',
+    'field_author_1' => 'field_author_1',
+    'edit_node' => 'edit_node',
+    'status' => 'status',
+    'field_online_text' => 'field_online_text',
+    'field_featured_content' => 'field_featured_content',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'page_title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'type' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_library_item_tree' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_author_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_online_text' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_featured_content' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Header Text */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['ui_name'] = 'Header Text';
+  $handler->display->display_options['header']['area']['content'] = '<p>Listed below are all the nodes on the site with their Page Title (if set).</p>
+<p>Use the Featured column to check the Featured status of any page. </p>';
+  $handler->display->display_options['header']['area']['format'] = 'simplified';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  /* Field: Page Title: Title */
+  $handler->display->display_options['fields']['page_title']['id'] = 'page_title';
+  $handler->display->display_options['fields']['page_title']['table'] = 'page_title';
+  $handler->display->display_options['fields']['page_title']['field'] = 'page_title';
+  $handler->display->display_options['fields']['page_title']['label'] = 'SEO Page Title';
+  $handler->display->display_options['fields']['page_title']['link_to_node'] = 0;
+  $handler->display->display_options['fields']['page_title']['use_node_title'] = 0;
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['changed']['date_format'] = 'long';
+  $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = 'Content Type';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Content: Library Item Type */
+  $handler->display->display_options['fields']['field_library_item_tree']['id'] = 'field_library_item_tree';
+  $handler->display->display_options['fields']['field_library_item_tree']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['fields']['field_library_item_tree']['field'] = 'field_library_item_tree';
+  $handler->display->display_options['fields']['field_library_item_tree']['type'] = 'term_reference_tree';
+  $handler->display->display_options['fields']['field_library_item_tree']['settings'] = array(
+    'token_display_selected' => '',
+    'token_display_unselected' => '',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_library_item_tree']['delta_offset'] = '0';
+  /* Field: Field: Author */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 1,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Content: Online text */
+  $handler->display->display_options['fields']['field_online_text']['id'] = 'field_online_text';
+  $handler->display->display_options['fields']['field_online_text']['table'] = 'field_data_field_online_text';
+  $handler->display->display_options['fields']['field_online_text']['field'] = 'field_online_text';
+  $handler->display->display_options['fields']['field_online_text']['label'] = 'Related Online Text';
+  $handler->display->display_options['fields']['field_online_text']['settings'] = array(
+    'link' => 1,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Featured */
+  $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['path'] = 'admin/content/mises-content';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Content List with Filters';
@@ -852,6 +1064,260 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Blog List with Filters';
   $handler->display->display_options['menu']['description'] = 'List all blogs';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Featured Pages Administration */
+  $handler = $view->new_display('page', 'Featured Pages Administration', 'page_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Featured Pages Administration';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    4 => '4',
+    8 => '8',
+    9 => '9',
+  );
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'editableviews_table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
+    'title' => 'title',
+    'changed' => 'changed',
+    'type' => 'type',
+    'field_library_item_tree' => 'field_library_item_tree',
+    'edit_node' => 'edit_node',
+    'status' => 'status',
+    'field_featured_content_editable' => 'field_featured_content_editable',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'type' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_library_item_tree' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_featured_content_editable' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Header Text */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['ui_name'] = 'Header Text';
+  $handler->display->display_options['header']['area']['content'] = '<p>Listed below are all the nodes tagged as Featured. Featured tags are used to highlight content, particularly for selecting which pages are featured in content bottom or sidebar blocks. "Featured" is used for generic Library Item blocks, as well as other content type blocks. Other options reflect filtered Library Item blocks, including Mises View, Mises Weekends, Books, Video, Related Topics, Related Level and Related Audience. Use a variety of Featured tags to help prevent the same block from appearing twice on the same page.</p>
+<p>Use the Featured column to check the Featured status of any page. To edit the Featured status, select another option (or -None- to remove the tag), then scroll to the bottom of the page and click SAVE.</p>';
+  $handler->display->display_options['header']['area']['format'] = 'simplified';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['changed']['date_format'] = 'long';
+  $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = 'Content Type';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Content: Library Item Type */
+  $handler->display->display_options['fields']['field_library_item_tree']['id'] = 'field_library_item_tree';
+  $handler->display->display_options['fields']['field_library_item_tree']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['fields']['field_library_item_tree']['field'] = 'field_library_item_tree';
+  $handler->display->display_options['fields']['field_library_item_tree']['type'] = 'term_reference_tree';
+  $handler->display->display_options['fields']['field_library_item_tree']['settings'] = array(
+    'token_display_selected' => '',
+    'token_display_unselected' => '',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_library_item_tree']['delta_offset'] = '0';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Content: Featured (editable) */
+  $handler->display->display_options['fields']['field_featured_content_editable']['id'] = 'field_featured_content_editable';
+  $handler->display->display_options['fields']['field_featured_content_editable']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content_editable']['field'] = 'field_featured_content_editable';
+  $handler->display->display_options['fields']['field_featured_content_editable']['label'] = 'Featured Status';
+  $handler->display->display_options['fields']['field_featured_content_editable']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_featured_content_editable']['widget_type'] = 'options_select';
+  $handler->display->display_options['fields']['field_featured_content_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_featured_content_editable']['suppress_description'] = 1;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['group'] = 1;
+  $handler->display->display_options['filters']['nid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['label'] = 'Node ID (NID) is:';
+  $handler->display->display_options['filters']['nid']['expose']['identifier'] = 'nid';
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title Contains:';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Content Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    7 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    6 => 0,
+    5 => 0,
+  );
+  /* Filter criterion: Content: Library Item Type (field_library_item_tree) */
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['expose']['operator_id'] = 'field_library_item_tree_tid_op';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['expose']['label'] = 'Library Item Type';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['expose']['operator'] = 'field_library_item_tree_tid_op';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['expose']['identifier'] = 'library-type';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    7 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    6 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_featured_content_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_featured_content_value']['expose']['operator_id'] = 'field_featured_content_value_op';
+  $handler->display->display_options['filters']['field_featured_content_value']['expose']['label'] = 'Featured Status';
+  $handler->display->display_options['filters']['field_featured_content_value']['expose']['operator'] = 'field_featured_content_value_op';
+  $handler->display->display_options['filters']['field_featured_content_value']['expose']['identifier'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'not empty';
+  $handler->display->display_options['path'] = 'admin/content/mises-featured-content';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Featured Content';
+  $handler->display->display_options['menu']['description'] = 'List all nodes tagged as Featured';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;

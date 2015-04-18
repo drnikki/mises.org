@@ -268,6 +268,13 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_view' => 'featured_view',
+  );
 
   /* Display: Library HP Block */
   $handler = $view->new_display('block', 'Library HP Block', 'library_block');
@@ -459,6 +466,13 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_weekends' => 'featured_weekends',
+  );
   $export['homepage'] = $view;
 
   return $export;

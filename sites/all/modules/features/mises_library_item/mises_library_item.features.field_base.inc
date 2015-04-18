@@ -289,7 +289,7 @@ function mises_library_item_field_default_field_bases() {
   // Exported field_base: 'field_featured_content'
   $field_bases['field_featured_content'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_featured_content',
@@ -304,6 +304,13 @@ function mises_library_item_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'featued' => 'Featured',
+        'featured_view' => 'Featured Mises View',
+        'featured_weekends' => 'Featured Mises Weekends',
+        'featured_book' => 'Featured Book',
+        'featured_video' => 'Featured Video',
+        'featured_topic' => 'Featured in Related Topic block',
+        'featured_level' => 'Featured in Related Level block',
+        'featured_audience' => 'Featured in Related Audience block',
       ),
       'allowed_values_function' => '',
     ),

@@ -457,7 +457,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -583,7 +583,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -1591,7 +1591,7 @@ function mises_library_item_field_default_field_instances() {
     'bundle' => 'library_item',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Select whether this item will be used in featured blocks. Only one selection should be made to avoid duplicate blocks. The first "Featured" option is the default filter for the featured Library Item block, as well as other content types.',
     'display' => array(
       'audio_teaser' => array(
         'label' => 'above',
@@ -1672,6 +1672,7 @@ function mises_library_item_field_default_field_instances() {
         'weight' => 32,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_featured_content',
     'label' => 'Featured Content',
@@ -1684,7 +1685,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -2297,7 +2298,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -3958,7 +3959,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -4084,7 +4085,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -4259,6 +4260,7 @@ function mises_library_item_field_default_field_instances() {
   t('PDF');
   t('Primary or Original Author');
   t('Published Date');
+  t('Select whether this item will be used in featured blocks. Only one selection should be made to avoid duplicate blocks. The first "Featured" option is the default filter for the featured Library Item block, as well as other content types.');
   t('Subtitle');
   t('Teaser Text');
   t('This field will be auto-populated to reflect the types of books available to this Library Item.');

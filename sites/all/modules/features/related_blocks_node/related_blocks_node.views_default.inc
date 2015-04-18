@@ -91,6 +91,14 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Related Topics Block */
   $handler = $view->new_display('block', 'Related Topics Block', 'topics');
@@ -121,6 +129,10 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -142,6 +154,21 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_item' => 'library_item',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_topic' => 'featured_topic',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 2;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
 
   /* Display: Related Level Block */
   $handler = $view->new_display('block', 'Related Level Block', 'level');
@@ -180,6 +207,10 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -201,6 +232,21 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_item' => 'library_item',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_level' => 'featured_level',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 2;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
 
   /* Display: Related Audience Block */
   $handler = $view->new_display('block', 'Related Audience Block', 'audience');
@@ -237,6 +283,10 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -258,6 +308,21 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_item' => 'library_item',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_audience' => 'featured_audience',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 2;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
 
   /* Display: Related Course Block */
   $handler = $view->new_display('block', 'Related Course Block', 'courses');
@@ -366,6 +431,47 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Image (field_image_collection) */
+  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_level' => 'featured_level',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 2;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
   $handler->display->display_options['displays'] = array(
     'level' => 'level',
     'default' => 0,
@@ -426,6 +532,47 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Image (field_image_collection) */
+  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_topic' => 'featured_topic',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 2;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
   $handler->display->display_options['displays'] = array(
     'topics' => 'topics',
     'default' => 0,
@@ -485,6 +632,40 @@ function related_blocks_node_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Image (field_image_collection) */
+  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
+  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
+  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_audience' => 'featured_audience',
+  );
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'empty';
   $handler->display->display_options['displays'] = array(
     'audience' => 'audience',
     'default' => 0,

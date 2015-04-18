@@ -50,7 +50,7 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_author_1_target_id']['field'] = 'field_author_1_target_id';
   $handler->display->display_options['relationships']['field_author_1_target_id']['label'] = 'author 1';
   $handler->display->display_options['relationships']['field_author_1_target_id']['required'] = TRUE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['field_author_2_target_id']['id'] = 'field_author_2_target_id';
   $handler->display->display_options['relationships']['field_author_2_target_id']['table'] = 'field_data_field_author_2';
   $handler->display->display_options['relationships']['field_author_2_target_id']['field'] = 'field_author_2_target_id';
@@ -206,7 +206,7 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['fields']['php']['php_output'] = '<?php echo variable_get(\'site_name\'); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Field: Content: Published Date */
+  /* Field: Content: Date Published */
   $handler->display->display_options['fields']['field_published_date']['id'] = 'field_published_date';
   $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
   $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
@@ -491,7 +491,7 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
-  /* Field: Content: Published Date */
+  /* Field: Content: Date Published */
   $handler->display->display_options['fields']['field_published_date']['id'] = 'field_published_date';
   $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
   $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
@@ -640,7 +640,7 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
-  /* Field: Content: Published Date */
+  /* Field: Content: Date Published */
   $handler->display->display_options['fields']['field_published_date']['id'] = 'field_published_date';
   $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
   $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
@@ -763,7 +763,7 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Related Profile */
+  /* Field: Field: Author */
   $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
   $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
   $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
@@ -818,7 +818,7 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
-  /* Field: Content: Published Date */
+  /* Field: Content: Date Published */
   $handler->display->display_options['fields']['field_published_date']['id'] = 'field_published_date';
   $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
   $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
@@ -965,7 +965,7 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['relationships']['field_author_1_target_id']['field'] = 'field_author_1_target_id';
   $handler->display->display_options['relationships']['field_author_1_target_id']['label'] = 'author 1';
   $handler->display->display_options['relationships']['field_author_1_target_id']['required'] = TRUE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['field_author_2_target_id']['id'] = 'field_author_2_target_id';
   $handler->display->display_options['relationships']['field_author_2_target_id']['table'] = 'field_data_field_author_2';
   $handler->display->display_options['relationships']['field_author_2_target_id']['field'] = 'field_author_2_target_id';
@@ -1130,7 +1130,7 @@ function mises_itunes_rss_feed_views_default_views() {
   $handler->display->display_options['fields']['php']['php_output'] = '<?php echo variable_get(\'site_name\'); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Field: Content: Published Date */
+  /* Field: Content: Date Published */
   $handler->display->display_options['fields']['field_published_date']['id'] = 'field_published_date';
   $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
   $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
@@ -1212,7 +1212,7 @@ return FALSE;';
   $handler->display->display_options['filters']['field_contact_email_value']['relationship'] = 'field_author_1_target_id';
   $handler->display->display_options['filters']['field_contact_email_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_contact_email_value']['group'] = 1;
-  /* Filter criterion: Content: Published Date (field_published_date) */
+  /* Filter criterion: Content: Date Published (field_published_date) */
   $handler->display->display_options['filters']['field_published_date_value']['id'] = 'field_published_date_value';
   $handler->display->display_options['filters']['field_published_date_value']['table'] = 'field_data_field_published_date';
   $handler->display->display_options['filters']['field_published_date_value']['field'] = 'field_published_date_value';
