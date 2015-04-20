@@ -2437,6 +2437,11 @@ html[contenteditable="true"] body { background-image: none; }
 
 @media (max-width: 768px) { /* tommy removing breadcrumbs on mobile */
   .easy-breadcrumb { display: none; } }
+/* image source */
+.view-image-source { margin-top: -12.5px; margin-bottom: 12.5px; }
+.view-image-source .views-label { font-weight: bold; }
+.view-image-source .field-content { display: inline; }
+
 /*
 * Main Site Custom Styles
 * 

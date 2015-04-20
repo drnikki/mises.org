@@ -288,6 +288,11 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blog';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'image_source' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'body_with_media_embedded' => array(
       'weight' => '6',
       'label' => 'hidden',
@@ -317,7 +322,7 @@ function display_suite_shared_ds_field_settings_info() {
       'format' => 'default',
     ),
     'dynamic_field_1' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -337,7 +342,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'follow_mises_institute' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -1626,13 +1631,18 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'library_item';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'image_source' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'contextual_block_title_with_icon' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -1646,6 +1656,11 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'library_item';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'image_source' => array(
+      'weight' => '12',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'body_with_media_embedded' => array(
       'weight' => '8',
       'label' => 'hidden',
@@ -1684,7 +1699,15 @@ function display_suite_shared_ds_field_settings_info() {
         'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:10:"Disclaimer";s:5:"title";s:0:"";s:4:"body";s:118:"<p><br /><strong>Note:</strong> The views expressed on Mises.org are not necessarily those of the Mises Institute.</p>";s:6:"format";s:10:"simplified";s:10:"substitute";i:1;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
         'load_terms' => 0,
         'ft' => array(),
-        'conditions' => array(),
+        'conditions' => array(
+          0 => array(
+            'condition' => 'hide_no_string',
+            'configuration' => array(
+              'target' => 'field_show_disclaimer',
+              'string' => '1',
+            ),
+          ),
+        ),
       ),
     ),
     'dynamic_field_1' => array(
@@ -1747,7 +1770,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'follow_mises_institute' => array(
-      'weight' => '12',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -1840,18 +1863,6 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'field_author_1' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'author',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_author_2' => array(
       'formatter_settings' => array(
         'ft' => array(
           'ow' => TRUE,
@@ -4226,10 +4237,10 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'text_resizer',
-        1 => 'tags_title',
-        2 => 'custom_breadcrumb',
-        3 => 'field_topics',
+        0 => 'tags_title',
+        1 => 'text_resizer',
+        2 => 'field_topics',
+        3 => 'custom_breadcrumb',
         4 => 'field_austrian_school',
         5 => 'title',
         6 => 'field_image_collection',
@@ -4239,18 +4250,19 @@ function display_suite_shared_ds_layout_settings_info() {
         10 => 'body_with_media_embedded',
         11 => 'field_author_1',
         12 => 'body',
-        13 => 'follow_mises_institute',
-        14 => 'dynamic_field_1',
+        13 => 'image_source',
+        14 => 'follow_mises_institute',
+        15 => 'dynamic_field_1',
       ),
       'ds_hidden' => array(
-        15 => 'field_media_collection',
+        16 => 'field_media_collection',
       ),
     ),
     'fields' => array(
-      'text_resizer' => 'ds_content',
       'tags_title' => 'ds_content',
-      'custom_breadcrumb' => 'ds_content',
+      'text_resizer' => 'ds_content',
       'field_topics' => 'ds_content',
+      'custom_breadcrumb' => 'ds_content',
       'field_austrian_school' => 'ds_content',
       'title' => 'ds_content',
       'field_image_collection' => 'ds_content',
@@ -4260,6 +4272,7 @@ function display_suite_shared_ds_layout_settings_info() {
       'body_with_media_embedded' => 'ds_content',
       'field_author_1' => 'ds_content',
       'body' => 'ds_content',
+      'image_source' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
       'field_media_collection' => 'ds_hidden',
@@ -5158,6 +5171,7 @@ function display_suite_shared_ds_layout_settings_info() {
         2 => 'field_image_collection',
         3 => 'field_teaser_text',
         4 => 'body',
+        5 => 'image_source',
       ),
     ),
     'fields' => array(
@@ -5166,6 +5180,7 @@ function display_suite_shared_ds_layout_settings_info() {
       'field_image_collection' => 'ds_content',
       'field_teaser_text' => 'ds_content',
       'body' => 'ds_content',
+      'image_source' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -5199,30 +5214,30 @@ function display_suite_shared_ds_layout_settings_info() {
         0 => 'text_resizer',
         1 => 'dynamic_field_1',
         2 => 'custom_breadcrumb',
-        3 => 'title',
-        4 => 'field_pdf',
+        3 => 'field_pdf',
+        4 => 'title',
         5 => 'field_image_collection',
         6 => 'field_mobi',
-        7 => 'field_mises_published_date',
-        8 => 'field_epub',
+        7 => 'field_epub',
+        8 => 'field_mises_published_date',
         9 => 'group_date_author',
-        10 => 'group_tags',
-        11 => 'field_kindle',
-        12 => 'field_author_1',
+        10 => 'field_kindle',
+        11 => 'field_author_1',
+        12 => 'group_tags',
         13 => 'dynamic_field_2',
         14 => 'group_links',
-        15 => 'field_author_2',
-        16 => 'field_link_to_external_listing_',
-        17 => 'field_subtitle',
+        15 => 'field_link_to_external_listing_',
+        16 => 'field_subtitle',
+        17 => 'body_with_media_embedded',
         18 => 'tags_title',
-        19 => 'body_with_media_embedded',
+        19 => 'body',
         20 => 'field_topics',
-        21 => 'body',
-        22 => 'field_bibliography_footnote',
-        23 => 'field_document_attachment',
-        24 => 'field_citation',
-        25 => 'dynamic_3',
-        26 => 'field_austrian_school',
+        21 => 'field_bibliography_footnote',
+        22 => 'field_document_attachment',
+        23 => 'field_citation',
+        24 => 'dynamic_3',
+        25 => 'field_austrian_school',
+        26 => 'image_source',
         27 => 'follow_mises_institute',
         28 => 'group_footnotes',
       ),
@@ -5237,30 +5252,30 @@ function display_suite_shared_ds_layout_settings_info() {
       'text_resizer' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
-      'title' => 'ds_content',
       'field_pdf' => 'ds_content',
+      'title' => 'ds_content',
       'field_image_collection' => 'ds_content',
       'field_mobi' => 'ds_content',
-      'field_mises_published_date' => 'ds_content',
       'field_epub' => 'ds_content',
+      'field_mises_published_date' => 'ds_content',
       'group_date_author' => 'ds_content',
-      'group_tags' => 'ds_content',
       'field_kindle' => 'ds_content',
       'field_author_1' => 'ds_content',
+      'group_tags' => 'ds_content',
       'dynamic_field_2' => 'ds_content',
       'group_links' => 'ds_content',
-      'field_author_2' => 'ds_content',
       'field_link_to_external_listing_' => 'ds_content',
       'field_subtitle' => 'ds_content',
-      'tags_title' => 'ds_content',
       'body_with_media_embedded' => 'ds_content',
-      'field_topics' => 'ds_content',
+      'tags_title' => 'ds_content',
       'body' => 'ds_content',
+      'field_topics' => 'ds_content',
       'field_bibliography_footnote' => 'ds_content',
       'field_document_attachment' => 'ds_content',
       'field_citation' => 'ds_content',
       'dynamic_3' => 'ds_content',
       'field_austrian_school' => 'ds_content',
+      'image_source' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'group_footnotes' => 'ds_content',
       'field_level' => 'ds_hidden',
