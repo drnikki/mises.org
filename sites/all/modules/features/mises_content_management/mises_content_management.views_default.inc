@@ -1202,12 +1202,48 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  /* Field: Content: Published */
-  $handler->display->display_options['fields']['status']['id'] = 'status';
-  $handler->display->display_options['fields']['status']['table'] = 'node';
-  $handler->display->display_options['fields']['status']['field'] = 'status';
-  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Content: Audience */
+  $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
+  $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['label'] = 'Related Audience';
+  $handler->display->display_options['fields']['field_audience']['settings'] = array(
+    'link' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_audience']['delta_offset'] = '0';
+  /* Field: Content: Level */
+  $handler->display->display_options['fields']['field_level']['id'] = 'field_level';
+  $handler->display->display_options['fields']['field_level']['table'] = 'field_data_field_level';
+  $handler->display->display_options['fields']['field_level']['field'] = 'field_level';
+  $handler->display->display_options['fields']['field_level']['label'] = 'Related Level';
+  $handler->display->display_options['fields']['field_level']['settings'] = array(
+    'link' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_level']['delta_offset'] = '0';
+  /* Field: Content: Topics */
+  $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
+  $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
+  $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
+  $handler->display->display_options['fields']['field_topics']['label'] = 'Related Topics';
+  $handler->display->display_options['fields']['field_topics']['settings'] = array(
+    'link' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
   /* Field: Content: Featured (editable) */
   $handler->display->display_options['fields']['field_featured_content_editable']['id'] = 'field_featured_content_editable';
   $handler->display->display_options['fields']['field_featured_content_editable']['table'] = 'field_data_field_featured_content';
@@ -1288,6 +1324,78 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 1;
+  /* Filter criterion: Content: Audience (field_audience) */
+  $handler->display->display_options['filters']['field_audience_target_id']['id'] = 'field_audience_target_id';
+  $handler->display->display_options['filters']['field_audience_target_id']['table'] = 'field_data_field_audience';
+  $handler->display->display_options['filters']['field_audience_target_id']['field'] = 'field_audience_target_id';
+  $handler->display->display_options['filters']['field_audience_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_audience_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_audience_target_id']['expose']['operator_id'] = 'field_audience_target_id_op';
+  $handler->display->display_options['filters']['field_audience_target_id']['expose']['label'] = 'Audience';
+  $handler->display->display_options['filters']['field_audience_target_id']['expose']['operator'] = 'field_audience_target_id_op';
+  $handler->display->display_options['filters']['field_audience_target_id']['expose']['identifier'] = 'field_audience_target_id';
+  $handler->display->display_options['filters']['field_audience_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Level (field_level) */
+  $handler->display->display_options['filters']['field_level_target_id']['id'] = 'field_level_target_id';
+  $handler->display->display_options['filters']['field_level_target_id']['table'] = 'field_data_field_level';
+  $handler->display->display_options['filters']['field_level_target_id']['field'] = 'field_level_target_id';
+  $handler->display->display_options['filters']['field_level_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_level_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['operator_id'] = 'field_level_target_id_op';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['label'] = 'Level';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['operator'] = 'field_level_target_id_op';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['identifier'] = 'field_level_target_id';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Topics (field_topics) */
+  $handler->display->display_options['filters']['field_topics_target_id']['id'] = 'field_topics_target_id';
+  $handler->display->display_options['filters']['field_topics_target_id']['table'] = 'field_data_field_topics';
+  $handler->display->display_options['filters']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['filters']['field_topics_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_topics_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['operator_id'] = 'field_topics_target_id_op';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['label'] = 'Topic';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['operator'] = 'field_topics_target_id_op';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['identifier'] = 'field_topics_target_id';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Featured (field_featured_content) */
   $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
   $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
@@ -1309,11 +1417,6 @@ function mises_content_management_views_default_views() {
     9 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: Featured (field_featured_content) */
-  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
-  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
-  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
-  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'admin/content/mises-featured-content';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Featured Content';
