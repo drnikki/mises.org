@@ -15,13 +15,14 @@ function mises_roles_and_perms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'roleassign_roles';
   $strongarm->value = array(
-    9 => '9',
-    8 => '8',
-    6 => '6',
     5 => '5',
-    3 => 0,
+    6 => '6',
+    4 => '4',
+    8 => '8',
+    10 => '10',
+    9 => '9',
     7 => 0,
-    4 => 0,
+    3 => 0,
   );
   $export['roleassign_roles'] = $strongarm;
 
