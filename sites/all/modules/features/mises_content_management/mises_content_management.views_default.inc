@@ -1158,8 +1158,8 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['ui_name'] = 'Header Text';
-  $handler->display->display_options['header']['area']['content'] = '<p>Listed below are all the nodes tagged as Featured. Featured tags are used to highlight content, particularly for selecting which pages are featured in content bottom or sidebar blocks. "Featured" is used for generic Library Item blocks, as well as other content type blocks. Other options reflect filtered Library Item blocks, including Mises View, Mises Weekends, Books, Video, Related Topics, Related Level and Related Audience. Use a variety of Featured tags to help prevent the same block from appearing twice on the same page.</p>
-<p>Use the Featured column to check the Featured status of any page. To edit the Featured status, select another option (or -None- to remove the tag), then scroll to the bottom of the page and click SAVE.</p>';
+  $handler->display->display_options['header']['area']['content'] = '<p>Listed below are all the pages tagged as Featured. Featured tags are used to highlight content, particularly for selecting which pages are featured in content bottom or sidebar blocks. "Featured" is used for generic Library Item blocks, as well as other content type blocks. Other options reflect filtered Library Item blocks, including Mises View, Mises Weekends, Books, Video, Related Topics, Related Level and Related Audience. Use a variety of Featured tags to help prevent the same block from appearing twice on the same page.</p>
+<p>Use the Featured Status column to check the status of any page. To edit the Featured status, select another option (or -None- to remove the tag), then scroll to the bottom of the page and click SAVE.</p>';
   $handler->display->display_options['header']['area']['format'] = 'simplified';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
@@ -1249,6 +1249,8 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['fields']['field_featured_content_editable']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content_editable']['field'] = 'field_featured_content_editable';
   $handler->display->display_options['fields']['field_featured_content_editable']['label'] = 'Featured Status';
+  $handler->display->display_options['fields']['field_featured_content_editable']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_featured_content_editable']['alter']['text'] = 'Current selection: [field_featured_content_editable]';
   $handler->display->display_options['fields']['field_featured_content_editable']['settings'] = array(
     'conditions' => array(
       0 => array(
