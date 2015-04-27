@@ -564,3 +564,15 @@ html[contenteditable="true"] {
 	  display: none;
 	}
 }
+
+/* image source */
+.view-image-source {
+  margin-top: -$line-height-computed / 2;
+  margin-bottom: $line-height-computed / 2;
+  .views-label {
+    font-weight: bold;
+  }
+  .field-content {
+  display: inline; 
+  }
+}
