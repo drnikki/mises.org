@@ -137,10 +137,11 @@ function mises_blog_field_default_field_instances() {
         'allowed_formats' => array(
           'ds_code' => 0,
           'filtered_html' => 0,
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'php_code' => 0,
           'plain_text' => 0,
           'simplified' => 'simplified',
+          'straight_html' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -163,6 +164,9 @@ function mises_blog_field_default_field_instances() {
             ),
             'simplified' => array(
               'weight' => -7,
+            ),
+            'straight_html' => array(
+              'weight' => 0,
             ),
           ),
         ),
@@ -204,7 +208,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 35,
       ),
       'print' => array(
         'label' => 'above',
@@ -439,7 +443,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 33,
       ),
       'print' => array(
         'label' => 'above',
@@ -504,7 +508,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 31,
       ),
       'print' => array(
         'label' => 'above',
@@ -677,7 +681,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 34,
       ),
       'print' => array(
         'label' => 'above',
@@ -755,7 +759,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'print' => array(
         'label' => 'above',
@@ -823,7 +827,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 32,
       ),
       'print' => array(
         'label' => 'above',

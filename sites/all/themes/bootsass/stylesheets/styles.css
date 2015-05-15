@@ -2437,6 +2437,11 @@ html[contenteditable="true"] body { background-image: none; }
 
 @media (max-width: 768px) { /* tommy removing breadcrumbs on mobile */
   .easy-breadcrumb { display: none; } }
+/* image source */
+.view-image-source { margin-top: -12.5px; margin-bottom: 12.5px; }
+.view-image-source .views-label { font-weight: bold; }
+.view-image-source .field-content { display: inline; }
+
 /*
 * Main Site Custom Styles
 * 
@@ -2679,6 +2684,7 @@ ul.menu li a, ul.menu li span { -webkit-transition: all 0.2s ease; -o-transition
 .sidebar .panel-body { padding: 10px 20px; }
 .sidebar .view-content p:last-child { margin: 0; }
 .sidebar .margin-bottom { margin-bottom: 20px; }
+.sidebar #block-views-flex-blocks-block-6 { margin-top: 20px; }
 
 .region-sidebar-second-top { margin-bottom: 20px; background: #38709e; color: #fff; }
 .region-sidebar-second-top .panel { padding: 24px; background: #38709e; }

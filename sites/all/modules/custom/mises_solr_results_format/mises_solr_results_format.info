@@ -1,0 +1,6 @@
+name = Mises Solr Results Format
+description = Assists with adjustments to the way results are presented, including Book Page and Book Chapter nodes.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0
+project = mises_solr_results_format

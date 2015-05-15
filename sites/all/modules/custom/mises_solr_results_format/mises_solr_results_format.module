@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Get chapter for current Online Text Page:
+ */
+function _mises_solr_results_format($page_entity) {
+  
+  if (isset($page_entity->field_library_item_reference[LANGUAGE_NONE][0]['entity']->field_online_text[LANGUAGE_NONE][0]['target_id'])) {
+    $online_text_nid = $page_entity->field_library_item_reference[LANGUAGE_NONE][0]['entity']->field_online_text[LANGUAGE_NONE][0]['target_id'];
+  } else {
+    return;
+  } 
+
+  if (isset($page_entity->field_page_reference[LANGUAGE_NONE][0]['target_id'])) {
+    $page_entity_id = $page_entity->field_page_reference[LANGUAGE_NONE][0]['target_id'];
+  } else {
+    return;
+  }
+ 
+  // loop all chapter entities associated with this online text node:
+  // For each, check if it is a parent of this page entity and get the associate page node:
+  $ch_query = db_query("SELECT n.nid, n.title " .
+    "FROM field_data_field_book_chapter c, field_data_field_book_pages p, field_data_field_chapter_reference cn, node n WHERE " .
+      "c.entity_id = $online_text_nid AND " .
+      "p.entity_id = c.field_book_chapter_target_id AND " .
+      "p.field_book_pages_target_id = $page_entity_id AND " .
+      "cn.entity_id = n.nid AND " .
+      "cn.field_chapter_reference_target_id = c.field_book_chapter_target_id"
+  );
+  foreach ($ch_query as $ch_result) {
+    return l($ch_result->title, 'node/' . $ch_result->nid);
+  }
+}
