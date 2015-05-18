@@ -6,7 +6,6 @@ version = 7.x-1.3
 project = mises_contact_notifications
 dependencies[] = ctools
 dependencies[] = eck
-dependencies[] = eck
 dependencies[] = email
 dependencies[] = entity
 dependencies[] = entity_rules

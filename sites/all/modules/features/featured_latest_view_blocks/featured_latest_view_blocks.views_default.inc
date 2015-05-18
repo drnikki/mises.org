@@ -88,6 +88,10 @@ function featured_latest_view_blocks_views_default_views() {
   $handler->display->display_options['relationships']['field_media_fid']['field'] = 'field_media_fid';
   $handler->display->display_options['relationships']['field_media_fid']['relationship'] = 'field_media_collection_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -103,6 +107,7 @@ function featured_latest_view_blocks_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_item' => 'library_item',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: File: Type */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'file_managed';
@@ -111,6 +116,21 @@ function featured_latest_view_blocks_views_default_views() {
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'video' => 'video',
   );
+  $handler->display->display_options['filters']['type_1']['group'] = 1;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_video' => 'featured_video',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 2;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
   $export['featured_latest_content'] = $view;
 
   return $export;
