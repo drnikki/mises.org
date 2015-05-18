@@ -39,6 +39,8 @@ function mises_wysiwyg_wysiwyg_default_profiles() {
           'Blockquote' => 1,
           'RemoveFormat' => 1,
           'Format' => 1,
+          'Styles' => 1,
+          'CreateDiv' => 1,
           'Scayt' => 1,
         ),
         'footnotes' => array(
@@ -55,10 +57,13 @@ function mises_wysiwyg_wysiwyg_default_profiles() {
       'remove_linebreaks' => 1,
       'apply_source_formatting' => 0,
       'paste_auto_cleanup_on_paste' => 0,
-      'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
-      'css_setting' => 'self',
+      'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div,fn',
+      'css_setting' => 'theme',
       'css_path' => '/%t/stylesheets/styles.css',
-      'css_classes' => '',
+      'css_classes' => 'Indendted Footnot=fn.indented_footnote',
+      'ckeditor_styles' => array(
+        'stylesheetparser' => 0,
+      ),
     ),
     'rdf_mapping' => array(),
   );
