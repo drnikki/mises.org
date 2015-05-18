@@ -90,6 +90,7 @@ function mises_library_item_field_group_info() {
       3 => 'field_mobi',
       4 => 'field_online_text',
       5 => 'field_pdf',
+      6 => 'field_books',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -220,6 +221,33 @@ function mises_library_item_field_group_info() {
     ),
   );
   $export['group_date_author|node|library_item|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_featured_tags|node|library_item|form';
+  $field_group->group_name = 'group_featured_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_tagging';
+  $field_group->data = array(
+    'label' => 'Featured Tags',
+    'weight' => '15',
+    'children' => array(
+      0 => 'field_featured_content',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-featured-tags field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_featured_tags|node|library_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -449,6 +477,7 @@ function mises_library_item_field_group_info() {
       4 => 'field_library_item_tree',
       5 => 'field_topics',
       6 => 'field_austrian_school',
+      7 => 'group_featured_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

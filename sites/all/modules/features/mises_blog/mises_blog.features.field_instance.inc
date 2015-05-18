@@ -137,10 +137,11 @@ function mises_blog_field_default_field_instances() {
         'allowed_formats' => array(
           'ds_code' => 0,
           'filtered_html' => 0,
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'php_code' => 0,
           'plain_text' => 0,
           'simplified' => 'simplified',
+          'straight_html' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -163,6 +164,9 @@ function mises_blog_field_default_field_instances() {
             ),
             'simplified' => array(
               'weight' => -7,
+            ),
+            'straight_html' => array(
+              'weight' => 0,
             ),
           ),
         ),

@@ -355,7 +355,7 @@ if($url == \'playlist\') {
 ?>
 
 <iframe id="ytplayer" type="text/html" width="500" height="390"
-  src="http://www.youtube.com/embed?listType=user_uploads&list=<?php print $url; ?>"
+  src="https://www.youtube.com/embed?listType=user_uploads&list=<?php print $url; ?>"
   frameborder="0"/></iframe>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';

@@ -75,7 +75,7 @@ var Drupal = Drupal || {};
 
       $('h3.sub-heading').each(function () {
         if ($(this).text() == tmpFrag) {
-          $(this).parent().parent().parent().parent().parent().find('h2').click();
+          $(this).parent().parent().parent().find('h2').click();
           $(this).click();
           return;
         }
