@@ -53,11 +53,17 @@ function landing_page_daily_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
+        'views-term_landing-block_3' => array(
+          'module' => 'views',
+          'delta' => 'term_landing-block_3',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
         'views-flex_blocks-block_9' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_9',
           'region' => 'sidebar_second',
-          'weight' => '-20',
+          'weight' => '-9',
         ),
       ),
     ),
