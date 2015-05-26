@@ -73,6 +73,12 @@ function library_item_node_context_context_default_contexts() {
           'module' => 'views',
           'delta' => 'term_landing-popular',
           'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'views-term_landing-block_4' => array(
+          'module' => 'views',
+          'delta' => 'term_landing-block_4',
+          'region' => 'sidebar_second',
           'weight' => '-9',
         ),
         'views-term_landing-featured_author' => array(
@@ -81,17 +87,35 @@ function library_item_node_context_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
+        'views-term_landing-block_5' => array(
+          'module' => 'views',
+          'delta' => 'term_landing-block_5',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
+        'views-term_landing-block_6' => array(
+          'module' => 'views',
+          'delta' => 'term_landing-block_6',
+          'region' => 'sidebar_second',
+          'weight' => '-6',
+        ),
+        'views-term_landing-block_7' => array(
+          'module' => 'views',
+          'delta' => 'term_landing-block_7',
+          'region' => 'sidebar_second',
+          'weight' => '-5',
+        ),
+        'views-term_landing-block_8' => array(
+          'module' => 'views',
+          'delta' => 'term_landing-block_8',
+          'region' => 'sidebar_second',
+          'weight' => '-4',
+        ),
         'views-flex_blocks-block_6' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_6',
           'region' => 'sidebar_second',
-          'weight' => '-7',
-        ),
-        'views-term_landing-columnist' => array(
-          'module' => 'views',
-          'delta' => 'term_landing-columnist',
-          'region' => 'sidebar_second',
-          'weight' => '-6',
+          'weight' => '-3',
         ),
         'views-related_blocks_node-topics' => array(
           'module' => 'views',
