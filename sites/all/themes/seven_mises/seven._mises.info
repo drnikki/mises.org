@@ -1,0 +1,8 @@
+name = Seven Mises
+description = This theme is extended and used for the admin of content on the site.
+package = Core
+core = 7.x
+
+base theme = seven
+
+files[] = js/ckeditor_custom_style.js
