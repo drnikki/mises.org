@@ -47,7 +47,15 @@ body {
 @media (max-width: $screen-sm) {
  .navbar-collapse {
    ul.menu {
-     @include content-columns(2);
+     .csscolumns & {
+      @include content-columns(2);
+     }
+     .no-csscolumns & {
+        li {
+          width: 50%;
+          float: left;   
+        }
+     }
    }
  }
 }
