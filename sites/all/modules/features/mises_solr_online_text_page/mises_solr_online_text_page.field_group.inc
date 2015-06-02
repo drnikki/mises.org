@@ -13,6 +13,35 @@ function mises_solr_online_text_page_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_date_author|node|solr_online_text_chapter|teaser';
+  $field_group->group_name = 'group_date_author';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'solr_online_text_chapter';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => '',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_library_item_reference',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => '',
+      'instance_settings' => array(
+        'classes' => 'group-date-author',
+        'element' => 'p',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_date_author|node|solr_online_text_chapter|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_parent_lib_item_data|node|solr_online_text_chapter|form';
   $field_group->group_name = 'group_parent_lib_item_data';
   $field_group->entity_type = 'node';
