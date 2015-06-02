@@ -22,6 +22,7 @@ features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_base][] = field_page_reference
+features[field_group][] = group_date_author|node|solr_online_text_page|teaser
 features[field_group][] = group_parent_lib_item_data|node|solr_online_text_page|form
 features[field_instance][] = node-solr_online_text_page-body
 features[field_instance][] = node-solr_online_text_page-field_audience
