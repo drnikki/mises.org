@@ -38,29 +38,29 @@ function mises_blog_landing_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-9',
         ),
-        'views-blog-block_featured' => array(
-          'module' => 'views',
-          'delta' => 'blog-block_featured',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'views-blog-block_popular' => array(
-          'module' => 'views',
-          'delta' => 'blog-block_popular',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'views-flex_blocks-block_23' => array(
-          'module' => 'views',
-          'delta' => 'flex_blocks-block_23',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
-        ),
         'views-blog-blogger' => array(
           'module' => 'views',
           'delta' => 'blog-blogger',
           'region' => 'sidebar_second',
           'weight' => '-7',
+        ),
+        'views-blog-block_featured' => array(
+          'module' => 'views',
+          'delta' => 'blog-block_featured',
+          'region' => 'sidebar_second',
+          'weight' => '-6',
+        ),
+        'views-blog-block_popular' => array(
+          'module' => 'views',
+          'delta' => 'blog-block_popular',
+          'region' => 'sidebar_second',
+          'weight' => '-5',
+        ),
+        'views-flex_blocks-block_23' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_23',
+          'region' => 'sidebar_second',
+          'weight' => '-4',
         ),
         'views-daily_landing-books' => array(
           'module' => 'views',

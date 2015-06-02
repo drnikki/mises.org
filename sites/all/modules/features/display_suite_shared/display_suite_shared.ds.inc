@@ -895,16 +895,6 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'event';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'follow_mises_institute' => array(
-      'weight' => '12',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'tags_title' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'custom_breadcrumb' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -917,7 +907,7 @@ function display_suite_shared_ds_field_settings_info() {
       'formatter_settings' => array(
         'show_title' => 0,
         'title_wrapper' => '',
-        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:16:"Event Disclaimer";s:5:"title";s:0:"";s:4:"body";s:381:"<p><strong>Publicity Waiver:</strong> Registering for this event gives the Mises Institute permission to take photos of attendees and use the photos for fundraising purposes. By this authorization, attendees understand and agree that no participant shall receive renumeration and that all rights, title and interest to the photos and use of them belongs to the Mises Institute.</p>";s:6:"format";s:10:"simplified";s:10:"substitute";i:0;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:16:"Event Disclaimer";s:5:"title";s:0:"";s:4:"body";s:381:"<p><strong>Publicity Waiver:</strong> Registering for this event gives the Mises Institute permission to take photos of attendees and use the photos for fundraising purposes. By this authorization, attendees understand and agree that no participant shall receive remuneration and that all rights, title and interest to the photos and use of them belongs to the Mises Institute.</p>";s:6:"format";s:10:"simplified";s:10:"substitute";i:0;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
         'load_terms' => 0,
         'ft' => array(
           'ow' => TRUE,
@@ -957,6 +947,16 @@ function display_suite_shared_ds_field_settings_info() {
           ),
         ),
       ),
+    ),
+    'follow_mises_institute' => array(
+      'weight' => '12',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'tags_title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
     'text_resizer' => array(
       'weight' => '0',
@@ -4704,42 +4704,42 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'text_resizer',
-        1 => 'tags_title',
+        0 => 'tags_title',
+        1 => 'text_resizer',
         2 => 'custom_breadcrumb',
         3 => 'field_topics',
         4 => 'field_austrian_school',
         5 => 'title',
         6 => 'field_image',
-        7 => 'group_date_location',
-        8 => 'field_event_date',
+        7 => 'field_event_date',
+        8 => 'group_date_location',
         9 => 'field_event_location',
         10 => 'dynamic_field_2',
         11 => 'group_tags',
         12 => 'field_description',
-        13 => 'field_media_collection',
-        14 => 'field_registration_link',
+        13 => 'field_registration_link',
+        14 => 'field_media_collection',
         15 => 'field_registration_link_external',
         16 => 'follow_mises_institute',
         17 => 'dynamic_field_1',
       ),
     ),
     'fields' => array(
-      'text_resizer' => 'ds_content',
       'tags_title' => 'ds_content',
+      'text_resizer' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
       'field_topics' => 'ds_content',
       'field_austrian_school' => 'ds_content',
       'title' => 'ds_content',
       'field_image' => 'ds_content',
-      'group_date_location' => 'ds_content',
       'field_event_date' => 'ds_content',
+      'group_date_location' => 'ds_content',
       'field_event_location' => 'ds_content',
       'dynamic_field_2' => 'ds_content',
       'group_tags' => 'ds_content',
       'field_description' => 'ds_content',
-      'field_media_collection' => 'ds_content',
       'field_registration_link' => 'ds_content',
+      'field_media_collection' => 'ds_content',
       'field_registration_link_external' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'dynamic_field_1' => 'ds_content',

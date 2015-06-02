@@ -2809,6 +2809,9 @@ ul.accordion li { list-style: none; }
 /* SLIDESHOW 
 *  Override flexslide styles
 */
+.image .flexslider .flex-viewport { height: auto !important; }
+.image .flexslider .flex-viewport ul.slides { float: left; height: auto; width: auto !important; overflow: hidden; }
+
 /*
 * TAGS ON TEASERS AND NODES
 */
