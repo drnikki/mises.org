@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function mises_solr_online_text_page_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -31,4 +34,21 @@ function mises_solr_online_text_page_node_info() {
     ),
   );
   return $items;
+}
+
+/**
+ * Implements hook_weight_features_default_settings().
+ */
+function mises_solr_online_text_page_weight_features_default_settings() {
+  $settings = array();
+
+  $settings['solr_online_text_page'] = array(
+    'enabled' => 0,
+    'range' => 20,
+    'menu_weight' => 0,
+    'default' => 0,
+    'sync_translations' => 0,
+  );
+
+  return $settings;
 }
