@@ -96,6 +96,10 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -111,6 +115,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['value'] = array(
     170 => '170',
   );
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   /* Filter criterion: Content: Image (field_image_collection) */
@@ -118,6 +123,21 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_book' => 'featured_book',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 2;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
 
   /* Display: Daily Online Courses Block */
   $handler = $view->new_display('block', 'Daily Online Courses Block', 'online_courses');
@@ -188,6 +208,10 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library/mises-view"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises View</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -203,6 +227,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_item' => 'library_item',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Library Item Type (field_library_item_tree) */
   $handler->display->display_options['filters']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
@@ -210,6 +235,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['value'] = array(
     185 => '185',
   );
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
@@ -218,6 +244,21 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_view' => 'featured_view',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 2;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
 
   /* Display: Daily Library Block */
   $handler = $view->new_display('block', 'Daily Library Block', 'library_block');
@@ -259,11 +300,13 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_item' => 'library_item',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Image (field_image_collection) */
   $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
   /* Filter criterion: Content: Featured (field_featured_content) */
   $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
   $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
@@ -271,6 +314,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
     'featued' => 'featued',
   );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 1;
 
   /* Display: Daily Mises Weekends Block */
   $handler = $view->new_display('block', 'Daily Mises Weekends Block', 'mises_weekends');
@@ -297,6 +341,10 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library/mises-view"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises Weekends</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -312,6 +360,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_item' => 'library_item',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Library Item Type (field_library_item_tree) */
   $handler->display->display_options['filters']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
@@ -319,6 +368,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['value'] = array(
     434 => '434',
   );
+  $handler->display->display_options['filters']['field_library_item_tree_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
@@ -327,6 +377,21 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    'featured_weekends' => 'featured_weekends',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 2;
+  /* Filter criterion: Content: Featured (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
   $export['daily_landing'] = $view;
 
   return $export;
