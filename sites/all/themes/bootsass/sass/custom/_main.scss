@@ -46,18 +46,13 @@ body {
 }
 @media (max-width: $screen-sm) {
  .navbar-collapse {
-   ul.menu {
-     .csscolumns & {
-      @include content-columns(2);
-     }
-     .no-csscolumns & {
-        li {
-          width: 50%;
-          float: left;   
-        }
-     }
-   }
- }
+    ul.menu {
+      li {
+        width: 50%;
+        float: left;   
+      }
+    }
+  }
 }
 .region-navigation {
   position: relative;
