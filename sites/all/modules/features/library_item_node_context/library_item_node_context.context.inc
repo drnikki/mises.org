@@ -75,9 +75,9 @@ function library_item_node_context_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'views-term_landing-block_4' => array(
+        'views-term_landing-meet_columnist' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_4',
+          'delta' => 'term_landing-meet_columnist',
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
@@ -87,27 +87,27 @@ function library_item_node_context_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
-        'views-term_landing-block_5' => array(
+        'views-term_landing-meet_author' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_5',
+          'delta' => 'term_landing-meet_author',
           'region' => 'sidebar_second',
           'weight' => '-7',
         ),
-        'views-term_landing-block_6' => array(
+        'views-term_landing-meet_guest' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_6',
+          'delta' => 'term_landing-meet_guest',
           'region' => 'sidebar_second',
           'weight' => '-6',
         ),
-        'views-term_landing-block_7' => array(
+        'views-term_landing-meet_speaker' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_7',
+          'delta' => 'term_landing-meet_speaker',
           'region' => 'sidebar_second',
           'weight' => '-5',
         ),
-        'views-term_landing-block_8' => array(
+        'views-term_landing-meet_expert' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_8',
+          'delta' => 'term_landing-meet_expert',
           'region' => 'sidebar_second',
           'weight' => '-4',
         ),

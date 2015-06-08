@@ -1153,9 +1153,8 @@ return FALSE;';
   $handler->display->display_options['path'] = 'admin/audiobook-order/%';
 
   /* Display: Meet the Blogger */
-  $handler = $view->new_display('block', 'Meet the Blogger', 'block_2');
+  $handler = $view->new_display('block', 'Meet the Blogger', 'meet_blogger');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Meet the Blogger';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'audience panel';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1214,27 +1213,16 @@ return FALSE;';
   $handler->display->display_options['filters']['type']['value'] = array(
     'person_profile' => 'person_profile',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Image (field_image_collection) */
   $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
-  /* Filter criterion: Taxonomy term: Name */
-  $handler->display->display_options['filters']['name']['id'] = 'name';
-  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['name']['field'] = 'name';
-  $handler->display->display_options['filters']['name']['relationship'] = 'field_profile_type_target_id';
-  $handler->display->display_options['filters']['name']['value'] = 'Author';
-  /* Filter criterion: Content: Featured (field_featured_content) */
-  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
-  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
-  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
-  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
-    'featured_blogger' => 'featured_blogger',
-  );
+  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
 
   /* Display: Featured Columnist */
-  $handler = $view->new_display('block', 'Featured Columnist', 'block_3');
+  $handler = $view->new_display('block', 'Featured Columnist', 'featured_columnist');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Columnist';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
@@ -1315,9 +1303,8 @@ if ($args != \'library/mises-daily\') {
 return FALSE;';
 
   /* Display: Meet the Columnist */
-  $handler = $view->new_display('block', 'Meet the Columnist', 'block_4');
+  $handler = $view->new_display('block', 'Meet the Columnist', 'meet_columnist');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Meet the Columnist';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'audience panel';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1383,14 +1370,6 @@ return FALSE;';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
-  /* Filter criterion: Content: Featured (field_featured_content) */
-  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
-  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
-  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
-  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
-    'featured_columnist' => 'featured_columnist',
-  );
-  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 1;
   /* Filter criterion: Content: Has taxonomy term */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
@@ -1399,6 +1378,7 @@ return FALSE;';
   $handler->display->display_options['filters']['tid']['value'] = array(
     147 => '147',
   );
+  $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'media_type';
   /* Filter criterion: Content: Has taxonomy term */
@@ -1412,6 +1392,7 @@ return FALSE;';
     1 => '185',
     2 => '434',
   );
+  $handler->display->display_options['filters']['tid_1']['group'] = 1;
   $handler->display->display_options['filters']['tid_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tid_1']['expose']['operator_id'] = 'tid_1_op';
   $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Has taxonomy term';
@@ -1431,9 +1412,8 @@ return FALSE;';
   $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'media_type';
 
   /* Display: Meet the Author */
-  $handler = $view->new_display('block', 'Meet the Author', 'block_5');
+  $handler = $view->new_display('block', 'Meet the Author', 'meet_author');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Meet the Author';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'audience panel';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1499,15 +1479,6 @@ return FALSE;';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
-  /* Filter criterion: Content: Featured (field_featured_content) */
-  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
-  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
-  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
-  $handler->display->display_options['filters']['field_featured_content_value_1']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_featured_content_value_1']['value'] = array(
-    'featured_columnist' => 'featured_columnist',
-  );
-  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 1;
   /* Filter criterion: Content: Has taxonomy term */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
@@ -1520,28 +1491,11 @@ return FALSE;';
     2 => '185',
     3 => '434',
   );
-  $handler->display->display_options['filters']['tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
-  $handler->display->display_options['filters']['tid']['expose']['label'] = 'Has taxonomy term';
-  $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
-  $handler->display->display_options['filters']['tid']['expose']['identifier'] = 'tid';
-  $handler->display->display_options['filters']['tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    7 => 0,
-    4 => 0,
-    9 => 0,
-    8 => 0,
-    6 => 0,
-    5 => 0,
-  );
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'media_type';
 
   /* Display: Meet the Guest */
-  $handler = $view->new_display('block', 'Meet the Guest', 'block_6');
+  $handler = $view->new_display('block', 'Meet the Guest', 'meet_guest');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Meet the Guest';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'audience panel';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1628,7 +1582,6 @@ return FALSE;';
     1 => '147',
     2 => '185',
   );
-  $handler->display->display_options['filters']['tid_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tid_1']['expose']['operator_id'] = 'tid_1_op';
   $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Has taxonomy term';
   $handler->display->display_options['filters']['tid_1']['expose']['operator'] = 'tid_1_op';
@@ -1647,9 +1600,8 @@ return FALSE;';
   $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'media_type';
 
   /* Display: Meet the Speaker */
-  $handler = $view->new_display('block', 'Meet the Speaker', 'block_7');
+  $handler = $view->new_display('block', 'Meet the Speaker', 'meet_speaker');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Meet the Speaker';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'audience panel';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1756,9 +1708,8 @@ return FALSE;';
   $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'media_type';
 
   /* Display: Meet the Expert */
-  $handler = $view->new_display('block', 'Meet the Expert', 'block_8');
+  $handler = $view->new_display('block', 'Meet the Expert', 'meet_expert');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Meet the Expert';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'audience panel';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1861,7 +1812,6 @@ return FALSE;';
     2 => '434',
   );
   $handler->display->display_options['filters']['tid_1']['group'] = 1;
-  $handler->display->display_options['filters']['tid_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tid_1']['expose']['operator_id'] = 'tid_1_op';
   $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Has taxonomy term';
   $handler->display->display_options['filters']['tid_1']['expose']['operator'] = 'tid_1_op';
