@@ -315,11 +315,11 @@ ul.menu {
   }
 
   #block-views-flex-blocks-block-6 {
-    margin-top: 20px;
+    //margin-top: 20px;
   }
 }
 .region-sidebar-second-top {
-  margin-bottom: 20px;
+  margin-bottom: $grid-gutter-width;
   background: $brand-secondary;
   color: $white;
   .panel {

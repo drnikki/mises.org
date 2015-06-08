@@ -2290,10 +2290,10 @@ label { margin-bottom: 0; }
 
 body.media { overflow-y: auto; }
 
-.panel { margin-bottom: 16px; }
+.panel { margin-bottom: 20px; }
 .panel, .panel .panel-heading, .panel .panel-footer { -webkit-box-shadow: 0 0 0 transparent; box-shadow: 0 0 0 transparent; border: 0 none; border-radius: 0; }
 .panel .panel-body { word-break: break-word; }
-.sidebar .block:last-child .panel, .sidebar .panel:last-child { margin-bottom: 0; }
+body.front .sidebar .block:last-child .panel, body.front .sidebar .panel:last-child { margin-bottom: 0; }
 
 .pagination { display: block; clear: both; border-radius: 50%; }
 .pagination > li { display: inline-block; }
