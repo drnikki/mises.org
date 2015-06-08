@@ -3479,7 +3479,8 @@ if ($entity->field_link_to_external_listing_) {
   else {
     $path = $uri;
   }
-  print \' <a class="btn btn-default btn-sm" href="\' . $path . \'">Download \' . $entity->type . \' file</a>\';
+  print theme(\'track_da_files_file_link\', array(\'file\' => $entity) );
+  // print \' <a class="btn btn-default btn-sm" href="\' . $path . \'">Download \' . $entity->type . \' file</a>\';
 ?>
 ',
       'format' => 'ds_code',
