@@ -90,7 +90,8 @@ function _mises_solr_author_fix_rss($tid) {
     "FROM node n, taxonomy_index t, field_data_field_published_date d " .
     "WHERE n.nid = t.nid AND t.tid = :tid AND d.entity_id = n.nid " .
     // "d.field_published_date_value >= :earliest " .
-    "ORDER BY d.field_published_date_value DESC ",
+    "ORDER BY d.field_published_date_value DESC " .
+    "LIMIT 14 ",
     array(
       ':tid' => $tid,
       // ':earliest' => $earliest,
