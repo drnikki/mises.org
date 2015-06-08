@@ -1224,9 +1224,8 @@ return FALSE;';
   /* Display: Featured Columnist */
   $handler = $view->new_display('block', 'Featured Columnist', 'featured_columnist');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Featured Columnist';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'audience panel';
+  $handler->display->display_options['css_class'] = 'audience panel border-contrast';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -1273,17 +1272,13 @@ return FALSE;';
   $handler->display->display_options['filters']['type']['value'] = array(
     'person_profile' => 'person_profile',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Image (field_image_collection) */
   $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
-  /* Filter criterion: Taxonomy term: Name */
-  $handler->display->display_options['filters']['name']['id'] = 'name';
-  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['name']['field'] = 'name';
-  $handler->display->display_options['filters']['name']['relationship'] = 'field_profile_type_target_id';
-  $handler->display->display_options['filters']['name']['value'] = 'Author';
+  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
   /* Filter criterion: Content: Featured (field_featured_content) */
   $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
   $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
@@ -1291,10 +1286,12 @@ return FALSE;';
   $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
     'featured_columnist' => 'featured_columnist',
   );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 1;
   /* Filter criterion: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = '$args = drupal_get_path_alias();
 if ($args != \'library/mises-daily\') {
