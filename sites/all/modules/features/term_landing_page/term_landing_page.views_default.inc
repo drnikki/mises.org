@@ -1287,17 +1287,6 @@ return FALSE;';
     'featured_columnist' => 'featured_columnist',
   );
   $handler->display->display_options['filters']['field_featured_content_value']['group'] = 1;
-  /* Filter criterion: Global: PHP */
-  $handler->display->display_options['filters']['php']['id'] = 'php';
-  $handler->display->display_options['filters']['php']['table'] = 'views';
-  $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['group'] = 1;
-  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php']['php_filter'] = '$args = drupal_get_path_alias();
-if ($args != \'library/mises-daily\') {
-  return TRUE;
-}
-return FALSE;';
 
   /* Display: Meet the Columnist */
   $handler = $view->new_display('block', 'Meet the Columnist', 'meet_columnist');
