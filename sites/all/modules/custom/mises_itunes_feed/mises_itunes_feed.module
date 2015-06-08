@@ -99,7 +99,7 @@ function _mises_solr_author_fix_rss($tid) {
   );
   foreach ($term_query as $result) {
     // Stop if processing time exceeds a limit:
-    $max_processing_seconds = 10;
+    $max_processing_seconds = 5;
     if (time() - $start_time > $max_processing_seconds) {
       break;
     }
