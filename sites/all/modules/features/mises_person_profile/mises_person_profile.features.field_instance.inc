@@ -68,7 +68,7 @@ function mises_person_profile_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'trim',
-          'trim_length' => 10,
+          'trim_length' => 15,
           'trim_options' => array(
             'text' => 0,
           ),
@@ -396,7 +396,7 @@ function mises_person_profile_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
-          'trim_length' => 10,
+          'trim_length' => 15,
           'trim_options' => array(
             'text' => 0,
           ),
