@@ -1214,12 +1214,6 @@ return FALSE;';
     'person_profile' => 'person_profile',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Image (field_image_collection) */
-  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
-  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
 
   /* Display: Featured Columnist */
   $handler = $view->new_display('block', 'Featured Columnist', 'featured_columnist');
@@ -1273,12 +1267,6 @@ return FALSE;';
     'person_profile' => 'person_profile',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Image (field_image_collection) */
-  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
-  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
   /* Filter criterion: Content: Featured (field_featured_content) */
   $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
   $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
@@ -1350,12 +1338,6 @@ return FALSE;';
     'person_profile' => 'person_profile',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Image (field_image_collection) */
-  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
-  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
   /* Filter criterion: Content: Has taxonomy term */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
@@ -1459,12 +1441,6 @@ return FALSE;';
     'person_profile' => 'person_profile',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Image (field_image_collection) */
-  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
-  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
   /* Filter criterion: Content: Has taxonomy term */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
@@ -1477,6 +1453,7 @@ return FALSE;';
     2 => '185',
     3 => '434',
   );
+  $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'media_type';
 
   /* Display: Meet the Guest */
@@ -1541,12 +1518,6 @@ return FALSE;';
     'person_profile' => 'person_profile',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Image (field_image_collection) */
-  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
-  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
   /* Filter criterion: Content: Has taxonomy term */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
@@ -1555,6 +1526,7 @@ return FALSE;';
   $handler->display->display_options['filters']['tid']['value'] = array(
     434 => '434',
   );
+  $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'media_type';
   /* Filter criterion: Content: Has taxonomy term */
@@ -1568,6 +1540,7 @@ return FALSE;';
     1 => '147',
     2 => '185',
   );
+  $handler->display->display_options['filters']['tid_1']['group'] = 1;
   $handler->display->display_options['filters']['tid_1']['expose']['operator_id'] = 'tid_1_op';
   $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Has taxonomy term';
   $handler->display->display_options['filters']['tid_1']['expose']['operator'] = 'tid_1_op';
@@ -1647,12 +1620,6 @@ return FALSE;';
     'person_profile' => 'person_profile',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Image (field_image_collection) */
-  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
-  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
   /* Filter criterion: Content: Has taxonomy term */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
@@ -1675,6 +1642,7 @@ return FALSE;';
     1 => '185',
     2 => '434',
   );
+  $handler->display->display_options['filters']['tid_1']['group'] = 1;
   $handler->display->display_options['filters']['tid_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tid_1']['expose']['operator_id'] = 'tid_1_op';
   $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Has taxonomy term';
@@ -1755,12 +1723,6 @@ return FALSE;';
     'person_profile' => 'person_profile',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Image (field_image_collection) */
-  $handler->display->display_options['filters']['field_image_collection_value']['id'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
-  $handler->display->display_options['filters']['field_image_collection_value']['field'] = 'field_image_collection_value';
-  $handler->display->display_options['filters']['field_image_collection_value']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_image_collection_value']['group'] = 1;
   /* Filter criterion: Content: Has taxonomy term */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';

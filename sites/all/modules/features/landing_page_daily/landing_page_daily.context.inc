@@ -17,14 +17,6 @@ function landing_page_daily_context_default_contexts() {
   $context->description = '';
   $context->tag = 'Landing Pages';
   $context->conditions = array(
-    'node_taxonomy' => array(
-      'values' => array(
-        147 => 147,
-      ),
-      'options' => array(
-        'node_form' => '0',
-      ),
-    ),
     'path' => array(
       'values' => array(
         'taxonomy/term/147' => 'taxonomy/term/147',
