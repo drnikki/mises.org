@@ -2463,7 +2463,7 @@ body { background: #e0e3e4 url("../images/texture.jpg") center center repeat; }
 .navbar-inverse .navbar-nav > li > a.active { background-color: #38709e; color: #fff; }
 body.mises-daily .navbar-inverse .navbar-nav > li > a.active.library, body.icon-mises-daily .navbar-inverse .navbar-nav > li > a.active.library { background-color: transparent; }
 
-@media (max-width: 768px) { .navbar-collapse ul.menu { -webkit-column-count: 2; -moz-column-count: 2; column-count: 2; -webkit-column-gap: 20px; -moz-column-gap: 20px; column-gap: 20px; } }
+@media (max-width: 768px) { .navbar-collapse ul.menu li { width: 50%; float: left; } }
 .region-navigation { position: relative; }
 .region-navigation .block { width: 258px; height: 50px; }
 @media (min-width: 769px) { .region-navigation .block.block-views { margin-top: -7px; }
