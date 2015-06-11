@@ -2880,6 +2880,30 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'bio-full',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_bio_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'bio-summary',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'field_image_collection' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -2889,6 +2913,15 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_related_nodes' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'RECENT POSTS',
+          'lb-el' => 'h3',
+          'lb-col' => TRUE,
         ),
       ),
     ),
@@ -3335,11 +3368,11 @@ if (!empty($media)) {
     'code' => array(
       'value' => '<?php
 //print \'<pre>\';
-//print_r($entity);
+//print_r($entity->view->result);
 //print \'</pre>\';
-//$view_name = $entity->view->name;
 if (isset($entity->view)) {
   $view_display = $entity->view->current_display;
+  $row_count = count($entity->view->result);
 } else {
   $view_display = \'node\';
 }
@@ -3421,7 +3454,11 @@ switch ($view_display) {
     $ctitle = "Meet the Columnist"; 
     break;
   case "meet_author": 
-    $ctitle = "Meet the Author"; 
+    if ($row_count > 1) {
+      $ctitle = "Meet the Authors"; 
+    } else {
+      $ctitle = "Meet the Author"; 
+    }
     break;
   case "meet_guest": 
     $ctitle = "Meet the Guest"; 
@@ -5926,6 +5963,7 @@ function display_suite_shared_ds_layout_settings_info() {
         4 => 'body',
         5 => 'node_link',
         6 => 'dynamic_field_1',
+        7 => 'field_related_nodes',
       ),
     ),
     'fields' => array(
@@ -5936,6 +5974,7 @@ function display_suite_shared_ds_layout_settings_info() {
       'body' => 'right',
       'node_link' => 'right',
       'dynamic_field_1' => 'right',
+      'field_related_nodes' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(

@@ -1385,8 +1385,7 @@ return FALSE;';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'audience panel border-contrast';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -1409,10 +1408,6 @@ return FALSE;';
   $handler->display->display_options['relationships']['reverse_field_author_1_node']['field'] = 'reverse_field_author_1_node';
   $handler->display->display_options['relationships']['reverse_field_author_1_node']['required'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Global: Random */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -1486,10 +1481,11 @@ return FALSE;';
   $handler->display->display_options['relationships']['reverse_field_author_1_node']['field'] = 'reverse_field_author_1_node';
   $handler->display->display_options['relationships']['reverse_field_author_1_node']['required'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Global: Random */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
+  /* Sort criterion: Field: Author (field_author_1:delta) */
+  $handler->display->display_options['sorts']['delta']['id'] = 'delta';
+  $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['sorts']['delta']['field'] = 'delta';
+  $handler->display->display_options['sorts']['delta']['relationship'] = 'reverse_field_author_1_node';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -1643,7 +1639,6 @@ return FALSE;';
     2 => '434',
   );
   $handler->display->display_options['filters']['tid_1']['group'] = 1;
-  $handler->display->display_options['filters']['tid_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tid_1']['expose']['operator_id'] = 'tid_1_op';
   $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Has taxonomy term';
   $handler->display->display_options['filters']['tid_1']['expose']['operator'] = 'tid_1_op';
@@ -1691,10 +1686,11 @@ return FALSE;';
   $handler->display->display_options['relationships']['reverse_field_author_1_node']['field'] = 'reverse_field_author_1_node';
   $handler->display->display_options['relationships']['reverse_field_author_1_node']['required'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Global: Random */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
+  /* Sort criterion: Field: Author (field_author_1:delta) */
+  $handler->display->display_options['sorts']['delta']['id'] = 'delta';
+  $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['sorts']['delta']['field'] = 'delta';
+  $handler->display->display_options['sorts']['delta']['relationship'] = 'reverse_field_author_1_node';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
