@@ -318,7 +318,7 @@ ul.menu {
     //margin-top: 20px;
   }
   .view-display-id-meet_author {
-    > .view-content > .views-row-2 {
+    > .view-content > .views-row:not(.views-row-first) {
       .panel-heading {
         display: none;
       }
