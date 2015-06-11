@@ -317,6 +317,13 @@ ul.menu {
   #block-views-flex-blocks-block-6 {
     //margin-top: 20px;
   }
+  .view-display-id-meet_author {
+    > .view-content > .views-row:not(.views-row-first) {
+      .panel-heading {
+        display: none;
+      }
+    }
+  }
 }
 .region-sidebar-second-top {
   margin-bottom: $grid-gutter-width;
