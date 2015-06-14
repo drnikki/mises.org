@@ -342,6 +342,7 @@ ul.menu {
   .nav {
     > li > a {
       padding-left: $padding-large-horizontal * 1.5;
+      padding-right: $padding-large-horizontal * 3;
       background-color: $gray-dark;
       color: $white;
       text-transform: uppercase;
@@ -703,5 +704,15 @@ ul.accordion {
   img {
     max-width: 100%;
     height: auto;
+  }
+}
+
+/*
+* Online Books
+*/
+.view-book-content {
+  h2.book-title {
+    font-family: $font-family-serif;
+    color: $brand-primary;
   }
 }

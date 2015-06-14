@@ -2692,7 +2692,7 @@ ul.menu li a, ul.menu li span { -webkit-transition: all 0.2s ease; -o-transition
 .region-sidebar-second-top a { color: #fff; }
 
 /* SIDEBAR MENU */
-.region-sidebar-second .nav > li > a, .region-sidebar-second-top .nav > li > a { padding-left: 24px; background-color: #494e54; color: #fff; text-transform: uppercase; font-size: 15px; }
+.region-sidebar-second .nav > li > a, .region-sidebar-second-top .nav > li > a { padding-left: 24px; padding-right: 48px; background-color: #494e54; color: #fff; text-transform: uppercase; font-size: 15px; }
 .region-sidebar-second .nav > li > a:hover, .region-sidebar-second-top .nav > li > a:hover { background-color: #788086; }
 .region-sidebar-second .nav > li + li, .region-sidebar-second-top .nav > li + li { border-top: 1px solid #788086; }
 .region-sidebar-second .nav > li.active a, .region-sidebar-second-top .nav > li.active a { background-color: #788086; }
@@ -2795,6 +2795,11 @@ ul.accordion li { list-style: none; }
 
 /* Flex-block image */
 .node-flex-block img { max-width: 100%; height: auto; }
+
+/*
+* Online Books
+*/
+.view-book-content h2.book-title { font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; color: #00426b; }
 
 /*
 * Custom Styles for Special Features

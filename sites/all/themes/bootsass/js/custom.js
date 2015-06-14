@@ -89,6 +89,16 @@ var Drupal = Drupal || {};
           splitUrl: '/'
         }).show();
 
+        // jQuery Nested Accordion on Book Sidebar Menus http://www.adipalaz.com/experiments/jquery/nested_accordion.html
+        $('.book-content-toc').attr('id','library-menu').find('ul').addClass('accordion nav');
+        $('#library-menu').accordion({
+          iconTrigger: true,
+          activeLink: true,
+          initShow: "#current",
+          uri: 'relative',
+          splitUrl: '/'
+        }).show();
+        
         //glyphicons
         $('.latest-library-content .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
         $('.row.featured .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');

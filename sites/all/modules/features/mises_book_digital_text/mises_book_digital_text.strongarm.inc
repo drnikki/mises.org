@@ -82,6 +82,9 @@ function mises_book_digital_text_strongarm() {
       'audio_teaser' => array(
         'custom_settings' => FALSE,
       ),
+      'reference_structure' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
