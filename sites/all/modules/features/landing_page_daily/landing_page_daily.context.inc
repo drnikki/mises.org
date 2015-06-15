@@ -17,14 +17,6 @@ function landing_page_daily_context_default_contexts() {
   $context->description = '';
   $context->tag = 'Landing Pages';
   $context->conditions = array(
-    'node_taxonomy' => array(
-      'values' => array(
-        147 => 147,
-      ),
-      'options' => array(
-        'node_form' => '0',
-      ),
-    ),
     'path' => array(
       'values' => array(
         'taxonomy/term/147' => 'taxonomy/term/147',
@@ -53,9 +45,9 @@ function landing_page_daily_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
-        'views-term_landing-block_3' => array(
+        'views-term_landing-featured_columnist' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_3',
+          'delta' => 'term_landing-featured_columnist',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),

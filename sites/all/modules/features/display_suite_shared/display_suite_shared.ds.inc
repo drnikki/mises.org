@@ -1656,11 +1656,6 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'library_item';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'image_source' => array(
-      'weight' => '12',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'body_with_media_embedded' => array(
       'weight' => '8',
       'label' => 'hidden',
@@ -1809,6 +1804,11 @@ function display_suite_shared_ds_field_settings_info() {
         ),
         'conditions' => array(),
       ),
+    ),
+    'image_source' => array(
+      'weight' => '12',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
     'title' => array(
       'weight' => '2',
@@ -2721,9 +2721,13 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'sidebar_author';
   $ds_fieldsetting->settings = array(
     'contextual_block_title_with_icon' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+        'conditions' => array(),
+      ),
     ),
     'title' => array(
       'weight' => '2',
@@ -2735,6 +2739,30 @@ function display_suite_shared_ds_field_settings_info() {
         'class' => 'author',
         'ft' => array(),
         'conditions' => array(),
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'bio-full',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_bio_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'bio-summary',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
       ),
     ),
     'field_image_collection' => array(
@@ -2852,6 +2880,30 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'bio-full',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_bio_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'bio-summary',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'field_image_collection' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -2861,6 +2913,15 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_related_nodes' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'RECENT POSTS',
+          'lb-el' => 'h3',
+          'lb-col' => TRUE,
         ),
       ),
     ),
@@ -3307,11 +3368,11 @@ if (!empty($media)) {
     'code' => array(
       'value' => '<?php
 //print \'<pre>\';
-//print_r($entity);
+//print_r($entity->view->result);
 //print \'</pre>\';
-//$view_name = $entity->view->name;
 if (isset($entity->view)) {
   $view_display = $entity->view->current_display;
+  $row_count = count($entity->view->result);
 } else {
   $view_display = \'node\';
 }
@@ -3382,6 +3443,31 @@ switch ($view_display) {
     break;
   case "featured_author": 
     $ctitle = "Featured Author"; 
+    break;
+  case "meet_blogger": 
+    $ctitle = "Meet the Blogger"; 
+    break;
+  case "featured_columnist": 
+    $ctitle = "Featured Columnist"; 
+    break;
+  case "meet_columnist": 
+    $ctitle = "Meet the Columnist"; 
+    break;
+  case "meet_author": 
+    if ($row_count > 1) {
+      $ctitle = "Meet the Authors"; 
+    } else {
+      $ctitle = "Meet the Author"; 
+    }
+    break;
+  case "meet_guest": 
+    $ctitle = "Meet the Guest"; 
+    break;
+  case "meet_speaker": 
+    $ctitle = "Meet the Speaker"; 
+    break;
+  case "meet_expert": 
+    $ctitle = "Meet the Expert"; 
     break;
   case "courses": 
     $ctitle = "Courses"; 
@@ -3479,7 +3565,8 @@ if ($entity->field_link_to_external_listing_) {
   else {
     $path = $uri;
   }
-  print \' <a class="btn btn-default btn-sm" href="\' . $path . \'">Download \' . $entity->type . \' file</a>\';
+  print theme(\'track_da_files_file_link\', array(\'file\' => $entity) );
+  // print \' <a class="btn btn-default btn-sm" href="\' . $path . \'">Download \' . $entity->type . \' file</a>\';
 ?>
 ',
       'format' => 'ds_code',
@@ -5212,34 +5299,35 @@ function display_suite_shared_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'text_resizer',
-        1 => 'dynamic_field_1',
-        2 => 'custom_breadcrumb',
+        1 => 'custom_breadcrumb',
+        2 => 'dynamic_field_1',
         3 => 'field_pdf',
         4 => 'title',
         5 => 'field_image_collection',
         6 => 'field_mobi',
-        7 => 'field_epub',
+        7 => 'group_date_author',
         8 => 'field_mises_published_date',
-        9 => 'group_date_author',
-        10 => 'field_kindle',
-        11 => 'field_author_1',
-        12 => 'group_tags',
-        13 => 'dynamic_field_2',
-        14 => 'group_links',
+        9 => 'field_epub',
+        10 => 'group_tags',
+        11 => 'field_kindle',
+        12 => 'field_author_1',
+        13 => 'group_links',
+        14 => 'dynamic_field_2',
         15 => 'field_link_to_external_listing_',
         16 => 'field_subtitle',
-        17 => 'body_with_media_embedded',
-        18 => 'tags_title',
+        17 => 'tags_title',
+        18 => 'body_with_media_embedded',
         19 => 'body',
         20 => 'field_topics',
         21 => 'field_bibliography_footnote',
         22 => 'field_document_attachment',
         23 => 'field_citation',
-        24 => 'dynamic_3',
-        25 => 'field_austrian_school',
+        24 => 'field_austrian_school',
+        25 => 'dynamic_3',
         26 => 'image_source',
         27 => 'follow_mises_institute',
         28 => 'group_footnotes',
+        33 => 'field_library_item_tree',
       ),
       'ds_hidden' => array(
         29 => 'field_level',
@@ -5250,31 +5338,31 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
     'fields' => array(
       'text_resizer' => 'ds_content',
-      'dynamic_field_1' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
+      'dynamic_field_1' => 'ds_content',
       'field_pdf' => 'ds_content',
       'title' => 'ds_content',
       'field_image_collection' => 'ds_content',
       'field_mobi' => 'ds_content',
-      'field_epub' => 'ds_content',
-      'field_mises_published_date' => 'ds_content',
       'group_date_author' => 'ds_content',
+      'field_mises_published_date' => 'ds_content',
+      'field_epub' => 'ds_content',
+      'group_tags' => 'ds_content',
       'field_kindle' => 'ds_content',
       'field_author_1' => 'ds_content',
-      'group_tags' => 'ds_content',
-      'dynamic_field_2' => 'ds_content',
       'group_links' => 'ds_content',
+      'dynamic_field_2' => 'ds_content',
       'field_link_to_external_listing_' => 'ds_content',
       'field_subtitle' => 'ds_content',
-      'body_with_media_embedded' => 'ds_content',
       'tags_title' => 'ds_content',
+      'body_with_media_embedded' => 'ds_content',
       'body' => 'ds_content',
       'field_topics' => 'ds_content',
       'field_bibliography_footnote' => 'ds_content',
       'field_document_attachment' => 'ds_content',
       'field_citation' => 'ds_content',
-      'dynamic_3' => 'ds_content',
       'field_austrian_school' => 'ds_content',
+      'dynamic_3' => 'ds_content',
       'image_source' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'group_footnotes' => 'ds_content',
@@ -5282,6 +5370,7 @@ function display_suite_shared_ds_layout_settings_info() {
       'field_media_collection' => 'ds_hidden',
       'field_audience' => 'ds_hidden',
       'field_online_text' => 'ds_hidden',
+      'field_library_item_tree' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -5737,11 +5826,13 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->layout = '2col_custom_fluid';
   $ds_layout->settings = array(
     'regions' => array(
+      'header' => array(
+        0 => 'contextual_block_title_with_icon',
+      ),
       'left' => array(
-        0 => 'field_image_collection',
+        1 => 'field_image_collection',
       ),
       'right' => array(
-        1 => 'contextual_block_title_with_icon',
         2 => 'title',
         3 => 'field_bio_summary',
         4 => 'body',
@@ -5751,8 +5842,8 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
+      'contextual_block_title_with_icon' => 'header',
       'field_image_collection' => 'left',
-      'contextual_block_title_with_icon' => 'right',
       'title' => 'right',
       'field_bio_summary' => 'right',
       'body' => 'right',
@@ -5872,6 +5963,7 @@ function display_suite_shared_ds_layout_settings_info() {
         4 => 'body',
         5 => 'node_link',
         6 => 'dynamic_field_1',
+        7 => 'field_related_nodes',
       ),
     ),
     'fields' => array(
@@ -5882,6 +5974,7 @@ function display_suite_shared_ds_layout_settings_info() {
       'body' => 'right',
       'node_link' => 'right',
       'dynamic_field_1' => 'right',
+      'field_related_nodes' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(
