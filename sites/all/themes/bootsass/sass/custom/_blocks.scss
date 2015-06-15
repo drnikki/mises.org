@@ -315,18 +315,11 @@ ul.menu {
   }
 
   #block-views-flex-blocks-block-6 {
-    //margin-top: 20px;
-  }
-  .view-display-id-meet_author {
-    > .view-content > .views-row:not(.views-row-first) {
-      .panel-heading {
-        display: none;
-      }
-    }
+    margin-top: 20px;
   }
 }
 .region-sidebar-second-top {
-  margin-bottom: $grid-gutter-width;
+  margin-bottom: 20px;
   background: $brand-secondary;
   color: $white;
   .panel {
@@ -721,5 +714,8 @@ ul.accordion {
   h2.book-title {
     font-family: $font-family-serif;
     color: $brand-primary;
+  }
+  blockquote {
+    font-size: $font-size-base;
   }
 }

@@ -288,6 +288,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['page_title_1']['alter']['path'] = 'node/[nid]/html/pp/[id_2]';
   $handler->display->display_options['fields']['page_title_1']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['page_title_1']['alter']['alt'] = 'Read page [page_title_1].';
+  $handler->display->display_options['fields']['page_title_1']['alter']['preserve_tags'] = '<b><i><em><strong>';
   $handler->display->display_options['fields']['page_title_1']['element_label_colon'] = FALSE;
   /* Field: Book Page: Id */
   $handler->display->display_options['fields']['id_3']['id'] = 'id_3';
@@ -404,8 +405,6 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '[title] - [nid]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -576,6 +575,8 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['chapter_title']['field'] = 'chapter_title';
   $handler->display->display_options['fields']['chapter_title']['relationship'] = 'field_book_chapter_target_id';
   $handler->display->display_options['fields']['chapter_title']['label'] = '';
+  $handler->display->display_options['fields']['chapter_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['chapter_title']['alter']['text'] = '[chapter_title]';
   $handler->display->display_options['fields']['chapter_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['chapter_title']['element_wrapper_type'] = 'h2';
   $handler->display->display_options['fields']['chapter_title']['element_wrapper_class'] = 'book-title chapter';
