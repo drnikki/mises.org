@@ -53,6 +53,22 @@ function mises_events_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_causeview_form_reg_link'
+  $field_bases['field_causeview_form_reg_link'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_causeview_form_reg_link',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'viewfield',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'viewfield',
+  );
+
   // Exported field_base: 'field_description'
   $field_bases['field_description'] = array(
     'active' => 1,

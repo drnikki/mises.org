@@ -274,6 +274,9 @@
 /*
 * EVENT PAGE
 */
+.form-button {
+  display: inline-block;
+}
 #registration-form {
   clear: both;
   margin-top: $padding-large-vertical;

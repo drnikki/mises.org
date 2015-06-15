@@ -2902,6 +2902,8 @@ ul.accordion li { list-style: none; }
 /*
 * EVENT PAGE
 */
+.form-button { display: inline-block; }
+
 #registration-form { clear: both; margin-top: 16px; }
 
 /* Add to calendar */

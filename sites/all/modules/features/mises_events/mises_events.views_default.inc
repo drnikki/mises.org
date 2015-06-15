@@ -351,6 +351,96 @@ function mises_events_views_default_views() {
   $export['mises_calendar'] = $view;
 
   $view = new view();
+  $view->name = 'mises_event_helper';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Mises Event Helper';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'form-buttons-display';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'form-button';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_registration_link_target_id']['id'] = 'field_registration_link_target_id';
+  $handler->display->display_options['relationships']['field_registration_link_target_id']['table'] = 'field_data_field_registration_link';
+  $handler->display->display_options['relationships']['field_registration_link_target_id']['field'] = 'field_registration_link_target_id';
+  $handler->display->display_options['relationships']['field_registration_link_target_id']['required'] = TRUE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'field_registration_link_target_id';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Registration Link */
+  $handler->display->display_options['fields']['field_code_registration_link']['id'] = 'field_code_registration_link';
+  $handler->display->display_options['fields']['field_code_registration_link']['table'] = 'field_data_field_code_registration_link';
+  $handler->display->display_options['fields']['field_code_registration_link']['field'] = 'field_code_registration_link';
+  $handler->display->display_options['fields']['field_code_registration_link']['relationship'] = 'field_registration_link_target_id';
+  $handler->display->display_options['fields']['field_code_registration_link']['label'] = '';
+  $handler->display->display_options['fields']['field_code_registration_link']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_code_registration_link']['alter']['path'] = '#form-[nid]';
+  $handler->display->display_options['fields']['field_code_registration_link']['alter']['link_class'] = 'btn btn-default btn-sm';
+  $handler->display->display_options['fields']['field_code_registration_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_code_registration_link']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_code_registration_link']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'event' => 'event',
+  );
+
+  /* Display: Form Link Button */
+  $handler = $view->new_display('block', 'Form Link Button', 'form_link_btn');
+  $export['mises_event_helper'] = $view;
+
+  $view = new view();
   $view->name = 'mises_events';
   $view->description = 'Page and blocks for homepage';
   $view->tag = 'ref_allowed';
