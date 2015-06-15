@@ -11,7 +11,6 @@
   <li class="view-grouping-subtitle"><?php print $title; ?>
     <?php $rows_string = implode('',$rows); 
         $rows_length = strlen($rows_string); ?>
-    <?php //if ($rows_length > 1) : ?>
     <?php if (array_filter($rows)) : ?>
     <ul class="accordion nav">
       <?php foreach ($rows as $id => $row): ?>
