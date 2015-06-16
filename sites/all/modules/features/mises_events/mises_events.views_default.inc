@@ -375,6 +375,7 @@ function mises_events_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_registration_link_target_id']['id'] = 'field_registration_link_target_id';
@@ -389,6 +390,8 @@ function mises_events_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['nid']['empty_zero'] = TRUE;
   /* Field: Content: Registration Link */
   $handler->display->display_options['fields']['field_code_registration_link']['id'] = 'field_code_registration_link';
   $handler->display->display_options['fields']['field_code_registration_link']['table'] = 'field_data_field_code_registration_link';
@@ -400,6 +403,7 @@ function mises_events_views_default_views() {
   $handler->display->display_options['fields']['field_code_registration_link']['alter']['link_class'] = 'btn btn-default btn-sm';
   $handler->display->display_options['fields']['field_code_registration_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_code_registration_link']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_code_registration_link']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_code_registration_link']['settings'] = array(
     'conditions' => array(
       0 => array(

@@ -2902,7 +2902,7 @@ ul.accordion li { list-style: none; }
 /*
 * EVENT PAGE
 */
-.form-button { display: inline-block; }
+.form-button { display: inline-block; margin-top: 16px; margin-bottom: 16px; }
 
 #registration-form { clear: both; margin-top: 16px; }
 
