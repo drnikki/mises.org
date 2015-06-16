@@ -404,6 +404,7 @@ function mises_events_views_default_views() {
   $handler->display->display_options['fields']['field_code_registration_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_code_registration_link']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_code_registration_link']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_code_registration_link']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_code_registration_link']['settings'] = array(
     'conditions' => array(
       0 => array(
@@ -439,6 +440,12 @@ function mises_events_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
+  /* Filter criterion: Content: Registration Link (field_code_registration_link) */
+  $handler->display->display_options['filters']['field_code_registration_link_value']['id'] = 'field_code_registration_link_value';
+  $handler->display->display_options['filters']['field_code_registration_link_value']['table'] = 'field_data_field_code_registration_link';
+  $handler->display->display_options['filters']['field_code_registration_link_value']['field'] = 'field_code_registration_link_value';
+  $handler->display->display_options['filters']['field_code_registration_link_value']['relationship'] = 'field_registration_link_target_id';
+  $handler->display->display_options['filters']['field_code_registration_link_value']['operator'] = 'not empty';
 
   /* Display: Form Link Button */
   $handler = $view->new_display('block', 'Form Link Button', 'form_link_btn');
