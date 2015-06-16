@@ -602,11 +602,8 @@ function mises_seo_settings_metatag_export_default() {
       'description' => array(
         'value' => '[node:field_teaser]',
       ),
-      'author' => array(
-        'value' => '[node:field-author-1:url]',
-      ),
       'dcterms.creator' => array(
-        'value' => '[node:field-author-1:title]',
+        'value' => '',
       ),
       'dcterms.description' => array(
         'value' => '[node:field_teaser]',
