@@ -31,7 +31,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 43,
       ),
       'print' => array(
         'label' => 'inline',
@@ -134,6 +134,141 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_causeview_form_reg_link'
+  $field_instances['node-event-field_causeview_form_reg_link'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'vname' => 'mises_event_helper|form_link_btn',
+        'vargs' => '[node:nid]',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'viewfield',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'viewfield_default',
+        'weight' => 20,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'viewfield',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'viewfield_default',
+        'weight' => 6,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_causeview_form_reg_link',
+    'label' => 'Causeview Form Reg Link',
+    'required' => 0,
+    'settings' => array(
+      'allowed_views' => array(
+        'areas_to_support' => 0,
+        'austrian_economists' => 0,
+        'author_articles' => 0,
+        'blog' => 0,
+        'book_content' => 0,
+        'book_content_backlink' => 0,
+        'content_date_test' => 0,
+        'content_type' => 0,
+        'daily_landing' => 0,
+        'entity_ref_filters' => 0,
+        'entityform_type_list' => 0,
+        'entityforms' => 0,
+        'featured_latest_content' => 0,
+        'featured_timely_posts' => 0,
+        'files_management' => 0,
+        'flex_blocks' => 0,
+        'flex_blocks_node_specific' => 0,
+        'flex_blocks_term_specific' => 0,
+        'giving_feature_blocks' => 0,
+        'giving_flex_blocks' => 0,
+        'giving_stories' => 0,
+        'homepage' => 0,
+        'homepage_hero' => 0,
+        'image_source' => 0,
+        'job_postings' => 0,
+        'library_items_menu' => 0,
+        'lipsom_content' => 0,
+        'list_node_page_titles' => 0,
+        'mailchimp' => 0,
+        'media_default' => 0,
+        'membership_levels' => 0,
+        'menu_footer_blocks' => 0,
+        'mises_calendar' => 0,
+        'mises_content_admin' => 0,
+        'mises_event_helper' => 'mises_event_helper',
+        'mises_events' => 0,
+        'mises_itunes_rss_feeds' => 0,
+        'mises_library' => 0,
+        'mises_newsletter_subscribe' => 0,
+        'mises_solr_authors' => 0,
+        'mises_solr_clicks_report' => 0,
+        'nodequeue_1' => 0,
+        'nodequeue_2' => 0,
+        'nodequeue_3' => 0,
+        'nodequeue_4' => 0,
+        'nodequeue_6' => 0,
+        'nodequeue_7' => 0,
+        'nodequeue_8' => 0,
+        'nodequeue_9' => 0,
+        'nodequeue_10' => 0,
+        'nodequeue_11' => 0,
+        'nodequeue_13' => 0,
+        'person_profile_major_works' => 0,
+        'person_profile_sig_contrib' => 0,
+        'photo_album' => 0,
+        'pre_recorded_topics' => 0,
+        'profile_blocks' => 0,
+        'profile_lists' => 0,
+        'profile_reference' => 0,
+        'related_blocks_node' => 0,
+        'rss_feed' => 0,
+        'social_media_displays' => 0,
+        'teaser_demo' => 0,
+        'term_description' => 0,
+        'term_entity_ref' => 0,
+        'term_landing' => 0,
+        'tmp_nvm_test' => 0,
+        'tweets' => 0,
+        'upcoming_courses' => 0,
+        'user_content' => 0,
+        'user_entityforms' => 0,
+        'weight' => 0,
+      ),
+      'force_default' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'viewfield',
+      'settings' => array(),
+      'type' => 'viewfield_select',
+      'weight' => 58,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_description'
   $field_instances['node-event-field_description'] = array(
     'bundle' => 'event',
@@ -157,7 +292,7 @@ function mises_events_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -461,7 +596,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 41,
       ),
       'print' => array(
         'label' => 'above',
@@ -518,7 +653,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 40,
       ),
       'print' => array(
         'label' => 'above',
@@ -664,7 +799,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 42,
       ),
       'print' => array(
         'label' => 'inline',
@@ -725,7 +860,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 39,
       ),
       'print' => array(
         'label' => 'above',
@@ -786,7 +921,7 @@ function mises_events_field_default_field_instances() {
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -846,7 +981,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 38,
       ),
       'print' => array(
         'label' => 'above',
@@ -922,7 +1057,7 @@ function mises_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'print' => array(
         'label' => 'above',
@@ -1008,7 +1143,7 @@ function mises_events_field_default_field_instances() {
           ),
         ),
         'type' => 'link_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -1096,7 +1231,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 37,
       ),
       'print' => array(
         'label' => 'above',
@@ -1209,6 +1344,7 @@ Select "No registration or past event" to hide the registration embed or link fi
 <p> </p>');
   t('Audience');
   t('Austrian School');
+  t('Causeview Form Reg Link');
   t('Date');
   t('Description');
   t('Event Image');
