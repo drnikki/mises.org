@@ -4,4 +4,24 @@
  * Code for the Social Widgets feature.
  */
 
+function mises_social_widgets_widgets_sets_alter(&$sets) {
+  // Check that we only affect a default set. 
+ if (mises_social_widgets_secure_connection()) {
+ 	foreach ($sets as $name => $set) {
+ 		if ( !empty($set['elements']) ) {
+ 			foreach ($set['elements'] as $id => $element) {
+ 				$sets[$name]['elements'][$id]['template'] = str_replace('http://', 'https://', $element['template']);
+ 			}
+ 		}
+ 	}
+ }
+
+}
+
+
+
+
+function mises_social_widgets_secure_connection() {
+	return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443;
+}
 include_once 'mises_social_widgets.features.inc';
