@@ -712,3 +712,12 @@ ul.accordion {
     height: auto;
   }
 }
+
+/* Mises Wire Bloggers overrides */
+.page-blog-mises-wire-bloggers {
+  .view-display-id-blogger {
+    .read-more {
+      display: none;
+    }
+  }
+}

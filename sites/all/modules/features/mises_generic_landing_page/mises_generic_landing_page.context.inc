@@ -72,29 +72,23 @@ function mises_generic_landing_page_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-9',
         ),
+        'views-library_items_menu-block' => array(
+          'module' => 'views',
+          'delta' => 'library_items_menu-block',
+          'region' => 'sidebar_second_top',
+          'weight' => '-8',
+        ),
         'views-a881a51cee516bce16966206118b160b' => array(
           'module' => 'views',
           'delta' => 'a881a51cee516bce16966206118b160b',
           'region' => 'sidebar_second_top',
-          'weight' => '0',
+          'weight' => '-7',
         ),
         'views-term_landing-popular' => array(
           'module' => 'views',
           'delta' => 'term_landing-popular',
           'region' => 'sidebar_second',
           'weight' => '-10',
-        ),
-        'views-term_landing-featured_author' => array(
-          'module' => 'views',
-          'delta' => 'term_landing-featured_author',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'views-term_landing-columnist' => array(
-          'module' => 'views',
-          'delta' => 'term_landing-columnist',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
         ),
         'views-dd8efc17b7ddc0693131e53ef4856cfd' => array(
           'module' => 'views',
@@ -133,6 +127,9 @@ function mises_generic_landing_page_context_default_contexts() {
           'weight' => '-10',
         ),
       ),
+    ),
+    'theme_html' => array(
+      'class' => 'generic-term-landing',
     ),
   );
   $context->condition_mode = 0;

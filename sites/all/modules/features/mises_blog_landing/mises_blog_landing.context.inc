@@ -20,7 +20,7 @@ function mises_blog_landing_context_default_contexts() {
     'views' => array(
       'values' => array(
         'blog:page' => 'blog:page',
-        'blog:page_1' => 'blog:page_1',
+        'blog:page_bloggers' => 'blog:page_bloggers',
       ),
     ),
   );

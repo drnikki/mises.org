@@ -162,7 +162,7 @@ function mises_blog_landing_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<p class="read-more text-right padding-lg"><a href="/blog/featured-bloggers">More</a></p>';
+  $handler->display->display_options['footer']['area']['content'] = '<p class="read-more text-right padding-lg"><a href="/blog/mises-wire-bloggers">More</a></p>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
@@ -210,10 +210,10 @@ function mises_blog_landing_views_default_views() {
     'featured_blogger' => 'featured_blogger',
   );
 
-  /* Display: Featured Bloggers */
-  $handler = $view->new_display('page', 'Featured Bloggers', 'page_1');
+  /* Display: Mises Wire Bloggers */
+  $handler = $view->new_display('page', 'Mises Wire Bloggers', 'page_bloggers');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Featured Bloggers';
+  $handler->display->display_options['title'] = 'Mises Wire Bloggers';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'landing-list';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -251,7 +251,7 @@ function mises_blog_landing_views_default_views() {
   $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
     'featured_blogger' => 'featured_blogger',
   );
-  $handler->display->display_options['path'] = 'blog/featured-bloggers';
+  $handler->display->display_options['path'] = 'blog/mises-wire-bloggers';
   $export['blog'] = $view;
 
   return $export;
