@@ -75,9 +75,9 @@ function library_item_node_context_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'views-term_landing-block_4' => array(
+        'views-term_landing-meet_columnist' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_4',
+          'delta' => 'term_landing-meet_columnist',
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
@@ -87,27 +87,27 @@ function library_item_node_context_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
-        'views-term_landing-block_5' => array(
+        'views-term_landing-meet_author' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_5',
+          'delta' => 'term_landing-meet_author',
           'region' => 'sidebar_second',
           'weight' => '-7',
         ),
-        'views-term_landing-block_6' => array(
+        'views-term_landing-meet_guest' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_6',
+          'delta' => 'term_landing-meet_guest',
           'region' => 'sidebar_second',
           'weight' => '-6',
         ),
-        'views-term_landing-block_7' => array(
+        'views-term_landing-meet_speaker' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_7',
+          'delta' => 'term_landing-meet_speaker',
           'region' => 'sidebar_second',
           'weight' => '-5',
         ),
-        'views-term_landing-block_8' => array(
+        'views-term_landing-meet_expert' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_8',
+          'delta' => 'term_landing-meet_expert',
           'region' => 'sidebar_second',
           'weight' => '-4',
         ),
@@ -193,6 +193,60 @@ function library_item_node_context_context_default_contexts() {
   t('Active menu item for Library Items except Mises Daily');
   t('Menu State');
   $export['library_menu_active'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'mises_daily_post';
+  $context->description = 'Blocks for pages tagged as Mises Daily';
+  $context->tag = 'Sections';
+  $context->conditions = array(
+    'node_taxonomy' => array(
+      'values' => array(
+        147 => 147,
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'custom_search_blocks-2' => array(
+          'module' => 'custom_search_blocks',
+          'delta' => '2',
+          'region' => 'sidebar_second_top',
+          'weight' => '-12',
+        ),
+        'views-flex_blocks-block_11' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_11',
+          'region' => 'sidebar_second_top',
+          'weight' => '-11',
+        ),
+        'views-library_items_menu-block' => array(
+          'module' => 'views',
+          'delta' => 'library_items_menu-block',
+          'region' => 'sidebar_second_top',
+          'weight' => '-10',
+        ),
+        'views-flex_blocks-block_9' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_9',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Blocks for pages tagged as Mises Daily');
+  t('Sections');
+  $export['mises_daily_post'] = $context;
 
   return $export;
 }

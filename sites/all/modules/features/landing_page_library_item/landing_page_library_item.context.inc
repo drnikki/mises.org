@@ -68,7 +68,7 @@ function landing_page_library_item_context_default_contexts() {
           'module' => 'views',
           'delta' => 'flex_blocks-block_6',
           'region' => 'sidebar_second',
-          'weight' => '-6',
+          'weight' => '15',
         ),
         'views-term_landing-columnist' => array(
           'module' => 'views',

@@ -25,7 +25,9 @@ function mises_causeview_snippet_field_group_info() {
     'children' => array(
       0 => 'field_code_snippet',
       1 => 'field_code_snippet_image',
-      2 => 'title',
+      2 => 'field_code_registration_link',
+      3 => 'field_code_display_title',
+      4 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

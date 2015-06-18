@@ -90,23 +90,23 @@ function mises_generic_landing_page_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
+        'views-term_landing-columnist' => array(
+          'module' => 'views',
+          'delta' => 'term_landing-columnist',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
         'views-dd8efc17b7ddc0693131e53ef4856cfd' => array(
           'module' => 'views',
           'delta' => 'dd8efc17b7ddc0693131e53ef4856cfd',
           'region' => 'sidebar_second',
-          'weight' => '-8',
+          'weight' => '-7',
         ),
         'views-flex_blocks-block_6' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_6',
           'region' => 'sidebar_second',
-          'weight' => '-7',
-        ),
-        'views-term_landing-columnist' => array(
-          'module' => 'views',
-          'delta' => 'term_landing-columnist',
-          'region' => 'sidebar_second',
-          'weight' => '-6',
+          'weight' => '15',
         ),
         'views-term_landing-books' => array(
           'module' => 'views',

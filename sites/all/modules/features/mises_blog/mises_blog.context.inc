@@ -41,9 +41,9 @@ function mises_blog_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-9',
         ),
-        'views-term_landing-block_2' => array(
+        'views-term_landing-meet_blogger' => array(
           'module' => 'views',
-          'delta' => 'term_landing-block_2',
+          'delta' => 'term_landing-meet_blogger',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),

@@ -2290,10 +2290,10 @@ label { margin-bottom: 0; }
 
 body.media { overflow-y: auto; }
 
-.panel { margin-bottom: 16px; }
+.panel { margin-bottom: 20px; }
 .panel, .panel .panel-heading, .panel .panel-footer { -webkit-box-shadow: 0 0 0 transparent; box-shadow: 0 0 0 transparent; border: 0 none; border-radius: 0; }
 .panel .panel-body { word-break: break-word; }
-.sidebar .block:last-child .panel, .sidebar .panel:last-child { margin-bottom: 0; }
+body.front .sidebar .block:last-child .panel, body.front .sidebar .panel:last-child { margin-bottom: 0; }
 
 .pagination { display: block; clear: both; border-radius: 50%; }
 .pagination > li { display: inline-block; }
@@ -2684,7 +2684,7 @@ ul.menu li a, ul.menu li span { -webkit-transition: all 0.2s ease; -o-transition
 .sidebar .panel-body { padding: 10px 20px; }
 .sidebar .view-content p:last-child { margin: 0; }
 .sidebar .margin-bottom { margin-bottom: 20px; }
-.sidebar #block-views-flex-blocks-block-6 { margin-top: 20px; }
+.sidebar .view-display-id-meet_author > .view-content > .views-row:not(.views-row-first) .panel-heading { display: none; }
 
 .region-sidebar-second-top { margin-bottom: 20px; background: #38709e; color: #fff; }
 .region-sidebar-second-top .panel { padding: 24px; background: #38709e; }
@@ -2902,6 +2902,8 @@ ul.accordion li { list-style: none; }
 /*
 * EVENT PAGE
 */
+.form-button { display: inline-block; margin-bottom: 16px; }
+
 #registration-form { clear: both; margin-top: 16px; }
 
 /* Add to calendar */
