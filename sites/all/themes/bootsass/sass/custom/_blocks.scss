@@ -631,19 +631,22 @@ ul.accordion {
     > li {
       position: relative;
       ul > li > a {
-        background-color: $brand-medium;
+        background-color: $brand-primary;
+        text-transform: none;
         &:hover {
           background-color: $gray;
         }
       }
       ul ul > li > a {
-        background: $brand-contrast-dark;
+        background: $brand-medium;
+        text-transform: none;
         &:hover {
           background-color: $gray; 
         }
       }
       ul ul ul > li > a {
         background: $brand-secondary;
+        text-transform: none;
         &:hover {
           background-color: $gray; 
         }
@@ -652,7 +655,7 @@ ul.accordion {
         @include transition(all 0.2s ease);
       }
       > a.active{
-        background-color: $brand-primary;
+        background-color: $brand-contrast-dark;
         color: $white; 
         text-decoration:none;
         font-weight:700;

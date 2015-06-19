@@ -181,9 +181,11 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="panel">
-  <h3 class="block-title"><a href="/node/[nid]/html">[title]</a></h3>
+  <h3 class="block-title">[title]</h3>
+  <p class="book-author">[field_author_1]</p>
   [body]
-  <p>Select from the table of contents below to read this book. [view_node]</p>
+  [view_node]
+  <p>Select from the table of contents below to read this book.</p>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
@@ -210,10 +212,32 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'node/[nid]/html';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Author */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['label'] = '';
+  $handler->display->display_options['fields']['field_author_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_author_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_author_1']['alter']['text'] = '[field_author_1]';
+  $handler->display->display_options['fields']['field_author_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 1,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_author_1']['separator'] = ' ';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -236,8 +260,11 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['text'] = '<p>[view_node]</p>';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'Click to learn about other formats of this book.';
+  $handler->display->display_options['fields']['view_node']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Click here for other formats of this book.';
   /* Field: Book Chapter: Id */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'eck_book_chapter';
@@ -397,7 +424,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2 class="page-title">[title]</h2>
-';
+<p class="book-author">[field_author_1]</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -422,9 +449,30 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'node/[nid]/html';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Author */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['label'] = '';
+  $handler->display->display_options['fields']['field_author_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_author_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 1,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_author_1']['separator'] = ' ';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
@@ -533,7 +581,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2 class="page-title">[title]</h2>
-';
+<p class="book-author">[field_author_1]</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -566,6 +614,24 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Author */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['label'] = '';
+  $handler->display->display_options['fields']['field_author_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_author_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 1,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_author_1']['separator'] = ' ';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
@@ -708,7 +774,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2 class="page-title">[title]</h2>
-';
+<p class="book-author">[field_author_1]</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -741,6 +807,26 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Author */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['label'] = '';
+  $handler->display->display_options['fields']['field_author_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_author_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_author_1']['element_wrapper_class'] = 'book-author';
+  $handler->display->display_options['fields']['field_author_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 1,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_author_1']['separator'] = ' ';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
@@ -888,7 +974,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2 class="page-title">[title]</h2>
-';
+<p class="book-author">[field_author_1]</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -921,6 +1007,24 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Author */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['label'] = '';
+  $handler->display->display_options['fields']['field_author_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_author_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 1,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_author_1']['separator'] = ' ';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
@@ -976,7 +1080,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Breadcrumb';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h3 class="sub-title chapter-page">[chapter_title] > [page_title_1]</h3>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h3 class="sub-title chapter-page">[chapter_title]<br />[page_title_1]</h3>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Book Page: Page Title */
   $handler->display->display_options['fields']['page_title']['id'] = 'page_title';
@@ -1097,7 +1201,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2 class="page-title">[title]</h2>
-';
+<p class="book-author">[field_author_1]</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -1130,6 +1234,24 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Author */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['label'] = '';
+  $handler->display->display_options['fields']['field_author_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_author_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 1,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_author_1']['separator'] = ' ';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
@@ -1204,7 +1326,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Breadcrumb';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h3 class="sub-title chapter-page-page">[chapter_title] > [page_title_1] > [page_title_2]</h3>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h3 class="sub-title chapter-page-page">[chapter_title]<br />[page_title_1]<br />[page_title_2]</h3>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Book Page: Page Title */
   $handler->display->display_options['fields']['page_title']['id'] = 'page_title';

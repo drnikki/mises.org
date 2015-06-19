@@ -2778,14 +2778,14 @@ ul.accordion li { list-style: none; }
 
 #library-menu { border-top: 5px solid #38709e; }
 #library-menu .nav > li { position: relative; }
-#library-menu .nav > li ul > li > a { background-color: #206093; }
+#library-menu .nav > li ul > li > a { background-color: #00426b; text-transform: none; }
 #library-menu .nav > li ul > li > a:hover { background-color: #788086; }
-#library-menu .nav > li ul ul > li > a { background: #46763a; }
+#library-menu .nav > li ul ul > li > a { background: #206093; text-transform: none; }
 #library-menu .nav > li ul ul > li > a:hover { background-color: #788086; }
-#library-menu .nav > li ul ul ul > li > a { background: #38709e; }
+#library-menu .nav > li ul ul ul > li > a { background: #38709e; text-transform: none; }
 #library-menu .nav > li ul ul ul > li > a:hover { background-color: #788086; }
 #library-menu .nav > li > a { -webkit-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease; }
-#library-menu .nav > li > a.active { background-color: #00426b; color: #fff; text-decoration: none; font-weight: 700; }
+#library-menu .nav > li > a.active { background-color: #46763a; color: #fff; text-decoration: none; font-weight: 700; }
 #library-menu .nav > li > a.link { vertical-align: middle; }
 #library-menu .nav > li > a.icon.trigger { position: absolute; top: 10px; right: 15px; z-index: 10; padding: 0; width: 20px; height: 20px; border: 0 none; border-radius: 50%; background-color: #fff; color: #38709e; vertical-align: middle; font-size: 12px; font-family: 'Glyphicons Halflings'; }
 #library-menu .nav > li > a.icon.trigger:before { position: relative; left: 4px; content: "\e080"; }
@@ -2983,3 +2983,11 @@ ul.addtocal_menu li a:hover { background: #e4ebee; text-decoration: none; }
 .node-blog .group-date-author { margin-bottom: 6px; }
 .node-blog .body-content p img { display: block; margin-right: 16px; padding: 0 0 6px; }
 .node-blog.view-mode-teaser .body-content p img { width: 218px; }
+
+/* BOOK - ONLINE TEXTS */
+.view-book-content .children { margin-top: 16px; }
+.view-book-content .children ul, .view-book-content .children li { list-style: none outside none; }
+.view-book-content .children ul { padding-left: 16px; }
+.view-book-content .book-author a { display: inline-block; padding-right: 10px; }
+.view-book-content .book-author a + a:before { display: inline-block; width: 14px; content: "\2022"; }
+.main-content .view-book-content .book-author a { color: #24292c; }
