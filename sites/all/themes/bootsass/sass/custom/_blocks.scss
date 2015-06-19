@@ -335,6 +335,11 @@ ul.menu {
   a {
     color: $white;
   }
+  p {
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 /* SIDEBAR MENU */
 .region-sidebar-second,
@@ -664,7 +669,6 @@ ul.accordion {
         background-color: $brand-contrast-dark;
         color: $white; 
         text-decoration:none;
-        font-weight:700;
       }
       > a.link {
         vertical-align:middle;

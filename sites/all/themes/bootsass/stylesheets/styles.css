@@ -2690,6 +2690,7 @@ ul.menu li a, ul.menu li span { -webkit-transition: all 0.2s ease; -o-transition
 .region-sidebar-second-top .panel { padding: 24px; background: #38709e; }
 .region-sidebar-second-top h3 { margin-top: 0; color: #fff; text-transform: uppercase; font-size: 15px; }
 .region-sidebar-second-top a { color: #fff; }
+.region-sidebar-second-top p a { text-decoration: underline; }
 
 /* SIDEBAR MENU */
 .region-sidebar-second .nav > li > a, .region-sidebar-second-top .nav > li > a { padding-left: 24px; padding-right: 48px; background-color: #494e54; color: #fff; text-transform: uppercase; font-size: 15px; }
@@ -2788,7 +2789,7 @@ ul.accordion li { list-style: none; }
 #block-views-book-content-book-content-toc #library-menu .nav > li ul ul ul > li > a { text-transform: none; }
 #library-menu .nav > li ul ul ul > li > a:hover { background-color: #788086; }
 #library-menu .nav > li > a { -webkit-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease; }
-#library-menu .nav > li > a.active { background-color: #46763a; color: #fff; text-decoration: none; font-weight: 700; }
+#library-menu .nav > li > a.active { background-color: #46763a; color: #fff; text-decoration: none; }
 #library-menu .nav > li > a.link { vertical-align: middle; }
 #library-menu .nav > li > a.icon.trigger { position: absolute; top: 10px; right: 15px; z-index: 10; padding: 0; width: 20px; height: 20px; border: 0 none; border-radius: 50%; background-color: #fff; color: #38709e; vertical-align: middle; font-size: 12px; font-family: 'Glyphicons Halflings'; }
 #library-menu .nav > li > a.icon.trigger:before { position: relative; left: 4px; content: "\e080"; }
