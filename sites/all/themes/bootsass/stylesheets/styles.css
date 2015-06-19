@@ -2778,11 +2778,14 @@ ul.accordion li { list-style: none; }
 
 #library-menu { border-top: 5px solid #38709e; }
 #library-menu .nav > li { position: relative; }
-#library-menu .nav > li ul > li > a { background-color: #00426b; text-transform: none; }
+#library-menu .nav > li ul > li > a { background-color: #00426b; }
+#block-views-book-content-book-content-toc #library-menu .nav > li ul > li > a { text-transform: none; }
 #library-menu .nav > li ul > li > a:hover { background-color: #788086; }
-#library-menu .nav > li ul ul > li > a { background: #206093; text-transform: none; }
+#library-menu .nav > li ul ul > li > a { background: #206093; }
+#block-views-book-content-book-content-toc #library-menu .nav > li ul ul > li > a { text-transform: none; }
 #library-menu .nav > li ul ul > li > a:hover { background-color: #788086; }
-#library-menu .nav > li ul ul ul > li > a { background: #38709e; text-transform: none; }
+#library-menu .nav > li ul ul ul > li > a { background: #38709e; }
+#block-views-book-content-book-content-toc #library-menu .nav > li ul ul ul > li > a { text-transform: none; }
 #library-menu .nav > li ul ul ul > li > a:hover { background-color: #788086; }
 #library-menu .nav > li > a { -webkit-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease; }
 #library-menu .nav > li > a.active { background-color: #46763a; color: #fff; text-decoration: none; font-weight: 700; }

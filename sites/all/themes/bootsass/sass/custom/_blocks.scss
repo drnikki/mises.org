@@ -632,21 +632,27 @@ ul.accordion {
       position: relative;
       ul > li > a {
         background-color: $brand-primary;
-        text-transform: none;
+        #block-views-book-content-book-content-toc & {
+          text-transform: none;
+        }
         &:hover {
           background-color: $gray;
         }
       }
       ul ul > li > a {
         background: $brand-medium;
-        text-transform: none;
+        #block-views-book-content-book-content-toc & {
+          text-transform: none;
+        }
         &:hover {
           background-color: $gray; 
         }
       }
       ul ul ul > li > a {
         background: $brand-secondary;
-        text-transform: none;
+        #block-views-book-content-book-content-toc & {
+          text-transform: none;
+        }
         &:hover {
           background-color: $gray; 
         }
