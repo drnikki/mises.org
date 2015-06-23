@@ -971,7 +971,7 @@ function mises_theme_default_fe_block_settings() {
 
   $export['views-term_landing-featured_author'] = array(
     'cache' => -1,
-    'css_class' => 'border-contrast',
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'term_landing-featured_author',
     'module' => 'views',

@@ -1,0 +1,98 @@
+<?php
+module_load_include('inc', 'randomblocks');
+
+/**
+ * Implementation of hook_menu().
+ */
+function randomblocks_menu() {
+	$items = array();
+	$items['admin/structure/block/randomblocks'] = array(
+		'title' => 'Random Blocks',
+		'description' => "Configure random blocks containers",
+		'page callback' => 'randomblocks_admin_display',
+		'access arguments' => array('administer blocks'),
+		'file' => 'randomblocks.admin.inc',
+	);
+	$items['admin/structure/block/randomblocks/add'] = array(
+		'title' => 'Add Random Block',
+		'description' => "Add a random block",
+		'type' => MENU_LOCAL_TASK,
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('randomblocks_random_block_edit_form'),
+		'access arguments' => array('administer blocks'),
+		'file' => 'randomblocks.admin.inc',
+	);
+	$items['admin/structure/block/randomblocks/%randomblock/edit'] = array(
+		'title' => 'Edit Random Block',
+		'description' => "Edit a random block",
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('randomblocks_random_block_edit_form', 4),
+		'access arguments' => array('administer blocks'),
+		'file' => 'randomblocks.admin.inc',
+		'menu_name' => 'management',
+		'plid' => '22'
+	);
+	$items['admin/structure/block/randomblocks/%randomblock/delete'] = array(
+		'title' => 'Delete Random Block',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('randomblocks_random_block_delete_form', 4),
+		'access arguments' => array('administer blocks'),
+		'file' => 'randomblocks.admin.inc',
+	);
+	$items['admin/structure/block/randomblocks/%randomblock/blocks'] = array(
+		'title' => 'Manage Random Blocks',
+		'description' => "Manage child blocks for a random block",
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('randomblocks_random_block_blocks_form', 4),
+		'access arguments' => array('administer blocks'),
+		'file' => 'randomblocks.admin.inc',
+	);
+	return $items;
+}
+
+function randomblock_load($machine_name) {
+	$rblock = new Randomblocks($machine_name);
+	return $rblock;
+}
+
+/**
+ * Implements hook_help().
+ */
+function randomblocks_help($path, $arg) {
+	switch ($path) {
+		case 'admin/help#randomblocks':
+		case 'admin/structure/block/randomblocks':
+			return '<p>'. t("A Random Block is a container for other blocks. Blocks added to a Random Block will be randomly displayed. The Random Block itself is also a Drupal block. There are multiple configuration options on the drupal block configuration form.") .'</p>'.
+						 '<p>'. l("Add a Random Block", 'admin/structure/block/randomblocks/add') .'</p>';
+		case 'admin/structure/block/randomblocks/%/blocks':
+			return '<p>'. t("Select the blocks you would like to be displayed in this block") .'</p>';
+	}
+}
+
+
+/**
+ * Implements hook_block_info().
+ */
+function randomblocks_block_info() {
+	$blocks = array();
+	$rblocks = Randomblocks::get_randomblocks();
+	if ($rblocks) {
+		foreach ($rblocks as $rblock) {
+			$blocks[$rblock->machine_name]['info'] = $rblock->info;
+			$blocks[$rblock->machine_name]['cache'] = DRUPAL_NO_CACHE;
+		}
+	}
+	return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function randomblocks_block_view($delta = '') {
+	$block = array('subject' => '', 'content' => '');
+	$rblock = new Randomblocks($delta);
+	if ($rblock) {
+		$block = $rblock->get_display();
+	}
+	return $block;
+}

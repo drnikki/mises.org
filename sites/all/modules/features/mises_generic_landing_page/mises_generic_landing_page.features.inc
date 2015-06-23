@@ -11,6 +11,9 @@ function mises_generic_landing_page_ctools_plugin_api($module = NULL, $api = NUL
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
 }
 
 /**
