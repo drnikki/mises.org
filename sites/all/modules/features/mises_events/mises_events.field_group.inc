@@ -25,11 +25,10 @@ function mises_events_field_group_info() {
     'children' => array(
       0 => 'field_audience',
       1 => 'field_austrian_school',
-      2 => 'field_award_type',
-      3 => 'field_level',
-      4 => 'field_topics',
-      5 => 'field_featured_content',
-      6 => 'field_public_private',
+      2 => 'field_level',
+      3 => 'field_topics',
+      4 => 'field_featured_content',
+      5 => 'field_public_private',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -177,6 +176,7 @@ function mises_events_field_group_info() {
       0 => 'field_registration_link',
       1 => 'field_registration_link_external',
       2 => 'field_registration_type',
+      3 => 'field_causeview_form_reg_link',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -201,7 +201,7 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',

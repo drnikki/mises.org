@@ -2800,6 +2800,9 @@ ul.accordion li { list-style: none; }
 /* Flex-block image */
 .node-flex-block img { max-width: 100%; height: auto; }
 
+/* Mises Wire Bloggers overrides */
+.page-blog-mises-wire-bloggers .view-display-id-blogger .read-more { display: none; }
+
 /*
 * Online Books
 */
@@ -2912,6 +2915,8 @@ ul.accordion li { list-style: none; }
 /*
 * EVENT PAGE
 */
+.form-button { display: inline-block; margin-bottom: 16px; }
+
 #registration-form { clear: both; margin-top: 16px; }
 
 /* Add to calendar */

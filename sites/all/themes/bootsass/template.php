@@ -47,6 +47,7 @@ function bootsass_theme(&$existing, $type, $theme, $path) {
   return _bootsass_theme($existing, $type, $theme, $path);
 }
 
+
 /**
  * Declare various hook_*_alter() hooks.
  *
@@ -54,3 +55,24 @@ function bootsass_theme(&$existing, $type, $theme, $path) {
  * they are properly detected when drupal_alter() is invoked.
  */
 bootsass_include('bootsass', 'theme/alter.inc');
+
+
+function bootsass_preprocess_field(&$variables) {
+  if ($variables['element']['#field_type'] == 'image') {
+  	if(isset($variables['element']['#object'])) {
+  		$field_collection_item = $variables['element']['#object'];
+  		if ( $field_collection_item->field_default_social_image['und'][0]['value'] == 1 ) {
+  			
+  			$url = file_create_url($variables['element'][0]['#item']['uri']);
+			$element = array(
+			  '#tag' => 'meta', 
+			  '#attributes' => array(
+			    'property' => 'og:image',
+			    'content' => $url,
+			  ),
+			);
+			drupal_add_html_head($element, 'og_image');
+  		}
+  	}
+  }
+}

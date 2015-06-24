@@ -124,6 +124,9 @@ function mises_library_landing_context_default_contexts() {
         ),
       ),
     ),
+    'theme_html' => array(
+      'class' => 'library-landing-page-context',
+    ),
   );
   $context->condition_mode = 0;
 

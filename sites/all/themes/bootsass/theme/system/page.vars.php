@@ -90,6 +90,9 @@ function bootsass_preprocess_page(&$variables) {
   else {
     $variables['navbar_classes_array'][] = 'navbar-inverse';
   }
+
+  
+
 }
 
 /**

@@ -72,29 +72,23 @@ function mises_generic_landing_page_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-9',
         ),
+        'views-library_items_menu-block' => array(
+          'module' => 'views',
+          'delta' => 'library_items_menu-block',
+          'region' => 'sidebar_second_top',
+          'weight' => '-8',
+        ),
         'views-a881a51cee516bce16966206118b160b' => array(
           'module' => 'views',
           'delta' => 'a881a51cee516bce16966206118b160b',
           'region' => 'sidebar_second_top',
-          'weight' => '0',
+          'weight' => '-7',
         ),
         'views-term_landing-popular' => array(
           'module' => 'views',
           'delta' => 'term_landing-popular',
           'region' => 'sidebar_second',
           'weight' => '-10',
-        ),
-        'views-term_landing-featured_author' => array(
-          'module' => 'views',
-          'delta' => 'term_landing-featured_author',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'views-term_landing-columnist' => array(
-          'module' => 'views',
-          'delta' => 'term_landing-columnist',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
         ),
         'views-dd8efc17b7ddc0693131e53ef4856cfd' => array(
           'module' => 'views',
@@ -134,6 +128,9 @@ function mises_generic_landing_page_context_default_contexts() {
         ),
       ),
     ),
+    'theme_html' => array(
+      'class' => 'generic-term-landing',
+    ),
   );
   $context->condition_mode = 0;
 
@@ -142,6 +139,51 @@ function mises_generic_landing_page_context_default_contexts() {
   t('Landing Pages');
   t('Term Landing/Listing Page');
   $export['generic_term'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'non_library_term';
+  $context->description = 'Blocks for non-Library Item term/landing pages';
+  $context->tag = 'Landing Pages';
+  $context->conditions = array(
+    'taxonomy_term' => array(
+      'values' => array(
+        'award_type' => 'award_type',
+        'currents_trends' => 'currents_trends',
+        'events' => 'events',
+        'level' => 'level',
+        'profile_type' => 'profile_type',
+        'reading_group' => 'reading_group',
+        'the_austrian_school_of_economics' => 'the_austrian_school_of_economics',
+      ),
+      'options' => array(
+        'term_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'randomblocks-non_library_item_profiles' => array(
+          'module' => 'randomblocks',
+          'delta' => 'non_library_item_profiles',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+    'theme_html' => array(
+      'class' => 'non-library-item-term-landing',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Blocks for non-Library Item term/landing pages');
+  t('Landing Pages');
+  $export['non_library_term'] = $context;
 
   return $export;
 }

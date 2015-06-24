@@ -490,10 +490,9 @@ function term_landing_page_views_default_views() {
     'featued' => 'featued',
   );
 
-  /* Display: Columnists */
-  $handler = $view->new_display('block', 'Columnists', 'columnist');
+  /* Display: Meet Our Columnists */
+  $handler = $view->new_display('block', 'Meet Our Columnists', 'columnist');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Meet Our Columnists';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'audience border-primary panel';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -590,9 +589,8 @@ return FALSE;';
   /* Display: Featured Author */
   $handler = $view->new_display('block', 'Featured Author', 'featured_author');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Featured Author';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'audience panel';
+  $handler->display->display_options['css_class'] = 'audience panel border-contrast';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -657,18 +655,6 @@ return FALSE;';
   $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
     'featured_author' => 'featured_author',
   );
-  /* Filter criterion: Global: PHP */
-  $handler->display->display_options['filters']['php']['id'] = 'php';
-  $handler->display->display_options['filters']['php']['table'] = 'views';
-  $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php']['php_filter'] = '$args = drupal_get_path_alias();
-if ($args) {
-  if ($args != \'library\') {
-    return TRUE;
-  }
-}
-return FALSE;';
 
   /* Display: Featured Author Articles */
   $handler = $view->new_display('block', 'Featured Author Articles', 'block_1');
