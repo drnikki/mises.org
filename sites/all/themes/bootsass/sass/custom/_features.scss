@@ -564,3 +564,30 @@ ul.addtocal_menu {
     }
   }
 }
+
+/* BOOK - ONLINE TEXTS */
+.view-book-content {
+  .children {
+    margin-top: $padding-large-vertical;
+    ul, li {
+      list-style: none outside none;
+    }
+    ul {
+      padding-left: $padding-large-horizontal;
+    }
+  }
+  .book-author {
+    a {
+      display: inline-block;
+      padding-right: 10px;
+      + a:before {
+        display: inline-block;
+        width: 14px;
+        content: "\2022";
+      }
+      .main-content & {
+        color: $black;
+      }
+    }
+  }
+}

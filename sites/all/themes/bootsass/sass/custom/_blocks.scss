@@ -315,18 +315,11 @@ ul.menu {
   }
 
   #block-views-flex-blocks-block-6 {
-    //margin-top: 20px;
-  }
-  .view-display-id-meet_author {
-    > .view-content > .views-row:not(.views-row-first) {
-      .panel-heading {
-        display: none;
-      }
-    }
+    margin-top: 20px;
   }
 }
 .region-sidebar-second-top {
-  margin-bottom: $grid-gutter-width;
+  margin-bottom: 20px;
   background: $brand-secondary;
   color: $white;
   .panel {
@@ -342,6 +335,11 @@ ul.menu {
   a {
     color: $white;
   }
+  p {
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 /* SIDEBAR MENU */
 .region-sidebar-second,
@@ -349,6 +347,7 @@ ul.menu {
   .nav {
     > li > a {
       padding-left: $padding-large-horizontal * 1.5;
+      padding-right: $padding-large-horizontal * 3;
       background-color: $gray-dark;
       color: $white;
       text-transform: uppercase;
@@ -637,19 +636,28 @@ ul.accordion {
     > li {
       position: relative;
       ul > li > a {
-        background-color: $brand-medium;
+        background-color: $brand-primary;
+        #block-views-book-content-book-content-toc & {
+          text-transform: none;
+        }
         &:hover {
           background-color: $gray;
         }
       }
       ul ul > li > a {
-        background: $brand-contrast-dark;
+        background: $brand-medium;
+        #block-views-book-content-book-content-toc & {
+          text-transform: none;
+        }
         &:hover {
           background-color: $gray; 
         }
       }
       ul ul ul > li > a {
         background: $brand-secondary;
+        #block-views-book-content-book-content-toc & {
+          text-transform: none;
+        }
         &:hover {
           background-color: $gray; 
         }
@@ -658,10 +666,9 @@ ul.accordion {
         @include transition(all 0.2s ease);
       }
       > a.active{
-        background-color: $brand-primary;
+        background-color: $brand-contrast-dark;
         color: $white; 
         text-decoration:none;
-        font-weight:700;
       }
       > a.link {
         vertical-align:middle;
@@ -713,6 +720,18 @@ ul.accordion {
   }
 }
 
+/*
+* Online Books
+*/
+.view-book-content {
+  h2.book-title {
+    font-family: $font-family-serif;
+    color: $brand-primary;
+  }
+  blockquote {
+    font-size: $font-size-base;
+  }
+}
 /* Mises Wire Bloggers overrides */
 .page-blog-mises-wire-bloggers {
   .view-display-id-blogger {

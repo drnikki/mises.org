@@ -12,6 +12,106 @@ function mises_book_digital_text_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'book_chapter|book_chapter|default';
+  $ds_fieldsetting->entity_type = 'book_chapter';
+  $ds_fieldsetting->bundle = 'book_chapter';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'chapter-title',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'field_book_chapter_content' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'chapter-content',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_book_pages' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Read',
+          'lb-el' => 'h3',
+          'fis' => TRUE,
+          'fis-el' => 'ul',
+          'fis-cl' => '',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'li',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['book_chapter|book_chapter|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'book_page|book_page|default';
+  $ds_fieldsetting->entity_type = 'book_page';
+  $ds_fieldsetting->bundle = 'book_page';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'page-title',
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'page-content',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'field_sub_page' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Pages',
+          'fis' => TRUE,
+          'fis-el' => 'ul',
+          'fis-cl' => '',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'li',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['book_page|book_page|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|book_digital_text|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'book_digital_text';
@@ -107,6 +207,80 @@ function mises_book_digital_text_ds_field_settings_info() {
  */
 function mises_book_digital_text_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'book_chapter|book_chapter|default';
+  $ds_layout->entity_type = 'book_chapter';
+  $ds_layout->bundle = 'book_chapter';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_book_chapter_content',
+        2 => 'field_book_pages',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_book_chapter_content' => 'ds_content',
+      'field_book_pages' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['book_chapter|book_chapter|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'book_page|book_page|default';
+  $ds_layout->entity_type = 'book_page';
+  $ds_layout->bundle = 'book_page';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_book_page_content',
+        2 => 'field_sub_page',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_book_page_content' => 'ds_content',
+      'field_sub_page' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['book_page|book_page|default'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

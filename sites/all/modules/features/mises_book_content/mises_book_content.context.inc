@@ -17,12 +17,13 @@ function mises_book_content_context_default_contexts() {
   $context->description = '';
   $context->tag = 'Content Types';
   $context->conditions = array(
-    'node' => array(
+    'views' => array(
       'values' => array(
-        'book_digital_text' => 'book_digital_text',
-      ),
-      'options' => array(
-        'node_form' => '0',
+        'book_content:book_chapter' => 'book_content:book_chapter',
+        'book_content:book_landing' => 'book_content:book_landing',
+        'book_content:book_page' => 'book_content:book_page',
+        'book_content:book_subpage' => 'book_content:book_subpage',
+        'book_content:book_subsubpage' => 'book_content:book_subsubpage',
       ),
     ),
   );
@@ -32,10 +33,13 @@ function mises_book_content_context_default_contexts() {
         'views-book_content-book_content_toc' => array(
           'module' => 'views',
           'delta' => 'book_content-book_content_toc',
-          'region' => 'content',
-          'weight' => '10',
+          'region' => 'sidebar_second_top',
+          'weight' => '-10',
         ),
       ),
+    ),
+    'theme_html' => array(
+      'class' => 'book-view-context',
     ),
   );
   $context->condition_mode = 0;
