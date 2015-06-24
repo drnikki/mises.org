@@ -12,7 +12,7 @@ function mises_book_digital_text_views_default_views() {
 
   $view = new view();
   $view->name = 'book_content_backlink';
-  $view->description = '';
+  $view->description = 'Renders link from Book Digital Text to its related Library Item';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Book Content Backlink';

@@ -116,7 +116,7 @@ function mises_book_digital_text_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Slideshow Wrapper',
-    'weight' => '27',
+    'weight' => '31',
     'children' => array(
       0 => 'field_image',
     ),
@@ -143,7 +143,7 @@ function mises_book_digital_text_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Links',
-    'weight' => '29',
+    'weight' => '33',
     'children' => array(
       0 => 'field_epub',
       1 => 'field_kindle',
@@ -174,7 +174,7 @@ function mises_book_digital_text_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '28',
+    'weight' => '32',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',

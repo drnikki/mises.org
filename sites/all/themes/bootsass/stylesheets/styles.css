@@ -2688,15 +2688,16 @@ ul.menu li a, ul.menu li span { -webkit-transition: all 0.2s ease; -o-transition
 .sidebar .panel-body { padding: 10px 20px; }
 .sidebar .view-content p:last-child { margin: 0; }
 .sidebar .margin-bottom { margin-bottom: 20px; }
-.sidebar .view-display-id-meet_author > .view-content > .views-row:not(.views-row-first) .panel-heading { display: none; }
+.sidebar #block-views-flex-blocks-block-6 { margin-top: 20px; }
 
 .region-sidebar-second-top { margin-bottom: 20px; background: #38709e; color: #fff; }
 .region-sidebar-second-top .panel { padding: 24px; background: #38709e; }
 .region-sidebar-second-top h3 { margin-top: 0; color: #fff; text-transform: uppercase; font-size: 15px; }
 .region-sidebar-second-top a { color: #fff; }
+.region-sidebar-second-top p a { text-decoration: underline; }
 
 /* SIDEBAR MENU */
-.region-sidebar-second .nav > li > a, .region-sidebar-second-top .nav > li > a { padding-left: 24px; background-color: #494e54; color: #fff; text-transform: uppercase; font-size: 15px; }
+.region-sidebar-second .nav > li > a, .region-sidebar-second-top .nav > li > a { padding-left: 24px; padding-right: 48px; background-color: #494e54; color: #fff; text-transform: uppercase; font-size: 15px; }
 .region-sidebar-second .nav > li > a:hover, .region-sidebar-second-top .nav > li > a:hover { background-color: #788086; }
 .region-sidebar-second .nav > li + li, .region-sidebar-second-top .nav > li + li { border-top: 1px solid #788086; }
 .region-sidebar-second .nav > li.active a, .region-sidebar-second-top .nav > li.active a { background-color: #788086; }
@@ -2782,14 +2783,17 @@ ul.accordion li { list-style: none; }
 
 #library-menu { border-top: 5px solid #38709e; }
 #library-menu .nav > li { position: relative; }
-#library-menu .nav > li ul > li > a { background-color: #206093; }
+#library-menu .nav > li ul > li > a { background-color: #00426b; }
+#block-views-book-content-book-content-toc #library-menu .nav > li ul > li > a { text-transform: none; }
 #library-menu .nav > li ul > li > a:hover { background-color: #788086; }
-#library-menu .nav > li ul ul > li > a { background: #46763a; }
+#library-menu .nav > li ul ul > li > a { background: #206093; }
+#block-views-book-content-book-content-toc #library-menu .nav > li ul ul > li > a { text-transform: none; }
 #library-menu .nav > li ul ul > li > a:hover { background-color: #788086; }
 #library-menu .nav > li ul ul ul > li > a { background: #38709e; }
+#block-views-book-content-book-content-toc #library-menu .nav > li ul ul ul > li > a { text-transform: none; }
 #library-menu .nav > li ul ul ul > li > a:hover { background-color: #788086; }
 #library-menu .nav > li > a { -webkit-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease; }
-#library-menu .nav > li > a.active { background-color: #00426b; color: #fff; text-decoration: none; font-weight: 700; }
+#library-menu .nav > li > a.active { background-color: #46763a; color: #fff; text-decoration: none; }
 #library-menu .nav > li > a.link { vertical-align: middle; }
 #library-menu .nav > li > a.icon.trigger { position: absolute; top: 10px; right: 15px; z-index: 10; padding: 0; width: 20px; height: 20px; border: 0 none; border-radius: 50%; background-color: #fff; color: #38709e; vertical-align: middle; font-size: 12px; font-family: 'Glyphicons Halflings'; }
 #library-menu .nav > li > a.icon.trigger:before { position: relative; left: 4px; content: "\e080"; }
@@ -2802,6 +2806,12 @@ ul.accordion li { list-style: none; }
 
 /* Mises Wire Bloggers overrides */
 .page-blog-mises-wire-bloggers .view-display-id-blogger .read-more { display: none; }
+
+/*
+* Online Books
+*/
+.view-book-content h2.book-title { font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; color: #00426b; }
+.view-book-content blockquote { font-size: 15px; }
 
 /*
 * Custom Styles for Special Features
@@ -2986,3 +2996,11 @@ ul.addtocal_menu li a:hover { background: #e4ebee; text-decoration: none; }
 .node-blog .group-date-author { margin-bottom: 6px; }
 .node-blog .body-content p img { display: block; margin-right: 16px; padding: 0 0 6px; }
 .node-blog.view-mode-teaser .body-content p img { width: 218px; }
+
+/* BOOK - ONLINE TEXTS */
+.view-book-content .children { margin-top: 16px; }
+.view-book-content .children ul, .view-book-content .children li { list-style: none outside none; }
+.view-book-content .children ul { padding-left: 16px; }
+.view-book-content .book-author a { display: inline-block; padding-right: 10px; }
+.view-book-content .book-author a + a:before { display: inline-block; width: 14px; content: "\2022"; }
+.main-content .view-book-content .book-author a { color: #24292c; }
