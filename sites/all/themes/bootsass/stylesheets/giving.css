@@ -2442,6 +2442,10 @@ html[contenteditable="true"] body { background-image: none; }
 .view-image-source .views-label { font-weight: bold; }
 .view-image-source .field-content { display: inline; }
 
+.file.view-mode-wide_player .file a { border-radius: 5px; font-size: 13px; line-height: 1.25; padding: 6px 10px; background-color: #38709e; border-color: #38709e; color: #fff; background-image: none; cursor: pointer; display: inline-block; font-weight: normal; margin-bottom: 0; text-align: center; vertical-align: middle; white-space: nowrap; }
+.file.view-mode-wide_player .file a:hover { background-color: #2b5578; border-color: #2b5578; color: #fff; text-decoration: none; }
+.file.view-mode-wide_player .file img { display: none; }
+
 /*
 * Main Site Custom Styles
 * 
