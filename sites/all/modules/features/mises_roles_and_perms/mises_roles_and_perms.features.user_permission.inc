@@ -19,6 +19,7 @@ function mises_roles_and_perms_user_default_permissions() {
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
       'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
     ),
     'module' => 'admin_menu',
   );
@@ -750,6 +751,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
     ),
     'module' => 'user',
   );
@@ -808,6 +810,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
     ),
     'module' => 'roleassign',
   );
@@ -2434,28 +2437,72 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'eck list book_chapter book_chapter entities'.
   $permissions['eck list book_chapter book_chapter entities'] = array(
     'name' => 'eck list book_chapter book_chapter entities',
-    'roles' => array(),
+    'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck list book_chapter bundles'.
   $permissions['eck list book_chapter bundles'] = array(
     'name' => 'eck list book_chapter bundles',
-    'roles' => array(),
+    'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck list book_page book_page entities'.
   $permissions['eck list book_page book_page entities'] = array(
     'name' => 'eck list book_page book_page entities',
-    'roles' => array(),
+    'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'eck',
   );
 
   // Exported permission: 'eck list book_page bundles'.
   $permissions['eck list book_page bundles'] = array(
     'name' => 'eck list book_page bundles',
-    'roles' => array(),
+    'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'eck',
   );
 
@@ -2489,7 +2536,18 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'eck view book_chapter book_chapter entities'.
   $permissions['eck view book_chapter book_chapter entities'] = array(
     'name' => 'eck view book_chapter book_chapter entities',
-    'roles' => array(),
+    'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'eck',
   );
 
@@ -2497,7 +2555,16 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['eck view book_chapter bundles'] = array(
     'name' => 'eck view book_chapter bundles',
     'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'eck',
   );
@@ -2505,7 +2572,18 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'eck view book_page book_page entities'.
   $permissions['eck view book_page book_page entities'] = array(
     'name' => 'eck view book_page book_page entities',
-    'roles' => array(),
+    'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
+      'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'eck',
   );
 
@@ -2513,7 +2591,16 @@ function mises_roles_and_perms_user_default_permissions() {
   $permissions['eck view book_page bundles'] = array(
     'name' => 'eck view book_page bundles',
     'roles' => array(
+      'Blog Author' => 'Blog Author',
+      'Content Creator' => 'Content Creator',
+      'Content Manager' => 'Content Manager',
+      'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
+      'Site Administrator' => 'Site Administrator',
+      'User Administrator' => 'User Administrator',
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'eck',
   );
