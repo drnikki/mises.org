@@ -3549,10 +3549,11 @@ if ($entity->field_link_to_external_listing_) {
   else {
     $path = $uri;
   }
+  // adding description to entity object, because track da files looks there first to use as link name
+  $entity->description = \'Download \' . $entity->type . \' file\';
   print theme(\'track_da_files_file_link\', array(\'file\' => $entity) );
   // print \' <a class="btn btn-default btn-sm" href="\' . $path . \'">Download \' . $entity->type . \' file</a>\';
-?>
-',
+?>',
       'format' => 'ds_code',
     ),
     'use_token' => 0,
