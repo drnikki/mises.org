@@ -656,6 +656,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'administer search',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'search',
   );
@@ -665,6 +666,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'administer search_api',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'search_api',
   );
@@ -3720,6 +3722,7 @@ function mises_roles_and_perms_user_default_permissions() {
     'name' => 'use advanced search',
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
+      'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'search',
   );
