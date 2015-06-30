@@ -28,9 +28,6 @@
   CKEDITOR.dtd.p['li'] = 1;
   CKEDITOR.dtd.$block['fn'] = 1;
   CKEDITOR.dtd.$blockLimit['fn'] = 1;
-  //console.log('p>fn', !!CKEDITOR.dtd['p']['fn']);
-  //console.log('fn>ul', !!CKEDITOR.dtd['fn']['ul']);
-  console.log('ckeditor.dtd ',CKEDITOR.dtd);
   
   CKEDITOR.plugins.add( 'footnotes',
   {
@@ -49,7 +46,6 @@
         );
       },
       init: function( editor ) {
-        //console.log('editor ',editor);
         editor.addCommand('createfootnotes', new CKEDITOR.dialogCommand('createfootnotes', {
           allowedContent: 'fn[value]'
         }));
@@ -96,6 +92,7 @@
         
       },
       afterInit : function( editor ) {
+
         var dataProcessor = editor.dataProcessor,
           dataFilter = dataProcessor && dataProcessor.dataFilter;
 
@@ -103,8 +100,6 @@
           dataFilter.addRules({
             elements: {
               fn: function(element ) {
-                console.log('addRules element ', element);
-                
                 var fakeElement = editor.createFakeParserElement( element, 'cke_footnote', 'fn', false );
                 return fakeElement;
               }
@@ -125,22 +120,18 @@ CKEDITOR.plugins.footnotes = {
     else {
       realElement = origElement;
     }
-    console.log('realElement ',realElement);
-
     if (text && text.length > 0 )
       realElement.setHtml(text);
     if (value && value.length > 0 )
       realElement.setAttribute('value',value);
 
     var fakeElement = editor.createFakeElement( realElement , 'cke_footnote', 'fn', false );
-    console.log('fakeElement ',fakeElement);
     editor.insertElement(fakeElement);
   },
 
   getSelectedFootnote: function( editor ) {
     var selection = editor.getSelection();
     var element = selection.getSelectedElement();
-    console.log('element2 ', element);
     var seltype = selection.getType();
 
     if ( seltype == CKEDITOR.SELECTION_ELEMENT && element.data('cke-real-element-type') == 'fn') {

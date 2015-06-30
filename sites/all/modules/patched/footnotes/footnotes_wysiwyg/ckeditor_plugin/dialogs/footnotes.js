@@ -56,10 +56,10 @@
         // Replace the Footnote textarea with a CKEditor instance.
         CKEDITOR.replace(footnote_editor_id, {
           toolbar: [
-            { name: 'basicstyles', items : [ 'Bold','Italic', 'Underline', 'Link', 'Unlink','BulletedList','NumberedList','Blockquote' ] }
+            { name: 'basicstyles', items : [ 'Bold','Italic', 'Underline', 'Link', 'Unlink' ] }
           ],
           enterMode: CKEDITOR.ENTER_BR,
-          autoParagraph : true,
+          //autoParagraph : true,
           resize_enabled : false,
           autoGrow_minHeight : 80,
           removePlugins : 'footnotes',
