@@ -16,7 +16,7 @@
               type: 'textarea',
               label: Drupal.t('Footnote text :'),
               onLoad : function () {
-                console.log('onload this ',this);
+                //console.log('onload this ',this);
                 // Workaround.  CKEditor 3.x does not add the ID to the input,
                 // just a wrapper <div> several levels above.  Add a class explicitly here
                 // so we can find the textarea easily later.
@@ -66,9 +66,12 @@
   
         // Replace the Footnote textarea with a CKEditor instance.
         CKEDITOR.replace(footnote_editor_id, {
+          //extraPlugins: 'stylesheetparser',
+          contentsCss: ['/sites/all/themes/bootsass/stylesheets/footnote_fakes.css'],
           toolbar: [
-            { name: 'basicstyles', items : [ 'Bold','Italic', 'Underline', 'Link', 'Unlink' ] }
+            { name: 'basicstyles', items : [ 'Bold','Italic', 'Underline', 'Link', 'Unlink', 'Styles', 'Source' ] },
           ],
+          stylesSet: 'footnoteStyles',
           enterMode: CKEDITOR.ENTER_BR,
           autoParagraph : true,
           resize_enabled : false,
