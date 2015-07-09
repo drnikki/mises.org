@@ -20,19 +20,6 @@
  */
 
 (function() {
-  //Add to HTML DTD
-  /*CKEDITOR.dtd['fn'] = CKEDITOR.dtd['div'];
-  CKEDITOR.dtd['p'] = CKEDITOR.dtd['div'];
-  CKEDITOR.dtd.p['fn'] = 1;
-  CKEDITOR.dtd.p['ol'] = 1;
-  CKEDITOR.dtd.p['li'] = 1;
-  CKEDITOR.dtd.fn['ul'] = 1;
-  CKEDITOR.dtd.fn['ol'] = 1;
-  CKEDITOR.dtd.fn['li'] = 1;
-  CKEDITOR.dtd.$block['fn'] = 1;
-  CKEDITOR.dtd.$blockLimit['fn'] = 1;
-  console.log('fn test ul ',CKEDITOR.dtd['fn']['ul']);
-  console.log('inline ',CKEDITOR.dtd.$inline); */
   
   CKEDITOR.stylesSet.add('footnoteStyles', [
     {name: 'Fake Bullet', element: 'span', attributes: {'class': 'fake-bullet'}},
@@ -113,14 +100,6 @@
           dataFilter.addRules({
             elements: {
               fn: function(element ) {
-                console.log('dataFilter realElement ',element);
-                var html;
-                var writer = new CKEDITOR.htmlParser.basicWriter();
-                element.writeHtml(writer);
-                //console.log('writer ',writer);
-                html = writer.getHtml();
-                //console.log('html ',html);
-                //var fakeElement = editor.createFakeElement( element, 'cke_footnote', 'fn', false );
                 var fakeElement = editor.createFakeParserElement( element, 'cke_footnote', 'fn', false );
                 return fakeElement;
               }
@@ -147,7 +126,6 @@ CKEDITOR.plugins.footnotes = {
     if (value && value.length > 0 )
       realElement.setAttribute('value',value);
 
-    //console.log('createFootnote realElement ',realElement);
     var fakeElement = editor.createFakeElement( realElement , 'cke_footnote', 'fn', false );
     editor.insertElement(fakeElement);
   },
