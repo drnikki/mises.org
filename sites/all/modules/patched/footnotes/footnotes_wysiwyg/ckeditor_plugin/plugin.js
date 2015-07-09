@@ -20,15 +20,14 @@
  */
 
 (function() {
-  //Add to HTML DTD
-  CKEDITOR.dtd['fn'] = CKEDITOR.dtd['div'];
-  CKEDITOR.dtd['p'] = CKEDITOR.dtd['div'];
-  CKEDITOR.dtd.p['fn'] = 1;
-  CKEDITOR.dtd.p['ul'] = 1;
-  CKEDITOR.dtd.p['li'] = 1;
-  CKEDITOR.dtd.$block['fn'] = 1;
-  CKEDITOR.dtd.$blockLimit['fn'] = 1;
   
+  CKEDITOR.stylesSet.add('footnoteStyles', [
+    {name: 'Fake Bullet', element: 'span', attributes: {'class': 'fake-bullet'}},
+    {name: 'Fake Numbered Group', element: 'span', attributes: {'class': 'fake-numbered-group'}},
+    {name: 'Fake Numbered', element: 'span', attributes: {'class': 'fake-numbered'}},
+    {name: 'Fake Blockquote', element: 'span', attributes: {'class': 'fake-blockquote'}}
+  ]);
+
   CKEDITOR.plugins.add( 'footnotes',
   {
       requires : [ 'fakeobjects','dialog' ],
@@ -47,10 +46,10 @@
       },
       init: function( editor ) {
         editor.addCommand('createfootnotes', new CKEDITOR.dialogCommand('createfootnotes', {
-          allowedContent: 'fn[value]'
+          allowedContent: 'fn[value] span'
         }));
         editor.addCommand('editfootnotes', new CKEDITOR.dialogCommand('editfootnotes', {
-          allowedContent: 'fn[value]'
+          allowedContent: 'fn[value] span'
         }));
 
         // Drupal Wysiwyg requirement: The first argument to editor.ui.addButton()
@@ -93,6 +92,7 @@
       },
       afterInit : function( editor ) {
 
+        console.log('afterInit editor ',editor);
         var dataProcessor = editor.dataProcessor,
           dataFilter = dataProcessor && dataProcessor.dataFilter;
 
@@ -113,6 +113,7 @@
 
 CKEDITOR.plugins.footnotes = {
   createFootnote: function( editor, origElement, text, value) {
+    console.log('origElement ',origElement);
     var realElement;
     if (!origElement) {
       realElement = CKEDITOR.dom.element.createFromHtml('<fn></fn>');

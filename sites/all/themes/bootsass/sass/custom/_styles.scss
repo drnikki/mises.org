@@ -554,10 +554,8 @@ blockquote {
 }
 
 // CKEDITOR
-html[contenteditable="true"] {
-  body {
-    background-image: none;
-  }
+body.cke_editable {
+  background: $white none;
 }
 
 @media (max-width: $screen-sm) {
