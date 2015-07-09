@@ -5,6 +5,9 @@
 /* BODY */
 body {
   @include background-texture($body-bg,'../images/texture.jpg');
+  &.cke_editable {
+    background: $white none;
+  }
 }
 
 /* HEADER */
@@ -243,4 +246,30 @@ body {
 /* tommy removing breadcrumbs on library items */
 .node-library-item .easy-breadcrumb {
   display: none;
+}
+
+// Fake Footnote block elements
+span.fake-bullet {
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 20px;
+}
+span.fake-numbered-group {
+  counter-reset: item;
+  margin-left: 20px;
+}
+span.fake-numbered {
+  display: block;
+  margin-left: 20px;
+  position: relative;
+  &:before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    position: absolute;
+    left: -20px;
+  }
+}
+span.fake-blockquote {
+  display: block;
+  padding: 0 20px;
 }
