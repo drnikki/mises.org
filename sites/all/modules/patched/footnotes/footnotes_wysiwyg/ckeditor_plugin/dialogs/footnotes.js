@@ -25,7 +25,7 @@
             {
               id: 'value',
               type: 'text',
-              label: Drupal.t('Value (Footnote ID) :'),
+              label: Drupal.t('Footnote ID:'),
               labelLayout: 'horizontal',
               style: 'float:left;width:100px;',
               setup: function (element) {
