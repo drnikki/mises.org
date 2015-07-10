@@ -14,7 +14,7 @@
             {
               id: 'footnote',
               type: 'textarea',
-              label: Drupal.t('Footnote text :'),
+              label: Drupal.t('Footnote text tips:<br /><br />To create line breaks and simulate paragraphs, press Return key.<br /><br />To create bullets or blockquotes, select the text, click the Styles dropdown, and choose the style needed.<br />This works best when the line is already separated by a line break.<br />Repeat for each bullet or blockquote.<br /><br />To remove bullets or blockquotes, highlight the text again, click the Styles dropdown, and click the style name to deselect.<br /><br />To view and edit HTML, click Source. This helps to manually remove spans that create the fake bullets and blockquotes.<br >.'),
               onLoad : function () {
               },
               setup: function (element) {

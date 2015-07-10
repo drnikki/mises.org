@@ -2527,11 +2527,6 @@ body.live-video .main-content .shield .icon, body.icon-live-video .main-content 
 
 span.fake-bullet { display: list-item; list-style-type: disc; margin-left: 20px; }
 
-span.fake-numbered-group { counter-reset: item; margin-left: 20px; }
-
-span.fake-numbered { display: block; margin-left: 20px; position: relative; }
-span.fake-numbered:before { content: counter(item) ". "; counter-increment: item; position: absolute; left: -20px; }
-
 span.fake-blockquote { display: block; padding: 0 20px; }
 
 /*

@@ -22,10 +22,8 @@
 (function() {
   
   CKEDITOR.stylesSet.add('footnoteStyles', [
-    {name: 'Fake Bullet', element: 'span', attributes: {'class': 'fake-bullet'}},
-    {name: 'Fake Numbered Group', element: 'span', attributes: {'class': 'fake-numbered-group'}},
-    {name: 'Fake Numbered', element: 'span', attributes: {'class': 'fake-numbered'}},
-    {name: 'Fake Blockquote', element: 'span', attributes: {'class': 'fake-blockquote'}}
+    {name: 'Fake Blockquote', element: 'span', attributes: {'class': 'fake-blockquote'}},
+    {name: 'Fake Bullet', element: 'span', attributes: {'class': 'fake-bullet'}}
   ]);
 
   CKEDITOR.plugins.add( 'footnotes',
