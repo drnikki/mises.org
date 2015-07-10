@@ -25,7 +25,7 @@
             {
               id: 'value',
               type: 'text',
-              label: Drupal.t('Value :'),
+              label: Drupal.t('Value (Footnote ID) :'),
               labelLayout: 'horizontal',
               style: 'float:left;width:100px;',
               setup: function (element) {
@@ -54,6 +54,7 @@
           contentsCss: ['/sites/all/themes/bootsass/stylesheets/footnote_fakes.css'],
           toolbar: [
             { name: 'basicstyles', items : [ 'Bold','Italic', 'Underline', 'Link', 'Unlink', 'Styles', 'Source' ] },
+            { name: 'image', items : [ 'Image' ] },
           ],
           stylesSet: 'footnoteStyles',
           enterMode: CKEDITOR.ENTER_BR,
