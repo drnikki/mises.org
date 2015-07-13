@@ -2433,7 +2433,7 @@ a.external-link:hover span.glyphicon { background-color: #38709e; }
 
 #slideshow, #media, #image { margin-right: 20px; padding-bottom: 6px; width: 240px; }
 
-html[contenteditable="true"] body { background-image: none; }
+body.cke_editable { background: #fff none; }
 
 @media (max-width: 768px) { /* tommy removing breadcrumbs on mobile */
   .easy-breadcrumb { display: none; } }

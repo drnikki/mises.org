@@ -20,15 +20,12 @@
  */
 
 (function() {
-  //Add to HTML DTD
-  CKEDITOR.dtd['fn'] = CKEDITOR.dtd['div'];
-  CKEDITOR.dtd['p'] = CKEDITOR.dtd['div'];
-  CKEDITOR.dtd.p['fn'] = 1;
-  CKEDITOR.dtd.p['ul'] = 1;
-  CKEDITOR.dtd.p['li'] = 1;
-  CKEDITOR.dtd.$block['fn'] = 1;
-  CKEDITOR.dtd.$blockLimit['fn'] = 1;
   
+  CKEDITOR.stylesSet.add('footnoteStyles', [
+    {name: 'Fake Blockquote', element: 'span', attributes: {'class': 'fake-blockquote'}},
+    {name: 'Fake Bullet', element: 'span', attributes: {'class': 'fake-bullet'}}
+  ]);
+
   CKEDITOR.plugins.add( 'footnotes',
   {
       requires : [ 'fakeobjects','dialog' ],
@@ -47,10 +44,10 @@
       },
       init: function( editor ) {
         editor.addCommand('createfootnotes', new CKEDITOR.dialogCommand('createfootnotes', {
-          allowedContent: 'fn[value]'
+          allowedContent: 'fn[value] span'
         }));
         editor.addCommand('editfootnotes', new CKEDITOR.dialogCommand('editfootnotes', {
-          allowedContent: 'fn[value]'
+          allowedContent: 'fn[value] span'
         }));
 
         // Drupal Wysiwyg requirement: The first argument to editor.ui.addButton()

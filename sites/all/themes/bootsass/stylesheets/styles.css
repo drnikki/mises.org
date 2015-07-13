@@ -2433,7 +2433,7 @@ a.external-link:hover span.glyphicon { background-color: #38709e; }
 
 #slideshow, #media, #image { margin-right: 20px; padding-bottom: 6px; width: 240px; }
 
-html[contenteditable="true"] body { background-image: none; }
+body.cke_editable { background: #fff none; }
 
 @media (max-width: 768px) { /* tommy removing breadcrumbs on mobile */
   .easy-breadcrumb { display: none; } }
@@ -2452,6 +2452,7 @@ html[contenteditable="true"] body { background-image: none; }
 */
 /* BODY */
 body { background: #e0e3e4 url("../images/texture.jpg") center center repeat; }
+body.cke_editable { background: #fff none; }
 
 /* HEADER */
 .header { position: relative; }
@@ -2523,6 +2524,10 @@ body.live-video .main-content .shield .icon, body.icon-live-video .main-content 
 
 /* tommy removing breadcrumbs on library items */
 .node-library-item .easy-breadcrumb { display: none; }
+
+span.fake-bullet { display: list-item; list-style-type: disc; margin-left: 20px; }
+
+span.fake-blockquote { display: block; padding: 0 20px; }
 
 /*
 * Custom Styles for Home and Landing Pages
@@ -2804,14 +2809,14 @@ ul.accordion li { list-style: none; }
 /* Flex-block image */
 .node-flex-block img { max-width: 100%; height: auto; }
 
-/* Mises Wire Bloggers overrides */
-.page-blog-mises-wire-bloggers .view-display-id-blogger .read-more { display: none; }
-
 /*
 * Online Books
 */
 .view-book-content h2.book-title { font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; color: #00426b; }
 .view-book-content blockquote { font-size: 15px; }
+
+/* Mises Wire Bloggers overrides */
+.page-blog-mises-wire-bloggers .view-display-id-blogger .read-more { display: none; }
 
 /*
 * Custom Styles for Special Features
