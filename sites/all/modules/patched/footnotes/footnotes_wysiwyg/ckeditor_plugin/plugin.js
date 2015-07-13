@@ -90,7 +90,6 @@
       },
       afterInit : function( editor ) {
 
-        console.log('afterInit editor ',editor);
         var dataProcessor = editor.dataProcessor,
           dataFilter = dataProcessor && dataProcessor.dataFilter;
 
@@ -111,7 +110,6 @@
 
 CKEDITOR.plugins.footnotes = {
   createFootnote: function( editor, origElement, text, value) {
-    console.log('origElement ',origElement);
     var realElement;
     if (!origElement) {
       realElement = CKEDITOR.dom.element.createFromHtml('<fn></fn>');

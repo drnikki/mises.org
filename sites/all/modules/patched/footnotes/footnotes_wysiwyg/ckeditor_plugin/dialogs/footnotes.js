@@ -37,7 +37,6 @@
         }
       ],
       onShow : function() {
-        console.log('onShow this ',this);
         if (isEdit) {
           this.fakeObj = CKEDITOR.plugins.footnotes.getSelectedFootnote( editor );
           this.realObj = editor.restoreRealElement( this.fakeObj );
