@@ -14,7 +14,7 @@
             {
               id: 'footnote',
               type: 'textarea',
-              label: Drupal.t('Footnote text tips:<br /><br />To create line breaks and simulate paragraphs, press Return key.<br /><br />To create bullets or blockquotes, select the text, click the Styles dropdown, and choose the style needed.<br />This works best when the line is already separated by a line break.<br />Repeat for each bullet or blockquote.<br /><br />To remove bullets or blockquotes, highlight the text again, click the Styles dropdown, and click the style name to deselect.<br /><br />To view and edit HTML, click Source. This helps to manually remove spans that create the fake bullets and blockquotes.<br >.'),
+              label: Drupal.t('Footnote text tips:<br /><br />To create line breaks and simulate paragraphs, press Return key.<br /><br />To create bullets or blockquotes, select the text, click the Styles dropdown, and choose the style needed.<br />This works best when the line is already separated by a line break. Repeat for each bullet or blockquote.<br /><br />To remove bullets or blockquotes, highlight the text again, click the Styles dropdown, and click the style name to deselect.<br /><br />To move text below an image, press Return key after the image.<br /><br />To view and edit HTML, click Source. This helps to manually remove spans that create the fake bullets and blockquotes.<br />DO NOT ENTER THESE TAGS: P, OL, LI, BLOCKQUOTE, DIV, TABLE, H1-H6, HR, OR ANY OTHER BLOCK TAG.<br >.'),
               onLoad : function () {
               },
               setup: function (element) {
@@ -53,8 +53,7 @@
         CKEDITOR.replace(footnote_editor_id, {
           contentsCss: ['/sites/all/themes/bootsass/stylesheets/footnote_fakes.css'],
           toolbar: [
-            { name: 'basicstyles', items : [ 'Bold','Italic', 'Underline', 'Link', 'Unlink', 'Styles', 'Source' ] },
-            { name: 'image', items : [ 'Image' ] },
+            { name: 'basicstyles', items : [ 'Bold','Italic', 'Underline', 'Link', 'Unlink', 'Image', 'Styles', 'Source' ] },
           ],
           stylesSet: 'footnoteStyles',
           enterMode: CKEDITOR.ENTER_BR,
