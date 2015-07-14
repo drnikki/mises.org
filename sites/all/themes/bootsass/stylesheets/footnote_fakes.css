@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+}
+span.fake-bullet {
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 20px;
+}
+span.fake-numbered-group {
+  counter-reset: item;
+  margin-left: 20px;
+}
+span.fake-numbered {
+  display: list-item;
+  list-style-type: decimal;
+  margin-left: 20px;
+  position: relative;
+  &:before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    position: absolute;
+    left: -20px;
+  }
+}
+span.fake-blockquote {
+  display: block;
+  padding: 0 20px;
+}
