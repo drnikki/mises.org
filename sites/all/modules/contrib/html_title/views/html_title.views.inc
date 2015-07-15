@@ -1,9 +1,11 @@
 <?php
 
 /**
-* @file
-* Views definitions for html_title module.
-*/
+ * @file
+ * Views handler definitions for html_title module.
+ *
+ * @ingroup html_title
+ */
 
 /**
 * Implementation of hook_views_data_alter()
