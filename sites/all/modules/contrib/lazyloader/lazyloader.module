@@ -8,31 +8,13 @@
  * Note: Obviously, this will not work unless the javascript is on.
  *
  */
-define('LAZYLOADER_PATH', base_path() . drupal_get_path('module', 'lazyloader'));
 
-
-/**
- * Implements hook_init().
- *
- * Sets the defaults global
- *
- */
-function lazyloader_init() {
-
-  global $_lazyloader_defaults;
-  global $_lazyloader_set;
-
-  $_lazyloader_defaults = array(
-    'enabled'     => 1,  // always enabled by default
-    'distance'    => 0,  // 0 pixel distance to the viewable browser window before the actual image is loaded
-    'loader_icon' => 7,  // default loader icon
-    'placeholder' => '', // stand-in image before the actual image gets loaded
-    'exclude'     => '', // pages to exclude from lazyloader
-  );
-
-  $_lazyloader_set = variable_get('lazyloader', $_lazyloader_defaults);
-}
-
+define("LAZYLOADER_ENABLED", TRUE);
+define("LAZYLOADER_DISTANCE", 0);
+define("LAZYLOADER_ICON", 7);
+define("LAZYLOADER_PLACEHOLDER", '');
+define("LAZYLOADER_PATHS", "media/*/format-form\nadmin/*\nnode/add/*\nnode/*/edit");
+define("LAZYLOADER_EXCLUDE_OPTION", 'exclude');
 
 /**
  * Implements hook_menu().
@@ -71,16 +53,11 @@ function lazyloader_permission() {
 }
 
 
-/*
+/**
  * Implements hook_theme_registry_alter().
  */
 function lazyloader_theme_registry_alter(&$theme_registry) {
-
-  global $_lazyloader_set;
-
-  $settings = $_lazyloader_set;
-
-  if ($settings['enabled'] && !drupal_match_path($_GET['q'], $settings['exclude'])) {
+  if (variable_get('lazyloader_enabled', LAZYLOADER_ENABLED)) {
     $theme_registry['image']['function'] = 'lazyloader_image';
   }
 
@@ -110,77 +87,136 @@ function lazyloader_theme_registry_alter(&$theme_registry) {
  *   - title: The title text is displayed when the image is hovered in some
  *     popular browsers.
  *   - attributes: Associative array of attributes to be placed in the img tag.
+ * @return string
+ *  HTML for a lazyloaded image
  */
 function lazyloader_image($variables) {
-
-  global $_lazyloader_set;
-
-  $settings = $_lazyloader_set;
-
+  static $rdwimages_enabled, $image_placeholder_src;
   $attributes = $variables['attributes'];
   $noscript_attributes = $variables['attributes'];
 
-  if ($settings['enabled'] && !drupal_match_path($_GET['q'], $settings['exclude'])) {
+  $src = file_create_url($variables['path']);
+  if (_lazy_loader_enabled()) {
 
-    $attributes['data-src'] = file_create_url($variables['path']);
+    $attributes['data-src'] = $src;
+    if (!isset($image_placeholder_src)) {
+      // Path to dummy placeholder image, to be replaced by actual image.
+      $image_placeholder = trim(variable_get('lazyloader_placeholder', LAZYLOADER_PLACEHOLDER));
+      $image_placeholder_src = $image_placeholder ? base_path() . $image_placeholder : file_create_url(drupal_get_path('module', 'lazyloader') . '/image_placeholder.gif');
+    }
+    $attributes['src'] = $image_placeholder_src;
+    $noscript_attributes['src'] = $src;
 
-    // path to dummy placeholder image, to be replaced by actual image
-    $image_placeholder = !empty($settings['placeholder']) ? base_path() . trim($settings['placeholder']): LAZYLOADER_PATH . '/image_placeholder.gif';
-
-    $attributes['src'] = $image_placeholder;
-
-    $noscript_attributes['src'] = file_create_url($variables['path']);
-  }
-  else {
-    $attributes['src'] = file_create_url($variables['path']);
-  }
-
-  // responsive web design module
-  if (module_exists('rwdimages')) {
-    global $_rwdimages_set;
-
-    $rwdimages_settings = $_rwdimages_set;
-
-    if ($rwdimages_settings['enabled'] && !drupal_match_path($_GET['q'], $rwdimages_settings['exclude'])) {
+    // Integrate with Responsive Webdesign module.
+    if (!isset($rdwimages_enabled)) {
+      global $_rwdimages_set;
+      $rdwimages_enabled = module_exists('rdwimages') && $_rwdimages_set['enabled'];
+    }
+    if ($rdwimages_enabled) {
       $attributes['class'] = array('rwdimage');
     }
+
+  }
+  else {
+    $attributes['src'] = $src;
   }
 
   foreach (array('width', 'height', 'alt', 'title') as $key) {
-    if (isset($variables[$key])) $attributes[$key] = $variables[$key];
-    if (isset($variables[$key])) $noscript_attributes[$key] = $variables[$key];
+    if (isset($variables[$key])) {
+      $attributes[$key] = $variables[$key];
+    }
+    if (isset($variables[$key])) {
+      $noscript_attributes[$key] = $variables[$key];
+    }
   }
 
-  $noscript = '<noscript><img' . drupal_attributes($noscript_attributes) . ' /></noscript>';
+  $noscript = '';
+  if (!empty($attributes['data-src'])) {
+    $noscript = '<noscript><img' . drupal_attributes($noscript_attributes) . ' /></noscript>';
+  }
 
   return '<img' . drupal_attributes($attributes) . ' />' . $noscript;
 }
 
+/**
+ * Implements hook_page_build().
+ *
+ * Initialize the trigger for lazyloader.
+ */
+function lazyloader_page_build(&$vars) {
+  if (_lazy_loader_enabled()) {
+    // add noscript markup as a fallback
+    $vars['page_bottom']['lazyload']['#markup'] = <<<'NOSCRIPT'
+      <noscript>
+        <style type="text/css" media="all">
+          img[data-src] { display: none !important; }
+        </style>
+      </noscript>
+NOSCRIPT;
+
+    // inline load this js with ajax / page compatibility in mind
+    $distance = trim(variable_get('lazyloader_distance', LAZYLOADER_DISTANCE));
+    $icon = _lazyloader_icon_path();
+    $lazyloader_init = <<<Script
+      (function ($) {
+        Drupal.behaviors.lazyloader = {
+          attach: function (context, settings) {
+            $("img[data-src]").lazyloader({distance: {$distance}, icon: "{$icon}" });
+          }
+        };
+      }(jQuery));
+Script;
+
+    $vars['page_bottom']['lazyload']['#attached']['js'][] = array(
+      'data' => $lazyloader_init,
+      'type' => 'inline',
+      'scope' => 'footer',
+    );
+  }
+}
 
 /**
- * Implements hook_process_html().
+ * Helper function to determine whether the lazyloader is enabled in a page.
  *
- * Initialize the trigger for lazyloader
- *
+ * @return bool
  */
-function lazyloader_process_html(&$vars) {
-
-  global $_lazyloader_set;
-
-  $settings = $_lazyloader_set;
-
-  if ($settings['enabled'] && !drupal_match_path($_GET['q'], $settings['exclude'])) {
-
-    $icon = ($settings['loader_icon'] != 0) ? LAZYLOADER_PATH . '/loader/loader-' . $settings['loader_icon'] . '.gif': '';
-
-    $lazyloader_init = '
-      <noscript><style type="text/css" media="all">img[data-src] { display: none; }</style></noscript>
-      <script type="text/javascript">
-        jQuery(function($){
-          $("img[data-src]").lazyloader({distance: ' . trim($settings['distance']) . ', icon: "' . $icon . '" });
-        });
-      </script>';
-
-    $vars['page_bottom'] .= $lazyloader_init;
+function _lazy_loader_enabled() {
+  // Bail if lazyloader is disabled entirely.
+  if (!variable_get('lazyloader_enabled', LAZYLOADER_ENABLED)) {
+    return FALSE;
   }
+
+  // Convert path to lowercase. This allows comparison of the same path
+  // with different case. Ex: /Page, /page, /PAGE.
+  $pages = drupal_strtolower(variable_get('lazyloader_paths', LAZYLOADER_PATHS));
+  // Convert the Drupal path to lowercase
+  $path = drupal_strtolower(drupal_get_path_alias($_GET['q']));
+
+  // Compare the lowercase internal and lowercase path alias (if any).
+  $path_match = drupal_match_path($path, $pages);
+  if ($path != $_GET['q']) {
+    $path_match = $path_match || drupal_match_path($_GET['q'], $pages);
+  }
+
+  if (variable_get('lazyloader_exclude_option', LAZYLOADER_EXCLUDE_OPTION) === 'exclude') {
+    return !$path_match;
+  }
+  else {
+    return $path_match;
+  }
+}
+
+/**
+ * Helper function to get the loading icon.
+ */
+function _lazyloader_icon_path() {
+  $icon = variable_get('lazyloader_icon', LAZYLOADER_ICON);
+
+  if (!empty($icon)) {
+    $base = base_path();
+    $path = drupal_get_path('module', 'lazyloader');
+    return "{$base}{$path}/loader/loader-{$icon}.gif";
+  }
+
+  return '';
 }
