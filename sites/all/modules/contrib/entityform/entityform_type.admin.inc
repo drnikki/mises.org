@@ -49,7 +49,7 @@ function entityform_type_form($form, &$form_state, $entityform_type, $op = 'edit
     // Clear so most defaults.  Allows entityform type to use defaults.
     $entityform_type->clear_text_props();
   }
-  $form = _entityform_type_setttings_elements($entityform_type, $op);
+  $form = _entityform_type_settings_elements($entityform_type, $op);
   entityform_type_prepare_edit($entityform_type);
   $form['#entityform_type'] = $entityform_type;
   $form['label'] = array(
@@ -75,6 +75,8 @@ function entityform_type_form($form, &$form_state, $entityform_type, $op = 'edit
     ),
     '#weight' => -49,
     '#description' => t('A unique machine-readable name for this entityform type. It must only contain lowercase letters, numbers, and underscores.'),
+    // Don't allow changing machine name.
+    '#access' => empty($entityform_type->type),
   );
   $form['data']['#tree'] = TRUE;
 
@@ -281,7 +283,7 @@ function entityform_type_prepare_edit(&$entityform_type) {
 function entityform_settings($form, &$form_state) {
   //choose the default View for viewing for submissions
   $defaults = entity_get_controller('entityform_type')->create(array(), TRUE);
-  $form = _entityform_type_setttings_elements($defaults, 'defaults');
+  $form = _entityform_type_settings_elements($defaults, 'defaults');
   $form['#entityform_type'] = $defaults;
 
   // Call Drupal.menu_update_parent_list() to filter the list of
@@ -318,7 +320,7 @@ function entityform_settings($form, &$form_state) {
  * @return array
  *   Form elements
  */
-function _entityform_type_setttings_elements($entityform_type, $op) {
+function _entityform_type_settings_elements($entityform_type, $op) {
   $default_value_message = $op != 'defaults' ? ' ' . ENTITYFORM_TYPE_DEFAULT_PROP_TEXT : '';
   //****************DRAFT FIELDSET SETTINGS *********************//
   $form['data']['draft_set'] = array(
