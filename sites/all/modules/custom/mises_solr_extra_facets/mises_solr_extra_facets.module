@@ -97,6 +97,7 @@ function mises_solr_extra_facets_cron() {
     }
   }
   variable_set('mises_solr_extra_facets_last_updated', $last_updated);
+
 }
 
 /**
@@ -159,3 +160,88 @@ function _mises_solr_extra_facets_process_item($node) {
   node_save($node);
 }
 
+/**
+ * Implements hook_preprocess_search_result().
+ *
+ * Boost terms in searches.
+ */
+/* function mises_solr_extra_facets_apachesolr_query_alter(DrupalSolrQueryInterface $query) {
+  // I only want to see articles by the admin.
+  //
+  // NOTE: this "is_uid" filter does NOT refer to the English word "is"
+  // It is a combination of flags representing Integer-Single, which is
+  // abbreviated with the letters i and s.
+  //
+  // @see the <dynamicField> definitions in schema.xml or schema-solr3.xml
+  $qf = $query->getParam('qf');
+  $qf['7'] = 'taxonomy_names^0';
+  $query->replaceParam('qf', $qf);
+  $query->addParam('qf', 'ts_custom_taxonomy');
+  $taxonomy = taxonomy_get_tree('10', 0, 1);
+  foreach ($taxonomy as $key => $value) {
+    //term machine name
+    $term_name = preg_replace('@[^a-z0-9-]+@','_', strtolower($value->name));
+    //add field to document
+    $query->addParam('qf', 'ts_boost_taxonomy_' . $term_name . '^50');
+  }
+
+  dpm($query->getParams());
+} */
+
+function taxonomy_get_children_all($tid, $vid = 0, $key = 'tid'){
+  $c = taxonomy_get_children($tid, $vid, $key);
+  $result = array();
+  foreach ($c as $t => $d){
+    $result[$t] = $d;
+    $below = taxonomy_get_children_all($t, $vid, $key);
+    if (!empty($below)) {
+      foreach ($below as $nt => $nd){
+        $result[$nt] = $nd;
+      }
+    }
+  }
+  return $result;
+}
+
+function mises_solr_extra_facets_apachesolr_index_document_build(ApacheSolrDocument $document, $entity, $entity_type, $env_id) {
+  //$price = $entity->field_price;
+  if ($entity->type == 'library_item') {
+    $tid = $entity->field_library_item_tree[LANGUAGE_NONE][0]['tid'];
+    $taxonomy = taxonomy_get_tree('10', 0, 1);
+    $parents = taxonomy_get_parents($tid);
+
+    foreach ($taxonomy as $key => $value) {
+      //term machine name
+      $term_name = preg_replace('@[^a-z0-9-]+@','_', strtolower($value->name));
+      //add field to document
+      $document->addField('ts_boost_taxonomy_' . $term_name, '0');
+
+      $original_tid = array($key => $value);
+      $all_children = taxonomy_get_children_all($value->tid, '10'. 'tid');
+      $all_terms = $original_tid + $all_children;
+      //dpm($all_terms);
+      foreach ($all_terms as $k => $v) {
+        if ($v->tid == $tid) {
+          $document->setField('ts_boost_taxonomy_' . $term_name, array(0 => $entity->title . $entity->body . $value->name));
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function mises_solr_extra_facets_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'apachesolr_search_bias_form') {
+    foreach ($form['field_bias'] as $key => $value) {
+      if (substr($key, 0, 18) == 'ts_boost_taxonomy_') {
+        $label_begin = substr($key, 18);
+        $label = str_replace('_', ' ', $label_begin);
+        $label = ucfirst($label);
+        $form['field_bias'][$key]['#title'] = $value['#title'] = 'Library Item - ' . $label;
+      }
+    }
+    $form['field_bias']['ts_custom_taxonomy']['#access'] = FALSE;
+  }
+}
