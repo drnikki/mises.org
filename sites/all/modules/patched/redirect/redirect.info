@@ -1,7 +1,10 @@
 name = Redirect
-description = Allows users to redirect from old URLs to new URLs.
+description = Allows users to redirect from old URLs to new URLs. (Patched https://www.drupal.org/files/issues/redirect.circular-loops.1796596-172.patch)
 core = 7.x
+files[] = redirect.module
 files[] = redirect.controller.inc
+files[] = redirect.admin.inc
+files[] = redirect.install
 files[] = redirect.test
 files[] = views/redirect.views.inc
 ;files[] = views/redirect_handler_field_redirect_type.inc
@@ -13,9 +16,9 @@ files[] = views/redirect_handler_field_redirect_link_edit.inc
 files[] = views/redirect_handler_field_redirect_link_delete.inc
 configure = admin/config/search/redirect/settings
 
-; Information added by Drupal.org packaging script on 2015-07-08
-version = "7.x-1.0-rc3"
+; Information added by Drupal.org packaging script on 2014-07-23
+version = "7.x-1.0-rc1+8-dev"
 core = "7.x"
 project = "redirect"
-datestamp = "1436393342"
+datestamp = "1406137728"
 
