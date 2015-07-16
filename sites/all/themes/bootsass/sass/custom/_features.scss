@@ -46,8 +46,7 @@
     text-transform: uppercase;
   }
   span:not(.tag-label) + span:before {
-    padding-right: 3px;
-    content: ",";
+    content: ", ";
   }
   a {
     color: $gray;
