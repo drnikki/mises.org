@@ -1090,7 +1090,7 @@ function mises_library_item_field_default_field_instances() {
     'bundle' => 'library_item',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This field will be auto-populated to reflect the types of books available to this Library Item.',
+    'description' => 'All values in this field except "Foreign Translation" are auto-populated based on values in other fields to reflect the types of books available to this Library Item. "Foreign Translation" must be manually selected.',
     'display' => array(
       'audio_teaser' => array(
         'label' => 'above',
@@ -1176,7 +1176,7 @@ function mises_library_item_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 30,
     ),
   );
@@ -4545,6 +4545,7 @@ function mises_library_item_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('All transcripts for any media attached to this page should be entered in this field. This transcript is used in search indexing only and is not displayed on the site.');
+  t('All values in this field except "Foreign Translation" are auto-populated based on values in other fields to reflect the types of books available to this Library Item. "Foreign Translation" must be manually selected.');
   t('Audience');
   t('Austrian School');
   t('Author 1');
@@ -4578,7 +4579,6 @@ function mises_library_item_field_default_field_instances() {
   t('Source');
   t('Subtitle');
   t('Teaser Text');
-  t('This field will be auto-populated to reflect the types of books available to this Library Item.');
   t('Timely Content');
   t('Topics');
   t('Transcript');

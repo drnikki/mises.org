@@ -103,11 +103,12 @@ function mises_solr_extra_facets_cron() {
  * Checks whether any pdf, epub, or html content exists
  */
 function _mises_solr_extra_facets_needs_processing($lib_item_nid) {
-  $pdf_count = 0; $epub_count = 0; $html_count = 0;
+  $pdf_count = 0; $epub_count = 0; $html_count = 0; $print_count = 0;
   $pdf_count = db_select('field_data_field_pdf')->condition('entity_id', $lib_item_nid)->countQuery()->execute()->fetchField();
   $epub_count = db_select('field_data_field_epub')->condition('entity_id', $lib_item_nid)->countQuery()->execute()->fetchField();
   $html_count = db_select('field_data_field_online_text')->condition('entity_id', $lib_item_nid)->countQuery()->execute()->fetchField();
-  if ($pdf_count || $epub_count || $html_count) {
+  $print_count = db_select('field_data_field_link_to_external_listing_')->condition('entity_id', $node->nid)->countQuery()->execute()->fetchField();
+  if ($pdf_count || $epub_count || $html_count || $print_count) {
     return TRUE;
   }
 
@@ -130,7 +131,7 @@ function _mises_solr_extra_facets_needs_processing($lib_item_nid) {
  * Process taxonomy population for a given library item:
  */
 function _mises_solr_extra_facets_process_item($node) {
-  $pdf_count = 0; $epub_count = 0; $html_count = 0;
+  $pdf_count = 0; $epub_count = 0; $html_count = 0; $print_count = 0;
 
 
   // Check for media fields:
@@ -139,6 +140,9 @@ function _mises_solr_extra_facets_process_item($node) {
 
   // Check for HTML books:
   $html_count = db_select('field_data_field_online_text')->condition('entity_id', $node->nid)->countQuery()->execute()->fetchField();
+
+  // Check for print books:
+  $print_count = db_select('field_data_field_link_to_external_listing_')->condition('entity_id', $node->nid)->countQuery()->execute()->fetchField();
 
   // drupal_set_message('<pre>' . print_r($node, 1) . '</pre>');
 
@@ -153,6 +157,10 @@ function _mises_solr_extra_facets_process_item($node) {
   }
   if ($html_count) {
     $term = array_shift(taxonomy_get_term_by_name('Online Book', 'books'));
+    $node->field_books[LANGUAGE_NONE][] = array('target_id' => $term->tid);
+  }
+  if ($print_count) {
+    $term = array_shift(taxonomy_get_term_by_name('Available in Print', 'books'));
     $node->field_books[LANGUAGE_NONE][] = array('target_id' => $term->tid);
   }
 
