@@ -1090,7 +1090,7 @@ function mises_library_item_field_default_field_instances() {
     'bundle' => 'library_item',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'All values in this field except "Foreign Translation" are auto-populated based on values in other fields to reflect the types of books available to this Library Item. "Foreign Translation" must be manually selected.',
+    'description' => 'Available in Print, EPUB, Online Book and PDF are auto-populated based on values in other fields to reflect the types of books available to this Library Item. <br />"Audio" and "Foreign Translation" must be manually selected.',
     'display' => array(
       'audio_teaser' => array(
         'label' => 'above',
@@ -4545,10 +4545,10 @@ function mises_library_item_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('All transcripts for any media attached to this page should be entered in this field. This transcript is used in search indexing only and is not displayed on the site.');
-  t('All values in this field except "Foreign Translation" are auto-populated based on values in other fields to reflect the types of books available to this Library Item. "Foreign Translation" must be manually selected.');
   t('Audience');
   t('Austrian School');
   t('Author 1');
+  t('Available in Print, EPUB, Online Book and PDF are auto-populated based on values in other fields to reflect the types of books available to this Library Item. <br />"Audio" and "Foreign Translation" must be manually selected.');
   t('Bibliography Footnote');
   t('Body');
   t('Books');
