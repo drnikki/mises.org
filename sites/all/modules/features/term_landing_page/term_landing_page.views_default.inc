@@ -115,10 +115,10 @@ function term_landing_page_views_default_views() {
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'tid' => array(
+    'field_books_target_id_selective' => array(
       'bef_format' => 'bef_links',
       'more_options' => array(
-        'bef_select_all_none' => 0,
+        'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
         'any_label' => 'All',
@@ -126,7 +126,6 @@ function term_landing_page_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
-            1 => 'vocabulary',
             'secondary_label' => NULL,
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
@@ -166,7 +165,7 @@ function term_landing_page_views_default_views() {
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_books_target_id_selective' => array(
+    'field_books_target_id' => array(
       'bef_format' => 'bef_links',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
@@ -341,17 +340,16 @@ function term_landing_page_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Books (field_books) (selective) */
-  $handler->display->display_options['filters']['field_books_target_id_selective']['id'] = 'field_books_target_id_selective';
-  $handler->display->display_options['filters']['field_books_target_id_selective']['table'] = 'field_data_field_books';
-  $handler->display->display_options['filters']['field_books_target_id_selective']['field'] = 'field_books_target_id_selective';
-  $handler->display->display_options['filters']['field_books_target_id_selective']['ui_name'] = 'Books (field_books) (selective)';
-  $handler->display->display_options['filters']['field_books_target_id_selective']['group'] = 1;
-  $handler->display->display_options['filters']['field_books_target_id_selective']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_books_target_id_selective']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['field_books_target_id_selective']['expose']['label'] = 'Book Type';
-  $handler->display->display_options['filters']['field_books_target_id_selective']['expose']['identifier'] = 'book_type';
-  $handler->display->display_options['filters']['field_books_target_id_selective']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Books (field_books) */
+  $handler->display->display_options['filters']['field_books_target_id']['id'] = 'field_books_target_id';
+  $handler->display->display_options['filters']['field_books_target_id']['table'] = 'field_data_field_books';
+  $handler->display->display_options['filters']['field_books_target_id']['field'] = 'field_books_target_id';
+  $handler->display->display_options['filters']['field_books_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_books_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_books_target_id']['expose']['operator_id'] = 'field_books_target_id_op';
+  $handler->display->display_options['filters']['field_books_target_id']['expose']['operator'] = 'field_books_target_id_op';
+  $handler->display->display_options['filters']['field_books_target_id']['expose']['identifier'] = 'field_books_target_id';
+  $handler->display->display_options['filters']['field_books_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -363,9 +361,6 @@ function term_landing_page_views_default_views() {
     9 => 0,
     7 => 0,
   );
-  $handler->display->display_options['filters']['field_books_target_id_selective']['selective_display_field'] = 'field_books';
-  $handler->display->display_options['filters']['field_books_target_id_selective']['selective_display_sort'] = 'ASC';
-  $handler->display->display_options['filters']['field_books_target_id_selective']['selective_items_limit'] = '100';
   $handler->display->display_options['path'] = 'taxonomy/term/%';
 
   /* Display: Term Landing */
