@@ -348,7 +348,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['filters']['field_books_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_books_target_id']['expose']['operator_id'] = 'field_books_target_id_op';
   $handler->display->display_options['filters']['field_books_target_id']['expose']['operator'] = 'field_books_target_id_op';
-  $handler->display->display_options['filters']['field_books_target_id']['expose']['identifier'] = 'field_books_target_id';
+  $handler->display->display_options['filters']['field_books_target_id']['expose']['identifier'] = 'book_type';
   $handler->display->display_options['filters']['field_books_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
