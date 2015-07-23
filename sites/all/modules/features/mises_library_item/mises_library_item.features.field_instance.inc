@@ -1090,7 +1090,7 @@ function mises_library_item_field_default_field_instances() {
     'bundle' => 'library_item',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Available in Print, EPUB, Online Book and PDF are auto-populated based on values in other fields to reflect the types of books available to this Library Item. <br />"Audio" and "Foreign Translation" must be manually selected.',
+    'description' => 'EPUB, Online Book and PDF are auto-populated based on values in other fields to reflect the types of books available to this Library Item. <br />"Audio," "Print Edition" and "Translations" must be manually selected.',
     'display' => array(
       'audio_teaser' => array(
         'label' => 'above',
@@ -4548,13 +4548,13 @@ function mises_library_item_field_default_field_instances() {
   t('Audience');
   t('Austrian School');
   t('Author 1');
-  t('Available in Print, EPUB, Online Book and PDF are auto-populated based on values in other fields to reflect the types of books available to this Library Item. <br />"Audio" and "Foreign Translation" must be manually selected.');
   t('Bibliography Footnote');
   t('Body');
   t('Books');
   t('Citation');
   t('Copyright Info');
   t('Document Attachment');
+  t('EPUB, Online Book and PDF are auto-populated based on values in other fields to reflect the types of books available to this Library Item. <br />"Audio," "Print Edition" and "Translations" must be manually selected.');
   t('Editor’s Note');
   t('Enter title of the Online Text node that contains the HTML version of this Library Item. If a valid value is entered here, the "View HTML Version" link will appear in the "Get this Book/Digital Text" table.');
   t('Featured Content');
