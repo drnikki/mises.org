@@ -125,6 +125,11 @@ var Drupal = Drupal || {};
         //implementEqualHeight();
         textResizer();
         
+        // Add select field styling
+        $('select:not(#edit-book-type)').selectBox({
+            menuSpeed: 'fast'
+        });
+        
         //Smooth scrolling
         $(function() {
           $('a[href*=#]:not([href=#])').click(function() {
