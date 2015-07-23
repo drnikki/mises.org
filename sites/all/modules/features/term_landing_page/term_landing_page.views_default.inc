@@ -102,8 +102,9 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['css_class'] = 'landing-list';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'GO';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
       'allow_secondary' => 0,
@@ -115,7 +116,7 @@ function term_landing_page_views_default_views() {
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_books_target_id_selective' => array(
+    'field_books_target_id' => array(
       'bef_format' => 'bef_links',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
@@ -165,13 +166,175 @@ function term_landing_page_views_default_views() {
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_books_target_id' => array(
-      'bef_format' => 'bef_links',
+    'field_author_1_target_id' => array(
+      'bef_format' => 'default',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'All',
+        'any_label' => 'All Authors',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_topics_target_id' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All Topics',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_austrian_school_target_id' => array(
+      'bef_format' => 'default',
+      'slider_options' => array(
+        'bef_slider_min' => '0',
+        'bef_slider_max' => '99999',
+        'bef_slider_step' => '1',
+        'bef_slider_animate' => '',
+        'bef_slider_orientation' => 'horizontal',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => 'All Austrian School',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_level_target_id' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All Levels',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -246,6 +409,8 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['content'] = '<p class="text-right"><em>Displaying @start - @end of @total</em></p>';
+  /* Header: Global: Alpha Pagination */
+  $handler->display->display_options['header']['alpha_pagination']['pre_letter_path'] = 'title';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -350,6 +515,92 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['filters']['field_books_target_id']['expose']['operator'] = 'field_books_target_id_op';
   $handler->display->display_options['filters']['field_books_target_id']['expose']['identifier'] = 'book_type';
   $handler->display->display_options['filters']['field_books_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Field: Author (field_author_1) */
+  $handler->display->display_options['filters']['field_author_1_target_id']['id'] = 'field_author_1_target_id';
+  $handler->display->display_options['filters']['field_author_1_target_id']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['filters']['field_author_1_target_id']['field'] = 'field_author_1_target_id';
+  $handler->display->display_options['filters']['field_author_1_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_author_1_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_author_1_target_id']['expose']['operator_id'] = 'field_author_1_target_id_op';
+  $handler->display->display_options['filters']['field_author_1_target_id']['expose']['label'] = 'Author';
+  $handler->display->display_options['filters']['field_author_1_target_id']['expose']['operator'] = 'field_author_1_target_id_op';
+  $handler->display->display_options['filters']['field_author_1_target_id']['expose']['identifier'] = 'author';
+  $handler->display->display_options['filters']['field_author_1_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Topics (field_topics) */
+  $handler->display->display_options['filters']['field_topics_target_id']['id'] = 'field_topics_target_id';
+  $handler->display->display_options['filters']['field_topics_target_id']['table'] = 'field_data_field_topics';
+  $handler->display->display_options['filters']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['filters']['field_topics_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_topics_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['operator_id'] = 'field_topics_target_id_op';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['label'] = 'Topic';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['operator'] = 'field_topics_target_id_op';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['identifier'] = 'topic';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Austrian School (field_austrian_school) */
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['id'] = 'field_austrian_school_target_id';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['table'] = 'field_data_field_austrian_school';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['field'] = 'field_austrian_school_target_id';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['operator_id'] = 'field_austrian_school_target_id_op';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['label'] = 'Austrian School';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['operator'] = 'field_austrian_school_target_id_op';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['identifier'] = 'austrian_school';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Level (field_level) */
+  $handler->display->display_options['filters']['field_level_target_id']['id'] = 'field_level_target_id';
+  $handler->display->display_options['filters']['field_level_target_id']['table'] = 'field_data_field_level';
+  $handler->display->display_options['filters']['field_level_target_id']['field'] = 'field_level_target_id';
+  $handler->display->display_options['filters']['field_level_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['operator_id'] = 'field_level_target_id_op';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['label'] = 'Level';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['operator'] = 'field_level_target_id_op';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['identifier'] = 'level';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
