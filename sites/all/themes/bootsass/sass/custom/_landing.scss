@@ -179,3 +179,27 @@ body.mises-daily {
     display: none;  
   }
 }
+
+/* CATEGORY FILTERS */
+.landing-list {
+  .views-exposed-widget {
+    float: none;
+    padding: 0;
+    > label {
+      display: none;
+    }
+  }
+  .bef-select-as-links {
+    text-align: right;
+    .form-item {
+      display: inline-block;
+      a {
+        @extend .btn;
+        @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $brand-contrast-dark, $brand-contrast-dark);
+      }
+    }
+    > .form-item {
+      float: right;
+    }
+  }
+}
