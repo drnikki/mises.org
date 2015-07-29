@@ -11,6 +11,8 @@
 function salesforce_uninstall() {
   variable_del('salesforce_consumer_key');
   variable_del('salesforce_consumer_secret');
+  variable_del('salesforce_endpoint');
+  variable_del('salesforce_identity');
   variable_del('salesforce_instance_url');
   variable_del('salesforce_refresh_token');
 }
@@ -29,8 +31,10 @@ function salesforce_schema() {
  * Create the cache bin for Salesforce objects.
  */
 function salesforce_update_7300() {
-  $schema_name = 'cache_salesforce_object';
-  $schema[$schema_name] = drupal_get_schema_unprocessed('system', 'cache');
-  $schema[$schema_name]['description'] = 'Cache table for detailed information about specific Salesforce objects.';
-  db_create_table($schema_name, $schema[$schema_name]);
+  if (!db_table_exists('cache_salesforce_object')) {
+    $schema_name = 'cache_salesforce_object';
+    $schema[$schema_name] = drupal_get_schema_unprocessed('system', 'cache');
+    $schema[$schema_name]['description'] = 'Cache table for detailed information about specific Salesforce objects.';
+    db_create_table($schema_name, $schema[$schema_name]);
+  }
 }
