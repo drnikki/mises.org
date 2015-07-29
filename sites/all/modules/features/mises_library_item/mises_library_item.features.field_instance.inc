@@ -1090,7 +1090,7 @@ function mises_library_item_field_default_field_instances() {
     'bundle' => 'library_item',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This field will be auto-populated to reflect the types of books available to this Library Item.',
+    'description' => 'EPUB, Online Book and PDF are auto-populated based on values in other fields to reflect the types of books available to this Library Item. <br />"Audio," "Print Edition" and "Translations" must be manually selected.',
     'display' => array(
       'audio_teaser' => array(
         'label' => 'above',
@@ -1176,7 +1176,7 @@ function mises_library_item_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 30,
     ),
   );
@@ -4554,6 +4554,7 @@ function mises_library_item_field_default_field_instances() {
   t('Citation');
   t('Copyright Info');
   t('Document Attachment');
+  t('EPUB, Online Book and PDF are auto-populated based on values in other fields to reflect the types of books available to this Library Item. <br />"Audio," "Print Edition" and "Translations" must be manually selected.');
   t('Editor’s Note');
   t('Enter title of the Online Text node that contains the HTML version of this Library Item. If a valid value is entered here, the "View HTML Version" link will appear in the "Get this Book/Digital Text" table.');
   t('Featured Content');
@@ -4578,7 +4579,6 @@ function mises_library_item_field_default_field_instances() {
   t('Source');
   t('Subtitle');
   t('Teaser Text');
-  t('This field will be auto-populated to reflect the types of books available to this Library Item.');
   t('Timely Content');
   t('Topics');
   t('Transcript');
