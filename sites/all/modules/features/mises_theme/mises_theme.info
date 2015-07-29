@@ -255,5 +255,4 @@ features[variable][] = field_bundle_settings_field_collection_item__field_media_
 features[variable][] = field_bundle_settings_file__image
 features[variable][] = html_title_allowed_elements
 features[variable][] = tvi_all_default
-mtime = 1436557554
 project path = sites/all/modules/features

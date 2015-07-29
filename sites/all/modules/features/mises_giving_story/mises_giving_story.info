@@ -52,5 +52,4 @@ features[variable][] = node_options_giving_story
 features[variable][] = node_preview_giving_story
 features[variable][] = node_submitted_giving_story
 features_exclude[field_base][field_body] = field_body
-mtime = 1436557554
 project path = sites/all/modules/features

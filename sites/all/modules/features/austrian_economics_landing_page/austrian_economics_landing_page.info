@@ -55,4 +55,3 @@ features_exclude[field_instance][node-landing_page-field_teaser] = node-landing_
 features_exclude[field_instance][node-landing_page-field_teaser_header] = node-landing_page-field_teaser_header
 features_exclude[field_instance][node-landing_page-field_teaser_title] = node-landing_page-field_teaser_title
 features_exclude[node][landing_page] = landing_page
-mtime = 1436557554

@@ -43,5 +43,4 @@ features[field_instance][] = book_page-book_page-field_sub_page
 features[variable][] = menu_parent_book_digital_text
 features[views_view][] = book_content
 features_exclude[field_instance][node-book_digital_text-field_book_chapter] = node-book_digital_text-field_book_chapter
-mtime = 1436557554
 project path = sites/all/modules/features

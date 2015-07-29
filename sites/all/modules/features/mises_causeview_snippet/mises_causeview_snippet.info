@@ -1,7 +1,7 @@
 name = Causeview Snippet
 core = 7.x
 package = Content Types
-version = 7.x-1.2
+version = 7.x-1.3
 project = mises_causeview_snippet
 dependencies[] = better_formats
 dependencies[] = conditional_fields
@@ -35,5 +35,4 @@ features[variable][] = menu_parent_causeview_snippet
 features[variable][] = node_options_causeview_snippet
 features[variable][] = node_preview_causeview_snippet
 features[variable][] = node_submitted_causeview_snippet
-mtime = 1436557554
 project path = sites/all/modules/features

@@ -16,4 +16,3 @@ features[field_instance][] = node-causeview_snippet-field_code_snippet_image
 features[image][] = causeview_snippet_medium
 features[image][] = causeview_snippet_small
 features[image][] = causeview_snippet_wide
-mtime = 1436557554

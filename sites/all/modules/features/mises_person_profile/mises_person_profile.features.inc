@@ -43,5 +43,6 @@ function mises_person_profile_node_info() {
       'help' => t('Enter complete name in Full Name field. First Name and Last Name fields are used in searches and filters, so both fields are also required.'),
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

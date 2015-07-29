@@ -139,4 +139,3 @@ features_exclude[field_base][field_author_2] = field_author_2
 features_exclude[field_instance][node-library_item-field_austrian_school_of_economi] = node-library_item-field_austrian_school_of_economi
 features_exclude[field_instance][field_collection_item-field_media_collection-field_insert_after] = field_collection_item-field_media_collection-field_insert_after
 features_exclude[field_instance][node-library_item-field_author_2] = node-library_item-field_author_2
-mtime = 1436557554

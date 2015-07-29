@@ -43,4 +43,3 @@ features[variable][] = weight_enabled_solr_online_text_page
 features[variable][] = weight_menu_solr_online_text_page
 features[variable][] = weight_range_solr_online_text_page
 features[weight][] = solr_online_text_page
-mtime = 1436557554

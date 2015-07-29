@@ -7,4 +7,3 @@ dependencies[] = fe_nodequeue
 dependencies[] = nodequeue
 features[fe_nodequeue][] = economist_recommended_resources_
 features[features_api][] = api:2
-mtime = 1436557554

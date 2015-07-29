@@ -41,4 +41,3 @@ features[variable][] = weight_enabled_solr_online_text_chapter
 features[variable][] = weight_menu_solr_online_text_chapter
 features[variable][] = weight_range_solr_online_text_chapter
 features[weight][] = solr_online_text_chapter
-mtime = 1436557554

@@ -28,4 +28,3 @@ features[rules_config][] = entityform_notifications_contact_form_submission_admi
 features[variable][] = pathauto_entityform_contact_us_pattern
 features_exclude[entity_rule_setting][] = 2
 features_exclude[entity_rule_setting][] = 3
-mtime = 1436557554

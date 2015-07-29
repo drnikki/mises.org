@@ -30,5 +30,6 @@ function mises_causeview_snippet_node_info() {
       'help' => t('Only Senior Editors have permission to create and edit Causeview code snippets.'),
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

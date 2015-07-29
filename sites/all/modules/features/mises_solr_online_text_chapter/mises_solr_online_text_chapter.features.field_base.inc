@@ -17,14 +17,6 @@ function mises_solr_online_text_chapter_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_page_reference',
-    'foreign keys' => array(
-      'eck_book_page' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_book_page',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
