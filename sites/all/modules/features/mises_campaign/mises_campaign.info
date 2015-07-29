@@ -47,4 +47,5 @@ features[variable][] = menu_parent_campaign_
 features[variable][] = node_options_campaign_
 features[variable][] = node_preview_campaign_
 features[variable][] = node_submitted_campaign_
+mtime = 1436557554
 project path = sites/all/modules/features

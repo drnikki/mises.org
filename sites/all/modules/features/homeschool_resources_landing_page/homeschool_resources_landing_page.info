@@ -22,3 +22,4 @@ features[fe_nodequeue][] = homeschool_recommended_resources
 features[features_api][] = api:2
 features[menu_custom][] = menu-homeschool-sub-menu
 features_exclude[dependencies][ctools] = ctools
+mtime = 1436557554

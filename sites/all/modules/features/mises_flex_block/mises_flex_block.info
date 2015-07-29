@@ -54,3 +54,4 @@ features[field_instance][] = node-flex_block-field_weight
 features[node][] = flex_block
 features_exclude[dependencies][entity_box_box_with_image] = entity_box_box_with_image
 features_exclude[dependencies][top_bar_ads] = top_bar_ads
+mtime = 1436557554

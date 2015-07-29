@@ -36,4 +36,5 @@ features[variable][] = node_options_award
 features[variable][] = node_preview_award
 features[variable][] = node_submitted_award
 features_exclude[field_instance][node-award-field_type] = node-award-field_type
+mtime = 1436557554
 project path = sites/all/modules/features

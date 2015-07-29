@@ -29,4 +29,5 @@ features[variable][] = node_options_library_collection
 features[variable][] = node_preview_library_collection
 features[variable][] = node_submitted_library_collection
 features[variable][] = pathauto_node_library_collection_pattern
+mtime = 1436557554
 project path = sites/all/modules/features

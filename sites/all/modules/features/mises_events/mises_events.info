@@ -95,5 +95,5 @@ features[views_view][] = mises_event_helper
 features[views_view][] = mises_events
 features[views_view][] = photo_album
 features[views_view][] = upcoming_courses
-mtime = 1436557554
+mtime = 1436991897
 project path = sites/all/modules/features

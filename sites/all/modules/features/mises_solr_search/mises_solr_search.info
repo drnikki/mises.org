@@ -142,3 +142,4 @@ features[variable][] = apachesolr_search_default_search_page
 features[variable][] = apachesolr_search_mlt_blocks
 features[variable][] = apachesolr_site_hash
 features[variable][] = facetapi:block_cache:apachesolr@solr
+mtime = 1436557554

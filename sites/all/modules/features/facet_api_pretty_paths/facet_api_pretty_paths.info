@@ -11,3 +11,4 @@ features[features_api][] = api:2
 features[user_permission][] = administer facetapi pretty paths
 features[variable][] = facetapi_pretty_paths_searcher_apachesolr@solr
 features[variable][] = facetapi_pretty_paths_searcher_apachesolr@solr_options
+mtime = 1436557554

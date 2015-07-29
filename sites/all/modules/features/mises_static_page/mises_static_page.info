@@ -57,4 +57,5 @@ features[variable][] = node_preview_page
 features[variable][] = node_submitted_page
 features_exclude[field_base][body] = body
 features_exclude[field_instance][node-page-field_insert_after] = node-page-field_insert_after
+mtime = 1436557554
 project path = sites/all/modules/features

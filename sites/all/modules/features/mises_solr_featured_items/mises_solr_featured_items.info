@@ -8,3 +8,4 @@ dependencies[] = fe_nodequeue
 dependencies[] = mises_solr_featured_nodes
 features[fe_nodequeue][] = top_results_list
 features[features_api][] = api:2
+mtime = 1436557554

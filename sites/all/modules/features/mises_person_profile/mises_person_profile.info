@@ -92,4 +92,5 @@ features[views_view][] = term_entity_ref
 features_exclude[field_base][field_austrian_school] = field_austrian_school
 features_exclude[field_base][field_austrian_school_of_economi] = field_austrian_school_of_economi
 features_exclude[field_instance][node-person_profile-field_austrian_school_of_economi] = node-person_profile-field_austrian_school_of_economi
+mtime = 1436557554
 project path = sites/all/modules/features

@@ -9,4 +9,5 @@ dependencies[] = taxonomy
 dependencies[] = uuid
 features[features_api][] = api:2
 features[taxonomy][] = the_austrian_school_of_economics
+mtime = 1436557554
 project path = sites/all/modules/custom
