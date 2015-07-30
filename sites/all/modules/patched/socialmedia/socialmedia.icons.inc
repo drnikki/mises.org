@@ -11,6 +11,9 @@ function socialmedia_icon_style_options($for_widgets = TRUE, $platform = NULL) {
   if ($for_widgets) {
     $options[] = t('Default');
   }
+  if (!empty($iconset['icon api'])) {
+    return $options;
+  }
   foreach ($icons AS $iconset_name => $iconset) {
     if (socialmedia_iconset_is_installed($iconset_name)) {
       foreach ($iconset['styles'] AS $sid => $style) {
@@ -29,7 +32,13 @@ function socialmedia_icon_style_options($for_widgets = TRUE, $platform = NULL) {
 function socialmedia_iconset_is_installed($iconset) {
   
   $iconsets = socialmedia_iconset_info();
-  return file_exists(call_user_func($iconsets[$iconset]['path callback']));
+  if (!empty($iconset['icon api'])) {
+    return 1;
+  }
+  if (isset($iconsets[$iconset]['path callback'])) {
+    return file_exists(call_user_func($iconsets[$iconset]['path callback']));
+  }
+  return;
 }
 
 function socialmedia_icon_platforms($featured = FALSE) {
@@ -90,11 +99,11 @@ function socialmedia_iconset_info() {
 function socialmedia_socialmedia_iconset_info() {
   $icons['levelten_glossy'] = array(
     'name' => 'LevelTen Glossy',                                 // name of your icon set
-    'publisher' => 'LevelTen Interactive',                       // name of publisher  
-    'publisher url' => 'http://www.leveltendesign.com',          // url to publisher's site 
-    'styles' => array(                                           // different variants of icons available  
+    'publisher' => 'LevelTen Interactive',                       // name of publisher
+    'publisher url' => 'http://www.leveltendesign.com',          // url to publisher's site
+    'styles' => array(                                           // different variants of icons available
       '16x16' => '16x16',
-      '32x32' => '32x32', 
+      '32x32' => '32x32',
       '48x48' => '48x48', 
     ),
     'path callback' => 'socialmedia_icon_path_levelten_glossy',  // callback for icon urls
@@ -210,7 +219,7 @@ function socialmedia_socialmedia_iconset_info() {
 
 function socialmedia_icon_path_levelten_glossy($platform = 'twitter', $style = NULL) {
   $style = isset($style) ? $style : '32x32';
-  $path = drupal_get_path('module', 'socialmedia') . '/icons/levelten/glossy/' . $style . '/' . ((isset($pt[$platform]))? $pt[$platform] : $platform) . '.png'; 
+  $path = drupal_get_path('module', 'socialmedia') . '/icons/levelten/glossy/' . $style . '/' . ((isset($pt[$platform]))? $pt[$platform] : $platform) . '.png';
   return $path;
 }
 
@@ -242,7 +251,7 @@ function socialmedia_icon_path_thegforce($platform = 'twitter', $style = NULL) {
     'google' => 'Google',
     'googleplus' => 'Google',
     'lastfm' => 'LastFM',
-    'linkedin' => 'Linkedin',
+    'linkedin' => 'LinkedIn',
     'myspace' => 'Myspace',
     'reddit' => 'Reddit',
     'rss' => 'RSS',   

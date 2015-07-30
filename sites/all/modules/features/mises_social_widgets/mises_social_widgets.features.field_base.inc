@@ -17,7 +17,6 @@ function mises_social_widgets_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_creative_commons',
-    'foreign keys' => array(),
     'indexes' => array(
       'licence' => array(
         0 => 'licence',

@@ -28,4 +28,5 @@ features_exclude[variable][menu_parent_flex_block] = menu_parent_flex_block
 features_exclude[variable][node_options_flex_block] = node_options_flex_block
 features_exclude[variable][node_preview_flex_block] = node_preview_flex_block
 features_exclude[variable][node_submitted_flex_block] = node_submitted_flex_block
+mtime = 1436557554
 project path = sites/all/modules/features

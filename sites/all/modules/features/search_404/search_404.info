@@ -1,7 +1,7 @@
 name = Search 404
 core = 7.x
 package = Settings
-version = 7.x-1.0
+version = 7.x-1.1
 project = search_404
 dependencies[] = ctools
 dependencies[] = search404
@@ -25,3 +25,4 @@ features[variable][] = search404_regex
 features[variable][] = search404_skip_auto_search
 features[variable][] = search404_use_or
 features[variable][] = search404_use_search_engine
+mtime = 1436998140

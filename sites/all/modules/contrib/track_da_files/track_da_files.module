@@ -496,7 +496,7 @@ function track_da_files_tracking($uri) {
   if (isset($_GET['type'])) {
     $type = $_GET['type'];
   }
-  $query = "SELECT f.fid, f.filename, f.filemime, f.filesize FROM file_managed f WHERE f.uri = :uri";
+  $query = "SELECT f.fid, f.filename, f.filemime, f.filesize FROM {file_managed} f WHERE f.uri = :uri";
   $result = db_query($query, array(':uri' => $uri))->fetch();
   if (!empty($result)) {
     $filename = $result->filename;

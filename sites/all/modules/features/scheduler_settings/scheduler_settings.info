@@ -109,4 +109,5 @@ features[variable][] = scheduler_publish_revision_scholarship_
 features[variable][] = scheduler_publish_revision_social_media
 features[variable][] = scheduler_publish_revision_working_papers
 features[variable][] = scheduler_time_only_format
+mtime = 1436557554
 project path = sites/all/modules/features

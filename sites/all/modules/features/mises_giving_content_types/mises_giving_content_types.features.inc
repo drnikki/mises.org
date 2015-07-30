@@ -27,17 +27,9 @@ function mises_giving_content_types_image_default_styles() {
 
   // Exported image style: giving_feature_icon.
   $styles['giving_feature_icon'] = array(
-    'name' => 'giving_feature_icon',
     'label' => 'Giving Feature Icon',
     'effects' => array(
       3 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 64,
@@ -51,16 +43,9 @@ function mises_giving_content_types_image_default_styles() {
 
   // Exported image style: giving_full-width.
   $styles['giving_full-width'] = array(
-    'name' => 'giving_full-width',
     'label' => 'Giving Full-Width 753x283',
     'effects' => array(
       12 => array(
-        'label' => 'Scale and Smart Crop',
-        'help' => 'Similar to "Scale And Crop", but preserves the portion of the image with the most entropy.',
-        'effect callback' => 'smartcrop_scale_effect',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'smartcrop',
         'name' => 'smartcrop_scale_and_crop',
         'data' => array(
           'width' => 753,
@@ -74,17 +59,9 @@ function mises_giving_content_types_image_default_styles() {
 
   // Exported image style: giving_header.
   $styles['giving_header'] = array(
-    'name' => 'giving_header',
     'label' => 'Giving Header 753x260',
     'effects' => array(
       2 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 753,
@@ -97,16 +74,9 @@ function mises_giving_content_types_image_default_styles() {
 
   // Exported image style: giving_story.
   $styles['giving_story'] = array(
-    'name' => 'giving_story',
     'label' => 'Giving Story 350x220',
     'effects' => array(
       13 => array(
-        'label' => 'Scale and Smart Crop',
-        'help' => 'Similar to "Scale And Crop", but preserves the portion of the image with the most entropy.',
-        'effect callback' => 'smartcrop_scale_effect',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'smartcrop',
         'name' => 'smartcrop_scale_and_crop',
         'data' => array(
           'width' => 350,
@@ -151,5 +121,6 @@ function mises_giving_content_types_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

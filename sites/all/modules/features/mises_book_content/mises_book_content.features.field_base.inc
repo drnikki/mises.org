@@ -17,14 +17,6 @@ function mises_book_content_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_book_chapter',
-    'foreign keys' => array(
-      'eck_book_chapter' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_book_chapter',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -60,14 +52,6 @@ function mises_book_content_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_book_chapter_content',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -87,14 +71,6 @@ function mises_book_content_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_book_page_content',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -114,14 +90,6 @@ function mises_book_content_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_book_pages',
-    'foreign keys' => array(
-      'eck_book_page' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_book_page',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -157,14 +125,6 @@ function mises_book_content_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sub_page',
-    'foreign keys' => array(
-      'eck_book_page' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_book_page',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',

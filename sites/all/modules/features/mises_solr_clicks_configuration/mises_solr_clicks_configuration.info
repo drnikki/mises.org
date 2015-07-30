@@ -13,3 +13,4 @@ features[features_api][] = api:2
 features[variable][] = mises_solr_clicks_analytics_frequency_hours
 features[variable][] = mises_solr_clicks_analytics_max_results
 features[variable][] = mises_solr_clicks_analytics_timespan_days
+mtime = 1436557554
