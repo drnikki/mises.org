@@ -963,21 +963,6 @@ function mises_schema_org_settings_rdf_default_mappings() {
     'field_hidden_solr_content' => array(
       'predicates' => array(),
     ),
-    'field_featured_mises_view' => array(
-      'predicates' => array(),
-    ),
-    'field_featured_mises_weekend' => array(
-      'predicates' => array(),
-    ),
-    'field_featured_book' => array(
-      'predicates' => array(),
-    ),
-    'field_featured_video' => array(
-      'predicates' => array(),
-    ),
-    'field_featured_content' => array(
-      'predicates' => array(),
-    ),
   );
 
   // Exported RDF mapping: membership_level

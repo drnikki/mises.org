@@ -3,11 +3,11 @@ description = Enables limited HTML markup in node titles.
 core = 7.x
 
 ; Views Handlers
-files[] = views/html_title.views.inc
 files[] = views/handlers/html_title_handler_field_node_title.inc
-; Information added by Drupal.org packaging script on 2014-03-17
-version = "7.x-1.2"
+
+; Information added by Drupal.org packaging script on 2014-10-28
+version = "7.x-1.4"
 core = "7.x"
 project = "html_title"
-datestamp = "1395081840"
+datestamp = "1414509830"
 

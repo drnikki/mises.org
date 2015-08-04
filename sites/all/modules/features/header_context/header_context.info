@@ -12,4 +12,5 @@ features[ctools][] = context:context:3
 features[features_api][] = api:2
 features_exclude[dependencies][context] = context
 features_exclude[dependencies][top_bar_ads] = top_bar_ads
+mtime = 1436557554
 project path = sites/all/modules/features

@@ -4,6 +4,9 @@
 .img-responsive img {
   @extend .img-responsive;
   width: 100%;
+  &[src$='image_placeholder.gif'] {
+    width: auto;
+  }
 }
 .img-rounded img {
   @extend .img-rounded;

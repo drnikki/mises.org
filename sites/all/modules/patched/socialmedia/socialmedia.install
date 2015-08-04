@@ -53,6 +53,7 @@ function socialmedia_schema() {
       'data' => array(
         'description' => 'Profile data',
         'type' => 'text',
+        //'serialize' => TRUE, // TODO set field to serialize
         'not null' => TRUE,
       ),
     ),
@@ -63,4 +64,51 @@ function socialmedia_schema() {
   );
 
   return $schema;
+}
+
+/**
+ * Converts AddThis username to pubid & adds userid to profiles
+ */
+function socialmedia_update_7001() {
+
+
+  // convert addthis username to pubid
+  $record = db_select('socialmedia_profile', 'p')
+    ->fields('p')
+    ->condition('platform', 'addthis')
+    ->execute()
+    ->fetch();
+  $record->data = unserialize($record->data);
+  if (isset($record->data['username'])) {
+    $record->data['pubid'] = $record->data['username'];
+  }
+  $record->data = serialize($record->data);
+  drupal_write_record('socialmedia_profile', $record, 'smid');
+
+  // create userid in standard profiles
+  $pubs = array(
+    'facebook',
+    'flickr',
+    'googleplus',
+    'pinterest',
+    'linkedin',
+    'pinterest',
+    'twitter',
+    'vimeo',
+    'youtube',
+  );
+  foreach ($pubs AS $pub) {
+    $result = db_select('socialmedia_profile', 'p')
+      ->fields('p')
+      ->condition('platform', $pub)
+      ->execute();
+    while ($record = $result->fetchObject()) {
+      $record->data = unserialize($record->data);
+      if (isset($record->data['username'])) {
+        $record->data['userid'] = $record->data['username'];
+        $record->data = serialize($record->data);
+        drupal_write_record('socialmedia_profile', $record, 'smid');
+      }
+    }
+  }
 }

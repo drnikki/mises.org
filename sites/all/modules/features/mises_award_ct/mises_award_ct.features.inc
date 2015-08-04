@@ -30,5 +30,6 @@ function mises_award_ct_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

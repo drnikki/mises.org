@@ -24,3 +24,15 @@ table#socialmedia-iconsets td {
   float: right;
   width: 50%
 }
+
+/* divide platform selectors into two columns */
+.form-item-socialmedia-platforms-site {
+  width: 50%;
+  padding-right: 20px;
+  float: left;
+}
+
+.form-item-socialmedia-platforms-user {
+    width: 50%;
+    float: left;
+}

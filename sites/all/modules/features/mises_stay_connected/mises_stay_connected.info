@@ -8,3 +8,4 @@ dependencies[] = menu
 dependencies[] = menu_icons
 features[features_api][] = api:2
 features[menu_custom][] = menu-mises-social-icons
+mtime = 1436557554

@@ -44,6 +44,7 @@ function social_media_hub_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'social_media',
@@ -63,17 +64,9 @@ function social_media_hub_image_default_styles() {
 
   // Exported image style: stay_connected_global.
   $styles['stay_connected_global'] = array(
-    'name' => 'stay_connected_global',
     'label' => 'Stay Connected Global',
     'effects' => array(
       1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 45,
@@ -87,17 +80,9 @@ function social_media_hub_image_default_styles() {
 
   // Exported image style: stay_connected_sidebar.
   $styles['stay_connected_sidebar'] = array(
-    'name' => 'stay_connected_sidebar',
     'label' => 'Stay Connected Sidebar',
     'effects' => array(
       2 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 23,
@@ -126,6 +111,7 @@ function social_media_hub_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
 

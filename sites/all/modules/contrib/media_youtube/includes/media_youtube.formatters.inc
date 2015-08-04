@@ -55,7 +55,8 @@ function media_youtube_file_formatter_info() {
 function media_youtube_file_formatter_video_view($file, $display, $langcode) {
   $scheme = file_uri_scheme($file->uri);
 
-  if ($scheme == 'youtube') {
+  // WYSIWYG does not yet support video inside a running editor instance.
+  if ($scheme == 'youtube' && empty($file->override['wysiwyg'])) {
     $element = array(
       '#theme' => 'media_youtube_video',
       '#uri' => $file->uri,
@@ -245,7 +246,7 @@ function media_youtube_file_formatter_image_view($file, $display, $langcode) {
     if (empty($image_style) || !isset($valid_image_styles[$image_style])) {
       $element = array(
         '#theme' => 'image',
-        '#path' => $wrapper->getOriginalThumbnailPath(),
+        '#path' => str_replace('http:', '', $wrapper->getOriginalThumbnailPath()),
         '#alt' => isset($file->override['attributes']['alt']) ? $file->override['attributes']['alt'] : $file->filename,
       );
     }

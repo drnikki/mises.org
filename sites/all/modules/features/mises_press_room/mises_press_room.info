@@ -25,3 +25,4 @@ features_exclude[field_base][field_featured_nodes] = field_featured_nodes
 features_exclude[field_base][field_featured_videos] = field_featured_videos
 features_exclude[field_instance][node-landing_page-field_featured_nodes] = node-landing_page-field_featured_nodes
 features_exclude[field_instance][node-landing_page-field_featured_videos] = node-landing_page-field_featured_videos
+mtime = 1436557554

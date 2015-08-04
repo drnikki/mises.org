@@ -26,7 +26,6 @@ class views_plugin_ds_fields_view extends views_plugin_row {
     if (strpos($this->base_table, 'eck_') === 0) {
       // Base tables of entities created by entity construction kit (eck)
       // are prefixed with 'eck_' and the base field is always 'id'.
-      $this->entity_type = str_replace('eck_', '', $this->base_table);
       return 'id';
     }
 
@@ -42,6 +41,7 @@ class views_plugin_ds_fields_view extends views_plugin_row {
       'commerce_product' => 'product_id',
       'commerce_line_item' => 'line_item_id',
       'civicrm_event' => 'id',
+      'field_collection_item' => 'item_id',
     );
     return isset($base_table_fields[$this->base_table]) ? $base_table_fields[$this->base_table] : 'nid';
   }

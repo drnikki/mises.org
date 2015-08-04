@@ -10,7 +10,11 @@
  * 
  */
 function socialmedia_admin_setup($step = 0) {
-  if (!$step) {
+  if (!module_exists('block')) {
+  	drupal_set_message(t('The Block module must be enabled before using this wizard.', 'error'));
+  	return '';
+  }
+	if (!$step) {
     $step = 0;
   }
   $form = drupal_get_form('socialmedia_setup_' . $step . '_form');
