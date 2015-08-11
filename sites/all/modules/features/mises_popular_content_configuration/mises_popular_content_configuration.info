@@ -15,3 +15,4 @@ features[variable][] = mises_popular_content_analytics_frequency_hours
 features[variable][] = mises_popular_content_analytics_max_results
 features[variable][] = mises_popular_content_analytics_path_filter
 features[variable][] = mises_popular_content_analytics_timespan_days
+mtime = 1436557554

@@ -16,6 +16,10 @@ class ViewsConditionalHandler extends views_handler_field {
     6 => 'NOT empty',
     7 => 'Contains',
     8 => 'Does NOT contain',
+    9 => 'Length Equal to',
+    10 => 'Length NOT equal to',
+    11 => 'Length Greater than',
+    12 => 'Length Less than',
   );
 
   /**
@@ -30,7 +34,7 @@ class ViewsConditionalHandler extends views_handler_field {
     $options['equalto'] = array('default' => '');
     $options['then'] = array('default' => '');
     $options['or'] = array('default' => '');
-    $options['strip_tags'] = array('default' => FALSE); /* patch */
+    $options['strip_tags'] = array('default' => FALSE);
 
     return $options;
   }
@@ -46,10 +50,15 @@ class ViewsConditionalHandler extends views_handler_field {
     // Display all labels weighted less than the current label.
     $fields = array(
       0 => '- ' . t('no field selected') . ' -',
-    ) + $this->view->display_handler->get_field_labels();
-
-    // We only use fields up to (not including) this one.
-    unset($fields[$this->options['id']]);
+    );
+    foreach ($this->view->display_handler->get_handlers('field') as $field => $handler) {
+      // We only use fields up to (not including) this one.
+      if ($field == $this->options['id']) {
+        break;
+      }
+      $title = $handler->ui_name();
+      $fields[$field] = "[$field] == $title";
+    }
 
     $form['if'] = array(
       '#type' => 'select',
@@ -73,24 +82,25 @@ class ViewsConditionalHandler extends views_handler_field {
     );
 
     $form['then'] = array(
-      '#type' => 'textfield',
+      '#type' => 'textarea',
       '#title' => t('Then output this...'),
       '#description' => t('Input what should be output.  Replacement variables may be used.'),
       '#default_value' => $this->options['then'],
     );
 
     $form['or'] = array(
-      '#type' => 'textfield',
+      '#type' => 'textarea',
       '#title' => t('Otherwise, output this...'),
       '#description' => t('Input what should be output if the above conditions do NOT evaluate to true.'),
       '#default_value' => $this->options['or'],
     );
 
-    $form['strip_tags'] = array( /* patched based on https://drupal.org/node/2097635#comment-7985697 */
+    $form['strip_tags'] = array(
       '#type' => 'checkbox',
       '#title' => t('Strip html tags from the output'),
       '#default_value' => $this->options['strip_tags'],
     );
+
 
     $form['replacements'] = array(
       '#type' => 'fieldset',
@@ -109,8 +119,13 @@ class ViewsConditionalHandler extends views_handler_field {
       'DATE_UNIX => Current date / time, in UNIX timestamp format (' . REQUEST_TIME . ')',
       'DATE_STAMP => Current date / time, in standard format (' . format_date(REQUEST_TIME) . ')',
     );
-    foreach ($this->view->display_handler->get_field_labels() as $item => $title) {
-      $items[] = "[$item] => $title";
+    foreach ($this->view->display_handler->get_handlers('field') as $field => $handler) {
+      // We only use fields up to (not including) this one.
+      if ($field == $this->options['id']) {
+        break;
+      }
+      $title = $handler->ui_name();
+      $items[] = "[$field] == $title";
     }
 
     $form['replacements']['variables'] = array(
@@ -130,7 +145,8 @@ class ViewsConditionalHandler extends views_handler_field {
       if (empty($values['condition'])) {
         form_set_error('condition', t("Please select a conditional operator."));
       }
-      if (empty($values['equalto']) && !in_array($values['condition'], array(5, 6))) {
+      // We using there is_numeric because values '0', '0.0' counting as empty in PHP language.
+      if (empty($values['equalto']) && !in_array($values['condition'], array(5, 6)) && !is_numeric($values['equalto'])) {
         form_set_error('condition', t("Please specify something to compare with."));
       }
     }
@@ -140,13 +156,14 @@ class ViewsConditionalHandler extends views_handler_field {
    * Defines summary text for Fields category in Views.
    */
   public function admin_summary() {
-    if (!empty($this->options['if']) && !empty($this->options['condition']) && (!empty($this->options['equalto']) || in_array($this->options['condition'], array(5, 6))) && trim($this->options['then']) != '') {
+    // We using there is_numeric because values '0', '0.0' counting as empty in PHP language.
+    if (!empty($this->options['if']) && !empty($this->options['condition']) && (!empty($this->options['equalto']) || in_array($this->options['condition'], array(5, 6)) || is_numeric($this->options['equalto'])) && trim($this->options['then']) != '') {
       return t('If !if is !condition !equalto, output !then, else output !or', array(
         '!if' => $this->options['if'],
         '!condition' => $this->conditions[$this->options['condition']],
         '!equalto' => $this->options['equalto'],
-        '!then' => $this->options['then'],
-        '!or' => $this->options['or'],
+        '!then' => strip_tags($this->options['then']),
+        '!or' => strip_tags($this->options['or']),
       ));
     }
     else {
@@ -171,37 +188,9 @@ class ViewsConditionalHandler extends views_handler_field {
   /**
    * Cleans a variable for handling later.
    */
-  public function clean_var($var, $key) {
-    //$f = array();
-    //if (isset($var->view->query->pager->display->handler->options['fields'][$key])) {
-    //  $f = $var->view->query->pager->display->handler->options['fields'][$key];
-    //}
-
-    //$unparsed = trim($var->last_render);
-		$unparsed = isset($var->last_render) ? trim($var->last_render) : ''; // Updated per https://drupal.org/files/removed_undefined_notices-2046695-2_0.patch
-    //$parse = TRUE;
-    //if (!empty($f['element_type'])) {
-    //  $parse = FALSE;
-    //}
-
-    //if (isset($f['alter']['make_link']) && $f['alter']['make_link'] == 1) {
-    //  $parse = FALSE;
-    //}
-
-    //if (isset($f['alter']['prefix']) || isset($f['alter']['suffix'])) {
-    //  $parse = FALSE;
-    //}
-
-    //if ($parse) {
-    //  $unparsed = strip_tags($unparsed);
-    //}
-
-    // patched based on https://drupal.org/node/2097635#comment-7985697 and https://drupal.org/files/removed_undefined_notices-2046695-2_0.patch */
-    if ($this->options['strip_tags']) {
-      $unparsed = strip_tags($unparsed);
-    }
-
-    return trim($unparsed);
+  public function clean_var($var) {
+    $unparsed = isset($var->last_render) ? $var->last_render : '';
+    return $this->options['strip_tags'] ? trim(strip_tags($unparsed)) : trim($unparsed);
   }
 
   /**
@@ -220,37 +209,46 @@ class ViewsConditionalHandler extends views_handler_field {
     // Search through field information for possible replacement variables.
     foreach ($this->view->display_handler->get_field_labels() as $key => $var) {
       // If we find a replacement variable, replace it.
+      if (strpos($equalto, "[$key]") !== FALSE) {
+        $field = $this->clean_var($fields[$key]);
+        $equalto = str_replace("[$key]", $field, $equalto);
+      }
       if (strpos($then, "[$key]") !== FALSE) {
-        $field = $this->clean_var($fields[$key], $key);
+        $field = $this->clean_var($fields[$key]);
         $then = str_replace("[$key]", $field, $then);
       }
-      elseif (strpos($or, "[$key]") !== FALSE) {
-        $field = $this->clean_var($fields[$key], $key);
+      if (strpos($or, "[$key]") !== FALSE) {
+        $field = $this->clean_var($fields[$key]);
         $or = str_replace("[$key]", $field, $or);
       }
     }
 
     // If we find a date stamp replacement, replace that.
+    if (strpos($equalto, 'DATE_STAMP') !== FALSE) {
+      $equalto = str_replace('DATE_STAMP', format_date(REQUEST_TIME), $equalto);
+    }
     if (strpos($then, 'DATE_STAMP') !== FALSE) {
       $then = str_replace('DATE_STAMP', format_date(REQUEST_TIME), $then);
     }
-    elseif (strpos($then, 'DATE_STAMP') !== FALSE) {
+    if (strpos($or, 'DATE_STAMP') !== FALSE) {
       $or = str_replace('DATE_STAMP', format_date(REQUEST_TIME), $or);
     }
 
     // If we find a unix date stamp replacement, replace that.
+    if (strpos($equalto, 'DATE_UNIX') !== FALSE) {
+      $equalto = str_replace('DATE_UNIX', REQUEST_TIME, $equalto);
+    }
     if (strpos($then, 'DATE_UNIX') !== FALSE) {
       $then = str_replace('DATE_UNIX', REQUEST_TIME, $then);
     }
-    elseif (strpos($or, 'DATE_UNIX') !== FALSE) {
+    if (strpos($or, 'DATE_UNIX') !== FALSE) {
       $or = str_replace('DATE_UNIX', REQUEST_TIME, $or);
     }
 
     // Strip tags on the "if" field.  Otherwise it appears to
     // output as <div class="xxx">Field data</div>...
-    // ...which of course makes it dificult to compare.
-    //$r = trim(strip_tags($fields["$if"]->last_render, '<img>'));
-		$r = isset($fields["$if"]->last_render) ? trim(strip_tags($fields["$if"]->last_render, '<img>')) : NULL; // Updated per https://drupal.org/files/removed_undefined_notices-2046695-2_0.patch
+    // ...which of course makes it difficult to compare.
+    $r = isset($fields["$if"]->last_render) ? trim(strip_tags($fields["$if"]->last_render, '<img>')) : NULL;
 
     // Run conditions.
     switch ($condition) {
@@ -316,7 +314,7 @@ class ViewsConditionalHandler extends views_handler_field {
 
       // Contains
       case 7:
-        if (stripos($r, $equalto) !== FALSE) {
+        if (mb_stripos($r, $equalto) !== FALSE) {
           return $then;
         }
         else {
@@ -326,7 +324,47 @@ class ViewsConditionalHandler extends views_handler_field {
 
       // Does NOT contain
       case 8:
-        if (stripos($r, $equalto) === FALSE) {
+        if (mb_stripos($r, $equalto) === FALSE) {
+          return $then;
+        }
+        else {
+          return $or;
+        }
+        break;
+        
+      // Length Equal to.
+      case 9:
+        if (mb_strlen($r) == $equalto) {
+          return $then;
+        }
+        else {
+          return $or;
+        }
+        break;
+
+      // Length Not equal to.
+      case 10:
+        if (mb_strlen($r) !== $equalto) {
+          return $then;
+        }
+        else {
+          return $or;
+        }
+        break;
+
+      // Length Greater than.
+      case 11:
+        if (mb_strlen($r) > $equalto) {
+          return $then;
+        }
+        else {
+          return $or;
+        }
+        break;
+
+      // Length Less than.
+      case 12:
+        if (mb_strlen($r) < $equalto) {
           return $then;
         }
         else {

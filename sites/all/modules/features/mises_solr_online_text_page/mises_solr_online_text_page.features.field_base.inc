@@ -17,14 +17,6 @@ function mises_solr_online_text_page_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_chapter_reference',
-    'foreign keys' => array(
-      'eck_book_chapter' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_book_chapter',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -58,14 +50,6 @@ function mises_solr_online_text_page_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_library_item_reference',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',

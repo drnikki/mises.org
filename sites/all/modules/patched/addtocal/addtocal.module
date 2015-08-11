@@ -62,15 +62,8 @@ function addtocal_field_formatter_info() {
         'multiple_from' => '',
         'multiple_to' => '',
         'fromto' => 'both',
-        'location' => array(
-          'field' => -1,
-          'tokenized' => '',
-        ),
-        'description' => array(
-          'field' => -1,
-          'tokenized' => '',
-        ),
-        'description_tokenized' => '',
+        'location_field' => -1,
+        'description_field' => -1,
         'past_events' => FALSE,
       ),
     ),
@@ -140,62 +133,32 @@ function addtocal_field_formatter_settings_form($field, $instance, $view_mode, $
     'addressfield_default',
     'addressfield_standard',
   );
+
   foreach ($field_list as $field) {
     if (in_array($field['widget']['type'], $location_field_types)) {
       $location_options[$field['field_name']] = $field['label'];
     }
+
     if ($field['widget']['type'] == 'text_textarea' || $field['widget']['type'] == 'text_textarea_with_summary') {
       $description_options[$field['field_name']] = $field['label'];
     }
   }
-  $tokens_enabled = module_exists('token');
-  if ($tokens_enabled) {
-    $location_options['tokenize output'] = 'Use Tokens';
-    $description_options['tokenize output'] = 'Use Tokens';
-  }
 
-  $element['location'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Location'),
-    '#collapsible' => TRUE,
-    '#weight' => 0,
-  );
-  $element['location']['field'] = array(
+  $element['location_field'] = array(
     '#title' => t('Location Field:'),
     '#type' => 'select',
     '#options' => $location_options,
-    '#default_value' => $settings['location']['field'],
+    '#default_value' => $settings['location_field'],
     '#description' => 'A field to use as the location for calendar events.',
     '#weight' => 0,
   );
-  $element['location']['tokenized'] = array(
-    '#title' => t('Tokenized Location Contents:'),
-    '#type' => 'textarea',
-    '#default_value' => isset($settings['location']['tokenized']) ? $settings['location']['tokenized'] : '',
-    '#description' => 'You can insert static text or use tokens (see the token chart below).',
-    '#weight' => 1,
-  );
 
-
-  $element['description'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Description'),
-    '#collapsible' => TRUE,
-    '#weight' => 1,
-  );
-  $element['description']['field'] = array(
+  $element['description_field'] = array(
     '#title' => t('Description Field:'),
     '#type' => 'select',
     '#options' => $description_options,
-    '#default_value' => $settings['description']['field'],
+    '#default_value' => $settings['description_field'],
     '#description' => 'A field to use as the description for calendar events.<br />The contents used from this field will be truncated to 1024 characters.',
-    '#weight' => 0,
-  );
-  $element['description']['tokenized'] = array(
-    '#title' => t('Tokenized Description Contents:'),
-    '#type' => 'textarea',
-    '#default_value' => isset($settings['description']['tokenized']) ? $settings['description']['tokenized'] : '',
-    '#description' => 'You can insert static text or use tokens (see the token chart below).',
     '#weight' => 1,
   );
 
@@ -215,39 +178,28 @@ function addtocal_field_formatter_settings_form($field, $instance, $view_mode, $
   $element['multiple_from']['#weight'] = 6;
   $element['multiple_to']['#weight'] = 7;
 
-  if ($tokens_enabled) {
-    $element['tokens'] = array(
-      '#theme' => 'token_tree',
-      '#token_types' => array('node'), // The token types that have specific context. Can be multiple token types like 'term' and/or 'user'
-      '#global_types' => TRUE, // A boolean TRUE or FALSE whether to include 'global' context tokens like [current-user:*] or [site:*]. Defaults to TRUE.
-      '#click_insert' => TRUE, // A boolean whether to include the 'Click this token to insert in into the the focused textfield' JavaScript functionality. Defaults to TRUE.
-      '#weight' => 8,
-    );
-  }
-
   return $element;
 }
 
 /**
  * Implements hook_field_formatter_settings_summary().
- * @todo: update for tokenized changes
  */
 function addtocal_field_formatter_settings_summary($field, $instance, $view_mode) {
   $display = $instance['display'][$view_mode];
   $settings = $display['settings'];
 
-  if ($settings['location']['field'] == -1) {
+  if ($settings['location_field'] == -1) {
     $location_output = 'None';
   }
   else {
-    $location_output = $settings['location']['field'];
+    $location_output = $settings['location_field'];
   }
 
-  if ($settings['description']['field'] == -1) {
+  if ($settings['description_field'] == -1) {
     $description_output = 'None';
   }
   else {
-    $description_output = $settings['description']['field'];
+    $description_output = $settings['description_field'];
   }
 
   $location_output = t('Location field: !field', array('!field' => $location_output));
@@ -272,43 +224,39 @@ function addtocal_field_formatter_settings_summary($field, $instance, $view_mode
  */
 function addtocal_field_get_value($entity_type, $entity, $field_name) {
   if (!empty($field_name)) {
-    if (!is_array($field_name)) {
-      $value = field_get_items($entity_type, $entity, $field_name);
+    $value = field_get_items($entity_type, $entity, $field_name);
 
-      $field_info = field_info_field($field_name);
+    $field_info = field_info_field($field_name);
 
-      if ($field_info['type'] == 'addressfield') {
-        $address = $value[0];
+    if ($field_info['type'] == 'addressfield') {
+      $address = $value[0];
 
-        $string = '';
+      $string = '';
 
-        if (!empty($address['thoroughfare'])) $string .= $address['thoroughfare'] . ' ';
-        if (!empty($address['premise'])) $string .= $address['premise'] . ', ';
-        if (!empty($address['locality'])) $string .= $address['locality'] . ', ';
-        if (!empty($address['administrative_area'])) $string .= $address['administrative_area'] . ' ';
-        if (!empty($address['postal_code'])) $string .= $address['postal_code'] . ', ';
-        if (!empty($address['country'])) $string .= $address['country'];
+      if (!empty($address['thoroughfare'])) $string .= $address['thoroughfare'] . ' ';
+      if (!empty($address['premise'])) $string .= $address['premise'] . ', ';
+      if (!empty($address['locality'])) $string .= $address['locality'] . ', ';
+      if (!empty($address['administrative_area'])) $string .= $address['administrative_area'] . ' ';
+      if (!empty($address['postal_code'])) $string .= $address['postal_code'] . ', ';
+      if (!empty($address['country'])) $string .= $address['country'];
 
-        $output = $string;
-      }
-      else {
-        $replace_strings = array(
-          '&nbsp;' => '',
-          '<br />' => '\n',
-          PHP_EOL => '\n',
-        );
-
-        $output = $value[0]['value'];
-
-        foreach ($replace_strings as $search => $replace) {
-          $output = str_replace($search, $replace, $output);
-        }
-      }
-
+      $output = $string;
     }
     else {
-      $output = token_replace($field_name['tokenized'], array('node' => $entity), array('clear' => TRUE));
+      //$value = ($value) ? check_plain($value[0]['value']) : '';
+      $replace_strings = array(
+        '&nbsp;' => '',
+        '<br />' => '\n',
+        PHP_EOL => '\n',
+      );
+
+      $output = $value[0]['value'];
+
+      foreach ($replace_strings as $search => $replace) {
+        $output = str_replace($search, $replace, $output);
+      }
     }
+
     return strip_tags($output);
   }
   else {
@@ -347,10 +295,10 @@ function addtocal_extract_event_info($entity_type, $entity, $entity_id = NULL, $
 
   $instance = field_info_instance($entity_type, $field_name, $bundle);
 
-  $display = field_get_display($instance, 'full', $entity);
+  $display = field_get_display($instance, 'default', $entity);
 
-  $location = addtocal_field_get_value($entity_type, $entity, $display['settings']['location']);
-  $description = addtocal_field_get_value($entity_type, $entity, $display['settings']['description']);
+  $location = addtocal_field_get_value($entity_type, $entity, $display['settings']['location_field']);
+  $description = addtocal_field_get_value($entity_type, $entity, $display['settings']['description_field']);
 
   if (strlen($description) > 1024) {
     $description = truncate_utf8($description, 1024, TRUE, TRUE);

@@ -625,24 +625,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'rules',
   );
 
-  // Exported permission: 'administer salesforce'.
-  $permissions['administer salesforce'] = array(
-    'name' => 'administer salesforce',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'salesforce',
-  );
-
-  // Exported permission: 'administer salesforce mapping'.
-  $permissions['administer salesforce mapping'] = array(
-    'name' => 'administer salesforce mapping',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'salesforce_mapping',
-  );
-
   // Exported permission: 'administer scheduler'.
   $permissions['administer scheduler'] = array(
     'name' => 'administer scheduler',
@@ -3973,15 +3955,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'view salesforce mapping'.
-  $permissions['view salesforce mapping'] = array(
-    'name' => 'view salesforce mapping',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'salesforce_mapping',
   );
 
   // Exported permission: 'view the administration theme'.

@@ -1,0 +1,22 @@
+--- socialmedia.widgets.inc
++++ socialmedia.widgets.inc
+@@ -378,8 +378,8 @@
+ }
+ 
+ function socialmedia_widgets_element_addthis_js() {
+-  return '<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=[?username=[socialmedia:sm-addthis_username]?]"></script>';
+-  //return '<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username="></script>';
++  return '<script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#username=[?username=[socialmedia:sm-addthis_username]?]"></script>';
++  //return '<script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#username="></script>';
+ }
+ 
+ function socialmedia_widgets_element_addthis_addthis_counter() {
+@@ -791,7 +791,7 @@
+ 
+ function socialmedia_widgets_element_twitter_profile_widget() {
+   $template = <<<EOF
+-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
++<script src="//widgets.twimg.com/j/2/widget.js"></script>
+ <script>
+ new TWTR.Widget({
+   version: 2,
