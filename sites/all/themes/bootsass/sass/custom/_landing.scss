@@ -183,11 +183,16 @@ body.mises-daily {
 /* CATEGORY FILTERS */
 .landing-list {
   .views-exposed-widget {
-    &#edit-book-type-wrapper,
-    &#edit-title-wrapper {
+    &#edit-book-type-wrapper {
       @include clearfix;
       float: none;
       padding: 0;
+    }
+    &#edit-title-wrapper {
+      @include clearfix;
+      float: none;
+      padding: $padding-large-vertical 0 0;
+      text-align: center;
     }
     &:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button) {
       width: -moz-calc(23% - 12px);
@@ -229,7 +234,6 @@ body.mises-daily {
     }
   }
   #edit-title-wrapper {
-    text-align: center;
     .form-item {
       display: inline-block;
       a {
@@ -257,17 +261,18 @@ body.mises-daily {
     }
   }
   .views-exposed-widgets {
-    @include transition(all 0.8s ease);
-    max-height: 0;
-    overflow: hidden;
-    &.open {
-      max-height: 100px;
-    }
+    //@include transition(all 0.8s ease);
+    //max-height: 0;
+    //overflow: hidden;
+    //&.open {
+    //  max-height: 100px;
+    //}
   }
   .views-reset-button {
     display: inline-block;
     padding: 0;
     float: none;
+    visibility: hidden;
     button {
       @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
     }

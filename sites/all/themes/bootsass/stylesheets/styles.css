@@ -2583,9 +2583,12 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 body.mises-daily #block-views-term-description-block { display: none; }
 
 /* CATEGORY FILTERS */
-.landing-list .views-exposed-widget#edit-book-type-wrapper, .landing-list .views-exposed-widget#edit-title-wrapper { float: none; padding: 0; }
-.landing-list .views-exposed-widget#edit-book-type-wrapper:before, .landing-list .views-exposed-widget#edit-book-type-wrapper:after, .landing-list .views-exposed-widget#edit-title-wrapper:before, .landing-list .views-exposed-widget#edit-title-wrapper:after { content: " "; display: table; }
-.landing-list .views-exposed-widget#edit-book-type-wrapper:after, .landing-list .views-exposed-widget#edit-title-wrapper:after { clear: both; }
+.landing-list .views-exposed-widget#edit-book-type-wrapper { float: none; padding: 0; }
+.landing-list .views-exposed-widget#edit-book-type-wrapper:before, .landing-list .views-exposed-widget#edit-book-type-wrapper:after { content: " "; display: table; }
+.landing-list .views-exposed-widget#edit-book-type-wrapper:after { clear: both; }
+.landing-list .views-exposed-widget#edit-title-wrapper { float: none; padding: 16px 0 0; text-align: center; }
+.landing-list .views-exposed-widget#edit-title-wrapper:before, .landing-list .views-exposed-widget#edit-title-wrapper:after { content: " "; display: table; }
+.landing-list .views-exposed-widget#edit-title-wrapper:after { clear: both; }
 .landing-list .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button) { width: -moz-calc(23% - 12px); width: calc(23% - 12px); padding: 16px 10px 0 0; }
 .landing-list .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button)#edit-austrian-school-wrapper { width: -moz-calc(31% - 12px); width: calc(31% - 12px); }
 .landing-list .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button).views-submit-button { width: auto; float: right; padding-right: 0; }
@@ -2602,16 +2605,13 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .landing-list #edit-book-type-wrapper .bef-select-as-links .form-item a a:hover { color: #fff; text-decoration: none; }
 .landing-list #edit-book-type-wrapper .bef-select-as-links .form-item a .badge { background-color: #fff; color: #38709e; }
 .landing-list #edit-book-type-wrapper .bef-select-as-links > .form-item { float: right; }
-.landing-list #edit-title-wrapper { text-align: center; }
 .landing-list #edit-title-wrapper .form-item { display: inline-block; }
 .landing-list #edit-title-wrapper .form-item a { padding: 0 5px; }
 .landing-list #edit-title-wrapper .form-item a.active { background-color: #38709e; color: #fff; }
 .landing-list .filter-toggle { text-transform: uppercase; cursor: pointer; }
 .landing-list .filter-toggle .glyphicon, .landing-list .filter-toggle .pagination > li.prev a, .pagination > li.prev .landing-list .filter-toggle a, .landing-list .filter-toggle .pagination > li.next a, .pagination > li.next .landing-list .filter-toggle a, .landing-list .filter-toggle .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-prev .landing-list .filter-toggle a, .landing-list .filter-toggle .sidebar .pager > li.date-next a, .sidebar .pager > li.date-next .landing-list .filter-toggle a { margin-right: 0; color: #206093; background-color: #fff; -webkit-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease; }
 .landing-list .filter-toggle.open .glyphicon, .landing-list .filter-toggle.open .pagination > li.prev a, .pagination > li.prev .landing-list .filter-toggle.open a, .landing-list .filter-toggle.open .pagination > li.next a, .pagination > li.next .landing-list .filter-toggle.open a, .landing-list .filter-toggle.open .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-prev .landing-list .filter-toggle.open a, .landing-list .filter-toggle.open .sidebar .pager > li.date-next a, .sidebar .pager > li.date-next .landing-list .filter-toggle.open a { -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg); }
-.landing-list .views-exposed-widgets { -webkit-transition: all 0.8s ease; -o-transition: all 0.8s ease; transition: all 0.8s ease; max-height: 0; overflow: hidden; }
-.landing-list .views-exposed-widgets.open { max-height: 100px; }
-.landing-list .views-reset-button { display: inline-block; padding: 0; float: none; }
+.landing-list .views-reset-button { display: inline-block; padding: 0; float: none; visibility: hidden; }
 .landing-list .views-reset-button button { border-color: #788086; background-color: #788086; color: #fff; }
 .landing-list .views-reset-button button:hover, .landing-list .views-reset-button button:focus { border-color: #60666b; background-color: #60666b; color: #fff; }
 .landing-list .views-reset-button button:active, .landing-list .views-reset-button button.active { border-color: #788086; background-color: #788086; background-image: none; box-shadow: none; color: #fff; }
