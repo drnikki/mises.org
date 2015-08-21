@@ -218,7 +218,7 @@ function term_landing_page_views_default_views() {
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_author_1_target_id' => array(
+    'field_author_1_target_id_entityreference_filter' => array(
       'bef_format' => 'default',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
@@ -274,7 +274,7 @@ function term_landing_page_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'All Topics',
+        'any_label' => 'Sort by Topic',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -324,7 +324,7 @@ function term_landing_page_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'All Austrian School',
+        'any_label' => 'Sort by Austrian School',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -456,7 +456,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = '<p>No items match the options selected. Please select another menu item or the "All" option to start over.</p>';
+  $handler->display->display_options['empty']['area']['content'] = '<p>No items match the options selected. Please select another option or the "Clear All" button to start over.</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Analytics Page Hits: Analytics Hits Entity */
@@ -722,17 +722,17 @@ function term_landing_page_views_default_views() {
       'value' => 'Z',
     ),
   );
-  /* Filter criterion: Field: Author (field_author_1) */
-  $handler->display->display_options['filters']['field_author_1_target_id']['id'] = 'field_author_1_target_id';
-  $handler->display->display_options['filters']['field_author_1_target_id']['table'] = 'field_data_field_author_1';
-  $handler->display->display_options['filters']['field_author_1_target_id']['field'] = 'field_author_1_target_id';
-  $handler->display->display_options['filters']['field_author_1_target_id']['group'] = 1;
-  $handler->display->display_options['filters']['field_author_1_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_author_1_target_id']['expose']['operator_id'] = 'field_author_1_target_id_op';
-  $handler->display->display_options['filters']['field_author_1_target_id']['expose']['label'] = 'Author';
-  $handler->display->display_options['filters']['field_author_1_target_id']['expose']['operator'] = 'field_author_1_target_id_op';
-  $handler->display->display_options['filters']['field_author_1_target_id']['expose']['identifier'] = 'author';
-  $handler->display->display_options['filters']['field_author_1_target_id']['expose']['remember_roles'] = array(
+  /* Filter criterion: Field: Author (field_author_1) (reference filter) */
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['id'] = 'field_author_1_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['field'] = 'field_author_1_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['group'] = 1;
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['operator_id'] = 'field_author_1_target_id_entityreference_filter_op';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['label'] = 'Author';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['operator'] = 'field_author_1_target_id_entityreference_filter_op';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['identifier'] = 'author';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -744,6 +744,8 @@ function term_landing_page_views_default_views() {
     9 => 0,
     7 => 0,
   );
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['hide_empty_filter'] = FALSE;
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['reference_display'] = 'term_landing:entityreference_1';
   /* Filter criterion: Content: Topics (field_topics) */
   $handler->display->display_options['filters']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['filters']['field_topics_target_id']['table'] = 'field_data_field_topics';
@@ -2601,6 +2603,60 @@ return FALSE;';
     5 => 0,
   );
   $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'media_type';
+
+  /* Display: Author Entity Reference */
+  $handler = $view->new_display('entityreference', 'Author Entity Reference', 'entityreference_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Last name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'person_profile' => 'person_profile',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type of Profile (field_profile_type) */
+  $handler->display->display_options['filters']['field_profile_type_target_id']['id'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['table'] = 'field_data_field_profile_type';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['field'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['value'] = array(
+    201 => '201',
+  );
   $export['term_landing'] = $view;
 
   return $export;

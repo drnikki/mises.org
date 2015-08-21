@@ -153,7 +153,7 @@ function _mises_solr_extra_facets_process_item($node) {
     $node->field_books[LANGUAGE_NONE][] = array('target_id' => $term->tid);
   }
   if ($html_count) {
-    $term = array_shift(taxonomy_get_term_by_name('Online Book', 'books'));
+    $term = array_shift(taxonomy_get_term_by_name('HTML Book', 'books'));
     $node->field_books[LANGUAGE_NONE][] = array('target_id' => $term->tid);
   }
 
