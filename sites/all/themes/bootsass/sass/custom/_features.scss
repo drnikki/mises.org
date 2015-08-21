@@ -118,6 +118,42 @@
   }
 }
 /*
+* BOOK FORMATS ON TEASERS
+*/
+.book-formats {
+  font-size: $font-size-small;
+  > span {
+    font-weight: bold;
+    color: $brand-primary;
+    text-transform: uppercase;
+  }
+  .format-item,
+  .file,
+  .content,
+  p {
+    display: inline;
+  }
+  .element-invisible,
+  .contextual-links-wrapper,
+  .file-icon,
+  .file-size {
+    display: none !important;
+  }
+  .format-item {
+    + .format-item {
+      &:before {
+        content: " | ";
+      }
+    }
+    a {
+      color: $gray;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+  }
+}
+
+/*
 *   WIDE MEDIA PLAYER
 */
 .media-player {

@@ -2912,6 +2912,16 @@ ul.accordion li { list-style: none; }
 .group-date-location span.reg-link { padding-left: 10px; }
 
 /*
+* BOOK FORMATS ON TEASERS
+*/
+.book-formats { font-size: 13px; }
+.book-formats > span { font-weight: bold; color: #00426b; text-transform: uppercase; }
+.book-formats .format-item, .book-formats .file, .book-formats .content, .book-formats p { display: inline; }
+.book-formats .element-invisible, .book-formats .contextual-links-wrapper, .book-formats .file-icon, .book-formats .file-size { display: none !important; }
+.book-formats .format-item + .format-item:before { content: " | "; }
+.book-formats .format-item a { color: #788086; text-transform: uppercase; font-size: 13px; }
+
+/*
 *   WIDE MEDIA PLAYER
 */
 .media-player { clear: both; }

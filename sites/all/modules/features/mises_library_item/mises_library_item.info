@@ -1,7 +1,7 @@
 name = Mises Library Item
 core = 7.x
 package = Content Types
-version = 7.x-1.16
+version = 7.x-1.17
 project = mises_library_item
 dependencies[] = austrian_school
 dependencies[] = creative_commons
@@ -67,6 +67,7 @@ features[field_base][] = field_transcript
 features[field_group][] = group_basic|node|library_item|form
 features[field_group][] = group_body|node|library_item|block_teaser_term
 features[field_group][] = group_book_digi_text_media|node|library_item|form
+features[field_group][] = group_book_formats|node|library_item|teaser
 features[field_group][] = group_content|node|library_item|form
 features[field_group][] = group_date_author|node|library_item|audio_teaser
 features[field_group][] = group_date_author|node|library_item|full
