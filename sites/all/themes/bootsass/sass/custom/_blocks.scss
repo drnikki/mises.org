@@ -13,6 +13,8 @@
     @include icon-block(61px,10px,-5px);
     @include icon-color($brand-contrast);
     @include icon-border();
+    // fallback
+    @include icon-image('../images/icons/icon-books.png');
     .mises-daily &, .Mises-Daily &, .Mises.Daily & {
       @include icon-image('../images/icons/icon-daily.png');
     }
