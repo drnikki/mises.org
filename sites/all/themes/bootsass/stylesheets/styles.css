@@ -2583,6 +2583,9 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 /* DAILY LANDING PAGE */
 body.mises-daily #block-views-term-description-block { display: none; }
 
+/* TERM DESCRIPTION */
+.view-term-description .pull-right, .view-term-description .region-navigation .block.block-views, .region-navigation .view-term-description .block.block-views { margin-left: 5px; }
+
 /* CATEGORY FILTERS */
 .landing-list .views-exposed-widget { float: none; padding: 0; }
 .landing-list .views-exposed-widget > label { display: none; }

@@ -296,6 +296,29 @@ function mises_generic_landing_page_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['tid']['alter']['text'] = '<img src="/sites/all/themes/bootsass/images/rss-link.png">';
+  $handler->display->display_options['fields']['tid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['tid']['alter']['path'] = 'taxonomy/term/[tid]/feed';
+  $handler->display->display_options['fields']['tid']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['tid']['alter']['alt'] = 'Get RSS feed for [name].';
+  $handler->display->display_options['fields']['tid']['alter']['link_class'] = 'rss-link';
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['tid']['element_wrapper_class'] = 'pull-right';
+  $handler->display->display_options['fields']['tid']['element_default_classes'] = FALSE;
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
