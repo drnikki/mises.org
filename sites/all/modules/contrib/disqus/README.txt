@@ -8,7 +8,7 @@ Disqus Official PHP API Support
 
 INSTALL
 =============
-You will need to install the Libraries API module (7.x-2.x branch).
+You will need to install the Libraries API module.
 
 https://drupal.org/project/libraries
 
