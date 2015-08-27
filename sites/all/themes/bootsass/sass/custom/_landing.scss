@@ -179,6 +179,12 @@ body.mises-daily {
     display: none;  
   }
 }
+/* TERM DESCRIPTION */
+.view-term-description {
+  .pull-right {
+    margin-left: $padding-xs-horizontal;
+  }
+}
 
 /* CATEGORY FILTERS */
 .landing-list {
