@@ -46,11 +46,19 @@ function bootsass_preprocess_html(&$variables) {
       ));
       $variables['classes_array'][] = 'giving-theme';
   } else {
+      drupal_add_css($theme_path . '/stylesheets/jquery.selectBox.css', array(
+        'group' => CSS_THEME,
+        'preprocess' => FALSE
+      ));
       drupal_add_css($theme_path . '/stylesheets/styles.css', array(
         'group' => CSS_THEME,
         'preprocess' => FALSE
       ));
       drupal_add_js($theme_path . '/js/misc/jquery.nestedAccordion.js', array(
+        'group' => JS_THEME,
+        'preprocess' => FALSE
+      ));
+      drupal_add_js($theme_path . '/js/misc/jquery.selectBox.js', array(
         'group' => JS_THEME,
         'preprocess' => FALSE
       ));

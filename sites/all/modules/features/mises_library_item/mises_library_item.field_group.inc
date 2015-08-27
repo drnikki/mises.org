@@ -108,6 +108,38 @@ function mises_library_item_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_book_formats|node|library_item|teaser';
+  $field_group->group_name = 'group_book_formats';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Formats',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_epub',
+      1 => 'field_link_to_external_listing_',
+      2 => 'field_pdf',
+      3 => 'dynamic_field_1',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Formats',
+      'instance_settings' => array(
+        'classes' => 'book-formats',
+        'element' => 'div',
+        'show_label' => '1',
+        'label_element' => 'span',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_book_formats|node|library_item|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_content|node|library_item|form';
   $field_group->group_name = 'group_content';
   $field_group->entity_type = 'node';
@@ -205,7 +237,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_mises_published_date',
       1 => 'field_author_1',
