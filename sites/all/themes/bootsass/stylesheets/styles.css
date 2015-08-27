@@ -2603,7 +2603,7 @@ body.mises-daily #block-views-term-description-block { display: none; }
 */
 /* ICONS */
 .panel-heading { border-top-right-radius: 0; border-top-left-radius: 0; position: relative; padding: 10px 15px 7px 80px; }
-.panel-heading:before { position: absolute; top: -5px; left: 10px; display: block; width: 61px; height: 61px; border-radius: 50%; content: ''; background-color: #729949; border: 3px solid #fff; }
+.panel-heading:before { position: absolute; top: -5px; left: 10px; display: block; width: 61px; height: 61px; border-radius: 50%; content: ''; background-color: #729949; border: 3px solid #fff; background-image: url("../images/icons/icon-books.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
 .mises-daily .panel-heading:before, .Mises-Daily .panel-heading:before, .Mises.Daily .panel-heading:before { background-image: url("../images/icons/icon-daily.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
 .academy .panel-heading:before { background-image: url("../images/icons/icon-academy.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
 .article .panel-heading:before { background-image: url("../images/icons/icon-article.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
