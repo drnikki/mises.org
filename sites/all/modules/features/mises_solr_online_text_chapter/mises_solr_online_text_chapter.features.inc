@@ -33,6 +33,7 @@ function mises_solr_online_text_chapter_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
 

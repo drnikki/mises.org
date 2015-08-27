@@ -265,7 +265,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_node']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Other Formats';
-  /* Field: Content: Citation */
+  /* Field: Content: Book Information */
   $handler->display->display_options['fields']['field_citation']['id'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['table'] = 'field_data_field_citation';
   $handler->display->display_options['fields']['field_citation']['field'] = 'field_citation';
@@ -539,7 +539,7 @@ function mises_book_content_views_default_views() {
   );
   $handler->display->display_options['fields']['field_book_chapter']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_book_chapter']['multi_type'] = 'ul';
-  /* Field: Content: Citation */
+  /* Field: Content: Book Information */
   $handler->display->display_options['fields']['field_citation']['id'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['table'] = 'field_data_field_citation';
   $handler->display->display_options['fields']['field_citation']['field'] = 'field_citation';
@@ -722,12 +722,11 @@ function mises_book_content_views_default_views() {
   );
   $handler->display->display_options['fields']['field_book_pages']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_book_pages']['multi_type'] = 'ul';
-  /* Field: Content: Citation */
+  /* Field: Content: Book Information */
   $handler->display->display_options['fields']['field_citation']['id'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['table'] = 'field_data_field_citation';
   $handler->display->display_options['fields']['field_citation']['field'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['relationship'] = 'field_online_text_target_id';
-  $handler->display->display_options['fields']['field_citation']['label'] = 'Book Information';
   $handler->display->display_options['fields']['field_citation']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_citation']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_citation']['alter']['text'] = '<div class="group-footnotes" id="book-information">
@@ -930,12 +929,11 @@ function mises_book_content_views_default_views() {
   );
   $handler->display->display_options['fields']['field_sub_page']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_sub_page']['multi_type'] = 'ul';
-  /* Field: Content: Citation */
+  /* Field: Content: Book Information */
   $handler->display->display_options['fields']['field_citation']['id'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['table'] = 'field_data_field_citation';
   $handler->display->display_options['fields']['field_citation']['field'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['relationship'] = 'field_online_text_target_id';
-  $handler->display->display_options['fields']['field_citation']['label'] = 'Book Information';
   $handler->display->display_options['fields']['field_citation']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_citation']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_citation']['alter']['text'] = '<div class="group-footnotes" id="book-information">
@@ -1163,12 +1161,11 @@ function mises_book_content_views_default_views() {
   );
   $handler->display->display_options['fields']['field_sub_page']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_sub_page']['multi_type'] = 'ul';
-  /* Field: Content: Citation */
+  /* Field: Content: Book Information */
   $handler->display->display_options['fields']['field_citation']['id'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['table'] = 'field_data_field_citation';
   $handler->display->display_options['fields']['field_citation']['field'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['relationship'] = 'field_online_text_target_id';
-  $handler->display->display_options['fields']['field_citation']['label'] = 'Book Information';
   $handler->display->display_options['fields']['field_citation']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_citation']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_citation']['alter']['text'] = '<div class="group-footnotes" id="book-information">
@@ -1418,12 +1415,11 @@ function mises_book_content_views_default_views() {
   );
   $handler->display->display_options['fields']['field_sub_page']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_sub_page']['multi_type'] = 'ul';
-  /* Field: Content: Citation */
+  /* Field: Content: Book Information */
   $handler->display->display_options['fields']['field_citation']['id'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['table'] = 'field_data_field_citation';
   $handler->display->display_options['fields']['field_citation']['field'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['relationship'] = 'field_online_text_target_id';
-  $handler->display->display_options['fields']['field_citation']['label'] = 'Book Information';
   $handler->display->display_options['fields']['field_citation']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_citation']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_citation']['alter']['text'] = '<div class="group-footnotes" id="book-information">
@@ -2071,7 +2067,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Return to Book';
-  /* Field: Content: Citation */
+  /* Field: Content: Book Information */
   $handler->display->display_options['fields']['field_citation']['id'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['table'] = 'field_data_field_citation';
   $handler->display->display_options['fields']['field_citation']['field'] = 'field_citation';
@@ -2288,7 +2284,7 @@ function mises_book_content_views_default_views() {
   $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Return to Book';
-  /* Field: Content: Citation */
+  /* Field: Content: Book Information */
   $handler->display->display_options['fields']['field_citation']['id'] = 'field_citation';
   $handler->display->display_options['fields']['field_citation']['table'] = 'field_data_field_citation';
   $handler->display->display_options['fields']['field_citation']['field'] = 'field_citation';

@@ -5,3 +5,4 @@ version = 7.x-1.0
 project = mises_global_redirect
 dependencies[] = globalredirect
 features[features_api][] = api:2
+mtime = 1436557554

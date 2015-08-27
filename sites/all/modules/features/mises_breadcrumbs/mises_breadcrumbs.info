@@ -20,3 +20,4 @@ features[variable][] = easy_breadcrumb-include_title_segment
 features[variable][] = easy_breadcrumb-segments_separator
 features[variable][] = easy_breadcrumb-title_from_page_when_available
 features[variable][] = easy_breadcrumb-title_segment_as_link
+mtime = 1436557554

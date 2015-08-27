@@ -37,7 +37,7 @@ function mises_image_source_views_default_views() {
   $handler->display->display_options['relationships']['field_image_collection_value']['table'] = 'field_data_field_image_collection';
   $handler->display->display_options['relationships']['field_image_collection_value']['field'] = 'field_image_collection_value';
   $handler->display->display_options['relationships']['field_image_collection_value']['delta'] = '-1';
-  /* Field: Field: Source */
+  /* Field: Field collection item: Source */
   $handler->display->display_options['fields']['field_source']['id'] = 'field_source';
   $handler->display->display_options['fields']['field_source']['table'] = 'field_data_field_source';
   $handler->display->display_options['fields']['field_source']['field'] = 'field_source';

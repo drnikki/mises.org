@@ -169,7 +169,7 @@ class SearchApiViewsQuery extends views_plugin_query {
       '#default_value' => $this->options['search_api_bypass_access'],
     );
 
-    if (entity_get_info($this->index->item_type)) {
+    if ($this->index->getEntityType()) {
       $form['entity_access'] = array(
         '#type' => 'checkbox',
         '#title' => t('Additional access checks on result entities'),
@@ -203,6 +203,10 @@ class SearchApiViewsQuery extends views_plugin_query {
    * Builds the necessary info to execute the query.
    */
   public function build(&$view) {
+    if (!empty($this->errors)) {
+      return;
+    }
+
     $this->view = $view;
 
     // Setup the nested filter structure for this query.
@@ -246,16 +250,6 @@ class SearchApiViewsQuery extends views_plugin_query {
     // Initialize the pager and let it modify the query to add limits.
     $view->init_pager();
     $this->pager->query();
-
-    // Views passes sometimes NULL and sometimes the integer 0 for "All" in a
-    // pager. If set to 0 items, a string "0" is passed. Therefore, we unset
-    // the limit if an empty value OTHER than a string "0" was passed.
-    if (!$this->limit && $this->limit !== '0') {
-      $this->limit = NULL;
-    }
-    // Set the range. (We always set this, as there might even be an offset if
-    // all items are shown.)
-    $this->query->range($this->offset, $this->limit);
 
     // Set the search ID, if it was not already set.
     if ($this->query->getOption('search id') == get_class($this->query)) {
@@ -313,6 +307,16 @@ class SearchApiViewsQuery extends views_plugin_query {
     try {
       // Trigger pager pre_execute().
       $this->pager->pre_execute($this->query);
+
+      // Views passes sometimes NULL and sometimes the integer 0 for "All" in a
+      // pager. If set to 0 items, a string "0" is passed. Therefore, we unset
+      // the limit if an empty value OTHER than a string "0" was passed.
+      if (!$this->limit && $this->limit !== '0') {
+        $this->limit = NULL;
+      }
+      // Set the range. (We always set this, as there might even be an offset if
+      // all items are shown.)
+      $this->query->range($this->offset, $this->limit);
 
       $start = microtime(TRUE);
 
@@ -374,9 +378,9 @@ class SearchApiViewsQuery extends views_plugin_query {
     // First off, we try to gather as much field values as possible without
     // loading any items.
     foreach ($results as $id => $result) {
-      if (!empty($this->options['entity_access'])) {
-        $entity = entity_load($this->index->item_type, array($id));
-        if (!entity_access('view', $this->index->item_type, $entity[$id])) {
+      if (!empty($this->options['entity_access']) && ($entity_type = $this->index->getEntityType())) {
+        $entity = $this->index->loadItems(array($id));
+        if (!$entity || !entity_access('view', $entity_type, reset($entity))) {
           continue;
         }
       }
@@ -400,7 +404,7 @@ class SearchApiViewsQuery extends views_plugin_query {
       }
 
       // Check whether we need to extract any properties from the result item.
-      $missing_fields = array_diff_key($this->fields, $row);
+      $missing_fields = array_diff_key($this->fields, $row['_entity_properties']);
       if ($missing_fields) {
         $missing[$id] = $missing_fields;
         if (is_object($row['entity'])) {
@@ -418,14 +422,14 @@ class SearchApiViewsQuery extends views_plugin_query {
     // Load items of those rows which haven't got all field values, yet.
     if (!empty($ids)) {
       $items += $this->index->loadItems($ids);
-      // $items now includes loaded items, and those already passed in the
-      // search results.
-      foreach ($items as $id => $item) {
-        // Extract item properties.
-        $wrapper = $this->index->entityWrapper($item, FALSE);
-        $rows[$id]->_entity_properties += $this->extractFields($wrapper, $missing[$id]);
-        $rows[$id]->entity = $item;
-      }
+    }
+    // $items now includes all loaded items from which fields still need to be
+    // extracted.
+    foreach ($items as $id => $item) {
+      // Extract item properties.
+      $wrapper = $this->index->entityWrapper($item, FALSE);
+      $rows[$id]->_entity_properties += $this->extractFields($wrapper, $missing[$id]);
+      $rows[$id]->entity = $item;
     }
 
     // Finally, add all rows to the Views result set.
@@ -660,16 +664,18 @@ class SearchApiViewsQuery extends views_plugin_query {
     return $ret;
   }
 
-  public function getOption($name) {
+  public function getOption($name, $default = NULL) {
     if (!$this->errors) {
-      return $this->query->getOption($name);
+      return $this->query->getOption($name, $default);
     }
+    return $default;
   }
 
   public function setOption($name, $value) {
     if (!$this->errors) {
       return $this->query->setOption($name, $value);
     }
+    return NULL;
   }
 
   public function &getOptions() {

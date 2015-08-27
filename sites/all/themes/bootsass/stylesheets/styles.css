@@ -2247,6 +2247,7 @@ table .radio input[type=radio], table .checkbox input[type=checkbox] { max-width
 * Drupal based overrides
 ********************/
 .img-responsive img, .node-blog .body-content p img img { width: 100%; }
+.img-responsive img[src$='image_placeholder.gif'], .node-blog .body-content p img img[src$='image_placeholder.gif'] { width: auto; }
 
 .field-collection-container { margin: 0; padding: 0; border: 0; }
 

@@ -70,7 +70,7 @@ function search_404_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search404_ignore_query';
-  $strongarm->value = 'gif jpg jpeg bmp png';
+  $strongarm->value = 'gif jpg jpeg bmp png css js';
   $export['search404_ignore_query'] = $strongarm;
 
   $strongarm = new stdClass();

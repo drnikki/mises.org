@@ -8,9 +8,9 @@ core = 7.x
 
 
 
-; Information added by Drupal.org packaging script on 2014-06-19
-version = "7.x-2.11"
+; Information added by Drupal.org packaging script on 2014-07-08
+version = "7.x-2.12"
 core = "7.x"
 project = "easy_breadcrumb"
-datestamp = "1403222331"
+datestamp = "1404848028"
 

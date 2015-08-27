@@ -66,7 +66,7 @@ function mailchimp_rss_feeds_views_default_views() {
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
-  /* Field: Content: Published Date */
+  /* Field: Content: Date Published */
   $handler->display->display_options['fields']['field_published_date']['id'] = 'field_published_date';
   $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
   $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
@@ -84,7 +84,7 @@ function mailchimp_rss_feeds_views_default_views() {
       ),
     ),
   );
-  /* Field: Content: Author */
+  /* Field: Field: Author */
   $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
   $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
   $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';

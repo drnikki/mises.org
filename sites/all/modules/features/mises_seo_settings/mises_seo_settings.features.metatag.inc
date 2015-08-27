@@ -49,9 +49,6 @@ function mises_seo_settings_metatag_export_default() {
       'generator' => array(
         'value' => 'Drupal 7 (http://drupal.org)',
       ),
-      'copyright' => array(
-        'value' => '',
-      ),
       'image_src' => array(
         'value' => '',
       ),
@@ -152,19 +149,10 @@ function mises_seo_settings_metatag_export_default() {
       'og:longitude' => array(
         'value' => '',
       ),
-      'og:street-address' => array(
-        'value' => '',
-      ),
       'og:locality' => array(
         'value' => '',
       ),
       'og:region' => array(
-        'value' => '',
-      ),
-      'og:postal-code' => array(
-        'value' => '',
-      ),
-      'og:country-name' => array(
         'value' => '',
       ),
       'og:email' => array(
@@ -217,9 +205,6 @@ function mises_seo_settings_metatag_export_default() {
       ),
       'twitter:description' => array(
         'value' => '[site:slogan]',
-      ),
-      'twitter:image' => array(
-        'value' => '',
       ),
       'twitter:image:width' => array(
         'value' => '',
@@ -285,6 +270,21 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '',
       ),
       'twitter:data2' => array(
+        'value' => '',
+      ),
+      'twitter:image:src' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+      ),
+      'og:country_name' => array(
         'value' => '',
       ),
     ),
@@ -408,9 +408,6 @@ function mises_seo_settings_metatag_export_default() {
       'description' => array(
         'value' => '[node:summary]',
       ),
-      'copyright' => array(
-        'value' => '[node:field_copyright_info]',
-      ),
       'dcterms.title' => array(
         'value' => '[node:title]',
       ),
@@ -438,6 +435,9 @@ function mises_seo_settings_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[node:summary]',
       ),
+      'rights' => array(
+        'value' => '[node:field_copyright_info]',
+      ),
     ),
   );
 
@@ -451,7 +451,7 @@ function mises_seo_settings_metatag_export_default() {
       'og:image' => array(
         'value' => '[node:field_image]',
       ),
-      'twitter:image' => array(
+      'twitter:image:src' => array(
         'value' => '[node:field_image]',
       ),
     ),
@@ -477,9 +477,6 @@ function mises_seo_settings_metatag_export_default() {
           'index' => 0,
           'follow' => 0,
         ),
-      ),
-      'copyright' => array(
-        'value' => '',
       ),
       'canonical' => array(
         'value' => '',
@@ -524,6 +521,9 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '',
       ),
       'twitter:description' => array(
+        'value' => '',
+      ),
+      'rights' => array(
         'value' => '',
       ),
     ),

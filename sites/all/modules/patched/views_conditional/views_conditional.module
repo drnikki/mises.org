@@ -6,11 +6,13 @@
  * you to define conditionals (if xxx then yyy) with
  * fields in views.  Conditions include:
  *   - Equal to
- *   - Not equal to
+ *   - NOT equal to
  *   - Great than
  *   - Less than
  *   - Empty
- *   - Not empty
+ *   - NOT empty
+ *   - Contains
+ *   - Does NOT Contain
  *
  * Views conditionals allows you to output text
  * based on the result of the condition.

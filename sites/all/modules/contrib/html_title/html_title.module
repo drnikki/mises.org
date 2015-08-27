@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * @defgroup html_title HTML Title
+ */
+
+/**
  * @file
  * This module enables limited HTML to be used in node titles. It strips title
  * markup from RSS feeds to eliminate unsightly markup in feed readers.
@@ -24,24 +28,18 @@ function html_title_menu() {
 
 /**
  * Implementation of hook_theme_registry_alter()
- *
- * Move our hook_preprocess_search_result so that it runs last
  */
 function html_title_theme_registry_alter(&$theme_registry) {
-  $preprocess_functions = array();
-  foreach($theme_registry['search_result']['preprocess functions'] as $key => $value) {
-    if ($value == 'html_title_preprocess_search_result') {
-      $callback = $theme_registry['search_result']['preprocess functions'][$key];
+  // Re-order search result pre-processing so ours always runs last
+  if (module_exists('search') && is_array($theme_registry['search_result']['preprocess functions'])) {
+    foreach($theme_registry['search_result']['preprocess functions'] as $value) {
+      if ($value != 'html_title_preprocess_search_result') {
+        $callbacks[] = $value;
+      }
     }
-    else {
-      $preprocess_functions[] = $theme_registry['search_result']['preprocess functions'][$key];
-    }
+    $callbacks[] = 'html_title_preprocess_search_result';
+    $theme_registry['search_result']['preprocess functions'] = $callbacks;
   }
-
-  if ($callback) {
-    $preprocess_functions[] = $callback;
-  }
-  $theme_registry['search_result']['preprocess functions'] = $preprocess_functions;
 }
 
 /**
@@ -59,12 +57,16 @@ function html_title_preprocess_page(&$vars) {
 }
 
 /**
- * Implementation of hook_preprocess_node()
+ * Implementation of template_preprocess_node()
  */
 function html_title_preprocess_node(&$vars) {
-  if ($vars['view_mode'] == 'full' || $vars['view_mode'] == 'teaser') {
-    $elements = variable_get('html_title_allowed_elements', array('em', 'sub', 'sup'));
-    $vars['title'] = filter_xss($vars['elements']['#node']->title, $elements);
+  switch ($vars['view_mode']) {
+    case 'search_index':
+    case 'rss':
+      return;
+    default:
+      $elements = variable_get('html_title_allowed_elements', array('em', 'sub', 'sup'));
+      $vars['title'] = filter_xss($vars['elements']['#node']->title, $elements);
   }
 }
 
