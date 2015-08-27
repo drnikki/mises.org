@@ -1932,6 +1932,8 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'file_entity',
   );
@@ -1942,6 +1944,8 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'file_entity',
   );
@@ -1949,7 +1953,10 @@ function mises_roles_and_perms_user_default_permissions() {
   // Exported permission: 'download any ebook files'.
   $permissions['download any ebook files'] = array(
     'name' => 'download any ebook files',
-    'roles' => array(),
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'file_entity',
   );
 
@@ -2016,6 +2023,8 @@ function mises_roles_and_perms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'file_entity',
   );

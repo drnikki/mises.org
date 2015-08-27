@@ -151,6 +151,18 @@
       font-size: 13px;
     }
   }
+  a.external-link {
+    span.glyphicon {
+      @include icon-color($gray-light);
+      @include glyph-size(20px);
+    }
+    &:hover {
+      color: $brand-secondary;
+      span.glyphicon {
+        background-color: $brand-secondary;
+      }
+    }
+  }
 }
 
 /*

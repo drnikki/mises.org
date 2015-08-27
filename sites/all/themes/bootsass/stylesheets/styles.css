@@ -2595,6 +2595,7 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .landing-list .views-exposed-widget > label { display: none; }
 .landing-list .views-exposed-widget .form-submit { margin-top: 0; }
 .landing-list select { visibility: hidden; }
+.landing-list .form-control { padding: 6px 10px; }
 .landing-list #edit-book-type-wrapper .bef-select-as-links { text-align: right; }
 .landing-list #edit-book-type-wrapper .bef-select-as-links .form-item { display: inline-block; }
 .landing-list #edit-book-type-wrapper .bef-select-as-links .form-item a { border-color: #38709e; background-color: #38709e; color: #fff; }
@@ -2920,6 +2921,9 @@ ul.accordion li { list-style: none; }
 .book-formats .element-invisible, .book-formats .contextual-links-wrapper, .book-formats .file-icon, .book-formats .file-size { display: none !important; }
 .book-formats .format-item + .format-item:before { content: " | "; }
 .book-formats .format-item a { color: #788086; text-transform: uppercase; font-size: 13px; }
+.book-formats a.external-link span.glyphicon { background-color: #c8cdd0; width: 20px; height: 20px; text-align: center; font-size: 10px; line-height: 20px; }
+.book-formats a.external-link:hover { color: #38709e; }
+.book-formats a.external-link:hover span.glyphicon { background-color: #38709e; }
 
 /*
 *   WIDE MEDIA PLAYER

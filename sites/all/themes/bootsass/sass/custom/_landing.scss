@@ -218,6 +218,9 @@ body.mises-daily {
   select {
     visibility: hidden;
   }
+  .form-control {
+    padding: $padding-base-vertical $padding-small-horizontal;
+  }
   #edit-book-type-wrapper {
     .bef-select-as-links {
       text-align: right;
