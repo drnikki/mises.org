@@ -4,9 +4,17 @@
   * Implements hook_menu().
   */
 function mises_itunes_feed_menu() {
+  $items = array();
   $items['itunes/%'] = array(
     'title' => 'Mises iTunes Feed',
     'page callback' => '_mises_solr_author_fix_rss',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+  );
+
+  $items['xml/%'] = array(
+    'title' => 'Test xml feed',
+    'page callback' => 'mises_itunes_feed_xml_callback',
     'page arguments' => array(1),
     'access arguments' => array('access content'),
   );
@@ -194,3 +202,47 @@ function _mises_solr_author_fix_rss($tid) {
   echo $output;
 }
 
+
+function mises_itunes_feed_xml_callback($tid) {
+  //Get taxonomy data
+  $term = taxonomy_term_load($tid);
+  if(!$term){
+    //@todo: set up error handling for $tid not being an int or a valid taxonomy id.
+  }
+  if($term){
+    dpm($term);
+    return 'hi';
+  }
+  //this page callback will return an xml page
+  drupal_add_http_header('Content-Type', 'text/xml');
+  $xml = new SimpleXMLElement('<rss version="2.0" xml:base="http://localhost/new_valley/mises/mises-org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"> </rss>');
+  _mises_itunes_feed_xml_setup_channel($xml);
+  $output = $xml->saveXML();
+  echo $output;
+  drupal_exit();
+}
+
+function _mises_itunes_feed_xml_setup_channel(SimpleXMLElement &$xml) {
+  $channel = $xml->addChild('channel');
+  $channel->addChild('title');
+  $channel->addChild('description');
+  $channel->addChild('language');
+  $channel->addChild('itunes:summary');
+  $channel->addChild('itunes:explicit');
+  $channel->addChild('itunes:image');
+  $image = $channel->addChild('image');
+  $image->addChild('url');
+  $image->addChild('link');
+}
+
+function _mises_itunes_feed_xml_add_item(SimpleXMLElement &$xml) {
+  $item = $xml->addChild('item');
+  $item->addChild('title');
+  $item->addChild('link');
+  $item->addChild('pubDate');
+  $item->addChild('guid');
+  $item->addChild('description');
+  $item->addChild('itunes:summary');
+  $item->addChild('itunes:explicit');
+  $item->addChild('itunes:keywords');
+}
