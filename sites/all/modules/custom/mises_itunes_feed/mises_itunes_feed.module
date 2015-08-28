@@ -1,8 +1,8 @@
 <?php
 
- /** 
-  * Implements hook_menu().
-  */
+/**
+ * Implements hook_menu().
+ */
 function mises_itunes_feed_menu() {
   $items = array();
   $items['itunes/%'] = array(
@@ -61,14 +61,17 @@ function _mises_solr_author_fix_rss($tid) {
   //return 'x';
   $out = array();
   $out[] = '<?xml version="1.0" encoding="UTF-8"?>';
+
   $out[] = '<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2enclosuresfull.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>';
+
+
   $out[] = '<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">';
   $out[] = '<channel>';
-  $out[] = '<title>' . $term->name . '</title>';  
+  $out[] = '<title>' . $term->name . '</title>';
   $out[] = '<description><![CDATA[' . strip_tags($term->description) . ']]></description>';
   $out[] = '<language>en-US</language>';
-  $out[] = '<itunes:summary><![CDATA[' . strip_tags($term->description)  . ']]></itunes:summary>';
-  if (isset($term->field_author_1[LANGUAGE_NONE][0]['target_id'])) { 
+  $out[] = '<itunes:summary><![CDATA[' . strip_tags($term->description) . ']]></itunes:summary>';
+  if (isset($term->field_author_1[LANGUAGE_NONE][0]['target_id'])) {
     $author_node = node_load($term->field_author_1[LANGUAGE_NONE][0]['target_id']);
   }
   if (isset($author_node->title)) {
@@ -88,7 +91,7 @@ function _mises_solr_author_fix_rss($tid) {
     $out[] = '</image>';
   }
   /**
-   * jestep - Disabling limit on number of results and limit on pub date - 2015-02-12 - jestep 
+   * jestep - Disabling limit on number of results and limit on pub date - 2015-02-12 - jestep
    * // Specific how old results can be in days:
    * $age_in_days = 30;
    * $earliest = date('Y-m-d 00:00:00', time() - (60 * 60 * 24 * $age_in_days));
@@ -125,7 +128,8 @@ function _mises_solr_author_fix_rss($tid) {
       if (isset($node->field_teaser_text[LANGUAGE_NONE][0]['value'])) {
         $item_out[] = '<itunes:summary><![CDATA[' . strip_tags($node->field_teaser_text[LANGUAGE_NONE][0]['value']) . ']]></itunes:summary>';
       }
-    } else {
+    }
+    else {
       $default_summary = 'A Mises podcast.';
       $item_out[] = '<description><![CDATA[' . $default_summary . ']]></description>';
       $item_out[] = '<itunes:summary><![CDATA[' . $default_summary . ']]></itunes:summary>';
@@ -146,20 +150,20 @@ function _mises_solr_author_fix_rss($tid) {
       $item_out[] = '<itunes:author>' . $author_node->title . '</itunes:author>';
     }
     $item_out[] = '<itunes:explicit>no</itunes:explicit>';
-  
+
     // Use any "Topic" or "Austrian School" taxonomy terms associated with this node as its keywords:
     $vocabs_to_use = "('currents_trends', 'the_austrian_school_of_economics')";
     $keywords_query = db_query("SELECT DISTINCT t.name FROM taxonomy_vocabulary v, taxonomy_term_data t, taxonomy_index i " .
       "WHERE v.machine_name IN $vocabs_to_use AND v.vid = t.vid AND t.tid = i.tid AND i.nid = :nid " .
       "ORDER BY t.name",
       array(
-        ':nid' => $node->nid, 
+        ':nid' => $node->nid,
       )
     );
     $keywords = array();
     foreach ($keywords_query as $keywords_result) {
       $keywords[] = $keywords_result->name;
-    }  
+    }
     if (!empty($keywords)) {
       $item_out[] = '<itunes:keywords>' . implode(", ", $keywords) . '</itunes:keywords>';
     }
@@ -180,16 +184,16 @@ function _mises_solr_author_fix_rss($tid) {
     }
 
     // Do not return this item if the file isn't an mp3 or mp4:
-  /*  if (!isset($file->filemime) || !in_array(strtolower($file->filemime), array('audio/mpeg', 'audio/mp4'))) {
-       continue;
-    } */  
+    /*  if (!isset($file->filemime) || !in_array(strtolower($file->filemime), array('audio/mpeg', 'audio/mp4'))) {
+         continue;
+      } */
     if ($audio_file_url) {
       $item_out[] = '<enclosure url="' . $audio_file_url . '" length="' . $file->filesize . '" type="' . $file->filemime . '" />';
     }
 
 
     $item_out[] = '</item>';
-    
+
     $out = array_merge($out, $item_out);
   }
   $out[] = '</channel>';
@@ -197,19 +201,20 @@ function _mises_solr_author_fix_rss($tid) {
   $output = implode("\n", $out);
   variable_set('mises_itunes_feed_time_' . $tid, time());
   variable_set('mises_itunes_feed_cache_' . $tid, $output);
-   
 
+  drupal_add_http_header('Content-Type', 'text/xml');
   echo $output;
+  drupal_exit();
 }
 
 
 function mises_itunes_feed_xml_callback($tid) {
   //Get taxonomy data
   $term = taxonomy_term_load($tid);
-  if(!$term){
+  if (!$term) {
     //@todo: set up error handling for $tid not being an int or a valid taxonomy id.
   }
-  if($term){
+  if ($term) {
     dpm($term);
     return 'hi';
   }
