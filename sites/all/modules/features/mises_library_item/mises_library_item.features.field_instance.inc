@@ -10,7 +10,8 @@
 function mises_library_item_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_image_collection-field_default_social_image'
+  // Exported field_instance:
+  // 'field_collection_item-field_image_collection-field_default_social_image'
   $field_instances['field_collection_item-field_image_collection-field_default_social_image'] = array(
     'bundle' => 'field_image_collection',
     'default_value' => array(
@@ -104,7 +105,8 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_image_collection-field_source'
+  // Exported field_instance:
+  // 'field_collection_item-field_image_collection-field_source'
   $field_instances['field_collection_item-field_image_collection-field_source'] = array(
     'bundle' => 'field_image_collection',
     'default_value' => NULL,
@@ -2656,7 +2658,8 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_link_to_external_listing_'
+  // Exported field_instance:
+  // 'node-library_item-field_link_to_external_listing_'
   $field_instances['node-library_item-field_link_to_external_listing_'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -3222,7 +3225,7 @@ function mises_library_item_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
@@ -3259,7 +3262,8 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_original_publication_link'
+  // Exported field_instance:
+  // 'node-library_item-field_original_publication_link'
   $field_instances['node-library_item-field_original_publication_link'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
