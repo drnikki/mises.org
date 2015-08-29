@@ -499,23 +499,23 @@ function track_da_files_tracking($uri) {
   $query = "SELECT f.fid, f.filename, f.filemime, f.filesize FROM {file_managed} f WHERE f.uri = :uri";
   $result = db_query($query, array(':uri' => $uri))->fetch();
   if (!empty($result)) {
-    $filename = $result->filename;
-    $fid = $result->fid;
-    $filemime = $result->filemime;
-    $filesize = $result->filesize;
-  }
+    $filename = isset($result->filename) ? $result->filename : '';
+    $fid = isset($result->fid) ? $result->fid : '';
+    $filemime = isset($result->filemime) ? $result->filemime : '';
+    $filesize = isset($result->filesize) ? $result->filesize : '';  
 
-  // If uri exists and valid uri scheme interaction with database begins.
-  if (file_stream_wrapper_valid_scheme($scheme) && file_exists($uri)) {
-    if (!empty($fid) && $track) {
-      if (!empty($id) && !empty($type)) {
-        track_da_files_register_new_display($uri, $fid, $id, $type);
-      }
-      else {
-        track_da_files_register_new_display($uri, $fid);
-      }
-    }
-    file_transfer($uri, array('Content-Type' => $filemime, 'Content-Disposition' => 'attachment; filename="' . $filename . '"', 'Content-Length' => $filesize));
+	  // If uri exists and valid uri scheme interaction with database begins.
+	  if (file_stream_wrapper_valid_scheme($scheme) && file_exists($uri)) {
+	    if (!empty($fid) && $track) {
+	      if (!empty($id) && !empty($type)) {
+	        track_da_files_register_new_display($uri, $fid, $id, $type);
+	      }
+	      else {
+	        track_da_files_register_new_display($uri, $fid);
+	      }
+	    }
+	    file_transfer($uri, array('Content-Type' => $filemime, 'Content-Disposition' => 'attachment; filename="' . $filename . '"', 'Content-Length' => $filesize));
+	  }
   }
 
 }

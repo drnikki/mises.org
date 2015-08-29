@@ -2428,11 +2428,11 @@ a.external-link:hover span.glyphicon { background-color: #38709e; }
 *  Override flexslide styles
 */
 .flexslider { -webkit-box-shadow: none; box-shadow: none; margin: 0; padding: 0; border: 0; background: transparent; }
-.flexslider .flex-direction-nav li { background: red; }
+.flexslider .flex-direction-nav li { background: transparent; }
 .flexslider .flex-direction-nav a { text-shadow: none; }
 .flexslider .flex-direction-nav a:before { font-size: 30px; }
 
-#slideshow, #media, #image { margin-right: 20px; padding-bottom: 6px; width: 240px; }
+#slideshow, #media, #image { background-color: #c8cdd0; margin-right: 20px; margin-bottom: 6px; width: 240px; }
 
 body.cke_editable { background: #fff none; }
 
@@ -2880,12 +2880,6 @@ ul.accordion li { list-style: none; }
 */
 .easy-breadcrumb { overflow: hidden; margin-bottom: 20px; width: 80%; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
 .easy-breadcrumb a { color: #788086; }
-
-/* SLIDESHOW 
-*  Override flexslide styles
-*/
-.image .flexslider .flex-viewport { height: auto !important; }
-.image .flexslider .flex-viewport ul.slides { float: left; height: auto; width: auto !important; overflow: hidden; }
 
 /*
 * TAGS ON TEASERS AND NODES
