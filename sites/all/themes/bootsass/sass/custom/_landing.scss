@@ -183,23 +183,118 @@ body.mises-daily {
 /* CATEGORY FILTERS */
 .landing-list {
   .views-exposed-widget {
-    float: none;
-    padding: 0;
+    &#edit-book-type-wrapper {
+      @include clearfix;
+      float: none;
+      padding: 0;
+    }
+    &#edit-title-wrapper {
+      @include clearfix;
+      float: none;
+      padding: $padding-large-vertical 0 0;
+      text-align: center;
+    }
+    &:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button) {
+      width: -moz-calc(23% - 12px);
+      width: calc(23% - 12px);
+      padding: $padding-large-vertical $padding-small-horizontal 0 0;
+      &#edit-austrian-school-wrapper {
+        width: -moz-calc(31% - 12px);
+        width: calc(31% - 12px);
+      }
+      &.views-submit-button {
+        width: auto;
+        float: right;
+        padding-right: 0;
+      }
+    }
     > label {
       display: none;
     }
+    .form-submit {
+      margin-top: 0;
+    }
   }
-  .bef-select-as-links {
-    text-align: right;
+  select {
+    visibility: hidden;
+  }
+  .form-control {
+    padding: $padding-base-vertical $padding-small-horizontal;
+  }
+  #edit-book-type-wrapper {
+    .bef-select-as-links {
+      text-align: right;
+      .form-item {
+        display: inline-block;
+        a {
+          @extend .btn;
+          @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $brand-contrast-dark, $brand-contrast-dark);
+        }
+      }
+      > .form-item {
+        float: right;
+      }
+    }
+  }
+  #edit-title-wrapper {
     .form-item {
       display: inline-block;
       a {
-        @extend .btn;
-        @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $brand-contrast-dark, $brand-contrast-dark);
+        padding: 0 $padding-xs-horizontal;
+        &.active {
+          background-color: $btn-default-bg;
+          color: $white;
+        }
       }
     }
-    > .form-item {
-      float: right;
+  }
+  .filter-toggle {
+    text-transform: uppercase;
+    cursor: pointer;
+    .glyphicon {
+      margin-right: 0;
+      color: $brand-medium;
+      background-color: $white;
+      @include transition(all 0.2s ease);
+    }
+    &.open {
+      .glyphicon {
+        @include rotate(90deg);
+      }
     }
   }
+  .views-exposed-widgets {
+    //@include transition(all 0.8s ease);
+    //max-height: 0;
+    //overflow: hidden;
+    //&.open {
+    //  max-height: 100px;
+    //}
+  }
+  .views-reset-button {
+    display: inline-block;
+    padding: 0;
+    float: none;
+    visibility: hidden;
+    button {
+      @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
+    }
+  }
+}
+.selectBox-dropdown {
+  .selectBox-label {
+    padding: 0;
+  }
+  .selectBox-arrow {
+    border-left-color: $input-border;
+  }
+}
+.selectBox-dropdown-menu {
+  overflow: auto !important;
+}
+
+/* FILTERED TERM LANDING */
+.alpha_pagination {
+  @include clearfix;
+  text-align: center;
 }

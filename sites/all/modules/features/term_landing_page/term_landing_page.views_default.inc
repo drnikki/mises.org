@@ -102,12 +102,15 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['css_class'] = 'landing-list';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'GO';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Clear All';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
       'allow_secondary' => 0,
-      'secondary_label' => 'Advanced options',
+      'secondary_label' => '',
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
@@ -115,7 +118,7 @@ function term_landing_page_views_default_views() {
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_books_target_id_selective' => array(
+    'field_books_target_id' => array(
       'bef_format' => 'bef_links',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
@@ -165,13 +168,213 @@ function term_landing_page_views_default_views() {
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_books_target_id' => array(
+    'title' => array(
       'bef_format' => 'bef_links',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'All',
+        'any_label' => 'ALL',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_author_1_target_id_entityreference_filter' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All Authors',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_topics_target_id' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'Sort by Topic',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_austrian_school_target_id' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'Sort by Austrian School',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_level_target_id' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All Levels',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -253,7 +456,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = '<p>No items match the options selected. Please select another menu item or the "All" option to start over.</p>';
+  $handler->display->display_options['empty']['area']['content'] = '<p>No items match the options selected. Please select another option or the "Clear All" button to start over.</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Analytics Page Hits: Analytics Hits Entity */
@@ -350,6 +553,254 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['filters']['field_books_target_id']['expose']['operator'] = 'field_books_target_id_op';
   $handler->display->display_options['filters']['field_books_target_id']['expose']['identifier'] = 'book_type';
   $handler->display->display_options['filters']['field_books_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'starts';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['title']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['title']['group_info']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['group_info']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'A',
+      'operator' => 'starts',
+      'value' => 'A',
+    ),
+    2 => array(
+      'title' => 'B',
+      'operator' => 'starts',
+      'value' => 'B',
+    ),
+    3 => array(
+      'title' => 'C',
+      'operator' => 'starts',
+      'value' => 'C',
+    ),
+    4 => array(
+      'title' => 'D',
+      'operator' => 'starts',
+      'value' => 'D',
+    ),
+    5 => array(
+      'title' => 'E',
+      'operator' => 'starts',
+      'value' => 'E',
+    ),
+    6 => array(
+      'title' => 'F',
+      'operator' => 'starts',
+      'value' => 'F',
+    ),
+    7 => array(
+      'title' => 'G',
+      'operator' => 'starts',
+      'value' => 'G',
+    ),
+    8 => array(
+      'title' => 'H',
+      'operator' => 'starts',
+      'value' => 'H',
+    ),
+    9 => array(
+      'title' => 'I',
+      'operator' => 'starts',
+      'value' => 'I',
+    ),
+    10 => array(
+      'title' => 'J',
+      'operator' => 'starts',
+      'value' => 'J',
+    ),
+    11 => array(
+      'title' => 'K',
+      'operator' => 'starts',
+      'value' => 'K',
+    ),
+    12 => array(
+      'title' => 'L',
+      'operator' => 'starts',
+      'value' => 'L',
+    ),
+    13 => array(
+      'title' => 'M',
+      'operator' => 'starts',
+      'value' => 'M',
+    ),
+    14 => array(
+      'title' => 'N',
+      'operator' => 'starts',
+      'value' => 'N',
+    ),
+    15 => array(
+      'title' => 'O',
+      'operator' => 'starts',
+      'value' => 'O',
+    ),
+    16 => array(
+      'title' => 'P',
+      'operator' => 'starts',
+      'value' => 'P',
+    ),
+    17 => array(
+      'title' => 'Q',
+      'operator' => 'starts',
+      'value' => 'Q',
+    ),
+    18 => array(
+      'title' => 'R',
+      'operator' => 'starts',
+      'value' => 'R',
+    ),
+    19 => array(
+      'title' => 'S',
+      'operator' => 'starts',
+      'value' => 'S',
+    ),
+    20 => array(
+      'title' => 'T',
+      'operator' => 'starts',
+      'value' => 'T',
+    ),
+    21 => array(
+      'title' => 'U',
+      'operator' => 'starts',
+      'value' => 'U',
+    ),
+    22 => array(
+      'title' => 'V',
+      'operator' => 'starts',
+      'value' => 'V',
+    ),
+    23 => array(
+      'title' => 'W',
+      'operator' => 'starts',
+      'value' => 'W',
+    ),
+    24 => array(
+      'title' => 'X',
+      'operator' => 'starts',
+      'value' => 'X',
+    ),
+    25 => array(
+      'title' => 'Y',
+      'operator' => 'starts',
+      'value' => 'Y',
+    ),
+    26 => array(
+      'title' => 'Z',
+      'operator' => 'starts',
+      'value' => 'Z',
+    ),
+  );
+  /* Filter criterion: Field: Author (field_author_1) (reference filter) */
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['id'] = 'field_author_1_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['field'] = 'field_author_1_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['group'] = 1;
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['operator_id'] = 'field_author_1_target_id_entityreference_filter_op';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['label'] = 'Author';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['operator'] = 'field_author_1_target_id_entityreference_filter_op';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['identifier'] = 'author';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['hide_empty_filter'] = FALSE;
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['reference_display'] = 'term_landing:entityreference_1';
+  /* Filter criterion: Content: Topics (field_topics) */
+  $handler->display->display_options['filters']['field_topics_target_id']['id'] = 'field_topics_target_id';
+  $handler->display->display_options['filters']['field_topics_target_id']['table'] = 'field_data_field_topics';
+  $handler->display->display_options['filters']['field_topics_target_id']['field'] = 'field_topics_target_id';
+  $handler->display->display_options['filters']['field_topics_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_topics_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['operator_id'] = 'field_topics_target_id_op';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['label'] = 'Topic';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['operator'] = 'field_topics_target_id_op';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['identifier'] = 'topic';
+  $handler->display->display_options['filters']['field_topics_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Austrian School (field_austrian_school) */
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['id'] = 'field_austrian_school_target_id';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['table'] = 'field_data_field_austrian_school';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['field'] = 'field_austrian_school_target_id';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['operator_id'] = 'field_austrian_school_target_id_op';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['label'] = 'Austrian School';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['operator'] = 'field_austrian_school_target_id_op';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['identifier'] = 'austrian_school';
+  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Level (field_level) */
+  $handler->display->display_options['filters']['field_level_target_id']['id'] = 'field_level_target_id';
+  $handler->display->display_options['filters']['field_level_target_id']['table'] = 'field_data_field_level';
+  $handler->display->display_options['filters']['field_level_target_id']['field'] = 'field_level_target_id';
+  $handler->display->display_options['filters']['field_level_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_level_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['operator_id'] = 'field_level_target_id_op';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['label'] = 'Level';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['operator'] = 'field_level_target_id_op';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['identifier'] = 'level';
+  $handler->display->display_options['filters']['field_level_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -2152,6 +2603,60 @@ return FALSE;';
     5 => 0,
   );
   $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'media_type';
+
+  /* Display: Author Entity Reference */
+  $handler = $view->new_display('entityreference', 'Author Entity Reference', 'entityreference_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Last name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'person_profile' => 'person_profile',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type of Profile (field_profile_type) */
+  $handler->display->display_options['filters']['field_profile_type_target_id']['id'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['table'] = 'field_data_field_profile_type';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['field'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['value'] = array(
+    201 => '201',
+  );
   $export['term_landing'] = $view;
 
   return $export;
