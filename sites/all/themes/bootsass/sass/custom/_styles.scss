@@ -537,7 +537,7 @@ blockquote {
   background: transparent;
   .flex-direction-nav {
     li {
-      background: red;
+      background: transparent;
     }
     a {
        text-shadow: none;
@@ -548,8 +548,9 @@ blockquote {
   }
 }
 #slideshow, #media, #image {
+  background-color: $gray-light;
   margin-right: $grid-gutter-width;
-  padding-bottom: $padding-base-vertical;
+  margin-bottom: $padding-base-vertical;
   width: 240px; 
 }
 
