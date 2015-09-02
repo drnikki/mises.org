@@ -307,15 +307,62 @@ function _mises_itunes_feed_xml_setup_channel(DOMDocument &$dom, DOMElement &$xm
   $xml->appendChild($channel);
 }
 
-function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$xml, array $node) {
+function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$xml, $node) {
+  $wrapper = entity_metadata_wrapper('node', $node);
   $item = $dom->createElement('item');
-  $item->appendChild($dom->createElement('title'));
-  $item->appendChild($dom->createElement('link'));
-  $item->appendChild($dom->createElement('pubDate'));
-  $item->appendChild($dom->createElement('guid'));
-  $item->appendChild($dom->createElement('description'));
+  $item->appendChild($dom->createElement('title', $node->title));
+  $xml->appendChild($item);
+  return TRUE;
+  $item->appendChild($dom->createElement('itunes:author', ''));
+  $item->appendChild($dom->createElement('itunes:subtitle'));
   $item->appendChild($dom->createElement('itunes:summary'));
-  $item->appendChild($dom->createElement('itunes:explicit'));
-  $item->appendChild($dom->createElement('itunes:keywords'));
+  //field_media on field_media_collection field collection has a cardinality of unlimited, so we need to loop through the results
+  if (!empty($wrapper->field_media_collection)) {
+    $duration = 0;
+    foreach ($wrapper->field_media_collection->value() as $index => $media) {
+      $fids = field_get_items('field_collection_item', $media, 'field_media');
+      $file = file_load($fids[0]['fid']);
+      $url = file_create_url($file->uri);
+
+      $file_info = getID3_analyze(drupal_realpath($file->uri));
+      $duration += $file_info['playtime_seconds'];
+
+      $encloser = $dom->createElement('enclosure');
+      $encloser->setAttribute('url', $url);
+      $encloser->setAttribute('length', $file->filesize);
+      $encloser->setAttribute('type', $file->filemime);
+      $item->appendChild($encloser);
+    }
+    $duration = gmdate("H:i:s", $duration);
+  }
+  else{
+    dd($wrapper->nid->value(), 'wrapper with out a field_media_collection');
+    dd($node, 'node');
+  }
+
+  $item->appendChild($dom->createElement('guid', $wrapper->url->value()));
+  $item->appendChild($dom->createElement('pubDate', date(DATE_RSS, $wrapper->field_published_date->value())));
+  $item->appendChild($dom->createElement('itunes:duration', $duration));
+
+  //Use any "Topic" or "Austrian School" taxonomy terms associated with this node as its keywords.
+  //@todo: should these field be checked before evaluated?
+  $keywords = array();
+  foreach ($wrapper->field_topics->value() as $index => $topic) {
+    $keywords[] = $topic->name;
+  }
+  foreach ($wrapper->field_austrian_school->value() as $index => $school) {
+    $keywords[] = $school->name;
+  }
+  //Sort the keywords into alphabetical order.
+  sort($keywords);
+  $item->appendChild($dom->createElement('itunes:keywords', implode(', ', $keywords)));
+
+  $item->appendChild($dom->createElement('link', url($node->nid, array('absolute' => TRUE))));
+  //drupal_get_path_alias
+
+  $item->appendChild($dom->createElement('description'));
+
+  //@todo remove this? http://deimos.apple.com/rsrc/doc/iTunesUAdministrationGuide/#ManagingiTunesUCoursePages/chapter_11_section_6.html
+  $item->appendChild($dom->createElement('itunes:explicit', 'no'));
   $xml->appendChild($item);
 }
