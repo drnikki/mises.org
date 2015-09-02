@@ -263,8 +263,11 @@ function mises_itunes_feed_xml_callback($tid) {
   $nids = array_keys($list['node']);
   $nodes = node_load_multiple($nids);
 
+  $channel = $dom->getElementsByTagName('channel');
+  $channel = $channel->item(0);
+
   foreach ($nodes as $node) {
-    _mises_itunes_feed_xml_add_item($dom, $xml, $node);
+    _mises_itunes_feed_xml_add_item($dom, $channel, $node);
   }
 
   $output = $dom->saveXML();
@@ -313,11 +316,11 @@ function _mises_itunes_feed_xml_setup_channel(DOMDocument &$dom, DOMElement &$xm
   $xml->appendChild($channel);
 }
 
-function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$xml, $node) {
+function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel, $node) {
   $wrapper = entity_metadata_wrapper('node', $node);
   $item = $dom->createElement('item');
   $item->appendChild($dom->createElement('title', $node->title));
-  $xml->appendChild($item);
+  $channel->appendChild($item);
   return TRUE;
   $item->appendChild($dom->createElement('itunes:author', ''));
   $item->appendChild($dom->createElement('itunes:subtitle'));
@@ -370,7 +373,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$xml, $n
 
   //@todo remove this? http://deimos.apple.com/rsrc/doc/iTunesUAdministrationGuide/#ManagingiTunesUCoursePages/chapter_11_section_6.html
   $item->appendChild($dom->createElement('itunes:explicit', 'no'));
-  $xml->appendChild($item);
+  $channel->appendChild($item);
 }
 
 
