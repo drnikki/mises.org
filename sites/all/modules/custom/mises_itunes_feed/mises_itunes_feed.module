@@ -241,26 +241,33 @@ function mises_itunes_feed_xml_callback($tid) {
 //  $query_node = db_select('node', 'n');
 //  $query_pubdate = db_select('field_data_field_published_date', 'd');
 
-  $list = taxonomy_select_nodes($tid, FALSE, 10);
+//  $list = taxonomy_select_nodes($tid, FALSE, 10);
 
-
+  $types = array(
+    'blog',
+    'course',
+    'event',
+    'library_collection',
+    'library_item',
+    'person_profile',
+    'product',
+  );
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->propertyCondition('status', 1)
+    ->propertyCondition('type', $types, 'in')
     ->propertyOrderBy('created', 'DESC')
-    ->range(0, 10)
-    ->fieldCondition('field_library_item_tree')
-  ;
+    ->addTag('debug')
+    ->range(0, 10);
+
   $list = $query->execute();
   $nids = array_keys($list['node']);
   $nodes = node_load_multiple($nids);
+
   foreach ($nodes as $node) {
     _mises_itunes_feed_xml_add_item($dom, $xml, $node);
-    break;
   }
-
-
-
+  
   $output = $dom->saveXML();
   echo $output;
   drupal_exit();
@@ -366,3 +373,27 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$xml, $n
   $item->appendChild($dom->createElement('itunes:explicit', 'no'));
   $xml->appendChild($item);
 }
+
+
+
+/**
++ * Implements hook_query_TAG_alter().
++ *
++ * Makes debugging EntityFieldQuery much easier.
++ *
++ * Example usage:
++ *   $q = new EntityFieldQuery;
++ *   $q->entityCondition('entity_type', 'node')
++ *     ->addTag('debug')
++ *     ->execute();
++ *
++ * @param QueryAlterableInterface $query
++ */
+function mises_itunes_feed_query_debug_alter(QueryAlterableInterface $query) {
+  if (!$query->hasTag('debug-semaphore')) {
+    $query->addTag('debug-semaphore');
+    dd($query);
+  }
+}
+
+
