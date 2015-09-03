@@ -206,7 +206,9 @@ function _mises_solr_author_fix_rss($tid) {
   drupal_exit();
 }
 
-
+/**
+ * @param int $tid
+ */
 function mises_itunes_feed_xml_callback($tid) {
   //Get taxonomy data
   $term = taxonomy_term_load($tid);
@@ -264,6 +266,13 @@ function mises_itunes_feed_xml_callback($tid) {
   drupal_exit();
 }
 
+/**
+ * Builds the channel xml item for an itunes rss feed.
+ *
+ * @param DOMDocument $dom
+ * @param DOMElement $xml
+ * @param stdClass $term
+ */
 function _mises_itunes_feed_xml_setup_channel(DOMDocument &$dom, DOMElement &$xml, stdClass $term) {
   global $language;
   //Create a wrapper to get at field values on the term easier.
@@ -307,7 +316,13 @@ function _mises_itunes_feed_xml_setup_channel(DOMDocument &$dom, DOMElement &$xm
   $xml->appendChild($channel);
 }
 
-
+/**
+ * Builds and item xml item for an itunes rss feed.
+ *
+ * @param DOMDocument $dom
+ * @param DOMElement $channel
+ * @param $node
+ */
 function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel, $node) {
 
   $wrapper = entity_metadata_wrapper('node', $node);
@@ -373,7 +388,6 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
   }
   else{
     //@todo: add watchdog for when a node shows up w/o a publish date.
-    dd($node->type, 'no published date');
   }
 
   $item->appendChild($dom->createElement('itunes:duration', $duration));
@@ -406,18 +420,18 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
 
 
 /**
- * + * Implements hook_query_TAG_alter().
- * + *
- * + * Makes debugging EntityFieldQuery much easier.
- * + *
- * + * Example usage:
- * + *   $q = new EntityFieldQuery;
- * + *   $q->entityCondition('entity_type', 'node')
- * + *     ->addTag('debug')
- * + *     ->execute();
- * + *
- * + * @param QueryAlterableInterface $query
- * + */
+ * Implements hook_query_TAG_alter().
+ *
+ * Makes debugging EntityFieldQuery much easier.
+ *
+ * Example usage:
+ *   $q = new EntityFieldQuery;
+ *   $q->entityCondition('entity_type', 'node')
+ *     ->addTag('debug')
+ *     ->execute();
+ *
+ * @param QueryAlterableInterface $query
+ */
 function mises_itunes_feed_query_debug_alter(QueryAlterableInterface $query) {
   if (!$query->hasTag('debug-semaphore')) {
     $query->addTag('debug-semaphore');
