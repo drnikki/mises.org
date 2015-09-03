@@ -321,8 +321,6 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
     }
     $item->appendChild($dom->createElement('itunes:author', implode(', ', $authors)));
   }
-  //@todo add subtiles.
-//  $item->appendChild($dom->createElement('itunes:subtitle'));
 
   $description = '';
   if (!empty($wrapper->body->value())) {
@@ -349,11 +347,11 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
           WATCHDOG_ERROR,
           url("node/$node->nid/edit", array('absolute' => TRUE)));
       }
-      $encloser = $dom->createElement('enclosure');
-      $encloser->setAttribute('url', $url);
-      $encloser->setAttribute('length', $file->filesize);
-      $encloser->setAttribute('type', $file->filemime);
-      $item->appendChild($encloser);
+      $enclosure = $dom->createElement('enclosure');
+      $enclosure->setAttribute('url', $url);
+      $enclosure->setAttribute('length', $file->filesize);
+      $enclosure->setAttribute('type', $file->filemime);
+      $item->appendChild($enclosure);
     }
     $duration = gmdate("H:i:s", $duration);
   }
