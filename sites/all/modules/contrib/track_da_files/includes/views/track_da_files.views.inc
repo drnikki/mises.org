@@ -425,9 +425,9 @@ function track_da_files_views_data_alter(&$data) {
   $data['file_managed']['table']['join'] = array(
     'track_da_files' => array(
       'left_table' => 'track_da_files_paths',
-      'left_field' => 'pid',
+      'left_field' => 'fid',
       'type' => 'INNER',
-      'field' => 'pid',
+      'field' => 'fid',
     ),
   );
 }
