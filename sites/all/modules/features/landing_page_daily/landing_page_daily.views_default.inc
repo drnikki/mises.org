@@ -338,7 +338,7 @@ function landing_page_daily_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library/mises-view"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises Weekends</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library/mises-weekends"><span class="glyphicon glyphicon-chevron-right"></span> Browse Mises Weekends</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
