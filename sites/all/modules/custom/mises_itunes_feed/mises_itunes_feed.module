@@ -103,17 +103,23 @@ function _mises_solr_author_fix_rss($tid) {
     if (time() - $start_time > $max_processing_seconds) {
       break;
     }
+    
+
     $item_out = array();
     $node = node_load($result->nid);
-    #    drupal_set_message('<pre>' . print_r($node, 1) . '</pre>');
+    // Grab the referenced author for the Library Item
+    $author = node_load($node->field_author_1['und'][0]['target_id']);
+    //drupal_set_message('<pre>' . print_r(node_load($author), 1) . '</pre>');
     #    return 'x';
     $item_out[] = '<item>';
     $item_out[] = '<title>' . $node->title . '</title>';
     $item_out[] = '<link>' . url('node/' . $node->nid, array('absolute' => TRUE)) . '</link>';
+    $item_out[] = '<dc:creator>' . $author->title . '</dc:creator>';
     $item_out[] = '<pubDate>' . date("r", strtotime($result->field_published_date_value)) . '</pubDate>';
     $item_out[] = '<guid isPermaLink="false">' . url('node/' . $node->nid, array('absolute' => TRUE)) . '</guid>';
+  
     if (isset($node->body[LANGUAGE_NONE][0]['value'])) {
-      $item_out[] = '<description><![CDATA[' . strip_tags($node->body[LANGUAGE_NONE][0]['value']) . ']]></description>';
+      $item_out[] = '<description><![CDATA[' . strip_tags($node->body[LANGUAGE_NONE][0]['value'], '<p>') . ']]></description>';
       if (isset($node->field_teaser_text[LANGUAGE_NONE][0]['value'])) {
         $item_out[] = '<itunes:summary><![CDATA[' . strip_tags($node->field_teaser_text[LANGUAGE_NONE][0]['value']) . ']]></itunes:summary>';
       }
