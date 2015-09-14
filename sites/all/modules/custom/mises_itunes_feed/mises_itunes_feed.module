@@ -324,7 +324,6 @@ function _mises_itunes_feed_xml_setup_channel(DOMDocument &$dom, DOMElement &$xm
  * @param $node
  */
 function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel, $node) {
-
   $wrapper = entity_metadata_wrapper('node', $node);
   $item = $dom->createElement('item');
   $item->appendChild($dom->createElement('title', $node->title));
@@ -338,9 +337,18 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
   }
 
   $description = '';
-  if (!empty($wrapper->body->value())) {
+  //If there is no value set for body then an exception is thrown.
+  try {
     $description = check_plain($wrapper->body->value->value());
+  } catch (EntityMetadataWrapperException $e) {
+    watchdog('mises_itunes_feed',
+      "Node %nid shows up in the itunes rss feed but does a body to be used as a
+       discription item",
+      array('%nid' => $node->nid),
+      WATCHDOG_ERROR
+    );
   }
+
   $item->appendChild($dom->createElement('description', $description));
   //field_media on field_media_collection field collection has a cardinality of unlimited, so we need to loop through the results
   if (!empty($wrapper->field_media_collection)) {
