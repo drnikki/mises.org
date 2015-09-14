@@ -430,7 +430,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
     $item->appendChild($dom->createElement('itunes:keywords', implode(', ', $keywords)));
   }
 
-  $item->appendChild($dom->createElement('link', url($node->nid, array('absolute' => TRUE))));
+  $item->appendChild($dom->createElement('link', url('node/'.$node->nid, array('absolute' => TRUE))));
 
   //@todo remove this? http://deimos.apple.com/rsrc/doc/iTunesUAdministrationGuide/#ManagingiTunesUCoursePages/chapter_11_section_6.html
   $item->appendChild($dom->createElement('itunes:explicit', 'no'));
