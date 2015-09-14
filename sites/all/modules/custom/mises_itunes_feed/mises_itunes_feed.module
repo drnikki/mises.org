@@ -348,8 +348,19 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       WATCHDOG_ERROR
     );
   }
-
   $item->appendChild($dom->createElement('description', $description));
+  //summary
+  try {
+    $summary = '';
+    $summary = check_plain($wrapper->field_teaser_text->value->value());
+    $item->appendChild($dom->createElement('itunes:summary', $summary));
+  } catch (EntityMetadataWrapperException $e) {
+    watchdog('mises_itunes_feed',
+      $e->getMessage(),
+      WATCHDOG_ERROR
+    );
+  }
+
   //field_media on field_media_collection field collection has a cardinality of unlimited, so we need to loop through the results
   if (!empty($wrapper->field_media_collection)) {
     $duration = 0;
