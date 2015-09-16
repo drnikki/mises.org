@@ -230,7 +230,7 @@ function mises_itunes_feed_xml_callback($tid) {
   $xml->setAttribute('xmlns:itunesu', "http://www.itunesu.com/feed");
   _mises_itunes_feed_xml_setup_channel($dom, $xml, $term);
 
-  // Collect items that belong to the current vocabulary term
+  // Collect items that belong to the current vocabulary term.
   // @todo: the view for taxonomy/term/%1 shows that $types should be shown on the view, but only library_item has the field_author_1 and field_published date.
   $types = array(
     'library_item',
@@ -327,7 +327,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
   $item = $dom->createElement('item');
   $item->appendChild($dom->createElement('title', $node->title));
   if (!empty($wrapper->field_author_1)) {
-    // Grab the Title from each of the referenced node threw field_author_1 on the node
+    // Grab the Title from each of the referenced node threw field_author_1 on the node.
     $authors = array();
     foreach ($wrapper->field_author_1->value() as $index => $author) {
       $authors[] = $author->title;
@@ -339,7 +339,8 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
   // If there is no value set for body then an exception is thrown.
   try {
     $description = check_plain($wrapper->body->value->value());
-  } catch (EntityMetadataWrapperException $e) {
+  }
+  catch (EntityMetadataWrapperException $e) {
     watchdog('mises_itunes_feed',
       "Node %nid shows up in the itunes rss feed but does a body to be used as a
        discription item",
@@ -348,12 +349,12 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
     );
   }
   $item->appendChild($dom->createElement('description', $description));
-  // summary
   try {
     $summary = '';
     $summary = check_plain($wrapper->field_teaser_text->value->value());
     $item->appendChild($dom->createElement('itunes:summary', $summary));
-  } catch (EntityMetadataWrapperException $e) {
+  }
+  catch (EntityMetadataWrapperException $e) {
     watchdog('mises_itunes_feed',
       $e->getMessage(),
       WATCHDOG_ERROR
@@ -372,7 +373,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       if (isset($file_info['playtime_seconds'])) {
         $duration += $file_info['playtime_seconds'];
       }
-      else{
+      else {
         watchdog('mises_itunes_feed',
           "Node %nid shows up in the itunes rss feed but does not have a media
           (field_collection_item) item",
@@ -404,14 +405,14 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
     $pubDate = date(DATE_RSS, $wrapper->field_published_date->value());
     $item->appendChild($dom->createElement('pubDate', $pubDate));
   }
-  else{
+  else {
     // @todo: add watchdog for when a node shows up w/o a publish date.
   }
 
   $item->appendChild($dom->createElement('itunes:duration', $duration));
 
-  //Use any "Topic" or "Austrian School" taxonomy terms associated with this node as its keywords.
-  //@todo: should these field be checked before evaluated?
+  // Use any "Topic" or "Austrian School" taxonomy terms associated with this node as its keywords.
+  // @todo: should these field be checked before evaluated?
   $keywords = array();
   if (!empty($wrapper->field_topics)) {
     foreach ($wrapper->field_topics->value() as $index => $topic) {
@@ -423,7 +424,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       $keywords[] = $school->name;
     }
   }
-  //Sort the keywords into alphabetical order.
+  // Sort the keywords into alphabetical order.
   if (!empty($keywords)) {
     sort($keywords);
     $item->appendChild($dom->createElement('itunes:keywords', implode(', ', $keywords)));
@@ -431,7 +432,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
 
   $item->appendChild($dom->createElement('link', url('node/'.$node->nid, array('absolute' => TRUE))));
 
-  //@todo remove this? http://deimos.apple.com/rsrc/doc/iTunesUAdministrationGuide/#ManagingiTunesUCoursePages/chapter_11_section_6.html
+  // @todo remove this? http://deimos.apple.com/rsrc/doc/iTunesUAdministrationGuide/#ManagingiTunesUCoursePages/chapter_11_section_6.html
   $item->appendChild($dom->createElement('itunes:explicit', 'no'));
   $channel->appendChild($item);
 }
