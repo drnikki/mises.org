@@ -80,7 +80,7 @@ function wysiwyg_ckeditor_version($editor) {
   }
   $library = fopen($library, 'r');
   $max_lines = 8;
-  while ($max_lines && $line = fgets($library)) {
+  while ($max_lines && $line = fgets($library, 500)) {
     // version:'CKEditor 3.0 SVN',revision:'3665'
     // version:'3.0 RC',revision:'3753'
     // version:'3.0.1',revision:'4391'
@@ -193,7 +193,7 @@ function wysiwyg_ckeditor_settings_form(&$form, &$form_state) {
     '#title' => t('Force paste as plain text'),
     '#default_value' => !empty($settings['forcePasteAsPlainText']),
     '#return_value' => 1,
-    '#description' => t('If enabled, all pasting operations insert plain text into the editor, loosing any formatting information possibly available in the source text. Note: Paste from Word is not affected by this setting.') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'forcePasteAsPlainText', '@url' => url('http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-forcePasteAsPlainText'))),
+    '#description' => t('If enabled, all pasting operations insert plain text into the editor, losing any formatting information possibly available in the source text. Note: Paste from Word is not affected by this setting.') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'forcePasteAsPlainText', '@url' => url('http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-forcePasteAsPlainText'))),
   );
 
   if (version_compare($installed_version, '4.1.0', '>=')) {
