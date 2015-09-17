@@ -1181,7 +1181,7 @@ Note that all tags must be manually selected.',
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_books',
-    'label' => 'Books',
+    'label' => 'Book Type',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -1823,7 +1823,7 @@ Note that all tags must be manually selected.',
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 25,
+      'weight' => 32,
     ),
   );
 
@@ -2420,7 +2420,7 @@ Note that all tags must be manually selected.',
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 26,
+      'weight' => 33,
     ),
   );
 
@@ -2772,7 +2772,7 @@ Note that all tags must be manually selected.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 29,
+      'weight' => 36,
     ),
   );
 
@@ -3160,7 +3160,7 @@ Note that all tags must be manually selected.',
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 27,
+      'weight' => 34,
     ),
   );
 
@@ -3263,7 +3263,7 @@ Note that all tags must be manually selected.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 28,
+      'weight' => 35,
     ),
   );
 
@@ -3609,7 +3609,7 @@ Note that all tags must be manually selected.',
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 24,
+      'weight' => 31,
     ),
   );
 
@@ -4610,7 +4610,7 @@ Note that all tags must be manually selected.',
   t('Author 1');
   t('Bibliography Footnote');
   t('Body');
-  t('Books');
+  t('Book Type');
   t('Bookstore');
   t('Citation');
   t('Copyright Info');
