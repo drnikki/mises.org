@@ -150,7 +150,14 @@ function mises_library_item_strongarm() {
           'weight' => '7',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'disqus' => array(
+          'teaser' => array(
+            'weight' => '1002',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__library_item'] = $strongarm;
