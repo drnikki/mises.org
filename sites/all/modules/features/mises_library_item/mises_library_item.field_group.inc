@@ -596,7 +596,6 @@ function mises_library_item_field_group_info() {
     'children' => array(
       0 => 'field_topics',
       1 => 'field_austrian_school',
-      2 => 'tags_title',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

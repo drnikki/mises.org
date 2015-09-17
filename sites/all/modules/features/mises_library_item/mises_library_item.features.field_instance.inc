@@ -920,7 +920,7 @@ function mises_library_item_field_default_field_instances() {
           'view_mode' => 'author_full_name',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 2,
+        'weight' => 43,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -3006,7 +3006,7 @@ Note that all tags must be manually selected.',
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 42,
       ),
       'token' => array(
         'label' => 'above',
@@ -3231,12 +3231,8 @@ Note that all tags must be manually selected.',
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'video_block_teaser' => array(
