@@ -266,9 +266,7 @@ function mises_library_item_field_group_info() {
   $field_group->data = array(
     'label' => 'Featured Tags',
     'weight' => '15',
-    'children' => array(
-      0 => 'field_featured_content',
-    ),
+    'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'formatter' => 'collapsible',
