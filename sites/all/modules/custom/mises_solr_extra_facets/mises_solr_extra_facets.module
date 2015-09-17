@@ -143,7 +143,7 @@ function _mises_solr_extra_facets_process_item($node) {
 
   // drupal_set_message('<pre>' . print_r($node, 1) . '</pre>');
 
-  $node->field_books[LANGUAGE_NONE] = array();
+  /* $node->field_books[LANGUAGE_NONE] = array();
   if ($pdf_count) {
     $term = array_shift(taxonomy_get_term_by_name('PDF', 'books'));
     $node->field_books[LANGUAGE_NONE][] = array('target_id' => $term->tid);
@@ -155,9 +155,9 @@ function _mises_solr_extra_facets_process_item($node) {
   if ($html_count) {
     $term = array_shift(taxonomy_get_term_by_name('HTML Book', 'books'));
     $node->field_books[LANGUAGE_NONE][] = array('target_id' => $term->tid);
-  }
+  } */
 
-  node_save($node);
+  //node_save($node);
 }
 
 /**
