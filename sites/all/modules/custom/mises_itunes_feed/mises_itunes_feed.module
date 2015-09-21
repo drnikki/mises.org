@@ -196,7 +196,6 @@ function _mises_solr_author_fix_rss($tid) {
       $item_out[] = '<enclosure url="' . $audio_file_url . '" length="' . $file->filesize . '" type="' . $file->filemime . '" />';
     }
 
-
     $item_out[] = '</item>';
 
     $out = array_merge($out, $item_out);
@@ -231,8 +230,6 @@ function mises_itunes_feed_xml_callback($tid) {
   // Get taxonomy data.
   $term = taxonomy_term_load($tid);
   if ($term) {
-    // @todo: set up error handling for $tid not being an int or a valid taxonomy id.
-
     _mises_itunes_feed_xml_setup_channel($dom, $xml, $term);
 
     // Collect items that belong to the current vocabulary term.
@@ -268,7 +265,7 @@ function mises_itunes_feed_xml_callback($tid) {
   else {
     watchdog('mises_itunes_feed invalid tid',
       "%tid is not a valid taxonomy identifier",
-      array('%tid' => $tid,),
+      array('%tid' => $tid),
       WATCHDOG_ERROR
     );
     $xml->appendChild($dom->createElement('error', "$tid is invalid"));
@@ -307,7 +304,7 @@ function _mises_itunes_feed_xml_setup_channel(DOMDocument &$dom, DOMElement &$xm
     $channel->appendChild($dom->createElement('itunes:author', implode(', ', $authors)));
   }
 
-  // @todo: exsplicit is hardcoded??
+  // @todo: explicit is hardcoded??
   $channel->appendChild($dom->createElement('itunes:explicit', 'no'));
 
   // Build image for the vocabulary.
@@ -444,7 +441,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
     $item->appendChild($dom->createElement('itunes:keywords', implode(', ', $keywords)));
   }
 
-  $item->appendChild($dom->createElement('link', url('node/'.$node->nid, array('absolute' => TRUE))));
+  $item->appendChild($dom->createElement('link', url('node/' . $node->nid, array('absolute' => TRUE))));
 
   // @todo remove this? http://deimos.apple.com/rsrc/doc/iTunesUAdministrationGuide/#ManagingiTunesUCoursePages/chapter_11_section_6.html
   $item->appendChild($dom->createElement('itunes:explicit', 'no'));
