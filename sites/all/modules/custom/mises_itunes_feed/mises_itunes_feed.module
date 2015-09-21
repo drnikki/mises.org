@@ -210,54 +210,62 @@ function _mises_solr_author_fix_rss($tid) {
  * @param int $tid
  */
 function mises_itunes_feed_xml_callback($tid) {
-  // Get taxonomy data.
-  $term = taxonomy_term_load($tid);
-  if (!$term) {
-    // @todo: set up error handling for $tid not being an int or a valid taxonomy id.
-  }
-
   // This page callback will return an xml page.
   drupal_add_http_header('Content-Type', 'text/xml');
   $dom = new DOMDocument('1.0', 'UTF-8');
   $dom->preserveWhiteSpace = FALSE;
   $dom->formatOutput = TRUE;
-
   $xml = $dom->createElement('rss');
   $dom->appendChild($xml);
   $xml->setAttribute('version', '2.0');
   $xml->setAttribute('xmlns:atom', "http://www.w3.org/2005/Atom");
   $xml->setAttribute('xmlns:itunes', "http://www.itunes.com/dtds/podcast-1.0.dtd");
   $xml->setAttribute('xmlns:itunesu', "http://www.itunesu.com/feed");
-  _mises_itunes_feed_xml_setup_channel($dom, $xml, $term);
 
-  // Collect items that belong to the current vocabulary term.
-  // @todo: the view for taxonomy/term/%1 shows that $types should be shown on the view, but only library_item has the field_author_1 and field_published date.
-  $types = array(
-    'library_item',
-    'blog',
-    'course',
-    'event',
-    'library_collection',
-    'person_profile',
-    'product',
-  );
-  $query = new EntityFieldQuery();
-  // @todo: is the limit of 14 needed?
-  $query->entityCondition('entity_type', 'node')
-    ->propertyCondition('status', 1)
-    ->propertyCondition('type', $types, 'in')
-    ->propertyOrderBy('created', 'DESC')
-    ->range(0, 14);
+  // Get taxonomy data.
+  $term = taxonomy_term_load($tid);
+  if ($term) {
+    // @todo: set up error handling for $tid not being an int or a valid taxonomy id.
 
-  $list = $query->execute();
-  $nids = array_keys($list['node']);
-  $nodes = node_load_multiple($nids);
+    _mises_itunes_feed_xml_setup_channel($dom, $xml, $term);
 
-  $channel = $dom->getElementsByTagName('channel');
-  $channel = $channel->item(0);
+    // Collect items that belong to the current vocabulary term.
+    // @todo: the view for taxonomy/term/%1 shows that $types should be shown on the view, but only library_item has the field_author_1 and field_published date.
+    $types = array(
+      'library_item',
+      'blog',
+      'course',
+      'event',
+      'library_collection',
+      'person_profile',
+      'product',
+    );
+    $query = new EntityFieldQuery();
+    // @todo: is the limit of 14 needed?
+    $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('status', 1)
+      ->propertyCondition('type', $types, 'in')
+      ->propertyOrderBy('created', 'DESC')
+      ->range(0, 14);
 
-  foreach ($nodes as $node) {
-    _mises_itunes_feed_xml_add_item($dom, $channel, $node);
+    $list = $query->execute();
+    $nids = array_keys($list['node']);
+    $nodes = node_load_multiple($nids);
+
+    $channel = $dom->getElementsByTagName('channel');
+    $channel = $channel->item(0);
+
+    foreach ($nodes as $node) {
+      _mises_itunes_feed_xml_add_item($dom, $channel, $node);
+    }
+  }
+  else {
+    watchdog('mises_itunes_feed invalid tid',
+      "%tid is not a valid taxonomy identifier",
+      array('%tid' => $tid,),
+      WATCHDOG_ERROR
+    );
+    $xml->appendChild($dom->createElement('error', "$tid is invalid"));
   }
 
   $output = $dom->saveXML();
