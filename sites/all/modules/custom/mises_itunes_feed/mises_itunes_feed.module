@@ -331,13 +331,24 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
   $wrapper = entity_metadata_wrapper('node', $node);
   $item = $dom->createElement('item');
   $item->appendChild($dom->createElement('title', $node->title));
-  if (!empty($wrapper->field_author_1)) {
-    // Grab the Title from each of the referenced node threw field_author_1 on the node.
-    $authors = array();
-    foreach ($wrapper->field_author_1->value() as $index => $author) {
-      $authors[] = $author->title;
+  try {
+    if (!empty($wrapper->field_author_1)) {
+      // Grab the Title from each of the referenced node threw field_author_1 on the node.
+      $authors = array();
+      foreach ($wrapper->field_author_1->value() as $index => $author) {
+        if (isset($author)) {
+          $authors[] = $author->title;
+        }
+      }
+      $item->appendChild($dom->createElement('itunes:author', implode(', ', $authors)));
     }
-    $item->appendChild($dom->createElement('itunes:author', implode(', ', $authors)));
+  }
+  catch (EntityMetadataWrapperException $e) {
+    watchdog('mises_itunes_feed',
+      "Node %nid shows up in the itunes rss feed with out an Author",
+      array('%nid' => $node->nid),
+      WATCHDOG_ERROR
+    );
   }
 
   $description = '';
@@ -350,7 +361,8 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       "Node %nid shows up in the itunes rss feed but does a body to be used as a
        discription item",
       array('%nid' => $node->nid),
-      WATCHDOG_ERROR
+      WATCHDOG_ERROR,
+      url("node/$node->nid", array('absolute' => TRUE))
     );
   }
   $item->appendChild($dom->createElement('description', $description));
@@ -360,9 +372,12 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
     $item->appendChild($dom->createElement('itunes:summary', $summary));
   }
   catch (EntityMetadataWrapperException $e) {
-    watchdog('mises_itunes_feed',
-      $e->getMessage(),
-      WATCHDOG_ERROR
+    watchdog('mises_itunes_feed', 'Node %nid has no field_teaser_text and
+    a EntityMetadataWrapperException is caught with message: %msg',
+      array('%nid' => $node->nid,'%msg' =>$e->getMessage()),
+      WATCHDOG_NOTICE,
+      url("node/$node->nid", array('absolute' => TRUE))
+
     );
   }
 
@@ -384,8 +399,10 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
           (field_collection_item) item",
           array('%nid' => $node->nid),
           WATCHDOG_ERROR,
-          url("node/$node->nid/edit", array('absolute' => TRUE)));
+          url("node/$node->nid", array('absolute' => TRUE))
+        );
       }
+      // @todo: filter out youtube here
       $enclosure = $dom->createElement('enclosure');
       $enclosure->setAttribute('url', $url);
       $enclosure->setAttribute('length', $file->filesize);
@@ -401,7 +418,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       (field_collection_item) item",
       array('%nid' => $node->nid),
       WATCHDOG_ERROR,
-      url("node/$node->nid/edit", array('absolute' => TRUE)));
+      url("node/$node->nid", array('absolute' => TRUE)));
   }
 
   $item->appendChild($dom->createElement('guid', $wrapper->url->value()));
