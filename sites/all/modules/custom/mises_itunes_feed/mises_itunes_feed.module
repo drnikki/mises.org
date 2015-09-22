@@ -243,6 +243,7 @@ function mises_itunes_feed_xml_callback($tid) {
       'person_profile',
       'product',
     );
+
     $query = new EntityFieldQuery();
     // @todo: is the limit of 14 needed?
     $query->entityCondition('entity_type', 'node')
@@ -265,8 +266,7 @@ function mises_itunes_feed_xml_callback($tid) {
   else {
     watchdog('mises_itunes_feed invalid tid',
       "%tid is not a valid taxonomy identifier",
-      array('%tid' => $tid),
-      WATCHDOG_ERROR
+      array('%tid' => $tid)
     );
     $xml->appendChild($dom->createElement('error', "$tid is invalid"));
   }
@@ -434,7 +434,12 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
     $item->appendChild($dom->createElement('pubDate', $pubDate));
   }
   else {
-    // @todo: add watchdog for when a node shows up w/o a publish date.
+    watchdog('mises_itunes_feed',
+      "Node %nid shows up in the itunes rss feed but does not have a publish date
+      (field_published_date) item",
+      array('%nid' => $node->nid),
+      WATCHDOG_ERROR,
+      url("node/$node->nid", array('absolute' => TRUE)));
   }
 
   $item->appendChild($dom->createElement('itunes:duration', $duration));
