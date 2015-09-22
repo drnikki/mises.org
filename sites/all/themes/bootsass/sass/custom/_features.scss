@@ -40,12 +40,11 @@
 */
 .group-date-author {
   span.type {
-    padding-right: 5px;
     color: $brand-primary;
     text-transform: uppercase;
     &:after {
       display: inline-block;
-      width: 14px;
+      width: 20px;
       content: "\2022";
       text-align: center;
     }
@@ -64,6 +63,7 @@
         display: inline-block;
         width: 14px;
         content: "\2022";        
+        font-weight: 600;
       }
     }
     div, p {
