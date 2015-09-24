@@ -572,11 +572,17 @@ function profile_pages_views_views_default_views() {
   $handler->display->display_options['fields']['tid']['relationship'] = 'field_profile_type_target_id_1';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Display Weight (field_display_weight) */
+  $handler->display->display_options['sorts']['field_display_weight_value']['id'] = 'field_display_weight_value';
+  $handler->display->display_options['sorts']['field_display_weight_value']['table'] = 'field_data_field_display_weight';
+  $handler->display->display_options['sorts']['field_display_weight_value']['field'] = 'field_display_weight_value';
+  $handler->display->display_options['sorts']['field_display_weight_value']['relationship'] = 'field_profile_type_target_id_1';
   /* Sort criterion: Taxonomy term: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   $handler->display->display_options['sorts']['weight']['relationship'] = 'field_profile_type_target_id_1';
+  $handler->display->display_options['sorts']['weight']['order'] = 'DESC';
   /* Sort criterion: Content: Last name (field_last_name) */
   $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
   $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
