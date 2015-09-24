@@ -78,15 +78,18 @@
     span {
       font-style: italic;
       text-transform: uppercase;
+      white-space: nowrap;
     }
   }
   .view-content {
     padding: 10px 15px;
   }
   .wire-teaser {
-    line-height: 1.55;
+    line-height: 1.5;
+    max-height: $font-size-base * 2.8;
+    overflow: hidden;
     & + .wire-teaser {
-      padding-top: $grid-gutter-width / 2;
+      margin-top: $font-size-base * 0.5;
     }
     .title {
       a {
@@ -94,6 +97,7 @@
       }
     }
     .author {
+      white-space: nowrap;
       a {
         color: $link-color;
       }
