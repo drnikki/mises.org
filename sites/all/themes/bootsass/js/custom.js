@@ -70,12 +70,16 @@ var Drupal = Drupal || {};
       
       var homeFeature = function() {
         // Homepage Featured equal height
-        var bannerHeight = $('.front .region-featured-left').height();
-        $('.front .region-featured-right').css({
-          'min-height': bannerHeight,
-          'max-height': bannerHeight,
-          'height': bannerHeight,
-        });
+        if ($(document).width() > 768) {
+          var bannerHeight = $('.front .region-featured-left').height();
+          $('.front .region-featured-right').css({
+            'height': bannerHeight,
+          });
+        } else {
+          $('.front .region-featured-right').css({
+            'height': 'auto',
+          });
+        }
 
       };
 

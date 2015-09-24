@@ -2553,11 +2553,12 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .blog-home-block { background-color: #e4ebee; height: 100%; }
 .blog-home-block .view-header { background: #46763a url("../images/radio_tower_graphic.png") right 11px bottom no-repeat; background-size: contain; border-top: 5px #46763a solid; border-bottom: 8px #81a957 solid; padding: 15px 14px 5px; }
 .blog-home-block h2 { font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; font-size: 28.0px; font-weight: 100; letter-spacing: 0.25px; margin: 0; color: #fff; }
-.blog-home-block h2 span { font-style: italic; text-transform: uppercase; }
+.blog-home-block h2 span { font-style: italic; text-transform: uppercase; white-space: nowrap; }
 .blog-home-block .view-content { padding: 10px 15px; }
-.blog-home-block .wire-teaser { line-height: 1.55; }
-.blog-home-block .wire-teaser + .wire-teaser { padding-top: 10px; }
+.blog-home-block .wire-teaser { line-height: 1.5; max-height: 42px; overflow: hidden; }
+.blog-home-block .wire-teaser + .wire-teaser { margin-top: 7.5px; }
 .blog-home-block .wire-teaser .title a { color: #00426b; }
+.blog-home-block .wire-teaser .author { white-space: nowrap; }
 .blog-home-block .wire-teaser .author a { color: #38709e; }
 .blog-home-block .wire-teaser .author:before { display: inline-block; width: 14px; content: "\2022"; font-weight: 600; padding-left: 7px; }
 
