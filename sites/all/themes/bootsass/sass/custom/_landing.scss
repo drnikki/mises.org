@@ -13,6 +13,9 @@
   .col-sm-8, .col-sm-4 {
     padding: 6px;
   }
+  .block {
+    height: 100%;
+  }
 }
 /* HOMEPAGE HERO */
 .view-homepage-hero {
@@ -51,7 +54,59 @@
   }
 }
 
-/* HOMEPAGE TOP RIGHT MENU */
+/* HOMEPAGE MISES WIRE */
+.front .region-featured-right {
+  overflow: hidden;
+}
+.blog-home-block {
+  background-color: $gray-lighter;
+  height: 100%;
+  .view-header {
+    background: $brand-contrast-dark url('../images/radio_tower_graphic.png') right 11px bottom no-repeat;
+    background-size: contain;
+    border-top: 5px $brand-contrast-dark solid;
+    border-bottom: 8px $brand-contrast-light solid;
+    padding: 15px 14px 5px;
+  }
+  h2 {
+    font-family: $font-family-serif;
+    font-size: $font-size-h2 * 1.12;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+    margin: 0;
+    color: $white;
+    span {
+      font-style: italic;
+      text-transform: uppercase;
+    }
+  }
+  .view-content {
+    padding: 10px 15px;
+  }
+  .wire-teaser {
+    line-height: 1.55;
+    & + .wire-teaser {
+      padding-top: $grid-gutter-width / 2;
+    }
+    .title {
+      a {
+        color: $brand-primary;
+      }
+    }
+    .author {
+      a {
+        color: $link-color;
+      }
+      &:before {
+        display: inline-block;
+        width: 14px;
+        content: "\2022";
+        font-weight: 600;
+        padding-left: 7px;
+      }
+    }
+  }
+}
 
 /* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
 .main-content {

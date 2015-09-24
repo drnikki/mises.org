@@ -2537,6 +2537,7 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 /* TOP FEATURED REGION */
 .featured .container .row, .featured .container .view-photo-album .view-content, .view-photo-album .featured .container .view-content, .featured .container .newsletter-form ul, .newsletter-form .featured .container ul { margin-right: 0; margin-left: 0; background: #fff; }
 .featured .container .col-sm-8, .featured .container .col-sm-4 { padding: 6px; }
+.featured .container .block { height: 100%; }
 
 /* HOMEPAGE HERO */
 .view-homepage-hero .featured-block { position: relative; }
@@ -2546,7 +2547,20 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .view-homepage-hero .featured-block .overlay h3 { margin-top: 0; color: #fff; font-size: 18px; }
 .view-homepage-hero .featured-block .overlay p { color: #e4ebee; }
 
-/* HOMEPAGE TOP RIGHT MENU */
+/* HOMEPAGE MISES WIRE */
+.front .region-featured-right { overflow: hidden; }
+
+.blog-home-block { background-color: #e4ebee; height: 100%; }
+.blog-home-block .view-header { background: #46763a url("../images/radio_tower_graphic.png") right 11px bottom no-repeat; background-size: contain; border-top: 5px #46763a solid; border-bottom: 8px #81a957 solid; padding: 15px 14px 5px; }
+.blog-home-block h2 { font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; font-size: 28.0px; font-weight: 100; letter-spacing: 0.25px; margin: 0; color: #fff; }
+.blog-home-block h2 span { font-style: italic; text-transform: uppercase; }
+.blog-home-block .view-content { padding: 10px 15px; }
+.blog-home-block .wire-teaser { line-height: 1.55; }
+.blog-home-block .wire-teaser + .wire-teaser { padding-top: 10px; }
+.blog-home-block .wire-teaser .title a { color: #00426b; }
+.blog-home-block .wire-teaser .author a { color: #38709e; }
+.blog-home-block .wire-teaser .author:before { display: inline-block; width: 14px; content: "\2022"; font-weight: 600; padding-left: 7px; }
+
 /* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
 .main-content .node-teaser, .main-content .view-mode-audio_teaser { padding: 20px 0 0; }
 .main-content .node-teaser:after, .main-content .view-mode-audio_teaser:after { display: block; visibility: visible; margin: 0 auto; padding-top: 20px; width: calc(100% - 20px); width: -moz-calc(100% - 20px); height: 1px; border-bottom: 1px solid #c8cdd0; content: ''; }

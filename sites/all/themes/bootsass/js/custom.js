@@ -67,6 +67,17 @@ var Drupal = Drupal || {};
           }
         });
       };
+      
+      var homeFeature = function() {
+        // Homepage Featured equal height
+        var bannerHeight = $('.front .region-featured-left').height();
+        $('.front .region-featured-right').css({
+          'min-height': bannerHeight,
+          'max-height': bannerHeight,
+          'height': bannerHeight,
+        });
+
+      };
 
       $(document).ready(function() {
         // profile expand / close
@@ -141,28 +152,26 @@ var Drupal = Drupal || {};
           });
         });
         
-      }); 
+      });
+       
       $(window).load(function() {
         implementEqualHeight();
+        homeFeature();
         
         // Filtered Term Landing
         // Add select field styling
         $('.views-reset-button').appendTo('#edit-book-type-wrapper .bef-select-as-links > .form-item').css('visibility','visible');
         $('#edit-book-type-wrapper').insertBefore('.views-exposed-widgets');
-        //var $filterToggle = '<h4 class="filter-toggle text-right">More Filters <span class="glyphicon glyphicon-chevron-right"></span></h4>';
-        //$($filterToggle).insertAfter('#edit-book-type-wrapper');
         $('select:not(#edit-book-type):not(#edit-title)').selectBox({
             menuSpeed: 'fast'
         });
-        //$('.filter-toggle').on('click',function(){
-        //  $(this).toggleClass('open');
-        //  $(this).siblings('.views-exposed-widgets').toggleClass('open');
-        //});
+        
         
       });      
 
       $(window).resize(function() {
         implementEqualHeight();
+        homeFeature();
       });      
 
       $(document).ajaxComplete(function() {
