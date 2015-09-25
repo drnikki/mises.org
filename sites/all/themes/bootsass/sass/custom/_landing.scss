@@ -82,23 +82,32 @@
     }
   }
   .view-content {
-    padding: 12px 15px 8px;
+    padding: 12px $grid-gutter-width / 2 8px;
   }
   .wire-teaser {
     line-height: 1.5;
     max-height: $font-size-base * 2.8;
     overflow: hidden;
+    position: relative;
+    padding-left: $grid-gutter-width;
     & + .wire-teaser {
       margin-top: $font-size-base * 0.5;
+    }
+    .bullet {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .glyphicon {
+      color: $gray-light;
+      background: transparent;
+      font-size: $font-size-small;
+      margin-right: 0;
     }
     .title {
       a {
         color: $brand-primary;
-        .glyphicon {
-          color: $gray;
-          background: transparent;
-          margin-right: 0;
-        }
       }
     }
     .author {
@@ -116,6 +125,13 @@
     }
   }
 }
+/* HOMEPAGE SIDEBAR TOP SPACING */
+.front .region-sidebar-second-top {
+  .view-flex-blocks {
+    margin-bottom: 0;
+  }
+}
+
 
 /* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
 .main-content {
