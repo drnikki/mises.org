@@ -82,7 +82,7 @@
     }
   }
   .view-content {
-    padding: 10px 15px;
+    padding: 12px 15px 8px;
   }
   .wire-teaser {
     line-height: 1.5;
@@ -94,6 +94,11 @@
     .title {
       a {
         color: $brand-primary;
+        .glyphicon {
+          color: $gray;
+          background: transparent;
+          margin-right: 0;
+        }
       }
     }
     .author {
