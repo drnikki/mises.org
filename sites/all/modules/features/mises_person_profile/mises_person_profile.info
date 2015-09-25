@@ -18,7 +18,6 @@ dependencies[] = mises_library_item
 dependencies[] = mises_person_profile_node_context
 dependencies[] = mises_static_page
 dependencies[] = options
-dependencies[] = page_title
 dependencies[] = smart_trim
 dependencies[] = strongarm
 dependencies[] = taxonomy

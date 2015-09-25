@@ -12,7 +12,6 @@ dependencies[] = features
 dependencies[] = field_group
 dependencies[] = inline_entity_form
 dependencies[] = mises_book_digital_text
-dependencies[] = page_title
 dependencies[] = strongarm
 dependencies[] = subpathauto
 dependencies[] = text
