@@ -45,7 +45,6 @@ dependencies[] = mises_utility
 dependencies[] = node
 dependencies[] = nodequeue
 dependencies[] = overlay
-dependencies[] = page_title
 dependencies[] = path
 dependencies[] = pathauto
 dependencies[] = print
