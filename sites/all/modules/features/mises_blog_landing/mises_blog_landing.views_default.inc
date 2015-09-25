@@ -285,8 +285,11 @@ function mises_blog_landing_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['max_length'] = '70';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<span class="glyphicon glyphicon-chevron-right"></span> [title]';
+  $handler->display->display_options['fields']['title']['alter']['max_length'] = '130';
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'title';
