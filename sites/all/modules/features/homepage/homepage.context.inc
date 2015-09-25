@@ -39,6 +39,18 @@ function homepage_context_default_contexts() {
           'region' => 'featured_right',
           'weight' => '-10',
         ),
+        'views-flex_blocks-block_25' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_25',
+          'region' => 'sidebar_second_top',
+          'weight' => '-10',
+        ),
+        'menu-menu-new-to-mises' => array(
+          'module' => 'menu',
+          'delta' => 'menu-new-to-mises',
+          'region' => 'sidebar_second_top',
+          'weight' => '-9',
+        ),
         'views-flex_blocks-block_5' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_5',

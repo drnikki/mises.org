@@ -2554,14 +2554,18 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .blog-home-block .view-header { background: #46763a url("../images/radio_tower_graphic.png") right 11px bottom no-repeat; background-size: contain; border-top: 5px #46763a solid; border-bottom: 8px #81a957 solid; padding: 15px 14px 5px; }
 .blog-home-block h2 { font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; font-size: 28.0px; font-weight: 100; letter-spacing: 0.25px; margin: 0; color: #fff; }
 .blog-home-block h2 span { font-style: italic; text-transform: uppercase; white-space: nowrap; }
-.blog-home-block .view-content { padding: 12px 15px 8px; }
-.blog-home-block .wire-teaser { line-height: 1.5; max-height: 42px; overflow: hidden; }
+.blog-home-block .view-content { padding: 12px 10px 8px; }
+.blog-home-block .wire-teaser { line-height: 1.5; max-height: 42px; overflow: hidden; position: relative; padding-left: 20px; }
 .blog-home-block .wire-teaser + .wire-teaser { margin-top: 7.5px; }
+.blog-home-block .wire-teaser .bullet { display: block; position: absolute; left: 0; top: 0; }
+.blog-home-block .wire-teaser .glyphicon, .blog-home-block .wire-teaser .pagination > li.prev a, .pagination > li.prev .blog-home-block .wire-teaser a, .blog-home-block .wire-teaser .pagination > li.next a, .pagination > li.next .blog-home-block .wire-teaser a, .blog-home-block .wire-teaser .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-prev .blog-home-block .wire-teaser a, .blog-home-block .wire-teaser .sidebar .pager > li.date-next a, .sidebar .pager > li.date-next .blog-home-block .wire-teaser a { color: #c8cdd0; background: transparent; font-size: 13px; margin-right: 0; }
 .blog-home-block .wire-teaser .title a { color: #00426b; }
-.blog-home-block .wire-teaser .title a .glyphicon, .blog-home-block .wire-teaser .title a .pagination > li.prev a, .pagination > li.prev .blog-home-block .wire-teaser .title a a, .blog-home-block .wire-teaser .title a .pagination > li.next a, .pagination > li.next .blog-home-block .wire-teaser .title a a, .blog-home-block .wire-teaser .title a .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-prev .blog-home-block .wire-teaser .title a a, .blog-home-block .wire-teaser .title a .sidebar .pager > li.date-next a, .sidebar .pager > li.date-next .blog-home-block .wire-teaser .title a a { color: #788086; background: transparent; margin-right: 0; }
 .blog-home-block .wire-teaser .author { white-space: nowrap; }
 .blog-home-block .wire-teaser .author a { color: #38709e; }
 .blog-home-block .wire-teaser .author:before { display: inline-block; width: 14px; content: "\2022"; font-weight: 600; padding-left: 7px; }
+
+/* HOMEPAGE SIDEBAR TOP SPACING */
+.front .region-sidebar-second-top .view-flex-blocks { margin-bottom: 0; }
 
 /* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
 .main-content .node-teaser, .main-content .view-mode-audio_teaser { padding: 20px 0 0; }
@@ -2783,14 +2787,16 @@ ul.menu li a, ul.menu li span { -webkit-transition: all 0.2s ease; -o-transition
 /* TITLE COLORSS */
 .view-display-id-academy_course .panel-title { color: #729949 !important; }
 
-/* HOMEPAGE */
-#block-views-flex-blocks-block-7 .panel { margin-bottom: 0; padding: 6px 16px; background-color: #46763a; }
-#block-views-flex-blocks-block-7 .panel h2 { margin: 0; color: #fff; font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; }
-#block-views-flex-blocks-block-7 .panel h2 span { font-size: 40px; }
+/* NEW TO MISES TITLE */
+div[about$='new-mises-homepage-block'].panel { margin-bottom: 0; padding: 6px 16px; background-color: #46763a; }
+div[about$='new-mises-homepage-block'].panel h2 { margin: 0; color: #fff; font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; }
+div[about$='new-mises-homepage-block'].panel h2 span { font-size: 40px; }
 
+#block-menu-menu-new-to-mises { background-color: #fff; }
 #block-menu-menu-new-to-mises h2 { margin: 0; padding: 9px 16px; background-color: #729949; color: #fff; text-transform: uppercase; font-weight: 200; font-size: 15px; }
-#block-menu-menu-new-to-mises .nav { padding-top: 16px; }
-#block-menu-menu-new-to-mises .nav > li > a { padding: 7px 16px; color: #729949; text-transform: uppercase; font-weight: 600; }
+#block-menu-menu-new-to-mises .nav { padding: 16px 0; }
+#block-menu-menu-new-to-mises .nav li + li { border-top: 0 none; }
+#block-menu-menu-new-to-mises .nav > li > a { padding: 7px 16px; color: #729949; text-transform: uppercase; font-weight: 600; background-color: transparent; }
 #block-menu-menu-new-to-mises .nav > li > a span { color: #788086; }
 #block-menu-menu-new-to-mises .nav > li > a span.glyphicon { width: 24px; height: 24px; text-align: center; font-size: 12px; line-height: 24px; color: #fff; font-weight: 100; }
 #block-menu-menu-new-to-mises .nav > li > a:hover { background: transparent; text-decoration: underline; }
