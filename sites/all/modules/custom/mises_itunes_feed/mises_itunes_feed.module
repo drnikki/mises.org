@@ -247,6 +247,7 @@ function mises_itunes_feed_xml_callback($tid) {
     $query = new EntityFieldQuery();
     // @todo: is the limit of 14 needed?
     $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('nid', taxonomy_select_nodes($tid), 'in')
       ->propertyCondition('status', 1)
       ->propertyCondition('type', $types, 'in')
       ->propertyOrderBy('created', 'DESC')
