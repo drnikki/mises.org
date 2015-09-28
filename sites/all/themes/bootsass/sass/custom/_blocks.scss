@@ -383,8 +383,8 @@ ul.menu {
   color: $brand-contrast !important;
 }
 
-/* HOMEPAGE */
-#block-views-flex-blocks-block-7 .panel {
+/* NEW TO MISES TITLE */
+div[about$='new-mises-homepage-block'].panel {
   margin-bottom: 0;
   padding: $padding-base-vertical $padding-large-horizontal;
   background-color: $brand-contrast-dark;
@@ -397,7 +397,9 @@ ul.menu {
     }
   }
 }
+
 #block-menu-menu-new-to-mises {
+  background-color: $white;
   h2 {
     margin: 0;
     padding: $padding-base-vertical * 1.5 $padding-large-horizontal;
@@ -408,15 +410,17 @@ ul.menu {
     font-size: $font-size-h4;
   }
   .nav {
-    padding-top: $padding-large-horizontal;
+    padding: $padding-large-horizontal 0;
+    li + li {
+      border-top: 0 none;
+    }
     > li > a {
-      //padding: $padding-base-vertical + 1 $padding-large-horizontal * 2 $padding-base-vertical + 1 66px;
       padding: $padding-base-vertical + 1 $padding-large-horizontal;
       color: $brand-contrast;
       text-transform: uppercase;
       //text-indent: -34px;
       font-weight: 600;
-      
+      background-color: transparent;
       span {
         color: $gray;
       }
