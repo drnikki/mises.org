@@ -13,11 +13,12 @@ function mises_itunes_feed_menu() {
   );
 
   $items['xml/%'] = array(
-    'title' => 'Test xml feed',
+    'title' => 'Mises iTunes Feed',
     'page callback' => 'mises_itunes_feed_xml_callback',
     'page arguments' => array(1),
     'access arguments' => array('access content'),
   );
+
   return $items;
 }
 
