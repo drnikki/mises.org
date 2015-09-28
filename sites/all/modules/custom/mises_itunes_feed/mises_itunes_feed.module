@@ -361,7 +361,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       "Node %nid shows up in the itunes rss feed but does a body to be used as a
        discription item",
       array('%nid' => $node->nid),
-      WATCHDOG_ERROR,
+      WATCHDOG_NOTICE,
       url("node/$node->nid", array('absolute' => TRUE))
     );
   }
@@ -398,7 +398,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
           "Node %nid shows up in the itunes rss feed but does not have a media
           (field_collection_item) item",
           array('%nid' => $node->nid),
-          WATCHDOG_ERROR,
+          WATCHDOG_NOTICE,
           url("node/$node->nid", array('absolute' => TRUE))
         );
       }
@@ -417,7 +417,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       "Node %nid shows up in the itunes rss feed but does not have a media
       (field_collection_item) item",
       array('%nid' => $node->nid),
-      WATCHDOG_ERROR,
+      WATCHDOG_NOTICE,
       url("node/$node->nid", array('absolute' => TRUE)));
   }
 
@@ -432,7 +432,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       "Node %nid shows up in the itunes rss feed but does not have a publish date
       (field_published_date) item",
       array('%nid' => $node->nid),
-      WATCHDOG_ERROR,
+      WATCHDOG_NOTICE,
       url("node/$node->nid", array('absolute' => TRUE)));
   }
 
