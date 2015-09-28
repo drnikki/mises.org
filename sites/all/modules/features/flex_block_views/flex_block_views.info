@@ -1,7 +1,7 @@
 name = Flex Block Views
 core = 7.x
 package = Views
-version = 7.x-1.1
+version = 7.x-1.2
 project = flex_block_views
 dependencies[] = ctools
 dependencies[] = editableviews
