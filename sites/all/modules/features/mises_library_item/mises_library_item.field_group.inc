@@ -266,9 +266,7 @@ function mises_library_item_field_group_info() {
   $field_group->data = array(
     'label' => 'Featured Tags',
     'weight' => '15',
-    'children' => array(
-      0 => 'field_featured_content',
-    ),
+    'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'formatter' => 'collapsible',
@@ -598,7 +596,6 @@ function mises_library_item_field_group_info() {
     'children' => array(
       0 => 'field_topics',
       1 => 'field_austrian_school',
-      2 => 'tags_title',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

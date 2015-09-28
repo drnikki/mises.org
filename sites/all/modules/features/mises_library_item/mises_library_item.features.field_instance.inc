@@ -920,7 +920,7 @@ function mises_library_item_field_default_field_instances() {
           'view_mode' => 'author_full_name',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 2,
+        'weight' => 43,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -1108,7 +1108,8 @@ function mises_library_item_field_default_field_instances() {
     'bundle' => 'library_item',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'EPUB, Online Book and PDF are auto-populated based on values in other fields to reflect the types of books available to this Library Item. <br />"Audio," "Print Edition" and "Translations" must be manually selected.',
+    'description' => 'Select the book type for this Library Item. This value is used for solr facets and filtered searches on landing pages. <br />
+Note that all tags must be manually selected.',
     'display' => array(
       'audio_teaser' => array(
         'label' => 'above',
@@ -1180,7 +1181,7 @@ function mises_library_item_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_books',
-    'label' => 'Books',
+    'label' => 'Book Type',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -1822,7 +1823,7 @@ function mises_library_item_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 25,
+      'weight' => 32,
     ),
   );
 
@@ -2419,7 +2420,7 @@ function mises_library_item_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 26,
+      'weight' => 33,
     ),
   );
 
@@ -2771,7 +2772,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 29,
+      'weight' => 36,
     ),
   );
 
@@ -2914,6 +2915,7 @@ function mises_library_item_field_default_field_instances() {
           'multiple_number' => '',
           'multiple_to' => '',
           'semantic_field_format' => 0,
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 5,
@@ -2946,6 +2948,7 @@ function mises_library_item_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -2961,6 +2964,7 @@ function mises_library_item_field_default_field_instances() {
           'multiple_number' => '',
           'multiple_to' => '',
           'semantic_field_format' => 0,
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -2999,9 +3003,10 @@ function mises_library_item_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 42,
       ),
       'token' => array(
         'label' => 'above',
@@ -3155,7 +3160,7 @@ function mises_library_item_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 27,
+      'weight' => 34,
     ),
   );
 
@@ -3226,12 +3231,8 @@ function mises_library_item_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'video_block_teaser' => array(
@@ -3258,7 +3259,7 @@ function mises_library_item_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 28,
+      'weight' => 35,
     ),
   );
 
@@ -3604,7 +3605,7 @@ function mises_library_item_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 24,
+      'weight' => 31,
     ),
   );
 
@@ -4605,12 +4606,11 @@ function mises_library_item_field_default_field_instances() {
   t('Author 1');
   t('Bibliography Footnote');
   t('Body');
-  t('Books');
+  t('Book Type');
   t('Bookstore');
   t('Citation');
   t('Copyright Info');
   t('Document Attachment');
-  t('EPUB, Online Book and PDF are auto-populated based on values in other fields to reflect the types of books available to this Library Item. <br />"Audio," "Print Edition" and "Translations" must be manually selected.');
   t('Editor’s Note');
   t('Enter link to Bookstore product page.');
   t('Enter title of the Online Text node that contains the HTML version of this Library Item. If a valid value is entered here, the "View HTML Version" link will appear in the "Get this Book/Digital Text" table.');
@@ -4630,6 +4630,8 @@ function mises_library_item_field_default_field_instances() {
   t('PDF');
   t('Primary or Original Author');
   t('Published Date');
+  t('Select the book type for this Library Item. This value is used for solr facets and filtered searches on landing pages. <br />
+Note that all tags must be manually selected.');
   t('Select whether this item will be used in featured blocks. Only one selection should be made to avoid duplicate blocks. The first "Featured" option is the default filter for the featured Library Item block, as well as other content types.');
   t('Show Disclaimer');
   t('Source');

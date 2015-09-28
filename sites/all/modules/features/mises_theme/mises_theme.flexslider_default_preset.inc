@@ -16,15 +16,13 @@ function mises_theme_flexslider_default_presets() {
   $preset->name = 'node_slideshow';
   $preset->title = 'Node Slideshow';
   $preset->theme = 'classic';
-  $preset->imagestyle_normal = 'medium';
-  $preset->imagestyle_thumbnail = 'flexslider_thumbnail';
   $preset->options = array(
     'namespace' => 'flex-',
     'selector' => '.slides > li',
     'easing' => 'swing',
     'direction' => 'horizontal',
     'reverse' => 0,
-    'smoothHeight' => 1,
+    'smoothHeight' => 0,
     'startAt' => '0',
     'animationSpeed' => '300',
     'initDelay' => '0',
@@ -45,7 +43,7 @@ function mises_theme_flexslider_default_presets() {
     'animation' => 'slide',
     'slideshow' => 1,
     'slideshowSpeed' => '7000',
-    'directionNav' => 1,
+    'directionNav' => 0,
     'controlNav' => '0',
     'prevText' => 'Previous',
     'nextText' => 'Next',

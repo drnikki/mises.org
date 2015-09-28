@@ -31,6 +31,68 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Date Published */
+  $handler->display->display_options['fields']['field_published_date']['id'] = 'field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['label'] = '';
+  $handler->display->display_options['fields']['field_published_date']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['field_published_date']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_published_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_published_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_published_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Author */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['label'] = '';
+  $handler->display->display_options['fields']['field_author_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
@@ -80,7 +142,16 @@ function rss_feed_views_default_views() {
   $handler->display->display_options['title'] = 'Front page feed';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
-  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['row_plugin'] = 'rss_fields';
+  $handler->display->display_options['row_options']['title_field'] = 'title';
+  $handler->display->display_options['row_options']['link_field'] = 'nid';
+  $handler->display->display_options['row_options']['description_field'] = 'body';
+  $handler->display->display_options['row_options']['creator_field'] = 'field_author_1';
+  $handler->display->display_options['row_options']['date_field'] = 'field_published_date';
+  $handler->display->display_options['row_options']['guid_field_options'] = array(
+    'guid_field' => 'nid',
+    'guid_field_is_permalink' => 0,
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'feed/rss.xml';
   $handler->display->display_options['displays'] = array(

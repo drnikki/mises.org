@@ -252,6 +252,73 @@ function mises_blog_landing_views_default_views() {
     'featured_blogger' => 'featured_blogger',
   );
   $handler->display->display_options['path'] = 'blog/mises-wire-bloggers';
+
+  /* Display: Homepage Mises Wire */
+  $handler = $view->new_display('block', 'Homepage Mises Wire', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'blog-home-block';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'wire-teaser';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Latest From <span>Mises Wire</span></h2>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="glyphicon glyphicon-chevron-right"></span>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'bullet';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['max_length'] = '70';
+  $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'title';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Field: Author */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['label'] = '';
+  $handler->display->display_options['fields']['field_author_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_author_1']['element_wrapper_class'] = 'author';
+  $handler->display->display_options['fields']['field_author_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 1,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_author_1']['separator'] = ' ';
   $export['blog'] = $view;
 
   return $export;

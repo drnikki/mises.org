@@ -1051,7 +1051,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library/books"><span class="glyphicon glyphicon-chevron-right"></span> Browse Bookstore</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="panel-footer"><a href="/library/books"><span class="glyphicon glyphicon-chevron-right"></span> Browse Books</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: View area */
