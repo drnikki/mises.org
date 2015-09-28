@@ -13,11 +13,12 @@ function mises_itunes_feed_menu() {
   );
 
   $items['xml/%'] = array(
-    'title' => 'Test xml feed',
+    'title' => 'Mises iTunes Feed',
     'page callback' => 'mises_itunes_feed_xml_callback',
     'page arguments' => array(1),
     'access arguments' => array('access content'),
   );
+
   return $items;
 }
 
@@ -247,6 +248,7 @@ function mises_itunes_feed_xml_callback($tid) {
     $query = new EntityFieldQuery();
     // @todo: is the limit of 14 needed?
     $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('nid', taxonomy_select_nodes($tid), 'in')
       ->propertyCondition('status', 1)
       ->propertyCondition('type', $types, 'in')
       ->propertyOrderBy('created', 'DESC')
@@ -367,7 +369,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       "Node %nid shows up in the itunes rss feed but does a body to be used as a
        discription item",
       array('%nid' => $node->nid),
-      WATCHDOG_ERROR,
+      WATCHDOG_NOTICE,
       url("node/$node->nid", array('absolute' => TRUE))
     );
   }
@@ -404,7 +406,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
           "Node %nid shows up in the itunes rss feed but does not have a media
           (field_collection_item) item",
           array('%nid' => $node->nid),
-          WATCHDOG_ERROR,
+          WATCHDOG_NOTICE,
           url("node/$node->nid", array('absolute' => TRUE))
         );
       }
@@ -423,7 +425,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       "Node %nid shows up in the itunes rss feed but does not have a media
       (field_collection_item) item",
       array('%nid' => $node->nid),
-      WATCHDOG_ERROR,
+      WATCHDOG_NOTICE,
       url("node/$node->nid", array('absolute' => TRUE)));
   }
 
@@ -438,7 +440,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       "Node %nid shows up in the itunes rss feed but does not have a publish date
       (field_published_date) item",
       array('%nid' => $node->nid),
-      WATCHDOG_ERROR,
+      WATCHDOG_NOTICE,
       url("node/$node->nid", array('absolute' => TRUE)));
   }
 
