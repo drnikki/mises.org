@@ -21,7 +21,7 @@ function mises_seo_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'page_title_default';
-  $strongarm->value = '[current-page:page-title] | [site:name]';
+  $strongarm->value = '[current-page:title] | [site:name]';
   $export['page_title_default'] = $strongarm;
 
   $strongarm = new stdClass();
