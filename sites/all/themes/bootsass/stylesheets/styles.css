@@ -2565,7 +2565,7 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .blog-home-block .wire-teaser .author:before { display: inline-block; width: 14px; content: "\2022"; font-weight: 600; padding-left: 7px; }
 
 /* HOMEPAGE SIDEBAR TOP SPACING */
-.front .region-sidebar-second-top .view-flex-blocks { margin-bottom: 0; }
+.front .sidebar .view-flex-blocks { margin-bottom: 0; }
 
 /* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
 .main-content .node-teaser, .main-content .view-mode-audio_teaser { padding: 20px 0 0; }
@@ -2788,7 +2788,7 @@ ul.menu li a, ul.menu li span { -webkit-transition: all 0.2s ease; -o-transition
 .view-display-id-academy_course .panel-title { color: #729949 !important; }
 
 /* NEW TO MISES TITLE */
-div[about$='new-mises-homepage-block'].panel { margin-bottom: 0; padding: 6px 16px; background-color: #46763a; }
+div[about$='new-mises-homepage-block'].panel { margin: 20px 0 0; padding: 6px 16px; background-color: #46763a; }
 div[about$='new-mises-homepage-block'].panel h2 { margin: 0; color: #fff; font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; }
 div[about$='new-mises-homepage-block'].panel h2 span { font-size: 40px; }
 
