@@ -559,15 +559,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'socialmedia',
   );
 
-  // Exported permission: 'administer page titles'.
-  $permissions['administer page titles'] = array(
-    'name' => 'administer page titles',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'page_title',
-  );
-
   // Exported permission: 'administer pathauto'.
   $permissions['administer pathauto'] = array(
     'name' => 'administer pathauto',
@@ -3637,19 +3628,6 @@ function mises_roles_and_perms_user_default_permissions() {
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'print_mail',
-  );
-
-  // Exported permission: 'set page title'.
-  $permissions['set page title'] = array(
-    'name' => 'set page title',
-    'roles' => array(
-      'Blog Author' => 'Blog Author',
-      'Content Creator' => 'Content Creator',
-      'Drupal Developer' => 'Drupal Developer',
-      'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
-    ),
-    'module' => 'page_title',
   );
 
   // Exported permission: 'show format selection for book_chapter'.

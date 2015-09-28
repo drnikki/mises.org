@@ -10,7 +10,8 @@
 function mises_book_content_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'book_chapter-book_chapter-field_book_chapter_content'
+  // Exported field_instance:
+  // 'book_chapter-book_chapter-field_book_chapter_content'
   $field_instances['book_chapter-book_chapter-field_book_chapter_content'] = array(
     'bundle' => 'book_chapter',
     'default_value' => NULL,
