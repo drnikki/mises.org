@@ -385,7 +385,7 @@ ul.menu {
 
 /* NEW TO MISES TITLE */
 div[about$='new-mises-homepage-block'].panel {
-  margin-bottom: 0;
+  margin: $grid-gutter-width 0 0;
   padding: $padding-base-vertical $padding-large-horizontal;
   background-color: $brand-contrast-dark;
   h2 {
