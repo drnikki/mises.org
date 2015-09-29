@@ -173,7 +173,8 @@ function mises_solr_online_text_node_update($node) {
  * Implements hook_entity_update().
  */
 function mises_solr_online_text_entity_update($entity, $type) {
-  $entity_id = array_shift(entity_extract_ids($type, $entity));
+  $entity_extract = entity_extract_ids($type, $entity);
+  $entity_id = array_shift($entity_extract);
   switch ($type) {
     case 'book_chapter':
       $parent_lib_items = _mises_solr_online_text_get_book_chapter_parent_lib_items($entity_id);
