@@ -38,4 +38,16 @@ function mises_utility_update_7002() {
   menu_rebuild();
 }
 
+/**
+* Disable and uninstall unneeded module.
+*
+*/
+function mises_utility_update_7003() {
+  
+  if (module_exists('page_title')) {
+    module_disable(array('page_title'));
+    drupal_uninstall_modules(array('page_title'));
+  }
+}
+
 ?>
