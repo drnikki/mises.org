@@ -57,6 +57,7 @@
 /* HOMEPAGE MISES WIRE */
 .front .region-featured-right {
   overflow: hidden;
+  height: 360px; //starting height, subject to override
 }
 .blog-home-block {
   background-color: $gray-lighter;
@@ -83,6 +84,25 @@
   }
   .view-content {
     padding: 12px $grid-gutter-width / 2 8px;
+    overflow: hidden;
+    @media (min-width: $screen-sm) {
+      height: -moz-calc(100% - 94px);
+      height: calc(100% - 94px);
+      .inner {
+        position: relative;
+        top: 50%;
+        @include translate(0,-50%);
+      }
+    }
+    @media (min-width: $screen-md) {
+      height: -moz-calc(100% - 64px);
+      height: calc(100% - 64px);
+      .inner {
+        position: relative;
+        top: 50%;
+        @include translate(0,-50%);
+      }
+    }
   }
   .wire-teaser {
     line-height: 1.5;
@@ -126,7 +146,7 @@
   }
 }
 /* HOMEPAGE SIDEBAR TOP SPACING */
-.front .region-sidebar-second-top {
+.front .sidebar {
   .view-flex-blocks {
     margin-bottom: 0;
   }
