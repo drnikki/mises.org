@@ -343,33 +343,6 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_journal_volume'
-  $field_bases['field_journal_volume'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_journal_volume',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        1 => 1,
-        2 => 2,
-        3 => 3,
-        4 => 4,
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_integer',
-  );
-
   // Exported field_base: 'field_journal_year'
   $field_bases['field_journal_year'] = array(
     'active' => 1,
