@@ -478,7 +478,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['fields']['counter']['label'] = '';
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  /* Field: Content: Books */
+  /* Field: Content: Book Type */
   $handler->display->display_options['fields']['field_books']['id'] = 'field_books';
   $handler->display->display_options['fields']['field_books']['table'] = 'field_data_field_books';
   $handler->display->display_options['fields']['field_books']['field'] = 'field_books';
@@ -543,7 +543,7 @@ function term_landing_page_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Books (field_books) */
+  /* Filter criterion: Content: Book Type (field_books) */
   $handler->display->display_options['filters']['field_books_target_id']['id'] = 'field_books_target_id';
   $handler->display->display_options['filters']['field_books_target_id']['table'] = 'field_data_field_books';
   $handler->display->display_options['filters']['field_books_target_id']['field'] = 'field_books_target_id';
@@ -1198,7 +1198,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['fields']['counter']['label'] = '';
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  /* Field: Content: Books */
+  /* Field: Content: Book Type */
   $handler->display->display_options['fields']['field_books']['id'] = 'field_books';
   $handler->display->display_options['fields']['field_books']['table'] = 'field_data_field_books';
   $handler->display->display_options['fields']['field_books']['field'] = 'field_books';
@@ -1258,7 +1258,7 @@ function term_landing_page_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Books (field_books) */
+  /* Filter criterion: Content: Book Type (field_books) */
   $handler->display->display_options['filters']['field_books_target_id']['id'] = 'field_books_target_id';
   $handler->display->display_options['filters']['field_books_target_id']['table'] = 'field_data_field_books';
   $handler->display->display_options['filters']['field_books_target_id']['field'] = 'field_books_target_id';
@@ -1804,7 +1804,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_journal_volume_value' => array(
+    'field_volume_value_selective' => array(
       'bef_format' => 'default',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
@@ -2020,7 +2020,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['fields']['counter']['label'] = '';
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  /* Field: Content: Books */
+  /* Field: Content: Book Type */
   $handler->display->display_options['fields']['field_books']['id'] = 'field_books';
   $handler->display->display_options['fields']['field_books']['table'] = 'field_data_field_books';
   $handler->display->display_options['fields']['field_books']['field'] = 'field_books';
@@ -2057,6 +2057,22 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['fields']['field_journal_year']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_journal_year']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_journal_year']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Volume */
+  $handler->display->display_options['fields']['field_volume']['id'] = 'field_volume';
+  $handler->display->display_options['fields']['field_volume']['table'] = 'field_data_field_volume';
+  $handler->display->display_options['fields']['field_volume']['field'] = 'field_volume';
+  $handler->display->display_options['fields']['field_volume']['label'] = '';
+  $handler->display->display_options['fields']['field_volume']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_volume']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_volume']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 0,
     'conditions' => array(
@@ -2249,17 +2265,17 @@ Quarterly Journal of Austrian Economics|Other Journals',
     9 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: Volume (field_journal_volume) */
-  $handler->display->display_options['filters']['field_journal_volume_value']['id'] = 'field_journal_volume_value';
-  $handler->display->display_options['filters']['field_journal_volume_value']['table'] = 'field_data_field_journal_volume';
-  $handler->display->display_options['filters']['field_journal_volume_value']['field'] = 'field_journal_volume_value';
-  $handler->display->display_options['filters']['field_journal_volume_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_journal_volume_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_journal_volume_value']['expose']['operator_id'] = 'field_journal_volume_value_op';
-  $handler->display->display_options['filters']['field_journal_volume_value']['expose']['label'] = 'Volume';
-  $handler->display->display_options['filters']['field_journal_volume_value']['expose']['operator'] = 'field_journal_volume_value_op';
-  $handler->display->display_options['filters']['field_journal_volume_value']['expose']['identifier'] = 'vol';
-  $handler->display->display_options['filters']['field_journal_volume_value']['expose']['remember_roles'] = array(
+  /* Filter criterion: Volume */
+  $handler->display->display_options['filters']['field_volume_value_selective']['id'] = 'field_volume_value_selective';
+  $handler->display->display_options['filters']['field_volume_value_selective']['table'] = 'field_data_field_volume';
+  $handler->display->display_options['filters']['field_volume_value_selective']['field'] = 'field_volume_value_selective';
+  $handler->display->display_options['filters']['field_volume_value_selective']['ui_name'] = 'Volume';
+  $handler->display->display_options['filters']['field_volume_value_selective']['group'] = 1;
+  $handler->display->display_options['filters']['field_volume_value_selective']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_volume_value_selective']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['field_volume_value_selective']['expose']['label'] = 'Volume';
+  $handler->display->display_options['filters']['field_volume_value_selective']['expose']['identifier'] = 'vol';
+  $handler->display->display_options['filters']['field_volume_value_selective']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -2271,6 +2287,9 @@ Quarterly Journal of Austrian Economics|Other Journals',
     9 => 0,
     7 => 0,
   );
+  $handler->display->display_options['filters']['field_volume_value_selective']['selective_display_field'] = 'field_volume';
+  $handler->display->display_options['filters']['field_volume_value_selective']['selective_display_sort'] = 'ASC';
+  $handler->display->display_options['filters']['field_volume_value_selective']['selective_items_limit'] = '100';
   /* Filter criterion: Number */
   $handler->display->display_options['filters']['field_journal_number_value_selective']['id'] = 'field_journal_number_value_selective';
   $handler->display->display_options['filters']['field_journal_number_value_selective']['table'] = 'field_data_field_journal_number';
@@ -2954,7 +2973,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['fields']['counter']['label'] = '';
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  /* Field: Content: Books */
+  /* Field: Content: Book Type */
   $handler->display->display_options['fields']['field_books']['id'] = 'field_books';
   $handler->display->display_options['fields']['field_books']['table'] = 'field_data_field_books';
   $handler->display->display_options['fields']['field_books']['field'] = 'field_books';
@@ -3019,7 +3038,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
     4 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Books (field_books) */
+  /* Filter criterion: Content: Book Type (field_books) */
   $handler->display->display_options['filters']['field_books_target_id']['id'] = 'field_books_target_id';
   $handler->display->display_options['filters']['field_books_target_id']['table'] = 'field_data_field_books';
   $handler->display->display_options['filters']['field_books_target_id']['field'] = 'field_books_target_id';
@@ -3442,7 +3461,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['fields']['counter']['label'] = '';
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  /* Field: Content: Books */
+  /* Field: Content: Book Type */
   $handler->display->display_options['fields']['field_books']['id'] = 'field_books';
   $handler->display->display_options['fields']['field_books']['table'] = 'field_data_field_books';
   $handler->display->display_options['fields']['field_books']['field'] = 'field_books';
