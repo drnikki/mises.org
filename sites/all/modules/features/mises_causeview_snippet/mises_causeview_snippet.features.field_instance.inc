@@ -100,7 +100,8 @@ function mises_causeview_snippet_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-causeview_snippet-field_code_registration_link'
+  // Exported field_instance:
+  // 'node-causeview_snippet-field_code_registration_link'
   $field_instances['node-causeview_snippet-field_code_registration_link'] = array(
     'bundle' => 'causeview_snippet',
     'default_value' => NULL,

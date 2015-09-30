@@ -10,7 +10,7 @@
 function mises_causeview_snippet_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["node:causeview_snippet:0"] = array(
     'entity' => 'node',
     'bundle' => 'causeview_snippet',
     'dependent' => 'field_code_display_title',
