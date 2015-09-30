@@ -116,7 +116,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Formats',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_epub',
       1 => 'field_link_to_external_listing_',
@@ -322,6 +322,7 @@ function mises_library_item_field_group_info() {
       0 => 'field_volume',
       1 => 'field_journal_number',
       2 => 'field_journal_year',
+      3 => 'field_journal_volume',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
