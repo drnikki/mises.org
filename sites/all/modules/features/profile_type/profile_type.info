@@ -1,12 +1,15 @@
 name = Profile Type
 core = 7.x
 package = Taxonomy
-version = 7.x-1.0
+version = 7.x-1.1
 project = profile_type
 dependencies[] = features
+dependencies[] = list
+dependencies[] = options
 dependencies[] = taxonomy
 dependencies[] = uuid
 features[features_api][] = api:2
+features[field_base][] = field_display_weight
+features[field_instance][] = taxonomy_term-profile_type-field_display_weight
 features[taxonomy][] = profile_type
-mtime = 1436557554
 project path = sites/all/modules/features

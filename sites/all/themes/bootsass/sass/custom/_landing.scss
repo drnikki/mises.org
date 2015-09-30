@@ -13,6 +13,9 @@
   .col-sm-8, .col-sm-4 {
     padding: 6px;
   }
+  .block {
+    height: 100%;
+  }
 }
 /* HOMEPAGE HERO */
 .view-homepage-hero {
@@ -51,7 +54,104 @@
   }
 }
 
-/* HOMEPAGE TOP RIGHT MENU */
+/* HOMEPAGE MISES WIRE */
+.front .region-featured-right {
+  overflow: hidden;
+  height: 360px; //starting height, subject to override
+}
+.blog-home-block {
+  background-color: $gray-lighter;
+  height: 100%;
+  .view-header {
+    background: $brand-contrast-dark url('../images/radio_tower_graphic.png') right 11px bottom no-repeat;
+    background-size: contain;
+    border-top: 5px $brand-contrast-dark solid;
+    border-bottom: 8px $brand-contrast-light solid;
+    padding: 15px 14px 5px;
+  }
+  h2 {
+    font-family: $font-family-serif;
+    font-size: $font-size-h2 * 1.12;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+    margin: 0;
+    color: $white;
+    span {
+      font-style: italic;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+  .view-content {
+    padding: 12px $grid-gutter-width / 2 8px;
+    overflow: hidden;
+    @media (min-width: $screen-sm) {
+      height: -moz-calc(100% - 94px);
+      height: calc(100% - 94px);
+      .inner {
+        position: relative;
+        top: 50%;
+        @include translate(0,-50%);
+      }
+    }
+    @media (min-width: $screen-md) {
+      height: -moz-calc(100% - 64px);
+      height: calc(100% - 64px);
+      .inner {
+        position: relative;
+        top: 50%;
+        @include translate(0,-50%);
+      }
+    }
+  }
+  .wire-teaser {
+    line-height: 1.5;
+    max-height: $font-size-base * 2.8;
+    overflow: hidden;
+    position: relative;
+    padding-left: $grid-gutter-width;
+    & + .wire-teaser {
+      margin-top: $font-size-base * 0.5;
+    }
+    .bullet {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .glyphicon {
+      color: $gray-light;
+      background: transparent;
+      font-size: $font-size-small;
+      margin-right: 0;
+    }
+    .title {
+      a {
+        color: $brand-primary;
+      }
+    }
+    .author {
+      white-space: nowrap;
+      a {
+        color: $link-color;
+      }
+      &:before {
+        display: inline-block;
+        width: 14px;
+        content: "\2022";
+        font-weight: 600;
+        padding-left: 7px;
+      }
+    }
+  }
+}
+/* HOMEPAGE SIDEBAR TOP SPACING */
+.front .sidebar {
+  .view-flex-blocks {
+    margin-bottom: 0;
+  }
+}
+
 
 /* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
 .main-content {

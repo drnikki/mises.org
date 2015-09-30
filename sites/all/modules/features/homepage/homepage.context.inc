@@ -33,17 +33,17 @@ function homepage_context_default_contexts() {
           'region' => 'featured_left',
           'weight' => '-10',
         ),
-        'views-flex_blocks-block_7' => array(
+        'views-blog-block_1' => array(
           'module' => 'views',
-          'delta' => 'flex_blocks-block_7',
+          'delta' => 'blog-block_1',
           'region' => 'featured_right',
           'weight' => '-10',
         ),
-        'menu-menu-new-to-mises' => array(
-          'module' => 'menu',
-          'delta' => 'menu-new-to-mises',
-          'region' => 'featured_right',
-          'weight' => '-9',
+        'views-flex_blocks-block_25' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_25',
+          'region' => 'sidebar_second_top',
+          'weight' => '-10',
         ),
         'views-flex_blocks-block_5' => array(
           'module' => 'views',
@@ -51,17 +51,11 @@ function homepage_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'views-homepage-learn' => array(
-          'module' => 'views',
-          'delta' => 'homepage-learn',
+        'menu-menu-new-to-mises' => array(
+          'module' => 'menu',
+          'delta' => 'menu-new-to-mises',
           'region' => 'sidebar_second',
           'weight' => '-9',
-        ),
-        'views-homepage-academy_course' => array(
-          'module' => 'views',
-          'delta' => 'homepage-academy_course',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
         ),
         'views-homepage-press_room' => array(
           'module' => 'views',

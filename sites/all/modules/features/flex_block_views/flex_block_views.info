@@ -1,7 +1,7 @@
 name = Flex Block Views
 core = 7.x
 package = Views
-version = 7.x-1.0
+version = 7.x-1.2
 project = flex_block_views
 dependencies[] = ctools
 dependencies[] = editableviews
@@ -10,4 +10,3 @@ features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = flex_blocks
 features[views_view][] = flex_blocks_node_specific
-mtime = 1436557554

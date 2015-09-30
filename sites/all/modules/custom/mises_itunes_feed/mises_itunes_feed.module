@@ -13,11 +13,12 @@ function mises_itunes_feed_menu() {
   );
 
   $items['xml/%'] = array(
-    'title' => 'Test xml feed',
+    'title' => 'Mises iTunes Feed',
     'page callback' => 'mises_itunes_feed_xml_callback',
     'page arguments' => array(1),
     'access arguments' => array('access content'),
   );
+
   return $items;
 }
 
@@ -196,7 +197,6 @@ function _mises_solr_author_fix_rss($tid) {
       $item_out[] = '<enclosure url="' . $audio_file_url . '" length="' . $file->filesize . '" type="' . $file->filemime . '" />';
     }
 
-
     $item_out[] = '</item>';
 
     $out = array_merge($out, $item_out);
@@ -216,54 +216,61 @@ function _mises_solr_author_fix_rss($tid) {
  * @param int $tid
  */
 function mises_itunes_feed_xml_callback($tid) {
-  // Get taxonomy data.
-  $term = taxonomy_term_load($tid);
-  if (!$term) {
-    // @todo: set up error handling for $tid not being an int or a valid taxonomy id.
-  }
-
   // This page callback will return an xml page.
   drupal_add_http_header('Content-Type', 'text/xml');
   $dom = new DOMDocument('1.0', 'UTF-8');
   $dom->preserveWhiteSpace = FALSE;
   $dom->formatOutput = TRUE;
-
   $xml = $dom->createElement('rss');
   $dom->appendChild($xml);
   $xml->setAttribute('version', '2.0');
   $xml->setAttribute('xmlns:atom', "http://www.w3.org/2005/Atom");
   $xml->setAttribute('xmlns:itunes', "http://www.itunes.com/dtds/podcast-1.0.dtd");
   $xml->setAttribute('xmlns:itunesu', "http://www.itunesu.com/feed");
-  _mises_itunes_feed_xml_setup_channel($dom, $xml, $term);
 
-  // Collect items that belong to the current vocabulary term.
-  // @todo: the view for taxonomy/term/%1 shows that $types should be shown on the view, but only library_item has the field_author_1 and field_published date.
-  $types = array(
-    'library_item',
-    'blog',
-    'course',
-    'event',
-    'library_collection',
-    'person_profile',
-    'product',
-  );
-  $query = new EntityFieldQuery();
-  // @todo: is the limit of 14 needed?
-  $query->entityCondition('entity_type', 'node')
-    ->propertyCondition('status', 1)
-    ->propertyCondition('type', $types, 'in')
-    ->propertyOrderBy('created', 'DESC')
-    ->range(0, 14);
+  // Get taxonomy data.
+  $term = taxonomy_term_load($tid);
+  if ($term) {
+    _mises_itunes_feed_xml_setup_channel($dom, $xml, $term);
 
-  $list = $query->execute();
-  $nids = array_keys($list['node']);
-  $nodes = node_load_multiple($nids);
+    // Collect items that belong to the current vocabulary term.
+    // @todo: the view for taxonomy/term/%1 shows that $types should be shown on the view, but only library_item has the field_author_1 and field_published date.
+    $types = array(
+      'library_item',
+      'blog',
+      'course',
+      'event',
+      'library_collection',
+      'person_profile',
+      'product',
+    );
 
-  $channel = $dom->getElementsByTagName('channel');
-  $channel = $channel->item(0);
+    $query = new EntityFieldQuery();
+    // @todo: is the limit of 14 needed?
+    $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('nid', taxonomy_select_nodes($tid), 'in')
+      ->propertyCondition('status', 1)
+      ->propertyCondition('type', $types, 'in')
+      ->propertyOrderBy('created', 'DESC')
+      ->range(0, 14);
 
-  foreach ($nodes as $node) {
-    _mises_itunes_feed_xml_add_item($dom, $channel, $node);
+    $list = $query->execute();
+    $nids = array_keys($list['node']);
+    $nodes = node_load_multiple($nids);
+
+    $channel = $dom->getElementsByTagName('channel');
+    $channel = $channel->item(0);
+
+    foreach ($nodes as $node) {
+      _mises_itunes_feed_xml_add_item($dom, $channel, $node);
+    }
+  }
+  else {
+    watchdog('mises_itunes_feed invalid tid',
+      "%tid is not a valid taxonomy identifier",
+      array('%tid' => $tid)
+    );
+    $xml->appendChild($dom->createElement('error', "$tid is invalid"));
   }
 
   $output = $dom->saveXML();
@@ -299,7 +306,7 @@ function _mises_itunes_feed_xml_setup_channel(DOMDocument &$dom, DOMElement &$xm
     $channel->appendChild($dom->createElement('itunes:author', implode(', ', $authors)));
   }
 
-  // @todo: exsplicit is hardcoded??
+  // @todo: explicit is hardcoded??
   $channel->appendChild($dom->createElement('itunes:explicit', 'no'));
 
   // Build image for the vocabulary.
@@ -332,13 +339,24 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
   $wrapper = entity_metadata_wrapper('node', $node);
   $item = $dom->createElement('item');
   $item->appendChild($dom->createElement('title', $node->title));
-  if (!empty($wrapper->field_author_1)) {
-    // Grab the Title from each of the referenced node threw field_author_1 on the node.
-    $authors = array();
-    foreach ($wrapper->field_author_1->value() as $index => $author) {
-      $authors[] = $author->title;
+  try {
+    if (!empty($wrapper->field_author_1)) {
+      // Grab the Title from each of the referenced node threw field_author_1 on the node.
+      $authors = array();
+      foreach ($wrapper->field_author_1->value() as $index => $author) {
+        if (isset($author)) {
+          $authors[] = $author->title;
+        }
+      }
+      $item->appendChild($dom->createElement('itunes:author', implode(', ', $authors)));
     }
-    $item->appendChild($dom->createElement('itunes:author', implode(', ', $authors)));
+  }
+  catch (EntityMetadataWrapperException $e) {
+    watchdog('mises_itunes_feed',
+      "Node %nid shows up in the itunes rss feed with out an Author",
+      array('%nid' => $node->nid),
+      WATCHDOG_ERROR
+    );
   }
 
   $description = '';
@@ -351,7 +369,8 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       "Node %nid shows up in the itunes rss feed but does a body to be used as a
        discription item",
       array('%nid' => $node->nid),
-      WATCHDOG_ERROR
+      WATCHDOG_NOTICE,
+      url("node/$node->nid", array('absolute' => TRUE))
     );
   }
   $item->appendChild($dom->createElement('description', $description));
@@ -361,9 +380,12 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
     $item->appendChild($dom->createElement('itunes:summary', $summary));
   }
   catch (EntityMetadataWrapperException $e) {
-    watchdog('mises_itunes_feed',
-      $e->getMessage(),
-      WATCHDOG_ERROR
+    watchdog('mises_itunes_feed', 'Node %nid has no field_teaser_text and
+    a EntityMetadataWrapperException is caught with message: %msg',
+      array('%nid' => $node->nid,'%msg' =>$e->getMessage()),
+      WATCHDOG_NOTICE,
+      url("node/$node->nid", array('absolute' => TRUE))
+
     );
   }
 
@@ -384,9 +406,11 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
           "Node %nid shows up in the itunes rss feed but does not have a media
           (field_collection_item) item",
           array('%nid' => $node->nid),
-          WATCHDOG_ERROR,
-          url("node/$node->nid/edit", array('absolute' => TRUE)));
+          WATCHDOG_NOTICE,
+          url("node/$node->nid", array('absolute' => TRUE))
+        );
       }
+      // @todo: filter out youtube here
       $enclosure = $dom->createElement('enclosure');
       $enclosure->setAttribute('url', $url);
       $enclosure->setAttribute('length', $file->filesize);
@@ -401,8 +425,8 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
       "Node %nid shows up in the itunes rss feed but does not have a media
       (field_collection_item) item",
       array('%nid' => $node->nid),
-      WATCHDOG_ERROR,
-      url("node/$node->nid/edit", array('absolute' => TRUE)));
+      WATCHDOG_NOTICE,
+      url("node/$node->nid", array('absolute' => TRUE)));
   }
 
   $item->appendChild($dom->createElement('guid', $wrapper->url->value()));
@@ -412,7 +436,12 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
     $item->appendChild($dom->createElement('pubDate', $pubDate));
   }
   else {
-    // @todo: add watchdog for when a node shows up w/o a publish date.
+    watchdog('mises_itunes_feed',
+      "Node %nid shows up in the itunes rss feed but does not have a publish date
+      (field_published_date) item",
+      array('%nid' => $node->nid),
+      WATCHDOG_NOTICE,
+      url("node/$node->nid", array('absolute' => TRUE)));
   }
 
   $item->appendChild($dom->createElement('itunes:duration', $duration));
@@ -436,7 +465,7 @@ function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel
     $item->appendChild($dom->createElement('itunes:keywords', implode(', ', $keywords)));
   }
 
-  $item->appendChild($dom->createElement('link', url('node/'.$node->nid, array('absolute' => TRUE))));
+  $item->appendChild($dom->createElement('link', url('node/' . $node->nid, array('absolute' => TRUE))));
 
   // @todo remove this? http://deimos.apple.com/rsrc/doc/iTunesUAdministrationGuide/#ManagingiTunesUCoursePages/chapter_11_section_6.html
   $item->appendChild($dom->createElement('itunes:explicit', 'no'));

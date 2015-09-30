@@ -67,6 +67,21 @@ var Drupal = Drupal || {};
           }
         });
       };
+      
+      var homeFeature = function() {
+        // Homepage Featured equal height
+        if ($(document).width() > 768) {
+          var bannerHeight = $('.front .region-featured-left').height();
+          $('.front .region-featured-right').css({
+            'height': bannerHeight,
+          });
+        } else {
+          $('.front .region-featured-right').css({
+            'height': 'auto',
+          });
+        }
+
+      };
 
       $(document).ready(function() {
         // profile expand / close
@@ -141,9 +156,11 @@ var Drupal = Drupal || {};
           });
         });
         
-      }); 
+      });
+       
       $(window).load(function() {
         implementEqualHeight();
+        homeFeature();
         
         // Filtered Term Landing
         // Add select field styling
@@ -199,6 +216,7 @@ var Drupal = Drupal || {};
 
       $(window).resize(function() {
         implementEqualHeight();
+        homeFeature();
       });      
 
       $(document).ajaxComplete(function() {
