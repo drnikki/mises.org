@@ -292,6 +292,7 @@
                 options
                     .data('selectBox-select', select)
                     .css('display', 'none')
+                    .attr('id','selectBox-'+select.attr('id')||'')
                     .appendTo('BODY')
                     .find('A')
                     .bind('mousedown.selectBox', function (event) {
