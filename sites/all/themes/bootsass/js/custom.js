@@ -147,17 +147,53 @@ var Drupal = Drupal || {};
         
         // Filtered Term Landing
         // Add select field styling
-        $('.views-reset-button').appendTo('#edit-book-type-wrapper .bef-select-as-links > .form-item').css('visibility','visible');
-        $('#edit-book-type-wrapper').insertBefore('.views-exposed-widgets');
-        //var $filterToggle = '<h4 class="filter-toggle text-right">More Filters <span class="glyphicon glyphicon-chevron-right"></span></h4>';
-        //$($filterToggle).insertAfter('#edit-book-type-wrapper');
+        if ($('#edit-book-type-wrapper').length) {
+          $('.views-reset-button').appendTo('#edit-book-type-wrapper .bef-select-as-links > .form-item').css('visibility','visible');
+          $('#edit-book-type-wrapper').insertBefore('.views-exposed-widgets');
+        }
+        
+        if ($('.filter-triggers').length) {
+          $('.filter-triggers').prependTo($('.views-exposed-widgets'));
+        }
+        
+        $('#edit-journal option').each(function() {
+          var link = $(this).text();
+          var start = link.substr(0,1);
+          var second = link.substr(1,1);
+          if (second === '-') {
+            link = link.substr(2);
+          } else if (start === '-'){
+            link = link.substr(1);
+          }
+          $(this).text(link);
+          if ($(this).attr('selected') === 'selected') {
+            var selectedValue = $(this).attr('value');
+            var featured = ['541','151'];
+            var test = $.inArray(selectedValue,featured);
+              if ($.inArray(selectedValue,featured) >= 0) {
+                var relatedTrigger = $('a[href="#edit-journal"][data-select="'+selectedValue+'"]');
+                $(relatedTrigger).addClass('active');
+              }
+          }
+        });
+
+        if ($('#edit-journal').length) {
+          var $journal = $('#edit-journal');
+          $('a[href="#edit-journal"]').click(function () {
+            if ($(this).hasClass('active')) {
+              $(this).removeClass('active');
+              $journal.val('All');
+              $journal.siblings('.selectBox').removeClass('hidden');
+            } else {
+              $(this).addClass('active').siblings('a').removeClass('active');
+              $journal.val( $(this).data('select') );
+              $journal.siblings('.selectBox').addClass('hidden');
+            }
+          });
+        }
         $('select:not(#edit-book-type):not(#edit-title)').selectBox({
             menuSpeed: 'fast'
         });
-        //$('.filter-toggle').on('click',function(){
-        //  $(this).toggleClass('open');
-        //  $(this).siblings('.views-exposed-widgets').toggleClass('open');
-        //});
         
       });      
 

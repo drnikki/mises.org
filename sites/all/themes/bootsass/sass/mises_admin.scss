@@ -1,0 +1,26 @@
+/*
+* OVERRIDES OF ADMIN THEME
+*/
+.sub-group .fieldset-wrapper {
+  > div {
+    float: left;
+    margin-right: 10px;
+    box-sizing: border-box;
+  }
+  &.two-items > div {
+    width: 45%;
+  }
+  &.three-items > div {
+    width: 30%;
+  }
+  &.four-items > div {
+    width: 22%;
+  }
+}
+.field-widget-number {
+  .form-type-textfield {
+    input {
+      width: auto;
+    }
+  }
+}

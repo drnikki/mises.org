@@ -137,6 +137,13 @@ function bootsass_form_alter(array &$form, array &$form_state = array(), $form_i
         // Apply a clearfix so the results don't overflow onto the form.
         $form['#attributes']['class'][] = 'content-search';
         break;
+        
+      case 'views_exposed_form':
+        if (isset($form['title'])) {
+          $form['title']['#attributes'] = array('placeholder' => array(t('Search by Title')));
+        }
+        break;
+      
     }
 
   }
