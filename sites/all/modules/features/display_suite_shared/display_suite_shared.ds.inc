@@ -2135,7 +2135,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'online_book_chapter' => array(
-      'weight' => '0',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
     ),
