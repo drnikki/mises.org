@@ -309,6 +309,36 @@ function mises_library_item_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_journal_data|node|library_item|form';
+  $field_group->group_name = 'group_journal_data';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_tagging';
+  $field_group->data = array(
+    'label' => 'Journal Data',
+    'weight' => '15',
+    'children' => array(
+      0 => 'field_volume',
+      1 => 'field_journal_number',
+      2 => 'field_journal_year',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Journal Data',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-journal-data field-group-fieldset sub-group three-children',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_journal_data|node|library_item|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_links|node|library_item|full';
   $field_group->group_name = 'group_links';
   $field_group->entity_type = 'node';
@@ -508,6 +538,7 @@ function mises_library_item_field_group_info() {
       5 => 'field_topics',
       6 => 'field_austrian_school',
       7 => 'group_featured_tags',
+      8 => 'group_journal_data',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
