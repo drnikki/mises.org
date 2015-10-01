@@ -92,6 +92,18 @@ function bootsass_preprocess_html(&$variables) {
         $vocabulary = drupal_clean_css_identifier($term->vocabulary_machine_name);
         //$variables['classes_array'][] = 'icon-' . $vocabulary . '-' . $class;
         $variables['classes_array'][] = 'icon-' . $class;
+        $variables['classes_array'][] = $term->name;
+        
+        // And if Mises Daily class, change the meta title
+        if ($term->name === "Mises Daily") {
+          //get site name
+          $site_name = token_replace('[site:name]');
+          $head_title = $node->title . " | " . $term->name;
+      
+          //add title
+          $variables['head_title'] = $head_title;
+        }
+
       }
     }
   }
@@ -109,5 +121,5 @@ function bootsass_preprocess_html(&$variables) {
       }
     }
   }
-
+  
 }
