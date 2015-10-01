@@ -445,6 +445,9 @@ function mises_seo_settings_metatag_export_default() {
   $config['node:blog'] = array(
     'instance' => 'node:blog',
     'config' => array(
+      'title' => array(
+        'value' => '[node:title] | Mises Wire',
+      ),
       'image_src' => array(
         'value' => '[node:field_image]',
       ),
