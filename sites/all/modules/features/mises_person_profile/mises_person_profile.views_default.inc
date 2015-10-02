@@ -257,7 +257,7 @@ function mises_person_profile_views_default_views() {
   );
 
   /* Display: Profile Articles Page */
-  $handler = $view->new_display('page_with_page_title', 'Profile Articles Page', 'page');
+  $handler = $view->new_display('page', 'Profile Articles Page', 'page');
   $handler->display->display_options['path'] = 'profile/%/%';
   $export['author_articles'] = $view;
 

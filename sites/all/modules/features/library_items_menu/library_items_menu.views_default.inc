@@ -109,12 +109,6 @@ function library_items_menu_views_default_views() {
   $handler->display->display_options['filters']['name_1']['operator'] = '!=';
   $handler->display->display_options['filters']['name_1']['value'] = 'Quotes';
 
-  /* Display: Page (with Page Title) */
-  $handler = $view->new_display('page_with_page_title', 'Page (with Page Title)', 'page_with_page_title_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Library Item Menu Demo';
-  $handler->display->display_options['path'] = 'library/menu';
-
   /* Display: Profile Menu */
   $handler = $view->new_display('block', 'Profile Menu', 'block_1');
   $handler->display->display_options['defaults']['query'] = FALSE;
