@@ -96,9 +96,7 @@ function bootsass_preprocess_html(&$variables) {
         
         // And if Mises Daily class, change the meta title
         if ($term->name === "Mises Daily") {
-          //get site name
-          $site_name = token_replace('[site:name]');
-          $head_title = $node->title . " | " . $term->name;
+          $head_title = trim($node->title) . " | " . $term->name;
       
           //add title
           $variables['head_title'] = $head_title;
