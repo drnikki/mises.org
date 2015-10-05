@@ -1606,12 +1606,12 @@ Quarterly Journal of Austrian Economics|Other Journals',
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_author_1_target_id_entityreference_filter' => array(
+    'field_author_1_target_id_selective' => array(
       'bef_format' => 'default',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
-        'is_secondary' => 1,
+        'is_secondary' => 0,
         'any_label' => 'All Authors',
         'bef_filter_description' => '',
         'tokens' => array(
@@ -2085,6 +2085,22 @@ Quarterly Journal of Austrian Economics|Other Journals',
       ),
     ),
   );
+  /* Field: Field: Author */
+  $handler->display->display_options['fields']['field_author_1']['id'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['field'] = 'field_author_1';
+  $handler->display->display_options['fields']['field_author_1']['label'] = '';
+  $handler->display->display_options['fields']['field_author_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_author_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author_1']['settings'] = array(
+    'link' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Type */
   $handler->display->display_options['sorts']['type']['id'] = 'type';
@@ -2179,17 +2195,17 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
-  /* Filter criterion: Field: Author (field_author_1) (reference filter) */
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['id'] = 'field_author_1_target_id_entityreference_filter';
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['table'] = 'field_data_field_author_1';
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['field'] = 'field_author_1_target_id_entityreference_filter';
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['group'] = 1;
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['operator_id'] = 'field_author_1_target_id_entityreference_filter_op';
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['label'] = 'Author';
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['operator'] = 'field_author_1_target_id_entityreference_filter_op';
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['identifier'] = 'author';
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['remember_roles'] = array(
+  /* Filter criterion: Author (field_author_1) (selective) */
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['id'] = 'field_author_1_target_id_selective';
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['table'] = 'field_data_field_author_1';
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['field'] = 'field_author_1_target_id_selective';
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['ui_name'] = 'Author (field_author_1) (selective)';
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['group'] = 1;
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['expose']['label'] = 'Author';
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['expose']['identifier'] = 'author';
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -2201,8 +2217,9 @@ Quarterly Journal of Austrian Economics|Other Journals',
     9 => 0,
     7 => 0,
   );
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['hide_empty_filter'] = FALSE;
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['reference_display'] = 'filtered_landing_term_page:entityreference_3';
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['selective_display_field'] = 'field_author_1';
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['selective_display_sort'] = 'ORIG';
+  $handler->display->display_options['filters']['field_author_1_target_id_selective']['selective_items_limit'] = '';
   /* Filter criterion: Content: Topics (field_topics) */
   $handler->display->display_options['filters']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['filters']['field_topics_target_id']['table'] = 'field_data_field_topics';
