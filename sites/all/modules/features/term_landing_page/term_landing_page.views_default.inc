@@ -1989,6 +1989,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<div class="filter-triggers"><a href="#edit-journal" data-select="541">The Austrian</a> <a href="#edit-journal" data-select="151">Quarterly Journal of Austrian Economics</a></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -2089,11 +2090,13 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['sorts']['type']['id'] = 'type';
   $handler->display->display_options['sorts']['type']['table'] = 'node';
   $handler->display->display_options['sorts']['type']['field'] = 'type';
+  $handler->display->display_options['sorts']['type']['expose']['label'] = 'Type';
   /* Sort criterion: Content: Mises Published Date (field_mises_published_date) */
   $handler->display->display_options['sorts']['field_mises_published_date_value']['id'] = 'field_mises_published_date_value';
   $handler->display->display_options['sorts']['field_mises_published_date_value']['table'] = 'field_data_field_mises_published_date';
   $handler->display->display_options['sorts']['field_mises_published_date_value']['field'] = 'field_mises_published_date_value';
   $handler->display->display_options['sorts']['field_mises_published_date_value']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['expose']['label'] = 'Publication Date';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
