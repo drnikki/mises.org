@@ -49,7 +49,6 @@
     font-weight: 600;
   }
   span.author {
-    padding-left: 10px;
     a {
       padding-right: 10px;
       color: $brand-primary;
@@ -62,7 +61,8 @@
   span + span {
     &:before {
       display: inline-block;
-      width: 14px;
+      width: 24px;
+      padding-left: 10px;
       content: "\2022";        
       font-weight: 600;
     }
