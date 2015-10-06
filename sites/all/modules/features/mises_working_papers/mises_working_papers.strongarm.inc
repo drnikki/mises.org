@@ -59,7 +59,7 @@ function mises_working_papers_strongarm() {
         'custom_settings' => FALSE,
       ),
       'simple_teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'single_term' => array(
         'custom_settings' => FALSE,
@@ -71,6 +71,15 @@ function mises_working_papers_strongarm() {
         'custom_settings' => FALSE,
       ),
       'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'audio_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'simple_content' => array(
+        'custom_settings' => FALSE,
+      ),
+      'vertical_teaser' => array(
         'custom_settings' => FALSE,
       ),
     ),

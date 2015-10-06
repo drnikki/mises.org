@@ -109,10 +109,7 @@ features[field_instance][] = node-library_item-field_hidden_solr_content
 features[field_instance][] = node-library_item-field_id
 features[field_instance][] = node-library_item-field_image_collection
 features[field_instance][] = node-library_item-field_journal_number
-<<<<<<< HEAD
 features[field_instance][] = node-library_item-field_journal_volume
-=======
->>>>>>> 28079a30ebec600fd7eabae63ad8507d9c471045
 features[field_instance][] = node-library_item-field_journal_year
 features[field_instance][] = node-library_item-field_kindle
 features[field_instance][] = node-library_item-field_level

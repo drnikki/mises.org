@@ -1,7 +1,7 @@
 name = Mises Events
 core = 7.x
 package = Content Types
-version = 7.x-1.11
+version = 7.x-1.12
 project = mises_events
 dependencies[] = addtocal
 dependencies[] = block
@@ -54,6 +54,7 @@ features[field_base][] = field_registration_link_external
 features[field_base][] = field_registration_type
 features[field_group][] = group_additional_information|node|event|form
 features[field_group][] = group_date_location|node|event|full
+features[field_group][] = group_date_location|node|event|simple_teaser
 features[field_group][] = group_date_location|node|event|teaser
 features[field_group][] = group_event_information|node|event|form
 features[field_group][] = group_event_media|node|event|form
