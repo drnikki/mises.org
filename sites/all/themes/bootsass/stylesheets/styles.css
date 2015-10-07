@@ -2530,6 +2530,8 @@ span.fake-bullet { display: list-item; list-style-type: disc; margin-left: 20px;
 
 span.fake-blockquote { display: block; padding: 0 20px; }
 
+.filtered-journals span.search-label { display: inline; }
+
 /*
 * Custom Styles for Home and Landing Pages
 * 
@@ -2949,12 +2951,10 @@ ul.accordion li { list-style: none; }
 * DATE AUTHOR ON TEASERS AND NODES
 */
 .group-date-author span.type { color: #00426b; text-transform: uppercase; }
-.group-date-author span.type:after { display: inline-block; width: 20px; content: "\2022"; text-align: center; }
-.group-date-author .date { color: #00426b; text-transform: uppercase; font-weight: 600; }
-.group-date-author span.author { padding-left: 10px; }
+.group-date-author span.date { color: #00426b; text-transform: uppercase; font-weight: 600; }
 .group-date-author span.author a { padding-right: 10px; color: #00426b; }
-.group-date-author span.author a:before { display: inline-block; width: 14px; content: "\2022"; font-weight: 600; }
 .group-date-author span.author div, .group-date-author span.author p { display: inline; color: #00426b; }
+.group-date-author span + span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600; }
 
 /*
 * DATE LOCATION ON TEASERS AND NODES
