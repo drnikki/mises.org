@@ -477,6 +477,16 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+    'field_teaser_text' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|blog|simple_teaser'] = $ds_fieldsetting;
 
@@ -2062,6 +2072,11 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+    'field_teaser_text' => array(
       'formatter_settings' => array(
         'ft' => array(),
       ),

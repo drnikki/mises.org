@@ -453,14 +453,21 @@ body.mises-daily {
     padding-right: 0;
   }
   #edit-vol-wrapper,
-  #edit-no-wrapper,
-  #edit-year-wrapper {
+  #edit-no-wrapper {
     width: -moz-calc(16.5% - 5px);
     width: calc(16.5% - 5px);
     padding: $padding-small-horizontal $padding-small-horizontal 0 0;
   }
+  #edit-year-wrapper {
+    width: -moz-calc(14.5% - 5px);
+    width: calc(14.5% - 5px);
+    padding: $padding-small-horizontal $padding-small-horizontal 0 0;
+  }
   .views-submit-button {
     padding: $padding-small-horizontal 0 0 0;
+    button {
+      width: 64px; // Wide enough for ajax throbber
+    }
   }
   .views-reset-button {
     float: right;

@@ -74,6 +74,36 @@ function mises_events_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_date_location|node|event|simple_teaser';
+  $field_group->group_name = 'group_date_location';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'simple_teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Date Location',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_event_date',
+      1 => 'field_event_location',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Date Location',
+      'instance_settings' => array(
+        'classes' => 'group-date-location sub-heading primary',
+        'element' => 'p',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_date_location|node|event|simple_teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_date_location|node|event|teaser';
   $field_group->group_name = 'group_date_location';
   $field_group->entity_type = 'node';
