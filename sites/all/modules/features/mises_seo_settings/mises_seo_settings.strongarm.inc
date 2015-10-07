@@ -20,20 +20,6 @@ function mises_seo_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_default';
-  $strongarm->value = '[current-page:page-title] | [site:name]';
-  $export['page_title_default'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_front';
-  $strongarm->value = '[site:name]';
-  $export['page_title_front'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'site_map_categories_depth';
   $strongarm->value = 'all';
   $export['site_map_categories_depth'] = $strongarm;
