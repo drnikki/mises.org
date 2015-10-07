@@ -6,7 +6,6 @@ version = 7.x-1.6
 project = mises_content_management
 dependencies[] = ctools
 dependencies[] = editableviews
-dependencies[] = page_title
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
