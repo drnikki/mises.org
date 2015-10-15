@@ -10,7 +10,8 @@
 function mises_static_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_image_collection-field_image'
+  // Exported field_instance:
+  // 'field_collection_item-field_image_collection-field_image'
   $field_instances['field_collection_item-field_image_collection-field_image'] = array(
     'bundle' => 'field_image_collection',
     'deleted' => 0,
@@ -167,7 +168,8 @@ function mises_static_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_media_collection-field_insert_after'
+  // Exported field_instance:
+  // 'field_collection_item-field_media_collection-field_insert_after'
   $field_instances['field_collection_item-field_media_collection-field_insert_after'] = array(
     'bundle' => 'field_media_collection',
     'default_value' => NULL,
@@ -220,7 +222,8 @@ function mises_static_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_media_collection-field_media'
+  // Exported field_instance:
+  // 'field_collection_item-field_media_collection-field_media'
   $field_instances['field_collection_item-field_media_collection-field_media'] = array(
     'bundle' => 'field_media_collection',
     'deleted' => 0,
@@ -596,7 +599,7 @@ function mises_static_page_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 2,
+      'weight' => 43,
     ),
   );
 
@@ -676,6 +679,98 @@ function mises_static_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_social_media_image'
+  $field_instances['node-page-field_social_media_image'] = array(
+    'bundle' => 'page',
+    'deleted' => 0,
+    'description' => 'Upload an image to be used for social media shares. Recommended size: 1200px X 1200px.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_social_media_image',
+    'label' => 'Social Media Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'ebook' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 42,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Alt Text');
@@ -684,7 +779,9 @@ function mises_static_page_field_default_field_instances() {
   t('Image');
   t('Insert After Paragraph #');
   t('Media');
+  t('Social Media Image');
   t('To embed media files within the content of the body, add a number in this field. If no value is entered, it will appear below the body of the page.');
+  t('Upload an image to be used for social media shares. Recommended size: 1200px X 1200px.');
 
   return $field_instances;
 }

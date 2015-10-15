@@ -114,16 +114,16 @@ function mises_course_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '5',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '6',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '3',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '4',
         ),
       ),
       'display' => array(),

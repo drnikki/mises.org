@@ -335,7 +335,7 @@ function mises_schema_org_settings_rdf_default_mappings() {
     ),
     'title' => array(
       'predicates' => array(
-        0 => 'dc:title',
+        0 => 'schema:name',
       ),
     ),
     'created' => array(
@@ -366,7 +366,7 @@ function mises_schema_org_settings_rdf_default_mappings() {
     ),
     'name' => array(
       'predicates' => array(
-        0 => 'foaf:name',
+        0 => 'schema:name',
       ),
     ),
     'comment_count' => array(
@@ -381,6 +381,18 @@ function mises_schema_org_settings_rdf_default_mappings() {
       ),
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
+    ),
+    'field_social_media_image' => array(
+      'predicates' => array(
+        0 => 'schema:primaryImageOfPage',
+      ),
+      'type' => 'rel',
+    ),
+    'url' => array(
+      'predicates' => array(
+        0 => 'schema:url',
+      ),
+      'type' => 'rel',
     ),
   );
 
@@ -393,7 +405,7 @@ function mises_schema_org_settings_rdf_default_mappings() {
     ),
     'title' => array(
       'predicates' => array(
-        0 => 'dc:title',
+        0 => 'schema:name',
       ),
     ),
     'created' => array(
@@ -424,7 +436,7 @@ function mises_schema_org_settings_rdf_default_mappings() {
     ),
     'name' => array(
       'predicates' => array(
-        0 => 'foaf:name',
+        0 => 'schema:name',
       ),
     ),
     'comment_count' => array(
@@ -439,6 +451,18 @@ function mises_schema_org_settings_rdf_default_mappings() {
       ),
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
+    ),
+    'field_social_media_image' => array(
+      'predicates' => array(
+        0 => 'schema:primaryImageOfPage',
+      ),
+      'type' => 'rel',
+    ),
+    'url' => array(
+      'predicates' => array(
+        0 => 'schema:url',
+      ),
+      'type' => 'rel',
     ),
   );
 
@@ -855,7 +879,7 @@ function mises_schema_org_settings_rdf_default_mappings() {
     ),
     'title' => array(
       'predicates' => array(
-        0 => 'dc:title',
+        0 => 'schema:name',
       ),
     ),
     'created' => array(
@@ -886,7 +910,7 @@ function mises_schema_org_settings_rdf_default_mappings() {
     ),
     'name' => array(
       'predicates' => array(
-        0 => 'foaf:name',
+        0 => 'schema:name',
       ),
     ),
     'comment_count' => array(
@@ -901,6 +925,18 @@ function mises_schema_org_settings_rdf_default_mappings() {
       ),
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
+    ),
+    'field_social_media_image' => array(
+      'predicates' => array(
+        0 => 'schema:primaryImageOfPage',
+      ),
+      'type' => 'rel',
+    ),
+    'url' => array(
+      'predicates' => array(
+        0 => 'schema:url',
+      ),
+      'type' => 'rel',
     ),
   );
 
@@ -962,6 +998,10 @@ function mises_schema_org_settings_rdf_default_mappings() {
     ),
     'field_hidden_solr_content' => array(
       'predicates' => array(),
+    ),
+    'field_social_media_image' => array(
+      'predicates' => array(),
+      'type' => 'rel',
     ),
   );
 
@@ -1077,6 +1117,10 @@ function mises_schema_org_settings_rdf_default_mappings() {
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
     ),
+    'field_social_media_image' => array(
+      'predicates' => array(),
+      'type' => 'rel',
+    ),
   );
 
   // Exported RDF mapping: person_profile
@@ -1134,6 +1178,10 @@ function mises_schema_org_settings_rdf_default_mappings() {
       ),
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
+    ),
+    'field_social_media_image' => array(
+      'predicates' => array(),
+      'type' => 'rel',
     ),
   );
 
@@ -1607,36 +1655,6 @@ function mises_schema_org_settings_rdf_default_mappings() {
 
   // Exported RDF mapping: reading_group
   $schemaorg['taxonomy_term']['reading_group'] = array(
-    'rdftype' => array(
-      0 => 'skos:Concept',
-    ),
-    'name' => array(
-      'predicates' => array(
-        0 => 'rdfs:label',
-        1 => 'skos:prefLabel',
-      ),
-    ),
-    'description' => array(
-      'predicates' => array(
-        0 => 'skos:definition',
-      ),
-    ),
-    'vid' => array(
-      'predicates' => array(
-        0 => 'skos:inScheme',
-      ),
-      'type' => 'rel',
-    ),
-    'parent' => array(
-      'predicates' => array(
-        0 => 'skos:broader',
-      ),
-      'type' => 'rel',
-    ),
-  );
-
-  // Exported RDF mapping: reason_for_contact
-  $schemaorg['taxonomy_term']['reason_for_contact'] = array(
     'rdftype' => array(
       0 => 'skos:Concept',
     ),
