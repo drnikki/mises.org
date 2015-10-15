@@ -22,6 +22,7 @@ function library_items_menu_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'accordion';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -168,6 +169,32 @@ function library_items_menu_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Filtered Journals Menu */
+  $handler = $view->new_display('block', 'Filtered Journals Menu', 'block_2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'static filtered-journals';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'media_type' => 'media_type',
+  );
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = '!=';
+  $handler->display->display_options['filters']['name']['value'] = 'Online Texts';
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['filters']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_1']['field'] = 'name';
+  $handler->display->display_options['filters']['name_1']['operator'] = '!=';
+  $handler->display->display_options['filters']['name_1']['value'] = 'Quotes';
   $export['library_items_menu'] = $view;
 
   return $export;
