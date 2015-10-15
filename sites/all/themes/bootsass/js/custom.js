@@ -140,15 +140,22 @@ var Drupal = Drupal || {};
         
 
         // jQuery Nested Accordion on Library Item Menu and Book Sidebar Menus http://www.adipalaz.com/experiments/jquery/nested_accordion.html
-        $('.view-library-items-menu').attr('id','library-menu').find('ul').addClass('accordion nav');
+        $('.view-library-items-menu.accordion').attr('id','library-menu').find('ul').addClass('accordion nav');
         $('.book-content-toc').attr('id','library-menu').find('ul').addClass('accordion nav');
-        $('#library-menu').accordion({
+        $('#library-menu.accordion').accordion({
           iconTrigger: true,
           activeLink: true,
           initShow: "#current",
           uri: 'relative',
           splitUrl: '/'
         }).show();
+
+        // Static Menu on Filtered Journals - may be used for others in the future
+        $('.view-library-items-menu.static').attr('id','library-menu').find('ul').addClass('nav');
+        $('#library-menu.filtered-journals .nav > li.first ul').addClass('hidden');
+        $('#library-menu.filtered-journals .nav > li:nth-child(2) ul ul').addClass('hidden');
+        $('#library-menu.filtered-journals').show();
+        
 
         //glyphicons
         $('.latest-library-content .panel-footer a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> Browse ');
