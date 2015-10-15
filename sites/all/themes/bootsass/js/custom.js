@@ -126,6 +126,8 @@ var Drupal = Drupal || {};
           });
         }
       };
+      
+      // Glyphicons that are needed only 
 
 
       $(document).ready(function() {
@@ -168,7 +170,7 @@ var Drupal = Drupal || {};
         $('.more-link a').prepend('<span class="glyphicon glyphicon-chevron-right"></span> ');
         $('.block-mailchimp-lists h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
         $('.block-custom-search-blocks h2.block-title').contents().unwrap().wrap('<div class="panel-heading single"><div class="panel-title"></div></div>');
-        $('a.external-link').append('<span class="glyphicon glyphicon-new-window"></span> ');
+        $('a.external-link:not(:has(.glyphicon-new-window))').append('<span class="glyphicon glyphicon-new-window"></span> ');
         $('.social-media-categories a').append('<span class="glyphicon glyphicon-new-window"></span> ');
         $('.view-giving-stories .panel-footer a').append(' <span class="glyphicon glyphicon-chevron-right"></span> ');
         
