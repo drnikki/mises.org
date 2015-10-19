@@ -1,7 +1,3 @@
-# Override HTAccess
-Allow from all
-Satisfy Any
-
 #
 # Apache/PHP/Drupal settings:
 #
