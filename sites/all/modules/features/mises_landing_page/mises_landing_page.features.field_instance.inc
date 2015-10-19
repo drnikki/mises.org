@@ -10,7 +10,8 @@
 function mises_landing_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_resource_group-field_description'
+  // Exported field_instance:
+  // 'field_collection_item-field_resource_group-field_description'
   $field_instances['field_collection_item-field_resource_group-field_description'] = array(
     'bundle' => 'field_resource_group',
     'default_value' => NULL,
@@ -90,7 +91,8 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_resource_group-field_display_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_resource_group-field_display_title'
   $field_instances['field_collection_item-field_resource_group-field_display_title'] = array(
     'bundle' => 'field_resource_group',
     'default_value' => NULL,
@@ -170,7 +172,8 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_resource_group-field_resources'
+  // Exported field_instance:
+  // 'field_collection_item-field_resource_group-field_resources'
   $field_instances['field_collection_item-field_resource_group-field_resources'] = array(
     'bundle' => 'field_resource_group',
     'default_value' => NULL,
@@ -223,7 +226,8 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_resources-field_read_more_link'
+  // Exported field_instance:
+  // 'field_collection_item-field_resources-field_read_more_link'
   $field_instances['field_collection_item-field_resources-field_read_more_link'] = array(
     'bundle' => 'field_resources',
     'default_value' => NULL,
@@ -285,7 +289,8 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_resources-field_resource'
+  // Exported field_instance:
+  // 'field_collection_item-field_resources-field_resource'
   $field_instances['field_collection_item-field_resources-field_resource'] = array(
     'bundle' => 'field_resources',
     'default_value' => NULL,
@@ -336,7 +341,8 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_resources-field_teaser_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_resources-field_teaser_title'
   $field_instances['field_collection_item-field_resources-field_teaser_title'] = array(
     'bundle' => 'field_resources',
     'default_value' => NULL,
@@ -508,7 +514,7 @@ function mises_landing_page_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 6,
+      'weight' => 20,
     ),
   );
 
@@ -750,7 +756,7 @@ function mises_landing_page_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 7,
+      'weight' => 21,
     ),
   );
 
@@ -1014,6 +1020,92 @@ function mises_landing_page_field_default_field_instances() {
       'settings' => array(),
       'type' => 'field_collection_embed',
       'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-landing_page-field_social_media_image'
+  $field_instances['node-landing_page-field_social_media_image'] = array(
+    'bundle' => 'landing_page',
+    'deleted' => 0,
+    'description' => 'Upload an image to be used for social media shares. Recommended size: 1200px X 1200px.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 13,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_social_media_image',
+    'label' => 'Social Media Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'ebook' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 19,
     ),
   );
 
@@ -1357,7 +1449,9 @@ function mises_landing_page_field_default_field_instances() {
   t('Resources');
   t('Select two Library Item nodes to display in the featured videos section of the landing page.');
   t('Select up to six items to be displayed in vertical blocks on this landing page. For proper display, select either three or six items. Available items include Library Items, Events and Courses.');
+  t('Social Media Image');
   t('Subtitle');
+  t('Upload an image to be used for social media shares. Recommended size: 1200px X 1200px.');
 
   return $field_instances;
 }
