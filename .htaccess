@@ -1,3 +1,7 @@
+# Override HTAccess
+Allow from all
+Satisfy Any
+
 #
 # Apache/PHP/Drupal settings:
 #
@@ -141,3 +145,4 @@ DirectoryIndex index.php index.html index.htm
     </FilesMatch>
   </IfModule>
 </IfModule>
+

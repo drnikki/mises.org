@@ -1,9 +1,10 @@
 name = Mises SEO Settings
 core = 7.x
 package = Settings
-version = 7.x-1.10
+version = 7.x-1.11
 project = mises_seo_settings
 dependencies[] = ctools
+dependencies[] = imagecache_token
 dependencies[] = metatag
 dependencies[] = metatag_context
 dependencies[] = metatag_dc
