@@ -139,6 +139,44 @@ function mises_theme_image_default_styles() {
     ),
   );
 
+  // Exported image style: social_media_1200_x_1200.
+  $styles['social_media_1200_x_1200'] = array(
+    'label' => 'Social Media 1200 x 1200',
+    'effects' => array(
+      1 => array(
+        'name' => 'smartcrop_scale_and_crop',
+        'data' => array(
+          'width' => 1200,
+          'height' => 1200,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: social_media_1200_x_628.
+  $styles['social_media_1200_x_628'] = array(
+    'label' => 'Social Media 1200 x 628',
+    'effects' => array(
+      2 => array(
+        'name' => 'smartcrop_scale_and_crop',
+        'data' => array(
+          'width' => 1200,
+          'height' => 628,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: social_media_800_x_1200.
+  $styles['social_media_800_x_1200'] = array(
+    'label' => 'Social Media 800 x 1200',
+    'effects' => array(),
+  );
+
   // Exported image style: vertical_teaser.
   $styles['vertical_teaser'] = array(
     'label' => 'Vertical Teaser',

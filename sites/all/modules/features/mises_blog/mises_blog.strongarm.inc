@@ -146,6 +146,9 @@ function mises_blog_strongarm() {
         'xmlsitemap' => array(
           'weight' => '3',
         ),
+        'twitter' => array(
+          'weight' => '1',
+        ),
       ),
       'display' => array(),
     ),

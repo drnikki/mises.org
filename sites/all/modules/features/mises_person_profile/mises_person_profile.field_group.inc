@@ -60,7 +60,8 @@ function mises_person_profile_field_group_info() {
       6 => 'field_twitter',
       7 => 'field_last_name',
       8 => 'field_email_link',
-      9 => 'title',
+      9 => 'field_social_media_image',
+      10 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -156,6 +156,7 @@ function mises_library_item_field_group_info() {
       3 => 'field_bibliography_footnote',
       4 => 'field_citation',
       5 => 'field_image_collection',
+      6 => 'field_social_media_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

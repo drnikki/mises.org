@@ -581,7 +581,7 @@ function mises_library_item_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1098,7 +1098,7 @@ function mises_library_item_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1342,7 +1342,7 @@ Note that all tags must be manually selected.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -1598,7 +1598,7 @@ Note that all tags must be manually selected.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -2304,7 +2304,7 @@ Note that all tags must be manually selected.',
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -2975,7 +2975,7 @@ Note that all tags must be manually selected.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 36,
+      'weight' => 37,
     ),
   );
 
@@ -4025,6 +4025,128 @@ Note that all tags must be manually selected.',
     ),
   );
 
+  // Exported field_instance: 'node-library_item-field_social_media_image'
+  $field_instances['node-library_item-field_social_media_image'] = array(
+    'bundle' => 'library_item',
+    'deleted' => 0,
+    'description' => 'Upload an image to be used for social media shares. Recommended size: 1200px X 1200px.',
+    'display' => array(
+      'audio_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 61,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_social_media_image',
+    'label' => 'Social Media Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'ebook' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-library_item-field_subtitle'
   $field_instances['node-library_item-field_subtitle'] = array(
     'bundle' => 'library_item',
@@ -4839,12 +4961,14 @@ Note that all tags must be manually selected.',
 Note that all tags must be manually selected.');
   t('Select whether this item will be used in featured blocks. Only one selection should be made to avoid duplicate blocks. The first "Featured" option is the default filter for the featured Library Item block, as well as other content types.');
   t('Show Disclaimer');
+  t('Social Media Image');
   t('Source');
   t('Subtitle');
   t('Teaser Text');
   t('Timely Content');
   t('Topics');
   t('Transcript');
+  t('Upload an image to be used for social media shares. Recommended size: 1200px X 1200px.');
   t('Use as Default Social Image');
   t('Year');
   t('ePub');

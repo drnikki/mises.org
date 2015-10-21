@@ -104,9 +104,9 @@ function mises_landing_page_field_group_info() {
     'label' => 'Blocks',
     'weight' => '2',
     'children' => array(
-      0 => 'field_resource_group',
-      1 => 'field_featured_nodes',
-      2 => 'field_featured_videos',
+      0 => 'field_featured_nodes',
+      1 => 'field_featured_videos',
+      2 => 'field_resource_group',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -172,6 +172,7 @@ function mises_landing_page_field_group_info() {
     'children' => array(
       0 => 'field_banner_image',
       1 => 'field_image',
+      2 => 'field_social_media_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

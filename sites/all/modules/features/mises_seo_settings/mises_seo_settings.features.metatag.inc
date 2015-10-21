@@ -408,6 +408,9 @@ function mises_seo_settings_metatag_export_default() {
       'description' => array(
         'value' => '[node:summary]',
       ),
+      'rights' => array(
+        'value' => '[node:field_copyright_info]',
+      ),
       'dcterms.title' => array(
         'value' => '[node:title]',
       ),
@@ -429,14 +432,20 @@ function mises_seo_settings_metatag_export_default() {
       'og:description' => array(
         'value' => '[node:summary]',
       ),
+      'og:image' => array(
+        'value' => '[node:field_social_media_image:social_media_1200_x_1200], [node:field-image-collection:0:field_image:social_media_1200_x_1200]',
+      ),
+      'twitter:card' => array(
+        'value' => 'summary_large_image',
+      ),
       'twitter:title' => array(
         'value' => '[node:title]',
       ),
       'twitter:description' => array(
         'value' => '[node:summary]',
       ),
-      'rights' => array(
-        'value' => '[node:field_copyright_info]',
+      'twitter:image:src' => array(
+        'value' => '[node:field_social_media_image:social_media_1200_x_628]',
       ),
     ),
   );
@@ -451,11 +460,14 @@ function mises_seo_settings_metatag_export_default() {
       'image_src' => array(
         'value' => '[node:field_image]',
       ),
-      'og:image' => array(
-        'value' => '[node:field_image]',
+      'twitter:card' => array(
+        'value' => 'summary_large_image',
       ),
-      'twitter:image:src' => array(
-        'value' => '[node:field_image]',
+      'twitter:image:width' => array(
+        'value' => 1200,
+      ),
+      'twitter:image:height' => array(
+        'value' => 628,
       ),
     ),
   );
@@ -615,10 +627,13 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '[node:field_teaser]',
       ),
       'og:image' => array(
-        'value' => '[node:field_image]',
+        'value' => '[node:field_social_media_image:social_media_1200_x_1200], [node:field_banner_image:social_media_1200_x_1200]',
       ),
       'twitter:description' => array(
         'value' => '[node:field_teaser]',
+      ),
+      'twitter:image:src' => array(
+        'value' => '[node:field_social_media_image:social_media_1200_x_628], [node:field_banner_image:social_media_1200_x_628]',
       ),
     ),
   );
@@ -636,14 +651,17 @@ function mises_seo_settings_metatag_export_default() {
       'dcterms.description' => array(
         'value' => '[node:field_bio_summary]',
       ),
-      'og:description' => array(
-        'value' => '[node:field_bio_summary]',
-      ),
       'og:type' => array(
         'value' => 'author',
       ),
+      'og:description' => array(
+        'value' => '[node:field_bio_summary]',
+      ),
       'twitter:description' => array(
         'value' => '[node:field_bio_summary]',
+      ),
+      'twitter:image:src' => array(
+        'value' => '[node:field_social_media_image:social_media_1200_x_1200], [node:field-image-collection:0:field_image:social_media_1200_x_1200]',
       ),
     ),
   );

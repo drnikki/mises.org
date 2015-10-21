@@ -147,7 +147,8 @@ function mises_events_field_group_info() {
       1 => 'field_event_date',
       2 => 'field_event_type',
       3 => 'field_event_location',
-      4 => 'title',
+      4 => 'field_social_media_image',
+      5 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
