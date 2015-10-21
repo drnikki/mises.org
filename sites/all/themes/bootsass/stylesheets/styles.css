@@ -2680,8 +2680,15 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .filtered-journals #edit-author-wrapper, .filtered-journals #edit-title-wrapper { clear: left; }
 .filtered-journals #edit-author-wrapper, .filtered-journals #edit-topic-wrapper, .filtered-journals #edit-austrian-school-wrapper, .filtered-journals #edit-title-wrapper { width: -moz-calc(34% - 5px); width: calc(34% - 5px); padding: 10px 10px 0 0; }
 .filtered-journals #edit-austrian-school-wrapper { padding-right: 0; }
+<<<<<<< HEAD
 .filtered-journals #edit-vol-wrapper, .filtered-journals #edit-no-wrapper, .filtered-journals #edit-year-wrapper { width: -moz-calc(16.5% - 5px); width: calc(16.5% - 5px); padding: 10px 10px 0 0; }
 .filtered-journals .views-submit-button { padding: 10px 0 0 0; }
+=======
+.filtered-journals #edit-vol-wrapper, .filtered-journals #edit-no-wrapper { width: -moz-calc(16.5% - 5px); width: calc(16.5% - 5px); padding: 10px 10px 0 0; }
+.filtered-journals #edit-year-wrapper { width: -moz-calc(14.5% - 5px); width: calc(14.5% - 5px); padding: 10px 10px 0 0; }
+.filtered-journals .views-submit-button { padding: 10px 0 0 0; }
+.filtered-journals .views-submit-button button { width: 64px; }
+>>>>>>> 28079a30ebec600fd7eabae63ad8507d9c471045
 .filtered-journals .views-reset-button { float: right; padding: 10px 0 0 0; }
 
 #selectBox-edit-journal li:nth-child(2), #selectBox-edit-journal li:nth-child(3), #selectBox-edit-journal li:nth-child(4) { display: none; }

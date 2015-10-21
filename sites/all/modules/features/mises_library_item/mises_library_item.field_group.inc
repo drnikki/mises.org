@@ -323,7 +323,10 @@ function mises_library_item_field_group_info() {
       0 => 'field_volume',
       1 => 'field_journal_number',
       2 => 'field_journal_year',
+<<<<<<< HEAD
       3 => 'field_journal_volume',
+=======
+>>>>>>> 28079a30ebec600fd7eabae63ad8507d9c471045
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

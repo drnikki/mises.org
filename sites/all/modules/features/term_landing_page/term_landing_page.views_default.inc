@@ -1535,12 +1535,15 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['title'] = '%1';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'landing-list filtered-journals';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'GO';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Clear All';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
@@ -1656,12 +1659,12 @@ Quarterly Journal of Austrian Economics|Other Journals',
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_topics_target_id' => array(
+    'field_topics_target_id_selective' => array(
       'bef_format' => 'default',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
-        'is_secondary' => 1,
+        'is_secondary' => 0,
         'any_label' => 'Sort by Topic',
         'bef_filter_description' => '',
         'tokens' => array(
@@ -1706,12 +1709,12 @@ Quarterly Journal of Austrian Economics|Other Journals',
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_austrian_school_target_id' => array(
+    'field_austrian_school_target_id_selective' => array(
       'bef_format' => 'default',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
-        'is_secondary' => 1,
+        'is_secondary' => 0,
         'any_label' => 'Sort by Austrian School',
         'bef_filter_description' => '',
         'tokens' => array(
@@ -1984,7 +1987,9 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
-  $handler->display->display_options['header']['result']['content'] = '<p class="text-right"><em>Displaying @start - @end of @total</em></p>';
+  $handler->display->display_options['header']['result']['empty'] = TRUE;
+  $handler->display->display_options['header']['result']['content'] = '<p class="text-right"><em>Displaying @start - @end of @total</em></p>
+<p>For best results, first select a journal (first row options). To fine-tune the results, select from the remaining filters.</p>';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
@@ -2101,6 +2106,38 @@ Quarterly Journal of Austrian Economics|Other Journals',
     ),
   );
   $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
+  /* Field: Content: Austrian School */
+  $handler->display->display_options['fields']['field_austrian_school']['id'] = 'field_austrian_school';
+  $handler->display->display_options['fields']['field_austrian_school']['table'] = 'field_data_field_austrian_school';
+  $handler->display->display_options['fields']['field_austrian_school']['field'] = 'field_austrian_school';
+  $handler->display->display_options['fields']['field_austrian_school']['label'] = '';
+  $handler->display->display_options['fields']['field_austrian_school']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_austrian_school']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_austrian_school']['settings'] = array(
+    'link' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_austrian_school']['delta_offset'] = '0';
+  /* Field: Content: Topics */
+  $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
+  $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
+  $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
+  $handler->display->display_options['fields']['field_topics']['label'] = '';
+  $handler->display->display_options['fields']['field_topics']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_topics']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_topics']['settings'] = array(
+    'link' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Type */
   $handler->display->display_options['sorts']['type']['id'] = 'type';
@@ -2220,17 +2257,17 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['filters']['field_author_1_target_id_selective']['selective_display_field'] = 'field_author_1';
   $handler->display->display_options['filters']['field_author_1_target_id_selective']['selective_display_sort'] = 'ORIG';
   $handler->display->display_options['filters']['field_author_1_target_id_selective']['selective_items_limit'] = '';
-  /* Filter criterion: Content: Topics (field_topics) */
-  $handler->display->display_options['filters']['field_topics_target_id']['id'] = 'field_topics_target_id';
-  $handler->display->display_options['filters']['field_topics_target_id']['table'] = 'field_data_field_topics';
-  $handler->display->display_options['filters']['field_topics_target_id']['field'] = 'field_topics_target_id';
-  $handler->display->display_options['filters']['field_topics_target_id']['group'] = 1;
-  $handler->display->display_options['filters']['field_topics_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_topics_target_id']['expose']['operator_id'] = 'field_topics_target_id_op';
-  $handler->display->display_options['filters']['field_topics_target_id']['expose']['label'] = 'Topic';
-  $handler->display->display_options['filters']['field_topics_target_id']['expose']['operator'] = 'field_topics_target_id_op';
-  $handler->display->display_options['filters']['field_topics_target_id']['expose']['identifier'] = 'topic';
-  $handler->display->display_options['filters']['field_topics_target_id']['expose']['remember_roles'] = array(
+  /* Filter criterion: Topics (field_topics) (selective) */
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['id'] = 'field_topics_target_id_selective';
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['table'] = 'field_data_field_topics';
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['field'] = 'field_topics_target_id_selective';
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['ui_name'] = 'Topics (field_topics) (selective)';
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['group'] = 1;
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['expose']['label'] = 'Topics';
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['expose']['identifier'] = 'topic';
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -2242,17 +2279,19 @@ Quarterly Journal of Austrian Economics|Other Journals',
     9 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: Austrian School (field_austrian_school) */
-  $handler->display->display_options['filters']['field_austrian_school_target_id']['id'] = 'field_austrian_school_target_id';
-  $handler->display->display_options['filters']['field_austrian_school_target_id']['table'] = 'field_data_field_austrian_school';
-  $handler->display->display_options['filters']['field_austrian_school_target_id']['field'] = 'field_austrian_school_target_id';
-  $handler->display->display_options['filters']['field_austrian_school_target_id']['group'] = 1;
-  $handler->display->display_options['filters']['field_austrian_school_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['operator_id'] = 'field_austrian_school_target_id_op';
-  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['label'] = 'Austrian School';
-  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['operator'] = 'field_austrian_school_target_id_op';
-  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['identifier'] = 'austrian_school';
-  $handler->display->display_options['filters']['field_austrian_school_target_id']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['selective_display_field'] = 'field_topics';
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['selective_display_sort'] = 'ASC';
+  $handler->display->display_options['filters']['field_topics_target_id_selective']['selective_items_limit'] = '100';
+  /* Filter criterion: Content: Austrian School (field_austrian_school) (selective) */
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['id'] = 'field_austrian_school_target_id_selective';
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['table'] = 'field_data_field_austrian_school';
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['field'] = 'field_austrian_school_target_id_selective';
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['group'] = 1;
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['expose']['label'] = 'Austrian School';
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['expose']['identifier'] = 'austrian_school';
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -2264,6 +2303,9 @@ Quarterly Journal of Austrian Economics|Other Journals',
     9 => 0,
     7 => 0,
   );
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['selective_display_field'] = 'field_austrian_school';
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['selective_display_sort'] = 'ASC';
+  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['selective_items_limit'] = '';
   /* Filter criterion: Title */
   $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
   $handler->display->display_options['filters']['title_1']['table'] = 'node';
