@@ -116,7 +116,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Formats',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
       0 => 'field_epub',
       1 => 'field_link_to_external_listing_',
@@ -236,7 +236,7 @@ function mises_library_item_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Date Author',
+    'label' => '',
     'weight' => '3',
     'children' => array(
       0 => 'field_mises_published_date',
@@ -245,9 +245,8 @@ function mises_library_item_field_group_info() {
     ),
     'format_type' => 'html5',
     'format_settings' => array(
-      'label' => 'Date Author',
+      'label' => '',
       'instance_settings' => array(
-        'id' => '',
         'classes' => 'group-date-author',
         'wrapper' => 'section',
       ),
@@ -266,7 +265,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = 'group_tagging';
   $field_group->data = array(
     'label' => 'Featured Tags',
-    'weight' => '17',
+    'weight' => '15',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -323,7 +322,6 @@ function mises_library_item_field_group_info() {
       0 => 'field_volume',
       1 => 'field_journal_number',
       2 => 'field_journal_year',
-      3 => 'field_journal_volume',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -624,7 +622,7 @@ function mises_library_item_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'tags',
+    'label' => '',
     'weight' => '1',
     'children' => array(
       0 => 'field_topics',
@@ -632,7 +630,7 @@ function mises_library_item_field_group_info() {
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
-      'label' => 'tags',
+      'label' => '',
       'instance_settings' => array(
         'classes' => 'tags',
         'element' => 'p',
