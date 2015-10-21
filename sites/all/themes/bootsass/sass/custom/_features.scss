@@ -42,33 +42,28 @@
   span.type {
     color: $brand-primary;
     text-transform: uppercase;
-    &:after {
-      display: inline-block;
-      width: 20px;
-      content: "\2022";
-      text-align: center;
-    }
   }
-  .date {
+  span.date {
     color: $brand-primary;
     text-transform: uppercase;
     font-weight: 600;
   }
   span.author {
-    padding-left: 10px;
     a {
-      padding-right: 10px;
       color: $brand-primary;
-      &:before {
-        display: inline-block;
-        width: 14px;
-        content: "\2022";        
-        font-weight: 600;
-      }
     }
     div, p {
       display: inline;
       color: $brand-primary;
+    }
+  }
+  span:not(.hidden) + span {
+    &:before {
+      display: inline-block;
+      width: 24px;
+      padding-left: 10px;
+      content: "\2022";        
+      font-weight: 600;
     }
   }
 }

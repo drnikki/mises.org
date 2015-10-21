@@ -286,8 +286,77 @@ body.mises-daily {
   }
 }
 
-/* CATEGORY FILTERS */
+/* CATEGORY FILTERED LANDING
+* used on Filtered Landing - Term Page view
+* Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_4
+*/
 .landing-list {
+  .views-reset-button {
+    button {
+      @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
+    }
+  }
+  select {
+    visibility: hidden;
+  }
+  .form-control {
+    padding: $padding-base-vertical $padding-small-horizontal;
+  }
+  .views-exposed-widget {
+    > label {
+      display: none;
+    }
+    .form-submit {
+      margin-top: 0;
+    }
+  }
+  .filter-toggle {
+    text-transform: uppercase;
+    cursor: pointer;
+    .glyphicon {
+      margin-right: 0;
+      color: $brand-medium;
+      background-color: $white;
+      @include transition(all 0.2s ease);
+    }
+    &.open {
+      .glyphicon {
+        @include rotate(90deg);
+      }
+    }
+  }
+  .views-exposed-widgets {
+    //@include transition(all 0.8s ease);
+    //max-height: 0;
+    //overflow: hidden;
+    //&.open {
+    //  max-height: 100px;
+    //}
+  }
+}
+.selectBox-dropdown {
+  .selectBox-label {
+    padding: 0;
+  }
+  .selectBox-arrow {
+    border-left-color: $input-border;
+  }
+}
+.selectBox-dropdown-menu {
+  overflow: auto !important;
+}
+
+/* FILTERED TERM LANDING */
+.alpha_pagination {
+  @include clearfix;
+  text-align: center;
+}
+
+/* FILTERED BOOKS
+* used on Filtered Landing - Term Page view
+* Book Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_1
+*/
+.filtered-books {
   .views-exposed-widget {
     &#edit-book-type-wrapper {
       @include clearfix;
@@ -314,18 +383,12 @@ body.mises-daily {
         padding-right: 0;
       }
     }
-    > label {
-      display: none;
-    }
-    .form-submit {
-      margin-top: 0;
-    }
   }
-  select {
+  .views-reset-button {
+    display: inline-block;
+    padding: 0;
+    float: none;
     visibility: hidden;
-  }
-  .form-control {
-    padding: $padding-base-vertical $padding-small-horizontal;
   }
   #edit-book-type-wrapper {
     .bef-select-as-links {
@@ -354,53 +417,68 @@ body.mises-daily {
       }
     }
   }
-  .filter-toggle {
-    text-transform: uppercase;
-    cursor: pointer;
-    .glyphicon {
-      margin-right: 0;
-      color: $brand-medium;
-      background-color: $white;
-      @include transition(all 0.2s ease);
-    }
-    &.open {
-      .glyphicon {
-        @include rotate(90deg);
+}
+/* FILTERED JOURNALS
+* used on Filtered Landing - Term Page view
+* Journals Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_2
+*/
+.filtered-journals {
+  .filter-triggers {
+    padding: $padding-small-horizontal 0 0 0;
+    width: 56%;
+    float: left;
+      a {
+        @extend .btn;
+        @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $brand-contrast-dark, $brand-contrast-dark);
       }
-    }
   }
-  .views-exposed-widgets {
-    //@include transition(all 0.8s ease);
-    //max-height: 0;
-    //overflow: hidden;
-    //&.open {
-    //  max-height: 100px;
-    //}
+  #edit-journal-wrapper {
+    padding: $padding-small-horizontal 0 0 0;
+    float: right;
+    width: 44%;
+  }
+  #edit-author-wrapper,
+  #edit-title-wrapper {
+    clear: left;
+  }
+  #edit-author-wrapper,
+  #edit-topic-wrapper,
+  #edit-austrian-school-wrapper,
+  #edit-title-wrapper {
+    width: -moz-calc(34% - 5px);
+    width: calc(34% - 5px);
+    padding: $padding-small-horizontal $padding-small-horizontal 0 0;
+  }
+  #edit-austrian-school-wrapper {
+    padding-right: 0;
+  }
+  #edit-vol-wrapper,
+  #edit-no-wrapper {
+    width: -moz-calc(16.5% - 5px);
+    width: calc(16.5% - 5px);
+    padding: $padding-small-horizontal $padding-small-horizontal 0 0;
+  }
+  #edit-year-wrapper {
+    width: -moz-calc(14.5% - 5px);
+    width: calc(14.5% - 5px);
+    padding: $padding-small-horizontal $padding-small-horizontal 0 0;
+  }
+  .views-submit-button {
+    padding: $padding-small-horizontal 0 0 0;
+    button {
+      width: 64px; // Wide enough for ajax throbber
+    }
   }
   .views-reset-button {
-    display: inline-block;
-    padding: 0;
-    float: none;
-    visibility: hidden;
-    button {
-      @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
-    }
+    float: right;
+    padding: $padding-small-horizontal 0 0 0;
   }
+  
 }
-.selectBox-dropdown {
-  .selectBox-label {
-    padding: 0;
+#selectBox-edit-journal {
+  li:nth-child(2),
+  li:nth-child(3),
+  li:nth-child(4) {
+    display: none;
   }
-  .selectBox-arrow {
-    border-left-color: $input-border;
-  }
-}
-.selectBox-dropdown-menu {
-  overflow: auto !important;
-}
-
-/* FILTERED TERM LANDING */
-.alpha_pagination {
-  @include clearfix;
-  text-align: center;
 }

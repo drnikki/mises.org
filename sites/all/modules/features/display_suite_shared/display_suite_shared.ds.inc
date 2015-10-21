@@ -477,6 +477,16 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+    'field_teaser_text' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|blog|simple_teaser'] = $ds_fieldsetting;
 
@@ -2066,6 +2076,11 @@ function display_suite_shared_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
+    'field_teaser_text' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|library_item|simple_teaser'] = $ds_fieldsetting;
 
@@ -2135,7 +2150,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'online_book_chapter' => array(
-      'weight' => '0',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -2184,6 +2199,13 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -3872,8 +3894,6 @@ print \'<div class="panel-heading \' . $random_class . \'"><div class="panel-tit
   $ds_field->properties = array(
     'code' => array(
       'value' => '<?php
-//foreach($entity->field_library_item_tree[\'und\'] as $term) {
-  //$term_tid = $term[\'tid\'];
   $term_tid = $entity->field_library_item_tree[\'und\'][0][\'tid\'];
   //this will be your top parent term if any was found
   $top_parent_term = array();
@@ -3883,14 +3903,17 @@ print \'<div class="panel-heading \' . $random_class . \'"><div class="panel-tit
     $parent_parents = taxonomy_get_parents_all($parent->tid);
     if ($parent_parents != false) {
       //this is top parent term
-      $top_parent_term = $parent;
+      if (($parent->tid == "178") || ($parent->tid == "184")) {
+        $jterm = taxonomy_term_load($term_tid);
+        $top_parent_term = $jterm;
+      } else {
+        $top_parent_term = $parent;
+      }
     }
   }
-  //dpm($top_parent_term, \'Parent Top\');
   if(isset($top_parent_term->name)) {
      print $top_parent_term->name;
   }
-//}
 ?>',
       'format' => 'ds_code',
     ),
