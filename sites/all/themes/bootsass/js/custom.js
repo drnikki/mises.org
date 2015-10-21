@@ -127,7 +127,18 @@ var Drupal = Drupal || {};
         }
       };
       
-      // Glyphicons that are needed only 
+      // Hide unneeded search-labels
+      var hideSearchLabels = function() {
+        var h1 = $('h1.page-header').text();
+        console.log('h1.page-header ',h1);
+        $('.search-label').each(function(i){
+          var label = $(this).text();
+          console.log('label ',label);
+          if ((h1 == label) || (h1 == 'Mises Wire' && label == 'Blog') || (h1 == 'Mises Weekends' && label == 'Audio/Video')) {
+            $(this).addClass('hidden');
+          }
+        });
+      };
 
 
       $(document).ready(function() {
@@ -190,9 +201,8 @@ var Drupal = Drupal || {};
           $(hiddenPanel).find('.chapter-intro').collapse('show');
         });
         
-        // Run height sizer last
-        //implementEqualHeight();
         textResizer();
+        hideSearchLabels();
         
         //Smooth scrolling
         $(function() {
