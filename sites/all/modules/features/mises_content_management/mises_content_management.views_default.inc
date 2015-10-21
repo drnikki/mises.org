@@ -128,13 +128,6 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  /* Field: Page Title: Title */
-  $handler->display->display_options['fields']['page_title']['id'] = 'page_title';
-  $handler->display->display_options['fields']['page_title']['table'] = 'page_title';
-  $handler->display->display_options['fields']['page_title']['field'] = 'page_title';
-  $handler->display->display_options['fields']['page_title']['label'] = 'SEO Page Title';
-  $handler->display->display_options['fields']['page_title']['link_to_node'] = 0;
-  $handler->display->display_options['fields']['page_title']['use_node_title'] = 0;
   /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
@@ -215,15 +208,6 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Title Contains:';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  /* Filter criterion: Page Title: Title */
-  $handler->display->display_options['filters']['page_title']['id'] = 'page_title';
-  $handler->display->display_options['filters']['page_title']['table'] = 'page_title';
-  $handler->display->display_options['filters']['page_title']['field'] = 'page_title';
-  $handler->display->display_options['filters']['page_title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['page_title']['group'] = 1;
-  $handler->display->display_options['filters']['page_title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['page_title']['expose']['label'] = '"Page Title" Contains:';
-  $handler->display->display_options['filters']['page_title']['expose']['identifier'] = 'page_title';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -425,13 +409,6 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  /* Field: Page Title: Title */
-  $handler->display->display_options['fields']['page_title']['id'] = 'page_title';
-  $handler->display->display_options['fields']['page_title']['table'] = 'page_title';
-  $handler->display->display_options['fields']['page_title']['field'] = 'page_title';
-  $handler->display->display_options['fields']['page_title']['label'] = 'SEO Page Title';
-  $handler->display->display_options['fields']['page_title']['link_to_node'] = 0;
-  $handler->display->display_options['fields']['page_title']['use_node_title'] = 0;
   /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
@@ -563,15 +540,6 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Title Contains:';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  /* Filter criterion: Page Title: Title */
-  $handler->display->display_options['filters']['page_title']['id'] = 'page_title';
-  $handler->display->display_options['filters']['page_title']['table'] = 'page_title';
-  $handler->display->display_options['filters']['page_title']['field'] = 'page_title';
-  $handler->display->display_options['filters']['page_title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['page_title']['group'] = 1;
-  $handler->display->display_options['filters']['page_title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['page_title']['expose']['label'] = '"Page Title" Contains:';
-  $handler->display->display_options['filters']['page_title']['expose']['identifier'] = 'page_title';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
