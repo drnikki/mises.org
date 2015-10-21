@@ -34,6 +34,14 @@ dependencies[] = taxonomy
 dependencies[] = term_reference_tree
 dependencies[] = text
 dependencies[] = views
+<<<<<<< HEAD
+features[field_base][] = field_journal_volume
+<<<<<<< HEAD
+features[field_instance][] = node-library_item-field_journal_volume
+>>>>>>> 28079a30ebec600fd7eabae63ad8507d9c471045
+features[field_base][] = field_journal_year
+>>>>>>> 28079a30ebec600fd7eabae63ad8507d9c471045
+features[field_instance][] = node-library_item-field_journal_year
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
@@ -52,10 +60,6 @@ features[field_base][] = field_featured_content
 features[field_base][] = field_hidden_solr_content
 features[field_base][] = field_id
 features[field_base][] = field_journal_number
-<<<<<<< HEAD
-features[field_base][] = field_journal_volume
-=======
->>>>>>> 28079a30ebec600fd7eabae63ad8507d9c471045
 features[field_base][] = field_journal_year
 features[field_base][] = field_level
 features[field_base][] = field_library_item_tree
@@ -71,7 +75,6 @@ features[field_base][] = field_teaser_text
 features[field_base][] = field_timely_content
 features[field_base][] = field_topics
 features[field_base][] = field_transcript
-features[field_base][] = field_volume
 features[field_group][] = group_basic|node|library_item|form
 features[field_group][] = group_body|node|library_item|block_teaser_term
 features[field_group][] = group_book_digi_text_media|node|library_item|form
@@ -112,10 +115,6 @@ features[field_instance][] = node-library_item-field_hidden_solr_content
 features[field_instance][] = node-library_item-field_id
 features[field_instance][] = node-library_item-field_image_collection
 features[field_instance][] = node-library_item-field_journal_number
-<<<<<<< HEAD
-features[field_instance][] = node-library_item-field_journal_volume
-=======
->>>>>>> 28079a30ebec600fd7eabae63ad8507d9c471045
 features[field_instance][] = node-library_item-field_journal_year
 features[field_instance][] = node-library_item-field_kindle
 features[field_instance][] = node-library_item-field_level
@@ -135,7 +134,6 @@ features[field_instance][] = node-library_item-field_teaser_text
 features[field_instance][] = node-library_item-field_timely_content
 features[field_instance][] = node-library_item-field_topics
 features[field_instance][] = node-library_item-field_transcript
-features[field_instance][] = node-library_item-field_volume
 features[node][] = library_item
 features[variable][] = comment_anonymous_library_item
 features[variable][] = comment_default_mode_library_item
