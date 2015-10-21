@@ -71,7 +71,7 @@ function bootsass_preprocess_field(&$variables) {
 			    'content' => $url,
 			  ),
 			);
-			drupal_add_html_head($element, 'og_image');
+			//drupal_add_html_head($element, 'og_image');
   		}
   	}
   }

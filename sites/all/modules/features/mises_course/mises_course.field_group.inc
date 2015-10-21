@@ -21,7 +21,7 @@ function mises_course_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tagging',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
@@ -59,7 +59,8 @@ function mises_course_field_group_info() {
       1 => 'field_image_collection',
       2 => 'field_link_to_external_listing_',
       3 => 'field_author_1',
-      4 => 'title',
+      4 => 'field_social_media_image',
+      5 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

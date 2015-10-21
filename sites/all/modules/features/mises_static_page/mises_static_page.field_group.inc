@@ -52,6 +52,7 @@ function mises_static_page_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_image_collection',
+      1 => 'field_social_media_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
