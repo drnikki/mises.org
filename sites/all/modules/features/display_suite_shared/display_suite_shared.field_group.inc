@@ -110,8 +110,8 @@ function display_suite_shared_field_group_info() {
     'label' => 'Date Author',
     'weight' => '1',
     'children' => array(
-      0 => 'dynamic_field_1',
-      1 => 'post_date',
+      0 => 'field_link_to_paper_on_ssrn_site',
+      1 => 'author',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

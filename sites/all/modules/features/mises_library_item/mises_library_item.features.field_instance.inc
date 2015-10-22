@@ -426,14 +426,13 @@ function mises_library_item_field_default_field_instances() {
           ),
           'more_link' => 0,
           'more_text' => 'Read more',
-          'semantic_field_format' => 0,
           'summary_handler' => 'trim',
           'trim_length' => 120,
-          'trim_link' => FALSE,
+          'trim_link' => 0,
           'trim_options' => array(
-            'text' => 0,
+            'text' => 'text',
           ),
-          'trim_preserve_tags' => '',
+          'trim_preserve_tags' => '<p><a><em>',
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),
@@ -664,7 +663,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 52,
+        'weight' => 56,
       ),
       'token' => array(
         'label' => 'above',
@@ -697,7 +696,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -823,7 +822,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -920,7 +919,7 @@ function mises_library_item_field_default_field_instances() {
           'view_mode' => 'author_full_name',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 43,
+        'weight' => 44,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -1034,7 +1033,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 49,
       ),
       'token' => array(
         'label' => 'above',
@@ -1169,7 +1168,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 41,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -1278,7 +1277,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 50,
       ),
       'token' => array(
         'label' => 'above',
@@ -1418,7 +1417,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 47,
       ),
       'token' => array(
         'label' => 'above',
@@ -1529,7 +1528,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 54,
+        'weight' => 58,
       ),
       'token' => array(
         'label' => 'above',
@@ -1674,7 +1673,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 51,
+        'weight' => 55,
       ),
       'token' => array(
         'label' => 'above',
@@ -1898,7 +1897,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 55,
+        'weight' => 59,
       ),
       'token' => array(
         'label' => 'above',
@@ -1926,7 +1925,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -1995,7 +1994,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 39,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -2133,7 +2132,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 49,
+        'weight' => 53,
       ),
       'token' => array(
         'label' => 'above',
@@ -2309,6 +2308,312 @@ Note that all tags must be manually selected.',
     ),
   );
 
+  // Exported field_instance: 'node-library_item-field_journal_number'
+  $field_instances['node-library_item-field_journal_number'] = array(
+    'bundle' => 'library_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'For journals, enter issue number, 1-12.',
+    'display' => array(
+      'audio_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'conditions' => array(),
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 62,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_journal_number',
+    'label' => 'Number',
+    'required' => 0,
+    'settings' => array(
+      'max' => 12,
+      'min' => 1,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 39,
+    ),
+  );
+
+  // Exported field_instance: 'node-library_item-field_journal_volume'
+  $field_instances['node-library_item-field_journal_volume'] = array(
+    'bundle' => 'library_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'For journals, enter volume number (1-200).',
+    'display' => array(
+      'audio_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'conditions' => array(),
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 64,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_journal_volume',
+    'label' => 'Volume',
+    'required' => 0,
+    'settings' => array(
+      'max' => 200,
+      'min' => 1,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 37,
+    ),
+  );
+
+  // Exported field_instance: 'node-library_item-field_journal_year'
+  $field_instances['node-library_item-field_journal_year'] = array(
+    'bundle' => 'library_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If journal, enter year. (Earliest allowed: 1900)',
+    'display' => array(
+      'audio_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'conditions' => array(),
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 63,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_journal_year',
+    'label' => 'Year',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => 1900,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 40,
+    ),
+  );
+
   // Exported field_instance: 'node-library_item-field_kindle'
   $field_instances['node-library_item-field_kindle'] = array(
     'bundle' => 'library_item',
@@ -2377,7 +2682,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 43,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -2502,7 +2807,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 48,
       ),
       'token' => array(
         'label' => 'above',
@@ -2535,7 +2840,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -2613,7 +2918,7 @@ Note that all tags must be manually selected.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 44,
       ),
       'token' => array(
         'label' => 'above',
@@ -2861,7 +3166,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 46,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -3006,7 +3311,7 @@ Note that all tags must be manually selected.',
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 42,
+        'weight' => 43,
       ),
       'token' => array(
         'label' => 'above',
@@ -3117,7 +3422,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 40,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -3233,7 +3538,7 @@ Note that all tags must be manually selected.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 38,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -3335,7 +3640,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 51,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -3456,7 +3761,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 52,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -3679,7 +3984,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 50,
+        'weight' => 54,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -3794,7 +4099,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 42,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -4022,7 +4327,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 56,
+        'weight' => 60,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -4215,14 +4520,13 @@ Note that all tags must be manually selected.',
           'conditions' => array(),
           'more_link' => 0,
           'more_text' => 'Read more',
-          'semantic_field_format' => 0,
           'summary_handler' => 'full',
           'trim_length' => 120,
-          'trim_link' => FALSE,
+          'trim_link' => 0,
           'trim_options' => array(
-            'text' => 0,
+            'text' => 'text',
           ),
-          'trim_preserve_tags' => '',
+          'trim_preserve_tags' => '<p><a><em>',
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),
@@ -4423,7 +4727,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 53,
+        'weight' => 57,
       ),
       'token' => array(
         'label' => 'above',
@@ -4450,7 +4754,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -4576,7 +4880,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -4651,7 +4955,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 45,
       ),
       'token' => array(
         'label' => 'above',
@@ -4737,8 +5041,11 @@ Note that all tags must be manually selected.',
   t('Enter link to Bookstore product page.');
   t('Enter title of the Online Text node that contains the HTML version of this Library Item. If a valid value is entered here, the "View HTML Version" link will appear in the "Get this Book/Digital Text" table.');
   t('Featured Content');
+  t('For journals, enter issue number, 1-12.');
+  t('For journals, enter volume number (1-200).');
   t('Hidden Solr Content');
   t('ID');
+  t('If journal, enter year. (Earliest allowed: 1900)');
   t('Image');
   t('Kindle');
   t('Level');
@@ -4746,6 +5053,7 @@ Note that all tags must be manually selected.',
   t('Media');
   t('Mises Published Date');
   t('Mobi');
+  t('Number');
   t('Online text');
   t('Original Publication Link');
   t('Original Title');
@@ -4765,6 +5073,8 @@ Note that all tags must be manually selected.');
   t('Transcript');
   t('Upload an image to be used for social media shares. Recommended size: 1200px X 1200px.');
   t('Use as Default Social Image');
+  t('Volume');
+  t('Year');
   t('ePub');
 
   return $field_instances;

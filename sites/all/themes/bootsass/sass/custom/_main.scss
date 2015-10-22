@@ -188,9 +188,6 @@ body {
   }
 }
 /* Search Customization */
-.search-label {
-  display: none;
-}
 .section-search {
   .main-content {
     .group-left {
@@ -205,9 +202,6 @@ body {
       border-left: 0 none;
       font-size: inherit;
     }
-  }
-  span.search-label {
-    display: inline;
   }
   p.search-label {
     display: block;
@@ -257,11 +251,4 @@ span.fake-bullet {
 span.fake-blockquote {
   display: block;
   padding: 0 20px;
-}
-
-// Move to Landing after merge of Filtered Journals branch
-.filtered-journals {
-  span.search-label {
-    display: inline;
-  }
 }

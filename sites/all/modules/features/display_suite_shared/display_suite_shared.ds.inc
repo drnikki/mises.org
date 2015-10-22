@@ -477,6 +477,16 @@ function display_suite_shared_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+    'field_teaser_text' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|blog|simple_teaser'] = $ds_fieldsetting;
 
@@ -2066,6 +2076,11 @@ function display_suite_shared_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
+    'field_teaser_text' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|library_item|simple_teaser'] = $ds_fieldsetting;
 
@@ -2135,7 +2150,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'online_book_chapter' => array(
-      'weight' => '0',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -2184,6 +2199,13 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),

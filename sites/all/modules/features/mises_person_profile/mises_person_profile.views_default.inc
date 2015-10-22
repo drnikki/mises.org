@@ -85,6 +85,26 @@ function mises_person_profile_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['vocabulary'] = 'media_type';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'campaign_' => 'campaign_',
+    'causeview_snippet' => 'causeview_snippet',
+    'flex_block' => 'flex_block',
+    'giving_feature_block' => 'giving_feature_block',
+    'giving_page' => 'giving_page',
+    'giving_story' => 'giving_story',
+    'homepage_hero' => 'homepage_hero',
+    'membership_level' => 'membership_level',
+    'book_digital_text' => 'book_digital_text',
+    'solr_online_text_chapter' => 'solr_online_text_chapter',
+    'solr_online_text_page' => 'solr_online_text_page',
+    'person_profile' => 'person_profile',
+    'social_media' => 'social_media',
+  );
 
   /* Display: Profile Articles */
   $handler = $view->new_display('block', 'Profile Articles', 'block');

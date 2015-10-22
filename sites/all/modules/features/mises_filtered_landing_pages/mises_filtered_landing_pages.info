@@ -1,0 +1,12 @@
+name = Mises Filtered Landing Pages
+description = Context (and other) for filtered landing pages
+core = 7.x
+package = Landing Pages
+version = 7.x-1.0
+dependencies[] = context
+dependencies[] = custom_search_blocks
+dependencies[] = mises_landing_page
+dependencies[] = views
+features[context][] = filtered_journals
+features[ctools][] = context:context:3
+features[features_api][] = api:2

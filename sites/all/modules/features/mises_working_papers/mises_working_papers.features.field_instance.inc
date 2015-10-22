@@ -35,6 +35,12 @@ function mises_working_papers_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'simple_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -122,6 +128,26 @@ function mises_working_papers_field_default_field_instances() {
         ),
         'type' => 'text_default',
         'weight' => 3,
+      ),
+      'simple_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 120,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_preserve_tags' => '<p><a><em>',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -225,6 +251,12 @@ function mises_working_papers_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 7,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -281,6 +313,12 @@ function mises_working_papers_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 3,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -334,6 +372,12 @@ function mises_working_papers_field_default_field_instances() {
         ),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -423,6 +467,12 @@ function mises_working_papers_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 6,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -452,7 +502,8 @@ function mises_working_papers_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-working_papers-field_link_to_paper_on_ssrn_site'
+  // Exported field_instance:
+  // 'node-working_papers-field_link_to_paper_on_ssrn_site'
   $field_instances['node-working_papers-field_link_to_paper_on_ssrn_site'] = array(
     'bundle' => 'working_papers',
     'default_value' => NULL,
@@ -477,11 +528,23 @@ function mises_working_papers_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 2,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 31,
+        'module' => 'link',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'link_default',
+        'weight' => 1,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -546,6 +609,12 @@ function mises_working_papers_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 2,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
