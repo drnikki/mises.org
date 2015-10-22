@@ -237,7 +237,7 @@ function mises_library_item_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => '',
+    'label' => 'Date Author',
     'weight' => '3',
     'children' => array(
       0 => 'field_mises_published_date',
@@ -246,8 +246,9 @@ function mises_library_item_field_group_info() {
     ),
     'format_type' => 'html5',
     'format_settings' => array(
-      'label' => '',
+      'label' => 'Date Author',
       'instance_settings' => array(
+        'id' => '',
         'classes' => 'group-date-author',
         'wrapper' => 'section',
       ),
@@ -592,7 +593,7 @@ function mises_library_item_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => '',
+    'label' => 'tags',
     'weight' => '1',
     'children' => array(
       0 => 'field_topics',
@@ -600,7 +601,7 @@ function mises_library_item_field_group_info() {
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
-      'label' => '',
+      'label' => 'tags',
       'instance_settings' => array(
         'classes' => 'tags',
         'element' => 'p',
