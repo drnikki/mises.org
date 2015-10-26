@@ -83,12 +83,28 @@ function mises_theme_image_default_styles() {
     'label' => 'List Teaser 240x165',
     'effects' => array(
       2 => array(
+        'name' => 'epsacrop_crop',
+        'data' => array(
+          'width' => 240,
+          'height' => 165,
+          'anchor' => 'center-center',
+          'disable_scale' => 0,
+          'jcrop_settings' => array(
+            'aspect_ratio' => '',
+            'bgcolor' => 'black',
+            'bgopacity' => 0.6,
+            'fallback' => 1,
+          ),
+        ),
+        'weight' => -10,
+      ),
+      1 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 240,
           'height' => 165,
         ),
-        'weight' => 1,
+        'weight' => -9,
       ),
     ),
   );
@@ -127,14 +143,30 @@ function mises_theme_image_default_styles() {
   $styles['slideshow'] = array(
     'label' => 'Slideshow',
     'effects' => array(
-      1 => array(
+      7 => array(
+        'name' => 'epsacrop_crop',
+        'data' => array(
+          'width' => 240,
+          'height' => '',
+          'anchor' => 'center-center',
+          'disable_scale' => 0,
+          'jcrop_settings' => array(
+            'aspect_ratio' => '',
+            'bgcolor' => 'black',
+            'bgopacity' => 0.6,
+            'fallback' => 1,
+          ),
+        ),
+        'weight' => -10,
+      ),
+      5 => array(
         'name' => 'image_scale',
         'data' => array(
           'width' => 240,
           'height' => 480,
           'upscale' => 0,
         ),
-        'weight' => 1,
+        'weight' => -9,
       ),
     ),
   );
@@ -179,15 +211,31 @@ function mises_theme_image_default_styles() {
 
   // Exported image style: vertical_teaser.
   $styles['vertical_teaser'] = array(
-    'label' => 'Vertical Teaser',
+    'label' => 'Vertical Teaser 210 x 240',
     'effects' => array(
-      1 => array(
+      4 => array(
+        'name' => 'epsacrop_crop',
+        'data' => array(
+          'width' => 210,
+          'height' => 240,
+          'anchor' => 'center-center',
+          'disable_scale' => 0,
+          'jcrop_settings' => array(
+            'aspect_ratio' => '',
+            'bgcolor' => 'black',
+            'bgopacity' => 0.6,
+            'fallback' => 1,
+          ),
+        ),
+        'weight' => -10,
+      ),
+      3 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 210,
           'height' => 240,
         ),
-        'weight' => 1,
+        'weight' => -9,
       ),
     ),
   );
