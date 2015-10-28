@@ -321,10 +321,9 @@ function mises_library_item_field_group_info() {
     'label' => 'Journal Data',
     'weight' => '15',
     'children' => array(
-      0 => 'field_volume',
-      1 => 'field_journal_number',
+      0 => 'field_journal_number',
+      1 => 'field_journal_volume',
       2 => 'field_journal_year',
-      3 => 'field_journal_volume',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

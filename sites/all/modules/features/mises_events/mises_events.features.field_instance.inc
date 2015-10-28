@@ -1423,6 +1423,12 @@ Select "No registration or past event" to hide the registration embed or link fi
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
