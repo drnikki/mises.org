@@ -61,6 +61,39 @@ function theme_track_da_files_file_link($variables) {
   return $output;
 }
 
+/**
+ * Returns plain URL to a file.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - file: A file object to which the link will be created.
+ *
+ * @ingroup themeable
+ */
+function theme_track_da_files_url_plain($variables) {
+
+  $file = $variables['file'];
+  $url = track_da_files_create_url($file->uri);
+
+  $options = array(
+    'attributes' => array(
+      'type' => $file->filemime . '; length=' . $file->filesize,
+    ),
+  );
+
+  $options['query']['file'] = '1';
+
+  if (isset($file->type)) {
+    $options['query']['type'] = $file->type;
+  }
+
+  if (isset($file->id)) {
+    $options['query']['id'] = $file->id;
+  }
+
+  return url($url, $options);
+}
+
 
 /**
  * Returns HTML for a file attachments table.

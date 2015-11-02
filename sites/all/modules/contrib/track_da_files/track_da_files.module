@@ -141,6 +141,13 @@ function track_da_files_theme() {
     'file' => 'includes/track_da_files_formatter.inc',
   );
 
+  $theme['track_da_files_url_plain'] = array(
+    'variables' => array(
+      'file' => NULL,
+    ),
+    'file' => 'includes/track_da_files_formatter.inc',
+  );
+
   $theme['track_da_files_file_formatter_table'] = array(
     'variables' => array('items' => NULL),
     'file' => 'includes/track_da_files_formatter.inc',
@@ -163,6 +170,11 @@ function track_da_files_field_formatter_info() {
   // Handle file field files.
   $formatters['track_da_files_file_default'] = array(
     'label' => t('tdf: Generic file'),
+    'field types' => array('file'),
+  );
+
+  $formatters['track_da_files_url_plain'] = array(
+    'label' => t('tdf: URL to file'),
     'field types' => array('file'),
   );
 
@@ -236,6 +248,22 @@ function track_da_files_field_formatter_view($entity_type, $entity, $field, $ins
           '#file' => (object) $item,
         );
 
+      }
+      break;
+
+    case 'track_da_files_url_plain':
+      foreach ($items as $delta => $item) {
+        // Register into file object entity id and type.
+        if (isset($entity_type)) {
+          $entity_info = entity_get_info($entity_type);
+          $item['type'] = $entity_type;
+          $item['id'] = $entity->$entity_info['entity keys']['id'];
+        }
+
+        $element[$delta] = array(
+          '#theme' => 'track_da_files_url_plain',
+          '#file' => (object) $item,
+        );
       }
       break;
 
@@ -514,7 +542,17 @@ function track_da_files_tracking($uri) {
 	        track_da_files_register_new_display($uri, $fid);
 	      }
 	    }
-	    file_transfer($uri, array('Content-Type' => $filemime, 'Content-Disposition' => 'attachment; filename="' . $filename . '"', 'Content-Length' => $filesize));
+
+      $headers = array(
+        'Content-Type' => $filemime,
+        'Content-Length' => $filesize,
+      );
+
+      if (!$_GET['inline']) {
+        $headers['Content-Disposition'] = 'attachment; filename="' . $filename . '"';
+      }
+
+      file_transfer($uri, $headers);
 	  }
   }
 
