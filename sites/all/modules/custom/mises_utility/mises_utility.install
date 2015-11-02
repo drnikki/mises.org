@@ -50,4 +50,16 @@ function mises_utility_update_7003() {
   }
 }
 
+/**
+* Disable and uninstall unneeded module.
+*
+*/
+function mises_utility_update_7004() {
+  
+  if (module_exists('default_social_image')) {
+    module_disable(array('default_social_image'));
+    drupal_uninstall_modules(array('default_social_image'));
+  }
+}
+
 ?>
