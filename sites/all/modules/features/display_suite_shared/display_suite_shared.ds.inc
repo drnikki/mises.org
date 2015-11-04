@@ -2133,22 +2133,6 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
-    'top_term' => array(
-      'weight' => '41',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'search-label type bold',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-        'conditions' => array(),
-      ),
-    ),
     'online_book_chapter' => array(
       'weight' => '9',
       'label' => 'hidden',

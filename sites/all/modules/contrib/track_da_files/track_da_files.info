@@ -9,9 +9,9 @@ dependencies[] = browscap
 
 configure = admin/config/media/track_da_files
 
-; Information added by Drupal.org packaging script on 2015-08-01
-version = "7.x-1.5"
+; Information added by Drupal.org packaging script on 2015-10-28
+version = "7.x-1.6"
 core = "7.x"
 project = "track_da_files"
-datestamp = "1438407841"
+datestamp = "1446052140"
 
