@@ -38,6 +38,8 @@ function mises_generic_landing_page_context_default_contexts() {
         'filtered_landing_term_page:page_1' => 'filtered_landing_term_page:page_1',
         'filtered_landing_term_page:page_4' => 'filtered_landing_term_page:page_4',
         'term_landing:page' => 'term_landing:page',
+        'term_landing:page_1' => 'term_landing:page_1',
+        'term_landing:page_3' => 'term_landing:page_3',
       ),
     ),
   );
