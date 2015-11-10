@@ -2547,7 +2547,7 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .front .region-featured-right { overflow: hidden; height: 360px; }
 
 .blog-home-block { background-color: #e4ebee; height: 100%; }
-.blog-home-block .view-header { background: #46763a url("../images/radio_tower_graphic.png") right 11px bottom no-repeat; background-size: contain; border-top: 5px #46763a solid; border-bottom: 8px #81a957 solid; padding: 15px 14px 5px; }
+.blog-home-block .view-header { background: #46763a url("../images/radio_tower_graphic.png") right bottom no-repeat; background: #46763a url("../images/radio_tower_graphic.png") right 11px bottom no-repeat; background-size: contain; border-top: 5px #46763a solid; border-bottom: 8px #81a957 solid; padding: 15px 14px 5px; }
 .blog-home-block h2 { font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; font-size: 28.0px; font-weight: 100; letter-spacing: 0.25px; margin: 0; color: #fff; }
 .blog-home-block h2 span { font-style: italic; text-transform: uppercase; white-space: nowrap; }
 .blog-home-block .view-content { padding: 12px 10px 8px; overflow: hidden; }

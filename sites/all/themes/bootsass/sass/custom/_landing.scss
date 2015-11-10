@@ -63,6 +63,7 @@
   background-color: $gray-lighter;
   height: 100%;
   .view-header {
+    background: $brand-contrast-dark url('../images/radio_tower_graphic.png') right bottom no-repeat;
     background: $brand-contrast-dark url('../images/radio_tower_graphic.png') right 11px bottom no-repeat;
     background-size: contain;
     border-top: 5px $brand-contrast-dark solid;
