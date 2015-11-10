@@ -219,9 +219,9 @@ function library_item_node_context_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-11',
         ),
-        'views-library_items_menu-block' => array(
+        'views-blog-block_1' => array(
           'module' => 'views',
-          'delta' => 'library_items_menu-block',
+          'delta' => 'blog-block_1',
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
@@ -231,6 +231,11 @@ function library_item_node_context_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
+      ),
+    ),
+    'disable_context' => array(
+      'disabled' => array(
+        'library_items' => 'library_items',
       ),
     ),
   );

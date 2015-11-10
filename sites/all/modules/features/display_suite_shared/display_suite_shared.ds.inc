@@ -5920,6 +5920,9 @@ function display_suite_shared_ds_layout_settings_info() {
       'layout_class' => array(
         'panel' => 'panel',
       ),
+      'header' => array(
+        'single' => 'single',
+      ),
       'left' => array(
         'col-xs-4' => 'col-xs-4',
       ),
@@ -5941,6 +5944,7 @@ function display_suite_shared_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => 0,
     'hide_page_title' => '0',
     'page_option_title' => '',
   );
