@@ -124,7 +124,6 @@ function mises_library_item_field_group_info() {
       2 => 'field_pdf',
       3 => 'field_audio_book',
       4 => 'dynamic_field_1',
-      5 => 'dynamic_field_2',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -245,7 +244,6 @@ function mises_library_item_field_group_info() {
     'children' => array(
       0 => 'field_mises_published_date',
       1 => 'field_author_1',
-      2 => 'top_term',
     ),
     'format_type' => 'html5',
     'format_settings' => array(
