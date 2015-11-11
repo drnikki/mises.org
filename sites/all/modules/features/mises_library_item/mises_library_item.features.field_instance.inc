@@ -11,7 +11,7 @@ function mises_library_item_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'field_collection_item-field_image_collection-field_default_social_image'
+  // 'field_collection_item-field_image_collection-field_default_social_image'.
   $field_instances['field_collection_item-field_image_collection-field_default_social_image'] = array(
     'bundle' => 'field_image_collection',
     'default_value' => array(
@@ -106,7 +106,7 @@ function mises_library_item_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_image_collection-field_source'
+  // 'field_collection_item-field_image_collection-field_source'.
   $field_instances['field_collection_item-field_image_collection-field_source'] = array(
     'bundle' => 'field_image_collection',
     'default_value' => NULL,
@@ -235,7 +235,7 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-body'
+  // Exported field_instance: 'node-library_item-body'.
   $field_instances['node-library_item-body'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -585,7 +585,7 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_audience'
+  // Exported field_instance: 'node-library_item-field_audience'.
   $field_instances['node-library_item-field_audience'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -623,7 +623,7 @@ function mises_library_item_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'entityreference_entity_id',
-        'weight' => 17,
+        'weight' => 19,
       ),
       'print' => array(
         'label' => 'above',
@@ -663,7 +663,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 56,
+        'weight' => 57,
       ),
       'token' => array(
         'label' => 'above',
@@ -700,7 +700,116 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_austrian_school'
+  // Exported field_instance: 'node-library_item-field_audio_book'.
+  $field_instances['node-library_item-field_audio_book'] = array(
+    'bundle' => 'library_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Recommended if this Library Item has a related Library Item tagged under Audio/Video. Be sure to check "Audio" under Book Type above.',
+    'display' => array(
+      'audio_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 65,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 7,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'token_formatters',
+        'settings' => array(
+          'check_access' => 1,
+          'conditions' => array(),
+          'link' => '[entity:url]',
+          'text' => 'Audio',
+        ),
+        'type' => 'token_formatters_entity_reference',
+        'weight' => 6,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_audio_book',
+    'label' => 'Related Audio Book',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 35,
+    ),
+  );
+
+  // Exported field_instance: 'node-library_item-field_austrian_school'.
   $field_instances['node-library_item-field_austrian_school'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -826,7 +935,7 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_author_1'
+  // Exported field_instance: 'node-library_item-field_author_1'.
   $field_instances['node-library_item-field_author_1'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -955,7 +1064,7 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_bibliography_footnote'
+  // Exported field_instance: 'node-library_item-field_bibliography_footnote'.
   $field_instances['node-library_item-field_bibliography_footnote'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -1033,7 +1142,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 49,
+        'weight' => 50,
       ),
       'token' => array(
         'label' => 'above',
@@ -1102,7 +1211,7 @@ function mises_library_item_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_books'
+  // Exported field_instance: 'node-library_item-field_books'.
   $field_instances['node-library_item-field_books'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -1138,7 +1247,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 43,
       ),
       'print' => array(
         'label' => 'above',
@@ -1168,7 +1277,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 42,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -1199,7 +1308,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_citation'
+  // Exported field_instance: 'node-library_item-field_citation'.
   $field_instances['node-library_item-field_citation'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -1277,7 +1386,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 50,
+        'weight' => 51,
       ),
       'token' => array(
         'label' => 'above',
@@ -1346,7 +1455,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_copyright_info'
+  // Exported field_instance: 'node-library_item-field_copyright_info'.
   $field_instances['node-library_item-field_copyright_info'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -1417,7 +1526,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 48,
       ),
       'token' => array(
         'label' => 'above',
@@ -1449,7 +1558,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_document_attachment'
+  // Exported field_instance: 'node-library_item-field_document_attachment'.
   $field_instances['node-library_item-field_document_attachment'] = array(
     'bundle' => 'library_item',
     'deleted' => 0,
@@ -1528,7 +1637,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 58,
+        'weight' => 59,
       ),
       'token' => array(
         'label' => 'above',
@@ -1602,7 +1711,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_editor_s_note'
+  // Exported field_instance: 'node-library_item-field_editor_s_note'.
   $field_instances['node-library_item-field_editor_s_note'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -1637,7 +1746,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 49,
       ),
       'print' => array(
         'label' => 'above',
@@ -1673,7 +1782,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 55,
+        'weight' => 56,
       ),
       'token' => array(
         'label' => 'above',
@@ -1707,7 +1816,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_epub'
+  // Exported field_instance: 'node-library_item-field_epub'.
   $field_instances['node-library_item-field_epub'] = array(
     'bundle' => 'library_item',
     'deleted' => 0,
@@ -1826,7 +1935,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_featured_content'
+  // Exported field_instance: 'node-library_item-field_featured_content'.
   $field_instances['node-library_item-field_featured_content'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -1861,7 +1970,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 50,
       ),
       'print' => array(
         'label' => 'above',
@@ -1897,7 +2006,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 59,
+        'weight' => 60,
       ),
       'token' => array(
         'label' => 'above',
@@ -1929,7 +2038,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_hidden_solr_content'
+  // Exported field_instance: 'node-library_item-field_hidden_solr_content'.
   $field_instances['node-library_item-field_hidden_solr_content'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -1964,7 +2073,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 44,
       ),
       'print' => array(
         'label' => 'above',
@@ -1994,7 +2103,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 40,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -2061,7 +2170,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_id'
+  // Exported field_instance: 'node-library_item-field_id'.
   $field_instances['node-library_item-field_id'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -2096,7 +2205,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 54,
       ),
       'print' => array(
         'label' => 'above',
@@ -2132,7 +2241,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 53,
+        'weight' => 54,
       ),
       'token' => array(
         'label' => 'above',
@@ -2166,7 +2275,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_image_collection'
+  // Exported field_instance: 'node-library_item-field_image_collection'.
   $field_instances['node-library_item-field_image_collection'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -2221,8 +2330,6 @@ Note that all tags must be manually selected.',
         'settings' => array(
           'conditions' => array(),
           'optionset' => 'node_slideshow',
-          'thumbnail_image_field' => '',
-          'thumbnail_image_style' => '',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_entity_flexslider',
@@ -2308,7 +2415,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_journal_number'
+  // Exported field_instance: 'node-library_item-field_journal_number'.
   $field_instances['node-library_item-field_journal_number'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -2350,7 +2457,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 41,
       ),
       'print' => array(
         'label' => 'above',
@@ -2380,7 +2487,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 38,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -2406,11 +2513,11 @@ Note that all tags must be manually selected.',
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 39,
+      'weight' => 43,
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_journal_volume'
+  // Exported field_instance: 'node-library_item-field_journal_volume'.
   $field_instances['node-library_item-field_journal_volume'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -2452,7 +2559,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 40,
       ),
       'print' => array(
         'label' => 'above',
@@ -2482,7 +2589,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 39,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -2508,11 +2615,11 @@ Note that all tags must be manually selected.',
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 37,
+      'weight' => 42,
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_journal_year'
+  // Exported field_instance: 'node-library_item-field_journal_year'.
   $field_instances['node-library_item-field_journal_year'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -2554,7 +2661,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 42,
       ),
       'print' => array(
         'label' => 'above',
@@ -2584,7 +2691,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 37,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -2610,11 +2717,11 @@ Note that all tags must be manually selected.',
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 40,
+      'weight' => 44,
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_kindle'
+  // Exported field_instance: 'node-library_item-field_kindle'.
   $field_instances['node-library_item-field_kindle'] = array(
     'bundle' => 'library_item',
     'deleted' => 0,
@@ -2682,7 +2789,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 44,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -2729,7 +2836,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_level'
+  // Exported field_instance: 'node-library_item-field_level'.
   $field_instances['node-library_item-field_level'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -2767,7 +2874,7 @@ Note that all tags must be manually selected.',
           'conditions' => array(),
         ),
         'type' => 'entityreference_entity_id',
-        'weight' => 15,
+        'weight' => 17,
       ),
       'print' => array(
         'label' => 'above',
@@ -2807,7 +2914,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 49,
       ),
       'token' => array(
         'label' => 'above',
@@ -2844,7 +2951,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_library_item_tree'
+  // Exported field_instance: 'node-library_item-field_library_item_tree'.
   $field_instances['node-library_item-field_library_item_tree'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -2880,9 +2987,12 @@ Note that all tags must be manually selected.',
       ),
       'full' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 44,
+        'module' => 'taxonomy',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 15,
       ),
       'print' => array(
         'label' => 'above',
@@ -2918,7 +3028,7 @@ Note that all tags must be manually selected.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 45,
       ),
       'token' => array(
         'label' => 'above',
@@ -2965,7 +3075,7 @@ Note that all tags must be manually selected.',
   );
 
   // Exported field_instance:
-  // 'node-library_item-field_link_to_external_listing_'
+  // 'node-library_item-field_link_to_external_listing_'.
   $field_instances['node-library_item-field_link_to_external_listing_'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -3003,7 +3113,7 @@ Note that all tags must be manually selected.',
           'conditions' => array(),
         ),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'above',
@@ -3036,7 +3146,7 @@ Note that all tags must be manually selected.',
           'conditions' => array(),
         ),
         'type' => 'link_label',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -3081,7 +3191,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_media_collection'
+  // Exported field_instance: 'node-library_item-field_media_collection'.
   $field_instances['node-library_item-field_media_collection'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -3125,7 +3235,7 @@ Note that all tags must be manually selected.',
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 16,
+        'weight' => 18,
       ),
       'print' => array(
         'label' => 'above',
@@ -3166,7 +3276,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 47,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -3203,7 +3313,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_mises_published_date'
+  // Exported field_instance: 'node-library_item-field_mises_published_date'.
   $field_instances['node-library_item-field_mises_published_date'] = array(
     'bundle' => 'library_item',
     'deleted' => 0,
@@ -3354,7 +3464,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_mobi'
+  // Exported field_instance: 'node-library_item-field_mobi'.
   $field_instances['node-library_item-field_mobi'] = array(
     'bundle' => 'library_item',
     'deleted' => 0,
@@ -3422,7 +3532,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 41,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -3469,7 +3579,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_online_text'
+  // Exported field_instance: 'node-library_item-field_online_text'.
   $field_instances['node-library_item-field_online_text'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -3508,7 +3618,7 @@ Note that all tags must be manually selected.',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 18,
+        'weight' => 20,
       ),
       'print' => array(
         'label' => 'above',
@@ -3536,9 +3646,13 @@ Note that all tags must be manually selected.',
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 38,
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -3564,12 +3678,12 @@ Note that all tags must be manually selected.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 35,
+      'weight' => 36,
     ),
   );
 
   // Exported field_instance:
-  // 'node-library_item-field_original_publication_link'
+  // 'node-library_item-field_original_publication_link'.
   $field_instances['node-library_item-field_original_publication_link'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -3604,7 +3718,7 @@ Note that all tags must be manually selected.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 53,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -3640,7 +3754,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 51,
+        'weight' => 52,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -3690,7 +3804,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_original_title'
+  // Exported field_instance: 'node-library_item-field_original_title'.
   $field_instances['node-library_item-field_original_title'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -3725,7 +3839,7 @@ Note that all tags must be manually selected.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 52,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -3761,7 +3875,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 52,
+        'weight' => 53,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -3795,7 +3909,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_pdf'
+  // Exported field_instance: 'node-library_item-field_pdf'.
   $field_instances['node-library_item-field_pdf'] = array(
     'bundle' => 'library_item',
     'deleted' => 0,
@@ -3914,7 +4028,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_published_date'
+  // Exported field_instance: 'node-library_item-field_published_date'.
   $field_instances['node-library_item-field_published_date'] = array(
     'bundle' => 'library_item',
     'deleted' => 0,
@@ -3948,7 +4062,7 @@ Note that all tags must be manually selected.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 47,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -3984,7 +4098,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 54,
+        'weight' => 55,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -4027,7 +4141,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_show_disclaimer'
+  // Exported field_instance: 'node-library_item-field_show_disclaimer'.
   $field_instances['node-library_item-field_show_disclaimer'] = array(
     'bundle' => 'library_item',
     'default_value' => array(
@@ -4069,7 +4183,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 39,
       ),
       'print' => array(
         'label' => 'above',
@@ -4099,7 +4213,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 43,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -4127,7 +4241,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_social_media_image'
+  // Exported field_instance: 'node-library_item-field_social_media_image'.
   $field_instances['node-library_item-field_social_media_image'] = array(
     'bundle' => 'library_item',
     'deleted' => 0,
@@ -4166,7 +4280,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 38,
       ),
       'print' => array(
         'label' => 'above',
@@ -4196,7 +4310,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 36,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -4249,7 +4363,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_subtitle'
+  // Exported field_instance: 'node-library_item-field_subtitle'.
   $field_instances['node-library_item-field_subtitle'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -4327,7 +4441,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 60,
+        'weight' => 61,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -4396,7 +4510,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_teaser_text'
+  // Exported field_instance: 'node-library_item-field_teaser_text'.
   $field_instances['node-library_item-field_teaser_text'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -4478,7 +4592,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 48,
       ),
       'print' => array(
         'label' => 'above',
@@ -4656,7 +4770,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_timely_content'
+  // Exported field_instance: 'node-library_item-field_timely_content'.
   $field_instances['node-library_item-field_timely_content'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -4691,7 +4805,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 51,
       ),
       'print' => array(
         'label' => 'above',
@@ -4727,7 +4841,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 57,
+        'weight' => 58,
       ),
       'token' => array(
         'label' => 'above',
@@ -4758,7 +4872,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_topics'
+  // Exported field_instance: 'node-library_item-field_topics'.
   $field_instances['node-library_item-field_topics'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -4884,7 +4998,7 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_transcript'
+  // Exported field_instance: 'node-library_item-field_transcript'.
   $field_instances['node-library_item-field_transcript'] = array(
     'bundle' => 'library_item',
     'default_value' => NULL,
@@ -4919,7 +5033,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 46,
       ),
       'print' => array(
         'label' => 'above',
@@ -4955,7 +5069,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 46,
       ),
       'token' => array(
         'label' => 'above',
@@ -5060,6 +5174,8 @@ Note that all tags must be manually selected.',
   t('PDF');
   t('Primary or Original Author');
   t('Published Date');
+  t('Recommended if this Library Item has a related Library Item tagged under Audio/Video. Be sure to check "Audio" under Book Type above.');
+  t('Related Audio Book');
   t('Select the book type for this Library Item. This value is used for solr facets and filtered searches on landing pages. <br />
 Note that all tags must be manually selected.');
   t('Select whether this item will be used in featured blocks. Only one selection should be made to avoid duplicate blocks. The first "Featured" option is the default filter for the featured Library Item block, as well as other content types.');

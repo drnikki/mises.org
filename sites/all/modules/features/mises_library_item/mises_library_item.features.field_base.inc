@@ -10,7 +10,7 @@
 function mises_library_item_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_audience'
+  // Exported field_base: 'field_audience'.
   $field_bases['field_audience'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -45,7 +45,41 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_author_1'
+  // Exported field_base: 'field_audio_book'.
+  $field_bases['field_audio_book'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_audio_book',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'views',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 1,
+          ),
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_3',
+          'view_name' => 'entity_ref_filters',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_author_1'.
   $field_bases['field_author_1'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -82,7 +116,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_bibliography_footnote'
+  // Exported field_base: 'field_bibliography_footnote'.
   $field_bases['field_bibliography_footnote'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -101,7 +135,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_books'
+  // Exported field_base: 'field_books'.
   $field_bases['field_books'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -136,7 +170,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_citation'
+  // Exported field_base: 'field_citation'.
   $field_bases['field_citation'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -155,7 +189,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_copyright_info'
+  // Exported field_base: 'field_copyright_info'.
   $field_bases['field_copyright_info'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -187,7 +221,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'creative_commons',
   );
 
-  // Exported field_base: 'field_default_social_image'
+  // Exported field_base: 'field_default_social_image'.
   $field_bases['field_default_social_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -212,7 +246,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_document_attachment'
+  // Exported field_base: 'field_document_attachment'.
   $field_bases['field_document_attachment'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -235,7 +269,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_editor_s_note'
+  // Exported field_base: 'field_editor_s_note'.
   $field_bases['field_editor_s_note'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -254,7 +288,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_featured_content'
+  // Exported field_base: 'field_featured_content'.
   $field_bases['field_featured_content'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -288,7 +322,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_hidden_solr_content'
+  // Exported field_base: 'field_hidden_solr_content'.
   $field_bases['field_hidden_solr_content'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -307,7 +341,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_id'
+  // Exported field_base: 'field_id'.
   $field_bases['field_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -328,7 +362,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_journal_number'
+  // Exported field_base: 'field_journal_number'.
   $field_bases['field_journal_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -343,7 +377,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_journal_volume'
+  // Exported field_base: 'field_journal_volume'.
   $field_bases['field_journal_volume'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -358,7 +392,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_journal_year'
+  // Exported field_base: 'field_journal_year'.
   $field_bases['field_journal_year'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -373,7 +407,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_level'
+  // Exported field_base: 'field_level'.
   $field_bases['field_level'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -408,7 +442,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_library_item_tree'
+  // Exported field_base: 'field_library_item_tree'.
   $field_bases['field_library_item_tree'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -434,7 +468,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_mises_published_date'
+  // Exported field_base: 'field_mises_published_date'.
   $field_bases['field_mises_published_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -463,7 +497,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_online_text'
+  // Exported field_base: 'field_online_text'.
   $field_bases['field_online_text'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -498,7 +532,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_original_publication_link'
+  // Exported field_base: 'field_original_publication_link'.
   $field_bases['field_original_publication_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -527,7 +561,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_original_title'
+  // Exported field_base: 'field_original_title'.
   $field_bases['field_original_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -548,7 +582,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_published_date'
+  // Exported field_base: 'field_published_date'.
   $field_bases['field_published_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -577,7 +611,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_show_disclaimer'
+  // Exported field_base: 'field_show_disclaimer'.
   $field_bases['field_show_disclaimer'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -602,7 +636,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_source'
+  // Exported field_base: 'field_source'.
   $field_bases['field_source'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -623,7 +657,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_subtitle'
+  // Exported field_base: 'field_subtitle'.
   $field_bases['field_subtitle'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -642,7 +676,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_teaser_text'
+  // Exported field_base: 'field_teaser_text'.
   $field_bases['field_teaser_text'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -661,7 +695,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_timely_content'
+  // Exported field_base: 'field_timely_content'.
   $field_bases['field_timely_content'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -685,7 +719,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_topics'
+  // Exported field_base: 'field_topics'.
   $field_bases['field_topics'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -720,7 +754,7 @@ function mises_library_item_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_transcript'
+  // Exported field_base: 'field_transcript'.
   $field_bases['field_transcript'] = array(
     'active' => 1,
     'cardinality' => 1,

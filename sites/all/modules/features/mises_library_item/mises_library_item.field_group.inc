@@ -91,6 +91,7 @@ function mises_library_item_field_group_info() {
       4 => 'field_online_text',
       5 => 'field_pdf',
       6 => 'field_books',
+      7 => 'field_audio_book',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -116,12 +117,14 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Formats',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
       0 => 'field_epub',
       1 => 'field_link_to_external_listing_',
       2 => 'field_pdf',
-      3 => 'dynamic_field_1',
+      3 => 'field_audio_book',
+      4 => 'dynamic_field_1',
+      5 => 'dynamic_field_2',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -356,8 +359,9 @@ function mises_library_item_field_group_info() {
       2 => 'field_link_to_external_listing_',
       3 => 'field_mobi',
       4 => 'field_pdf',
-      5 => 'dynamic_field_1',
-      6 => 'dynamic_field_2',
+      5 => 'field_audio_book',
+      6 => 'dynamic_field_1',
+      7 => 'dynamic_field_2',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -502,7 +506,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '37',
+    'weight' => '45',
     'children' => array(
       0 => 'field_copyright_info',
       1 => 'print_link',
