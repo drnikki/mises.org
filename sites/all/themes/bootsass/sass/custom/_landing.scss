@@ -30,6 +30,7 @@
       position: relative;
       left: -6px;
       padding: 10px 20px 10px 38px;
+      width: -webkit-calc(100% + 6px);
       width: -moz-calc(100% + 6px);
       width: calc(100% + 6px);
       border-left: 6px solid $brand-primary;
@@ -87,21 +88,33 @@
     padding: 12px $grid-gutter-width / 2 8px;
     overflow: hidden;
     @media (min-width: $screen-sm) {
+      height: 100%;
+      height: -webkit-calc(100% - 94px);
       height: -moz-calc(100% - 94px);
       height: calc(100% - 94px);
       .inner {
         position: relative;
         top: 50%;
         @include translate(0,-50%);
+        .no-csscalc & {
+          top: 0;
+          @include translate(0,0);
+        }
       }
     }
     @media (min-width: $screen-md) {
+      height: 100%;
+      height: -webkit-calc(100% - 64px);
       height: -moz-calc(100% - 64px);
       height: calc(100% - 64px);
       .inner {
         position: relative;
         top: 50%;
         @include translate(0,-50%);
+        .no-csscalc & {
+          top: 0;
+          @include translate(0,0);
+        }
       }
     }
   }
@@ -164,8 +177,9 @@
       visibility: visible;
       margin: 0 auto;
       padding-top: $grid-gutter-width;
-      width: calc(100% - 20px);
+      width: -webkit-calc(100% - 20px);
       width: -moz-calc(100% - 20px);
+      width: calc(100% - 20px);
       height: 1px;
       border-bottom: 1px solid $gray-light;
       content: '';
@@ -371,10 +385,12 @@ body.mises-daily {
       text-align: center;
     }
     &:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button) {
+      width: -webkit-calc(23% - 12px);
       width: -moz-calc(23% - 12px);
       width: calc(23% - 12px);
       padding: $padding-large-vertical $padding-small-horizontal 0 0;
       &#edit-austrian-school-wrapper {
+        width: -webkit-calc(31% - 12px);
         width: -moz-calc(31% - 12px);
         width: calc(31% - 12px);
       }
@@ -446,6 +462,7 @@ body.mises-daily {
   #edit-topic-wrapper,
   #edit-austrian-school-wrapper,
   #edit-title-wrapper {
+    width: -webkit-calc(34% - 5px);
     width: -moz-calc(34% - 5px);
     width: calc(34% - 5px);
     padding: $padding-small-horizontal $padding-small-horizontal 0 0;
@@ -455,11 +472,13 @@ body.mises-daily {
   }
   #edit-vol-wrapper,
   #edit-no-wrapper {
+    width: -webkit-calc(16.5% - 5px);
     width: -moz-calc(16.5% - 5px);
     width: calc(16.5% - 5px);
     padding: $padding-small-horizontal $padding-small-horizontal 0 0;
   }
   #edit-year-wrapper {
+    width: -webkit-calc(14.5% - 5px);
     width: -moz-calc(14.5% - 5px);
     width: calc(14.5% - 5px);
     padding: $padding-small-horizontal $padding-small-horizontal 0 0;
