@@ -96,6 +96,10 @@
           position: relative;
           top: 50%;
           @include translate(0,-50%);
+          .no-csscalc & {
+            top: 0;
+            @include translate(0,0);
+          }
         }
       }
       @media (min-width: $screen-md) {
@@ -105,8 +109,15 @@
           position: relative;
           top: 50%;
           @include translate(0,-50%);
+          .no-csscalc & {
+            top: 0;
+            @include translate(0,0);
+          }
         }
       }
+    }
+    .not-front & {
+      padding: $grid-gutter-width $grid-gutter-width / 2;
     }
   }
   .wire-teaser {
