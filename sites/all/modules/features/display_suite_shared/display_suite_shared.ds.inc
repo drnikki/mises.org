@@ -1510,6 +1510,7 @@ function display_suite_shared_ds_field_settings_info() {
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -2154,6 +2155,23 @@ function display_suite_shared_ds_field_settings_info() {
             ),
           ),
         ),
+      ),
+    ),
+    'top_term' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'search-label type bold',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
+        ),
+        'conditions' => array(),
       ),
     ),
     'online_book_chapter' => array(
@@ -5638,6 +5656,98 @@ function display_suite_shared_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['node|library_item|single_term'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|library_item|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'library_item';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = '2col_custom_fluid';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'top_term',
+        2 => 'field_mises_published_date',
+        6 => 'field_author_1',
+        7 => 'title',
+        8 => 'field_pdf',
+        9 => 'group_date_author',
+        10 => 'field_epub',
+        11 => 'field_teaser_text',
+        12 => 'dynamic_field_1',
+        13 => 'body',
+        14 => 'field_audio_book',
+        15 => 'node_link',
+        16 => 'group_book_formats',
+        17 => 'field_link_to_external_listing_',
+      ),
+      'left' => array(
+        1 => 'field_image_collection',
+        3 => 'field_topics',
+        4 => 'group_tags',
+        5 => 'field_austrian_school',
+      ),
+      'ds_hidden' => array(
+        18 => 'online_book_chapter',
+        19 => 'field_online_text',
+      ),
+    ),
+    'fields' => array(
+      'top_term' => 'right',
+      'field_image_collection' => 'left',
+      'field_mises_published_date' => 'right',
+      'field_topics' => 'left',
+      'group_tags' => 'left',
+      'field_austrian_school' => 'left',
+      'field_author_1' => 'right',
+      'title' => 'right',
+      'field_pdf' => 'right',
+      'group_date_author' => 'right',
+      'field_epub' => 'right',
+      'field_teaser_text' => 'right',
+      'dynamic_field_1' => 'right',
+      'body' => 'right',
+      'field_audio_book' => 'right',
+      'node_link' => 'right',
+      'group_book_formats' => 'right',
+      'field_link_to_external_listing_' => 'right',
+      'online_book_chapter' => 'ds_hidden',
+      'field_online_text' => 'ds_hidden',
+    ),
+    'limit' => array(
+      'field_image_collection' => '1',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'row' => 'row',
+      ),
+      'left' => array(
+        'col-xs-4' => 'col-xs-4',
+      ),
+      'right' => array(
+        'col-xs-8' => 'col-xs-8',
+      ),
+    ),
+    'wrappers' => array(
+      'header' => 'div',
+      'top' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'bottom' => 'div',
+      'footer' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => 0,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|library_item|teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

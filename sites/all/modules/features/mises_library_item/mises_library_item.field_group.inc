@@ -244,6 +244,7 @@ function mises_library_item_field_group_info() {
     'children' => array(
       0 => 'field_mises_published_date',
       1 => 'field_author_1',
+      2 => 'top_term',
     ),
     'format_type' => 'html5',
     'format_settings' => array(
