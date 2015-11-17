@@ -63,6 +63,9 @@
 .blog-home-block {
   background-color: $gray-lighter;
   height: 100%;
+  .not-front & {
+    border-top: 1px $brand-contrast-light solid;
+  }
   .view-header {
     background: $brand-contrast-dark url('../images/radio_tower_graphic.png') right bottom no-repeat;
     background: $brand-contrast-dark url('../images/radio_tower_graphic.png') right 11px bottom no-repeat;
@@ -87,35 +90,36 @@
   .view-content {
     padding: 12px $grid-gutter-width / 2 8px;
     overflow: hidden;
-    @media (min-width: $screen-sm) {
-      height: 100%;
-      height: -webkit-calc(100% - 94px);
-      height: -moz-calc(100% - 94px);
-      height: calc(100% - 94px);
-      .inner {
-        position: relative;
-        top: 50%;
-        @include translate(0,-50%);
-        .no-csscalc & {
-          top: 0;
-          @include translate(0,0);
+    .front & {
+      @media (min-width: $screen-sm) {
+        height: -moz-calc(100% - 94px);
+        height: calc(100% - 94px);
+        .inner {
+          position: relative;
+          top: 50%;
+          @include translate(0,-50%);
+          .no-csscalc & {
+            top: 0;
+            @include translate(0,0);
+          }
+        }
+      }
+      @media (min-width: $screen-md) {
+        height: -moz-calc(100% - 64px);
+        height: calc(100% - 64px);
+        .inner {
+          position: relative;
+          top: 50%;
+          @include translate(0,-50%);
+          .no-csscalc & {
+            top: 0;
+            @include translate(0,0);
+          }
         }
       }
     }
-    @media (min-width: $screen-md) {
-      height: 100%;
-      height: -webkit-calc(100% - 64px);
-      height: -moz-calc(100% - 64px);
-      height: calc(100% - 64px);
-      .inner {
-        position: relative;
-        top: 50%;
-        @include translate(0,-50%);
-        .no-csscalc & {
-          top: 0;
-          @include translate(0,0);
-        }
-      }
+    .not-front & {
+      padding: $grid-gutter-width $grid-gutter-width / 2;
     }
   }
   .wire-teaser {
