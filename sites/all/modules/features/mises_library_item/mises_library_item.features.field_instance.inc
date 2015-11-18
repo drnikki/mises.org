@@ -736,13 +736,15 @@ function mises_library_item_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
+        'module' => 'token_formatters',
         'settings' => array(
+          'check_access' => 1,
           'conditions' => array(),
-          'link' => 1,
+          'link' => '[entity:url]',
+          'text' => 'Listen to Audio Book',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 7,
+        'type' => 'token_formatters_entity_reference',
+        'weight' => 6,
       ),
       'print' => array(
         'label' => 'above',
