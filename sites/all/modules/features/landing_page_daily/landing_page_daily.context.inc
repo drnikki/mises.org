@@ -39,9 +39,9 @@ function landing_page_daily_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-11',
         ),
-        'views-library_items_menu-block' => array(
+        'views-blog-block_1' => array(
           'module' => 'views',
-          'delta' => 'library_items_menu-block',
+          'delta' => 'blog-block_1',
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
