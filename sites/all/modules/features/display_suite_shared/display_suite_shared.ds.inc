@@ -1734,7 +1734,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'dynamic_field_2' => array(
-      'weight' => '6',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -1743,13 +1743,13 @@ function display_suite_shared_ds_field_settings_info() {
         'ctools' => 'a:3:{s:4:"conf";a:5:{s:11:"admin_title";s:0:"";s:5:"title";s:0:"";s:4:"body";s:46:"<a href="%node:url/html">View HTML Version</a>";s:6:"format";s:9:"full_html";s:10:"substitute";i:1;}s:4:"type";s:6:"custom";s:7:"subtype";s:6:"custom";}',
         'load_terms' => 0,
         'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'list-group-item',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
+          'prefix' => '<span class="glyphicon glyphicon-globe"></span>',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'list-group-item',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
         'conditions' => array(
           0 => array(
@@ -2024,7 +2024,7 @@ function display_suite_shared_ds_field_settings_info() {
     'field_audio_book' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'prefix' => '<span class="uppercase bold">Audio:</span> ',
+          'prefix' => '<span class="glyphicon glyphicon-volume-up"></span> ',
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'list-group-item',
@@ -2276,12 +2276,13 @@ function display_suite_shared_ds_field_settings_info() {
     'field_epub' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'format-item',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'format-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -2300,12 +2301,13 @@ function display_suite_shared_ds_field_settings_info() {
     'field_pdf' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'format-item',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'format-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -5428,10 +5430,10 @@ function display_suite_shared_ds_layout_settings_info() {
         10 => 'group_tags',
         11 => 'field_author_1',
         12 => 'field_kindle',
-        13 => 'dynamic_field_2',
-        14 => 'group_links',
+        13 => 'group_links',
+        14 => 'field_audio_book',
         15 => 'field_subtitle',
-        16 => 'field_audio_book',
+        16 => 'dynamic_field_2',
         17 => 'tags_title',
         18 => 'body_with_media_embedded',
         19 => 'field_link_to_external_listing_',
@@ -5468,10 +5470,10 @@ function display_suite_shared_ds_layout_settings_info() {
       'group_tags' => 'ds_content',
       'field_author_1' => 'ds_content',
       'field_kindle' => 'ds_content',
-      'dynamic_field_2' => 'ds_content',
       'group_links' => 'ds_content',
-      'field_subtitle' => 'ds_content',
       'field_audio_book' => 'ds_content',
+      'field_subtitle' => 'ds_content',
+      'dynamic_field_2' => 'ds_content',
       'tags_title' => 'ds_content',
       'body_with_media_embedded' => 'ds_content',
       'field_link_to_external_listing_' => 'ds_content',
