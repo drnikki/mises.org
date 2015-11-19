@@ -127,13 +127,21 @@ var Drupal = Drupal || {};
         }
       };
       
+      // Books filter fields manipulation
+      var booksFilters = function(){
+        if ($('#edit-book-type-wrapper').length) {
+          $('#edit-book-type-wrapper').insertBefore('.views-exposed-widgets');
+        }
+        if ($('.views-widget-sort-by').length) {
+          $('.views-widget-sort-by').insertBefore('.views-exposed-widgets').addClass('show');
+        }
+      };
+      
       // Hide unneeded search-labels
       var hideSearchLabels = function() {
         var h1 = $('h1.page-header').text();
-        console.log('h1.page-header ',h1);
         $('.search-label').each(function(i){
           var label = $(this).text();
-          console.log('label ',label);
           if ((h1 == label) || (h1 == 'Mises Wire' && label == 'Blog') || (h1 == 'Mises Weekends' && label == 'Audio/Video')) {
             $(this).addClass('hidden');
           }
@@ -228,11 +236,7 @@ var Drupal = Drupal || {};
         homeFeature();
         
         // Filtered Term Landing
-        // Add select field styling
-        if ($('#edit-book-type-wrapper').length) {
-          $('.views-reset-button').appendTo('#edit-book-type-wrapper .bef-select-as-links > .form-item').css('visibility','visible');
-          $('#edit-book-type-wrapper').insertBefore('.views-exposed-widgets');
-        }
+        booksFilters();
         
         if ($('.filter-triggers').length) {
           $('.filter-triggers').prependTo($('.views-exposed-widgets'));
@@ -256,6 +260,7 @@ var Drupal = Drupal || {};
       $(document).ajaxComplete(function() {
         //console.log("Ajax complete");
         implementEqualHeight();
+        booksFilters();
         journalsFilters();
         editJournalTrigger();
         $('select:not(#edit-book-type):not(#edit-title)').selectBox({

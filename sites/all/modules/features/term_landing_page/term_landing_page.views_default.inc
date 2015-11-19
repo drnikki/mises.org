@@ -543,27 +543,6 @@ function term_landing_page_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Book Type (field_books) */
-  $handler->display->display_options['filters']['field_books_target_id']['id'] = 'field_books_target_id';
-  $handler->display->display_options['filters']['field_books_target_id']['table'] = 'field_data_field_books';
-  $handler->display->display_options['filters']['field_books_target_id']['field'] = 'field_books_target_id';
-  $handler->display->display_options['filters']['field_books_target_id']['group'] = 1;
-  $handler->display->display_options['filters']['field_books_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_books_target_id']['expose']['operator_id'] = 'field_books_target_id_op';
-  $handler->display->display_options['filters']['field_books_target_id']['expose']['operator'] = 'field_books_target_id_op';
-  $handler->display->display_options['filters']['field_books_target_id']['expose']['identifier'] = 'book_type';
-  $handler->display->display_options['filters']['field_books_target_id']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    5 => 0,
-    6 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
-    7 => 0,
-  );
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -820,17 +799,45 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['title'] = '%1';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'landing-list filtered-books';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'GO';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Clear All';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sort by:';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => '',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'sort' => array(
+      'bef_format' => 'default',
+      'advanced' => array(
+        'collapsible' => 0,
+        'collapsible_label' => 'Sort options',
+        'combine' => 1,
+        'combine_param' => 'sort',
+        'combine_rewrite' => '',
+        'reset' => 0,
+        'reset_label' => '',
+        'is_secondary' => 0,
+        'secondary_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
@@ -944,7 +951,7 @@ function term_landing_page_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'All Authors',
+        'any_label' => 'Authors',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -994,7 +1001,7 @@ function term_landing_page_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'Sort by Topic',
+        'any_label' => 'Topics',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -1044,7 +1051,7 @@ function term_landing_page_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'Sort by Austrian School',
+        'any_label' => 'Austrian School',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -1094,7 +1101,7 @@ function term_landing_page_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'All Levels',
+        'any_label' => 'Levels',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -1215,20 +1222,32 @@ function term_landing_page_views_default_views() {
   );
   $handler->display->display_options['fields']['field_books']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Type */
-  $handler->display->display_options['sorts']['type']['id'] = 'type';
-  $handler->display->display_options['sorts']['type']['table'] = 'node';
-  $handler->display->display_options['sorts']['type']['field'] = 'type';
   /* Sort criterion: Content: Mises Published Date (field_mises_published_date) */
   $handler->display->display_options['sorts']['field_mises_published_date_value']['id'] = 'field_mises_published_date_value';
   $handler->display->display_options['sorts']['field_mises_published_date_value']['table'] = 'field_data_field_mises_published_date';
   $handler->display->display_options['sorts']['field_mises_published_date_value']['field'] = 'field_mises_published_date_value';
   $handler->display->display_options['sorts']['field_mises_published_date_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['expose']['label'] = 'Newest First';
+  /* Sort criterion: Content: Mises Published Date (field_mises_published_date) */
+  $handler->display->display_options['sorts']['field_mises_published_date_value_1']['id'] = 'field_mises_published_date_value_1';
+  $handler->display->display_options['sorts']['field_mises_published_date_value_1']['table'] = 'field_data_field_mises_published_date';
+  $handler->display->display_options['sorts']['field_mises_published_date_value_1']['field'] = 'field_mises_published_date_value';
+  $handler->display->display_options['sorts']['field_mises_published_date_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_mises_published_date_value_1']['expose']['label'] = 'Oldest First';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['sorts']['title_1']['table'] = 'node';
+  $handler->display->display_options['sorts']['title_1']['field'] = 'title';
+  $handler->display->display_options['sorts']['title_1']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['title_1']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['title_1']['expose']['label'] = 'Title Z-A';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1265,6 +1284,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['filters']['field_books_target_id']['group'] = 1;
   $handler->display->display_options['filters']['field_books_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_books_target_id']['expose']['operator_id'] = 'field_books_target_id_op';
+  $handler->display->display_options['filters']['field_books_target_id']['expose']['label'] = 'Select Format:';
   $handler->display->display_options['filters']['field_books_target_id']['expose']['operator'] = 'field_books_target_id_op';
   $handler->display->display_options['filters']['field_books_target_id']['expose']['identifier'] = 'book_type';
   $handler->display->display_options['filters']['field_books_target_id']['expose']['remember_roles'] = array(
@@ -1303,7 +1323,7 @@ function term_landing_page_views_default_views() {
     7 => 0,
   );
   $handler->display->display_options['filters']['title']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['title']['group_info']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['group_info']['label'] = 'Filter by Title:';
   $handler->display->display_options['filters']['title']['group_info']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['group_info']['group_items'] = array(
     1 => array(
@@ -1444,7 +1464,7 @@ function term_landing_page_views_default_views() {
   $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['group'] = 1;
   $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['operator_id'] = 'field_author_1_target_id_entityreference_filter_op';
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['label'] = 'Author';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['label'] = 'Filter by:';
   $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['operator'] = 'field_author_1_target_id_entityreference_filter_op';
   $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['identifier'] = 'author';
   $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['remember_roles'] = array(

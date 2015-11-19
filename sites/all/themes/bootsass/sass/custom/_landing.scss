@@ -323,7 +323,7 @@ body.mises-daily {
   }
   .views-exposed-widget {
     > label {
-      display: none;
+      visibility: hidden;
     }
     .form-submit {
       margin-top: 0;
@@ -376,10 +376,13 @@ body.mises-daily {
 * Book Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_1
 */
 .filtered-books {
+  .views-exposed-widgets {
+    clear: both;
+  }
   .views-exposed-widget {
     &#edit-book-type-wrapper {
       @include clearfix;
-      float: none;
+      float: left;
       padding: 0;
     }
     &#edit-title-wrapper {
@@ -388,30 +391,37 @@ body.mises-daily {
       padding: $padding-large-vertical 0 0;
       text-align: center;
     }
-    &:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button) {
-      width: -webkit-calc(23% - 12px);
-      width: -moz-calc(23% - 12px);
-      width: calc(23% - 12px);
-      padding: $padding-large-vertical $padding-small-horizontal 0 0;
+    &:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button):not(.views-widget-sort-by) {
+      width: -webkit-calc(20% - 12px);
+      width: -moz-calc(20% - 12px);
+      width: calc(20% - 12px);
+      padding: $padding-large-vertical * 0.6 $padding-small-horizontal 0 0;
       &#edit-austrian-school-wrapper {
-        width: -webkit-calc(31% - 12px);
-        width: -moz-calc(31% - 12px);
-        width: calc(31% - 12px);
+        width: -webkit-calc(24% - 12px);
+        width: -moz-calc(24% - 12px);
+        width: calc(24% - 12px);
       }
       &.views-submit-button {
         width: auto;
-        float: right;
-        padding-right: 0;
+        padding: $padding-large-vertical * 1.5625 0 0 0;
+        button {
+          width: 64px; // Wide enough for ajax throbber
+        }
+      }
+    }
+    &.views-widget-sort-by {
+      display: none;
+      width: 150px;
+      padding: 0 0 0 $padding-small-horizontal;
+      &.show {
+        display: inline-block;
       }
     }
   }
-  .views-reset-button {
-    display: inline-block;
-    padding: 0;
-    float: none;
-    visibility: hidden;
-  }
   #edit-book-type-wrapper {
+    > label {
+      visibility: visible;
+    }
     .bef-select-as-links {
       text-align: right;
       .form-item {
@@ -427,10 +437,19 @@ body.mises-daily {
     }
   }
   #edit-title-wrapper {
+    clear: both;
+    > label {
+      display: inline-block;
+      visibility: visible;
+      padding-right: $padding-xs-horizontal;
+    }
+    > .views-widget {
+      display: inline-block;
+    }
     .form-item {
       display: inline-block;
       a {
-        padding: 0 $padding-xs-horizontal;
+        padding: 0 4px;
         &.active {
           background-color: $btn-default-bg;
           color: $white;
@@ -438,12 +457,27 @@ body.mises-daily {
       }
     }
   }
+  #edit-author-wrapper {
+    > label {
+      visibility: visible;
+    }
+  }
+  .views-reset-button {
+    visibility: visible;
+    padding: $padding-large-vertical * 1.5625 0 0 0;
+    float: right;
+  }
 }
 /* FILTERED JOURNALS
 * used on Filtered Landing - Term Page view
 * Journals Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_2
 */
 .filtered-journals {
+  .views-exposed-widget {
+    > label {
+      display: none;
+    }
+  }
   .filter-triggers {
     padding: $padding-small-horizontal 0 0 0;
     width: 56%;
