@@ -11,7 +11,7 @@ function mises_landing_page_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'field_collection_item-field_resource_group-field_description'
+  // 'field_collection_item-field_resource_group-field_description'.
   $field_instances['field_collection_item-field_resource_group-field_description'] = array(
     'bundle' => 'field_resource_group',
     'default_value' => NULL,
@@ -92,7 +92,7 @@ function mises_landing_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_resource_group-field_display_title'
+  // 'field_collection_item-field_resource_group-field_display_title'.
   $field_instances['field_collection_item-field_resource_group-field_display_title'] = array(
     'bundle' => 'field_resource_group',
     'default_value' => NULL,
@@ -173,7 +173,7 @@ function mises_landing_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_resource_group-field_resources'
+  // 'field_collection_item-field_resource_group-field_resources'.
   $field_instances['field_collection_item-field_resource_group-field_resources'] = array(
     'bundle' => 'field_resource_group',
     'default_value' => NULL,
@@ -227,7 +227,7 @@ function mises_landing_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_resources-field_read_more_link'
+  // 'field_collection_item-field_resources-field_read_more_link'.
   $field_instances['field_collection_item-field_resources-field_read_more_link'] = array(
     'bundle' => 'field_resources',
     'default_value' => NULL,
@@ -290,7 +290,7 @@ function mises_landing_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_resources-field_resource'
+  // 'field_collection_item-field_resources-field_resource'.
   $field_instances['field_collection_item-field_resources-field_resource'] = array(
     'bundle' => 'field_resources',
     'default_value' => NULL,
@@ -342,7 +342,7 @@ function mises_landing_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_resources-field_teaser_title'
+  // 'field_collection_item-field_resources-field_teaser_title'.
   $field_instances['field_collection_item-field_resources-field_teaser_title'] = array(
     'bundle' => 'field_resources',
     'default_value' => NULL,
@@ -422,7 +422,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_banner_image'
+  // Exported field_instance: 'node-landing_page-field_banner_image'.
   $field_instances['node-landing_page-field_banner_image'] = array(
     'bundle' => 'landing_page',
     'deleted' => 0,
@@ -518,7 +518,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_featured_nodes'
+  // Exported field_instance: 'node-landing_page-field_featured_nodes'.
   $field_instances['node-landing_page-field_featured_nodes'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -591,7 +591,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_featured_videos'
+  // Exported field_instance: 'node-landing_page-field_featured_videos'.
   $field_instances['node-landing_page-field_featured_videos'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -664,7 +664,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_image'
+  // Exported field_instance: 'node-landing_page-field_image'.
   $field_instances['node-landing_page-field_image'] = array(
     'bundle' => 'landing_page',
     'deleted' => 0,
@@ -760,7 +760,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_page_subtitle'
+  // Exported field_instance: 'node-landing_page-field_page_subtitle'.
   $field_instances['node-landing_page-field_page_subtitle'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -861,7 +861,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_read_more_link'
+  // Exported field_instance: 'node-landing_page-field_read_more_link'.
   $field_instances['node-landing_page-field_read_more_link'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -944,7 +944,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_resource_group'
+  // Exported field_instance: 'node-landing_page-field_resource_group'.
   $field_instances['node-landing_page-field_resource_group'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -1023,7 +1023,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_social_media_image'
+  // Exported field_instance: 'node-landing_page-field_social_media_image'.
   $field_instances['node-landing_page-field_social_media_image'] = array(
     'bundle' => 'landing_page',
     'deleted' => 0,
@@ -1109,7 +1109,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_teaser'
+  // Exported field_instance: 'node-landing_page-field_teaser'.
   $field_instances['node-landing_page-field_teaser'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -1224,7 +1224,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_teaser_header'
+  // Exported field_instance: 'node-landing_page-field_teaser_header'.
   $field_instances['node-landing_page-field_teaser_header'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -1325,7 +1325,7 @@ function mises_landing_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_teaser_title'
+  // Exported field_instance: 'node-landing_page-field_teaser_title'.
   $field_instances['node-landing_page-field_teaser_title'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,

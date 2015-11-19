@@ -10,7 +10,7 @@
 function mises_landing_page_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_banner_image'
+  // Exported field_base: 'field_banner_image'.
   $field_bases['field_banner_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -32,7 +32,7 @@ function mises_landing_page_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_featured_nodes'
+  // Exported field_base: 'field_featured_nodes'.
   $field_bases['field_featured_nodes'] = array(
     'active' => 1,
     'cardinality' => 6,
@@ -66,7 +66,7 @@ function mises_landing_page_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_featured_videos'
+  // Exported field_base: 'field_featured_videos'.
   $field_bases['field_featured_videos'] = array(
     'active' => 1,
     'cardinality' => 2,
@@ -100,7 +100,7 @@ function mises_landing_page_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_page_subtitle'
+  // Exported field_base: 'field_page_subtitle'.
   $field_bases['field_page_subtitle'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -121,7 +121,7 @@ function mises_landing_page_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_read_more_link'
+  // Exported field_base: 'field_read_more_link'.
   $field_bases['field_read_more_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -150,7 +150,7 @@ function mises_landing_page_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_resource'
+  // Exported field_base: 'field_resource'.
   $field_bases['field_resource'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -191,7 +191,7 @@ function mises_landing_page_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_resource_group'
+  // Exported field_base: 'field_resource_group'.
   $field_bases['field_resource_group'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -213,7 +213,7 @@ function mises_landing_page_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_resources'
+  // Exported field_base: 'field_resources'.
   $field_bases['field_resources'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -235,7 +235,7 @@ function mises_landing_page_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_teaser_header'
+  // Exported field_base: 'field_teaser_header'.
   $field_bases['field_teaser_header'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -256,7 +256,7 @@ function mises_landing_page_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_teaser_title'
+  // Exported field_base: 'field_teaser_title'.
   $field_bases['field_teaser_title'] = array(
     'active' => 1,
     'cardinality' => 1,

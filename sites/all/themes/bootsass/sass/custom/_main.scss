@@ -252,3 +252,13 @@ span.fake-blockquote {
   display: block;
   padding: 0 20px;
 }
+// List Group Item glypicon size
+.list-group-item {
+  .glyphicon {
+    color: $gray;
+    background-color: transparent;
+  }
+  p {
+    display: inline;
+  }
+}
