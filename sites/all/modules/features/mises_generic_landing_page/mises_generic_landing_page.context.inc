@@ -14,9 +14,14 @@ function mises_generic_landing_page_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'generic_term';
-  $context->description = 'Term Landing/Listing Page';
+  $context->description = 'Term Landing/Listing Page (except Daily)';
   $context->tag = 'Landing Pages';
   $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '~taxonomy/term/147' => '~taxonomy/term/147',
+      ),
+    ),
     'taxonomy_term' => array(
       'values' => array(
         'award_type' => 'award_type',
@@ -34,7 +39,6 @@ function mises_generic_landing_page_context_default_contexts() {
     ),
     'views' => array(
       'values' => array(
-        'daily_landing' => 'daily_landing',
         'filtered_landing_term_page:page_1' => 'filtered_landing_term_page:page_1',
         'filtered_landing_term_page:page_4' => 'filtered_landing_term_page:page_4',
         'term_landing:page' => 'term_landing:page',
@@ -145,7 +149,7 @@ function mises_generic_landing_page_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Landing Pages');
-  t('Term Landing/Listing Page');
+  t('Term Landing/Listing Page (except Daily)');
   $export['generic_term'] = $context;
 
   $context = new stdClass();

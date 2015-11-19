@@ -2541,7 +2541,7 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 /* HOMEPAGE HERO */
 .view-homepage-hero .featured-block { position: relative; }
 .view-homepage-hero .featured-block a { color: #fff; }
-.view-homepage-hero .featured-block .overlay { position: relative; left: -6px; padding: 10px 20px 10px 38px; width: -moz-calc(100% + 6px); width: calc(100% + 6px); border-left: 6px solid #00426b; background: rgba(80, 129, 156, 0.8); color: #fff; }
+.view-homepage-hero .featured-block .overlay { position: relative; left: -6px; padding: 10px 20px 10px 38px; width: -webkit-calc(100% + 6px); width: -moz-calc(100% + 6px); width: calc(100% + 6px); border-left: 6px solid #00426b; background: rgba(80, 129, 156, 0.8); color: #fff; }
 @media (min-width: 992px) { .view-homepage-hero .featured-block .overlay { position: absolute; bottom: 10px; max-width: 75%; } }
 .view-homepage-hero .featured-block .overlay h3 { margin-top: 0; color: #fff; font-size: 18px; }
 .view-homepage-hero .featured-block .overlay p { color: #e4ebee; }
@@ -2550,14 +2550,18 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .front .region-featured-right { overflow: hidden; height: 360px; }
 
 .blog-home-block { background-color: #e4ebee; height: 100%; }
-.blog-home-block .view-header { background: #46763a url("../images/radio_tower_graphic.png") right 11px bottom no-repeat; background-size: contain; border-top: 5px #46763a solid; border-bottom: 8px #81a957 solid; padding: 15px 14px 5px; }
+.not-front .blog-home-block { border-top: 1px #81a957 solid; }
+.blog-home-block .view-header { background: #46763a url("../images/radio_tower_graphic.png") right bottom no-repeat; background: #46763a url("../images/radio_tower_graphic.png") right 11px bottom no-repeat; background-size: contain; border-top: 5px #46763a solid; border-bottom: 8px #81a957 solid; padding: 15px 14px 5px; }
 .blog-home-block h2 { font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; font-size: 28.0px; font-weight: 100; letter-spacing: 0.25px; margin: 0; color: #fff; }
 .blog-home-block h2 span { font-style: italic; text-transform: uppercase; white-space: nowrap; }
 .blog-home-block .view-content { padding: 12px 10px 8px; overflow: hidden; }
-@media (min-width: 768px) { .blog-home-block .view-content { height: -moz-calc(100% - 94px); height: calc(100% - 94px); }
-  .blog-home-block .view-content .inner { position: relative; top: 50%; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); -o-transform: translate(0, -50%); transform: translate(0, -50%); } }
-@media (min-width: 992px) { .blog-home-block .view-content { height: -moz-calc(100% - 64px); height: calc(100% - 64px); }
-  .blog-home-block .view-content .inner { position: relative; top: 50%; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); -o-transform: translate(0, -50%); transform: translate(0, -50%); } }
+@media (min-width: 768px) { .front .blog-home-block .view-content { height: -moz-calc(100% - 94px); height: calc(100% - 94px); }
+  .front .blog-home-block .view-content .inner { position: relative; top: 50%; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); -o-transform: translate(0, -50%); transform: translate(0, -50%); }
+  .no-csscalc .front .blog-home-block .view-content .inner { top: 0; -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); -o-transform: translate(0, 0); transform: translate(0, 0); } }
+@media (min-width: 992px) { .front .blog-home-block .view-content { height: -moz-calc(100% - 64px); height: calc(100% - 64px); }
+  .front .blog-home-block .view-content .inner { position: relative; top: 50%; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); -o-transform: translate(0, -50%); transform: translate(0, -50%); }
+  .no-csscalc .front .blog-home-block .view-content .inner { top: 0; -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); -o-transform: translate(0, 0); transform: translate(0, 0); } }
+.not-front .blog-home-block .view-content { padding: 20px 10px; }
 .blog-home-block .wire-teaser { line-height: 1.5; max-height: 42px; overflow: hidden; position: relative; padding-left: 20px; }
 .blog-home-block .wire-teaser + .wire-teaser { margin-top: 7.5px; }
 .blog-home-block .wire-teaser .bullet { display: block; position: absolute; left: 0; top: 0; }
@@ -2572,7 +2576,7 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 
 /* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
 .main-content .node-teaser, .main-content .view-mode-audio_teaser { padding: 20px 0 0; }
-.main-content .node-teaser:after, .main-content .view-mode-audio_teaser:after { display: block; visibility: visible; margin: 0 auto; padding-top: 20px; width: calc(100% - 20px); width: -moz-calc(100% - 20px); height: 1px; border-bottom: 1px solid #c8cdd0; content: ''; }
+.main-content .node-teaser:after, .main-content .view-mode-audio_teaser:after { display: block; visibility: visible; margin: 0 auto; padding-top: 20px; width: -webkit-calc(100% - 20px); width: -moz-calc(100% - 20px); width: calc(100% - 20px); height: 1px; border-bottom: 1px solid #c8cdd0; content: ''; }
 .main-content .node-teaser .image, .main-content .view-mode-audio_teaser .image { margin-top: 5px; }
 
 /* LANDING LISTS */
@@ -2648,8 +2652,8 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .filtered-books .views-exposed-widget#edit-title-wrapper { float: none; padding: 16px 0 0; text-align: center; }
 .filtered-books .views-exposed-widget#edit-title-wrapper:before, .filtered-books .views-exposed-widget#edit-title-wrapper:after { content: " "; display: table; }
 .filtered-books .views-exposed-widget#edit-title-wrapper:after { clear: both; }
-.filtered-books .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button) { width: -moz-calc(23% - 12px); width: calc(23% - 12px); padding: 16px 10px 0 0; }
-.filtered-books .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button)#edit-austrian-school-wrapper { width: -moz-calc(31% - 12px); width: calc(31% - 12px); }
+.filtered-books .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button) { width: -webkit-calc(23% - 12px); width: -moz-calc(23% - 12px); width: calc(23% - 12px); padding: 16px 10px 0 0; }
+.filtered-books .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button)#edit-austrian-school-wrapper { width: -webkit-calc(31% - 12px); width: -moz-calc(31% - 12px); width: calc(31% - 12px); }
 .filtered-books .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button).views-submit-button { width: auto; float: right; padding-right: 0; }
 .filtered-books .views-reset-button { display: inline-block; padding: 0; float: none; visibility: hidden; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links { text-align: right; }
@@ -2680,10 +2684,10 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .filtered-journals .filter-triggers a .badge { background-color: #fff; color: #38709e; }
 .filtered-journals #edit-journal-wrapper { padding: 10px 0 0 0; float: right; width: 44%; }
 .filtered-journals #edit-author-wrapper, .filtered-journals #edit-title-wrapper { clear: left; }
-.filtered-journals #edit-author-wrapper, .filtered-journals #edit-topic-wrapper, .filtered-journals #edit-austrian-school-wrapper, .filtered-journals #edit-title-wrapper { width: -moz-calc(34% - 5px); width: calc(34% - 5px); padding: 10px 10px 0 0; }
+.filtered-journals #edit-author-wrapper, .filtered-journals #edit-topic-wrapper, .filtered-journals #edit-austrian-school-wrapper, .filtered-journals #edit-title-wrapper { width: -webkit-calc(34% - 5px); width: -moz-calc(34% - 5px); width: calc(34% - 5px); padding: 10px 10px 0 0; }
 .filtered-journals #edit-austrian-school-wrapper { padding-right: 0; }
-.filtered-journals #edit-vol-wrapper, .filtered-journals #edit-no-wrapper { width: -moz-calc(16.5% - 5px); width: calc(16.5% - 5px); padding: 10px 10px 0 0; }
-.filtered-journals #edit-year-wrapper { width: -moz-calc(14.5% - 5px); width: calc(14.5% - 5px); padding: 10px 10px 0 0; }
+.filtered-journals #edit-vol-wrapper, .filtered-journals #edit-no-wrapper { width: -webkit-calc(16.5% - 5px); width: -moz-calc(16.5% - 5px); width: calc(16.5% - 5px); padding: 10px 10px 0 0; }
+.filtered-journals #edit-year-wrapper { width: -webkit-calc(14.5% - 5px); width: -moz-calc(14.5% - 5px); width: calc(14.5% - 5px); padding: 10px 10px 0 0; }
 .filtered-journals .views-submit-button { padding: 10px 0 0 0; }
 .filtered-journals .views-submit-button button { width: 64px; }
 .filtered-journals .views-reset-button { float: right; padding: 10px 0 0 0; }
