@@ -2526,6 +2526,9 @@ span.fake-bullet { display: list-item; list-style-type: disc; margin-left: 20px;
 
 span.fake-blockquote { display: block; padding: 0 20px; }
 
+.list-group-item .glyphicon, .attachments li .glyphicon, .list-group-item .pagination > li.prev a, .pagination > li.prev .list-group-item a, .attachments .pagination > li.prev a, .list-group-item .pagination > li.next a, .pagination > li.next .list-group-item a, .attachments .pagination > li.next a, .list-group-item .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-prev .list-group-item a, .attachments .sidebar .pager > li.date-prev a, .sidebar .attachments .pager > li.date-prev a, .list-group-item .sidebar .pager > li.date-next a, .sidebar .pager > li.date-next .list-group-item a, .attachments .sidebar .pager > li.date-next a, .sidebar .attachments .pager > li.date-next a { color: #788086; background-color: transparent; }
+.list-group-item p, .attachments li p { display: inline; }
+
 /*
 * Custom Styles for Home and Landing Pages
 * 
