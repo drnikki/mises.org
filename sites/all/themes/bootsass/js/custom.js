@@ -83,6 +83,13 @@ var Drupal = Drupal || {};
 
       };
       
+      // Filtered landing page submit wrapper.
+      var filteredSubmit = function() {
+        $('.landing-list .views-submit-button, .landing-list .views-reset-button').addClass('landing-submit');
+        $('.landing-submit').wrapAll('<div class="filtered-submit"></div>');
+      };
+      filteredSubmit();
+      
       // Filtered Journals -- connect .filter-triggers to options
       var journalsFilters = function() {
         $('#edit-journal option').each(function() {

@@ -322,12 +322,75 @@ body.mises-daily {
     padding: $padding-base-vertical $padding-small-horizontal;
   }
   .views-exposed-widget {
+    padding: $padding-large-vertical * 0.6 $padding-small-horizontal 0 0;
     > label {
       visibility: hidden;
     }
     .form-submit {
       margin-top: 0;
     }
+    &.views-widget-sort-by {
+      display: none;
+      width: 150px;
+      padding: 0 0 0 $padding-small-horizontal;
+      &.show {
+        display: inline-block;
+      }
+    }
+  }
+  #edit-title-wrapper {
+    @include clearfix;
+    clear: both;
+    float: none;
+    padding: $padding-large-vertical 0 0;
+    text-align: center;
+    > label {
+      display: inline-block;
+      visibility: visible;
+      padding-right: $padding-xs-horizontal;
+    }
+    > .views-widget {
+      display: inline-block;
+    }
+    .form-item {
+      display: inline-block;
+      a {
+        padding: 0 4px;
+        &.active {
+          background-color: $btn-default-bg;
+          color: $white;
+        }
+      }
+    }
+  }
+  #edit-author-wrapper,
+  #edit-topic-wrapper,
+  #edit-level-wrapper {
+    width: -webkit-calc(20% - 10px);
+    width: -moz-calc(20% - 10px);
+    width: calc(20% - 10px);
+  }
+  #edit-author-wrapper {
+    > label {
+      visibility: visible;
+    }
+  }
+  #edit-austrian-school-wrapper {
+    width: -webkit-calc(24% - 10px);
+    width: -moz-calc(24% - 10px);
+    width: calc(24% - 10px);
+  }
+  .views-submit-button {
+    width: auto;
+    padding: $padding-large-vertical * 2.125 0 0 0;
+    button {
+      width: 64px; // Wide enough for ajax throbber
+    }
+  }
+  .views-reset-button {
+    visibility: visible;
+    padding: $padding-large-vertical * 2.125 0 0 0;
+    float: right;
   }
   .filter-toggle {
     text-transform: uppercase;
@@ -351,6 +414,10 @@ body.mises-daily {
     //&.open {
     //  max-height: 100px;
     //}
+  }
+  // Hiding buggy element.
+  .views-widget-sort-order {
+    display: none;
   }
 }
 .selectBox-dropdown {
@@ -385,38 +452,6 @@ body.mises-daily {
       float: left;
       padding: 0;
     }
-    &#edit-title-wrapper {
-      @include clearfix;
-      float: none;
-      padding: $padding-large-vertical 0 0;
-      text-align: center;
-    }
-    &:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button):not(.views-widget-sort-by) {
-      width: -webkit-calc(20% - 12px);
-      width: -moz-calc(20% - 12px);
-      width: calc(20% - 12px);
-      padding: $padding-large-vertical * 0.6 $padding-small-horizontal 0 0;
-      &#edit-austrian-school-wrapper {
-        width: -webkit-calc(24% - 12px);
-        width: -moz-calc(24% - 12px);
-        width: calc(24% - 12px);
-      }
-      &.views-submit-button {
-        width: auto;
-        padding: $padding-large-vertical * 1.5625 0 0 0;
-        button {
-          width: 64px; // Wide enough for ajax throbber
-        }
-      }
-    }
-    &.views-widget-sort-by {
-      display: none;
-      width: 150px;
-      padding: 0 0 0 $padding-small-horizontal;
-      &.show {
-        display: inline-block;
-      }
-    }
   }
   #edit-book-type-wrapper {
     > label {
@@ -436,36 +471,10 @@ body.mises-daily {
       }
     }
   }
-  #edit-title-wrapper {
-    clear: both;
-    > label {
-      display: inline-block;
-      visibility: visible;
-      padding-right: $padding-xs-horizontal;
-    }
-    > .views-widget {
-      display: inline-block;
-    }
-    .form-item {
-      display: inline-block;
-      a {
-        padding: 0 4px;
-        &.active {
-          background-color: $btn-default-bg;
-          color: $white;
-        }
-      }
-    }
-  }
   #edit-author-wrapper {
     > label {
       visibility: visible;
     }
-  }
-  .views-reset-button {
-    visibility: visible;
-    padding: $padding-large-vertical * 1.5625 0 0 0;
-    float: right;
   }
 }
 /* FILTERED JOURNALS
@@ -495,6 +504,10 @@ body.mises-daily {
   #edit-author-wrapper,
   #edit-title-wrapper {
     clear: left;
+    float: left;
+    > label {
+      display: none;
+    }
   }
   #edit-author-wrapper,
   #edit-topic-wrapper,
