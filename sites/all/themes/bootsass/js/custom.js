@@ -150,7 +150,6 @@ var Drupal = Drupal || {};
         var y = date.getFullYear();
         var m = date.getMonth() + 1;
         var d = date.getDate();
-        console.log("date-"+y+"-"+m+"-"+d);
         $('.daily-filtered .views-row.date-'+y+'-'+m+'-'+d).addClass('today');
       };
       dailyToday();
