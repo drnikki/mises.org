@@ -82,7 +82,8 @@ function homepage_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['advanced_options'] = '{"fit":"1"}';
-  $handler->display->display_options['style_options']['views_slideshow_cycle2']['timeout'] = '3000';
+  $handler->display->display_options['style_options']['views_slideshow_cycle2']['transition_advanced'] = 1;
+  $handler->display->display_options['style_options']['views_slideshow_cycle2']['timeout'] = '4000';
   $handler->display->display_options['style_options']['views_slideshow_cycle2']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle2']['delay'] = '0';
   $handler->display->display_options['row_plugin'] = 'fields';

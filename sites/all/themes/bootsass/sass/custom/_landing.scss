@@ -19,6 +19,7 @@
 }
 /* HOMEPAGE HERO */
 .view-homepage-hero {
+  position: relative;
   .featured-block {
     position: relative;
     a {
@@ -52,6 +53,8 @@
         color: $gray-lighter;
       }
     }
+  }
+  .views-slideshow-controls-bottom {
   }
   #widget_pager_bottom_homepage_hero-block {
     position: absolute;
