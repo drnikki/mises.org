@@ -219,7 +219,7 @@
 }
 .page-taxonomy-term-147 {
   .landing-list {
-    .result-1 {
+    .today {
       background-color: $gray-lighter;
       .node-teaser {
         padding: 0;
@@ -313,21 +313,26 @@ body.mises-daily {
   .views-reset-button {
     button {
       @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
+      @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
     }
   }
   select {
     visibility: hidden;
   }
   .form-control {
-    padding: $padding-base-vertical $padding-small-horizontal;
+    padding: 0 $padding-small-horizontal;
+    height: auto;
   }
   .views-exposed-widget {
     padding: $padding-large-vertical * 0.6 $padding-small-horizontal 0 0;
     > label {
       visibility: hidden;
+      color: $gray;
+      font-size: $font-size-small;
     }
     .form-submit {
       margin-top: 0;
+      @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
     }
     &.views-widget-sort-by {
       display: none;
@@ -336,6 +341,10 @@ body.mises-daily {
       &.show {
         display: inline-block;
       }
+      label {
+        color: $gray;
+        font-size: $font-size-small;
+      }
     }
   }
   #edit-title-wrapper {
@@ -343,7 +352,6 @@ body.mises-daily {
     clear: both;
     float: none;
     padding: $padding-large-vertical 0 0;
-    text-align: center;
     > label {
       display: inline-block;
       visibility: visible;
@@ -464,6 +472,7 @@ body.mises-daily {
         a {
           @extend .btn;
           @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $brand-contrast-dark, $brand-contrast-dark);
+          @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
         }
       }
       > .form-item {
@@ -494,6 +503,7 @@ body.mises-daily {
       a {
         @extend .btn;
         @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $brand-contrast-dark, $brand-contrast-dark);
+        @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
       }
   }
   #edit-journal-wrapper {

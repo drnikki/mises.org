@@ -144,6 +144,17 @@ var Drupal = Drupal || {};
         }
       };
       
+      // Daily today's article
+      var dailyToday = function() {
+        var date = new Date();
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        var d = date.getDate();
+        console.log("date-"+y+"-"+m+"-"+d);
+        $('.daily-filtered .views-row.date-'+y+'-'+m+'-'+d).addClass('today');
+      };
+      dailyToday();
+      
       // Hide unneeded search-labels
       var hideSearchLabels = function() {
         var h1 = $('h1.page-header').text();
