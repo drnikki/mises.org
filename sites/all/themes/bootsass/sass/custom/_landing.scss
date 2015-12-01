@@ -324,7 +324,7 @@ body.mises-daily {
     height: auto;
   }
   .views-exposed-widget {
-    padding: $padding-large-vertical * 0.6 $padding-small-horizontal 0 0;
+    padding: $padding-base-vertical $padding-small-horizontal 0 0;
     > label {
       visibility: hidden;
       color: $gray;
@@ -351,7 +351,7 @@ body.mises-daily {
     @include clearfix;
     clear: both;
     float: none;
-    padding: $padding-large-vertical 0 0;
+    padding: $padding-base-vertical 0 0;
     > label {
       display: inline-block;
       visibility: visible;
@@ -390,14 +390,14 @@ body.mises-daily {
   }
   .views-submit-button {
     width: auto;
-    padding: $padding-large-vertical * 2.125 0 0 0;
+    padding: $padding-base-vertical * 5 0 0 0;
     button {
       width: 64px; // Wide enough for ajax throbber
     }
   }
   .views-reset-button {
     visibility: visible;
-    padding: $padding-large-vertical * 2.125 0 0 0;
+    padding: $padding-base-vertical * 5 0 0 0;
     float: right;
   }
   .filter-toggle {
