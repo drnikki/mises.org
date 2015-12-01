@@ -223,6 +223,7 @@
       background-color: $gray-lighter;
       .node-teaser {
         padding: 0;
+        margin-top: $grid-gutter-width;
         &:after {
           display: none;
         } 
@@ -251,9 +252,6 @@
     .group-right {
       padding: 20px 10px;
       }
-    }
-    .views-row-1 {
-      margin-top: $grid-gutter-width;
     }
   }
 }
