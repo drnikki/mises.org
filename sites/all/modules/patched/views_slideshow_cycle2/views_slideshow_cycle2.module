@@ -1,0 +1,184 @@
+<?php
+
+function views_slideshow_cycle2_libraries_info() {
+  $libraries['jquery.cycle2'] = array(
+    'name' => 'Cycle2',
+    'vendor url' => 'http://jquery.malsup.com/cycle2/',
+    'download url' => 'http://jquery.malsup.com/cycle2/download/',
+    'version arguments' => array(
+      'file' => 'jquery.cycle2.js',
+      // Version: BETA-20121030
+      'pattern' => '/ver.*? ([a-z0-9\-\.]+)/i',
+      'lines' => 5,
+    ),
+    'files' => array(
+      'js' => array('jquery.cycle2.js'),
+    ),
+    'variants' => array(
+      'minified' => array(
+        'version arguments' => array(
+          'file' => 'jquery.cycle2.min.js',
+        ),
+        'files' => array(
+          'js' => array('jquery.cycle2.min.js'),
+          // Version: BETA-20121030
+          'pattern' => '/ver.*? ([a-z0-9\-\.]+)/i',
+          'lines' => 5,
+        ),
+        'variant arguments' => array(
+          'variant' => 'minified',
+        ),
+        'variant callback' => '_views_slideshow_cycle2_detect_minified',
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+function views_slideshow_cycle2_libraries_info_alter(&$libraries) {
+  // Look for optional plugins and add them to the files array if available
+
+  $path = libraries_get_path('jquery.cycle2');
+  $plugins = file_scan_directory($path, '/jquery\.cycle2\..*?\.js/');
+
+  // We don't want effects from removed plugins hanging around
+  variable_set('views_slideshow_cycle2_plugin_effects', array());
+
+  foreach ($plugins as $plugin) {
+    if ($plugin->filename === 'jquery.cycle2.min.js') continue;
+
+    $libraries['jquery.cycle2']['variants']['minified']['files']['js'][$plugin->filename] = array('weight' => 1);
+    $libraries['jquery.cycle2']['files']['js'][$plugin->filename] = array('weight' => 1);
+
+    _views_slideshow_cycle2_inspect_plugin($plugin);
+  }
+}
+
+function _views_slideshow_cycle2_detect_minified($library) {
+  $library_path = DRUPAL_ROOT . '/' . $library['library path'] . '/';
+
+  return file_exists($library_path . 'jquery.cycle2.min.js');
+}
+
+function _views_slideshow_cycle2_load_js($module_path = null, $settings = null) {
+  if (empty($module_path)) {
+    $module_path = drupal_get_path('module', 'views_slideshow_cycle2');
+  }
+
+  if (!empty($settings)) {
+    drupal_add_js(array('viewsSlideshowCycle2' => $settings), 'setting');
+  }
+
+  drupal_add_js($module_path . '/js/views_slideshow_cycle2.js');
+
+  $cycle2 = libraries_detect('jquery.cycle2');
+  
+  if ($cycle2['installed'] || _views_slideshow_cycle2_detect_minified($cycle2)) {
+    if (!$cycle2['installed']) {
+      $cycle2 = libraries_load('jquery.cycle2', 'minified');
+    }
+
+    if ($load = libraries_load_files($cycle2)) {
+      foreach ($settings as $options) {
+        _views_slideshow_cycle2_load_effect_plugin($options['effect']);
+      }
+    }
+
+    return $load;
+  } else {
+    // Cycle2 is missing entirely.
+    // TODO: Make loud noises
+    return false;
+  }
+}
+
+function _views_slideshow_cycle2_inspect_plugin($plugin) {
+  $contents = file_get_contents(DRUPAL_ROOT . '/' . $plugin->uri);
+  $effects = views_slideshow_cycle2_get_plugin_effects();
+  
+  // Look for fn.cycle.transitions
+  preg_match_all('/fn.cycle.transitions.([a-z]+)?/i', $contents, $matches);
+
+  foreach ($matches[1] as $transition) {
+    $effects[$transition] = $plugin->uri;
+  }
+
+  variable_set('views_slideshow_cycle2_plugin_effects', serialize($effects));
+}
+
+/**
+ * Check if an effect is provided by a plugin, and load it if so.
+ */
+function _views_slideshow_cycle2_load_effect_plugin($effect) {
+    $plugin_effects = views_slideshow_cycle2_get_plugin_effects();
+
+    if (isset($plugin_effects[$effect])) {
+      drupal_add_js($plugin_effects[$effect]);
+    }
+}
+
+/**
+ * Describe additional effects from plugins.
+ */
+function views_slideshow_cycle2_get_plugin_effects() {
+  $effects = variable_get('views_slideshow_cycle2_plugin_effects', array());
+
+  if (is_string($effects)) {
+    $effects = unserialize($effects);
+  }
+
+  return $effects;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function views_slideshow_cycle2_theme($existing, $type, $theme, $path) {
+  return array(
+    'views_slideshow_cycle2' => array(
+      'variables' => array('view' => NULL, 'settings' => array(), 'rows' => array(), 'title' => ''),
+      'template' => 'theme/views-slideshow-cycle2',
+      'file' => 'theme/views_slideshow_cycle2.theme.inc',
+      'pattern' => 'views_slideshow_cycle2__',
+    ),
+    'views_slideshow_cycle2_main_frame' => array(
+      'variables' => array('vss_id' => NULL, 'view' => NULL, 'settings' => NULL, 'rows' => NULL),
+      'template' => 'theme/views-slideshow-cycle2-main-frame',
+      'pattern' => 'views_slideshow_cycle2_main_frame__',
+    ),
+    'views_slideshow_cycle2_main_frame_row' => array(
+      'variables' => array('vss_id' => NULL, 'items' => NULL, 'count' => NULL, 'view' => NULL),
+      'template' => 'theme/views-slideshow-cycle2-main-frame-row',
+      'pattern' => 'views_slideshow_cycle2_main_frame_row__',
+    ),
+    'views_slideshow_cycle2_main_frame_row_item' => array(
+      'variables' => array('item' => NULL, 'item_count' => NULL, 'count' => NULL, 'view' => NULL),
+      'template' => 'theme/views-slideshow-cycle2-main-frame-row-item',
+      'views_slideshow_cycle2_main_frame_row_item__',
+    ),
+  );
+}
+
+/**
+ * Need to have preprocess functions here because drupal doesn't cache them
+ * correctly in the theme.inc file.
+ *
+ * If you would like to override the preprocess functions make sure to look at
+ * the associated function in theme.inc.
+ */
+
+// Trying to make sure the theme.inc get's loaded.
+include_once('theme/views_slideshow_cycle2.theme.inc');
+
+function template_preprocess_views_slideshow_cycle2_main_frame(&$vars) {
+  _views_slideshow_cycle2_preprocess_views_slideshow_cycle2_main_frame($vars);
+}
+
+function template_preprocess_views_slideshow_cycle2_main_frame_row(&$vars) {
+  _views_slideshow_cycle2_preprocess_views_slideshow_cycle2_main_frame_row($vars);
+}
+
+function template_preprocess_views_slideshow_cycle2_main_frame_row_item(&$vars) {
+  _views_slideshow_cycle2_preprocess_views_slideshow_cycle2_main_frame_row_item($vars);
+}

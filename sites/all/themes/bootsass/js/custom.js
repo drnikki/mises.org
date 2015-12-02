@@ -89,6 +89,19 @@ var Drupal = Drupal || {};
         $('.landing-submit').wrapAll('<div class="filtered-submit"></div>');
       };
       filteredSubmit();
+
+      // Home Page Hero slideshow
+      var homeHero = function() {
+        var hhPager = $('#widget_pager_bottom_homepage_hero-block > div');
+        var hhPagerWidth = (100 / $(hhPager).length) + '%';
+        //console.log(hhPagerWidth);
+        $(hhPager).each(function () {
+          $(this).css('width',hhPagerWidth);
+        });
+        $('.views-slideshow-controls-text-previous').html('<span class="glyphicon glyphicon-chevron-left"></span>');        
+        $('.views-slideshow-controls-text-next').html('<span class="glyphicon glyphicon-chevron-right"></span>');        
+      };
+      homeHero();
       
       // Filtered Journals -- connect .filter-triggers to options
       var journalsFilters = function() {
@@ -119,7 +132,7 @@ var Drupal = Drupal || {};
         if ($('#edit-journal').length) {
           var $journal = $('#edit-journal');
           $('a[href="#edit-journal"]').click(function () {
-            console.log('clicked filter trigger');
+            //console.log('clicked filter trigger');
             if ($(this).hasClass('active')) {
               $(this).removeClass('active');
               $journal.val('All');
