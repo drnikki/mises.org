@@ -22,6 +22,7 @@ function term_landing_page_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -901,7 +902,7 @@ function term_landing_page_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'Authors',
+        'any_label' => 'Author',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -951,7 +952,7 @@ function term_landing_page_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'Topics',
+        'any_label' => 'Topic',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -1051,7 +1052,7 @@ function term_landing_page_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'Levels',
+        'any_label' => 'Level',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -2377,168 +2378,6 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['filters']['field_journal_year_value_selective']['selective_items_limit'] = '100';
   $handler->display->display_options['path'] = 'taxonomy/term/%';
 
-  /* Display: Author Entity Reference */
-  $handler = $view->new_display('entityreference', 'Author Entity Reference', 'entityreference_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'entityreference_style';
-  $handler->display->display_options['style_options']['search_fields'] = array(
-    'title' => 'title',
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last name (field_last_name) */
-  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
-  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
-  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'person_profile' => 'person_profile',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Type of Profile (field_profile_type) */
-  $handler->display->display_options['filters']['field_profile_type_target_id']['id'] = 'field_profile_type_target_id';
-  $handler->display->display_options['filters']['field_profile_type_target_id']['table'] = 'field_data_field_profile_type';
-  $handler->display->display_options['filters']['field_profile_type_target_id']['field'] = 'field_profile_type_target_id';
-  $handler->display->display_options['filters']['field_profile_type_target_id']['value'] = array(
-    201 => '201',
-  );
-
-  /* Display: Book Author Entity Reference */
-  $handler = $view->new_display('entityreference', 'Book Author Entity Reference', 'entityreference_2');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'entityreference_style';
-  $handler->display->display_options['style_options']['search_fields'] = array(
-    'title' => 'title',
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last name (field_last_name) */
-  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
-  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
-  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'person_profile' => 'person_profile',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Type of Profile (field_profile_type) */
-  $handler->display->display_options['filters']['field_profile_type_target_id']['id'] = 'field_profile_type_target_id';
-  $handler->display->display_options['filters']['field_profile_type_target_id']['table'] = 'field_data_field_profile_type';
-  $handler->display->display_options['filters']['field_profile_type_target_id']['field'] = 'field_profile_type_target_id';
-  $handler->display->display_options['filters']['field_profile_type_target_id']['value'] = array(
-    569 => '569',
-  );
-
-  /* Display: Journal Author Entity Reference */
-  $handler = $view->new_display('entityreference', 'Journal Author Entity Reference', 'entityreference_3');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'entityreference_style';
-  $handler->display->display_options['style_options']['search_fields'] = array(
-    'title' => 'title',
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last name (field_last_name) */
-  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
-  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
-  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'person_profile' => 'person_profile',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Type of Profile (field_profile_type) */
-  $handler->display->display_options['filters']['field_profile_type_target_id']['id'] = 'field_profile_type_target_id';
-  $handler->display->display_options['filters']['field_profile_type_target_id']['table'] = 'field_data_field_profile_type';
-  $handler->display->display_options['filters']['field_profile_type_target_id']['field'] = 'field_profile_type_target_id';
-  $handler->display->display_options['filters']['field_profile_type_target_id']['value'] = array(
-    572 => '572',
-  );
-
   /* Display: Daily Filtered Term Landing */
   $handler = $view->new_display('page', 'Daily Filtered Term Landing', 'page_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -2619,7 +2458,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'Authors',
+        'any_label' => 'Author',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -2669,7 +2508,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'Topics',
+        'any_label' => 'Topic',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -2769,7 +2608,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'Levels',
+        'any_label' => 'Level',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -3088,34 +2927,34 @@ Quarterly Journal of Austrian Economics|Other Journals',
       'value' => 'T',
     ),
     21 => array(
-      'title' => 'Y',
+      'title' => 'U',
       'operator' => 'starts',
-      'value' => 'Y',
+      'value' => 'U',
     ),
     22 => array(
-      'title' => 'Z',
-      'operator' => 'starts',
-      'value' => 'Z',
-    ),
-    23 => array(
-      'title' => 'X',
-      'operator' => 'starts',
-      'value' => 'X',
-    ),
-    24 => array(
-      'title' => 'W',
-      'operator' => 'starts',
-      'value' => 'W',
-    ),
-    25 => array(
       'title' => 'V',
       'operator' => 'starts',
       'value' => 'V',
     ),
-    26 => array(
-      'title' => 'U',
+    23 => array(
+      'title' => 'W',
       'operator' => 'starts',
-      'value' => 'U',
+      'value' => 'W',
+    ),
+    24 => array(
+      'title' => 'X',
+      'operator' => 'starts',
+      'value' => 'X',
+    ),
+    25 => array(
+      'title' => 'Y',
+      'operator' => 'starts',
+      'value' => 'Y',
+    ),
+    26 => array(
+      'title' => 'Z',
+      'operator' => 'starts',
+      'value' => 'Z',
     ),
   );
   /* Filter criterion: Field: Author (field_author_1) (reference filter) */
@@ -3141,7 +2980,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
     7 => 0,
   );
   $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['expose']['hide_empty_filter'] = FALSE;
-  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['reference_display'] = 'filtered_landing_term_page:entityreference_1';
+  $handler->display->display_options['filters']['field_author_1_target_id_entityreference_filter']['reference_display'] = 'filtered_landing_term_page:entityreference_4';
   /* Filter criterion: Content: Topics (field_topics) */
   $handler->display->display_options['filters']['field_topics_target_id']['id'] = 'field_topics_target_id';
   $handler->display->display_options['filters']['field_topics_target_id']['table'] = 'field_data_field_topics';
@@ -3209,6 +3048,168 @@ Quarterly Journal of Austrian Economics|Other Journals',
     7 => 0,
   );
   $handler->display->display_options['path'] = 'taxonomy/term/%';
+
+  /* Display: Author Entity Reference */
+  $handler = $view->new_display('entityreference', 'Author Entity Reference', 'entityreference_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Last name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'person_profile' => 'person_profile',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type of Profile (field_profile_type) */
+  $handler->display->display_options['filters']['field_profile_type_target_id']['id'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['table'] = 'field_data_field_profile_type';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['field'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['value'] = array(
+    201 => '201',
+  );
+
+  /* Display: Book Author Entity Reference */
+  $handler = $view->new_display('entityreference', 'Book Author Entity Reference', 'entityreference_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Last name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'person_profile' => 'person_profile',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type of Profile (field_profile_type) */
+  $handler->display->display_options['filters']['field_profile_type_target_id']['id'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['table'] = 'field_data_field_profile_type';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['field'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['value'] = array(
+    569 => '569',
+  );
+
+  /* Display: Journal Author Entity Reference */
+  $handler = $view->new_display('entityreference', 'Journal Author Entity Reference', 'entityreference_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Last name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'person_profile' => 'person_profile',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Type of Profile (field_profile_type) */
+  $handler->display->display_options['filters']['field_profile_type_target_id']['id'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['table'] = 'field_data_field_profile_type';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['field'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['value'] = array(
+    572 => '572',
+  );
 
   /* Display: Columnist Profile Entity Reference */
   $handler = $view->new_display('entityreference', 'Columnist Profile Entity Reference', 'entityreference_4');

@@ -337,6 +337,7 @@ body.mises-daily {
     }
     &.views-widget-sort-by {
       display: none;
+      float: right;
       width: 150px;
       padding: 0 0 0 $padding-small-horizontal;
       &.show {
@@ -391,14 +392,14 @@ body.mises-daily {
   }
   .views-submit-button {
     width: auto;
-    padding: $padding-base-vertical * 5 0 0 0;
+    padding: $padding-base-vertical * 5 + 1 0 0 0;
     button {
       width: 64px; // Wide enough for ajax throbber
     }
   }
   .views-reset-button {
     visibility: visible;
-    padding: $padding-base-vertical * 5 0 0 0;
+    padding: $padding-base-vertical * 5 + 1 0 0 0;
     float: right;
   }
   .filter-toggle {
@@ -432,6 +433,8 @@ body.mises-daily {
 .selectBox-dropdown {
   .selectBox-label {
     padding: 0;
+    position: relative;
+    top: -2px;
   }
   .selectBox-arrow {
     border-left-color: $input-border;
