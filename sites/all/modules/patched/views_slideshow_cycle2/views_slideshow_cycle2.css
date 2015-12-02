@@ -1,0 +1,27 @@
+
+.views_slideshow_cycle2_no_display,
+.views_slideshow_cycle2_hidden,
+.views_slideshow_cycle2_controls,
+.views_slideshow_cycle2_image_count {
+  display: none;
+}
+
+/* Pager Settings */
+
+.views_slideshow_cycle2_pager div a img {
+  width: 75px;
+  height: 75px;
+}
+
+.views_slideshow_pager_numbered div, .views_slideshow_pager_thumbnails div {
+  display: inline;
+  padding-left: 10px;
+}
+
+.views_slideshow_cycle2_pager.thumbnails a.activeSlide img {
+  border: 3px solid #000;
+}
+
+.views_slideshow_cycle2_pager.numbered a.activeSlide {
+  text-decoration: underline;
+}
