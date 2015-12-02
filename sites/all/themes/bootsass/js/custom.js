@@ -83,6 +83,19 @@ var Drupal = Drupal || {};
 
       };
       
+      // Home Page Hero slideshow
+      var homeHero = function() {
+        var hhPager = $('#widget_pager_bottom_homepage_hero-block > div');
+        var hhPagerWidth = (100 / $(hhPager).length) + '%';
+        console.log(hhPagerWidth);
+        $(hhPager).each(function () {
+          $(this).css('width',hhPagerWidth);
+        });
+        $('.views-slideshow-controls-text-previous').html('<span class="glyphicon glyphicon-chevron-left"></span>');        
+        $('.views-slideshow-controls-text-next').html('<span class="glyphicon glyphicon-chevron-right"></span>');        
+      };
+      homeHero();
+      
       // Filtered Journals -- connect .filter-triggers to options
       var journalsFilters = function() {
         $('#edit-journal option').each(function() {
