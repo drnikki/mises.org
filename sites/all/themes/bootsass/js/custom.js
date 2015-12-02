@@ -87,7 +87,7 @@ var Drupal = Drupal || {};
       var homeHero = function() {
         var hhPager = $('#widget_pager_bottom_homepage_hero-block > div');
         var hhPagerWidth = (100 / $(hhPager).length) + '%';
-        console.log(hhPagerWidth);
+        //console.log(hhPagerWidth);
         $(hhPager).each(function () {
           $(this).css('width',hhPagerWidth);
         });
@@ -125,7 +125,7 @@ var Drupal = Drupal || {};
         if ($('#edit-journal').length) {
           var $journal = $('#edit-journal');
           $('a[href="#edit-journal"]').click(function () {
-            console.log('clicked filter trigger');
+            //console.log('clicked filter trigger');
             if ($(this).hasClass('active')) {
               $(this).removeClass('active');
               $journal.val('All');
@@ -143,7 +143,7 @@ var Drupal = Drupal || {};
       // Hide unneeded search-labels
       var hideSearchLabels = function() {
         var h1 = $('h1.page-header').text();
-        console.log('h1.page-header ',h1);
+        //console.log('h1.page-header ',h1);
         $('.search-label').each(function(i){
           var label = $(this).text();
           console.log('label ',label);
