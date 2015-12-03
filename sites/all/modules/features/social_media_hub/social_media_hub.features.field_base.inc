@@ -10,7 +10,7 @@
 function social_media_hub_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_main_pages'
+  // Exported field_base: 'field_main_pages'.
   $field_bases['field_main_pages'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -41,7 +41,7 @@ function social_media_hub_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_platform_icon'
+  // Exported field_base: 'field_platform_icon'.
   $field_bases['field_platform_icon'] = array(
     'active' => 1,
     'cardinality' => 1,

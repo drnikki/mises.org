@@ -10,6 +10,7 @@ dependencies[] = features
 dependencies[] = field_group
 dependencies[] = image
 dependencies[] = link
+dependencies[] = mises_pathauto
 dependencies[] = mises_social_media_configuration
 dependencies[] = strongarm
 dependencies[] = views
