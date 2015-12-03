@@ -10,7 +10,7 @@
 function social_media_hub_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-social_media-field_main_pages'
+  // Exported field_instance: 'node-social_media-field_main_pages'.
   $field_instances['node-social_media-field_main_pages'] = array(
     'bundle' => 'social_media',
     'default_value' => NULL,
@@ -69,7 +69,7 @@ function social_media_hub_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media-field_platform_icon'
+  // Exported field_instance: 'node-social_media-field_platform_icon'.
   $field_instances['node-social_media-field_platform_icon'] = array(
     'bundle' => 'social_media',
     'deleted' => 0,
