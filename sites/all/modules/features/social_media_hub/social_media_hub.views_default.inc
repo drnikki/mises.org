@@ -406,7 +406,7 @@ if($url == \'playlist\') {
 $url = arg(4) ?:  \'misesinstitute\';
 ?>
 
-<iframe src="https://widget.stagram.com/in/<?php print $url;?>/?s=115&w=4&h=6&b=0&p=10" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:500px; height: 750px" ></iframe> <!-- websta - web.stagram.com -->';
+<iframe src="http://widget.stagram.com/in/<?php print $url;?>/?s=115&w=4&h=6&b=0&p=10" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:500px; height: 750px" ></iframe> <!-- websta - web.stagram.com -->';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
