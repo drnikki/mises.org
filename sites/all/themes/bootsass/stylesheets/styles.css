@@ -2600,15 +2600,15 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .landing-list h2.teaser-title { margin-top: 0; }
 .landing-list .view-footer span.glyphicon { width: 22px; height: 22px; text-align: center; font-size: 11px; line-height: 22px; }
 
-.page-taxonomy-term-147 .landing-list .result-1 { background-color: #e4ebee; }
-.page-taxonomy-term-147 .landing-list .result-1 .node-teaser { padding: 0; }
-.page-taxonomy-term-147 .landing-list .result-1 .node-teaser:after { display: none; }
-.page-taxonomy-term-147 .landing-list .result-1 .group-right:before { display: block; content: "Today's Article"; }
-.page-taxonomy-term-147 .landing-list .result-1 .group-right:first-child { padding-left: 20px; }
-.page-taxonomy-term-147 .landing-list .result-1 .image { margin-top: 0; }
-.page-taxonomy-term-147 .landing-list .result-1 .tags { margin-top: 0; padding: 10px; background-color: #38709e; color: #fff; }
-.page-taxonomy-term-147 .landing-list .result-1 .tags a { color: #fff; }
-.page-taxonomy-term-147 .landing-list .result-1 .group-right { padding: 20px 10px; }
+.page-taxonomy-term-147 .landing-list .today { background-color: #e4ebee; }
+.page-taxonomy-term-147 .landing-list .today .node-teaser { padding: 0; margin-top: 20px; }
+.page-taxonomy-term-147 .landing-list .today .node-teaser:after { display: none; }
+.page-taxonomy-term-147 .landing-list .today .group-right:before { display: block; content: "Today's Article"; }
+.page-taxonomy-term-147 .landing-list .today .group-right:first-child { padding-left: 20px; }
+.page-taxonomy-term-147 .landing-list .today .image { margin-top: 0; }
+.page-taxonomy-term-147 .landing-list .today .tags { margin-top: 0; padding: 10px; background-color: #38709e; color: #fff; }
+.page-taxonomy-term-147 .landing-list .today .tags a { color: #fff; }
+.page-taxonomy-term-147 .landing-list .today .group-right { padding: 20px 10px; }
 
 /* LANDING PAGE */
 .node-landing-page.view-mode-full h2.teaser-title { margin-top: 6px; }
@@ -2631,7 +2631,7 @@ body.mises-daily #block-views-term-description-block { display: none; }
 * used on Filtered Landing - Term Page view
 * Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_4
 */
-.landing-list .views-reset-button button { border-color: #788086; background-color: #788086; color: #fff; }
+.landing-list .views-reset-button button { border-color: #788086; background-color: #788086; color: #fff; padding: 1px 12px; font-size: 15px; line-height: 1.66667; border-radius: 0px; }
 .landing-list .views-reset-button button:hover, .landing-list .views-reset-button button:focus { border-color: #60666b; background-color: #60666b; color: #fff; }
 .landing-list .views-reset-button button:active, .landing-list .views-reset-button button.active { border-color: #788086; background-color: #788086; background-image: none; box-shadow: none; color: #fff; }
 .landing-list .views-reset-button button.disabled, .landing-list .views-reset-button button.disabled:hover, .landing-list .views-reset-button button.disabled:focus, .landing-list .views-reset-button button.disabled:active, .landing-list .views-reset-button button.disabled.active, .landing-list .views-reset-button button[disabled], .landing-list .views-reset-button button[disabled]:hover, .landing-list .views-reset-button button[disabled]:focus, .landing-list .views-reset-button button[disabled]:active, .landing-list .views-reset-button button[disabled].active, fieldset[disabled] .landing-list .views-reset-button button, fieldset[disabled] .landing-list .views-reset-button button:hover, fieldset[disabled] .landing-list .views-reset-button button:focus, fieldset[disabled] .landing-list .views-reset-button button:active, fieldset[disabled] .landing-list .views-reset-button button.active { border-color: #788086; background-color: #788086; }
@@ -2639,14 +2639,33 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .landing-list .views-reset-button button a:hover { color: #fff; text-decoration: none; }
 .landing-list .views-reset-button button .badge { background-color: #fff; color: #788086; }
 .landing-list select { visibility: hidden; }
-.landing-list .form-control { padding: 6px 10px; }
-.landing-list .views-exposed-widget > label { display: none; }
-.landing-list .views-exposed-widget .form-submit { margin-top: 0; }
+.landing-list .form-control { padding: 0 10px; height: auto; }
+.landing-list .views-exposed-widget { padding: 6px 10px 0 0; }
+.landing-list .views-exposed-widget > label { visibility: hidden; color: #788086; font-size: 13px; }
+.landing-list .views-exposed-widget .form-submit { margin-top: 0; padding: 1px 12px; font-size: 15px; line-height: 1.66667; border-radius: 0px; }
+.landing-list .views-exposed-widget.views-widget-sort-by { display: none; float: right; width: 150px; padding: 0 0 0 10px; }
+.landing-list .views-exposed-widget.views-widget-sort-by.show { display: inline-block; }
+.landing-list .views-exposed-widget.views-widget-sort-by label { color: #788086; font-size: 13px; }
+.landing-list #edit-title-wrapper { clear: both; float: none; padding: 6px 0 0; }
+.landing-list #edit-title-wrapper:before, .landing-list #edit-title-wrapper:after { content: " "; display: table; }
+.landing-list #edit-title-wrapper:after { clear: both; }
+.landing-list #edit-title-wrapper > label { display: inline-block; visibility: visible; padding-right: 5px; }
+.landing-list #edit-title-wrapper > .views-widget { display: inline-block; }
+.landing-list #edit-title-wrapper .form-item { display: inline-block; }
+.landing-list #edit-title-wrapper .form-item a { padding: 0 4px; }
+.landing-list #edit-title-wrapper .form-item a.active { background-color: #38709e; color: #fff; }
+.landing-list #edit-author-wrapper, .landing-list #edit-topic-wrapper, .landing-list #edit-level-wrapper { width: -webkit-calc(20% - 10px); width: -moz-calc(20% - 10px); width: calc(20% - 10px); }
+.landing-list #edit-author-wrapper > label { visibility: visible; }
+.landing-list #edit-austrian-school-wrapper { width: -webkit-calc(24% - 10px); width: -moz-calc(24% - 10px); width: calc(24% - 10px); }
+.landing-list .views-submit-button { width: auto; padding: 31px 0 0 0; }
+.landing-list .views-submit-button button { width: 64px; }
+.landing-list .views-reset-button { visibility: visible; padding: 31px 0 0 0; float: right; }
 .landing-list .filter-toggle { text-transform: uppercase; cursor: pointer; }
 .landing-list .filter-toggle .glyphicon, .landing-list .filter-toggle .pagination > li.prev a, .pagination > li.prev .landing-list .filter-toggle a, .landing-list .filter-toggle .pagination > li.next a, .pagination > li.next .landing-list .filter-toggle a, .landing-list .filter-toggle .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-prev .landing-list .filter-toggle a, .landing-list .filter-toggle .sidebar .pager > li.date-next a, .sidebar .pager > li.date-next .landing-list .filter-toggle a { margin-right: 0; color: #206093; background-color: #fff; -webkit-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease; }
 .landing-list .filter-toggle.open .glyphicon, .landing-list .filter-toggle.open .pagination > li.prev a, .pagination > li.prev .landing-list .filter-toggle.open a, .landing-list .filter-toggle.open .pagination > li.next a, .pagination > li.next .landing-list .filter-toggle.open a, .landing-list .filter-toggle.open .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-prev .landing-list .filter-toggle.open a, .landing-list .filter-toggle.open .sidebar .pager > li.date-next a, .sidebar .pager > li.date-next .landing-list .filter-toggle.open a { -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg); }
+.landing-list .views-widget-sort-order { display: none; }
 
-.selectBox-dropdown .selectBox-label { padding: 0; }
+.selectBox-dropdown .selectBox-label { padding: 0; position: relative; top: -2px; }
 .selectBox-dropdown .selectBox-arrow { border-left-color: #ccc; }
 
 .selectBox-dropdown-menu { overflow: auto !important; }
@@ -2660,19 +2679,14 @@ body.mises-daily #block-views-term-description-block { display: none; }
 * used on Filtered Landing - Term Page view
 * Book Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_1
 */
-.filtered-books .views-exposed-widget#edit-book-type-wrapper { float: none; padding: 0; }
+.filtered-books .views-exposed-widgets { clear: both; }
+.filtered-books .views-exposed-widget#edit-book-type-wrapper { float: left; padding: 0; }
 .filtered-books .views-exposed-widget#edit-book-type-wrapper:before, .filtered-books .views-exposed-widget#edit-book-type-wrapper:after { content: " "; display: table; }
 .filtered-books .views-exposed-widget#edit-book-type-wrapper:after { clear: both; }
-.filtered-books .views-exposed-widget#edit-title-wrapper { float: none; padding: 16px 0 0; text-align: center; }
-.filtered-books .views-exposed-widget#edit-title-wrapper:before, .filtered-books .views-exposed-widget#edit-title-wrapper:after { content: " "; display: table; }
-.filtered-books .views-exposed-widget#edit-title-wrapper:after { clear: both; }
-.filtered-books .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button) { width: -webkit-calc(23% - 12px); width: -moz-calc(23% - 12px); width: calc(23% - 12px); padding: 16px 10px 0 0; }
-.filtered-books .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button)#edit-austrian-school-wrapper { width: -webkit-calc(31% - 12px); width: -moz-calc(31% - 12px); width: calc(31% - 12px); }
-.filtered-books .views-exposed-widget:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button).views-submit-button { width: auto; float: right; padding-right: 0; }
-.filtered-books .views-reset-button { display: inline-block; padding: 0; float: none; visibility: hidden; }
+.filtered-books #edit-book-type-wrapper > label { visibility: visible; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links { text-align: right; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item { display: inline-block; }
-.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a { border-color: #38709e; background-color: #38709e; color: #fff; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a { border-color: #38709e; background-color: #38709e; color: #fff; padding: 1px 12px; font-size: 15px; line-height: 1.66667; border-radius: 0px; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:hover, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:focus { border-color: #2b5578; background-color: #2b5578; color: #fff; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:active, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.active { border-color: #46763a; background-color: #46763a; background-image: none; box-shadow: none; color: #fff; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.disabled, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.disabled:hover, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.disabled:focus, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.disabled:active, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.disabled.active, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a[disabled], .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a[disabled]:hover, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a[disabled]:focus, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a[disabled]:active, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a[disabled].active, fieldset[disabled] .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a, fieldset[disabled] .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:hover, fieldset[disabled] .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:focus, fieldset[disabled] .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:active, fieldset[disabled] .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.active { border-color: #38709e; background-color: #38709e; }
@@ -2680,16 +2694,15 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a a:hover { color: #fff; text-decoration: none; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a .badge { background-color: #fff; color: #38709e; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links > .form-item { float: right; }
-.filtered-books #edit-title-wrapper .form-item { display: inline-block; }
-.filtered-books #edit-title-wrapper .form-item a { padding: 0 5px; }
-.filtered-books #edit-title-wrapper .form-item a.active { background-color: #38709e; color: #fff; }
+.filtered-books #edit-author-wrapper > label { visibility: visible; }
 
 /* FILTERED JOURNALS
 * used on Filtered Landing - Term Page view
 * Journals Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_2
 */
+.filtered-journals .views-exposed-widget > label { display: none; }
 .filtered-journals .filter-triggers { padding: 10px 0 0 0; width: 56%; float: left; }
-.filtered-journals .filter-triggers a { border-color: #38709e; background-color: #38709e; color: #fff; }
+.filtered-journals .filter-triggers a { border-color: #38709e; background-color: #38709e; color: #fff; padding: 1px 12px; font-size: 15px; line-height: 1.66667; border-radius: 0px; }
 .filtered-journals .filter-triggers a:hover, .filtered-journals .filter-triggers a:focus { border-color: #2b5578; background-color: #2b5578; color: #fff; }
 .filtered-journals .filter-triggers a:active, .filtered-journals .filter-triggers a.active { border-color: #46763a; background-color: #46763a; background-image: none; box-shadow: none; color: #fff; }
 .filtered-journals .filter-triggers a.disabled, .filtered-journals .filter-triggers a.disabled:hover, .filtered-journals .filter-triggers a.disabled:focus, .filtered-journals .filter-triggers a.disabled:active, .filtered-journals .filter-triggers a.disabled.active, .filtered-journals .filter-triggers a[disabled], .filtered-journals .filter-triggers a[disabled]:hover, .filtered-journals .filter-triggers a[disabled]:focus, .filtered-journals .filter-triggers a[disabled]:active, .filtered-journals .filter-triggers a[disabled].active, fieldset[disabled] .filtered-journals .filter-triggers a, fieldset[disabled] .filtered-journals .filter-triggers a:hover, fieldset[disabled] .filtered-journals .filter-triggers a:focus, fieldset[disabled] .filtered-journals .filter-triggers a:active, fieldset[disabled] .filtered-journals .filter-triggers a.active { border-color: #38709e; background-color: #38709e; }
@@ -2697,7 +2710,8 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .filtered-journals .filter-triggers a a:hover { color: #fff; text-decoration: none; }
 .filtered-journals .filter-triggers a .badge { background-color: #fff; color: #38709e; }
 .filtered-journals #edit-journal-wrapper { padding: 10px 0 0 0; float: right; width: 44%; }
-.filtered-journals #edit-author-wrapper, .filtered-journals #edit-title-wrapper { clear: left; }
+.filtered-journals #edit-author-wrapper, .filtered-journals #edit-title-wrapper { clear: left; float: left; }
+.filtered-journals #edit-author-wrapper > label, .filtered-journals #edit-title-wrapper > label { display: none; }
 .filtered-journals #edit-author-wrapper, .filtered-journals #edit-topic-wrapper, .filtered-journals #edit-austrian-school-wrapper, .filtered-journals #edit-title-wrapper { width: -webkit-calc(34% - 5px); width: -moz-calc(34% - 5px); width: calc(34% - 5px); padding: 10px 10px 0 0; }
 .filtered-journals #edit-austrian-school-wrapper { padding-right: 0; }
 .filtered-journals #edit-vol-wrapper, .filtered-journals #edit-no-wrapper { width: -webkit-calc(16.5% - 5px); width: -moz-calc(16.5% - 5px); width: calc(16.5% - 5px); padding: 10px 10px 0 0; }

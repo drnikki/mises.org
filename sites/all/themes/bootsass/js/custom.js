@@ -83,6 +83,13 @@ var Drupal = Drupal || {};
 
       };
       
+      // Filtered landing page submit wrapper.
+      var filteredSubmit = function() {
+        $('.landing-list .views-submit-button, .landing-list .views-reset-button').addClass('landing-submit');
+        $('.landing-submit').wrapAll('<div class="filtered-submit"></div>');
+      };
+      filteredSubmit();
+
       // Home Page Hero slideshow
       var homeHero = function() {
         var hhPager = $('#widget_pager_bottom_homepage_hero-block > div');
@@ -140,13 +147,31 @@ var Drupal = Drupal || {};
         }
       };
       
+      // Books filter fields manipulation
+      var booksFilters = function(){
+        if ($('#edit-book-type-wrapper').length) {
+          $('#edit-book-type-wrapper').insertBefore('.views-exposed-widgets');
+        }
+        if ($('.views-widget-sort-by').length) {
+          $('.views-widget-sort-by').insertBefore('.views-exposed-widgets').addClass('show');
+        }
+      };
+      
+      // Daily today's article
+      var dailyToday = function() {
+        var date = new Date();
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        var d = date.getDate();
+        $('.daily-filtered .views-row.date-'+y+'-'+m+'-'+d).addClass('today');
+      };
+      dailyToday();
+      
       // Hide unneeded search-labels
       var hideSearchLabels = function() {
         var h1 = $('h1.page-header').text();
-        //console.log('h1.page-header ',h1);
         $('.search-label').each(function(i){
           var label = $(this).text();
-          console.log('label ',label);
           if ((h1 == label) || (h1 == 'Mises Wire' && label == 'Blog') || (h1 == 'Mises Weekends' && label == 'Audio/Video')) {
             $(this).addClass('hidden');
           }
@@ -241,11 +266,7 @@ var Drupal = Drupal || {};
         homeFeature();
         
         // Filtered Term Landing
-        // Add select field styling
-        if ($('#edit-book-type-wrapper').length) {
-          $('.views-reset-button').appendTo('#edit-book-type-wrapper .bef-select-as-links > .form-item').css('visibility','visible');
-          $('#edit-book-type-wrapper').insertBefore('.views-exposed-widgets');
-        }
+        booksFilters();
         
         if ($('.filter-triggers').length) {
           $('.filter-triggers').prependTo($('.views-exposed-widgets'));
@@ -269,6 +290,7 @@ var Drupal = Drupal || {};
       $(document).ajaxComplete(function() {
         //console.log("Ajax complete");
         implementEqualHeight();
+        booksFilters();
         journalsFilters();
         editJournalTrigger();
         $('select:not(#edit-book-type):not(#edit-title)').selectBox({
