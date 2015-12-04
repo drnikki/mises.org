@@ -1862,12 +1862,13 @@ function display_suite_shared_ds_field_settings_info() {
     'field_author_1' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'author',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'author',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
