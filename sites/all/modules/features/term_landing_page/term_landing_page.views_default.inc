@@ -1960,7 +1960,7 @@ Quarterly Journal of Austrian Economics|Other Journals',
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['empty'] = TRUE;
   $handler->display->display_options['header']['result']['content'] = '<p class="text-right"><em>Displaying @start - @end of @total</em></p>
-<p>For best results, first select a journal (first row options). To fine-tune the results, select from the remaining filters.</p>';
+<p class="small">For best results, first select a journal (first row options). To fine-tune the results, select from the remaining filters.</p>';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
