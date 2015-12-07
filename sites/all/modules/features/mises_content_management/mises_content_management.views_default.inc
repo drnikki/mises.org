@@ -296,6 +296,27 @@ function mises_content_management_views_default_views() {
     9 => 0,
     7 => 0,
   );
+  /* Filter criterion: Content: Type of Profile (field_profile_type) */
+  $handler->display->display_options['filters']['field_profile_type_target_id']['id'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['table'] = 'field_data_field_profile_type';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['field'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_profile_type_target_id']['expose']['operator_id'] = 'field_profile_type_target_id_op';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['expose']['label'] = 'Profile Type';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['expose']['operator'] = 'field_profile_type_target_id_op';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['expose']['identifier'] = 'field_profile_type_target_id';
+  $handler->display->display_options['filters']['field_profile_type_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+    7 => 0,
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
@@ -397,9 +418,13 @@ function mises_content_management_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['ui_name'] = 'Header Text';
-  $handler->display->display_options['header']['area']['content'] = '<p>Listed below are all the nodes on the site with their Page Title (if set).</p>
-<p>Use the Featured column to check the Featured status of any page. </p>';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<p>Use the Featured column to check the Featured status of any page. </p>';
   $handler->display->display_options['header']['area']['format'] = 'simplified';
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -483,6 +508,20 @@ function mises_content_management_views_default_views() {
       ),
     ),
   );
+  /* Field: Content: Type of Profile */
+  $handler->display->display_options['fields']['field_profile_type']['id'] = 'field_profile_type';
+  $handler->display->display_options['fields']['field_profile_type']['table'] = 'field_data_field_profile_type';
+  $handler->display->display_options['fields']['field_profile_type']['field'] = 'field_profile_type';
+  $handler->display->display_options['fields']['field_profile_type']['label'] = 'Profile Type';
+  $handler->display->display_options['fields']['field_profile_type']['settings'] = array(
+    'link' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_profile_type']['delta_offset'] = '0';
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';

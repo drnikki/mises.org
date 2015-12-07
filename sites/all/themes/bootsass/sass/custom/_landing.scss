@@ -279,10 +279,11 @@
 }
 .page-taxonomy-term-147 {
   .landing-list {
-    .result-1 {
+    .today {
       background-color: $gray-lighter;
       .node-teaser {
         padding: 0;
+        margin-top: $grid-gutter-width;
         &:after {
           display: none;
         } 
@@ -373,21 +374,93 @@ body.mises-daily {
   .views-reset-button {
     button {
       @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
+      @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
     }
   }
   select {
     visibility: hidden;
   }
   .form-control {
-    padding: $padding-base-vertical $padding-small-horizontal;
+    padding: 0 $padding-small-horizontal;
+    height: auto;
   }
   .views-exposed-widget {
+    padding: $padding-base-vertical $padding-small-horizontal 0 0;
     > label {
-      display: none;
+      visibility: hidden;
+      color: $gray;
+      font-size: $font-size-small;
     }
     .form-submit {
       margin-top: 0;
+      @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
     }
+    &.views-widget-sort-by {
+      display: none;
+      float: right;
+      width: 150px;
+      padding: 0 0 0 $padding-small-horizontal;
+      &.show {
+        display: inline-block;
+      }
+      label {
+        color: $gray;
+        font-size: $font-size-small;
+      }
+    }
+  }
+  #edit-title-wrapper {
+    @include clearfix;
+    clear: both;
+    float: none;
+    padding: $padding-base-vertical 0 0;
+    > label {
+      display: inline-block;
+      visibility: visible;
+      padding-right: $padding-xs-horizontal;
+    }
+    > .views-widget {
+      display: inline-block;
+    }
+    .form-item {
+      display: inline-block;
+      a {
+        padding: 0 4px;
+        &.active {
+          background-color: $btn-default-bg;
+          color: $white;
+        }
+      }
+    }
+  }
+  #edit-author-wrapper,
+  #edit-topic-wrapper,
+  #edit-level-wrapper {
+    width: -webkit-calc(20% - 10px);
+    width: -moz-calc(20% - 10px);
+    width: calc(20% - 10px);
+  }
+  #edit-author-wrapper {
+    > label {
+      visibility: visible;
+    }
+  }
+  #edit-austrian-school-wrapper {
+    width: -webkit-calc(24% - 10px);
+    width: -moz-calc(24% - 10px);
+    width: calc(24% - 10px);
+  }
+  .views-submit-button {
+    width: auto;
+    padding: $padding-base-vertical * 5 + 1 0 0 0;
+    button {
+      width: 64px; // Wide enough for ajax throbber
+    }
+  }
+  .views-reset-button {
+    visibility: visible;
+    padding: $padding-base-vertical * 5 + 1 0 0 0;
+    float: right;
   }
   .filter-toggle {
     text-transform: uppercase;
@@ -412,10 +485,16 @@ body.mises-daily {
     //  max-height: 100px;
     //}
   }
+  // Hiding buggy element.
+  .views-widget-sort-order {
+    display: none;
+  }
 }
 .selectBox-dropdown {
   .selectBox-label {
     padding: 0;
+    position: relative;
+    top: -2px;
   }
   .selectBox-arrow {
     border-left-color: $input-border;
@@ -436,42 +515,20 @@ body.mises-daily {
 * Book Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_1
 */
 .filtered-books {
+  .views-exposed-widgets {
+    clear: both;
+  }
   .views-exposed-widget {
     &#edit-book-type-wrapper {
       @include clearfix;
-      float: none;
+      float: left;
       padding: 0;
     }
-    &#edit-title-wrapper {
-      @include clearfix;
-      float: none;
-      padding: $padding-large-vertical 0 0;
-      text-align: center;
-    }
-    &:not(#edit-book-type-wrapper):not(#edit-title-wrapper):not(.views-reset-button) {
-      width: -webkit-calc(23% - 12px);
-      width: -moz-calc(23% - 12px);
-      width: calc(23% - 12px);
-      padding: $padding-large-vertical $padding-small-horizontal 0 0;
-      &#edit-austrian-school-wrapper {
-        width: -webkit-calc(31% - 12px);
-        width: -moz-calc(31% - 12px);
-        width: calc(31% - 12px);
-      }
-      &.views-submit-button {
-        width: auto;
-        float: right;
-        padding-right: 0;
-      }
-    }
-  }
-  .views-reset-button {
-    display: inline-block;
-    padding: 0;
-    float: none;
-    visibility: hidden;
   }
   #edit-book-type-wrapper {
+    > label {
+      visibility: visible;
+    }
     .bef-select-as-links {
       text-align: right;
       .form-item {
@@ -479,6 +536,7 @@ body.mises-daily {
         a {
           @extend .btn;
           @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $brand-contrast-dark, $brand-contrast-dark);
+          @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
         }
       }
       > .form-item {
@@ -486,16 +544,9 @@ body.mises-daily {
       }
     }
   }
-  #edit-title-wrapper {
-    .form-item {
-      display: inline-block;
-      a {
-        padding: 0 $padding-xs-horizontal;
-        &.active {
-          background-color: $btn-default-bg;
-          color: $white;
-        }
-      }
+  #edit-author-wrapper {
+    > label {
+      visibility: visible;
     }
   }
 }
@@ -504,6 +555,11 @@ body.mises-daily {
 * Journals Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_2
 */
 .filtered-journals {
+  .views-exposed-widget {
+    > label {
+      display: none;
+    }
+  }
   .filter-triggers {
     padding: $padding-small-horizontal 0 0 0;
     width: 56%;
@@ -511,6 +567,7 @@ body.mises-daily {
       a {
         @extend .btn;
         @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $brand-contrast-dark, $brand-contrast-dark);
+        @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
       }
   }
   #edit-journal-wrapper {
@@ -521,6 +578,10 @@ body.mises-daily {
   #edit-author-wrapper,
   #edit-title-wrapper {
     clear: left;
+    float: left;
+    > label {
+      display: none;
+    }
   }
   #edit-author-wrapper,
   #edit-topic-wrapper,
