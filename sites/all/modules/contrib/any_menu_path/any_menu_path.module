@@ -197,3 +197,35 @@ function any_menu_path_view_paths() {
   return $html;
 }
 
+/**
+ * Implements hook_form_menu_overview_form_alter().
+ */
+function any_menu_path_form_menu_overview_form_alter(&$form) {
+  $form['#submit'][] = 'any_menu_path_form_menu_overview_submit';
+}
+
+/**
+ * A submit that sets the 'external' field of the overridden menu paths back to 1
+ * after the core menu module resets it after its validation.
+ */
+function any_menu_path_form_menu_overview_submit($form, &$form_state) {
+  $changed_menus = [];
+
+  foreach ($form_state['values'] as $key => $value) {
+    if (substr($key, 0, 5) === 'mlid:') {
+      $changed_menus[] = $form_state['values'][$key]['mlid'];
+    }
+  }
+
+  $any_menus = variable_get('any_menu_path', []);
+
+  foreach ($changed_menus as $mlid) {
+    if (in_array($mlid, $any_menus, FALSE)) {
+      db_update('menu_links')
+        ->fields(['external' => 1])
+        ->condition('mlid', $mlid)
+        ->execute();
+    }
+  }
+}
+
