@@ -999,7 +999,7 @@ class views_handler_filter extends views_handler {
         ),
         'weight' => array(
           '#type' => 'weight',
-          '#delta' => 20,
+          '#delta' => 10,
           '#default_value' => $default_weight++,
           '#attributes' => array('class' => array('weight')),
         ),
