@@ -117,15 +117,6 @@ function mises_roles_and_perms_user_default_permissions() {
     'module' => 'media',
   );
 
-  // Exported permission: 'access overlay'.
-  $permissions['access overlay'] = array(
-    'name' => 'access overlay',
-    'roles' => array(
-      'Drupal Developer' => 'Drupal Developer',
-    ),
-    'module' => 'overlay',
-  );
-
   // Exported permission: 'access print'.
   $permissions['access print'] = array(
     'name' => 'access print',
