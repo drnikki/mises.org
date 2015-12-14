@@ -1,0 +1,11 @@
+name = Mises Alexa Configuration
+description = Provides default configuration for Alexa Site Certifcation
+core = 7.x
+package = Mises
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = mises_alexa
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = alexa_verfiy_code
