@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Autosave feature.
+ */
+
+include_once 'mises_autosave.features.inc';
+
+/**
+ * Disable and uninstall the overlay module.
+ */
+function mises_autosave_update_7301() {
+  if (module_exists('overlay')) {
+    module_disable(array('overlay'));
+    drupal_uninstall_modules(array('overlay'));
+  }
+}
