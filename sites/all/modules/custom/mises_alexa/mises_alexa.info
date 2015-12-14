@@ -1,0 +1,4 @@
+name = Alexa Verification
+description = Add your verification script from Alexa.com
+core = 7.x
+configure = admin/config/search/alexa

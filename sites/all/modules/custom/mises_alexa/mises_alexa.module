@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * Implements hook_init().
+ */
+function mises_alexa_init() {
+  drupal_add_js(variable_get('alexa_verfiy_code', ''), 'inline');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function mises_alexa_menu() {
+
+  $items['admin/config/search/alexa'] = array(
+    'title' => 'Alexa Verification',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mises_alexa_admin'),
+    'access arguments' => array('alexa_configure'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Form builder for mises_alexa settings.
+ *
+ * @see system_settings_form()
+ */
+function mises_alexa_admin() {
+  $form = array();
+   
+  $form['alexa_verfiy_code'] = array(
+    '#type' => 'textarea',
+    '#title' => 'Alexa Verfication Code',
+    '#default_value' => variable_get('alexa_verfiy_code', ''),
+    '#description' => 'Provide the Alexa certify code.',
+    '#required' => FALSE,
+  );   
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_permission().
+ */
+function mises_alexa_permission() {
+  return array(
+    'alexa_configure' =>  array(
+      'title' => t('Configure Alexa Verification'),
+      'description' => t('Configure settings for the Alexa Vertification module.'),
+    ),
+  );
+}
