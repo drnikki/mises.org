@@ -1,0 +1,17 @@
+diff --git a/autosave.module b/autosave.module
+index 976246f..a2b5572 100644
+--- a/autosave.module
++++ b/autosave.module
+@@ -505,7 +505,11 @@ function autosave_menu_get_item($path) {
+       list($lang, $path) = language_url_split_prefix($path, language_list());
+     }
+   }
+-  return menu_get_item($path);
++  $menu_item = menu_get_item($path);
++  if ($menu_item === FALSE) {
++    $menu_item = menu_get_item(drupal_get_normal_path($path));
++  }
++  return $menu_item;
+ }
+ 
+ /**
