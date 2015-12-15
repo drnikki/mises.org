@@ -10,7 +10,7 @@
 function mises_person_profile_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-person_profile-body'
+  // Exported field_instance: 'node-person_profile-body'.
   $field_instances['node-person_profile-body'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -170,7 +170,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_austrian_school'
+  // Exported field_instance: 'node-person_profile-field_austrian_school'.
   $field_instances['node-person_profile-field_austrian_school'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -260,7 +260,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_award_type'
+  // Exported field_instance: 'node-person_profile-field_award_type'.
   $field_instances['node-person_profile-field_award_type'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -297,7 +297,7 @@ function mises_person_profile_field_default_field_instances() {
           'link' => 0,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'print' => array(
         'label' => 'above',
@@ -346,7 +346,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_bio_summary'
+  // Exported field_instance: 'node-person_profile-field_bio_summary'.
   $field_instances['node-person_profile-field_bio_summary'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -507,7 +507,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_contact_email'
+  // Exported field_instance: 'node-person_profile-field_contact_email'.
   $field_instances['node-person_profile-field_contact_email'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -539,7 +539,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 39,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -586,7 +586,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_contributions'
+  // Exported field_instance: 'node-person_profile-field_contributions'.
   $field_instances['node-person_profile-field_contributions'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -705,7 +705,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_email_link'
+  // Exported field_instance: 'node-person_profile-field_email_link'.
   $field_instances['node-person_profile-field_email_link'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -806,7 +806,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_facebook'
+  // Exported field_instance: 'node-person_profile-field_facebook'.
   $field_instances['node-person_profile-field_facebook'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -907,7 +907,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_featured_content'
+  // Exported field_instance: 'node-person_profile-field_featured_content'.
   $field_instances['node-person_profile-field_featured_content'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -939,7 +939,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 41,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -983,7 +983,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_first_name'
+  // Exported field_instance: 'node-person_profile-field_first_name'.
   $field_instances['node-person_profile-field_first_name'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -1062,7 +1062,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_image_collection'
+  // Exported field_instance: 'node-person_profile-field_image_collection'.
   $field_instances['node-person_profile-field_image_collection'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -1105,8 +1105,6 @@ function mises_person_profile_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'optionset' => 'node_slideshow',
-          'thumbnail_image_field' => '',
-          'thumbnail_image_style' => '',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_entity_flexslider',
@@ -1173,7 +1171,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_last_name'
+  // Exported field_instance: 'node-person_profile-field_last_name'.
   $field_instances['node-person_profile-field_last_name'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -1286,7 +1284,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_major_works'
+  // Exported field_instance: 'node-person_profile-field_major_works'.
   $field_instances['node-person_profile-field_major_works'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -1317,14 +1315,9 @@ function mises_person_profile_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'links' => 1,
-          'view_mode' => 'teaser',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 17,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'print' => array(
         'label' => 'above',
@@ -1377,7 +1370,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_profile_type'
+  // Exported field_instance: 'node-person_profile-field_profile_type'.
   $field_instances['node-person_profile-field_profile_type'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -1410,7 +1403,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 42,
       ),
       'print' => array(
         'label' => 'above',
@@ -1459,7 +1452,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_published_in'
+  // Exported field_instance: 'node-person_profile-field_published_in'.
   $field_instances['node-person_profile-field_published_in'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -1553,7 +1546,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_quote_reference'
+  // Exported field_instance: 'node-person_profile-field_quote_reference'.
   $field_instances['node-person_profile-field_quote_reference'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -1644,7 +1637,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_related_nodes'
+  // Exported field_instance: 'node-person_profile-field_related_nodes'.
   $field_instances['node-person_profile-field_related_nodes'] = array(
     'bundle' => 'person_profile',
     'default_value' => array(
@@ -1681,7 +1674,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 40,
       ),
       'print' => array(
         'label' => 'above',
@@ -1744,7 +1737,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_social_media_image'
+  // Exported field_instance: 'node-person_profile-field_social_media_image'.
   $field_instances['node-person_profile-field_social_media_image'] = array(
     'bundle' => 'person_profile',
     'deleted' => 0,
@@ -1777,7 +1770,7 @@ function mises_person_profile_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 37,
       ),
       'print' => array(
         'label' => 'above',
@@ -1848,7 +1841,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_topics'
+  // Exported field_instance: 'node-person_profile-field_topics'.
   $field_instances['node-person_profile-field_topics'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,
@@ -1938,7 +1931,7 @@ function mises_person_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person_profile-field_twitter'
+  // Exported field_instance: 'node-person_profile-field_twitter'.
   $field_instances['node-person_profile-field_twitter'] = array(
     'bundle' => 'person_profile',
     'default_value' => NULL,

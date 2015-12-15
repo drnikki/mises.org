@@ -21,7 +21,7 @@ function mises_person_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Author Title',
-    'weight' => '32',
+    'weight' => '38',
     'children' => array(
       0 => 'field_first_name',
       1 => 'field_last_name',
@@ -119,7 +119,7 @@ function mises_person_profile_field_group_info() {
     'weight' => '10',
     'children' => array(
       0 => 'field_contributions',
-      1 => 'field_major_works',
+      1 => 'profile_major_words',
       2 => 'profile_author_articles',
     ),
     'format_type' => 'html-element',
