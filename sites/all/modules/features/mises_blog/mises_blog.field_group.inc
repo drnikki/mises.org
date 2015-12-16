@@ -59,7 +59,8 @@ function mises_blog_field_group_info() {
       1 => 'field_author_1',
       2 => 'field_teaser_text',
       3 => 'field_image',
-      4 => 'title',
+      4 => 'field_show_disclaimer',
+      5 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
