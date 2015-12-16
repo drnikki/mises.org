@@ -80,6 +80,7 @@ features[ds_fields][] = dynamic_field_2
 features[ds_fields][] = follow_mises_institute
 features[ds_fields][] = linked_box_image
 features[ds_fields][] = profile_author_articles
+features[ds_fields][] = profile_major_words
 features[ds_fields][] = random_term
 features[ds_fields][] = tags_title
 features[ds_fields][] = text_resizer

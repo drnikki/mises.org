@@ -10,7 +10,7 @@
 function mises_person_profile_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_bio_summary'
+  // Exported field_base: 'field_bio_summary'.
   $field_bases['field_bio_summary'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -50,7 +50,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_contact_email'
+  // Exported field_base: 'field_contact_email'.
   $field_bases['field_contact_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -71,7 +71,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_contributions'
+  // Exported field_base: 'field_contributions'.
   $field_bases['field_contributions'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -90,7 +90,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_email_link'
+  // Exported field_base: 'field_email_link'.
   $field_bases['field_email_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -119,7 +119,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_facebook'
+  // Exported field_base: 'field_facebook'.
   $field_bases['field_facebook'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -148,7 +148,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_first_name'
+  // Exported field_base: 'field_first_name'.
   $field_bases['field_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -169,7 +169,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_last_name'
+  // Exported field_base: 'field_last_name'.
   $field_bases['field_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -190,7 +190,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_major_works'
+  // Exported field_base: 'field_major_works'.
   $field_bases['field_major_works'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -216,8 +216,6 @@ function mises_person_profile_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'book_digital_text' => 'book_digital_text',
-          'legacy_book' => 'legacy_book',
           'library_item' => 'library_item',
         ),
       ),
@@ -227,7 +225,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_profile_type'
+  // Exported field_base: 'field_profile_type'.
   $field_bases['field_profile_type'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -262,7 +260,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_published_in'
+  // Exported field_base: 'field_published_in'.
   $field_bases['field_published_in'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -296,7 +294,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_quote_reference'
+  // Exported field_base: 'field_quote_reference'.
   $field_bases['field_quote_reference'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -330,7 +328,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_related_nodes'
+  // Exported field_base: 'field_related_nodes'.
   $field_bases['field_related_nodes'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -345,7 +343,7 @@ function mises_person_profile_field_default_field_bases() {
     'type' => 'viewfield',
   );
 
-  // Exported field_base: 'field_twitter'
+  // Exported field_base: 'field_twitter'.
   $field_bases['field_twitter'] = array(
     'active' => 1,
     'cardinality' => 1,
