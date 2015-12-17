@@ -10,7 +10,7 @@
 function mises_events_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_austrian_school'
+  // Exported field_base: 'field_austrian_school'.
   $field_bases['field_austrian_school'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -45,7 +45,7 @@ function mises_events_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_causeview_form_reg_link'
+  // Exported field_base: 'field_causeview_form_reg_link'.
   $field_bases['field_causeview_form_reg_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -60,7 +60,7 @@ function mises_events_field_default_field_bases() {
     'type' => 'viewfield',
   );
 
-  // Exported field_base: 'field_description'
+  // Exported field_base: 'field_description'.
   $field_bases['field_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -79,7 +79,7 @@ function mises_events_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_event_date'
+  // Exported field_base: 'field_event_date'.
   $field_bases['field_event_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -108,7 +108,7 @@ function mises_events_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_event_location'
+  // Exported field_base: 'field_event_location'.
   $field_bases['field_event_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -129,7 +129,7 @@ function mises_events_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_event_type'
+  // Exported field_base: 'field_event_type'.
   $field_bases['field_event_type'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -164,7 +164,7 @@ function mises_events_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_live_feed'
+  // Exported field_base: 'field_live_feed'.
   $field_bases['field_live_feed'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -189,7 +189,7 @@ function mises_events_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_public_private'
+  // Exported field_base: 'field_public_private'.
   $field_bases['field_public_private'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -214,7 +214,7 @@ function mises_events_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_registration_link'
+  // Exported field_base: 'field_registration_link'.
   $field_bases['field_registration_link'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -249,7 +249,7 @@ function mises_events_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_registration_link_external'
+  // Exported field_base: 'field_registration_link_external'.
   $field_bases['field_registration_link_external'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -278,7 +278,7 @@ function mises_events_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_registration_type'
+  // Exported field_base: 'field_registration_type'.
   $field_bases['field_registration_type'] = array(
     'active' => 1,
     'cardinality' => 1,
