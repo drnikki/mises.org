@@ -1,7 +1,7 @@
 name = Mises Events
 core = 7.x
 package = Content Types
-version = 7.x-1.13
+version = 7.x-1.14
 project = mises_events
 dependencies[] = addtocal
 dependencies[] = block
@@ -20,6 +20,7 @@ dependencies[] = file_entity
 dependencies[] = image
 dependencies[] = inline_entity_form
 dependencies[] = link
+dependencies[] = linked_field
 dependencies[] = list
 dependencies[] = media
 dependencies[] = menu

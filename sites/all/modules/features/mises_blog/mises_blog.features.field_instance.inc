@@ -10,7 +10,7 @@
 function mises_blog_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-blog-body'
+  // Exported field_instance: 'node-blog-body'.
   $field_instances['node-blog-body'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -22,6 +22,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -38,6 +49,17 @@ function mises_blog_field_default_field_instances() {
               ),
             ),
           ),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 7,
@@ -47,6 +69,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 5,
@@ -62,6 +95,17 @@ function mises_blog_field_default_field_instances() {
                 'target' => 'field_teaser_text',
               ),
             ),
+          ),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
           ),
           'more_link' => 0,
           'more_text' => 'Read more',
@@ -90,6 +134,17 @@ function mises_blog_field_default_field_instances() {
               ),
             ),
           ),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'trim',
@@ -116,6 +171,17 @@ function mises_blog_field_default_field_instances() {
                 'target' => 'field_teaser_text',
               ),
             ),
+          ),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
           ),
           'more_link' => 0,
           'more_text' => 'Read more',
@@ -193,7 +259,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_audience'
+  // Exported field_instance: 'node-blog-field_audience'.
   $field_instances['node-blog-field_audience'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -206,6 +272,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 7,
@@ -263,7 +340,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_austrian_school'
+  // Exported field_instance: 'node-blog-field_austrian_school'.
   $field_instances['node-blog-field_austrian_school'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -276,6 +353,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 3,
@@ -286,6 +374,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 2,
@@ -296,6 +395,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 4,
@@ -306,6 +416,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 2,
@@ -345,7 +466,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_author_1'
+  // Exported field_instance: 'node-blog-field_author_1'.
   $field_instances['node-blog-field_author_1'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -358,6 +479,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 5,
@@ -367,6 +499,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'links' => 1,
           'view_mode' => 'author_full_name',
         ),
@@ -378,6 +521,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'links' => 1,
           'view_mode' => 'author_full_name',
         ),
@@ -401,6 +555,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'links' => 0,
           'view_mode' => 'author_full_name',
         ),
@@ -429,7 +594,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_featured_content'
+  // Exported field_instance: 'node-blog-field_featured_content'.
   $field_instances['node-blog-field_featured_content'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -441,6 +606,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'list_default',
         'weight' => 9,
@@ -493,7 +669,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_image'
+  // Exported field_instance: 'node-blog-field_image'.
   $field_instances['node-blog-field_image'] = array(
     'bundle' => 'blog',
     'deleted' => 0,
@@ -506,6 +682,17 @@ function mises_blog_field_default_field_instances() {
           'conditions' => array(),
           'image_link' => '',
           'image_style' => '',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'image',
         'weight' => 12,
@@ -585,7 +772,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_image_collection'
+  // Exported field_instance: 'node-blog-field_image_collection'.
   $field_instances['node-blog-field_image_collection'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -601,6 +788,17 @@ function mises_blog_field_default_field_instances() {
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -611,6 +809,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'flexslider_field_collection',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'optionset' => 'node_slideshow',
           'thumbnail_image_field' => '',
           'thumbnail_image_style' => '',
@@ -642,6 +851,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '[node:url]',
+            'linked' => 1,
+          ),
           'view_mode' => 'list_teaser',
         ),
         'type' => 'field_collection_fields',
@@ -665,7 +885,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_level'
+  // Exported field_instance: 'node-blog-field_level'.
   $field_instances['node-blog-field_level'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -678,6 +898,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 6,
@@ -735,7 +966,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_media_collection'
+  // Exported field_instance: 'node-blog-field_media_collection'.
   $field_instances['node-blog-field_media_collection'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -751,6 +982,17 @@ function mises_blog_field_default_field_instances() {
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -761,6 +1003,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
@@ -771,6 +1024,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
@@ -812,7 +1076,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_teaser_text'
+  // Exported field_instance: 'node-blog-field_teaser_text'.
   $field_instances['node-blog-field_teaser_text'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -824,6 +1088,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 11,
@@ -845,6 +1120,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'more_link' => FALSE,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -863,6 +1149,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -883,6 +1180,17 @@ function mises_blog_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'more_link' => FALSE,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -955,7 +1263,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_topics'
+  // Exported field_instance: 'node-blog-field_topics'.
   $field_instances['node-blog-field_topics'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -968,6 +1276,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 4,
@@ -978,6 +1297,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 1,
@@ -988,6 +1318,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 3,
@@ -998,6 +1339,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 3,
@@ -1037,7 +1389,7 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_insert_after'
+  // Exported field_instance: 'node-page-field_insert_after'.
   $field_instances['node-page-field_insert_after'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -1050,6 +1402,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'decimal_separator' => '.',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -1069,6 +1432,17 @@ function mises_blog_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'decimal_separator' => '.',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',
