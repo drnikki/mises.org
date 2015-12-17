@@ -285,13 +285,13 @@ function mises_blog_field_default_field_instances() {
           ),
         ),
         'type' => 'entityreference_label',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 37,
       ),
       'print' => array(
         'label' => 'above',
@@ -366,7 +366,7 @@ function mises_blog_field_default_field_instances() {
           ),
         ),
         'type' => 'entityreference_label',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -492,7 +492,7 @@ function mises_blog_field_default_field_instances() {
           ),
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -619,13 +619,13 @@ function mises_blog_field_default_field_instances() {
           ),
         ),
         'type' => 'list_default',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 35,
       ),
       'print' => array(
         'label' => 'above',
@@ -695,13 +695,13 @@ function mises_blog_field_default_field_instances() {
           ),
         ),
         'type' => 'image',
-        'weight' => 12,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 33,
       ),
       'print' => array(
         'label' => 'above',
@@ -802,7 +802,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -821,8 +821,6 @@ function mises_blog_field_default_field_instances() {
             'linked' => 0,
           ),
           'optionset' => 'node_slideshow',
-          'thumbnail_image_field' => '',
-          'thumbnail_image_style' => '',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_entity_flexslider',
@@ -911,13 +909,13 @@ function mises_blog_field_default_field_instances() {
           ),
         ),
         'type' => 'entityreference_label',
-        'weight' => 6,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 36,
       ),
       'print' => array(
         'label' => 'above',
@@ -996,7 +994,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 8,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1017,7 +1015,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'print' => array(
         'label' => 'above',
@@ -1076,6 +1074,76 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-blog-field_show_disclaimer'.
+  $field_instances['node-blog-field_show_disclaimer'] = array(
+    'bundle' => 'blog',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_show_disclaimer',
+    'label' => 'Show Disclaimer',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-blog-field_teaser_text'.
   $field_instances['node-blog-field_teaser_text'] = array(
     'bundle' => 'blog',
@@ -1101,13 +1169,13 @@ function mises_blog_field_default_field_instances() {
           ),
         ),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 34,
       ),
       'print' => array(
         'label' => 'above',
@@ -1289,7 +1357,7 @@ function mises_blog_field_default_field_instances() {
           ),
         ),
         'type' => 'entityreference_label',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1502,6 +1570,7 @@ function mises_blog_field_default_field_instances() {
   t('Insert After');
   t('Level');
   t('Media');
+  t('Show Disclaimer');
   t('Social Media Image');
   t('Teaser Text');
   t('Topics');

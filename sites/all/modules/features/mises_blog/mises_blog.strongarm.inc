@@ -128,6 +128,9 @@ function mises_blog_strongarm() {
       'video_block_teaser' => array(
         'custom_settings' => FALSE,
       ),
+      'audio_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

@@ -48,6 +48,7 @@ features[field_instance][] = node-blog-field_image
 features[field_instance][] = node-blog-field_image_collection
 features[field_instance][] = node-blog-field_level
 features[field_instance][] = node-blog-field_media_collection
+features[field_instance][] = node-blog-field_show_disclaimer
 features[field_instance][] = node-blog-field_teaser_text
 features[field_instance][] = node-blog-field_topics
 features[field_instance][] = node-page-field_insert_after
