@@ -10,7 +10,7 @@
 function mises_events_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-event-field_audience'
+  // Exported field_instance: 'node-event-field_audience'.
   $field_instances['node-event-field_audience'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -23,6 +23,17 @@ function mises_events_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 12,
@@ -74,7 +85,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_austrian_school'
+  // Exported field_instance: 'node-event-field_austrian_school'.
   $field_instances['node-event-field_austrian_school'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -87,6 +98,17 @@ function mises_events_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 10,
@@ -97,6 +119,17 @@ function mises_events_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => 0,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 2,
@@ -107,6 +140,17 @@ function mises_events_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => 0,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 9,
@@ -146,7 +190,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_causeview_form_reg_link'
+  // Exported field_instance: 'node-event-field_causeview_form_reg_link'.
   $field_instances['node-event-field_causeview_form_reg_link'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -163,6 +207,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'viewfield',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'viewfield_default',
         'weight' => 20,
@@ -172,6 +227,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'viewfield',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'viewfield_default',
         'weight' => 6,
@@ -287,7 +353,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_description'
+  // Exported field_instance: 'node-event-field_description'.
   $field_instances['node-event-field_description'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -299,6 +365,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 4,
@@ -308,6 +385,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 8,
@@ -317,6 +405,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 4,
@@ -326,6 +425,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -346,6 +456,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -416,7 +537,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_date'
+  // Exported field_instance: 'node-event-field_event_date'.
   $field_instances['node-event-field_event_date'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -429,6 +550,17 @@ function mises_events_field_default_field_instances() {
           'conditions' => array(),
           'format_type' => 'long',
           'fromto' => 'both',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
@@ -450,6 +582,17 @@ function mises_events_field_default_field_instances() {
           'description_tokenized' => '',
           'format_type' => 'long',
           'fromto' => 'both',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'location' => array(
             'field' => 'tokenize output',
             'tokenized' => '[node:field-event-location]',
@@ -470,6 +613,17 @@ function mises_events_field_default_field_instances() {
           'conditions' => array(),
           'format_type' => 'long',
           'fromto' => 'both',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
@@ -485,6 +639,17 @@ function mises_events_field_default_field_instances() {
           'conditions' => array(),
           'format_type' => 'month_day_year',
           'fromto' => 'both',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
@@ -500,6 +665,17 @@ function mises_events_field_default_field_instances() {
           'conditions' => array(),
           'format_type' => 'month_day_year',
           'fromto' => 'both',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
@@ -537,7 +713,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_location'
+  // Exported field_instance: 'node-event-field_event_location'.
   $field_instances['node-event-field_event_location'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -549,6 +725,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 14,
@@ -558,6 +745,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_plain',
         'weight' => 5,
@@ -567,6 +765,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_plain',
         'weight' => 3,
@@ -576,6 +785,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_plain',
         'weight' => 4,
@@ -585,6 +805,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_plain',
         'weight' => 4,
@@ -644,7 +875,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_type'
+  // Exported field_instance: 'node-event-field_event_type'.
   $field_instances['node-event-field_event_type'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -657,6 +888,17 @@ function mises_events_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 7,
@@ -708,7 +950,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_featured_content'
+  // Exported field_instance: 'node-event-field_featured_content'.
   $field_instances['node-event-field_featured_content'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -720,6 +962,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'list_default',
         'weight' => 15,
@@ -766,7 +1019,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_image'
+  // Exported field_instance: 'node-event-field_image'.
   $field_instances['node-event-field_image'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -779,6 +1032,17 @@ function mises_events_field_default_field_instances() {
           'conditions' => array(),
           'image_link' => '',
           'image_style' => '',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'image',
         'weight' => 16,
@@ -789,6 +1053,17 @@ function mises_events_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'full',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'file_rendered',
         'weight' => 3,
@@ -799,6 +1074,17 @@ function mises_events_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'file_view_mode' => 'full',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'file_rendered',
         'weight' => 1,
@@ -816,6 +1102,17 @@ function mises_events_field_default_field_instances() {
           'conditions' => array(),
           'image_link' => '',
           'image_style' => 'list_teaser',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '[node:url]',
+            'linked' => 1,
+          ),
         ),
         'type' => 'image',
         'weight' => 0,
@@ -865,7 +1162,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_level'
+  // Exported field_instance: 'node-event-field_level'.
   $field_instances['node-event-field_level'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -878,6 +1175,17 @@ function mises_events_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 11,
@@ -929,7 +1237,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_live_feed'
+  // Exported field_instance: 'node-event-field_live_feed'.
   $field_instances['node-event-field_live_feed'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -945,6 +1253,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'list_default',
         'weight' => 5,
@@ -991,7 +1310,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_media_collection'
+  // Exported field_instance: 'node-event-field_media_collection'.
   $field_instances['node-event-field_media_collection'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1007,6 +1326,17 @@ function mises_events_field_default_field_instances() {
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -1017,6 +1347,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
@@ -1027,6 +1368,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
@@ -1062,7 +1414,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_public_private'
+  // Exported field_instance: 'node-event-field_public_private'.
   $field_instances['node-event-field_public_private'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -1078,6 +1430,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'list_default',
         'weight' => 18,
@@ -1124,7 +1487,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_registration_link'
+  // Exported field_instance: 'node-event-field_registration_link'.
   $field_instances['node-event-field_registration_link'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1147,6 +1510,17 @@ function mises_events_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 8,
@@ -1163,6 +1537,17 @@ function mises_events_field_default_field_instances() {
                 'target' => 'field_registration_type',
               ),
             ),
+          ),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
           ),
           'links' => 0,
           'view_mode' => 'full',
@@ -1182,6 +1567,17 @@ function mises_events_field_default_field_instances() {
                 'target' => 'field_registration_type',
               ),
             ),
+          ),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
           ),
           'links' => 0,
           'view_mode' => 'full',
@@ -1229,7 +1625,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_registration_link_external'
+  // Exported field_instance: 'node-event-field_registration_link_external'.
   $field_instances['node-event-field_registration_link_external'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1241,6 +1637,17 @@ function mises_events_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'link_default',
         'weight' => 13,
@@ -1258,6 +1665,17 @@ function mises_events_field_default_field_instances() {
               ),
             ),
           ),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'link_default',
         'weight' => 11,
@@ -1274,6 +1692,17 @@ function mises_events_field_default_field_instances() {
                 'target' => 'field_registration_type',
               ),
             ),
+          ),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
           ),
         ),
         'type' => 'link_default',
@@ -1328,7 +1757,7 @@ function mises_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_registration_type'
+  // Exported field_instance: 'node-event-field_registration_type'.
   $field_instances['node-event-field_registration_type'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -1348,6 +1777,17 @@ Select "No registration or past event" to hide the registration embed or link fi
         'module' => 'list',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'list_default',
         'weight' => 19,
@@ -1394,7 +1834,7 @@ Select "No registration or past event" to hide the registration embed or link fi
     ),
   );
 
-  // Exported field_instance: 'node-event-field_social_media_image'
+  // Exported field_instance: 'node-event-field_social_media_image'.
   $field_instances['node-event-field_social_media_image'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -1407,6 +1847,17 @@ Select "No registration or past event" to hide the registration embed or link fi
           'conditions' => array(),
           'image_link' => '',
           'image_style' => '',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'image',
         'weight' => 21,
@@ -1480,7 +1931,7 @@ Select "No registration or past event" to hide the registration embed or link fi
     ),
   );
 
-  // Exported field_instance: 'node-event-field_topics'
+  // Exported field_instance: 'node-event-field_topics'.
   $field_instances['node-event-field_topics'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1493,6 +1944,17 @@ Select "No registration or past event" to hide the registration embed or link fi
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 9,
@@ -1503,6 +1965,17 @@ Select "No registration or past event" to hide the registration embed or link fi
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 1,
@@ -1513,6 +1986,17 @@ Select "No registration or past event" to hide the registration embed or link fi
         'settings' => array(
           'conditions' => array(),
           'link' => 1,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 8,

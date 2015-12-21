@@ -1,7 +1,7 @@
 name = Mises Blog
 core = 7.x
 package = Content Types
-version = 7.x-1.91
+version = 7.x-1.10
 project = mises_blog
 dependencies[] = ctools
 dependencies[] = custom_search_blocks
@@ -12,6 +12,7 @@ dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = flexslider_field_collection
 dependencies[] = image
+dependencies[] = linked_field
 dependencies[] = list
 dependencies[] = media
 dependencies[] = mises_library_item

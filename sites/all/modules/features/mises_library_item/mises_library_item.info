@@ -1,7 +1,7 @@
 name = Mises Library Item
 core = 7.x
 package = Content Types
-version = 7.x-1.26
+version = 7.x-1.27
 project = mises_library_item
 dependencies[] = austrian_school
 dependencies[] = creative_commons
@@ -21,6 +21,7 @@ dependencies[] = flexslider_field_collection
 dependencies[] = image
 dependencies[] = library_item_media_type
 dependencies[] = link
+dependencies[] = linked_field
 dependencies[] = list
 dependencies[] = media
 dependencies[] = mediafield
