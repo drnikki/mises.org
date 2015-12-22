@@ -348,6 +348,23 @@ body.not-logged-in {
 .body-content {
   padding-bottom: $padding-large-horizontal;
 }
+// Library item and blogs decrease spacing between content and disclaimer
+.node-type-blog {
+  .body-content {
+    padding-bottom: 0;
+  }
+  .group-sharing {
+    margin-top: $padding-large-horizontal;
+  }
+}
+.node-type-library-item {
+  .body-content {
+    padding-bottom: 0;
+  }
+  .group-sharing {
+    margin-top: $padding-large-horizontal;
+  }
+}
 
 .content-bottom,
 .bottom-blocks {
@@ -572,8 +589,6 @@ body.cke_editable {
 
 /* image source */
 .view-image-source {
-  margin-top: -$line-height-computed / 2;
-  margin-bottom: $line-height-computed / 2;
   .views-label {
     font-weight: bold;
   }

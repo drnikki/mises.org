@@ -128,9 +128,6 @@ function mises_blog_strongarm() {
       'video_block_teaser' => array(
         'custom_settings' => FALSE,
       ),
-      'audio_teaser' => array(
-        'custom_settings' => FALSE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -138,19 +135,19 @@ function mises_blog_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '4',
-        ),
-        'metatags' => array(
-          'weight' => '6',
-        ),
-        'redirect' => array(
           'weight' => '5',
         ),
+        'metatags' => array(
+          'weight' => '7',
+        ),
+        'redirect' => array(
+          'weight' => '6',
+        ),
         'xmlsitemap' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'twitter' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
