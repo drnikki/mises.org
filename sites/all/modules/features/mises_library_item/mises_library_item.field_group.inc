@@ -481,6 +481,7 @@ function mises_library_item_field_group_info() {
       3 => 'field_copyright_info',
       4 => 'field_hidden_solr_content',
       5 => 'field_show_disclaimer',
+      6 => 'field_show_comment_policy',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -505,7 +506,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '45',
+    'weight' => '48',
     'children' => array(
       0 => 'field_copyright_info',
       1 => 'print_link',

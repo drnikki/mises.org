@@ -21,7 +21,7 @@ function mises_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tagging',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
@@ -60,7 +60,8 @@ function mises_blog_field_group_info() {
       2 => 'field_teaser_text',
       3 => 'field_image',
       4 => 'field_show_disclaimer',
-      5 => 'title',
+      5 => 'field_show_comment_policy',
+      6 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
