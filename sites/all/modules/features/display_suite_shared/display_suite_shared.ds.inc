@@ -3569,6 +3569,29 @@ if (!empty($media)) {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'comment_policy';
+  $ds_field->label = 'Comment Policy';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+$comment_policy = variable_get(\'mises_utility_comment_policy\', \'\');
+if (isset($comment_policy[\'value\'])) {
+  print $comment_policy[\'value\'];
+}
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['comment_policy'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'contextual_block_title_with_icon';
   $ds_field->label = 'Contextual Block Title';
   $ds_field->field_type = 5;
@@ -3755,6 +3778,29 @@ if ($entity->field_link_to_external_listing_) {
     'block_render' => '3',
   );
   $export['custom_breadcrumb'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'disclaimer_note';
+  $ds_field->label = 'Disclaimer Note';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+$disclaimer_note = variable_get(\'mises_utility_disclaimer_note\', \'\');
+if (isset($disclaimer_note[\'value\'])) {
+  print $disclaimer_note[\'value\'];
+}
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['disclaimer_note'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
