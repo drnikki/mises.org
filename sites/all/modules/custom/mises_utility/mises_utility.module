@@ -90,6 +90,24 @@ function mises_utility_admin() {
     '#description' => t("Turn on the header ad region."),
   );
 
+  $disclaimer_note = variable_get('mises_utility_disclaimer_note', '');
+  $form['mises_utility']['mises_utility_disclaimer_note'] = array(
+    '#type' => 'text_format',
+    '#format' => 'simplified',
+    '#title' => t('Disclaimer Note text'),
+    '#default_value' => ($disclaimer_note['value'] ? $disclaimer_note['value'] : ''),
+    '#description' => t("Text to be shown as a disclaimer on specific content types."),
+  );
+
+  $comment_policy = variable_get('mises_utility_comment_policy', '');
+  $form['mises_utility']['mises_utility_comment_policy'] = array(
+    '#type' => 'text_format',
+    '#format' => 'simplified',
+    '#title' => t('Comment Policy Statement text'),
+    '#default_value' => ($comment_policy['value'] ? $comment_policy['value'] : ''),
+    '#description' => t("Text to be shown as the comment policy statement on specific content types."),
+  );
+
 	$form['mises_mailchimp'] = array(
 		'#type' => 'fieldset', 
 		'#title' => t('Mailchimp Settings'), 

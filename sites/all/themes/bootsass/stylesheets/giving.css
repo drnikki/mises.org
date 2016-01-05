@@ -2353,6 +2353,12 @@ body.not-logged-in .contextual-links-wrapper { display: none; }
 
 .body-content { padding-bottom: 16px; }
 
+.node-type-blog .body-content { padding-bottom: 0; }
+.node-type-blog .group-sharing { margin-top: 16px; }
+
+.node-type-library-item .body-content { padding-bottom: 0; }
+.node-type-library-item .group-sharing { margin-top: 16px; }
+
 .content-bottom, .bottom-blocks { padding-top: 16px; }
 
 .node-unpublished.view-mode-full { background: #ffc0c0; }
@@ -2440,7 +2446,6 @@ body.cke_editable { background: #fff none; }
 @media (max-width: 768px) { /* tommy removing breadcrumbs on mobile */
   .easy-breadcrumb { display: none; } }
 /* image source */
-.view-image-source { margin-top: -12.5px; margin-bottom: 12.5px; }
 .view-image-source .views-label { font-weight: bold; }
 .view-image-source .field-content { display: inline; }
 
