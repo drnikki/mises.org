@@ -43,7 +43,7 @@ select:focus {
    width:120px;
 }
 @media (max-width: 480px) {
-  table, tr, td { display: block !important; box-model: border-box; }
+  table, td { display: block !important; box-model: border-box; }
   td { padding-left: 9px !important; text-align: left !important; width: 100% !important; }
   td.fullCol { padding-left: 18px !important; }
   td.fullCol .required { left: -10px !important; }
