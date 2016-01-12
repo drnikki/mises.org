@@ -71,7 +71,7 @@ var Drupal = Drupal || {};
       var homeFeature = function() {
         // Homepage Featured equal height
         if ($(document).width() > 768) {
-          var bannerHeight = $('.front .region-featured-left').height();
+          var bannerHeight = $('.front .region-featured-left').outerHeight();
           $('.front .region-featured-right').css({
             'height': bannerHeight,
           });
