@@ -2536,6 +2536,14 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .list-group-item .glyphicon, .attachments li .glyphicon, .list-group-item .pagination > li.prev a, .pagination > li.prev .list-group-item a, .attachments .pagination > li.prev a, .list-group-item .pagination > li.next a, .pagination > li.next .list-group-item a, .attachments .pagination > li.next a, .list-group-item .sidebar .pager > li.date-prev a, .sidebar .pager > li.date-prev .list-group-item a, .attachments .sidebar .pager > li.date-prev a, .sidebar .attachments .pager > li.date-prev a, .list-group-item .sidebar .pager > li.date-next a, .sidebar .pager > li.date-next .list-group-item a, .attachments .sidebar .pager > li.date-next a, .sidebar .attachments .pager > li.date-next a { color: #788086; background-color: transparent; }
 .list-group-item p, .attachments li p { display: inline; }
 
+.profile-phone-number:before { content: "\e183"; font-family: "Glyphicons Halflings"; color: #38709e; margin-right: 5px; top: 10px; display: block; float: left; }
+
+.profile-title { font-family: "myriad-pro", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #494e54; font-size: 18px; }
+
+.view-profile-lists h3.list-title { margin-bottom: 0; }
+.view-profile-lists .profile-item { padding-bottom: 12px; }
+.view-profile-lists .faculty-staff-profile-title { line-height: 1em; }
+
 /*
 * Custom Styles for Home and Landing Pages
 * 

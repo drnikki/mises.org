@@ -21,7 +21,7 @@ function mises_person_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Author Title',
-    'weight' => '38',
+    'weight' => '42',
     'children' => array(
       0 => 'field_first_name',
       1 => 'field_last_name',
@@ -61,7 +61,9 @@ function mises_person_profile_field_group_info() {
       7 => 'field_last_name',
       8 => 'field_email_link',
       9 => 'field_social_media_image',
-      10 => 'title',
+      10 => 'field_profile_phone_number',
+      11 => 'field_profile_title',
+      12 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -116,11 +118,11 @@ function mises_person_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Details',
-    'weight' => '10',
+    'weight' => '12',
     'children' => array(
       0 => 'field_contributions',
-      1 => 'profile_major_words',
-      2 => 'profile_author_articles',
+      1 => 'profile_author_articles',
+      2 => 'profile_major_words',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -173,7 +175,7 @@ function mises_person_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Areas of Expertise',
-    'weight' => '3',
+    'weight' => '5',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
