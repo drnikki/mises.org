@@ -7,9 +7,9 @@ core = 7.x
 
 files[] = views_handler_filter_selective.inc
 
-; Information added by Drupal.org packaging script on 2015-06-18
-version = "7.x-1.4"
+; Information added by Drupal.org packaging script on 2016-01-01
+version = "7.x-1.5"
 core = "7.x"
 project = "views_selective_filters"
-datestamp = "1434655686"
+datestamp = "1451678355"
 
