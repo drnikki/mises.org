@@ -262,3 +262,31 @@ span.fake-blockquote {
     display: inline;
   }
 }
+
+.profile-phone-number:before {
+  content: "\e183";
+  font-family: "Glyphicons Halflings";
+  color: $brand-secondary;
+  margin-right: 5px;
+  top: 10px;
+  display: block;
+  float: left;
+}
+
+.profile-title {
+  font-family: $font-family-sans-serif;
+  color: $gray-dark;
+  font-size: $font-size-large;
+}
+
+.view-profile-lists {
+  h3.list-title {
+    margin-bottom: 0;
+  }
+  .profile-item {
+    padding-bottom: $padding-base-horizontal;
+  }
+  .faculty-staff-profile-title {
+    line-height: 1em;
+  }
+}

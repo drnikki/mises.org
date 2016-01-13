@@ -549,6 +549,34 @@ function profile_pages_views_views_default_views() {
       ),
     ),
   );
+  /* Field: Content: Title/Department */
+  $handler->display->display_options['fields']['field_profile_title']['id'] = 'field_profile_title';
+  $handler->display->display_options['fields']['field_profile_title']['table'] = 'field_data_field_profile_title';
+  $handler->display->display_options['fields']['field_profile_title']['field'] = 'field_profile_title';
+  $handler->display->display_options['fields']['field_profile_title']['label'] = '';
+  $handler->display->display_options['fields']['field_profile_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_profile_title']['alter']['text'] = '<p class="faculty-staff-profile-title">[field_profile_title]</p>';
+  $handler->display->display_options['fields']['field_profile_title']['element_label_type'] = 'p';
+  $handler->display->display_options['fields']['field_profile_title']['element_label_class'] = 'faculty-staff-profile-title';
+  $handler->display->display_options['fields']['field_profile_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_profile_title']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
