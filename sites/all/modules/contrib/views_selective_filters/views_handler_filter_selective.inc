@@ -89,13 +89,13 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
     // Extended condition see https://www.drupal.org/node/2295707
     return preg_match('/^' . $base_field1 . '/', $base_field2);
   }
-  
+
   /**
    * Override options_form.
    */
   public function options_form(&$form, &$form_state) {
     $base_field = $this->definition['field_base'];
-    
+
     parent::options_form($form, $form_state);
     // Filter should always be exposed, show warning.
     array_unshift($form['expose_button'], array(
@@ -111,13 +111,13 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
     $form['value']['#attributes']['disabled'] = 'disabled';
     // Cannot group without values.
     unset($form['group_button']);
-    
+
     // Preload handlers, sorts and filters.
     // This gest cached all along.
     $this->view->display_handler->get_handlers('field');
     $this->view->display_handler->get_handlers('sort');
     $this->view->display_handler->get_handlers('filter');
-    
+
     // Add combo to pick display field for filter.
     $options = array();
     foreach ($this->view->display_handler->handlers['field'] as $key => $handler) {
@@ -125,7 +125,7 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
         $options[$handler->options['id']] = $handler->definition['group'] . ': ' . $handler->definition['title'] . '(' . $handler->label() . ')';
       }
     }
-    
+
     $form['selective_display_field'] = array(
       '#title' => t('Display field'),
       '#type' => 'select',
@@ -133,13 +133,16 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
       '#options' => $options,
       '#default_value' => $this->options['selective_display_field'],
     );
-    
+
     // Add combo to pick sort for display.
     $options = array();
+    $options['NONE'] = t('No sorting');
     // Add option for custom sortings.
     if ($this->getOriginalOptions()) {
       $options['ORIG'] = t('As the original filter');
     }
+    $options['KASC'] = t('Custom key ascending (ksort)');
+    $options['KDESC'] = t('Custom key descending (ksort reverse)');
     $options['ASC'] = t('Custom ascending (asort)');
     $options['DESC'] = t('Custom descending (asort reverse)');
     // TODO: Allow the use of view's sorts!
@@ -193,10 +196,15 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
       return;
     }
     // Decode the values to restore special chars.
-    $this->value = array_map('urldecode', $this->value);
+    if (is_array($this->value)) {
+      $this->value = array_map('urldecode', $this->value);
+    }
+    elseif (is_string($this->value)){
+      $this->value = urldecode($this->value);
+    }
     parent::query();
   }
-  
+
   /**
    * Override option_definition
    */
@@ -206,7 +214,7 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
     // Storage for field used to display values.
     $options['selective_display_field']['default'] = '';
     // Storage for sort used to sort display values.
-    $options['selective_display_sort']['default'] = '';
+    $options['selective_display_sort']['default'] = 'ASC';
     // Storage for aggregated fields
     $options['selective_aggregated_fields']['default'] = '';
     // Limit aggregated items to prevent a huge number of options in select.
@@ -283,6 +291,10 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
       unset($display->display_options['exposed_form']);
       unset($display_default->display_options['exposed_form']);
 
+      // Also disable attachments.
+      $display->handler->definition['accept attachments'] = FALSE;
+      $display_default->handler->definition['accept attachments'] = FALSE;
+
       // If we are using fields from default or current display.
       if (isset($display->display_options['fields'])) {
         $display_options_fields = &$display->display_options['fields'];
@@ -302,7 +314,7 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
           }
         }
       }
-      
+
       // Remove all fields but the one used to display and aggregate.
       foreach ($display_options_fields as $key => $value) {
         if ($key != $field_to_keep) {
@@ -371,6 +383,10 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
       unset($display->display_options['query']['options']['distinct']);
       unset($display->display_options['query']['options']['pure_distinct']);
 
+      // Make sure we are not using a pager to prevent unnecessary count(*) queries.
+      $display->display_options['pager'] = unserialize('a:2:{s:4:"type";s:4:"none";s:7:"options";a:1:{s:6:"offset";s:1:"0";}}');
+      $display_default->display_options['pager'] = unserialize('a:2:{s:4:"type";s:4:"none";s:7:"options";a:1:{s:6:"offset";s:1:"0";}}');
+
       // Some style plugins can affect the built query, make sure
       // we use a reliable field based style plugin.
       $display->display_options['style_plugin'] = 'default';
@@ -414,14 +430,26 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
 
       // Sort values.
       $sort_option = $this->options['selective_display_sort'];
-      if (empty($sort_option) || $sort_option == 'ASC') {
-        asort($oids);
-      }
-      elseif ($sort_option == 'DESC') {
-        arsort($oids);
-      }
-      elseif ($sort_option == 'ORIG') {
-        $oids = static::filterOriginalOptions($this->getOriginalOptions(), array_keys($oids));
+      switch($sort_option) {
+        case 'ASC':
+          asort($oids);
+          break;
+        case 'DESC':
+          arsort($oids);
+          break;
+        case 'KASC':
+          ksort($oids);
+          break;
+        case 'KDESC':
+          krsort($oids);
+          break;
+        case 'ORIG':
+          $oids = self::filterOriginalOptions($this->getOriginalOptions(), array_keys($oids));
+          break;
+        case 'NONE':
+          break;
+        default:
+          asort($oids);
       }
 
       // If limit exceeded this field is not good for being "selective".
@@ -478,7 +506,7 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
       $this->originalOptions = FALSE;
       $class = $this->definition['proxy'];
       $original_filter = new $class();
-      if (method_exists($original_filter, 'get_value_options')) {
+      if (is_callable(array($original_filter, 'get_value_options'))) {
         $original_filter->set_definition($this->definition);
         $options = $original_filter->get_value_options();
         // We store only non-empty array.
