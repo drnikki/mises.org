@@ -89,7 +89,12 @@ function mises_blog_landing_context_default_contexts() {
         ),
       ),
     ),
-    'menu' => 'blog',
+    'menu' => array(
+      0 => 'menu-austrian-economics-sub-menu:blog',
+    ),
+    'theme_html' => array(
+      'class' => 'section-blog',
+    ),
   );
   $context->condition_mode = 0;
 
