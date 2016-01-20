@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function mises_person_profile_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -36,7 +36,7 @@ function mises_person_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_author_title|node|person_profile|full'] = $field_group;
+  $field_groups['group_author_title|node|person_profile|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -75,7 +75,7 @@ function mises_person_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_basic|node|person_profile|form'] = $field_group;
+  $field_groups['group_basic|node|person_profile|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -105,7 +105,7 @@ function mises_person_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_bio|node|person_profile|form'] = $field_group;
+  $field_groups['group_bio|node|person_profile|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -134,7 +134,7 @@ function mises_person_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_details|node|person_profile|full'] = $field_group;
+  $field_groups['group_details|node|person_profile|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -162,7 +162,7 @@ function mises_person_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_expertise|node|person_profile|form'] = $field_group;
+  $field_groups['group_expertise|node|person_profile|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -175,7 +175,7 @@ function mises_person_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Areas of Expertise',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
@@ -191,7 +191,7 @@ function mises_person_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_tags|node|person_profile|full'] = $field_group;
+  $field_groups['group_tags|node|person_profile|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -220,7 +220,16 @@ function mises_person_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_works|node|person_profile|form'] = $field_group;
+  $field_groups['group_works|node|person_profile|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Areas of Expertise');
+  t('Author Title');
+  t('Basic Information');
+  t('Biography');
+  t('Details');
+  t('Works');
+
+  return $field_groups;
 }
