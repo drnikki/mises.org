@@ -273,7 +273,7 @@ function mises_person_profile_field_default_field_instances() {
           ),
         ),
         'type' => 'entityreference_label',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -396,7 +396,7 @@ function mises_person_profile_field_default_field_instances() {
           ),
         ),
         'type' => 'entityreference_label',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'above',
@@ -1828,7 +1828,7 @@ function mises_person_profile_field_default_field_instances() {
           ),
         ),
         'type' => 'phone',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'print' => array(
         'label' => 'above',
@@ -2165,7 +2165,7 @@ function mises_person_profile_field_default_field_instances() {
           ),
         ),
         'type' => 'entityreference_label',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'print' => array(
         'label' => 'inline',
@@ -2293,7 +2293,7 @@ function mises_person_profile_field_default_field_instances() {
           'view_mode' => 'simple_content',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -2664,7 +2664,7 @@ function mises_person_profile_field_default_field_instances() {
           ),
         ),
         'type' => 'entityreference_label',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'hidden',
