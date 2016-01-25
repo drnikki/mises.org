@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function mises_library_item_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -40,7 +40,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_basic|node|library_item|form'] = $field_group;
+  $field_groups['group_basic|node|library_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -69,7 +69,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_body|node|library_item|block_teaser_term'] = $field_group;
+  $field_groups['group_body|node|library_item|block_teaser_term'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -104,7 +104,7 @@ function mises_library_item_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_book_digi_text_media|node|library_item|form'] = $field_group;
+  $field_groups['group_book_digi_text_media|node|library_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -137,7 +137,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_book_formats|node|library_item|teaser'] = $field_group;
+  $field_groups['group_book_formats|node|library_item|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -170,7 +170,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_content|node|library_item|form'] = $field_group;
+  $field_groups['group_content|node|library_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -200,7 +200,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_date_author|node|library_item|audio_teaser'] = $field_group;
+  $field_groups['group_date_author|node|library_item|audio_teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -227,7 +227,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_date_author|node|library_item|full'] = $field_group;
+  $field_groups['group_date_author|node|library_item|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -256,7 +256,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_date_author|node|library_item|teaser'] = $field_group;
+  $field_groups['group_date_author|node|library_item|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -281,7 +281,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_featured_tags|node|library_item|form'] = $field_group;
+  $field_groups['group_featured_tags|node|library_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -308,7 +308,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_footnotes|node|library_item|full'] = $field_group;
+  $field_groups['group_footnotes|node|library_item|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -338,7 +338,7 @@ function mises_library_item_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_journal_data|node|library_item|form'] = $field_group;
+  $field_groups['group_journal_data|node|library_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -374,7 +374,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_links|node|library_item|full'] = $field_group;
+  $field_groups['group_links|node|library_item|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -402,7 +402,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|library_item|form'] = $field_group;
+  $field_groups['group_media|node|library_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -431,7 +431,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_panel_body|node|library_item|sidebar_teaser'] = $field_group;
+  $field_groups['group_panel_body|node|library_item|sidebar_teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -460,7 +460,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_panel_body|node|library_item|video_block_teaser'] = $field_group;
+  $field_groups['group_panel_body|node|library_item|video_block_teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -493,7 +493,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_secondary|node|library_item|form'] = $field_group;
+  $field_groups['group_secondary|node|library_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -521,7 +521,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_sharing|node|library_item|full'] = $field_group;
+  $field_groups['group_sharing|node|library_item|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -556,7 +556,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_tagging|node|library_item|form'] = $field_group;
+  $field_groups['group_tagging|node|library_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -587,7 +587,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_tags|node|library_item|audio_teaser'] = $field_group;
+  $field_groups['group_tags|node|library_item|audio_teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -616,7 +616,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_tags|node|library_item|full'] = $field_group;
+  $field_groups['group_tags|node|library_item|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -646,7 +646,7 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_tags|node|library_item|teaser'] = $field_group;
+  $field_groups['group_tags|node|library_item|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -674,7 +674,25 @@ function mises_library_item_field_group_info() {
       ),
     ),
   );
-  $export['group_teaser|node|library_item|block_teaser'] = $field_group;
+  $field_groups['group_teaser|node|library_item|block_teaser'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Basic Information');
+  t('Body');
+  t('Content');
+  t('Date Author');
+  t('Documents / Links');
+  t('Featured Tags');
+  t('Formats');
+  t('Journal Data');
+  t('Links');
+  t('Media');
+  t('Panel Body');
+  t('Secondary Information');
+  t('Tagging');
+  t('Tags');
+  t('tags');
+
+  return $field_groups;
 }
