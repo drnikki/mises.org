@@ -146,6 +146,12 @@ function sitewide_context_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-88',
         ),
+        'views-flex_blocks-block_26' => array(
+          'module' => 'views',
+          'delta' => 'flex_blocks-block_26',
+          'region' => 'mobile_header_bottom',
+          'weight' => '-10',
+        ),
         'system-main' => array(
           'module' => 'system',
           'delta' => 'main',

@@ -128,9 +128,15 @@
                 <?php print render($page['navigation']); ?>
               <?php endif; ?>
             </nav>
+          </div>          
           </div>
         <?php endif; ?>
       <?php if ($variables['site_section'] == 'main'): ?></div><?php endif; ?>
+      <?php if (!empty($page['mobile_header_bottom'])): ?>
+        <div class="hidden-sm hidden-md hidden-lg mobile-header-bottom">
+          <?php print render($page['mobile_header_bottom']); ?>
+        </div>
+      <?php endif; ?>  
     </div>
   <?php if ($variables['site_section'] == 'giving'): ?></div><?php endif; ?>
 </header>

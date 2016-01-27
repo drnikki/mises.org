@@ -2471,6 +2471,7 @@ body.cke_editable { background: #fff none; }
 @media (min-width: 768px) { .navbar-header { float: none; } }
 
 #navbar.navbar-static-top { border-width: 0 0 6px; text-transform: uppercase; font-weight: 400; font-size: 18px; }
+@media (max-width: 768px) { #navbar.navbar-static-top { border-width: 0; } }
 
 .navbar-inverse .navbar-nav > li > a.active { background-color: #38709e; color: #fff; }
 body.mises-daily .navbar-inverse .navbar-nav > li > a.active.library, body.icon-mises-daily .navbar-inverse .navbar-nav > li > a.active.library { background-color: transparent; }
@@ -2480,8 +2481,14 @@ body.mises-daily .navbar-inverse .navbar-nav > li > a.active.library, body.icon-
 .region-navigation .block { width: 258px; height: 50px; }
 @media (min-width: 769px) { .region-navigation .block.block-views { margin-top: -7px; }
   .region-navigation .block#block-search-form { position: absolute; top: -64px; right: 0; } }
+@media (max-width: 768px) { .region-navigation .block.block-views { display: none; } }
 .region-navigation #block-search-form .form-control { border-right: 0 none; border-radius: 0; }
 .region-navigation #block-search-form button { padding: 6px 11px; border-radius: 0; }
+
+.mobile-header-bottom .view-content { max-width: 258px; float: right; }
+.mobile-header-bottom .view-content .node-flex-block { margin-bottom: 0; }
+
+.mobile-header-bottom { background-color: #5b8ab5; overflow: auto; }
 
 /* CONTAINER */
 .main-container { padding: 20px 0 35px; background: transparent url("../images/content-texture.jpg") center top no-repeat; }
