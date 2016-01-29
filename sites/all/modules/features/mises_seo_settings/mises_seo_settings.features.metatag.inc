@@ -460,8 +460,11 @@ function mises_seo_settings_metatag_export_default() {
       'image_src' => array(
         'value' => '[node:field_image]',
       ),
-      'twitter:card' => array(
-        'value' => 'summary_large_image',
+      'fb:admins' => array(
+        'value' => 'willjackson00',
+      ),
+      'fb:app_id' => array(
+        'value' => 'tho.bishop, jeff.deist.52, brandon.hill.96930, peter.g.klein, mcmaken, drewo3, chad.parish.16, mark.thornton.3760, natalie.danelishen, floy.lilley, wesley.downs.1',
       ),
       'twitter:image:width' => array(
         'value' => 1200,
