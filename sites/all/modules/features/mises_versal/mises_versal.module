@@ -1,0 +1,16 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+/**
+ * Implements hook_form_alter().
+ */
+
+/**
+ * Implements hook_preprocess().
+ */
+function mises_versal_preprocess_html(&$variables, $hook) {
+  $path = drupal_get_path('module', 'mises_versal');
+  drupal_add_js($path . '/js/mises_versal.js'); 
+}

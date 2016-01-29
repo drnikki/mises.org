@@ -1,0 +1,6 @@
+name = Mises Versal
+description = Mises Versal Integration
+core = 7.x
+package = Mises
+version = 7.x-1.0
+features[features_api][] = api:2
