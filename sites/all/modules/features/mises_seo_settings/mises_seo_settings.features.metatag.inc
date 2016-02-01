@@ -46,8 +46,17 @@ function mises_seo_settings_metatag_export_default() {
       'standout' => array(
         'value' => '',
       ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
       'generator' => array(
         'value' => 'Drupal 7 (http://drupal.org)',
+      ),
+      'rights' => array(
+        'value' => '',
       ),
       'image_src' => array(
         'value' => '',
@@ -67,9 +76,33 @@ function mises_seo_settings_metatag_export_default() {
       'original-source' => array(
         'value' => '',
       ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
       'revisit-after' => array(
         'value' => '',
         'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
       ),
       'dcterms.title' => array(
         'value' => '[current-page:title]',
@@ -117,7 +150,7 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '',
       ),
       'fb:admins' => array(
-        'value' => '',
+        'value' => 'tho.bishop, jeff.deist.52, brandon.hill.96930, peter.g.klein, mcmaken, drewo3, chad.parish.16, mark.thornton.3760, natalie.danelishen, floy.lilley, wesley.downs.1',
       ),
       'fb:app_id' => array(
         'value' => '',
@@ -125,23 +158,44 @@ function mises_seo_settings_metatag_export_default() {
       'og:site_name' => array(
         'value' => '[site:name]',
       ),
+      'og:type' => array(
+        'value' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+      ),
       'og:title' => array(
         'value' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
       ),
       'og:description' => array(
         'value' => '',
       ),
-      'og:type' => array(
-        'value' => 'article',
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
       ),
       'og:image' => array(
+        'value' => '',
+      ),
+      'og:image:url' => array(
         'value' => '',
       ),
       'og:image:secure_url' => array(
         'value' => '',
       ),
-      'og:url' => array(
-        'value' => '[current-page:url:absolute]',
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
       ),
       'og:latitude' => array(
         'value' => '',
@@ -149,10 +203,19 @@ function mises_seo_settings_metatag_export_default() {
       'og:longitude' => array(
         'value' => '',
       ),
+      'og:street_address' => array(
+        'value' => '',
+      ),
       'og:locality' => array(
         'value' => '',
       ),
       'og:region' => array(
+        'value' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+      ),
+      'og:country_name' => array(
         'value' => '',
       ),
       'og:email' => array(
@@ -165,6 +228,63 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '',
       ),
       'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
         'value' => '',
       ),
       'og:video' => array(
@@ -180,6 +300,30 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '',
       ),
       'og:video:type' => array(
+        'value' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
         'value' => '',
       ),
       'twitter:card' => array(
@@ -205,6 +349,9 @@ function mises_seo_settings_metatag_export_default() {
       ),
       'twitter:description' => array(
         'value' => '[site:slogan]',
+      ),
+      'twitter:image:src' => array(
+        'value' => '',
       ),
       'twitter:image:width' => array(
         'value' => '',
@@ -239,22 +386,31 @@ function mises_seo_settings_metatag_export_default() {
       'twitter:player:stream:content_type' => array(
         'value' => '',
       ),
+      'twitter:app:country' => array(
+        'value' => '',
+      ),
+      'twitter:app:name:iphone' => array(
+        'value' => '',
+      ),
       'twitter:app:id:iphone' => array(
-        'value' => '',
-      ),
-      'twitter:app:id:ipad' => array(
-        'value' => '',
-      ),
-      'twitter:app:id:googleplay' => array(
         'value' => '',
       ),
       'twitter:app:url:iphone' => array(
         'value' => '',
       ),
+      'twitter:app:name:ipad' => array(
+        'value' => '',
+      ),
+      'twitter:app:id:ipad' => array(
+        'value' => '',
+      ),
       'twitter:app:url:ipad' => array(
         'value' => '',
       ),
-      'twitter:app:country' => array(
+      'twitter:app:name:googleplay' => array(
+        'value' => '',
+      ),
+      'twitter:app:id:googleplay' => array(
         'value' => '',
       ),
       'twitter:app:url:googleplay' => array(
@@ -270,21 +426,6 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '',
       ),
       'twitter:data2' => array(
-        'value' => '',
-      ),
-      'twitter:image:src' => array(
-        'value' => '',
-      ),
-      'rights' => array(
-        'value' => '',
-      ),
-      'og:street_address' => array(
-        'value' => '',
-      ),
-      'og:postal_code' => array(
-        'value' => '',
-      ),
-      'og:country_name' => array(
         'value' => '',
       ),
     ),
