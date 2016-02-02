@@ -2485,7 +2485,7 @@ body.mises-daily .navbar-inverse .navbar-nav > li > a.active.library, body.icon-
 .region-navigation #block-search-form .form-control { border-right: 0 none; border-radius: 0; }
 .region-navigation #block-search-form button { padding: 6px 11px; border-radius: 0; }
 
-.mobile-header-bottom .view-content { max-width: 258px; float: right; }
+.mobile-header-bottom .view-content { max-width: 60%; float: right; }
 .mobile-header-bottom .view-content .node-flex-block { margin-bottom: 0; }
 
 .mobile-header-bottom { background-color: #5b8ab5; overflow: auto; }
