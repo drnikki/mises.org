@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function mises_landing_page_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -36,7 +36,7 @@ function mises_landing_page_field_group_info() {
       ),
     ),
   );
-  $export['group_block_intro|field_collection_item|field_resource_group|default'] = $field_group;
+  $field_groups['group_block_intro|field_collection_item|field_resource_group|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -64,7 +64,7 @@ function mises_landing_page_field_group_info() {
       ),
     ),
   );
-  $export['group_block_intro|field_collection_item|field_resource_group|full'] = $field_group;
+  $field_groups['group_block_intro|field_collection_item|field_resource_group|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -89,7 +89,7 @@ function mises_landing_page_field_group_info() {
       ),
     ),
   );
-  $export['group_block_intro|node|landing_page|full'] = $field_group;
+  $field_groups['group_block_intro|node|landing_page|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -123,7 +123,7 @@ function mises_landing_page_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_blocks|node|landing_page|form'] = $field_group;
+  $field_groups['group_blocks|node|landing_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -155,7 +155,7 @@ function mises_landing_page_field_group_info() {
       ),
     ),
   );
-  $export['group_page_content|node|landing_page|form'] = $field_group;
+  $field_groups['group_page_content|node|landing_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -184,7 +184,14 @@ function mises_landing_page_field_group_info() {
       ),
     ),
   );
-  $export['group_page_media|node|landing_page|form'] = $field_group;
+  $field_groups['group_page_media|node|landing_page|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Block Intro');
+  t('Blocks');
+  t('Images');
+  t('Page Content');
+
+  return $field_groups;
 }
