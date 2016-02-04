@@ -28,6 +28,7 @@ function mises_landing_page_context_default_contexts() {
     'path' => array(
       'values' => array(
         '~resources-economist' => '~resources-economist',
+        '~resources-students' => '~resources-students',
         '~about-mises*' => '~about-mises*',
       ),
     ),
