@@ -5,3 +5,12 @@
  */
 
 include_once 'mises_webforms.features.inc';
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function mises_webforms_preprocess_page(&$variables) {	
+	if ($variables['page']['#type'] == 'page') {
+		drupal_add_css(drupal_get_path('module', 'mises_webforms') . "/css/mises_webforms.css"); // Added to remove the book icons. Ref: #4995607
+	}
+}
