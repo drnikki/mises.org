@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function mises_static_page_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -24,7 +24,8 @@ function mises_static_page_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'title',
+      1 => 'field_view_list_block',
+      2 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -36,7 +37,7 @@ function mises_static_page_field_group_info() {
       ),
     ),
   );
-  $export['group_page_content|node|page|form'] = $field_group;
+  $field_groups['group_page_content|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -65,7 +66,7 @@ function mises_static_page_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_page_images|node|page|form'] = $field_group;
+  $field_groups['group_page_images|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -94,7 +95,13 @@ function mises_static_page_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_page_media|node|page|form'] = $field_group;
+  $field_groups['group_page_media|node|page|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Images');
+  t('Media');
+  t('Page Content');
+
+  return $field_groups;
 }
