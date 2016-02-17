@@ -180,6 +180,18 @@ var Drupal = Drupal || {};
           }
         });
       };
+      
+      // Hide Flexslider if there are no images ... Flexslider should do this, but it doesn't.
+      var hideFlexslider = function() {
+        var fS = $('.flexslider-processed ul li');
+        var fSlength = $(fS).html().length;
+        console.log('function flexslider length', fSlength);
+        if (fSlength === 0) {
+          console.log('remove it!');
+          $(fS).parents('#slideshow').addClass('hidden');
+        }
+      };
+
 
 
       $(document).ready(function() {
@@ -282,6 +294,8 @@ var Drupal = Drupal || {};
         $('select:not(#edit-book-type):not(#edit-title)').selectBox({
             menuSpeed: 'fast'
         });
+        
+        hideFlexslider();
         
       });      
 

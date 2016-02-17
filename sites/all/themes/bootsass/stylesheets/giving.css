@@ -2441,6 +2441,8 @@ a.external-link:hover span.glyphicon { background-color: #38709e; }
 
 #slideshow, #media, #image { background-color: #c8cdd0; margin-right: 20px; margin-bottom: 6px; width: 240px; }
 
+.view-list { clear: both; }
+
 body.cke_editable { background: #fff none; }
 
 @media (max-width: 768px) { /* tommy removing breadcrumbs on mobile */

@@ -574,6 +574,9 @@ blockquote {
   margin-bottom: $padding-base-vertical;
   width: 240px; 
 }
+.view-list {
+  clear: both;  
+}
 
 // CKEDITOR
 body.cke_editable {
