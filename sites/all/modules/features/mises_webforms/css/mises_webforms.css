@@ -1,0 +1,3 @@
+.node-webform .panel-heading:before {
+  background-image: none;  /* Remove the book icon from webform content type displays. Ref: #4995607 */
+}
