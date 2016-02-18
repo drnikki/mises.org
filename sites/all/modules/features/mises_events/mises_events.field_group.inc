@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function mises_events_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -41,7 +41,7 @@ function mises_events_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_additional_information|node|event|form'] = $field_group;
+  $field_groups['group_additional_information|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -69,7 +69,7 @@ function mises_events_field_group_info() {
       ),
     ),
   );
-  $export['group_date_location|node|event|full'] = $field_group;
+  $field_groups['group_date_location|node|event|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -99,7 +99,7 @@ function mises_events_field_group_info() {
       ),
     ),
   );
-  $export['group_date_location|node|event|simple_teaser'] = $field_group;
+  $field_groups['group_date_location|node|event|simple_teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -112,7 +112,7 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Location',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_event_date',
       1 => 'field_event_location',
@@ -128,7 +128,7 @@ function mises_events_field_group_info() {
       ),
     ),
   );
-  $export['group_date_location|node|event|teaser'] = $field_group;
+  $field_groups['group_date_location|node|event|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -149,6 +149,7 @@ function mises_events_field_group_info() {
       3 => 'field_event_location',
       4 => 'field_social_media_image',
       5 => 'title',
+      6 => 'field_teaser_text',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -160,7 +161,7 @@ function mises_events_field_group_info() {
       ),
     ),
   );
-  $export['group_event_information|node|event|form'] = $field_group;
+  $field_groups['group_event_information|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -189,7 +190,7 @@ function mises_events_field_group_info() {
       ),
     ),
   );
-  $export['group_event_media|node|event|form'] = $field_group;
+  $field_groups['group_event_media|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -219,7 +220,7 @@ function mises_events_field_group_info() {
       ),
     ),
   );
-  $export['group_event_registration|node|event|form'] = $field_group;
+  $field_groups['group_event_registration|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -248,7 +249,16 @@ function mises_events_field_group_info() {
       ),
     ),
   );
-  $export['group_tags|node|event|full'] = $field_group;
+  $field_groups['group_tags|node|event|full'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Date Location');
+  t('Event Information');
+  t('Media');
+  t('Registration');
+  t('Tagging');
+  t('Tags');
+
+  return $field_groups;
 }

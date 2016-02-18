@@ -10,7 +10,7 @@
 function mises_static_page_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_file_image_alt_text'
+  // Exported field_base: 'field_file_image_alt_text'.
   $field_bases['field_file_image_alt_text'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function mises_static_page_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_image'
+  // Exported field_base: 'field_image'.
   $field_bases['field_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -53,7 +53,7 @@ function mises_static_page_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_image_collection'
+  // Exported field_base: 'field_image_collection'.
   $field_bases['field_image_collection'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -75,7 +75,7 @@ function mises_static_page_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_insert_after'
+  // Exported field_base: 'field_insert_after'.
   $field_bases['field_insert_after'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -90,7 +90,7 @@ function mises_static_page_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_media'
+  // Exported field_base: 'field_media'.
   $field_bases['field_media'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -109,7 +109,7 @@ function mises_static_page_field_default_field_bases() {
     'type' => 'media',
   );
 
-  // Exported field_base: 'field_media_collection'
+  // Exported field_base: 'field_media_collection'.
   $field_bases['field_media_collection'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -131,7 +131,7 @@ function mises_static_page_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_social_media_image'
+  // Exported field_base: 'field_social_media_image'.
   $field_bases['field_social_media_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -151,6 +151,21 @@ function mises_static_page_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
+  );
+
+  // Exported field_base: 'field_view_list_block'.
+  $field_bases['field_view_list_block'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_view_list_block',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'viewfield',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'viewfield',
   );
 
   return $field_bases;

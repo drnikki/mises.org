@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function display_suite_shared_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -37,7 +37,7 @@ function display_suite_shared_field_group_info() {
       ),
     ),
   );
-  $export['group_date_author|node|course|teaser'] = $field_group;
+  $field_groups['group_date_author|node|course|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -66,7 +66,7 @@ function display_suite_shared_field_group_info() {
       ),
     ),
   );
-  $export['group_date_author|node|person_profile|teaser'] = $field_group;
+  $field_groups['group_date_author|node|person_profile|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -95,7 +95,7 @@ function display_suite_shared_field_group_info() {
       ),
     ),
   );
-  $export['group_date_author|node|product|teaser'] = $field_group;
+  $field_groups['group_date_author|node|product|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -125,7 +125,7 @@ function display_suite_shared_field_group_info() {
       ),
     ),
   );
-  $export['group_date_author|node|working_papers|teaser'] = $field_group;
+  $field_groups['group_date_author|node|working_papers|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -153,7 +153,7 @@ function display_suite_shared_field_group_info() {
       ),
     ),
   );
-  $export['group_heading|node|course|sidebar_teaser'] = $field_group;
+  $field_groups['group_heading|node|course|sidebar_teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -181,7 +181,7 @@ function display_suite_shared_field_group_info() {
       ),
     ),
   );
-  $export['group_heading|node|library_item|sidebar_teaser'] = $field_group;
+  $field_groups['group_heading|node|library_item|sidebar_teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -205,7 +205,13 @@ function display_suite_shared_field_group_info() {
       ),
     ),
   );
-  $export['group_sharing|node|event|full'] = $field_group;
+  $field_groups['group_sharing|node|event|full'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Date Autho');
+  t('Date Author');
+  t('Sharing');
+
+  return $field_groups;
 }
