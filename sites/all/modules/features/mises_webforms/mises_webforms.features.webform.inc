@@ -82,9 +82,9 @@ $webforms = array();
     'pathauto' => 1,
   ),
   'webform' => array(
-    'next_serial' => 2,
-    'confirmation' => '',
-    'confirmation_format' => NULL,
+    'next_serial' => 3,
+    'confirmation' => '<p>Thank you for applying to attend Mises University.</p><p>You will be notified of the status of your application via email address you provided in this application form.</p><p>If you have any questions, please email scholarships@mises.org</p>',
+    'confirmation_format' => 'simplified',
     'redirect_url' => '<confirmation>',
     'status' => 1,
     'block' => 0,
@@ -109,7 +109,7 @@ $webforms = array();
     'preview_prev_button_label' => '',
     'preview_title' => '',
     'preview_message' => '',
-    'preview_message_format' => NULL,
+    'preview_message_format' => 'simplified',
     'preview_excluded_components' => array(),
     'machine_name' => 'mises_university_student_applica',
     'record_exists' => TRUE,
@@ -1354,7 +1354,7 @@ tom_woods|Tom Woods',
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:1;}',
   'webform_features_author' => 'admin',
-  'webform_features_revision_author' => '',
+  'webform_features_revision_author' => 'Chad',
 );
 return $webforms;
 }
