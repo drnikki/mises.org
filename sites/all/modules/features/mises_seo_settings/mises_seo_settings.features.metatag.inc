@@ -153,7 +153,7 @@ function mises_seo_settings_metatag_export_default() {
         'value' => 'tho.bishop, jeff.deist.52, brandon.hill.96930, peter.g.klein, mcmaken, drewo3, chad.parish.16, mark.thornton.3760, natalie.danelishen, floy.lilley, wesley.downs.1',
       ),
       'fb:app_id' => array(
-        'value' => '',
+        'value' => '571281026361960',
       ),
       'og:site_name' => array(
         'value' => '[site:name]',
@@ -602,10 +602,10 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '[node:field_image]',
       ),
       'fb:admins' => array(
-        'value' => 'willjackson00',
+        'value' => '',
       ),
       'fb:app_id' => array(
-        'value' => 'tho.bishop, jeff.deist.52, brandon.hill.96930, peter.g.klein, mcmaken, drewo3, chad.parish.16, mark.thornton.3760, natalie.danelishen, floy.lilley, wesley.downs.1',
+        'value' => '',
       ),
       'twitter:image:width' => array(
         'value' => 1200,
