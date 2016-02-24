@@ -28,7 +28,9 @@ function mises_library_item_field_group_info() {
       2 => 'field_published_date',
       3 => 'field_mises_published_date',
       4 => 'field_author_1',
-      5 => 'title',
+      5 => 'field_push_to_wire',
+      6 => 'title',
+      7 => 'twitter',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

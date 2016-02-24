@@ -148,8 +148,9 @@ function mises_events_field_group_info() {
       2 => 'field_event_type',
       3 => 'field_event_location',
       4 => 'field_social_media_image',
-      5 => 'title',
-      6 => 'field_teaser_text',
+      5 => 'field_teaser_text',
+      6 => 'field_push_to_wire',
+      7 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

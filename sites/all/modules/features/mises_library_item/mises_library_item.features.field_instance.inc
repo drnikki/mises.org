@@ -4141,7 +4141,7 @@ Note that all tags must be manually selected.',
         'year_range' => '1500:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -4873,7 +4873,118 @@ Note that all tags must be manually selected.',
         'year_range' => '1500:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 6,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-library_item-field_push_to_wire'.
+  $field_instances['node-library_item-field_push_to_wire'] = array(
+    'bundle' => 'library_item',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'audio_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
+        ),
+        'type' => 'list_default',
+        'weight' => 67,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_push_to_wire',
+    'label' => 'Push to Wire',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 7,
     ),
   );
 
@@ -6207,6 +6318,7 @@ Note that all tags must be manually selected.',
   t('PDF');
   t('Primary or Original Author');
   t('Published Date');
+  t('Push to Wire');
   t('Recommended if this Library Item has a related Library Item tagged under Audio/Video. Be sure to check "Audio" under Book Type above.');
   t('Related Audio Book');
   t('Select the book type for this Library Item. This value is used for solr facets and filtered searches on landing pages. <br />

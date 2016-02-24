@@ -149,6 +149,9 @@ function mises_events_strongarm() {
         'redirect' => array(
           'weight' => '6',
         ),
+        'twitter' => array(
+          'weight' => '1',
+        ),
       ),
       'display' => array(),
     ),
