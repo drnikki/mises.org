@@ -21,7 +21,7 @@ function any_menu_path_update_7101() {
 
   foreach ($any_menu_path_items as $mlid) {
     db_update('menu_links')
-      ->fields(['external' => 1])
+      ->fields(array('external' => 1))
       ->condition('mlid', $mlid)
       ->execute();
   }

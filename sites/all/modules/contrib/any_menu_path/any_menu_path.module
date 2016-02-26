@@ -209,7 +209,7 @@ function any_menu_path_form_menu_overview_form_alter(&$form) {
  * after the core menu module resets it after its validation.
  */
 function any_menu_path_form_menu_overview_submit($form, &$form_state) {
-  $changed_menus = [];
+  $changed_menus = array();
 
   foreach ($form_state['values'] as $key => $value) {
     if (substr($key, 0, 5) === 'mlid:') {
@@ -217,12 +217,12 @@ function any_menu_path_form_menu_overview_submit($form, &$form_state) {
     }
   }
 
-  $any_menus = variable_get('any_menu_path', []);
+  $any_menus = variable_get('any_menu_path', array());
 
   foreach ($changed_menus as $mlid) {
     if (in_array($mlid, $any_menus, FALSE)) {
       db_update('menu_links')
-        ->fields(['external' => 1])
+        ->fields(array('external' => 1))
         ->condition('mlid', $mlid)
         ->execute();
     }
