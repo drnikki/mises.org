@@ -366,9 +366,11 @@ body.not-logged-in {
   }
 }
 
-.node-library-item .views-field-field-source {
+.node-library-item .views-field-field-source, .node-blog .views-field-field-source {
   font-size: 13px;
 }
+
+
 
 .content-bottom,
 .bottom-blocks {

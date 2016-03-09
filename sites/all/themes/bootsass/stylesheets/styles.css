@@ -2359,7 +2359,7 @@ body.not-logged-in .contextual-links-wrapper { display: none; }
 .node-type-library-item .body-content { padding-bottom: 0; }
 .node-type-library-item .group-sharing { margin-top: 16px; }
 
-.node-library-item .views-field-field-source { font-size: 13px; }
+.node-library-item .views-field-field-source, .node-blog .views-field-field-source { font-size: 13px; }
 
 .content-bottom, .bottom-blocks { padding-top: 16px; }
 
