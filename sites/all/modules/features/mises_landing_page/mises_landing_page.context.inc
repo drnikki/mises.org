@@ -98,7 +98,7 @@ function mises_landing_page_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'resources-students' => 'resources-students',
+        'student-resources' => 'student-resources',
       ),
     ),
   );
