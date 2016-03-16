@@ -105,12 +105,6 @@ function mises_landing_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-flex_blocks-block_11' => array(
-          'module' => 'views',
-          'delta' => 'flex_blocks-block_11',
-          'region' => 'sidebar_second_top',
-          'weight' => '-10',
-        ),
         'menu-menu-student-resources' => array(
           'module' => 'menu',
           'delta' => 'menu-student-resources',
