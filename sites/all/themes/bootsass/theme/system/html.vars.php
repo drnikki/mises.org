@@ -69,6 +69,11 @@ function bootsass_preprocess_html(&$variables) {
       $variables['classes_array'][] = 'main-theme';
   }
 
+  drupal_add_css($theme_path . '/stylesheets/overrides.css', array(
+    'group' => CSS_THEME,
+    'preprocess' => FALSE
+  ));
+
   // Add the terms to the body classes based on terms.
   if ($node = menu_get_object()) {
     // Return an array of taxonomy term ID's.
