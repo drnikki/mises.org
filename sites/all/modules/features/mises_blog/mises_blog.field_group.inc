@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function mises_blog_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -40,7 +40,7 @@ function mises_blog_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_addit_blog_information|node|blog|form'] = $field_group;
+  $field_groups['group_addit_blog_information|node|blog|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -61,7 +61,8 @@ function mises_blog_field_group_info() {
       3 => 'field_image',
       4 => 'field_show_disclaimer',
       5 => 'field_show_comment_policy',
-      6 => 'title',
+      6 => 'field_push_to_wire',
+      7 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -73,7 +74,7 @@ function mises_blog_field_group_info() {
       ),
     ),
   );
-  $export['group_blog_information|node|blog|form'] = $field_group;
+  $field_groups['group_blog_information|node|blog|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -102,7 +103,7 @@ function mises_blog_field_group_info() {
       ),
     ),
   );
-  $export['group_date_author|node|blog|full'] = $field_group;
+  $field_groups['group_date_author|node|blog|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -133,7 +134,7 @@ function mises_blog_field_group_info() {
       ),
     ),
   );
-  $export['group_date_author|node|blog|teaser'] = $field_group;
+  $field_groups['group_date_author|node|blog|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -161,7 +162,7 @@ function mises_blog_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|blog|form'] = $field_group;
+  $field_groups['group_media|node|blog|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -190,7 +191,15 @@ function mises_blog_field_group_info() {
       ),
     ),
   );
-  $export['group_tags|node|blog|full'] = $field_group;
+  $field_groups['group_tags|node|blog|full'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Blog Information');
+  t('Date Author');
+  t('Image / Media');
+  t('Tagging');
+  t('Tags');
+
+  return $field_groups;
 }

@@ -184,14 +184,32 @@ var Drupal = Drupal || {};
       // Hide Flexslider if there are no images ... Flexslider should do this, but it doesn't.
       var hideFlexslider = function() {
         var fS = $('.flexslider-processed ul li');
-        var fSlength = $(fS).html().length;
-        console.log('function flexslider length', fSlength);
-        if (fSlength === 0) {
-          console.log('remove it!');
-          $(fS).parents('#slideshow').addClass('hidden');
+        if (fS.length > 0) {
+          var fSlength = $(fS).html().length;
+          console.log('function flexslider length', fSlength);
+          if (fSlength === 0) {
+            console.log('remove it!');
+            $(fS).parents('#slideshow').addClass('hidden');
+          }
         }
       };
 
+      var implementDotDotDot = function(element, height) {
+        element.dotdotdot({
+          ellipsis  : '... ',
+          wrap    : 'word',
+          fallbackToLetter: true,
+          after   : null,
+          watch   : false,
+          height    : height,
+          tolerance : 0,
+          callback  : function( isTruncated, orgContent ) {},      
+          lastCharacter : {
+            remove    : [ ' ', ',', ';', '.', '!', '?' ],
+            noEllipsis  : []
+          }
+        });
+      }
 
 
       $(document).ready(function() {
@@ -256,7 +274,14 @@ var Drupal = Drupal || {};
         
         textResizer();
         hideSearchLabels();
-        
+       
+        // adjust letter-spacing before and after trim due to mysterious issue
+        $('.view-mode-teaser .teaser-title').css('letterSpacing', -2);
+        implementDotDotDot($('.view-mode-teaser .teaser-title'), 50);
+        $('.view-mode-teaser .teaser-title').css('letterSpacing', 0);
+
+        implementDotDotDot($('.view-mode-teaser .body-content'), 70);
+
         //Smooth scrolling
         $(function() {
           $('a[href*=#]:not([href=#])').click(function() {
@@ -302,6 +327,7 @@ var Drupal = Drupal || {};
       $(window).resize(function() {
         implementEqualHeight();
         homeFeature();
+
       });      
 
       $(document).ajaxComplete(function() {
@@ -310,11 +336,11 @@ var Drupal = Drupal || {};
         booksFilters();
         journalsFilters();
         editJournalTrigger();
+        
         $('select:not(#edit-book-type):not(#edit-title)').selectBox({
             menuSpeed: 'fast'
         });
       });      
-      
       
     }
   };

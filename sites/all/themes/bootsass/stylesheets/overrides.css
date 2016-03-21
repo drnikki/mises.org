@@ -1,0 +1,12 @@
+.view-mode-teaser .teaser-title {
+    min-height: 50px;
+    height: inherit;
+}
+
+.ellipsis_wrapper {
+  display: block;
+}
+
+.teaser-title {
+  display: block;
+}

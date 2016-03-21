@@ -12,8 +12,8 @@
     $left_classes .= ' col-xs-12';
     $right_classes .= ' col-xs-12';
   } else {
-    $left_classes .= ' col-xs-4';
-    $right_classes .= ' col-xs-8';
+    $left_classes .= ' col-xs-3';
+    $right_classes .= ' col-xs-9';
   }
 ?>
 <<?php print $layout_wrapper; print $layout_attributes; ?> class="ds-2col-custom-fluid column <?php print $classes;?> clearfix">
@@ -36,7 +36,7 @@
     <?php endif; ?>
 
     <?php if ($left): ?>
-      <<?php print $left_wrapper ?> class="group-left col-xs-4<?php print $left_classes; ?>">
+      <<?php print $left_wrapper ?> class="group-left col-xs-3<?php print $left_classes; ?>">
         <?php print $left; ?>
       </<?php print $left_wrapper ?>>
     <?php endif; ?>
