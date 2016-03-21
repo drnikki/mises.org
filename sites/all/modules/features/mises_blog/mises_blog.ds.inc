@@ -17,6 +17,11 @@ function mises_blog_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blog';
   $ds_fieldsetting->view_mode = 'print';
   $ds_fieldsetting->settings = array(
+    'print_body_with_embedded_media' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -54,8 +59,7 @@ function mises_blog_ds_layout_settings_info() {
         2 => 'field_author_1',
         3 => 'field_topics',
         4 => 'field_austrian_school',
-        5 => 'body',
-        6 => 'field_media_collection',
+        5 => 'print_body_with_embedded_media',
       ),
     ),
     'fields' => array(
@@ -64,8 +68,7 @@ function mises_blog_ds_layout_settings_info() {
       'field_author_1' => 'ds_content',
       'field_topics' => 'ds_content',
       'field_austrian_school' => 'ds_content',
-      'body' => 'ds_content',
-      'field_media_collection' => 'ds_content',
+      'print_body_with_embedded_media' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(

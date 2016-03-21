@@ -74,7 +74,7 @@ function search_blocks_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Search Blog',
+    'title' => 'Search Wire',
     'visibility' => 0,
   );
 

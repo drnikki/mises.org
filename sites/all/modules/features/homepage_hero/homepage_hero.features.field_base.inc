@@ -10,7 +10,7 @@
 function homepage_hero_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_image_link'
+  // Exported field_base: 'field_image_link'.
   $field_bases['field_image_link'] = array(
     'active' => 1,
     'cardinality' => 1,

@@ -114,7 +114,7 @@ function homepage_views_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['path'] = 'homepage';
+  $handler->display->display_options['path'] = 'homepage-old';
 
   /* Display: Press Room HP Block */
   $handler = $view->new_display('block', 'Press Room HP Block', 'press_room');

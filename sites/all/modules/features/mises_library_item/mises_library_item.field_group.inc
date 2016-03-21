@@ -29,8 +29,9 @@ function mises_library_item_field_group_info() {
       3 => 'field_mises_published_date',
       4 => 'field_author_1',
       5 => 'field_push_to_wire',
-      6 => 'title',
-      7 => 'twitter',
+      6 => 'field_wire_include_exclude',
+      7 => 'title',
+      8 => 'twitter',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -119,7 +120,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Formats',
-    'weight' => '7',
+    'weight' => '9',
     'children' => array(
       0 => 'field_epub',
       1 => 'field_link_to_external_listing_',
@@ -215,10 +216,10 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Author',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_mises_published_date',
-      1 => 'field_author_1',
+      0 => 'field_author_1',
+      1 => 'custom_post_date',
     ),
     'format_type' => 'html5',
     'format_settings' => array(
@@ -242,10 +243,10 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Author',
-    'weight' => '3',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_mises_published_date',
-      1 => 'field_author_1',
+      0 => 'field_author_1',
+      1 => 'custom_post_date',
       2 => 'top_term',
     ),
     'format_type' => 'html5',
@@ -296,7 +297,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '14',
+    'weight' => '15',
     'children' => array(
       0 => 'field_bibliography_footnote',
       1 => 'field_citation',
@@ -311,6 +312,38 @@ function mises_library_item_field_group_info() {
     ),
   );
   $field_groups['group_footnotes|node|library_item|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_wrapper|node|library_item|full';
+  $field_group->group_name = 'group_image_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_item';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Image Wrapper',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_image_collection',
+      1 => 'disqus_comment_count',
+      2 => 'ga_page_counter',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Image Wrapper',
+      'instance_settings' => array(
+        'id' => 'slideshow',
+        'classes' => 'group-image-wrapper field-group-html-element pull-left',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_image_wrapper|node|library_item|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -353,7 +386,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Links',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_epub',
       1 => 'field_kindle',
@@ -508,7 +541,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '48',
+    'weight' => '53',
     'children' => array(
       0 => 'field_copyright_info',
       1 => 'print_link',
@@ -602,7 +635,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_topics',
       1 => 'field_austrian_school',
@@ -631,7 +664,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'tags',
-    'weight' => '1',
+    'weight' => '4',
     'children' => array(
       0 => 'field_topics',
       1 => 'field_austrian_school',
@@ -640,6 +673,7 @@ function mises_library_item_field_group_info() {
     'format_settings' => array(
       'label' => 'tags',
       'instance_settings' => array(
+        'id' => '',
         'classes' => 'tags',
         'element' => 'p',
         'show_label' => '0',
@@ -687,6 +721,7 @@ function mises_library_item_field_group_info() {
   t('Documents / Links');
   t('Featured Tags');
   t('Formats');
+  t('Image Wrapper');
   t('Journal Data');
   t('Links');
   t('Media');
