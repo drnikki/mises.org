@@ -2803,297 +2803,6 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|person_profile|full';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'person_profile';
-  $ds_fieldsetting->view_mode = 'full';
-  $ds_fieldsetting->settings = array(
-    'custom_breadcrumb' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'follow_mises_institute' => array(
-      'weight' => '13',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'profile_author_articles' => array(
-      'weight' => '17',
-      'label' => 'above',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'All Works',
-          'lb-el' => 'h3',
-          'lb-cl' => 'sub-heading contrast accordion-toggle',
-          'lb-at' => 'data-toggle="collapse" data-target="#author-articles" data-parent="#profile-accordion"',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'panel',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fis' => TRUE,
-          'fis-el' => 'div',
-          'fis-cl' => 'collapse in',
-          'fis-at' => 'id="author-articles"',
-          'fis-def-at' => FALSE,
-        ),
-        'conditions' => array(),
-      ),
-    ),
-    'profile_major_words' => array(
-      'weight' => '16',
-      'label' => 'above',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'Major Works',
-          'lb-el' => 'h3',
-          'lb-cl' => 'sub-heading contrast accordion-toggle collapsed',
-          'lb-at' => 'data-toggle="collapse" data-target="#major-works" data-parent="#profile-accordion"',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'panel',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fis' => TRUE,
-          'fis-el' => 'div',
-          'fis-cl' => 'collapse',
-          'fis-at' => 'id="major-works"',
-          'fis-def-at' => FALSE,
-        ),
-        'conditions' => array(),
-      ),
-    ),
-    'tags_title' => array(
-      'weight' => '5',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb-el' => 'span',
-          'lb-cl' => 'tag-title bold',
-        ),
-        'conditions' => array(),
-      ),
-    ),
-    'title' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '0',
-        'wrapper' => 'h2',
-        'class' => 'page-title',
-        'ft' => array(),
-        'conditions' => array(),
-      ),
-    ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'Read Full Bio',
-          'lb-el' => 'p',
-          'lb-cl' => 'read-more text-right accordion-toggle collapsed',
-          'lb-at' => 'data-toggle="collapse" data-target="#full-bio"',
-          'lb-col' => TRUE,
-          'fis' => TRUE,
-          'fis-el' => 'div',
-          'fis-cl' => 'collapse',
-          'fis-at' => 'id="full-bio"',
-          'fis-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_austrian_school' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'span',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_contributions' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb-el' => 'h3',
-          'lb-cl' => 'sub-heading contrast accordion-toggle',
-          'lb-at' => 'data-toggle="collapse" data-target="#contributions" data-parent="#profile-accordion"',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'panel',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fis' => TRUE,
-          'fis-el' => 'div',
-          'fis-cl' => 'collapse',
-          'fis-at' => 'id="contributions"',
-          'fis-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_facebook' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'facebook',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_image_collection' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'image pull-left border-secondary',
-          'ow-def-cl' => FALSE,
-          'ow-at' => 'id="slideshow"',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_published_in' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb-el' => 'span',
-          'lb-cl' => 'tag-label bold',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'p',
-          'ow-cl' => 'tags',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'span',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_topics' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'span',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_twitter' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'twitter',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_quote_reference' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'quote',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_email_link' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'contact',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_award_type' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'Awards',
-          'lb-el' => 'span',
-          'lb-cl' => 'tag-label bold',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'p',
-          'ow-cl' => 'tags',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'span',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_profile_phone_number' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'p',
-          'fi-cl' => 'profile-phone-number',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_profile_title' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'h3',
-          'fi-cl' => 'profile-title',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-  );
-  $export['node|person_profile|full'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|person_profile|sidebar_author';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'person_profile';
@@ -3948,6 +3657,33 @@ if ($entity->field_link_to_external_listing_) {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'custom_post_date';
+  $ds_field->label = 'Custom Post Date';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+
+$post_date = $entity->created;
+if ($post_date <= strtotime(\'-1 day\')) {
+print \'<span class="date">\' . format_date($post_date, \'custom\', \'m/d/Y\') . \'</span>\';
+}
+else {
+print \'<span class="date">\' . format_interval((time() - $post_date) , 1) . t(\' ago\') . \'</span>\';
+}
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['custom_post_date'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'disclaimer_note';
   $ds_field->label = 'Disclaimer Note';
   $ds_field->field_type = 5;
@@ -3968,6 +3704,28 @@ if (isset($disclaimer_note[\'value\'])) {
     'use_token' => 0,
   );
   $export['disclaimer_note'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'disqus_comment_count';
+  $ds_field->label = 'Disqus Comment Count';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+drupal_add_js(drupal_get_path(\'module\', \'disqus\') . \'/disqus.js\');  
+drupal_add_js(array(\'disqusComments\' => $entity->disqus[\'domain\']), \'setting\');
+?>
+<a href="/<?php print drupal_get_path_alias(\'node/\' . $entity->nid) . \'#disqus_thread\'; ?>"><span class="disqus-comment-count" data-disqus-identifier="<?php print $entity->disqus[\'identifier\']; ?>"><!--Comment Counter Inserted Here --></span></a>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['disqus_comment_count'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -4127,6 +3885,32 @@ if (isset($disclaimer_note[\'value\'])) {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'ga_page_counter';
+  $ds_field->label = 'ga_page_counter';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php $alias = drupal_get_path_alias();
+$nodeurl = drupal_get_path_alias(\'node/\' . $entity->nid);
+if ($alias != $nodeurl) { ?>
+<a href="/<?php print $nodeurl; ?>">
+<?php } ?>
+<div class="ga-counter-display"><?php print google_analytics_counter_display($nodeurl) . \' Views\'; ?></div>
+<?php if ($alias != $nodeurl) { ?>
+</a>
+<?php } ?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['ga_page_counter'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'linked_box_image';
   $ds_field->label = 'Linked Flex Box Image';
   $ds_field->field_type = 5;
@@ -4146,6 +3930,45 @@ if (isset($disclaimer_note[\'value\'])) {
     'use_token' => 1,
   );
   $export['linked_box_image'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'print_body_with_embedded_media';
+  $ds_field->label = 'Print -Body with embedded media';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'field_collection_item' => 'field_collection_item',
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+
+$media = field_get_items(\'node\', $entity, \'field_media_collection\');
+if (!empty($media)) {
+  $content_array = explode("</p>", check_markup($entity->body[\'und\'][0][\'value\'],\'simplified\',\'\',FALSE));
+  foreach ($media as $key => $itemid) {
+    $medium = field_collection_field_get_entity($itemid);
+    $insertAfter = $medium->field_insert_after[LANGUAGE_NONE][0][\'value\'] ? $medium->field_insert_after[LANGUAGE_NONE][0][\'value\'] : count($content_array);
+    $mediumValue = render(field_view_field(\'field_collection_item\',$medium,\'field_media\',\'wide_player\'));
+    //dpm($insertAfter);
+    //dpm($mediumValue);
+    //dpm($content_array);
+    array_splice($content_array, $insertAfter + $key + 0, 0, $mediumValue);
+}
+$final_content = implode("</p>", $content_array);
+  print $final_content;
+}
+else {
+  print $entity->body[\'und\'][0][\'value\'];
+}
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['print_body_with_embedded_media'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
