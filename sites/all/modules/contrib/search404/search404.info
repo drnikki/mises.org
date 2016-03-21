@@ -1,6 +1,5 @@
 name = "Search 404"
 description = "Automatically search for the keywords in URLs that result in 404 errors and show results instead of Page-Not-Found. "
-dependencies[] = 'search'
 core = 7.x
 
 files[] = search404.module
@@ -9,9 +8,9 @@ files[] = search404.install
 configure = admin/config/search/search404
 
 
-; Information added by drupal.org packaging script on 2013-06-09
-version = "7.x-1.3"
+; Information added by Drupal.org packaging script on 2016-02-29
+version = "7.x-1.4"
 core = "7.x"
 project = "search404"
-datestamp = "1370809553"
+datestamp = "1456722437"
 
