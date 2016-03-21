@@ -3948,33 +3948,6 @@ if ($entity->field_link_to_external_listing_) {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
-  $ds_field->field = 'custom_post_date';
-  $ds_field->label = 'Custom Post Date';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-
-$post_date = $entity->created;
-if ($post_date <= strtotime(\'-1 day\')) {
-print \'<span class="date">\' . format_date($post_date, \'custom\', \'m/d/Y\') . \'</span>\';
-}
-else {
-print \'<span class="date">\' . format_interval((time() - $post_date) , 1) . t(\' ago\') . \'</span>\';
-}
-?>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => 0,
-  );
-  $export['custom_post_date'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
   $ds_field->field = 'disclaimer_note';
   $ds_field->label = 'Disclaimer Note';
   $ds_field->field_type = 5;
@@ -3995,28 +3968,6 @@ if (isset($disclaimer_note[\'value\'])) {
     'use_token' => 0,
   );
   $export['disclaimer_note'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'disqus_comment_count';
-  $ds_field->label = 'Disqus Comment Count';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-drupal_add_js(drupal_get_path(\'module\', \'disqus\') . \'/disqus.js\');  
-drupal_add_js(array(\'disqusComments\' => $entity->disqus[\'domain\']), \'setting\');
-?>
-<a href="/<?php print drupal_get_path_alias(\'node/\' . $entity->nid) . \'#disqus_thread\'; ?>"><span class="disqus-comment-count" data-disqus-identifier="<?php print $entity->disqus[\'identifier\']; ?>"><!--Comment Counter Inserted Here --></span></a>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => 0,
-  );
-  $export['disqus_comment_count'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -4176,32 +4127,6 @@ drupal_add_js(array(\'disqusComments\' => $entity->disqus[\'domain\']), \'settin
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
-  $ds_field->field = 'ga_page_counter';
-  $ds_field->label = 'ga_page_counter';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php $alias = drupal_get_path_alias();
-$nodeurl = drupal_get_path_alias(\'node/\' . $entity->nid);
-if ($alias != $nodeurl) { ?>
-<a href="/<?php print $nodeurl; ?>">
-<?php } ?>
-<div class="ga-counter-display"><?php print google_analytics_counter_display($nodeurl) . \' Views\'; ?></div>
-<?php if ($alias != $nodeurl) { ?>
-</a>
-<?php } ?>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => 0,
-  );
-  $export['ga_page_counter'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
   $ds_field->field = 'linked_box_image';
   $ds_field->label = 'Linked Flex Box Image';
   $ds_field->field_type = 5;
@@ -4221,45 +4146,6 @@ if ($alias != $nodeurl) { ?>
     'use_token' => 1,
   );
   $export['linked_box_image'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'print_body_with_embedded_media';
-  $ds_field->label = 'Print -Body with embedded media';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'field_collection_item' => 'field_collection_item',
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-
-$media = field_get_items(\'node\', $entity, \'field_media_collection\');
-if (!empty($media)) {
-  $content_array = explode("</p>", check_markup($entity->body[\'und\'][0][\'value\'],\'simplified\',\'\',FALSE));
-  foreach ($media as $key => $itemid) {
-    $medium = field_collection_field_get_entity($itemid);
-    $insertAfter = $medium->field_insert_after[LANGUAGE_NONE][0][\'value\'] ? $medium->field_insert_after[LANGUAGE_NONE][0][\'value\'] : count($content_array);
-    $mediumValue = render(field_view_field(\'field_collection_item\',$medium,\'field_media\',\'wide_player\'));
-    //dpm($insertAfter);
-    //dpm($mediumValue);
-    //dpm($content_array);
-    array_splice($content_array, $insertAfter + $key + 0, 0, $mediumValue);
-}
-$final_content = implode("</p>", $content_array);
-  print $final_content;
-}
-else {
-  print $entity->body[\'und\'][0][\'value\'];
-}
-?>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => 0,
-  );
-  $export['print_body_with_embedded_media'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
