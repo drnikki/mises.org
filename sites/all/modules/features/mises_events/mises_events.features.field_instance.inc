@@ -42,7 +42,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 54,
       ),
       'print' => array(
         'label' => 'inline',
@@ -60,7 +60,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 50,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -162,10 +162,25 @@ function mises_events_field_default_field_instances() {
         'weight' => 40,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 44,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 1,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 56,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -240,7 +255,7 @@ function mises_events_field_default_field_instances() {
           ),
         ),
         'type' => 'viewfield_default',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'above',
@@ -258,7 +273,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 44,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -398,7 +413,7 @@ function mises_events_field_default_field_instances() {
           ),
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 10,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -455,7 +470,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 42,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -546,40 +561,9 @@ function mises_events_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'addtocal',
-        'settings' => array(
-          'conditions' => array(),
-          'description' => array(
-            'field' => 'tokenize output',
-            'tokenized' => '[node:field_description]',
-          ),
-          'description_field' => -1,
-          'description_tokenized' => '',
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-          'location' => array(
-            'field' => 'tokenize output',
-            'tokenized' => '[node:field-event-location]',
-          ),
-          'location_field' => -1,
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-          'past_events' => 0,
-        ),
-        'type' => 'addtocal_view',
-        'weight' => 4,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 46,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -635,29 +619,9 @@ function mises_events_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'date',
-        'settings' => array(
-          'conditions' => array(),
-          'format_type' => 'month_day_year',
-          'fromto' => 'both',
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-        ),
-        'type' => 'date_default',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 41,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -733,7 +697,7 @@ function mises_events_field_default_field_instances() {
           ),
         ),
         'type' => 'text_plain',
-        'weight' => 5,
+        'weight' => 2,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -793,7 +757,7 @@ function mises_events_field_default_field_instances() {
           ),
         ),
         'type' => 'text_plain',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -882,7 +846,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 52,
       ),
       'print' => array(
         'label' => 'above',
@@ -900,7 +864,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 48,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -956,7 +920,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 51,
       ),
       'print' => array(
         'label' => 'above',
@@ -974,7 +938,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 52,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -998,7 +962,7 @@ function mises_events_field_default_field_instances() {
   $field_instances['node-event-field_image'] = array(
     'bundle' => 'event',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Upload an image to be used for the page and teaser. Recommended size: 240 x 165.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1041,7 +1005,7 @@ function mises_events_field_default_field_instances() {
           ),
         ),
         'type' => 'file_rendered',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -1101,6 +1065,13 @@ function mises_events_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'list_teaser' => 0,
+          'slideshow' => 0,
+          'vertical_teaser' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -1121,6 +1092,7 @@ function mises_events_field_default_field_instances() {
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
+          'ebook' => 0,
           'image' => 'image',
           'video' => 0,
         ),
@@ -1129,11 +1101,10 @@ function mises_events_field_default_field_instances() {
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
           'upload' => 0,
-          'youtube' => 0,
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -1169,7 +1140,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 53,
       ),
       'print' => array(
         'label' => 'inline',
@@ -1187,7 +1158,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 49,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1247,7 +1218,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 50,
       ),
       'print' => array(
         'label' => 'above',
@@ -1265,7 +1236,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 51,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1281,7 +1252,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -1336,7 +1307,7 @@ function mises_events_field_default_field_instances() {
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 10,
+        'weight' => 12,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -1369,7 +1340,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 47,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1385,7 +1356,7 @@ function mises_events_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -1424,7 +1395,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 49,
       ),
       'print' => array(
         'label' => 'above',
@@ -1442,7 +1413,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 46,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1459,81 +1430,6 @@ function mises_events_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 48,
-    ),
-  );
-
-  // Exported field_instance: 'node-event-field_push_to_wire'.
-  $field_instances['node-event-field_push_to_wire'] = array(
-    'bundle' => 'event',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'list_default',
-        'weight' => 23,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_push_to_wire',
-    'label' => 'Push to Wire',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 8,
     ),
   );
 
@@ -1603,7 +1499,7 @@ function mises_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'print' => array(
         'label' => 'above',
@@ -1645,7 +1541,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 53,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1728,7 +1624,7 @@ function mises_events_field_default_field_instances() {
           ),
         ),
         'type' => 'link_default',
-        'weight' => 11,
+        'weight' => 13,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -1768,7 +1664,7 @@ function mises_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 49,
+        'weight' => 54,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1846,7 +1742,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 48,
       ),
       'print' => array(
         'label' => 'above',
@@ -1864,7 +1760,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 45,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1916,7 +1812,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 38,
       ),
       'print' => array(
         'label' => 'above',
@@ -1934,7 +1830,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 43,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -2012,7 +1908,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 40,
       ),
       'print' => array(
         'label' => 'above',
@@ -2042,18 +1938,20 @@ Select "No registration or past event" to hide the registration embed or link fi
             'destination' => '',
             'linked' => 0,
           ),
-          'more_link' => FALSE,
+          'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
-          'trim_length' => 300,
-          'trim_link' => FALSE,
-          'trim_options' => array(),
+          'trim_length' => 60,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 0,
+          ),
           'trim_preserve_tags' => '',
           'trim_suffix' => '...',
-          'trim_type' => 'chars',
+          'trim_type' => 'words',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 4,
+        'weight' => 6,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -2191,10 +2089,25 @@ Select "No registration or past event" to hide the registration embed or link fi
         'weight' => 46,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 50,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'conditions' => array(),
+          'link' => 1,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 55,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -2219,6 +2132,75 @@ Select "No registration or past event" to hide the registration embed or link fi
     ),
   );
 
+  // Exported field_instance: 'node-event-field_wire_include_exclude'.
+  $field_instances['node-event-field_wire_include_exclude'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
+        ),
+        'type' => 'list_default',
+        'weight' => 24,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_wire_include_exclude',
+    'label' => 'Include or exclude from The Wire',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 9,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('<h3>Content Creators:</h3>
@@ -2240,12 +2222,12 @@ Select "No registration or past event" to hide the registration embed or link fi
   t('Event Image');
   t('Event Type');
   t('Featured');
+  t('Include or exclude from The Wire');
   t('Indicate where this event is public or private. ');
   t('Level');
   t('Live Feed');
   t('Location');
   t('Public/Private');
-  t('Push to Wire');
   t('Registration Form');
   t('Registration Link (External)');
   t('Registration Type');
@@ -2258,6 +2240,7 @@ Select "No registration or past event" to hide the registration embed or link fi
   t('Teaser Text');
   t('Topics');
   t('Upload an image to be used for social media shares. Recommended size: 1200px X 1200px.');
+  t('Upload an image to be used for the page and teaser. Recommended size: 240 x 165.');
   t('Will this event have a live feed? If so, the video embed field will appear below after you select "Yes."');
   t('YouTube Embed');
 

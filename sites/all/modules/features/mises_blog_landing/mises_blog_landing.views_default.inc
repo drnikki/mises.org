@@ -27,6 +27,8 @@ function mises_blog_landing_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -66,7 +68,97 @@ function mises_blog_landing_views_default_views() {
   $handler->display->display_options['title'] = 'Mises Wire';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'landing-list';
-  $handler->display->display_options['path'] = 'blog';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Library Item Type (field_library_item_tree) */
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+    3 => 'AND',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+    'event' => 'event',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Include or exclude from The Wire (field_wire_include_exclude) */
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['id'] = 'field_wire_include_exclude_value';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['table'] = 'field_data_field_wire_include_exclude';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['field'] = 'field_wire_include_exclude_value';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['value'] = array(
+    'exclude' => 'exclude',
+  );
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['group'] = 1;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['relationship'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['filters']['name']['value'] = 'article';
+  $handler->display->display_options['filters']['name']['group'] = 2;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Content: Include or exclude from The Wire (field_wire_include_exclude) */
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['id'] = 'field_wire_include_exclude_value_1';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['table'] = 'field_data_field_wire_include_exclude';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['field'] = 'field_wire_include_exclude_value';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['value'] = array(
+    'exclude' => 'exclude',
+  );
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['group'] = 2;
+  /* Filter criterion: Content: Include or exclude from The Wire (field_wire_include_exclude) */
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_2']['id'] = 'field_wire_include_exclude_value_2';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_2']['table'] = 'field_data_field_wire_include_exclude';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_2']['field'] = 'field_wire_include_exclude_value';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_2']['value'] = array(
+    'include' => 'include',
+  );
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_2']['group'] = 3;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_2']['id'] = 'status_2';
+  $handler->display->display_options['filters']['status_2']['table'] = 'node';
+  $handler->display->display_options['filters']['status_2']['field'] = 'status';
+  $handler->display->display_options['filters']['status_2']['value'] = '1';
+  $handler->display->display_options['filters']['status_2']['group'] = 3;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_2']['id'] = 'type_2';
+  $handler->display->display_options['filters']['type_2']['table'] = 'node';
+  $handler->display->display_options['filters']['type_2']['field'] = 'type';
+  $handler->display->display_options['filters']['type_2']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  $handler->display->display_options['filters']['type_2']['group'] = 3;
+  $handler->display->display_options['path'] = 'wire';
 
   /* Display: Featured Block */
   $handler = $view->new_display('block', 'Featured Block', 'block_featured');
@@ -319,6 +411,184 @@ function mises_blog_landing_views_default_views() {
   );
   $handler->display->display_options['fields']['field_author_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_author_1']['separator'] = ' ';
+
+  /* Display: The Wire Block */
+  $handler = $view->new_display('block', 'The Wire Block', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'The Wire';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['total_pages'] = '3';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+    'event' => 'event',
+    'library_item' => 'library_item',
+  );
+  /* Filter criterion: Broken/missing handler */
+  $handler->display->display_options['filters']['field_push_to_wire_value']['id'] = 'field_push_to_wire_value';
+  $handler->display->display_options['filters']['field_push_to_wire_value']['table'] = 'field_data_field_push_to_wire';
+  $handler->display->display_options['filters']['field_push_to_wire_value']['field'] = 'field_push_to_wire_value';
+  $handler->display->display_options['filters']['field_push_to_wire_value']['operator'] = 'or';
+  $handler->display->display_options['filters']['field_push_to_wire_value']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: The Wire Page */
+  $handler = $view->new_display('page', 'The Wire Page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'The Wire';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+    'event' => 'event',
+    'library_item' => 'library_item',
+  );
+  /* Filter criterion: Broken/missing handler */
+  $handler->display->display_options['filters']['field_push_to_wire_value']['id'] = 'field_push_to_wire_value';
+  $handler->display->display_options['filters']['field_push_to_wire_value']['table'] = 'field_data_field_push_to_wire';
+  $handler->display->display_options['filters']['field_push_to_wire_value']['field'] = 'field_push_to_wire_value';
+  $handler->display->display_options['filters']['field_push_to_wire_value']['operator'] = 'or';
+  $handler->display->display_options['filters']['field_push_to_wire_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['path'] = 'the-wire';
+
+  /* Display: The Wire Homepage */
+  $handler = $view->new_display('page', 'The Wire Homepage', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'The Wire';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['total_pages'] = '3';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Library Item Type (field_library_item_tree) */
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['id'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
+  $handler->display->display_options['relationships']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+    3 => 'AND',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+    'event' => 'event',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Include or exclude from The Wire (field_wire_include_exclude) */
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['id'] = 'field_wire_include_exclude_value';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['table'] = 'field_data_field_wire_include_exclude';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['field'] = 'field_wire_include_exclude_value';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['value'] = array(
+    'exclude' => 'exclude',
+  );
+  $handler->display->display_options['filters']['field_wire_include_exclude_value']['group'] = 1;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_2']['id'] = 'status_2';
+  $handler->display->display_options['filters']['status_2']['table'] = 'node';
+  $handler->display->display_options['filters']['status_2']['field'] = 'status';
+  $handler->display->display_options['filters']['status_2']['value'] = '1';
+  $handler->display->display_options['filters']['status_2']['group'] = 2;
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['relationship'] = 'field_library_item_tree_tid';
+  $handler->display->display_options['filters']['name']['value'] = 'article';
+  $handler->display->display_options['filters']['name']['group'] = 2;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Content: Include or exclude from The Wire (field_wire_include_exclude) */
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['id'] = 'field_wire_include_exclude_value_1';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['table'] = 'field_data_field_wire_include_exclude';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['field'] = 'field_wire_include_exclude_value';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['value'] = array(
+    'exclude' => 'exclude',
+  );
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_1']['group'] = 2;
+  /* Filter criterion: Content: Include or exclude from The Wire (field_wire_include_exclude) */
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_2']['id'] = 'field_wire_include_exclude_value_2';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_2']['table'] = 'field_data_field_wire_include_exclude';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_2']['field'] = 'field_wire_include_exclude_value';
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_2']['value'] = array(
+    'include' => 'include',
+  );
+  $handler->display->display_options['filters']['field_wire_include_exclude_value_2']['group'] = 3;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 3;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_2']['id'] = 'type_2';
+  $handler->display->display_options['filters']['type_2']['table'] = 'node';
+  $handler->display->display_options['filters']['type_2']['field'] = 'type';
+  $handler->display->display_options['filters']['type_2']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  $handler->display->display_options['filters']['type_2']['group'] = 3;
+  $handler->display->display_options['path'] = 'homepage';
   $export['blog'] = $view;
 
   return $export;

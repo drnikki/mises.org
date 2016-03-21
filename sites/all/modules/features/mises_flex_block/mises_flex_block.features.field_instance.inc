@@ -10,7 +10,7 @@
 function mises_flex_block_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'file-image-field_file_image_title_text'
+  // Exported field_instance: 'file-image-field_file_image_title_text'.
   $field_instances['file-image-field_file_image_title_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -28,6 +28,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'more_link' => FALSE,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -79,7 +90,7 @@ function mises_flex_block_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flex_block-field_display_title'
+  // Exported field_instance: 'node-flex_block-field_display_title'.
   $field_instances['node-flex_block-field_display_title'] = array(
     'bundle' => 'flex_block',
     'default_value' => NULL,
@@ -91,6 +102,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_plain',
         'weight' => 1,
@@ -100,6 +122,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 3,
@@ -109,6 +142,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_plain',
         'weight' => 0,
@@ -118,6 +162,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_plain',
         'weight' => 0,
@@ -175,7 +230,7 @@ function mises_flex_block_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flex_block-field_image'
+  // Exported field_instance: 'node-flex_block-field_image'.
   $field_instances['node-flex_block-field_image'] = array(
     'bundle' => 'flex_block',
     'deleted' => 0,
@@ -193,6 +248,17 @@ function mises_flex_block_field_default_field_instances() {
           'conditions' => array(),
           'image_link' => '',
           'image_style' => '',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'image',
         'weight' => 0,
@@ -204,6 +270,17 @@ function mises_flex_block_field_default_field_instances() {
           'conditions' => array(),
           'image_link' => '',
           'image_style' => '',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'image',
         'weight' => 1,
@@ -222,6 +299,17 @@ function mises_flex_block_field_default_field_instances() {
           ),
           'image_link' => '',
           'image_style' => '',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'image',
         'weight' => 2,
@@ -240,6 +328,17 @@ function mises_flex_block_field_default_field_instances() {
           ),
           'image_link' => '',
           'image_style' => '',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'image',
         'weight' => 2,
@@ -296,7 +395,7 @@ function mises_flex_block_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flex_block-field_image_link'
+  // Exported field_instance: 'node-flex_block-field_image_link'.
   $field_instances['node-flex_block-field_image_link'] = array(
     'bundle' => 'flex_block',
     'default_value' => NULL,
@@ -308,6 +407,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'link_plain',
         'weight' => 3,
@@ -317,6 +427,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'link_default',
         'weight' => 2,
@@ -326,6 +447,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'link_plain',
         'weight' => 5,
@@ -335,6 +467,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'link_plain',
         'weight' => 5,
@@ -382,7 +525,7 @@ function mises_flex_block_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flex_block-field_media_collection'
+  // Exported field_instance: 'node-flex_block-field_media_collection'.
   $field_instances['node-flex_block-field_media_collection'] = array(
     'bundle' => 'flex_block',
     'default_value' => NULL,
@@ -404,6 +547,17 @@ function mises_flex_block_field_default_field_instances() {
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -414,6 +568,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'small_player',
         ),
         'type' => 'field_collection_fields',
@@ -424,6 +589,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'small_player',
         ),
         'type' => 'field_collection_fields',
@@ -434,6 +610,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
@@ -457,7 +644,7 @@ function mises_flex_block_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flex_block-field_on_page'
+  // Exported field_instance: 'node-flex_block-field_on_page'.
   $field_instances['node-flex_block-field_on_page'] = array(
     'bundle' => 'flex_block',
     'default_value' => NULL,
@@ -476,6 +663,17 @@ function mises_flex_block_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 8,
@@ -514,7 +712,7 @@ function mises_flex_block_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flex_block-field_region'
+  // Exported field_instance: 'node-flex_block-field_region'.
   $field_instances['node-flex_block-field_region'] = array(
     'bundle' => 'flex_block',
     'default_value' => NULL,
@@ -532,6 +730,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'list_default',
         'weight' => 4,
@@ -572,7 +781,7 @@ function mises_flex_block_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flex_block-field_section'
+  // Exported field_instance: 'node-flex_block-field_section'.
   $field_instances['node-flex_block-field_section'] = array(
     'bundle' => 'flex_block',
     'default_value' => NULL,
@@ -590,6 +799,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'list_default',
         'weight' => 5,
@@ -630,7 +850,7 @@ function mises_flex_block_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flex_block-field_teaser_text'
+  // Exported field_instance: 'node-flex_block-field_teaser_text'.
   $field_instances['node-flex_block-field_teaser_text'] = array(
     'bundle' => 'flex_block',
     'default_value' => NULL,
@@ -642,6 +862,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 2,
@@ -651,6 +882,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -660,6 +902,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 4,
@@ -669,6 +922,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 4,
@@ -678,6 +942,17 @@ function mises_flex_block_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 29,
@@ -741,7 +1016,7 @@ function mises_flex_block_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flex_block-field_term_page'
+  // Exported field_instance: 'node-flex_block-field_term_page'.
   $field_instances['node-flex_block-field_term_page'] = array(
     'bundle' => 'flex_block',
     'default_value' => NULL,
@@ -754,6 +1029,17 @@ function mises_flex_block_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'link' => FALSE,
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'entityreference_label',
         'weight' => 9,
@@ -797,7 +1083,7 @@ function mises_flex_block_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flex_block-field_weight'
+  // Exported field_instance: 'node-flex_block-field_weight'.
   $field_instances['node-flex_block-field_weight'] = array(
     'bundle' => 'flex_block',
     'default_value' => array(
@@ -822,6 +1108,17 @@ lowest weight first.',
         'module' => 'list',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'list_default',
         'weight' => 6,

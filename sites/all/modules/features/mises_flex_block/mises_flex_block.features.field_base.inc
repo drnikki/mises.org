@@ -10,7 +10,7 @@
 function mises_flex_block_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_display_title'
+  // Exported field_base: 'field_display_title'.
   $field_bases['field_display_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function mises_flex_block_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_file_image_title_text'
+  // Exported field_base: 'field_file_image_title_text'.
   $field_bases['field_file_image_title_text'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -52,7 +52,7 @@ function mises_flex_block_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_on_page'
+  // Exported field_base: 'field_on_page'.
   $field_bases['field_on_page'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -100,7 +100,7 @@ function mises_flex_block_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_region'
+  // Exported field_base: 'field_region'.
   $field_bases['field_region'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -134,13 +134,16 @@ function mises_flex_block_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_section'
+  // Exported field_base: 'field_section'.
   $field_bases['field_section'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_section',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -162,6 +165,7 @@ function mises_flex_block_field_default_field_bases() {
         'giving_home' => 'Giving Section',
         'term' => 'Term/Category page (select below; used for term/category descriptions)',
         'node' => 'Place only on the specific page(s) below',
+        'wire' => 'Wire',
       ),
       'allowed_values_function' => '',
     ),
@@ -169,7 +173,7 @@ function mises_flex_block_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_term_page'
+  // Exported field_base: 'field_term_page'.
   $field_bases['field_term_page'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -211,7 +215,7 @@ function mises_flex_block_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_weight'
+  // Exported field_base: 'field_weight'.
   $field_bases['field_weight'] = array(
     'active' => 1,
     'cardinality' => 1,

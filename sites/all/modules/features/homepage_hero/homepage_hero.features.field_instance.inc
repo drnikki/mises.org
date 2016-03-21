@@ -10,7 +10,7 @@
 function homepage_hero_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-homepage_hero-field_image'
+  // Exported field_instance: 'node-homepage_hero-field_image'.
   $field_instances['node-homepage_hero-field_image'] = array(
     'bundle' => 'homepage_hero',
     'deleted' => 0,
@@ -23,6 +23,17 @@ function homepage_hero_field_default_field_instances() {
           'conditions' => array(),
           'image_link' => '',
           'image_style' => '',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'image',
         'weight' => 0,
@@ -76,7 +87,7 @@ function homepage_hero_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-homepage_hero-field_image_link'
+  // Exported field_instance: 'node-homepage_hero-field_image_link'.
   $field_instances['node-homepage_hero-field_image_link'] = array(
     'bundle' => 'homepage_hero',
     'default_value' => NULL,
@@ -88,6 +99,17 @@ function homepage_hero_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'link_default',
         'weight' => 2,
@@ -135,7 +157,7 @@ function homepage_hero_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-homepage_hero-field_teaser_text'
+  // Exported field_instance: 'node-homepage_hero-field_teaser_text'.
   $field_instances['node-homepage_hero-field_teaser_text'] = array(
     'bundle' => 'homepage_hero',
     'default_value' => NULL,
@@ -147,6 +169,17 @@ function homepage_hero_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'text_default',
         'weight' => 1,

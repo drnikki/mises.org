@@ -99,7 +99,7 @@ function homepage_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Image Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_image_link']['id'] = 'field_image_link';
   $handler->display->display_options['fields']['field_image_link']['table'] = 'field_data_field_image_link';
   $handler->display->display_options['fields']['field_image_link']['field'] = 'field_image_link';
