@@ -62,13 +62,27 @@ function mises_blog_field_default_field_instances() {
           ),
         ),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -171,18 +185,18 @@ function mises_blog_field_default_field_instances() {
           ),
           'more_link' => 0,
           'more_text' => 'Read more',
-          'summary_handler' => 'full',
-          'trim_length' => 60,
-          'trim_link' => 0,
+          'summary_handler' => 'trim',
+          'trim_length' => 300,
+          'trim_link' => FALSE,
           'trim_options' => array(
-            'text' => 'text',
+            'text' => 0,
           ),
-          'trim_preserve_tags' => '<a><p>',
+          'trim_preserve_tags' => '',
           'trim_suffix' => '...',
-          'trim_type' => 'words',
+          'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 7,
+        'weight' => 4,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -241,7 +255,7 @@ function mises_blog_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -277,13 +291,13 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 41,
       ),
       'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 31,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -301,7 +315,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 34,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -424,25 +438,10 @@ function mises_blog_field_default_field_instances() {
         'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => 1,
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 49,
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -515,7 +514,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'author_full_name',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -571,7 +570,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'author_full_name',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 4,
+        'weight' => 3,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -626,13 +625,13 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 39,
       ),
       'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 29,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -650,7 +649,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 31,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -666,7 +665,7 @@ function mises_blog_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 42,
+      'weight' => 47,
     ),
   );
 
@@ -702,13 +701,13 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 37,
       ),
       'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 0,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -726,7 +725,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -769,7 +768,7 @@ function mises_blog_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -778,7 +777,7 @@ function mises_blog_field_default_field_instances() {
     'bundle' => 'blog',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Upload an image to be used for the page and teaser. Recommended size: 240 x 165.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -825,13 +824,13 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_entity_flexslider',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 0,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -870,7 +869,7 @@ function mises_blog_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_image_collection',
-    'label' => 'Page Image',
+    'label' => 'Image',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -880,7 +879,7 @@ function mises_blog_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -916,13 +915,13 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 40,
       ),
       'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 30,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -940,7 +939,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 33,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1016,12 +1015,27 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 16,
+        'weight' => 13,
       ),
       'print' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
+          'view_mode' => 'wide_player',
+        ),
+        'type' => 'field_collection_fields',
         'weight' => 6,
       ),
       'sidebar_teaser' => array(
@@ -1040,7 +1054,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 32,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1095,13 +1109,13 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 31,
       ),
       'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 0,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1119,7 +1133,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1137,7 +1151,7 @@ function mises_blog_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -1176,13 +1190,13 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 36,
       ),
       'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 0,
       ),
       'sidebar_teaser' => array(
         'label' => 'above',
@@ -1200,7 +1214,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1218,7 +1232,7 @@ function mises_blog_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -1253,13 +1267,13 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 38,
       ),
       'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 0,
       ),
       'sidebar_teaser' => array(
         'label' => 'hidden',
@@ -1337,20 +1351,18 @@ function mises_blog_field_default_field_instances() {
             'destination' => '',
             'linked' => 0,
           ),
-          'more_link' => 0,
+          'more_link' => FALSE,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
-          'trim_length' => 60,
-          'trim_link' => 0,
-          'trim_options' => array(
-            'text' => 0,
-          ),
-          'trim_preserve_tags' => '<a><p>',
+          'trim_length' => 300,
+          'trim_link' => FALSE,
+          'trim_options' => array(),
+          'trim_preserve_tags' => '',
           'trim_suffix' => '...',
-          'trim_type' => 'words',
+          'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 6,
+        'weight' => 3,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1404,14 +1416,10 @@ function mises_blog_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -1513,25 +1521,10 @@ function mises_blog_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => 1,
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 48,
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1553,81 +1546,6 @@ function mises_blog_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 44,
-    ),
-  );
-
-  // Exported field_instance: 'node-blog-field_wire_include_exclude'.
-  $field_instances['node-blog-field_wire_include_exclude'] = array(
-    'bundle' => 'blog',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'list_default',
-        'weight' => 14,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'sidebar_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_wire_include_exclude',
-    'label' => 'Include or exclude from The Wire',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 9,
     ),
   );
 
@@ -1740,18 +1658,16 @@ function mises_blog_field_default_field_instances() {
   t('Body');
   t('Enter a number to indicate after which paragraph in the Body the Media player should appear. If left empty, the Media player will appear midway in the body. ');
   t('Featured');
-  t('Include or exclude from The Wire');
+  t('Image');
   t('Insert After');
   t('Level');
   t('Media');
-  t('Page Image');
   t('Show Comment Policy');
   t('Show Disclaimer');
   t('Social Media Image');
   t('Teaser Text');
   t('Topics');
   t('Upload an image to be used for social media shares. Recommended size: 1200px X 1200px.');
-  t('Upload an image to be used for the page and teaser. Recommended size: 240 x 165.');
 
   return $field_instances;
 }

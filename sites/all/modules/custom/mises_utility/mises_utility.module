@@ -546,4 +546,10 @@ function mises_utility_preprocess_html(&$variables) {
   if (path_is_admin(current_path())) {
     drupal_add_css(drupal_get_path('theme', 'bootsass') . '/stylesheets/mises_admin.css', array('weight' => CSS_THEME));
   }
+
+  // Add conditional stylesheets for admin pages on admin theme.
+  if (arg(0)=="node" && arg(2)=="edit") {
+    // reference your own stylesheet    
+    drupal_add_css(drupal_get_path('module', 'mises_utility') . '/css/mises_utility.css', array('weight' => CSS_THEME));
+  }
 }
