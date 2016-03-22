@@ -150,7 +150,7 @@ function mises_library_item_strongarm() {
           'weight' => '7',
         ),
         'twitter' => array(
-          'weight' => '9',
+          'weight' => '1',
         ),
       ),
       'display' => array(
