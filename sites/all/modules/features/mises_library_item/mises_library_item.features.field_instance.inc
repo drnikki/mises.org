@@ -854,7 +854,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 22,
+      'weight' => 20,
     ),
   );
 
@@ -1166,7 +1166,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 20,
+      'weight' => 18,
     ),
   );
 
@@ -2395,7 +2395,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 16,
+      'weight' => 21,
     ),
   );
 
@@ -3458,7 +3458,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 21,
+      'weight' => 19,
     ),
   );
 
@@ -5787,7 +5787,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 18,
+      'weight' => 22,
     ),
   );
 
@@ -5955,7 +5955,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 19,
+      'weight' => 17,
     ),
   );
 
