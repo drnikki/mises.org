@@ -54,10 +54,10 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Location',
-    'weight' => '4',
+    'weight' => '7',
     'children' => array(
-      0 => 'field_event_date',
-      1 => 'field_event_location',
+      0 => 'field_event_location',
+      1 => 'custom_post_date',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -112,10 +112,10 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Location',
-    'weight' => '2',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_event_date',
-      1 => 'field_event_location',
+      0 => 'field_event_location',
+      1 => 'custom_post_date',
       2 => 'dynamic_field_1',
     ),
     'format_type' => 'html-element',
@@ -147,9 +147,9 @@ function mises_events_field_group_info() {
       1 => 'field_event_date',
       2 => 'field_event_type',
       3 => 'field_event_location',
-      4 => 'field_social_media_image',
-      5 => 'title',
-      6 => 'field_teaser_text',
+      4 => 'field_teaser_text',
+      5 => 'field_wire_include_exclude',
+      6 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -179,6 +179,7 @@ function mises_events_field_group_info() {
       0 => 'field_live_feed',
       1 => 'field_image',
       2 => 'field_media_collection',
+      3 => 'field_social_media_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -225,6 +226,38 @@ function mises_events_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_wrapper|node|event|full';
+  $field_group->group_name = 'group_image_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Image Wrapper',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_image',
+      1 => 'disqus_comment_count',
+      2 => 'ga_page_counter',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Image Wrapper',
+      'instance_settings' => array(
+        'id' => 'image',
+        'classes' => 'group-image-wrapper field-group-html-element pull-left',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_image_wrapper|node|event|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_tags|node|event|full';
   $field_group->group_name = 'group_tags';
   $field_group->entity_type = 'node';
@@ -233,7 +266,7 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '7',
+    'weight' => '9',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
@@ -251,14 +284,47 @@ function mises_events_field_group_info() {
   );
   $field_groups['group_tags|node|event|full'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|event|teaser';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'tags',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_austrian_school',
+      1 => 'field_topics',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'tags',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'tags',
+        'element' => 'p',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_tags|node|event|teaser'] = $field_group;
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Date Location');
   t('Event Information');
+  t('Image Wrapper');
   t('Media');
   t('Registration');
   t('Tagging');
   t('Tags');
+  t('tags');
 
   return $field_groups;
 }

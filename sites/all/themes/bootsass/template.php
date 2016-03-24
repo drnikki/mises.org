@@ -58,5 +58,12 @@ bootsass_include('bootsass', 'theme/alter.inc');
 
 
 function bootsass_preprocess_field(&$variables) {
-  // removed default social media image stuff
+  // do not preload audio files
+  if ($variables['element']['#field_type'] == 'media') {
+    if ($variables['items'][0]['#bundle'] == 'audio') {
+      foreach ($variables['items'] as $key => $item) {
+        $variables['items'][$key]['file']['#preload'] = 'none';
+      }
+    }
+  }
 }

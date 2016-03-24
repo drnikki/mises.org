@@ -1,0 +1,22 @@
+/* Moving Tags To Columns */
+.page-node-edit .group-addit-blog-information .form-radios {
+  -webkit-column-count: 5; /* Chrome, Safari, Opera */
+  -moz-column-count: 5; /* Firefox */
+  column-count: 5;
+}
+.page-node-edit .group-addit-blog-information .form-checkboxes {
+  -webkit-column-count: 5; /* Chrome, Safari, Opera */
+  -moz-column-count: 5; /* Firefox */
+  column-count: 5;
+}
+
+.page-node-edit .group-tagging .form-radios {
+  -webkit-column-count: 5; /* Chrome, Safari, Opera */
+  -moz-column-count: 5; /* Firefox */
+  column-count: 5;
+}
+.page-node-edit .group-tagging .form-checkboxes {
+  -webkit-column-count: 5; /* Chrome, Safari, Opera */
+  -moz-column-count: 5; /* Firefox */
+  column-count: 5;
+}

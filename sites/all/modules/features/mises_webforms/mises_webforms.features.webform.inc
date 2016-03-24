@@ -1354,7 +1354,7 @@ tom_woods|Tom Woods',
   'picture' => 0,
   'data' => 'a:1:{s:7:"overlay";i:1;}',
   'webform_features_author' => 'admin',
-  'webform_features_revision_author' => 'Chad',
+  'webform_features_revision_author' => '',
 );
 return $webforms;
 }

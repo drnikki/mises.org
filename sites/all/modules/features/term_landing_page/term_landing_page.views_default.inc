@@ -2251,7 +2251,6 @@ Quarterly Journal of Austrian Economics|Other Journals',
     7 => 0,
   );
   $handler->display->display_options['filters']['field_topics_target_id_selective']['selective_display_field'] = 'field_topics';
-  $handler->display->display_options['filters']['field_topics_target_id_selective']['selective_display_sort'] = 'ASC';
   $handler->display->display_options['filters']['field_topics_target_id_selective']['selective_items_limit'] = '100';
   /* Filter criterion: Content: Austrian School (field_austrian_school) (selective) */
   $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['id'] = 'field_austrian_school_target_id_selective';
@@ -2275,7 +2274,6 @@ Quarterly Journal of Austrian Economics|Other Journals',
     7 => 0,
   );
   $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['selective_display_field'] = 'field_austrian_school';
-  $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['selective_display_sort'] = 'ASC';
   $handler->display->display_options['filters']['field_austrian_school_target_id_selective']['selective_items_limit'] = '';
   /* Filter criterion: Title */
   $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
@@ -2324,7 +2322,6 @@ Quarterly Journal of Austrian Economics|Other Journals',
     7 => 0,
   );
   $handler->display->display_options['filters']['field_journal_volume_value_selective']['selective_display_field'] = 'field_journal_volume';
-  $handler->display->display_options['filters']['field_journal_volume_value_selective']['selective_display_sort'] = 'ASC';
   $handler->display->display_options['filters']['field_journal_volume_value_selective']['selective_items_limit'] = '100';
   /* Filter criterion: Number */
   $handler->display->display_options['filters']['field_journal_number_value_selective']['id'] = 'field_journal_number_value_selective';
@@ -2349,7 +2346,6 @@ Quarterly Journal of Austrian Economics|Other Journals',
     7 => 0,
   );
   $handler->display->display_options['filters']['field_journal_number_value_selective']['selective_display_field'] = 'field_journal_number';
-  $handler->display->display_options['filters']['field_journal_number_value_selective']['selective_display_sort'] = 'ASC';
   $handler->display->display_options['filters']['field_journal_number_value_selective']['selective_items_limit'] = '100';
   /* Filter criterion: Year */
   $handler->display->display_options['filters']['field_journal_year_value_selective']['id'] = 'field_journal_year_value_selective';
@@ -2374,7 +2370,6 @@ Quarterly Journal of Austrian Economics|Other Journals',
     7 => 0,
   );
   $handler->display->display_options['filters']['field_journal_year_value_selective']['selective_display_field'] = 'field_journal_year';
-  $handler->display->display_options['filters']['field_journal_year_value_selective']['selective_display_sort'] = 'ASC';
   $handler->display->display_options['filters']['field_journal_year_value_selective']['selective_items_limit'] = '100';
   $handler->display->display_options['path'] = 'taxonomy/term/%';
 

@@ -20,6 +20,11 @@
 /* HOMEPAGE HERO */
 .view-homepage-hero {
   position: relative;
+  padding: 5px;
+  background-color: #fff;
+  .views-slideshow-pager-fields {
+    display: none;
+  }
   .featured-block {
     position: relative;
     a {
@@ -30,7 +35,7 @@
     .overlay {
       position: relative;
       left: -6px;
-      padding: 10px 20px 10px 38px;
+      padding: 10px 20px 10px 20px;
       width: -webkit-calc(100% + 6px);
       width: -moz-calc(100% + 6px);
       width: calc(100% + 6px);
@@ -41,13 +46,15 @@
         & {
           position: absolute;
           bottom: 12px;
-          max-width: 75%;
+          max-width: 90%;
         }
       }
       h3 {
         margin-top: 0;
+        margin-bottom: 0;
         color: $white;
-        font-size: $font-size-large;
+        font-size: 25px;
+        font-family: $font-family-serif;
       }
       p {
         color: $gray-lighter;
@@ -116,10 +123,42 @@
 }
 
 /* HOMEPAGE MISES WIRE */
-.front .region-featured-right {
+.front {
+
+  .region-featured-right {
   overflow: hidden;
   height: 360px; //starting height, subject to override
+  }
+
+  h1.page-header{
+  display: none;
+  }
+  
+  .main-content .shield {
+    display: none;
+  }
+  .group-date-author {
+    .search-label {
+      display: none;
+    }
+    .date:before {
+      content: "";
+      width: 0;
+      padding: 0;
+    }
+  }
+  .group-date-location {
+    .search-label {
+      display: none;
+    }
+    .date:before {
+      content: "";
+      width: 0;
+      padding: 0;
+    }
+  }
 }
+
 .blog-home-block {
   background-color: $gray-lighter;
   height: 100%;
@@ -270,6 +309,7 @@
   }
   h2.teaser-title {
     margin-top: 0;
+    margin-bottom: 0;
   }
   .view-footer {
     span.glyphicon {

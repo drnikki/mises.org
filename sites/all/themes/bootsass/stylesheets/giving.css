@@ -2359,6 +2359,8 @@ body.not-logged-in .contextual-links-wrapper { display: none; }
 .node-type-library-item .body-content { padding-bottom: 0; }
 .node-type-library-item .group-sharing { margin-top: 16px; }
 
+.node-library-item .views-field-field-source { font-size: 13px; }
+
 .content-bottom, .bottom-blocks { padding-top: 16px; }
 
 .node-unpublished.view-mode-full { background: #ffc0c0; }
@@ -2593,3 +2595,5 @@ span.glyphicon { margin-right: 10px; border-radius: 50%; color: #fff; }
 
 /* PAGE ELEMENTS */
 .media-player { clear: both; padding: 20px 0; }
+
+/*# sourceMappingURL=giving.css.map */

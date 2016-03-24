@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function homepage_hero_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -37,7 +37,7 @@ function homepage_hero_field_group_info() {
       ),
     ),
   );
-  $export['group_homepage_hero_information|node|homepage_hero|form'] = $field_group;
+  $field_groups['group_homepage_hero_information|node|homepage_hero|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -64,7 +64,12 @@ function homepage_hero_field_group_info() {
       ),
     ),
   );
-  $export['group_link|node|homepage_hero|form'] = $field_group;
+  $field_groups['group_link|node|homepage_hero|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Homepage Hero Information');
+  t('Link');
+
+  return $field_groups;
 }

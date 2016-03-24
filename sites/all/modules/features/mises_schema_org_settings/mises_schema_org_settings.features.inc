@@ -151,6 +151,15 @@ function mises_schema_org_settings_rdf_default_mappings() {
       ),
       'type' => 'rel',
     ),
+    'field_push_to_wire' => array(
+      'predicates' => array(),
+    ),
+    'field_wire_include_exclude' => array(
+      'predicates' => array(),
+    ),
+    'field_image_collection' => array(
+      'predicates' => array(),
+    ),
   );
 
   // Exported RDF mapping: book_digital_text
@@ -464,6 +473,16 @@ function mises_schema_org_settings_rdf_default_mappings() {
       ),
       'type' => 'rel',
     ),
+    'field_push_to_wire' => array(
+      'predicates' => array(),
+    ),
+    'field_wire_include_exclude' => array(
+      'predicates' => array(),
+    ),
+    'field_image' => array(
+      'predicates' => array(),
+      'type' => 'rel',
+    ),
   );
 
   // Exported RDF mapping: flex_block
@@ -520,6 +539,9 @@ function mises_schema_org_settings_rdf_default_mappings() {
       ),
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
+    ),
+    'field_section' => array(
+      'predicates' => array(),
     ),
   );
 
@@ -1002,6 +1024,15 @@ function mises_schema_org_settings_rdf_default_mappings() {
     'field_social_media_image' => array(
       'predicates' => array(),
       'type' => 'rel',
+    ),
+    'field_push_to_wire' => array(
+      'predicates' => array(),
+    ),
+    'field_wire_include_exclude' => array(
+      'predicates' => array(),
+    ),
+    'field_image_collection' => array(
+      'predicates' => array(),
     ),
   );
 

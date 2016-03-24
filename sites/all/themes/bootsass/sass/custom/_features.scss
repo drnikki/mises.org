@@ -35,6 +35,24 @@
     color: $gray;
   }
 }
+
+.view-mode-teaser {
+  .tags {
+    margin-bottom: 0;
+    &:before {
+    content: "TAGS";
+    font-weight: bold;
+    margin-right: 10px;
+    }
+  }
+  h3.group-date-location {
+    margin-top: 0;
+  }
+  .teaser-title {
+    height: 50px;
+  }
+}
+
 /*
 * DATE AUTHOR ON TEASERS AND NODES
 */
@@ -295,6 +313,43 @@
 }
 .main-content .date-nav-wrapper .date-heading h3 { 
   @extend h2.page-title;
+}
+
+.view-mode-full,
+.view-mode-teaser {
+  .group-left,
+  .group-image-wrapper {
+    > a,
+    > .ga-counter-display {
+      font-size: 11px;
+      text-transform: uppercase;
+      line-height: 11px;
+      float: left;
+      display: block;
+      margin-top: 5px;
+    }
+  }
+  .ga-counter-display {
+    float: left;
+    padding-right: 5px;
+    &:after {
+      content: " |";
+    }
+  }
+}
+
+.view-mode-teaser {
+  .body-content {
+    padding-bottom: 5px;
+  }
+  .read-more a {
+    color: #38709e;
+  }
+}
+
+.view-mode-full #slideshow,
+.view-mode-full #image {
+  background-color: #fff;
 }
 /*
 * EVENT PAGE
@@ -615,4 +670,8 @@ ul.addtocal_menu {
       }
     }
   }
+}
+
+h2.teaser-title {
+  margin-bottom: 3px;
 }
