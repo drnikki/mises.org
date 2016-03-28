@@ -10,7 +10,7 @@
 function profile_type_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'taxonomy_term-profile_type-field_display_weight'
+  // Exported field_instance: 'taxonomy_term-profile_type-field_display_weight'.
   $field_instances['taxonomy_term-profile_type-field_display_weight'] = array(
     'bundle' => 'profile_type',
     'default_value' => NULL,
@@ -22,6 +22,17 @@ function profile_type_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
         ),
         'type' => 'list_default',
         'weight' => 0,

@@ -2132,75 +2132,6 @@ Select "No registration or past event" to hide the registration embed or link fi
     ),
   );
 
-  // Exported field_instance: 'node-event-field_wire_include_exclude'.
-  $field_instances['node-event-field_wire_include_exclude'] = array(
-    'bundle' => 'event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'list_default',
-        'weight' => 24,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_wire_include_exclude',
-    'label' => 'Include or exclude from The Wire',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 9,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('<h3>Content Creators:</h3>
@@ -2222,7 +2153,6 @@ Select "No registration or past event" to hide the registration embed or link fi
   t('Event Image');
   t('Event Type');
   t('Featured');
-  t('Include or exclude from The Wire');
   t('Indicate where this event is public or private. ');
   t('Level');
   t('Live Feed');

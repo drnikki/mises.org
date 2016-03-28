@@ -24,13 +24,13 @@ function homepage_hero_image_default_styles() {
 
   // Exported image style: featured.
   $styles['featured'] = array(
-    'label' => 'Featured (750x770)',
+    'label' => 'Featured (750x360)',
     'effects' => array(
-      3 => array(
+      1 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 750,
-          'height' => 770,
+          'height' => 360,
         ),
         'weight' => 1,
       ),

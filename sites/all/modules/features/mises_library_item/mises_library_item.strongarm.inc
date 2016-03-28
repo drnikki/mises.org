@@ -149,9 +149,6 @@ function mises_library_item_strongarm() {
         'xmlsitemap' => array(
           'weight' => '7',
         ),
-        'twitter' => array(
-          'weight' => '1',
-        ),
       ),
       'display' => array(
         'disqus' => array(
