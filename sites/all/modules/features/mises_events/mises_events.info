@@ -82,7 +82,6 @@ features[field_instance][] = node-event-field_registration_type
 features[field_instance][] = node-event-field_social_media_image
 features[field_instance][] = node-event-field_teaser_text
 features[field_instance][] = node-event-field_topics
-features[field_instance][] = node-event-field_wire_include_exclude
 features[node][] = event
 features[variable][] = comment_anonymous_event
 features[variable][] = comment_default_mode_event

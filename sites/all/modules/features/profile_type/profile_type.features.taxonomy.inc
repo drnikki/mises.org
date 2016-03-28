@@ -12,7 +12,7 @@ function profile_type_taxonomy_default_vocabularies() {
     'profile_type' => array(
       'name' => 'Profile Type',
       'machine_name' => 'profile_type',
-      'description' => '',
+      'description' => 'Mises Wire',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
