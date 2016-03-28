@@ -15,6 +15,8 @@ function honeypot_entityform_uninstall() {
 
   // Delete all remaining honeypot entity form type variables.
   foreach ($entityform_types as $key => $entityform_type) {
-    variable_delete("honeypot_form_{$key}_entityform_edit_form");
+    variable_del("honeypot_form_{$key}_entityform_edit_form");
   }
+
+  variable_del('honeypot_entityform_autoprotect_new_types');
 }
