@@ -1,5 +1,5 @@
 .view-mode-teaser .teaser-title {
-    min-height: 50px;
+    /* min-height: 50px; */
     height: inherit;
 }
 
