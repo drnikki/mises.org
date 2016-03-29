@@ -149,7 +149,8 @@ function mises_events_field_group_info() {
       3 => 'field_event_location',
       4 => 'field_teaser_text',
       5 => 'field_wire_include_exclude',
-      6 => 'title',
+      6 => 'field_mises_published_date',
+      7 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -117,7 +117,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Formats',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_epub',
       1 => 'field_link_to_external_listing_',
@@ -240,11 +240,12 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Author',
-    'weight' => '3',
+    'weight' => '5',
     'children' => array(
       0 => 'field_mises_published_date',
       1 => 'field_author_1',
-      2 => 'top_term',
+      2 => 'custom_post_date',
+      3 => 'top_term',
     ),
     'format_type' => 'html5',
     'format_settings' => array(
@@ -629,7 +630,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'tags',
-    'weight' => '1',
+    'weight' => '4',
     'children' => array(
       0 => 'field_topics',
       1 => 'field_austrian_school',
