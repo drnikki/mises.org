@@ -99,7 +99,7 @@ function homepage_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Link */
+  /* Field: Content: Image Link */
   $handler->display->display_options['fields']['field_image_link']['id'] = 'field_image_link';
   $handler->display->display_options['fields']['field_image_link']['table'] = 'field_data_field_image_link';
   $handler->display->display_options['fields']['field_image_link']['field'] = 'field_image_link';
@@ -124,11 +124,22 @@ function homepage_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'featured',
+    'image_style' => 'slideshow_sidebar',
     'image_link' => '',
     'conditions' => array(
       0 => array(
         'condition' => '',
+      ),
+    ),
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
       ),
     ),
   );

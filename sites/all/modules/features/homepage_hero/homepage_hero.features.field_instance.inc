@@ -53,6 +53,13 @@ function homepage_hero_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'list_teaser' => 0,
+          'slideshow_sidebar' => 'slideshow_sidebar',
+          'vertical_teaser' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -68,19 +75,21 @@ function homepage_hero_field_default_field_instances() {
         'allowed_schemes' => array(
           'private' => 'private',
           'public' => 'public',
+          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
+          'ebook' => 0,
           'image' => 'image',
           'video' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
           'upload' => 0,
         ),
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => -3,

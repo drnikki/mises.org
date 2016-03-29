@@ -129,13 +129,12 @@
   overflow: hidden;
   height: 360px; //starting height, subject to override
   }
-
-  h1.page-header{
-  display: none;
-  }
   
-  .main-content .shield {
-    display: none;
+  .main-content div.shield > .icon {
+    background-image: url("../images/icons/icon-blog.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .group-date-author {
     .search-label {
