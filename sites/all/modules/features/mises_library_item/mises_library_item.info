@@ -1,7 +1,7 @@
 name = Mises Library Item
 core = 7.x
 package = Content Types
-version = 7.x-1.30
+version = 7.x-1.31
 project = mises_library_item
 dependencies[] = austrian_school
 dependencies[] = creative_commons
@@ -136,6 +136,7 @@ features[field_instance][] = node-library_item-field_teaser_text
 features[field_instance][] = node-library_item-field_timely_content
 features[field_instance][] = node-library_item-field_topics
 features[field_instance][] = node-library_item-field_transcript
+features[field_instance][] = node-library_item-field_wire_include_exclude
 features[node][] = library_item
 features[variable][] = comment_anonymous_library_item
 features[variable][] = comment_default_mode_library_item
