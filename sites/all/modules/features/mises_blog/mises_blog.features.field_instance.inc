@@ -62,7 +62,7 @@ function mises_blog_field_default_field_instances() {
           ),
         ),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -291,7 +291,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 44,
       ),
       'print' => array(
         'label' => 'above',
@@ -529,7 +529,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'author_full_name',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -640,7 +640,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 42,
       ),
       'print' => array(
         'label' => 'above',
@@ -716,7 +716,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 40,
       ),
       'print' => array(
         'label' => 'above',
@@ -839,7 +839,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_entity_flexslider',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'print' => array(
         'label' => 'above',
@@ -930,7 +930,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 43,
       ),
       'print' => array(
         'label' => 'above',
@@ -1125,7 +1125,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 33,
       ),
       'print' => array(
         'label' => 'above',
@@ -1216,7 +1216,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 38,
       ),
       'print' => array(
         'label' => 'above',
@@ -1297,7 +1297,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 39,
       ),
       'print' => array(
         'label' => 'above',
@@ -1374,7 +1374,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 41,
       ),
       'print' => array(
         'label' => 'above',
@@ -1702,7 +1702,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 31,
       ),
       'print' => array(
         'label' => 'above',

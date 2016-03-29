@@ -54,7 +54,7 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Location',
-    'weight' => '7',
+    'weight' => '4',
     'children' => array(
       0 => 'field_event_location',
       1 => 'custom_post_date',
@@ -112,7 +112,7 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Location',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_event_location',
       1 => 'custom_post_date',
@@ -238,8 +238,7 @@ function mises_events_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'field_image',
-      1 => 'disqus_comment_count',
-      2 => 'ga_page_counter',
+      1 => 'ga_page_counter',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -267,7 +266,7 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '9',
+    'weight' => '6',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
@@ -296,7 +295,7 @@ function mises_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'tags',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',

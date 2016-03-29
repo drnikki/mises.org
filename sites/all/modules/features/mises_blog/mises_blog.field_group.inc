@@ -88,10 +88,11 @@ function mises_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Date Author',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_author_1',
-      1 => 'post_date',
+      1 => 'custom_post_date',
+      2 => 'post_date',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -141,6 +142,38 @@ function mises_blog_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_wrapper|node|blog|full';
+  $field_group->group_name = 'group_image_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'blog';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Image Wrapper',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_image_collection',
+      1 => 'disqus_comment_count',
+      2 => 'ga_page_counter',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Image Wrapper',
+      'instance_settings' => array(
+        'id' => 'slideshow',
+        'classes' => 'group-image-wrapper field-group-html-element pull-left',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_image_wrapper|node|blog|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_media|node|blog|form';
   $field_group->group_name = 'group_media';
   $field_group->entity_type = 'node';
@@ -177,7 +210,7 @@ function mises_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_austrian_school',
       1 => 'field_topics',
@@ -231,6 +264,7 @@ function mises_blog_field_group_info() {
   t('Blog Information');
   t('Date Author');
   t('Image / Media');
+  t('Image Wrapper');
   t('Tagging');
   t('Tags');
   t('tags');

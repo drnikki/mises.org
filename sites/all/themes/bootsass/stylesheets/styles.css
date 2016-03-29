@@ -2589,8 +2589,7 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 
 /* HOMEPAGE MISES WIRE */
 .front .region-featured-right { overflow: hidden; height: 360px; }
-.front h1.page-header { display: none; }
-.front .main-content .shield { display: none; }
+.front .main-content div.shield > .icon { background-image: url("../images/icons/icon-blog.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
 .front .group-date-author .search-label { display: none; }
 .front .group-date-author .date:before { content: ""; width: 0; padding: 0; }
 .front .group-date-location .search-label { display: none; }
@@ -3108,7 +3107,7 @@ ul.accordion li { list-style: none; }
 
 .view-mode-full .group-left > a, .view-mode-full .group-left > .ga-counter-display, .view-mode-full .group-image-wrapper > a, .view-mode-full .group-image-wrapper > .ga-counter-display, .view-mode-teaser .group-left > a, .view-mode-teaser .group-left > .ga-counter-display, .view-mode-teaser .group-image-wrapper > a, .view-mode-teaser .group-image-wrapper > .ga-counter-display { font-size: 11px; text-transform: uppercase; line-height: 11px; float: left; display: block; margin-top: 5px; }
 .view-mode-full .ga-counter-display, .view-mode-teaser .ga-counter-display { float: left; padding-right: 5px; }
-.view-mode-full .ga-counter-display:after, .view-mode-teaser .ga-counter-display:after { content: " |"; }
+.view-mode-full .disqus-comment-count:before, .view-mode-teaser .disqus-comment-count:before { content: " | "; }
 
 .view-mode-teaser .body-content { padding-bottom: 5px; }
 .view-mode-teaser .read-more a { color: #38709e; }

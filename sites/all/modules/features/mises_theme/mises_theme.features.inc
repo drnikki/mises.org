@@ -143,7 +143,7 @@ function mises_theme_image_default_styles() {
   $styles['slideshow'] = array(
     'label' => 'Slideshow',
     'effects' => array(
-      7 => array(
+      3 => array(
         'name' => 'epsacrop_crop',
         'data' => array(
           'width' => 240,
@@ -159,7 +159,7 @@ function mises_theme_image_default_styles() {
         ),
         'weight' => -10,
       ),
-      5 => array(
+      4 => array(
         'name' => 'image_scale',
         'data' => array(
           'width' => 240,
