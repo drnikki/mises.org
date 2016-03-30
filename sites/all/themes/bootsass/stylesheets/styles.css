@@ -2632,15 +2632,8 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .landing-list h2.teaser-title { margin-top: 0; margin-bottom: 0; }
 .landing-list .view-footer span.glyphicon { width: 22px; height: 22px; text-align: center; font-size: 11px; line-height: 22px; }
 
-.page-taxonomy-term-147 .landing-list .today { background-color: #e4ebee; }
-.page-taxonomy-term-147 .landing-list .today .node-teaser { padding: 0; margin-top: 20px; }
-.page-taxonomy-term-147 .landing-list .today .node-teaser:after { display: none; }
-.page-taxonomy-term-147 .landing-list .today .group-right:before { display: block; content: "Today's Article"; }
-.page-taxonomy-term-147 .landing-list .today .group-right:first-child { padding-left: 20px; }
-.page-taxonomy-term-147 .landing-list .today .image { margin-top: 0; }
-.page-taxonomy-term-147 .landing-list .today .tags { margin-top: 0; padding: 10px; background-color: #38709e; color: #fff; }
-.page-taxonomy-term-147 .landing-list .today .tags a { color: #fff; }
-.page-taxonomy-term-147 .landing-list .today .group-right { padding: 20px 10px; }
+.page-taxonomy-term-147 .landing-list { /*    .today { background-color: $gray-lighter; .node-teaser { padding: 0; margin-top: $grid-gutter-width; &:after { display: none; }  } .group-right { &:before { display: block; content: "Today's Article"; } &:first-child { padding-left: $grid-gutter-width; } } .image { margin-top: 0; } .tags { margin-top: 0; padding: 10px; background-color: $brand-secondary; color: $white; a { color: $white; } } .group-right { padding: 20px 10px; } }*/ }
+.page-taxonomy-term-147 .landing-list span.author > span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600; }
 
 /* LANDING PAGE */
 .node-landing-page.view-mode-full h2.teaser-title { margin-top: 6px; }
@@ -3204,5 +3197,3 @@ ul.addtocal_menu li a:hover { background: #e4ebee; text-decoration: none; }
 .main-content .view-book-content .book-author a { color: #24292c; }
 
 h2.teaser-title { margin-bottom: 3px; }
-
-/*# sourceMappingURL=styles.css.map */
