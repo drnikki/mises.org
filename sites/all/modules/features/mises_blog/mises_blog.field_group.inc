@@ -61,9 +61,10 @@ function mises_blog_field_group_info() {
       3 => 'field_image',
       4 => 'field_show_disclaimer',
       5 => 'field_show_comment_policy',
-      6 => 'field_wire_include_exclude',
-      7 => 'field_mises_published_date',
+      6 => 'field_mises_published_date',
+      7 => 'field_wire_include_exclude',
       8 => 'title',
+      9 => 'field_copyright_info',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

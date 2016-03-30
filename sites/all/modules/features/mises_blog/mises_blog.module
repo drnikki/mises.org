@@ -5,3 +5,19 @@
  */
 
 include_once 'mises_blog.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function mises_blog_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#form_id'] == 'blog_node_form') {
+	unset($form['field_copyright_info']['und'][0]['licence']['#options'][1]);
+	unset($form['field_copyright_info']['und'][0]['licence']['#options'][8]);
+	unset($form['field_copyright_info']['und'][0]['licence']['#options'][9]);
+	unset($form['field_copyright_info']['und'][0]['licence']['#options'][2]);
+	unset($form['field_copyright_info']['und'][0]['licence']['#options'][3]);
+	unset($form['field_copyright_info']['und'][0]['licence']['#options'][4]);
+	unset($form['field_copyright_info']['und'][0]['licence']['#options'][5]);
+	unset($form['field_copyright_info']['und'][0]['licence']['#options'][6]);
+  }
+}
