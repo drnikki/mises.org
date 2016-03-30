@@ -318,7 +318,14 @@
 }
 .page-taxonomy-term-147 {
   .landing-list {
-    .today {
+    span.author > span:before {
+      display: inline-block;
+      width: 24px;
+      padding-left: 10px;
+      content: "\2022";
+      font-weight: 600;
+    }
+/*    .today {
       background-color: $gray-lighter;
       .node-teaser {
         padding: 0;
@@ -351,7 +358,7 @@
     .group-right {
       padding: 20px 10px;
       }
-    }
+    }*/
   }
 }
 
