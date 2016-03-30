@@ -673,3 +673,49 @@ body.mises-daily {
     display: none;
   }
 }
+
+/* Mises Wire */
+.page-wire {
+  .landing-list {
+    .panel-body {
+      display: flex;
+    }
+    span.author > span:before {
+      display: inline-block;
+      width: 24px;
+      padding-left: 10px;
+      content: "\2022";
+      font-weight: 600;
+    }
+    .views-row-first {
+      background-color: $gray-lighter;
+      .node-teaser {
+        padding: 0;
+        margin-top: $grid-gutter-width;
+        &:after {
+          display: none;
+        } 
+      }
+    .group-left {
+      align-items: stretch;
+      background-color: $brand-secondary;
+      padding: 0;
+      margin-left: 10px;
+      width: 22%;
+      margin-right: 10px;
+      a {
+        color: #fff;
+      }
+    }
+    .image {
+      margin-top: 0;
+    }
+    .group-right {
+      padding: 20px 10px;
+      }
+    }
+    .ga-counter-display {
+      margin-left: 5px;
+    }
+  }
+}
