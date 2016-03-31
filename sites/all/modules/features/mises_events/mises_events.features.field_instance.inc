@@ -757,7 +757,7 @@ function mises_events_field_default_field_instances() {
           ),
         ),
         'type' => 'text_plain',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
     'ds_extras_field_template' => '',
