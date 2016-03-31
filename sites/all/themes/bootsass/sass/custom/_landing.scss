@@ -675,7 +675,17 @@ body.mises-daily {
 }
 
 /* Mises Wire */
-.page-wire {
+.page-homepage {
+  #block-mises-utility-mailchimp-custom {
+    margin-top: 20px;
+  }
+  .view-homepage-hero .overlay a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .view-blog,
   .landing-list {
     .panel-body {
       display: flex;
