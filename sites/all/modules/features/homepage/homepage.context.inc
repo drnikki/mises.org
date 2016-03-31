@@ -45,6 +45,12 @@ function homepage_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
+        'mises_utility-mailchimp_custom' => array(
+          'module' => 'mises_utility',
+          'delta' => 'mailchimp_custom',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
