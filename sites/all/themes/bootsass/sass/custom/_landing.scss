@@ -687,9 +687,6 @@ body.mises-daily {
   }
   .view-blog,
   .landing-list {
-    .panel-body {
-      display: flex;
-    }
     span.author > span:before {
       display: inline-block;
       width: 24px;
@@ -698,6 +695,43 @@ body.mises-daily {
       font-weight: 600;
     }
     .views-row-first {
+      @media (min-width: 480px) {
+        .panel-body {
+          display: flex;
+          .group-left {
+            a {
+              color: #fff; 
+            }
+          }
+          .group-right {
+            padding: 20px 10px;
+          }
+        }
+      }
+      @media (max-width: 480px) {
+        .panel-body {
+            .group-left {
+              width: 100%;
+              padding: 0 10px;
+              margin: 0;
+              margin-bottom: 20px;
+              background-color: transparent;
+              .ga-counter-display {
+                margin-left: 10px;
+              }
+            }
+            .group-right {
+              > * {
+                margin-left: 10px;
+                margin-right: 10px;
+              }
+            }
+            a {
+              color: $brand-secondary;
+            }
+            
+        }
+      }
       background-color: $gray-lighter;
       .node-teaser {
         padding: 0;
@@ -713,19 +747,19 @@ body.mises-daily {
       margin-left: 10px;
       width: 22%;
       margin-right: 10px;
-      a {
-        color: #fff;
-      }
     }
     .image {
       margin-top: 0;
     }
-    .group-right {
-      padding: 20px 10px;
-      }
     }
     .ga-counter-display {
       margin-left: 5px;
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .node-teaser .panel-body .group-left {
+    margin-bottom: 20px;
   }
 }
