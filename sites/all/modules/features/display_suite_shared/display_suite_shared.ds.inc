@@ -565,11 +565,6 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blog';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'custom_post_date' => array(
-      'weight' => '7',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'disqus_comment_count' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -638,6 +633,34 @@ function display_suite_shared_ds_field_settings_info() {
         'class' => 'read-more',
         'ft' => array(),
         'conditions' => array(),
+      ),
+    ),
+    'post_date' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'ds_post_date_month_day_year',
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'date',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
+        ),
+        'conditions' => array(),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
+        ),
       ),
     ),
     'body' => array(
@@ -1023,18 +1046,13 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'event';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'custom_post_date' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'custom_breadcrumb' => array(
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'disqus_comment_count' => array(
-      'weight' => '41',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -1126,6 +1144,19 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_event_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'date',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
+        ),
+      ),
+    ),
     'field_registration_link' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -1202,11 +1233,6 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'event';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'custom_post_date' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'dynamic_field_1' => array(
       'weight' => '5',
       'label' => 'hidden',
@@ -1270,6 +1296,19 @@ function display_suite_shared_ds_field_settings_info() {
           'fi' => TRUE,
           'fi-el' => 'span',
           'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
+        ),
+      ),
+    ),
+    'field_event_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'date',
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
@@ -4718,11 +4757,11 @@ function display_suite_shared_ds_layout_settings_info() {
         3 => 'title',
         4 => 'group_tags',
         5 => 'group_date_author',
-        6 => 'field_teaser_text',
-        7 => 'dynamic_field_1',
-        8 => 'custom_post_date',
-        9 => 'body',
-        10 => 'node_link',
+        6 => 'dynamic_field_1',
+        7 => 'field_teaser_text',
+        8 => 'body',
+        9 => 'node_link',
+        10 => 'post_date',
         11 => 'field_author_1',
         12 => 'links',
         13 => 'field_topics',
@@ -4736,11 +4775,11 @@ function display_suite_shared_ds_layout_settings_info() {
       'title' => 'right',
       'group_tags' => 'right',
       'group_date_author' => 'right',
-      'field_teaser_text' => 'right',
       'dynamic_field_1' => 'right',
-      'custom_post_date' => 'right',
+      'field_teaser_text' => 'right',
       'body' => 'right',
       'node_link' => 'right',
+      'post_date' => 'right',
       'field_author_1' => 'right',
       'links' => 'right',
       'field_topics' => 'right',
@@ -5087,19 +5126,19 @@ function display_suite_shared_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'tags_title',
-        1 => 'custom_post_date',
-        2 => 'text_resizer',
-        3 => 'field_topics',
-        4 => 'custom_breadcrumb',
+        0 => 'text_resizer',
+        1 => 'tags_title',
+        2 => 'field_topics',
+        3 => 'custom_breadcrumb',
+        4 => 'field_austrian_school',
         5 => 'title',
-        6 => 'field_austrian_school',
-        7 => 'field_event_location',
-        8 => 'group_image_wrapper',
-        9 => 'field_image',
-        10 => 'group_date_location',
-        11 => 'field_causeview_form_reg_link',
-        12 => 'ga_page_counter',
+        6 => 'field_event_date',
+        7 => 'group_image_wrapper',
+        8 => 'group_date_location',
+        9 => 'field_event_location',
+        10 => 'field_image',
+        11 => 'ga_page_counter',
+        12 => 'field_causeview_form_reg_link',
         13 => 'group_tags',
         14 => 'field_description',
         15 => 'field_registration_link',
@@ -5111,19 +5150,19 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'tags_title' => 'ds_content',
-      'custom_post_date' => 'ds_content',
       'text_resizer' => 'ds_content',
+      'tags_title' => 'ds_content',
       'field_topics' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
-      'title' => 'ds_content',
       'field_austrian_school' => 'ds_content',
-      'field_event_location' => 'ds_content',
+      'title' => 'ds_content',
+      'field_event_date' => 'ds_content',
       'group_image_wrapper' => 'ds_content',
-      'field_image' => 'ds_content',
       'group_date_location' => 'ds_content',
-      'field_causeview_form_reg_link' => 'ds_content',
+      'field_event_location' => 'ds_content',
+      'field_image' => 'ds_content',
       'ga_page_counter' => 'ds_content',
+      'field_causeview_form_reg_link' => 'ds_content',
       'group_tags' => 'ds_content',
       'field_description' => 'ds_content',
       'field_registration_link' => 'ds_content',
@@ -5172,8 +5211,8 @@ function display_suite_shared_ds_layout_settings_info() {
         4 => 'group_date_location',
         5 => 'field_teaser_text',
         6 => 'dynamic_field_1',
-        7 => 'node_link',
-        8 => 'custom_post_date',
+        7 => 'field_event_date',
+        8 => 'node_link',
         9 => 'field_event_location',
         10 => 'field_topics',
         11 => 'field_austrian_school',
@@ -5187,8 +5226,8 @@ function display_suite_shared_ds_layout_settings_info() {
       'group_date_location' => 'right',
       'field_teaser_text' => 'right',
       'dynamic_field_1' => 'right',
+      'field_event_date' => 'right',
       'node_link' => 'right',
-      'custom_post_date' => 'right',
       'field_event_location' => 'right',
       'field_topics' => 'right',
       'field_austrian_school' => 'right',
