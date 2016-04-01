@@ -278,9 +278,16 @@ function mises_utility_preprocess_page(&$variables) {
  */
 function mises_utility_preprocess_node(&$variables) {
   if($variables['type'] == 'event') {
-    $timestamp = $variables['field_event_date']['und'][0]['value'];
-    $dtime = DateTime::createFromFormat("Y-m-d G:i:s", $timestamp);
-    $timestamp = $dtime->getTimestamp();
+    
+    // dpm($variables, 'Variables');
+    dpm($variables['field_event_date'][0]['value'], 'Date');
+
+    if (!empty($variables['field_event_date'][0]['value'])) {
+      $timestamp = $variables['field_event_date'][0]['value'];
+      $dtime = DateTime::createFromFormat("Y-m-d G:i:s", $timestamp);
+      $timestamp = $dtime->getTimestamp();
+    }
+
     $current_date = time();
     if ($current_date >= $timestamp && $variables['field_registration_type']['und'][0]['value'] != 'none') {
       drupal_set_message('Registration is closed.');

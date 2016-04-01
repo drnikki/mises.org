@@ -56,8 +56,8 @@ function mises_events_field_group_info() {
     'label' => 'Date Location',
     'weight' => '4',
     'children' => array(
-      0 => 'field_event_location',
-      1 => 'custom_post_date',
+      0 => 'field_event_date',
+      1 => 'field_event_location',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -114,8 +114,8 @@ function mises_events_field_group_info() {
     'label' => 'Date Location',
     'weight' => '4',
     'children' => array(
-      0 => 'field_event_location',
-      1 => 'custom_post_date',
+      0 => 'field_event_date',
+      1 => 'field_event_location',
       2 => 'dynamic_field_1',
     ),
     'format_type' => 'html-element',
