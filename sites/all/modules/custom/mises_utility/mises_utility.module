@@ -278,9 +278,6 @@ function mises_utility_preprocess_page(&$variables) {
  */
 function mises_utility_preprocess_node(&$variables) {
   if($variables['type'] == 'event') {
-    
-    // dpm($variables, 'Variables');
-    dpm($variables['field_event_date'][0]['value'], 'Date');
 
     if (!empty($variables['field_event_date'][0]['value'])) {
       $timestamp = $variables['field_event_date'][0]['value'];
