@@ -48,6 +48,7 @@ features[field_instance][] = node-blog-body
 features[field_instance][] = node-blog-field_audience
 features[field_instance][] = node-blog-field_austrian_school
 features[field_instance][] = node-blog-field_author_1
+features[field_instance][] = node-blog-field_copyright_info
 features[field_instance][] = node-blog-field_featured_content
 features[field_instance][] = node-blog-field_image
 features[field_instance][] = node-blog-field_image_collection
