@@ -16,7 +16,16 @@ var Drupal = Drupal || {};
   Drupal.behaviors.customScript = {
     attach: function(context) {
       // Custom scrips here.
-      
+
+      // trick disqus into thinking it has not checked for comments yet when loading script on ajax
+      window.DISQUSWIDGETS = undefined;
+      $.ajax({
+        type: 'GET',
+        url: '//crossco.disqus.com/count.js',
+        dataType: 'script',
+        cache: false
+      });
+
       var implementEqualHeight = function() {
         $('.content-bottom .region .img-responsive').equalHeight();
         $('.content-bottom .region .panel-heading .panel-title').equalHeight();

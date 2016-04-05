@@ -287,9 +287,6 @@ function mises_seo_settings_metatag_export_default() {
       'book:tag' => array(
         'value' => '',
       ),
-      'og:video' => array(
-        'value' => '',
-      ),
       'og:video:secure_url' => array(
         'value' => '',
       ),
@@ -349,9 +346,6 @@ function mises_seo_settings_metatag_export_default() {
       ),
       'twitter:description' => array(
         'value' => '[site:slogan]',
-      ),
-      'twitter:image:src' => array(
-        'value' => '',
       ),
       'twitter:image:width' => array(
         'value' => '',
@@ -426,6 +420,12 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '',
       ),
       'twitter:data2' => array(
+        'value' => '',
+      ),
+      'twitter:image' => array(
+        'value' => '',
+      ),
+      'og:video:url' => array(
         'value' => '',
       ),
     ),
@@ -585,7 +585,7 @@ function mises_seo_settings_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[node:summary]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[node:field_social_media_image:social_media_1200_x_628]',
       ),
     ),
@@ -600,12 +600,6 @@ function mises_seo_settings_metatag_export_default() {
       ),
       'image_src' => array(
         'value' => '[node:field_image]',
-      ),
-      'fb:admins' => array(
-        'value' => '',
-      ),
-      'fb:app_id' => array(
-        'value' => '',
       ),
       'twitter:image:width' => array(
         'value' => 1200,
@@ -776,7 +770,7 @@ function mises_seo_settings_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[node:field_teaser]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[node:field_social_media_image:social_media_1200_x_628], [node:field_banner_image:social_media_1200_x_628]',
       ),
     ),
@@ -804,7 +798,7 @@ function mises_seo_settings_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[node:field_bio_summary]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[node:field_social_media_image:social_media_1200_x_1200], [node:field-image-collection:0:field_image:social_media_1200_x_1200]',
       ),
     ),

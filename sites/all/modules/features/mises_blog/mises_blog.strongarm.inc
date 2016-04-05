@@ -135,19 +135,19 @@ function mises_blog_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '5',
-        ),
-        'metatags' => array(
-          'weight' => '7',
-        ),
-        'redirect' => array(
           'weight' => '6',
         ),
+        'metatags' => array(
+          'weight' => '8',
+        ),
+        'redirect' => array(
+          'weight' => '7',
+        ),
         'xmlsitemap' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'twitter' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'display' => array(),

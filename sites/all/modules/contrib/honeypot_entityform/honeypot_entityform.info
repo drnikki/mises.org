@@ -5,9 +5,9 @@ core = 7.x
 dependencies[] = entityform
 dependencies[] = honeypot
 
-; Information added by Drupal.org packaging script on 2014-05-07
-version = "7.x-1.0"
+; Information added by Drupal.org packaging script on 2015-04-09
+version = "7.x-1.0+2-dev"
 core = "7.x"
 project = "honeypot_entityform"
-datestamp = "1399456735"
+datestamp = "1428579738"
 

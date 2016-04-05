@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the mises_ga_counter feature.
+ */
+
+include_once 'mises_ga_counter.features.inc';

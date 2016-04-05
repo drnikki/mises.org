@@ -542,19 +542,15 @@ function search_blocks_strongarm() {
     'institute_fellowship' => 0,
     'job_posting_' => 0,
     'landing_page' => 0,
-    'library_collection' => 0,
     'library_item' => 0,
     'membership_level' => 0,
     'book_digital_text' => 0,
-    'solr_online_text_chapter' => 0,
-    'solr_online_text_page' => 0,
     'person_profile' => 0,
     'photo_gallery' => 0,
     'product' => 0,
     'scholarship_' => 0,
     'social_media' => 0,
     'page' => 0,
-    'webform' => 0,
     'working_papers' => 0,
   );
   $export['custom_search_blocks_3_node_types'] = $strongarm;
@@ -578,19 +574,15 @@ function search_blocks_strongarm() {
     'institute_fellowship' => 0,
     'job_posting_' => 0,
     'landing_page' => 0,
-    'library_collection' => 0,
     'library_item' => 0,
     'membership_level' => 0,
     'book_digital_text' => 0,
-    'solr_online_text_chapter' => 0,
-    'solr_online_text_page' => 0,
     'person_profile' => 0,
     'photo_gallery' => 0,
     'product' => 0,
     'scholarship_' => 0,
     'social_media' => 0,
     'page' => 0,
-    'webform' => 0,
     'working_papers' => 0,
   );
   $export['custom_search_blocks_3_node_types_excluded'] = $strongarm;
@@ -755,7 +747,7 @@ function search_blocks_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_delta';
-  $strongarm->value = 'blocks_2_';
+  $strongarm->value = '';
   $export['custom_search_delta'] = $strongarm;
 
   return $export;

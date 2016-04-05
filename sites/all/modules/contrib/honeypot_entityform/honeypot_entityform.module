@@ -13,6 +13,12 @@ function honeypot_entityform_form_honeypot_admin_form_alter(&$form, &$form_state
     return;
   }
 
+  $form['configuration']['honeypot_entityform_autoprotect_new_types'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Automatically protect new entityform types with Honeypot.'),
+    '#default_value' => variable_get('honeypot_entityform_autoprotect_new_types', TRUE),
+  );
+
   $form['enabled_forms']['entityform_types'] = array(
     '#type' => 'item',
     '#title' => t('Entity Forms'),
@@ -34,5 +40,17 @@ function honeypot_entityform_form_honeypot_admin_form_alter(&$form, &$form_state
 function honeypot_entityform_entityform_type_delete($entity) {
   // Clean up the corresponding honeypot variable.
   $key = entity_id('entityform_type', $entity);
-  variable_delete("honeypot_form_{$key}_entityform_edit_form");
+  variable_del("honeypot_form_{$key}_entityform_edit_form");
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function honeypot_entityform_entityform_type_insert($entity) {
+  // If enabled automatically protect newly added entityform types.
+  if (variable_get('honeypot_entityform_autoprotect_new_types', TRUE)) {
+    // Add the corresponding honeypot variable.
+    $key = entity_id('entityform_type', $entity);
+    variable_set("honeypot_form_{$key}_entityform_edit_form", TRUE);
+  }
 }

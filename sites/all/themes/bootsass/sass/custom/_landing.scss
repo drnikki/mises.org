@@ -129,13 +129,12 @@
   overflow: hidden;
   height: 360px; //starting height, subject to override
   }
-
-  h1.page-header{
-  display: none;
-  }
   
-  .main-content .shield {
-    display: none;
+  .main-content div.shield > .icon {
+    background-image: url("../images/icons/icon-blog.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .group-date-author {
     .search-label {
@@ -319,7 +318,14 @@
 }
 .page-taxonomy-term-147 {
   .landing-list {
-    .today {
+    span.author > span:before {
+      display: inline-block;
+      width: 24px;
+      padding-left: 10px;
+      content: "\2022";
+      font-weight: 600;
+    }
+/*    .today {
       background-color: $gray-lighter;
       .node-teaser {
         padding: 0;
@@ -352,7 +358,7 @@
     .group-right {
       padding: 20px 10px;
       }
-    }
+    }*/
   }
 }
 
@@ -665,5 +671,51 @@ body.mises-daily {
   li:nth-child(3),
   li:nth-child(4) {
     display: none;
+  }
+}
+
+/* Mises Wire */
+.page-wire {
+  .landing-list {
+    .panel-body {
+      display: flex;
+    }
+    span.author > span:before {
+      display: inline-block;
+      width: 24px;
+      padding-left: 10px;
+      content: "\2022";
+      font-weight: 600;
+    }
+    .views-row-first {
+      background-color: $gray-lighter;
+      .node-teaser {
+        padding: 0;
+        margin-top: $grid-gutter-width;
+        &:after {
+          display: none;
+        } 
+      }
+    .group-left {
+      align-items: stretch;
+      background-color: $brand-secondary;
+      padding: 0;
+      margin-left: 10px;
+      width: 22%;
+      margin-right: 10px;
+      a {
+        color: #fff;
+      }
+    }
+    .image {
+      margin-top: 0;
+    }
+    .group-right {
+      padding: 20px 10px;
+      }
+    }
+    .ga-counter-display {
+      margin-left: 5px;
+    }
   }
 }

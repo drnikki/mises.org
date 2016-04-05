@@ -16,7 +16,6 @@ function mises_webforms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'webform',
@@ -28,7 +27,6 @@ function mises_webforms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'webform',
@@ -40,7 +38,6 @@ function mises_webforms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'webform',
@@ -52,7 +49,6 @@ function mises_webforms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'webform',
@@ -64,7 +60,6 @@ function mises_webforms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'webform',
@@ -76,7 +71,6 @@ function mises_webforms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'webform',
@@ -88,7 +82,6 @@ function mises_webforms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'webform',
@@ -100,7 +93,6 @@ function mises_webforms_user_default_permissions() {
     'roles' => array(
       'Drupal Developer' => 'Drupal Developer',
       'Senior Editor' => 'Senior Editor',
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'webform',

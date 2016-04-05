@@ -487,7 +487,7 @@ function mises_blog_landing_views_default_views() {
   /* Display: The Wire Homepage */
   $handler = $view->new_display('page', 'The Wire Homepage', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'The Wire';
+  $handler->display->display_options['title'] = 'Mises Wire';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;

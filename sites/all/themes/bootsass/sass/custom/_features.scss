@@ -332,8 +332,10 @@
   .ga-counter-display {
     float: left;
     padding-right: 5px;
-    &:after {
-      content: " |";
+  }
+  .disqus-comment-count {
+    &:before {
+      content: " | ";
     }
   }
 }
