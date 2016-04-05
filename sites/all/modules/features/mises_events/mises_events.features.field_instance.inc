@@ -1107,9 +1107,9 @@ function mises_events_field_default_field_instances() {
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
-          'list_teaser' => 0,
-          'slideshow' => 0,
-          'vertical_teaser' => 0,
+          'list_teaser' => 'list_teaser',
+          'slideshow' => 'slideshow',
+          'vertical_teaser' => 'vertical_teaser',
         ),
       ),
       'file_directory' => '',
