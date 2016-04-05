@@ -10,3 +10,17 @@
 .teaser-title {
   display: block;
 }
+
+/* remove the following once page views is fixed */
+span.disqus-comment-count:before {
+  display: none;
+}
+
+span.disqus-comment-count {
+  margin-left: 5px;
+}
+
+.ga-counter-display {
+  display: none;
+}
+/* remove above once page views is fixed */
