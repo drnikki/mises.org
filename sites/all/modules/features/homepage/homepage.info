@@ -10,6 +10,7 @@ dependencies[] = flex_block_views
 dependencies[] = homepage_hero
 dependencies[] = homepage_views
 dependencies[] = menu
+dependencies[] = mises_utility
 dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_conditional
