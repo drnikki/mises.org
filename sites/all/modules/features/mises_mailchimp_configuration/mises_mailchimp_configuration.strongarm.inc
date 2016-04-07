@@ -21,12 +21,12 @@ function mises_mailchimp_configuration_strongarm() {
 	<div class="mc-field-group input-group">
 	<h3 class="sub-heading contrast">Email Subscriptions</h3>
 	<ul>
-		<li><input id="mce-group[1]-1-0" name="group[1][1]" type="checkbox" value="1"> <label for="mce-group[1]-1-0">Institute News</label></li>
-		<li><input id="mce-group[1]-1-1" name="group[1][2]" type="checkbox" value="2"> <label for="mce-group[1]-1-1">Events</label></li>
-		<li><input id="mce-group[1]-1-2" name="group[1][4]" type="checkbox" value="4"> <label for="mce-group[1]-1-2">Academy</label></li>
-		<li><input id="mce-group[1]-1-3" name="group[1][8]" type="checkbox" value="8"> <label for="mce-group[1]-1-3">Store</label></li>
-		<li><input id="mce-group[1]-1-4" name="group[1][16]" type="checkbox" value="16"> <label for="mce-group[1]-1-4">Mises Daily</label></li>
+		<li><input id="mce-group[1]-1-4" name="group[1][16]" type="checkbox" value="16"> <label for="mce-group[1]-1-4">Mises Wire</label></li>
 		<li><input id="mce-group[1]-1-5" name="group[1][32]" type="checkbox" value="32"> <label for="mce-group[1]-1-5">The Austrian</label></li>
+		<li><input id="mce-group[1]-1-3" name="group[1][8]" type="checkbox" value="8"> <label for="mce-group[1]-1-3">Mises Store</label></li>
+		<li><input id="mce-group[1]-1-1" name="group[1][2]" type="checkbox" value="2"> <label for="mce-group[1]-1-1">Events</label></li>
+		<li><input id="mce-group[1]-1-0" name="group[1][1]" type="checkbox" value="1"> <label for="mce-group[1]-1-0">Institute News</label></li>
+		<li><input id="mce-group[1]-1-2" name="group[1][4]" type="checkbox" value="4"> <label for="mce-group[1]-1-2">Academy</label></li>
 	</ul>
 	</div>
 	<div class="clear" id="mce-responses">
