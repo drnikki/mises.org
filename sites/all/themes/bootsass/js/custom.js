@@ -204,20 +204,22 @@ var Drupal = Drupal || {};
       };
 
       var implementDotDotDot = function(element, height) {
-        element.dotdotdot({
-          ellipsis  : '... ',
-          wrap    : 'word',
-          fallbackToLetter: true,
-          after   : null,
-          watch   : false,
-          height    : height,
-          tolerance : 0,
-          callback  : function( isTruncated, orgContent ) {},      
-          lastCharacter : {
-            remove    : [ ' ', ',', ';', '.', '!', '?' ],
-            noEllipsis  : []
-          }
-        });
+        if (element.length > 0) {
+          element.dotdotdot({
+            ellipsis  : '... ',
+            wrap    : 'word',
+            fallbackToLetter: true,
+            after   : null,
+            watch   : false,
+            height    : height,
+            tolerance : 0,
+            callback  : function( isTruncated, orgContent ) {},      
+            lastCharacter : {
+              remove    : [ ' ', ',', ';', '.', '!', '?' ],
+              noEllipsis  : []
+            }
+          });
+        }
       }
 
 
