@@ -288,8 +288,13 @@ var Drupal = Drupal || {};
        
         // adjust letter-spacing before and after trim due to mysterious issue
         $('.view-mode-teaser .teaser-title').css('letterSpacing', -2);
-        implementDotDotDot($('.view-mode-teaser .teaser-title'), 50);
-        $('.view-mode-teaser .teaser-title').css('letterSpacing', 0);
+        try {
+          implementDotDotDot($('.view-mode-teaser .teaser-title'), 50);
+          $('.view-mode-teaser .teaser-title').css('letterSpacing', 0);
+        }
+        catch(err) {
+          $('.view-mode-teaser .teaser-title').css('letterSpacing', 0);
+        }
 
         implementDotDotDot($('.view-mode-teaser .body-content'), 70);
 
