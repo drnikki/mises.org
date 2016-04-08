@@ -19,6 +19,7 @@ features[fe_block_settings][] = mises_utility-mailchimp_custom
 features[fe_block_settings][] = mises_utility-mailchimp_page_description
 features[features_api][] = api:2
 features[variable][] = mises_mailchimp_custom_content
+features[variable][] = mises_mailchimp_custom_description
 features[variable][] = mises_mailchimp_custom_region
 features[variable][] = mises_mailchimp_custom_style
 features[variable][] = mises_mailchimp_custom_subject

@@ -42,6 +42,18 @@ function mises_mailchimp_configuration_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'mises_mailchimp_custom_description';
+  $strongarm->value = '● <strong>The Mises Wire.</strong> Selections from the Mises Wire. Sent six days a week to your inbox.
+● <strong>The Mises Store.</strong>  Announcements and alerts of new books, epubs, audiobooks, discounted and sale items, along with offerings of t-shirts and memorabilia. Sent weekly to your inbox. 
+● <strong>Institute News.</strong>  The News List provides occasional announcements of interest about what is happening at the Mises Institute, and sent to your inbox. 
+● <strong>The Austrian.</strong>  This is the online version of our Member\'s magazine containing articles, current events, interviews, alumni and faculty news. It is sent every two months to your inbox. 
+● <strong>Events.</strong>  Announcements of seminars, conferences, and Mises circle events presented by the Mises Institute. Also alerts of upcoming Live Broadcasts are sent to your inbox. 
+● <strong>Academy.</strong>  Announcements and updates of what is happening with academy online courses will be sent to your inbox. ';
+  $export['mises_mailchimp_custom_description'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'mises_mailchimp_custom_region';
   $strongarm->value = 'content';
   $export['mises_mailchimp_custom_region'] = $strongarm;
