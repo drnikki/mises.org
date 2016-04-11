@@ -21,12 +21,12 @@ function mises_mailchimp_configuration_strongarm() {
 	<div class="mc-field-group input-group">
 	<h3 class="sub-heading contrast">Email Subscriptions</h3>
 	<ul>
-		<li><input id="mce-group[1]-1-0" name="group[1][1]" type="checkbox" value="1"> <label for="mce-group[1]-1-0">Institute News</label></li>
-		<li><input id="mce-group[1]-1-1" name="group[1][2]" type="checkbox" value="2"> <label for="mce-group[1]-1-1">Events</label></li>
-		<li><input id="mce-group[1]-1-2" name="group[1][4]" type="checkbox" value="4"> <label for="mce-group[1]-1-2">Academy</label></li>
-		<li><input id="mce-group[1]-1-3" name="group[1][8]" type="checkbox" value="8"> <label for="mce-group[1]-1-3">Store</label></li>
-		<li><input id="mce-group[1]-1-4" name="group[1][16]" type="checkbox" value="16"> <label for="mce-group[1]-1-4">Mises Daily</label></li>
+		<li><input id="mce-group[1]-1-4" name="group[1][16]" type="checkbox" value="16"> <label for="mce-group[1]-1-4">Mises Wire</label></li>
 		<li><input id="mce-group[1]-1-5" name="group[1][32]" type="checkbox" value="32"> <label for="mce-group[1]-1-5">The Austrian</label></li>
+		<li><input id="mce-group[1]-1-3" name="group[1][8]" type="checkbox" value="8"> <label for="mce-group[1]-1-3">Mises Store</label></li>
+		<li><input id="mce-group[1]-1-1" name="group[1][2]" type="checkbox" value="2"> <label for="mce-group[1]-1-1">Events</label></li>
+		<li><input id="mce-group[1]-1-0" name="group[1][1]" type="checkbox" value="1"> <label for="mce-group[1]-1-0">Institute News</label></li>
+		<li><input id="mce-group[1]-1-2" name="group[1][4]" type="checkbox" value="4"> <label for="mce-group[1]-1-2">Academy</label></li>
 	</ul>
 	</div>
 	<div class="clear" id="mce-responses">
@@ -38,6 +38,18 @@ function mises_mailchimp_configuration_strongarm() {
 	</form>
 </div>';
   $export['mises_mailchimp_custom_content'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mises_mailchimp_custom_description';
+  $strongarm->value = '● <strong>The Mises Wire.</strong> Selections from the Mises Wire. Sent six days a week to your inbox.
+● <strong>The Mises Store.</strong>  Announcements and alerts of new books, epubs, audiobooks, discounted and sale items, along with offerings of t-shirts and memorabilia. Sent weekly to your inbox. 
+● <strong>Institute News.</strong>  The News List provides occasional announcements of interest about what is happening at the Mises Institute, and sent to your inbox. 
+● <strong>The Austrian.</strong>  This is the online version of our Member\'s magazine containing articles, current events, interviews, alumni and faculty news. It is sent every two months to your inbox. 
+● <strong>Events.</strong>  Announcements of seminars, conferences, and Mises circle events presented by the Mises Institute. Also alerts of upcoming Live Broadcasts are sent to your inbox. 
+● <strong>Academy.</strong>  Announcements and updates of what is happening with academy online courses will be sent to your inbox. ';
+  $export['mises_mailchimp_custom_description'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
