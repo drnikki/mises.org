@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * GetClicky: Adds the GetClicky tracking system to your website.
+ *
+ */
+
+function getclicky_uninstall() {
+  $result = db_query("DELETE FROM {variable} WHERE name LIKE 'getclicky_%'");
+}
+
+/**
+ * Delete secure pages tracking option in favor of protocol-relative URLs.
+ */
+function getclicky_update_7001(&$sandbox) {
+  variable_del('getclicky_secure_pages_tracking_option');
+}
+
+
+/**
+ * Trim getclicky_site_id_number and getclicky_site_key_number
+ */
+function getclicky_update_7100(&$sandbox) {
+  variable_set('getclicky_site_id_number',  trim( variable_get('getclicky_site_id_number',  '') ) );
+  variable_set('getclicky_site_key_number', trim( variable_get('getclicky_site_key_number', '') ) );
+}
+
