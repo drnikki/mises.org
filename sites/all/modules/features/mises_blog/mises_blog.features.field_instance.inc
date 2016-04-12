@@ -585,7 +585,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'author_full_name',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 8,
+        'weight' => 9,
       ),
     ),
     'ds_extras_field_template' => '',
