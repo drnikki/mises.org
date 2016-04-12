@@ -124,7 +124,6 @@ function mises_blog_field_group_info() {
       0 => 'field_author_1',
       1 => 'custom_post_date',
       2 => 'dynamic_field_1',
-      3 => 'post_date',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
