@@ -2867,13 +2867,15 @@ function display_suite_shared_ds_field_settings_info() {
     ),
     'profile_author_articles' => array(
       'weight' => '3',
-      'label' => 'hidden',
+      'label' => 'above',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
           'lb' => 'All Works',
+          'lb-el' => 'h3',
           'lb-cl' => 'sub-heading contrast accordion-toggle',
           'lb-at' => 'data-toggle="collapse" data-target="#author-articles" data-parent="#profile-accordion"',
+          'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'panel',
@@ -2902,7 +2904,7 @@ function display_suite_shared_ds_field_settings_info() {
     ),
     'profile_major_words' => array(
       'weight' => '2',
-      'label' => 'hidden',
+      'label' => 'above',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
