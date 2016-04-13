@@ -75,7 +75,7 @@
       color: $brand-primary;
     }
   }
-  > span + span {
+  > span:not(.hidden) + span {
     &:before {
       display: inline-block;
       width: 24px;
