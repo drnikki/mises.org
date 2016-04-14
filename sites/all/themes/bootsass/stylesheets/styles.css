@@ -3034,8 +3034,8 @@ ul.accordion li { list-style: none; }
 .group-date-author span.date { color: #00426b; text-transform: uppercase; font-weight: 600; }
 .group-date-author span.author a { color: #00426b; }
 .group-date-author span.author div, .group-date-author span.author p { display: inline; color: #00426b; }
-.group-date-author > span + span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600; }
-.group-date-author > span + span span:before { display: none !important; content: "" !important; }
+.group-date-author > span:not(.hidden) + span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600; }
+.group-date-author > span:not(.hidden) + span span:before { display: none !important; content: "" !important; }
 
 /*
 * DATE LOCATION ON TEASERS AND NODES
