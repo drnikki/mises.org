@@ -21,6 +21,6 @@ span.disqus-comment-count {
 }
 
 .ga-counter-display {
-  display: none;
+  display: none !important;
 }
 /* remove above once page views is fixed */
