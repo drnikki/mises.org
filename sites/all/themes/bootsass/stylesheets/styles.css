@@ -2766,6 +2766,8 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .page-homepage .view-blog .ga-counter-display, .page-homepage .landing-list .ga-counter-display { margin-left: 5px; }
 
 @media (max-width: 480px) { .node-teaser .panel-body .group-left { margin-bottom: 20px; } }
+.wire-btn { float: right; margin-top: 15px; }
+
 /*
 * Custom Styles for Blocks
 * 
