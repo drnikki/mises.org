@@ -1,0 +1,9 @@
+name = Mises Content Notifications
+description = Adds basic rules to send notifications upon publishing new content.
+core = 7.x
+package = Mises
+version = 7.x-1.0
+dependencies[] = entity
+dependencies[] = rules
+features[features_api][] = api:2
+features[rules_config][] = rules_content_publish_notification
