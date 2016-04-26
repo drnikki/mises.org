@@ -24,3 +24,8 @@ span.disqus-comment-count {
   display: none;
 }
 /* remove above once page views is fixed */
+
+/* disqus comments */
+.disqus-disabled .comment-title {
+  display: none;
+}
