@@ -28,6 +28,12 @@ function mises_roles_and_perms_user_default_roles() {
     'weight' => 4,
   );
 
+  // Exported role: Content Notification.
+  $roles['Content Notification'] = array(
+    'name' => 'Content Notification',
+    'weight' => 9,
+  );
+
   // Exported role: Drupal Developer.
   $roles['Drupal Developer'] = array(
     'name' => 'Drupal Developer',
