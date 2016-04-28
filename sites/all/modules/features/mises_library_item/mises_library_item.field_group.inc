@@ -516,6 +516,7 @@ function mises_library_item_field_group_info() {
       4 => 'field_hidden_solr_content',
       5 => 'field_show_disclaimer',
       6 => 'field_show_comment_policy',
+      7 => 'field_exclude_disqus_comment',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
