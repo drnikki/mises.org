@@ -1,0 +1,12 @@
+name = Mises Solr Authors
+description = Provides a view which conditionally displays profiles on Solr results if a keyword contains part of a profile first or last name
+core = 7.x
+package = Views
+version = 7.x-1.2
+project = mises_solr_authors
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = mises_solr_authors
+features_exclude[dependencies][ctools] = ctools
+mtime = 1436557554

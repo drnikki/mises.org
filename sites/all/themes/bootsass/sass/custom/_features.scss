@@ -1,0 +1,685 @@
+/*
+* Custom Styles for Special Features
+* 
+*/
+
+/*
+* BREADCRUMB
+*/
+.easy-breadcrumb {
+  overflow: hidden;
+  margin-bottom: $grid-gutter-width;
+  width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: $font-size-small;
+  a {
+    color: $gray;
+  }
+}
+
+/*
+* TAGS ON TEASERS AND NODES
+*/
+.tags {
+  color: $gray;
+  font-size: $font-size-xs;
+  .tag-label {
+    padding-right: $padding-xs-horizontal;
+    text-transform: uppercase;
+  }
+  span:not(.tag-label) + span:before {
+    content: ", ";
+  }
+  a {
+    color: $gray;
+  }
+}
+
+.view-mode-teaser {
+  .tags {
+    margin-bottom: 0;
+    &:before {
+    content: "TAGS";
+    font-weight: bold;
+    margin-right: 10px;
+    }
+  }
+  h3.group-date-location {
+    margin-top: 0;
+  }
+  .teaser-title {
+    height: 50px;
+  }
+}
+
+/*
+* DATE AUTHOR ON TEASERS AND NODES
+*/
+.group-date-author {
+  span.type {
+    color: $brand-primary;
+    text-transform: uppercase;
+  }
+  span.date {
+    color: $brand-primary;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  span.author {
+    a {
+      color: $brand-primary;
+    }
+    div, p {
+      display: inline;
+      color: $brand-primary;
+    }
+  }
+  > span:not(.hidden) + span {
+    &:before {
+      display: inline-block;
+      width: 24px;
+      padding-left: 10px;
+      content: "\2022";        
+      font-weight: 600;
+    }
+    span {
+      &:before {
+        display: none !important;
+        content: "" !important;        
+      }
+    }
+  }
+}
+/*
+* DATE LOCATION ON TEASERS AND NODES
+*/
+.group-date-location {
+  span.location {
+    padding-left: 10px;
+    &:before {
+      display: inline-block;
+      width: 14px;
+      content: "\2022";
+    }
+    a {
+      color: $brand-primary;
+    }
+  }
+  span.type {
+    padding-right: 5px;
+    &:after {
+      display: inline-block;
+      width: 14px;
+      content: "\2022";
+      text-align: center;
+    }
+  }
+  span.reg-link {
+    padding-left: 10px;
+  }
+}
+/*
+* BOOK FORMATS ON TEASERS
+*/
+.book-formats {
+  font-size: $font-size-small;
+  > span {
+    font-weight: bold;
+    color: $brand-primary;
+    text-transform: uppercase;
+  }
+  .format-item,
+  .file,
+  .content,
+  p {
+    display: inline;
+  }
+  .element-invisible,
+  .contextual-links-wrapper,
+  .file-icon,
+  .file-size {
+    display: none !important;
+  }
+  .format-item {
+    + .format-item {
+      &:before {
+        content: " | ";
+      }
+    }
+    a {
+      color: $gray;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+  }
+  a.external-link {
+    span.glyphicon {
+      @include icon-color($gray-light);
+      @include glyph-size(20px);
+    }
+    &:hover {
+      color: $brand-secondary;
+      span.glyphicon {
+        background-color: $brand-secondary;
+      }
+    }
+  }
+}
+
+/*
+*   WIDE MEDIA PLAYER
+*/
+.media-player {
+  clear: both;
+}
+
+/*
+* SHARING
+*/
+.group-sharing {
+  clear: both;
+  padding: $padding-large-horizontal 0;
+  border-bottom: 1px solid $gray-light;
+  .copyright {
+    padding-top:  $padding-large-horizontal;
+  }
+  .print {
+    padding-top:  $padding-large-horizontal;
+    .glyphicon {
+      top: 4px;
+      width: 25px;
+      height: 25px;
+      background: transparent;
+      color: $gray-dark;
+      font-size: 25px;
+    }
+  }
+}
+#widgets-element-addthis-share {
+  height: 62px;
+  .widgets-element {
+    padding-right: $padding-xs-horizontal;
+  }
+  .addthis_counter .addthis_button_expanded {
+    height: 37px;
+  }
+}
+#bottom-social-share {
+  padding: $padding-large-horizontal / 2 0 $padding-large-horizontal * 1.5;
+  .social-widget {
+    display: inline-block;
+    &.facebook-widget {
+      position: relative;
+      top: -7px;
+      width: 85px;
+    }
+    &.twitter-widget {
+      width: 110px;
+    }
+  }
+}
+
+/*
+* FOOTNOTES GROUP -- MAY ABSTRACT THIS
+*/
+.group-footnotes {
+  @extend .outset;
+  @extend .bg-gray;
+  h3 {
+    color: $brand-secondary;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: $font-size-h5;    
+  }
+  p {
+    font-size: $font-size-small;
+  }
+}
+/*
+* COMMENTING
+*/
+.comment-title {
+  h3 {
+    color: $brand-secondary;
+    text-transform: uppercase;
+  }
+}
+
+/*
+* PHOTO ALBUM
+*/
+.view-photo-album {
+  .view-content {
+    @extend .row;
+    padding: $padding-large-vertical $padding-large-vertical $padding-base-vertical;
+  }
+  .views-row {
+    padding-bottom: $padding-base-vertical;
+  }
+  img {
+    @include transition(all 0.2s ease);
+    border: 3px solid $gray-light;
+    border-radius: 0%;
+    &:hover {
+      border-radius: 50%;
+    }
+  }
+}
+/*
+* CALENDAR
+*/
+.view-mises-calendar {
+  &.sidebar {
+    a {
+      color: $white;
+    }
+    table {
+      margin-bottom: $padding-large-vertical;
+      width: 100%;
+      th {
+        text-align: center;
+      }
+      td {
+        vertical-align: middle;
+        text-align: center;
+        .month {
+          margin: 2px auto;
+          width: $font-size-base * 2;
+          height: $font-size-base * 2;
+          border-radius: $pager-border-radius;
+          line-height: $font-size-base * 2;
+          &.mini-day-on {
+            background-color: $brand-contrast;
+          }
+        }
+        &.today {
+          .month {
+            background-color: $brand-medium;
+          }
+        }
+        .calendar-empty {
+          display: none;
+        }
+      }
+    }
+    .date-nav-wrapper .date-heading h3 { 
+      font-size: $font-size-base;
+    }
+  }
+  .pager {
+    margin: 0;
+  }
+}
+
+/* overrides */
+.date-nav-wrapper .date-nav {
+  margin: 0 0 $padding-large-vertical;
+  padding: 0;
+}
+.main-content .date-nav-wrapper .date-heading h3 { 
+  @extend h2.page-title;
+}
+
+.view-mode-full,
+.view-mode-teaser {
+  .group-left,
+  .group-image-wrapper {
+    > a,
+    > .ga-counter-display {
+      font-size: 11px;
+      text-transform: uppercase;
+      line-height: 11px;
+      float: left;
+      display: block;
+      margin-top: 5px;
+    }
+  }
+  .ga-counter-display {
+    float: left;
+    padding-right: 5px;
+  }
+  .disqus-comment-count {
+    &:before {
+      content: " | ";
+    }
+  }
+}
+
+.view-mode-teaser {
+  .body-content {
+    padding-bottom: 5px;
+  }
+  .read-more a {
+    color: #38709e;
+  }
+}
+
+.view-mode-full #slideshow,
+.view-mode-full #image {
+  background-color: #fff;
+}
+/*
+* EVENT PAGE
+*/
+.form-button {
+  display: inline-block;
+  margin-bottom: $padding-large-vertical;
+}
+#registration-form {
+  clear: both;
+  margin-top: $padding-large-vertical;
+}
+/* Add to calendar */
+.addtocal {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  width: 15px;
+  height: 15px;
+  white-space: nowrap;
+  font-size: 0;
+  cursor: pointer;
+  &:before {
+    color: $brand-primary;
+    content: "\e109";
+    font-size: 15px;
+    font-family: 'Glyphicons Halflings';
+  }
+  &:hover:after{
+    position: absolute;
+    bottom: $padding-large-vertical;
+    left: 0;
+    z-index: 98;
+    padding: $padding-small-vertical;
+    width: auto;
+    border: 1px solid $brand-secondary;
+    border-radius: $border-radius-base;
+    background: $white;
+    color: $brand-secondary;
+    content: 'Add to Calendar';
+    text-indent: 0;
+    font-size: $font-size-small;
+  }
+}
+
+ul.addtocal_menu {
+  position: absolute;
+  z-index: 50;
+  display: none;
+  overflow: hidden;
+  margin-bottom: 0px;
+  margin-left: 0px !important;
+  padding: 0;
+  min-width: 100px;
+  border: 1px solid $brand-secondary;
+  border-radius: $border-radius-base;
+  background: $white;
+  list-style-type: none;
+  text-transform: none;
+  li {
+    margin: 0px;
+    padding: 0px;
+    a {
+      display: block;
+      padding: $padding-small-vertical;
+      color: $brand-secondary;
+      text-decoration: none;
+      &:hover {
+        background: $gray-lighter;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* LIST GROUPS AND ATTACHMENT LISTS */
+.list-group {
+  overflow: hidden;
+  h3 {
+    margin: 0;
+  }
+}
+.attachments {
+  ul {
+    @extend .list-group;
+  }
+  li {
+    @extend .list-group-item;
+  }
+}
+/* EXTEND BOOTSTRAP COLLAPSE */
+.accordion-toggle {
+  cursor: pointer;
+}
+.accordion-toggle:before {
+    padding-right: $padding-xs-horizontal; 
+    content: "\e114";    /* down arrow */
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';
+}
+.accordion-toggle.collapsed:before {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* right-arrow */
+}
+/* PROFILE */
+#profile-accordion {
+  clear: both;
+}
+.group-contact {
+  span {
+    display: inline-block;
+    padding-right: $padding-xs-horizontal;
+  }
+  .twitter, .facebook {
+    a {
+      display: inline-block;
+      width: $padding-xs-horizontal * 4;
+      height: $padding-xs-horizontal * 4;
+      background-image: url(../images/icons/icon-twitter.png);
+      background-position: 0 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      text-indent: -9999em;
+    }
+  }
+  .facebook {
+    a {
+      background-image: url(../images/icons/icon-facebook.png);
+    }
+  }
+}
+.quote {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: $grid-gutter-width;
+  padding: $grid-gutter-width $grid-gutter-width $grid-gutter-width $grid-gutter-width * 3;
+  background-color: $gray-lighter;
+  //font-size: $font-size-large;
+  &:before {
+    @include icon-block(40px,10px,10px);
+    @include icon-image('../images/icons/icon-blog.png');
+    @include icon-color($brand-secondary);
+  }
+}
+/* DIRECTORY */
+.view-profile-lists {
+  .views-summary {
+    display: block;
+    padding: $grid-gutter-width;
+    text-align: center;
+    word-break: break-word;
+    span {
+      padding: 0 $padding-xs-horizontal;
+    }
+  }
+  h2 {
+    @extend .col-sm-12;
+    color: $brand-secondary;
+    font-family: $font-family-serif;
+  }
+}
+.profile-item {
+  clear: right;
+  &:nth-of-type(4n+1) {
+    clear: left;
+  }
+}
+/* SOCIAL MEDIA PAGES */
+.social-media-submenu {
+  a {
+    text-transform: uppercase;
+    font-weight: bold;
+    &.active {
+      background: $gray-lighter;
+    }
+  }
+  img {
+    margin-right: $padding-xs-horizontal;
+  }
+}
+.social-media-categories {
+  a {
+    span.glyphicon {
+      @include glyph-size(24px);
+      margin-left: $padding-base-vertical;
+    }
+    &:hover {
+      color: $brand-secondary;
+      span.glyphicon {
+        background-color: $brand-secondary;
+      }
+    }
+  }
+}
+/* NEWSLETTER FORM */
+.newsletter-form {
+  .sidebar & {
+    form {
+      @extend .padding-lg;    
+    }
+  }
+  .mc-field-group {
+    margin: $grid-gutter-width 0;
+    h3 {
+      margin-top: 0;
+    }
+  }
+  ul {
+    @extend .row;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none outside none;
+    li {
+      @extend .col-sm-6;
+      list-style: none outside none;
+      input {
+        margin: 0 $padding-xs-horizontal 0 0;
+      }
+    }
+  }
+}
+/* FANCY MEDIA HANDLING */
+.body-content.embedded-media {
+  p + .file {
+    clear: both;
+    margin-bottom: $padding-large-vertical;
+    text-align: center;
+  }
+  img {
+    margin: auto;
+    width: auto !important;
+    height: auto !important;
+  }
+}
+/* JOB POSTING */
+.node-type-job-posting- {
+  .tags {
+    span:not(.tag-label) {
+      color: $gray-dark;
+      font-size: $font-size-base;
+    }
+  }
+}
+.job-detail {
+  margin-bottom: ($line-height-computed / 2);
+  p {
+    display: inline;
+    margin-bottom: 0;
+    &:not(.tags) {
+      // padding-left: $padding-base-horizontal;
+    }
+  }
+  .tags {
+    padding-right: $padding-xs-horizontal;
+  }
+}
+.file.view-mode-wide_player {
+  audio {
+    vertical-align: middle;
+  }
+  .btn {
+    @include button-size($padding-small-vertical + 1, $padding-small-horizontal, $font-size-small, $line-height-small, 5px);
+  }
+}
+
+/* BLOG */
+// CUSTOM IMAGE STYLES FOR INLINE IMAGES IN LEGACY POSTS
+.node-blog {
+  .group-date-author {
+    margin-bottom: $padding-base-vertical;
+  }
+  .body-content {
+    p {
+      img {
+        @extend .col-sm-5;
+        @extend .border-secondary;
+        @extend .img-responsive;
+        display: block;
+        margin-right: $padding-large-horizontal;
+        padding: 0 0 $padding-base-vertical;
+      }
+    }
+  }
+  &.view-mode-teaser {
+    .body-content {
+      p {
+        img {
+          width: 218px;
+        }
+      }
+    }
+  }
+}
+
+/* BOOK - ONLINE TEXTS */
+.view-book-content {
+  .children {
+    margin-top: $padding-large-vertical;
+    ul, li {
+      list-style: none outside none;
+    }
+    ul {
+      padding-left: $padding-large-horizontal;
+    }
+  }
+  .book-author {
+    a {
+      display: inline-block;
+      padding-right: 10px;
+      + a:before {
+        display: inline-block;
+        width: 14px;
+        content: "\2022";
+      }
+      .main-content & {
+        color: $black;
+      }
+    }
+  }
+}
+
+h2.teaser-title {
+  margin-bottom: 3px;
+}

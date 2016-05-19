@@ -1,0 +1,164 @@
+// CUSTOM MIXINS
+// --------------------------------------------------
+
+// For text-replacement background images
+@mixin background-image($image, $height, $width) {
+  display: block;
+  width: $width;
+  height: $height;
+  background: url($image) 0 0 no-repeat;
+  text-indent: -9999em;
+}
+
+@mixin background-texture($color,$image) {
+  background: $color url($image) center center repeat;
+}
+
+// Icons and glyphicons
+@mixin icon-block($size,$x,$y) {
+  position: absolute;
+  top: $y;
+  left: $x;
+  display: block;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  content: '';
+}
+
+@mixin icon-image($image,$size:cover) {
+  background-image: url($image);
+  background-position: center center;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+@mixin icon-color($color) {
+  background-color: $color;
+}
+@mixin icon-border($border-width:3px) {
+  border: $border-width solid $white;
+}
+
+@mixin glyph-size($size) {
+  width: $size;
+  height: $size;
+  text-align: center;
+  font-size: $size/2;
+  line-height: $size;
+}
+
+// Rule
+@mixin vertical-rule($size,$x,$y,$color) {
+  position: absolute;
+  top: $y;
+  left: $x;
+  display: block;
+  width: 1px;
+  height: moz-$size;
+  height: $size;
+  border-left: 1px solid $color;
+  content: '';
+}
+@mixin horizontal-rule($size,$x,$y,$color) {
+  position: absolute;
+  top: $y;
+  left: $x;
+  display: block;
+  width: moz-$size;
+  width: $size;
+  height: 1px;
+  border-top: 1px solid $color;
+  content: '';
+}
+
+// OVERRIDE BOOTSASS BUTTON MIXIN
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($color, $background, $border, $activebg: $background, $activebd: $border) {
+  border-color: $border;
+  background-color: $background;
+  color: $color;
+
+  &:hover,
+  &:focus {
+    border-color: darken($border, 10%);
+    background-color: darken($background, 10%);
+    color: $color;
+  }
+  &:active,
+  &.active {
+    border-color: $activebd;
+    background-color: $activebg;
+    background-image: none;
+    box-shadow: none;
+    color: $color;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      border-color: $border;
+      background-color: $background;
+    }
+  }
+  a {
+    color: $color;
+    &:hover {
+      color: $color;
+      text-decoration: none;
+    }
+  }
+
+  .badge {
+    background-color: $color;
+    color: $background;
+  }
+}
+
+// For Button background images -- used to convert a tags to buttons
+@mixin button-image($color, $image, $height, $width) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background: $color url($image) right center no-repeat;
+  line-height: $height;
+}
+
+// Horizontal and vertical center
+@mixin center($axis: "both"){
+    position:absolute;
+    @if $axis == "y"{
+        top:50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @if $axis == "x"{
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    @if $axis == "both"{
+        top:50%;
+        left:50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+}
+

@@ -1,0 +1,12 @@
+name = Main menu
+core = 7.x
+package = Menus
+version = 7.x-1.2
+project = main_menu
+dependencies[] = any_menu_path
+dependencies[] = features
+dependencies[] = menu
+dependencies[] = menu_attributes
+features[features_api][] = api:2
+features[menu_custom][] = main-menu
+project path = sites/all/modules/features

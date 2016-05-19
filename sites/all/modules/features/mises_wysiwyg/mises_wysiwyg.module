@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Wysiwyg feature.
+ */
+
+include_once 'mises_wysiwyg.features.inc';
+function mises_wysiwyg_wysiwyg_editor_settings_alter(&$settings, $context) {
+  if ($context['profile']->editor == 'ckeditor') {
+    $settings['scayt_autoStartup'] = TRUE;
+   }
+}

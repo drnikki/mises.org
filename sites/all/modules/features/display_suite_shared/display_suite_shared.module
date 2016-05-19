@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ * Code for the Display Suite Shared feature.
+ */
+
+include_once 'display_suite_shared.features.inc';
+
+function display_suite_shared_form_alter($form, $form_state, $form_id) {
+  if ($form_id == 'blog_node_form' || $form_id == 'library_item_node_form' || $form_id == 'event_node_form') { 
+    $body_field_instance = field_info_instance('node', 'field_teaser_text', $form['#node']->type);
+    $trim_length = $body_field_instance['display']['teaser']['settings']['trim_length'];
+    $settings = array(
+      'trimLength' => $trim_length,
+    );
+    drupal_add_js(array('displaySuiteShared' => $settings), 'setting');
+    drupal_add_js(drupal_get_path('module', 'display_suite_shared') . '/js/display_suite_shared_countdown.js');
+  }
+}

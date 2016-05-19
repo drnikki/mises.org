@@ -1,0 +1,68 @@
+diff --git a/socialmedia.widgets.inc b/socialmedia.widgets.inc
+index 359595d..27f851d 100644
+--- a/socialmedia.widgets.inc
++++ b/socialmedia.widgets.inc
+@@ -786,34 +786,8 @@ function socialmedia_widgets_element_rss_button() {
+ 
+ function socialmedia_widgets_element_twitter_profile_widget() {
+   $template = <<<EOF
+-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+-<script>
+-new TWTR.Widget({
+-  version: 2,
+-  type: 'profile',
+-  rpp: [?preferences:number_of_tweets=4?],
+-  interval: 30000,
+-  width: [?dimensions:width=[socialmedia:sm-default_width]?],
+-  height: [?dimensions:height=[socialmedia:sm-default_height]?],
+-  theme: {
+-    shell: {
+-      background: '[?appearance:shell_background_color=[socialmedia:sm-default_color_header_background]?]',
+-      color: '[?appearance:shell_text_color=[socialmedia:sm-default_color_header_text]?]'
+-    },
+-    tweets: {
+-      background: '[?appearance:tweets_background_color=[socialmedia:sm-default_color_body_background]?]',
+-      color: '[?appearance:tweets_text_color=[socialmedia:sm-default_color_body_text]?]',
+-      links: '[?appearance:link_color=[socialmedia:sm-default_color_body_linktext]?]'
+-    }
+-  },
+-  features: {
+-    scrollbar: [?preferences:include_scrollbar=false?],
+-    loop: false,
+-    live: [?preferences:poll_for_new_results=false?],
+-    behavior: 'all'
+-  }
+-}).render().setUser('[?settings:twitter_username=[socialmedia:sm-twitter_username]?]').start();
+-</script>  
++<a class="twitter-timeline" href="https://twitter.com" data-widget-id="[?settings:twitter_widget_id=0?]">Tweets by @[?settings:twitter_username=[socialmedia:sm-twitter_username]?]</a>
++<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs")</script>
+ EOF;
+   $elements['socialmedia_twitter-profile-widget'] = array(
+     'label' => t('Twitter profile widget'),
+@@ -825,24 +799,8 @@ EOF;
+ }
+ 
+ function socialmedia_widgets_element_alter_twitter_profile_widget(&$form, $set, $element) {
+-  
+-  $options = array(
+-    'true' => t('Yes'),
+-    'false' => t('No'),
+-  );
+-  $fields = array(
+-    'poll_for_new_results',
+-    'include_scrollbar',
+-  );
+-  foreach ($fields AS $field) {
+-    $form['preferences'][$field]['#type'] = 'radios';
+-    $form['preferences'][$field]['#options'] = $options;
+-    //$form[$field]['#default_value'] = $
+-  } 
+-  $form['settings']['#weight'] = -1; 
+-  $form['preferences']['#collapsed'] = TRUE;
+-  $form['appearance']['#collapsed'] = TRUE; 
+-  $form['dimensions']['#collapsed'] = TRUE;  
++  $form['settings']['twitter_widget_id']['#description'] .= ' ' . t('Twitter widget must be created and configured at <a href="!link">https://twitter.com/settings/widgets</a>, paste generated id here.', array('!link' => 'https://twitter.com/settings/widgets'));
++  $form['settings']['#weight'] = -1;
+ 
+ }
+ 

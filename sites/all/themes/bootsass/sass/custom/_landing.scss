@@ -1,0 +1,767 @@
+/*
+* Custom Styles for Home and Landing Pages
+* 
+*/
+
+/* TOP FEATURED REGION */
+.featured .container {
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+    background: $white;
+  }
+  .col-sm-8, .col-sm-4 {
+    padding: 6px;
+  }
+  .block {
+    height: 100%;
+  }
+}
+/* HOMEPAGE HERO */
+.view-homepage-hero {
+  position: relative;
+  padding: 5px;
+  background-color: #fff;
+  .views-slideshow-pager-fields {
+    display: none;
+  }
+  .featured-block {
+    position: relative;
+    a {
+      color: $white;
+    }
+    .image {
+    }
+    .overlay {
+      position: relative;
+      left: -6px;
+      padding: 10px 20px 10px 20px;
+      width: -webkit-calc(100% + 6px);
+      width: -moz-calc(100% + 6px);
+      width: calc(100% + 6px);
+      border-left: 6px solid $brand-primary;
+      background: $brand-medium-screen;
+      color: $white;
+      @media (min-width: $screen-md) {
+        & {
+          position: absolute;
+          bottom: 12px;
+          max-width: 90%;
+        }
+      }
+      h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: $white;
+        font-size: 25px;
+        font-family: $font-family-serif;
+      }
+      p {
+        color: $gray-lighter;
+      }
+    }
+  }
+  .views-slideshow-controls-bottom {
+  }
+  #widget_pager_bottom_homepage_hero-block {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    .views-slideshow-pager-field-item {
+      float: left;
+      .views-field-counter {
+        font-size: 0;
+        height: 6px;
+        background-color: $brand-medium-screen;
+        cursor: pointer;
+      }
+      &.cycle-pager-active {
+        .views-field-counter {
+          background-color: $brand-contrast;
+        }
+      }
+      & + .views-slideshow-pager-field-item {
+        padding-left: 2px;
+      }
+    }
+  }
+  #views_slideshow_controls_text_homepage_hero-block {
+    display: none;
+    [class^="views-slideshow-controls-text"] {
+      position: absolute;
+      z-index: 100;
+      bottom: 35%;
+      color: $white;
+      font-size: 48px;
+      opacity: 0.5;
+      span {
+        background-color: transparent;
+      }
+      &:hover, &:focus,
+      span:hover, span:focus {
+        text-decoration: none;
+        opacity: 1;
+      }
+    }
+    .views-slideshow-controls-text-previous {
+      left: 0;
+    }
+    .views-slideshow-controls-text-next {
+      right: 0;
+    }
+    .views-slideshow-controls-text-pause {
+      display: none;
+    }
+  }
+  &:hover {
+    #views_slideshow_controls_text_homepage_hero-block {
+      display: block;
+    }
+  }
+}
+
+/* HOMEPAGE MISES WIRE */
+.front {
+
+  .region-featured-right {
+  overflow: hidden;
+  height: 360px; //starting height, subject to override
+  }
+  
+  .main-content div.shield > .icon {
+    background-image: url("../images/icons/icon-wire.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .group-date-author {
+    .date:before {
+      content: "";
+      width: 0;
+      padding: 0;
+    }
+  }
+  .group-date-location {
+    .search-label {
+      display: none;
+    }
+    .date:before {
+      content: "";
+      width: 0;
+      padding: 0;
+    }
+  }
+}
+
+.blog-home-block {
+  background-color: $gray-lighter;
+  height: 100%;
+  .not-front & {
+    border-top: 1px $brand-contrast-light solid;
+  }
+  .view-header {
+    background: $brand-contrast-dark url('../images/radio_tower_graphic.png') right bottom no-repeat;
+    background: $brand-contrast-dark url('../images/radio_tower_graphic.png') right 11px bottom no-repeat;
+    background-size: contain;
+    border-top: 5px $brand-contrast-dark solid;
+    border-bottom: 8px $brand-contrast-light solid;
+    padding: 15px 14px 5px;
+  }
+  h2 {
+    font-family: $font-family-serif;
+    font-size: $font-size-h2 * 1.12;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+    margin: 0;
+    color: $white;
+    span {
+      font-style: italic;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+  .view-content {
+    padding: 12px $grid-gutter-width / 2 8px;
+    overflow: hidden;
+    .front & {
+      @media (min-width: $screen-sm) {
+        height: -moz-calc(100% - 94px);
+        height: calc(100% - 94px);
+        .inner {
+          position: relative;
+          top: 50%;
+          @include translate(0,-50%);
+          .no-csscalc & {
+            top: 0;
+            @include translate(0,0);
+          }
+        }
+      }
+      @media (min-width: $screen-md) {
+        height: -moz-calc(100% - 64px);
+        height: calc(100% - 64px);
+        .inner {
+          position: relative;
+          top: 50%;
+          @include translate(0,-50%);
+          .no-csscalc & {
+            top: 0;
+            @include translate(0,0);
+          }
+        }
+      }
+    }
+    .not-front & {
+      padding: $grid-gutter-width $grid-gutter-width / 2;
+    }
+  }
+  .wire-teaser {
+    line-height: 1.5;
+    max-height: $font-size-base * 2.8;
+    overflow: hidden;
+    position: relative;
+    padding-left: $grid-gutter-width;
+    & + .wire-teaser {
+      margin-top: $font-size-base * 0.5;
+    }
+    .bullet {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .glyphicon {
+      color: $gray-light;
+      background: transparent;
+      font-size: $font-size-small;
+      margin-right: 0;
+    }
+    .title {
+      a {
+        color: $brand-primary;
+      }
+    }
+    .author {
+      white-space: nowrap;
+      a {
+        color: $link-color;
+      }
+      &:before {
+        display: inline-block;
+        width: 14px;
+        content: "\2022";
+        font-weight: 600;
+        padding-left: 7px;
+      }
+    }
+  }
+}
+/* HOMEPAGE SIDEBAR TOP SPACING */
+.front .sidebar {
+  .view-flex-blocks {
+    margin-bottom: 0;
+  }
+}
+
+
+/* GENERIC NODE TEASER - USED ON LANDING PAGES AND SEARCH RESULTS */
+.main-content {
+  .node-teaser,
+  .view-mode-audio_teaser {
+    padding: $grid-gutter-width 0 0;
+    &:after {
+      display: block;
+      visibility: visible;
+      margin: 0 auto;
+      padding-top: $grid-gutter-width;
+      width: -webkit-calc(100% - 20px);
+      width: -moz-calc(100% - 20px);
+      width: calc(100% - 20px);
+      height: 1px;
+      border-bottom: 1px solid $gray-light;
+      content: '';
+    }
+    .image {
+      margin-top: 5px;
+    }
+  }
+}
+
+
+/* LANDING LISTS */
+.landing-list {
+  .node-teaser {
+    .front &:after {
+      display: none;
+    }
+  }
+  .image {
+    margin-top: 5px;
+  }
+  .tags {
+    padding-top: 5px;
+  }
+  h2.teaser-title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .view-footer {
+    span.glyphicon {
+      @include glyph-size(22px);
+    }
+  }
+}
+.page-taxonomy-term-147 {
+  .landing-list {
+    span.author > span:before {
+      display: inline-block;
+      width: 24px;
+      padding-left: 10px;
+      content: "\2022";
+      font-weight: 600;
+    }
+/*    .today {
+      background-color: $gray-lighter;
+      .node-teaser {
+        padding: 0;
+        margin-top: $grid-gutter-width;
+        &:after {
+          display: none;
+        } 
+      }
+      .group-right {
+        &:before {
+          display: block;
+          content: "Today's Article";
+        }
+        &:first-child {
+          padding-left: $grid-gutter-width;
+        }
+    }
+    .image {
+      margin-top: 0;
+    }
+    .tags {
+      margin-top: 0;
+      padding: 10px;
+      background-color: $brand-secondary;
+      color: $white;
+      a {
+        color: $white;
+      }
+    }
+    .group-right {
+      padding: 20px 10px;
+      }
+    }*/
+  }
+}
+
+/* LANDING PAGE */
+.node-landing-page.view-mode-full {
+  h2.teaser-title {
+    margin-top: $padding-base-vertical;
+  }
+  .sub-heading {
+    margin-top: 0;
+  }
+  .row {
+    margin-bottom: $grid-gutter-width;
+  }
+}
+.field-collection-item-field-resources {
+  .read-more {
+    @extend .more-link;
+  }
+} 
+.resource-item {
+  &.odd {
+    @extend .outset;
+    @extend .bg-gray;
+  }  
+}
+
+/* LANDING LIBRARY PAGE */
+.latest-library-content.outset {
+	margin-right: $grid-gutter-width / -2;
+	margin-left: $grid-gutter-width / -2;
+	padding: 0;
+}
+
+/* AUSTRIAN ECONOMICS LANDING PAGE */
+.austrian-econ-block {
+  img {
+    border: 3px solid $gray;
+  }
+}
+/* DAILY LANDING PAGE */
+body.mises-daily {
+  #block-views-term-description-block {
+    display: none;  
+  }
+}
+/* TERM DESCRIPTION */
+.view-term-description {
+  .pull-right {
+    margin-left: $padding-xs-horizontal;
+  }
+}
+
+/* CATEGORY FILTERED LANDING
+* used on Filtered Landing - Term Page view
+* Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_4
+*/
+.landing-list {
+  .views-reset-button {
+    button {
+      @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
+      @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+    }
+  }
+  select {
+    visibility: hidden;
+  }
+  .form-control {
+    padding: 0 $padding-small-horizontal;
+    height: auto;
+  }
+  .views-exposed-widget {
+    padding: $padding-base-vertical $padding-small-horizontal 0 0;
+    > label {
+      visibility: hidden;
+      color: $gray;
+      font-size: $font-size-small;
+    }
+    .form-submit {
+      margin-top: 0;
+      @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+    }
+    &.views-widget-sort-by {
+      display: none;
+      float: right;
+      width: 150px;
+      padding: 0 0 0 $padding-small-horizontal;
+      &.show {
+        display: inline-block;
+      }
+      label {
+        color: $gray;
+        font-size: $font-size-small;
+      }
+    }
+  }
+  #edit-title-wrapper {
+    @include clearfix;
+    clear: both;
+    float: none;
+    padding: $padding-base-vertical 0 0;
+    > label {
+      display: inline-block;
+      visibility: visible;
+      padding-right: $padding-xs-horizontal;
+    }
+    > .views-widget {
+      display: inline-block;
+    }
+    .form-item {
+      display: inline-block;
+      a {
+        padding: 0 4px;
+        &.active {
+          background-color: $btn-default-bg;
+          color: $white;
+        }
+      }
+    }
+  }
+  #edit-author-wrapper,
+  #edit-topic-wrapper,
+  #edit-level-wrapper {
+    width: -webkit-calc(20% - 10px);
+    width: -moz-calc(20% - 10px);
+    width: calc(20% - 10px);
+  }
+  #edit-author-wrapper {
+    > label {
+      visibility: visible;
+    }
+  }
+  #edit-austrian-school-wrapper {
+    width: -webkit-calc(24% - 10px);
+    width: -moz-calc(24% - 10px);
+    width: calc(24% - 10px);
+  }
+  .views-submit-button {
+    width: auto;
+    padding: $padding-base-vertical * 5 + 1 0 0 0;
+    button {
+      width: 64px; // Wide enough for ajax throbber
+    }
+  }
+  .views-reset-button {
+    visibility: visible;
+    padding: $padding-base-vertical * 5 + 1 0 0 0;
+    float: right;
+  }
+  .filter-toggle {
+    text-transform: uppercase;
+    cursor: pointer;
+    .glyphicon {
+      margin-right: 0;
+      color: $brand-medium;
+      background-color: $white;
+      @include transition(all 0.2s ease);
+    }
+    &.open {
+      .glyphicon {
+        @include rotate(90deg);
+      }
+    }
+  }
+  .views-exposed-widgets {
+    //@include transition(all 0.8s ease);
+    //max-height: 0;
+    //overflow: hidden;
+    //&.open {
+    //  max-height: 100px;
+    //}
+  }
+  // Hiding buggy element.
+  .views-widget-sort-order {
+    display: none;
+  }
+}
+.selectBox-dropdown {
+  .selectBox-label {
+    padding: 0;
+    position: relative;
+    top: -2px;
+  }
+  .selectBox-arrow {
+    border-left-color: $input-border;
+  }
+}
+.selectBox-dropdown-menu {
+  overflow: auto !important;
+}
+
+/* FILTERED TERM LANDING */
+.alpha_pagination {
+  @include clearfix;
+  text-align: center;
+}
+
+/* FILTERED BOOKS
+* used on Filtered Landing - Term Page view
+* Book Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_1
+*/
+.filtered-books {
+  .views-exposed-widgets {
+    clear: both;
+  }
+  .views-exposed-widget {
+    &#edit-book-type-wrapper {
+      @include clearfix;
+      float: left;
+      padding: 0;
+    }
+  }
+  #edit-book-type-wrapper {
+    > label {
+      visibility: visible;
+    }
+    .bef-select-as-links {
+      text-align: right;
+      .form-item {
+        display: inline-block;
+        a {
+          @extend .btn;
+          @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $brand-contrast-dark, $brand-contrast-dark);
+          @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+        }
+      }
+      > .form-item {
+        float: right;
+      }
+    }
+  }
+  #edit-author-wrapper {
+    > label {
+      visibility: visible;
+    }
+  }
+}
+/* FILTERED JOURNALS
+* used on Filtered Landing - Term Page view
+* Journals Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_2
+*/
+.filtered-journals {
+  .views-exposed-widget {
+    > label {
+      display: none;
+    }
+  }
+  .filter-triggers {
+    padding: $padding-small-horizontal 0 0 0;
+    width: 56%;
+    float: left;
+      a {
+        @extend .btn;
+        @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $brand-contrast-dark, $brand-contrast-dark);
+        @include button-size(1px, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+      }
+  }
+  #edit-journal-wrapper {
+    padding: $padding-small-horizontal 0 0 0;
+    float: right;
+    width: 44%;
+  }
+  #edit-author-wrapper,
+  #edit-title-wrapper {
+    clear: left;
+    float: left;
+    > label {
+      display: none;
+    }
+  }
+  #edit-author-wrapper,
+  #edit-topic-wrapper,
+  #edit-austrian-school-wrapper,
+  #edit-title-wrapper {
+    width: -webkit-calc(34% - 5px);
+    width: -moz-calc(34% - 5px);
+    width: calc(34% - 5px);
+    padding: $padding-small-horizontal $padding-small-horizontal 0 0;
+  }
+  #edit-austrian-school-wrapper {
+    padding-right: 0;
+  }
+  #edit-vol-wrapper,
+  #edit-no-wrapper {
+    width: -webkit-calc(16.5% - 5px);
+    width: -moz-calc(16.5% - 5px);
+    width: calc(16.5% - 5px);
+    padding: $padding-small-horizontal $padding-small-horizontal 0 0;
+  }
+  #edit-year-wrapper {
+    width: -webkit-calc(14.5% - 5px);
+    width: -moz-calc(14.5% - 5px);
+    width: calc(14.5% - 5px);
+    padding: $padding-small-horizontal $padding-small-horizontal 0 0;
+  }
+  .views-submit-button {
+    padding: $padding-small-horizontal 0 0 0;
+    button {
+      width: 64px; // Wide enough for ajax throbber
+    }
+  }
+  .views-reset-button {
+    float: right;
+    padding: $padding-small-horizontal 0 0 0;
+  }
+  
+}
+#selectBox-edit-journal {
+  li:nth-child(2),
+  li:nth-child(3),
+  li:nth-child(4) {
+    display: none;
+  }
+}
+
+/* Mises Wire */
+.page-homepage {
+  #block-mises-utility-mailchimp-custom {
+    margin-top: 20px;
+  }
+  .view-homepage-hero .overlay a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .view-blog,
+  .landing-list {
+    span.author > span:before {
+      display: inline-block;
+      width: 24px;
+      padding-left: 10px;
+      content: "\2022";
+      font-weight: 600;
+    }
+    .views-row-first {
+      @media (min-width: 480px) {
+        .panel-body {
+          display: flex;
+          .group-left {
+            a {
+              color: #fff; 
+            }
+          }
+          .group-right {
+            padding: 20px 10px;
+          }
+        }
+      }
+      @media (max-width: 480px) {
+        .panel-body {
+            .group-left {
+              width: 100%;
+              padding: 0 10px;
+              margin: 0;
+              margin-bottom: 20px;
+              background-color: transparent;
+              .ga-counter-display {
+                margin-left: 10px;
+              }
+            }
+            .group-right {
+              > * {
+                margin-left: 10px;
+                margin-right: 10px;
+              }
+            }
+            a {
+              color: $brand-secondary;
+            }
+            
+        }
+      }
+      background-color: $gray-lighter;
+      .node-teaser {
+        padding: 0;
+        margin-top: $grid-gutter-width;
+        &:after {
+          display: none;
+        } 
+      }
+    .group-left {
+      align-items: stretch;
+      background-color: $brand-secondary;
+      padding: 0;
+      margin-left: 10px;
+      width: 22%;
+      margin-right: 10px;
+    }
+    .image {
+      margin-top: 0;
+    }
+    }
+    .ga-counter-display {
+      margin-left: 5px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .node-teaser .panel-body .group-left {
+    margin-bottom: 20px;
+  }
+}
+
+.wire-btn {
+    float: right;
+    margin-top: 15px;
+}

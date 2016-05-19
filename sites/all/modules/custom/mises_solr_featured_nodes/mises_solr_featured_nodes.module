@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * Implements hook_cron().
+ */
+function mises_solr_featured_nodes_cron() {
+  // Promote nodes in the "top_results_list" nodequeue to the front page
+  // so that a Solr bias can be applied to them:
+  $queue = nodequeue_load_queue_by_name('top_results_list');
+  $queue_nodes = nodequeue_load_nodes($queue->qid, FALSE, 0, 0);
+  foreach ($queue_nodes as $queue_node) {
+    if (!isset($queue_node->promote) || !$queue_node->promote) {
+      $queue_node->promote = 1;
+      node_save($queue_node);
+    }
+  }
+
+  // Ensure all library items with the "Books" media type are sticky:
+  $book_tid = taxonomy_get_term_by_name('Books', 'media_type');
+  if (count($book_tid)) {
+    $book_tid = array_pop($book_tid);
+    $book_query = db_query("SELECT n.nid " .
+      "FROM node n, field_data_field_library_item_tree l " .
+      "WHERE n.sticky != 1 AND n.type = 'library_item' AND n.nid = l.entity_id AND " .
+      "l.field_library_item_tree_tid = :booktid " .
+      "LIMIT 250",
+      array(
+        ':booktid' => $book_tid->tid,
+      )
+    );
+    foreach ($book_query as $book_data) {
+      $book_node = node_load($book_data->nid);
+      $book_node->sticky = 1;
+      node_save($book_node);
+    }
+  }
+}

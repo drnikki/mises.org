@@ -1,0 +1,5 @@
+name = Mises Solr Types Paths 
+description = Defines user-friendly paths for solr results facet-filtered by content type.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0

@@ -1,0 +1,34 @@
+// DRUPAL-BASED OVERRIDES
+
+// Extend img styles to wrappers since Drupal doesn't make it easy to add classes to images
+.img-responsive img {
+  @extend .img-responsive;
+  width: 100%;
+  &[src$='image_placeholder.gif'] {
+    width: auto;
+  }
+}
+.img-rounded img {
+  @extend .img-rounded;
+}
+.img-circle img {
+  @extend .img-circle;
+}
+.img-thumbnail img {
+  @extend .img-thumbnail;
+}
+// OVERRIDE FIELD-COLLECTION
+.field-collection-container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.field-collection-view {
+  margin: $padding-large-vertical 0;
+  padding: 0;
+  border: 0;
+}
+// COMPENSATE FOR VIEW ATTACHMENT THAT APPEARS WHEN PRINTING ANOTHER VIEW BLOCK WHEN NO RESULTS
+.view-empty + .attachment-after {
+  display: none;
+}

@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Implements hook_node_view().
+ */
+function mises_anon_dl_link_node_view($node, $view_mode, $langcode) {
+  if ($node->type != 'library_item') {
+    return;
+  }
+
+  if (!isset($node->field_document_attachment[LANGUAGE_NONE])) {
+    return;
+  }
+
+  global $user;
+  if ($user->uid > 0) {
+    return;
+  }
+  $html = '<div id="mises-jquery-dl-links" class="downloads">';
+  $html .= '<h4 class="label-above sub-heading contrast">Download</h4>';
+  foreach ($node->field_document_attachment[LANGUAGE_NONE] as $file) {
+    if (isset($file['filename']) && isset($file['uri'])) {
+      $filesize = ' ';
+      if (isset($file['filesize'])) {
+        $filesize .= '(' . round($file['filesize'] / 1024 / 1024, 2) . ' MB)';
+      }
+      $icon_img = '<img class="file-icon" src="/modules/file/icons/package-x-generic.png" title="application/zip" alt="">';
+      $html .= '<div><span class="file">' . $icon_img . ' ' .  l('Download ' . $file['filename'], file_create_url($file['uri'])) . $filesize . '</span></div>';
+    }
+  }
+  $html .= "</div>";
+
+  $js = " 
+    (function ($) {
+      $('body.page-node .body-content').after('" . $html . "');
+      // Original JavaScript code.
+    })(jQuery);    
+  ";
+  drupal_add_js($js, array('type' => 'inline', 'scope' => 'footer', 'cache' => FALSE));
+} 

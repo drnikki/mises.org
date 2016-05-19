@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Profile Type feature.
+ */
+
+include_once 'profile_type.features.inc';

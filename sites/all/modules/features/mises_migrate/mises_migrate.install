@@ -1,0 +1,74 @@
+<?php
+function mises_migrate_schema() {
+  $schema = array(
+    'mises_migrate_url_map' => array(
+      'description' => 'The main table to hold the scheduler data.',
+      'fields' => array(
+        'entity_id' => array(
+          'description' => 'The {user}.uid of the user.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+        'entity_type' => array(
+          'description' => 'The UNIX UTC timestamp when to unpublish',
+          'type' => 'varchar',
+          'length' => 32,
+        ),   
+        'old_id' => array(
+          'description' => 'The {user}.uid of the user.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+        'old_type' => array(
+          'description' => 'The UNIX UTC timestamp when to unpublish',
+          'type' => 'varchar',
+          'length' => 32,
+        ), 
+       'old_url' => array(
+          'description' => 'The UNIX UTC timestamp when to unpublish',
+          'type' => 'varchar',
+          'length' => 512,
+        ), 
+        'new_url' => array(
+          'description' => 'The UNIX UTC timestamp when to unpublish',
+          'type' => 'varchar',
+          'length' => 512,
+        ),        
+      ),
+      'primary key' => array('entity_id', 'entity_type', 'old_id', 'old_type'),
+    ),
+  );
+  return $schema;
+}
+
+function mises_migrate_install() {
+  drupal_install_schema('mises_migrate');
+}
+function mises_migrate_uninstall() {
+  drupal_uninstall_schema('mises_migrate');
+}
+
+function mises_migrate_update_1() {
+  drupal_install_schema('mises_migrate');
+}
+
+/**
+ * Reset migration map. We gotta rebuild all the content types anyways so we'll just drop the old table.
+ */
+function mises_migrate_update_2() {
+  drupal_uninstall_schema('mises_migrate');
+  drupal_install_schema('mises_migrate');
+}
+
+/**
+ * Allow migration mapppings for everything not just content
+ */
+function mises_migrate_update_3() {
+  drupal_uninstall_schema('mises_migrate');
+  drupal_install_schema('mises_migrate');
+}
+

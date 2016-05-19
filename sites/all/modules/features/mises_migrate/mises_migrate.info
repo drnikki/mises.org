@@ -1,0 +1,8 @@
+name = mises_migrate
+core = 7.x
+package = Mises
+dependencies[] = migrate
+dependencies[] = migrate_extras
+features[features_api][] = api:2
+mtime = 1436557554
+project path = sites/all/modules/features

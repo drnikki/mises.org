@@ -1,0 +1,43 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function spyglass_solr_theme() {
+  return array(
+    // Dialog page.
+    'spyglass_solr_search_page' => array(
+      'render element' => 'page',
+      'template' => 'templates/spyglass-solr-search-page',
+    ),
+  );
+}
+
+
+/**
+ * Implements hook_menu).
+ */
+function spyglass_solr_menu() {
+  $items = array();
+  $items['site-search'] = array(
+    'title' => 'Search',
+    'page callback' => 'spyglass_solr_search_page',
+    'access callback' => TRUE
+  );
+  return $items;
+}
+
+
+function spyglass_solr_search_page() {
+  spyglass_solr_add_js();
+  $output = theme('spyglass_solr_search_page');
+  return $output;
+}
+
+
+function spyglass_solr_add_js() {
+  drupal_add_js('http://code.jquery.com/jquery-1.9.1.min.js', array('type' => 'external', 'scope' => 'footer'));
+  drupal_add_js('http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.4/handlebars.min.js', array('type' => 'external', 'scope' => 'footer'));
+  drupal_add_js('http://cdnjs.cloudflare.com/ajax/libs/ember.js/1.0.0-rc.4/ember.min.js', array('type' => 'external', 'scope' => 'footer'));
+  drupal_add_js('sites/all/libraries/spyglass/js/Spyglass.0.0.1.min.js', array('scope' => 'footer'));
+  drupal_add_js(drupal_get_path('module', 'spyglass_solr'). '/js/app.js', array('scope' => 'footer'));
+}

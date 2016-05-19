@@ -1,0 +1,110 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Versal feature.
+ */
+
+include_once 'mises_versal.features.inc';
+/**
+ * Implements hook_form_alter().
+ */
+
+/**
+ * Implements hook_preprocess().
+ */
+function mises_versal_preprocess_html(&$variables, $hook) {
+  $path = drupal_get_path('module', 'mises_versal');
+  drupal_add_js($path . '/js/mises_versal.js'); 
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function mises_versal_block_info() {
+  $blocks['mises_versal_block'] = array(
+    'info' => t('Mises Versal Block'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function mises_versal_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'mises_versal_block':
+      $block['subject'] = t('Mises Versal');
+      $block['content'] = _versal_block();
+      break;
+    
+  }
+  return $block;
+}
+
+function _versal_block() {
+global $user;
+dpm($user);
+if ($user->uid == 0) {
+  var_dump('lala');
+  $output = _versal_logged_out();
+  return $output;
+}
+
+// $email = 'tommy.sliker@newvalleymedia.com';
+$data = array('email' => $user->mail);
+$url = 'https://stack.versal.com/api2/sessions';
+$options = array(
+  'headers' => array(
+    'SID' => 'ef977c48-8e4c-4090-9038-c57aa82d9ec8',
+  ),
+  'method' => 'POST',
+  'data' => json_encode($data),
+);
+$request = drupal_http_request($url, $options);
+
+if ($data = $request->data) {
+  $data = json_decode($data);
+  if (isset($data->sessionId)) {
+    return _versal_logged_in();
+  } 
+  else {
+    return _versal_wrong_email($user);
+  } 
+}
+else {
+  return _versal_wrong_email($user);
+}
+
+return _versal_logged_out();
+}
+
+function _versal_wrong_email($user) {
+  $output = 'Your email address could not be authenticated with versal. Please make sure that your Mises.org email is the same as your versal email. You can edit you account <a href="/user/' . $user->uid . '/edit">here.</a>';
+  return $output;
+}
+
+function _versal_logged_out() {
+  $output = 'You are not currently authenticated with versal. You either need to <a href="/user/login">login</a> to Mises.org, or <a href="/user/register">register</a> for Mises using your versal email address.';
+  return $output;
+}
+
+function _versal_logged_in() {
+  $node = menu_get_object();
+  if (!empty($node)) {
+    if ($course_id = $node->field_versal_course_id['und'][0]['value']) {
+      $output = '<iframe allowfullscreen="true" height="800" mozallowfullscreen="true" scrolling="no" src="https://versal.com/c/' . $course_id . '/learn?embed=true" style="margin:0;padding:0;border:1px solid #f2f1ed;box-shadow: 0 0 3px 0 rgba(199,195,190,0.5);" webkitallowfullscreen="true" width="100%"></iframe>';
+      return $output;
+    }
+  }
+}
+
+/**
+ * Implements hook_user_update().
+ */
+function mises_versal_user_update(&$edit, $account, $category) {
+  dpm($account);
+}

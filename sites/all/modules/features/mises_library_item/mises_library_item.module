@@ -1,0 +1,39 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Library Item feature.
+ */
+
+include_once 'mises_library_item.features.inc';
+
+/**
+ * Implements hook_node_view().
+ */
+function mises_library_item_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'blog' || $node->type == 'library_item') {
+    if ($view_mode == 'full') {
+      if (!empty($node->field_exclude_disqus_comment)) {
+        if ($node->field_exclude_disqus_comment['und'][0]['value'] == 1) {
+          unset($node->disqus);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function mises_library_item_preprocess_html(&$vars) {
+  $node = menu_get_object();
+  if (is_object($node)) {
+    if ($node->type == 'blog' || $node->type == 'library_item') {
+      if (!empty($node->field_exclude_disqus_comment)) {
+        if ($node->field_exclude_disqus_comment['und'][0]['value'] == 1) {
+          $vars['classes_array'][] = 'disqus-disabled';
+          unset($vars['page']['content']['disqus_disqus_comments']);
+        }
+      }
+    }
+  }
+}

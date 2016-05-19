@@ -1,0 +1,8 @@
+name = Publication Workflows
+description = Defines workflows related to content publication.
+core = 7.x
+package = Settings
+version = 7.x-1.0
+project = mises_publication_workflows
+dependencies[] = save_draft
+features[features_api][] = api:2

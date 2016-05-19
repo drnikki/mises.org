@@ -1,0 +1,34 @@
+<?php
+/* *
+ * @file
+ * The search404 module file, does all the searching
+ * when a 404 occurs
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function search404_menu() {
+  $items = array();
+
+  $items['search404'] = array(
+    'title' => 'Page not found',
+    'access callback' => TRUE,
+    'page callback' => 'search404_page',
+    'file' => 'search404.page.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['admin/config/search/search404'] = array(
+    'title' => 'Search 404 settings',
+    'description' => 'Configure searching for keywords from URLs that result in 404 errors.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('search404_settings'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer site configuration'),
+    'file' => 'search404.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}

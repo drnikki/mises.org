@@ -1,0 +1,294 @@
+diff --git a/footnotes_wysiwyg/ckeditor_plugin/plugin.js b/footnotes_wysiwyg/ckeditor_plugin/plugin.js
+index a873f48..500b6f3 100644
+--- a/footnotes_wysiwyg/ckeditor_plugin/plugin.js
++++ b/footnotes_wysiwyg/ckeditor_plugin/plugin.js
+@@ -4,55 +4,55 @@
+  * This is a rather sophisticated plugin to show a dialog to insert
+  * <fn> footnotes or edit existing ones. It produces and understands
+  * the <fn>angle bracket</fn> variant and uses the fakeObjects API to
+- * show a nice icon to the user, while producing proper <fn> tags when 
+- * the text is saved or View Source is pressed. 
++ * show a nice icon to the user, while producing proper <fn> tags when
++ * the text is saved or View Source is pressed.
+  *
+- * If a text contains footnotes of the [fn]square bracket[/fn] variant, 
++ * If a text contains footnotes of the [fn]square bracket[/fn] variant,
+  * they will be visible in the text and this plugin will not react to them.
+  *
+  * This plugin uses Drupal.t() to translate strings and will not as such
+  * work outside of Drupal. (But removing those functions would be the only
+- * change needed.) While being part of a Wysiwyg compatible module, it could 
++ * change needed.) While being part of a Wysiwyg compatible module, it could
+  * also be used together with the CKEditor module.
+- * 
+- * Drupal Wysiwyg requirement: The first argument to CKEDITOR.plugins.add() 
++ *
++ * Drupal Wysiwyg requirement: The first argument to CKEDITOR.plugins.add()
+  * must be equal to the key used in $plugins[] in hook_wysiwyg_plugin().
+  */
+ CKEDITOR.plugins.add( 'footnotes',
+-{
++  {
+     requires : [ 'fakeobjects', 'htmlwriter' ],
+     init: function( editor )
+     {
+       editor.addCss(
+-      'img.cke_footnote' +
+-      '{' +
+-        'background-image: url(' + CKEDITOR.getUrl( this.path + 'images/fn_icon2.png' ) + ');' +
+-        'background-position: center center;' +
+-        'background-repeat: no-repeat;' +
++        'img.cke_footnote' +
++          '{' +
++          'background-image: url(' + CKEDITOR.getUrl( this.path + 'images/fn_icon2.png' ) + ');' +
++          'background-position: center center;' +
++          'background-repeat: no-repeat;' +
+ //        'border: 1px solid #a9a9a9;' +
+-        'width: 16px;' +
+-        'height: 16px;' +
+-   '}'
++          'width: 16px;' +
++          'height: 16px;' +
++          '}'
+       );
+       CKEDITOR.dialog.add('footnotesDialog', function( editor ) {
+-       var loadElements = function( editor, selection, element )
+-       {
++        var loadElements = function( editor, selection, element )
++        {
+           var content = null;
+           var attr_value = null;
+ 
+           element.editMode = true;
+-          content = element.getText();
++          content = element.getHtml();
+           attr_value = element.getAttribute('value');
+ 
+-        if ( content.length > 0 )
+-         this.setValueOf( 'info','footnote', content );
+-        else
+-         this.setValueOf( 'info','footnote', "" );
+-        if ( attr_value && attr_value.length > 0 )
+-         this.setValueOf( 'info','value', attr_value );
+-        else
+-         this.setValueOf( 'info','value', "" );
+-       };
++          if ( content.length > 0 )
++            this.setValueOf( 'info','footnote', content );
++          else
++            this.setValueOf( 'info','footnote', "" );
++          if ( attr_value && attr_value.length > 0 )
++            this.setValueOf( 'info','value', attr_value );
++          else
++            this.setValueOf( 'info','value', "" );
++        };
+         return {
+           title : Drupal.t('Footnotes Dialog'),
+           minWidth : 500,
+@@ -63,60 +63,96 @@ CKEDITOR.plugins.add( 'footnotes',
+               label : Drupal.t('Add a footnote'),
+               title : Drupal.t('Add a footnote'),
+               elements :
+-              [
+-                {
+-                  id : 'footnote',
+-                  type : 'text',
+-                  label : Drupal.t('Footnote text :'),
+-                },
+-                {
+-                  id : 'value',
+-                  type : 'text',
+-                  label : Drupal.t('Value :'),
+-                  labelLayout : 'horizontal',
+-                  style : 'float:left;width:100px;',
+-                }
+-              ]
++                [
++                  {
++                    id : 'footnote',
++                    type : 'textarea',
++                    label : Drupal.t('Footnote text :'),
++                    onLoad : function () {
++                      // Workaround.  CKEditor 3.x does not add the ID to the input,
++                      // just a wrapper <div> several levels above.  Add a class explicitly here
++                      // so we can find the textarea easily later.
++                      var footnote_id = this.getElement().getId();
++                      var footnoteWrapper = jQuery("#" + footnote_id);
++                      var textarea = jQuery(".cke_dialog_ui_input_textarea textarea", footnoteWrapper);
++                      textarea.addClass('footnote-textarea');
++                    }
++                  },
++                  {
++                    id : 'value',
++                    type : 'text',
++                    label : Drupal.t('Value :'),
++                    labelLayout : 'horizontal',
++                    style : 'float:left;width:100px;',
++                    required: true,
++                  }
++                ]
+             }
+           ],
+-        onShow : function()
+-        {
+-         this.editObj = false;
+-         this.fakeObj = false;
+-         this.editMode = false;
++          onShow : function()
++          {
++            this.editObj = false;
++            this.fakeObj = false;
++            this.editMode = false;
++
++            var selection = editor.getSelection();
++            var ranges = selection.getRanges();
++            var element = selection.getSelectedElement();
++            var seltype = selection.getType();
+ 
+-         var selection = editor.getSelection();
+-         var ranges = selection.getRanges();
+-         var element = selection.getSelectedElement();
+-         var seltype = selection.getType();
+-         
+-         if ( seltype == CKEDITOR.SELECTION_ELEMENT && element.getAttribute( 'data-cke-real-element-type' ) && element.getAttribute( 'data-cke-real-element-type' ) == 'fn' )
+-         {
+-          this.fakeObj = element;
+-          element = editor.restoreRealElement( this.fakeObj );
+-          loadElements.apply( this, [ editor, selection, element ] );
+-          selection.selectElement( this.fakeObj );
+-         }
+-         else if ( seltype == CKEDITOR.SELECTION_TEXT )
+-         {
+-           this.setValueOf( 'info','footnote', selection.getNative() );
+-         }
+-         this.getContentElement( 'info', 'footnote' ).focus();
+-        },
++            if ( seltype == CKEDITOR.SELECTION_ELEMENT && element.getAttribute( 'data-cke-real-element-type' ) && element.getAttribute( 'data-cke-real-element-type' ) == 'fn' )
++            {
++              this.fakeObj = element;
++              element = editor.restoreRealElement( this.fakeObj );
++              loadElements.apply( this, [ editor, selection, element ] );
++              selection.selectElement( this.fakeObj );
++            }
++            else if ( seltype == CKEDITOR.SELECTION_TEXT )
++            {
++              this.setValueOf( 'info','footnote', selection.getNative() );
++            }
++
++            var current_editor_id = this.getParentEditor().id;
++            var footnote_editor_id = jQuery('.footnote-textarea').attr('id');
++
++            // Replace the Footnote textarea with a CKEditor instance.
++            CKEDITOR.replace(footnote_editor_id, {
++              toolbar: [
++                { name: 'basicstyles', items : [ 'Bold','Italic', 'Underline', 'Link', 'Unlink' ] }
++              ],
++              enterMode: CKEDITOR.ENTER_BR,
++              autoParagraph : false,
++              resize_enabled : false,
++              autoGrow_minHeight : 80,
++              removePlugins : 'footnotes',
++              startupFocus: true
++            });
++
++          },
+           onOk : function()
+           {
++            var footnote_editor_id = jQuery('.footnote-textarea').attr('id');
+             var editor = this.getParentEditor();
+-            var content = this.getValueOf( 'info', 'footnote' );
++            var content = CKEDITOR.instances[footnote_editor_id].getData();
+             var value = this.getValueOf( 'info', 'value' );
++
++            CKEDITOR.instances[footnote_editor_id].destroy();
++
+             if ( content.length > 0 || value.length > 0 ) {
+               var realElement = CKEDITOR.dom.element.createFromHtml('<fn></fn>');
+               if ( content.length > 0 )
+-                realElement.setText(content);
++                realElement.setHtml(content);
+               if ( value.length > 0 )
+                 realElement.setAttribute('value',value);
+               var fakeElement = editor.createFakeElement( realElement , 'cke_footnote', 'fn', false );
+               editor.insertElement(fakeElement);
++
+             }
++            return;
++          },
++          onCancel : function() {
++            var footnote_editor_id = jQuery('.footnote-textarea').attr('id');
++            CKEDITOR.instances[footnote_editor_id].destroy();
+           }
+         };
+       });
+@@ -126,9 +162,9 @@ CKEDITOR.plugins.add( 'footnotes',
+       // in hook_wysiwyg_plugin().
+       editor.ui.addButton('footnotes',
+         {
+-            label : Drupal.t('Add a footnote'),
+-            icon : this.path + 'images/footnotes.png',
+-            command : 'footnotes'
++          label : Drupal.t('Add a footnote'),
++          icon : this.path + 'images/footnotes.png',
++          command : 'footnotes'
+         });
+       if ( editor.addMenuGroup )
+       {
+@@ -139,23 +175,23 @@ CKEDITOR.plugins.add( 'footnotes',
+         editor.addMenuItems(
+           {
+             footnotes :
+-              {
+-                label : Drupal.t('Edit footnote'),  
+-                command : 'footnotes',
+-                icon : this.path + 'images/footnotes.png',
+-                group : 'footnotes'
+-              }
++            {
++              label : Drupal.t('Edit footnote'),
++              command : 'footnotes',
++              icon : this.path + 'images/footnotes.png',
++              group : 'footnotes'
++            }
+           });
+       }
+       if ( editor.contextMenu )
+       {
+         editor.contextMenu.addListener(function(element, selection)
+-          {
+-            if(element.is( 'img' ) &&element.getAttribute( 'data-cke-real-element-type' ) == 'fn')
+-              return { footnotes : CKEDITOR.TRISTATE_OFF };
+-            else
+-              return null;
+-          });
++        {
++          if(element.is( 'img' ) &&element.getAttribute( 'data-cke-real-element-type' ) == 'fn')
++            return { footnotes : CKEDITOR.TRISTATE_OFF };
++          else
++            return null;
++        });
+       }
+     },
+     afterInit : function( editor )
+@@ -168,15 +204,15 @@ CKEDITOR.plugins.add( 'footnotes',
+         dataFilter.addRules(
+           {
+             elements :
++            {
++              'fn' : function( element )
+               {
+-                'fn' : function( element )
+-                  {
+-                      var fakeElement = editor.createFakeParserElement(element, 'cke_footnote', 'fn', false );
+-                      return fakeElement;  
+-                  }
++                var fakeElement = editor.createFakeParserElement(element, 'cke_footnote', 'fn', false );
++                return fakeElement;
+               }
++            }
+           },
+           5);
+       }
+     }
+-});
++  });

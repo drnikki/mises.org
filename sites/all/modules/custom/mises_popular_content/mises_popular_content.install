@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the table where analytics hits will be mapped to entities for the purpose of views support.
+ */
+function mises_popular_content_schema() {
+  $schema['mises_analytics_hits'] = array(
+    'description' => 'A table for tracking page view stats as captured by Google Analytics.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for a node\'s hit count.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE),
+      'entity_type' => array(
+        'description' => 'The type type of entity being track, for example, "node".',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE),
+      'entity_id' => array(
+        'description' => 'The ID of the entity whose page received hits as tracked by Google Analytics.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE),
+      'hit_count' => array(
+        'description' => 'The number of hits this entity\'s page received, as tracked by Google Analytics.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}

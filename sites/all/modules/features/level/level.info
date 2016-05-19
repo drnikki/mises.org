@@ -1,0 +1,12 @@
+name = Level
+core = 7.x
+package = Taxonomy
+version = 7.x-1.0-beta
+project = level
+dependencies[] = features
+dependencies[] = taxonomy
+dependencies[] = uuid
+features[features_api][] = api:2
+features[taxonomy][] = level
+mtime = 1436557554
+project path = sites/all/modules/features

@@ -1,0 +1,494 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function mises_itunes_feed_menu() {
+  $items = array();
+  $items['itunes/%'] = array(
+    'title' => 'Mises iTunes Feed',
+    'page callback' => '_mises_solr_author_fix_rss',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+  );
+
+  $items['xml/%'] = array(
+    'title' => 'Mises iTunes Feed',
+    'page callback' => 'mises_itunes_feed_xml_callback',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
+ * RSS output of Libary Item feeds based on the term argument passed.
+ */
+function _mises_solr_author_fix_rss($tid) {
+
+  $start_time = time();
+  if (!is_numeric($tid)) {
+    drupal_set_message('Invalid iTunes feed URL; bad argument.', 'error');
+    drupal_goto('<front>');
+  }
+
+  $term = taxonomy_term_load($tid);
+  if (!$term) {
+    drupal_set_message('Invalid iTunes feed URL; bad term argument.', 'error');
+    drupal_goto('<front>');
+  }
+  /*
+  $last_gen_time = variable_get('mises_itunes_feed_time_' . $tid, 'x');
+  $cache_duration = 60 * 15;
+  if (time() - $last_gen_time <= $cache_duration) {
+    $cached_data = variable_get('mises_itunes_feed_cache_' . $tid, '');
+    if ($cached_data) {
+      echo $cached_data;
+      return;
+    }
+  } */
+
+  $feed_img_url = '';
+  if (isset($term->field_itunes_image[LANGUAGE_NONE][0]['uri'])) {
+    $feed_img_url = file_create_url($term->field_itunes_image[LANGUAGE_NONE][0]['uri']);
+
+    if (isset($term->field_itunes_image[LANGUAGE_NONE][0]['field_file_image_alt_text'][LANGUAGE_NONE][0]['safe_value'])) {
+      $feed_img_text = $term->field_itunes_image[LANGUAGE_NONE][0]['field_file_image_alt_text'][LANGUAGE_NONE][0]['safe_value'];
+    }
+  }
+  //drupal_set_message('<pre>' . print_r($term, 1) . '</pre>');
+  //return 'x';
+  $out = array();
+  $out[] = '<?xml version="1.0" encoding="UTF-8"?>';
+
+  $out[] = '<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2enclosuresfull.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>';
+
+
+  $out[] = '<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">';
+  $out[] = '<channel>';
+  $out[] = '<title>' . $term->name . '</title>';
+  $out[] = '<description><![CDATA[' . strip_tags($term->description) . ']]></description>';
+  $out[] = '<language>en-US</language>';
+  $out[] = '<itunes:summary><![CDATA[' . strip_tags($term->description) . ']]></itunes:summary>';
+  if (isset($term->field_author_1[LANGUAGE_NONE][0]['target_id'])) {
+    $author_node = node_load($term->field_author_1[LANGUAGE_NONE][0]['target_id']);
+  }
+  if (isset($author_node->title)) {
+    $out[] = '<itunes:author>' . $author_node->title . '</itunes:author>';
+  }
+  $out[] = '<itunes:explicit>no</itunes:explicit>';
+  if (isset($feed_img_url)) {
+    $out[] = '<itunes:image href="' . $feed_img_url . '" />';
+  }
+  if (isset($feed_img_url)) {
+    $out[] = '<image>';
+    if (isset($feed_img_text)) {
+      $out[] = '<title>' . $feed_img_text . '</title>';
+    }
+    $out[] = '<url>' . $feed_img_url . '</url>';
+    $out[] = '<link>http://mises.org</link>';
+    $out[] = '</image>';
+  }
+  /**
+   * jestep - Disabling limit on number of results and limit on pub date - 2015-02-12 - jestep
+   * // Specific how old results can be in days:
+   * $age_in_days = 30;
+   * $earliest = date('Y-m-d 00:00:00', time() - (60 * 60 * 24 * $age_in_days));
+   */
+  // Fetch Library Items with the provided term ID:
+  $term_query = db_query("SELECT n.nid, d.field_published_date_value " .
+    "FROM node n, taxonomy_index t, field_data_field_published_date d " .
+    "WHERE n.nid = t.nid AND t.tid = :tid AND d.entity_id = n.nid " .
+    // "d.field_published_date_value >= :earliest " .
+    "ORDER BY d.field_published_date_value DESC " .
+    "LIMIT 14 ",
+    array(
+      ':tid' => $tid,
+      // ':earliest' => $earliest,
+    )
+  );
+  foreach ($term_query as $result) {
+    // Stop if processing time exceeds a limit:
+    $max_processing_seconds = 5;
+    if (time() - $start_time > $max_processing_seconds) {
+      break;
+    }
+    
+
+    $item_out = array();
+    $node = node_load($result->nid);
+    // Grab the referenced author for the Library Item
+    $author = node_load($node->field_author_1['und'][0]['target_id']);
+    //drupal_set_message('<pre>' . print_r(node_load($author), 1) . '</pre>');
+    #    return 'x';
+    $item_out[] = '<item>';
+    $item_out[] = '<title>' . $node->title . '</title>';
+    $item_out[] = '<link>' . url('node/' . $node->nid, array('absolute' => TRUE)) . '</link>';
+    $item_out[] = '<dc:creator>' . $author->title . '</dc:creator>';
+    $item_out[] = '<pubDate>' . date("r", strtotime($result->field_published_date_value)) . '</pubDate>';
+    $item_out[] = '<guid isPermaLink="false">' . url('node/' . $node->nid, array('absolute' => TRUE)) . '</guid>';
+  
+    if (isset($node->body[LANGUAGE_NONE][0]['value'])) {
+      $item_out[] = '<description><![CDATA[' . strip_tags($node->body[LANGUAGE_NONE][0]['value'], '<p>') . ']]></description>';
+      if (isset($node->field_teaser_text[LANGUAGE_NONE][0]['value'])) {
+        $item_out[] = '<itunes:summary><![CDATA[' . strip_tags($node->field_teaser_text[LANGUAGE_NONE][0]['value']) . ']]></itunes:summary>';
+      }
+    }
+    else {
+      $default_summary = 'A Mises podcast.';
+      $item_out[] = '<description><![CDATA[' . $default_summary . ']]></description>';
+      $item_out[] = '<itunes:summary><![CDATA[' . $default_summary . ']]></itunes:summary>';
+    }
+    /**
+     * // jestep - 2015-02-13 - Disabled item-specific authors in favor of term-specific per tasks/3137716, 2nd sub-item.
+     * unset($author);
+     * if (isset($node->field_author_1[LANGUAGE_NONE][0]['target_id'])) {
+     *    $author = node_load($node->field_author_1[LANGUAGE_NONE][0]['target_id']);
+     * }
+     * if (isset($author->title)) {
+     *   $item_out[] = '<itunes:author>' . $author->title . '</itunes:author>';
+     * } else {
+     *   $item_out[] = '<itunes:author>' . 'Mises' . '</itunes:author>';
+     * }
+     */
+    if (isset($author_node->title)) {
+      $item_out[] = '<itunes:author>' . $author_node->title . '</itunes:author>';
+    }
+    $item_out[] = '<itunes:explicit>no</itunes:explicit>';
+
+    // Use any "Topic" or "Austrian School" taxonomy terms associated with this node as its keywords:
+    $vocabs_to_use = "('currents_trends', 'the_austrian_school_of_economics')";
+    $keywords_query = db_query("SELECT DISTINCT t.name FROM taxonomy_vocabulary v, taxonomy_term_data t, taxonomy_index i " .
+      "WHERE v.machine_name IN $vocabs_to_use AND v.vid = t.vid AND t.tid = i.tid AND i.nid = :nid " .
+      "ORDER BY t.name",
+      array(
+        ':nid' => $node->nid,
+      )
+    );
+    $keywords = array();
+    foreach ($keywords_query as $keywords_result) {
+      $keywords[] = $keywords_result->name;
+    }
+    if (!empty($keywords)) {
+      $item_out[] = '<itunes:keywords>' . implode(", ", $keywords) . '</itunes:keywords>';
+    }
+    unset($audio_file_url);
+    unset($file);
+    if (isset($node->field_media_collection[LANGUAGE_NONE][0]['value'])) {
+      $file_query = db_query("SELECT field_media_fid FROM field_data_field_media WHERE entity_id = :entity_id",
+        array(
+          ':entity_id' => $node->field_media_collection[LANGUAGE_NONE][0]['value'],
+        )
+      );
+      foreach ($file_query as $result) {
+        $file = file_load($result->field_media_fid);
+        //drupal_set_message('<pre>' . print_r($file, 1) . '</pre>');
+        //return 'x';
+        $audio_file_url = file_create_url($file->uri);
+      }
+    }
+
+    // Do not return this item if the file isn't an mp3 or mp4:
+    /*  if (!isset($file->filemime) || !in_array(strtolower($file->filemime), array('audio/mpeg', 'audio/mp4'))) {
+         continue;
+      } */
+    if ($audio_file_url) {
+      $item_out[] = '<enclosure url="' . $audio_file_url . '" length="' . $file->filesize . '" type="' . $file->filemime . '" />';
+    }
+
+    $item_out[] = '</item>';
+
+    $out = array_merge($out, $item_out);
+  }
+  $out[] = '</channel>';
+  $out[] = '</rss>';
+  $output = implode("\n", $out);
+  variable_set('mises_itunes_feed_time_' . $tid, time());
+  variable_set('mises_itunes_feed_cache_' . $tid, $output);
+
+  drupal_add_http_header('Content-Type', 'text/xml');
+  echo $output;
+  drupal_exit();
+}
+
+/**
+ * @param int $tid
+ */
+function mises_itunes_feed_xml_callback($tid) {
+  // This page callback will return an xml page.
+  drupal_add_http_header('Content-Type', 'text/xml');
+  $dom = new DOMDocument('1.0', 'UTF-8');
+  $dom->preserveWhiteSpace = FALSE;
+  $dom->formatOutput = TRUE;
+  $xml = $dom->createElement('rss');
+  $dom->appendChild($xml);
+  $xml->setAttribute('version', '2.0');
+  $xml->setAttribute('xmlns:atom', "http://www.w3.org/2005/Atom");
+  $xml->setAttribute('xmlns:itunes', "http://www.itunes.com/dtds/podcast-1.0.dtd");
+  $xml->setAttribute('xmlns:itunesu', "http://www.itunesu.com/feed");
+
+  // Get taxonomy data.
+  $term = taxonomy_term_load($tid);
+  if ($term) {
+    _mises_itunes_feed_xml_setup_channel($dom, $xml, $term);
+
+    // Collect items that belong to the current vocabulary term.
+    // @todo: the view for taxonomy/term/%1 shows that $types should be shown on the view, but only library_item has the field_author_1 and field_published date.
+    $types = array(
+      'library_item',
+      'blog',
+      'course',
+      'event',
+      'library_collection',
+      'person_profile',
+      'product',
+    );
+
+    $query = new EntityFieldQuery();
+    // @todo: is the limit of 14 needed?
+    $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('nid', taxonomy_select_nodes($tid), 'in')
+      ->propertyCondition('status', 1)
+      ->propertyCondition('type', $types, 'in')
+      ->propertyOrderBy('created', 'DESC')
+      ->range(0, 14);
+
+    $list = $query->execute();
+    $nids = array_keys($list['node']);
+    $nodes = node_load_multiple($nids);
+
+    $channel = $dom->getElementsByTagName('channel');
+    $channel = $channel->item(0);
+
+    foreach ($nodes as $node) {
+      _mises_itunes_feed_xml_add_item($dom, $channel, $node);
+    }
+  }
+  else {
+    watchdog('mises_itunes_feed invalid tid',
+      "%tid is not a valid taxonomy identifier",
+      array('%tid' => $tid)
+    );
+    $xml->appendChild($dom->createElement('error', "$tid is invalid"));
+  }
+
+  $output = $dom->saveXML();
+  echo $output;
+  drupal_exit();
+}
+
+/**
+ * Builds the channel xml item for an itunes rss feed.
+ *
+ * @param DOMDocument $dom
+ * @param DOMElement $xml
+ * @param stdClass $term
+ */
+function _mises_itunes_feed_xml_setup_channel(DOMDocument &$dom, DOMElement &$xml, stdClass $term) {
+  global $language;
+  // Create a wrapper to get at field values on the term easier.
+  $term_wrapper = entity_metadata_wrapper('taxonomy_term', $term);
+
+  $channel = $dom->createElement('channel');
+  $channel->appendChild($dom->createElement('title', $term->name));
+  $channel->appendChild($dom->createElement('language', $language->language));
+  $desc = check_plain($term->description);
+  $channel->appendChild($dom->createElement('description', $desc));
+  $channel->appendChild($dom->createElement("itunes:summary", $desc));
+
+  // Grab the Title from each of the referenced node threw field_author_1 on the term
+  if (!empty($term_wrapper->field_author_1)) {
+    $authors = array();
+    foreach ($term_wrapper->field_author_1->value() as $index => $author) {
+      $authors[] = $author->title;
+    }
+    $channel->appendChild($dom->createElement('itunes:author', implode(', ', $authors)));
+  }
+
+  // @todo: explicit is hardcoded??
+  $channel->appendChild($dom->createElement('itunes:explicit', 'no'));
+
+  // Build image for the vocabulary.
+  $voc_image = $term_wrapper->field_itunes_image->value();
+  $voc_image_url = file_create_url($voc_image['uri']);
+  // @todo: a default could be set up in drupal cms
+  if (!empty($voc_image)) {
+    $channel->appendChild($dom->createElement('itunes:image', $voc_image_url));
+    $image = $dom->createElement('image');
+    $image->appendChild($dom->createElement('title', $voc_image['title']));
+    if (valid_url($voc_image_url)) {
+      $image->appendChild($dom->createElement('url', $voc_image_url));
+    }
+    // @todo: the could probably be removed.
+    $image->appendChild($dom->createElement('link', 'http://mises.org'));
+    $channel->appendChild($image);
+  }
+
+  $xml->appendChild($channel);
+}
+
+/**
+ * Builds and item xml item for an itunes rss feed.
+ *
+ * @param DOMDocument $dom
+ * @param DOMElement $channel
+ * @param $node
+ */
+function _mises_itunes_feed_xml_add_item(DOMDocument &$dom, DOMElement &$channel, $node) {
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $item = $dom->createElement('item');
+  $item->appendChild($dom->createElement('title', $node->title));
+  try {
+    if (!empty($wrapper->field_author_1)) {
+      // Grab the Title from each of the referenced node threw field_author_1 on the node.
+      $authors = array();
+      foreach ($wrapper->field_author_1->value() as $index => $author) {
+        if (isset($author)) {
+          $authors[] = $author->title;
+        }
+      }
+      $item->appendChild($dom->createElement('itunes:author', implode(', ', $authors)));
+    }
+  }
+  catch (EntityMetadataWrapperException $e) {
+    watchdog('mises_itunes_feed',
+      "Node %nid shows up in the itunes rss feed with out an Author",
+      array('%nid' => $node->nid),
+      WATCHDOG_ERROR
+    );
+  }
+
+  $description = '';
+  // If there is no value set for body then an exception is thrown.
+  try {
+    $description = check_plain($wrapper->body->value->value());
+  }
+  catch (EntityMetadataWrapperException $e) {
+    watchdog('mises_itunes_feed',
+      "Node %nid shows up in the itunes rss feed but does a body to be used as a
+       discription item",
+      array('%nid' => $node->nid),
+      WATCHDOG_NOTICE,
+      url("node/$node->nid", array('absolute' => TRUE))
+    );
+  }
+  $item->appendChild($dom->createElement('description', $description));
+  try {
+    $summary = '';
+    $summary = check_plain($wrapper->field_teaser_text->value->value());
+    $item->appendChild($dom->createElement('itunes:summary', $summary));
+  }
+  catch (EntityMetadataWrapperException $e) {
+    watchdog('mises_itunes_feed', 'Node %nid has no field_teaser_text and
+    a EntityMetadataWrapperException is caught with message: %msg',
+      array('%nid' => $node->nid,'%msg' =>$e->getMessage()),
+      WATCHDOG_NOTICE,
+      url("node/$node->nid", array('absolute' => TRUE))
+
+    );
+  }
+
+  // field_media on field_media_collection field collection has a cardinality of unlimited, so we need to loop through the results
+  if (!empty($wrapper->field_media_collection)) {
+    $duration = 0;
+    foreach ($wrapper->field_media_collection->value() as $index => $media) {
+      $fids = field_get_items('field_collection_item', $media, 'field_media');
+      $file = file_load($fids[0]['fid']);
+      $url = file_create_url($file->uri);
+
+      $file_info = getID3_analyze(drupal_realpath($file->uri));
+      if (isset($file_info['playtime_seconds'])) {
+        $duration += $file_info['playtime_seconds'];
+      }
+      else {
+        watchdog('mises_itunes_feed',
+          "Node %nid shows up in the itunes rss feed but does not have a media
+          (field_collection_item) item",
+          array('%nid' => $node->nid),
+          WATCHDOG_NOTICE,
+          url("node/$node->nid", array('absolute' => TRUE))
+        );
+      }
+      // @todo: filter out youtube here
+      $enclosure = $dom->createElement('enclosure');
+      $enclosure->setAttribute('url', $url);
+      $enclosure->setAttribute('length', $file->filesize);
+      $enclosure->setAttribute('type', $file->filemime);
+      $item->appendChild($enclosure);
+    }
+    $duration = gmdate("H:i:s", $duration);
+  }
+  else {
+    $duration = gmdate("H:i:s", 0);
+    watchdog('mises_itunes_feed',
+      "Node %nid shows up in the itunes rss feed but does not have a media
+      (field_collection_item) item",
+      array('%nid' => $node->nid),
+      WATCHDOG_NOTICE,
+      url("node/$node->nid", array('absolute' => TRUE)));
+  }
+
+  $item->appendChild($dom->createElement('guid', $wrapper->url->value()));
+
+  if (!empty($wrapper->field_published_date)) {
+    $pubDate = date(DATE_RSS, $wrapper->field_published_date->value());
+    $item->appendChild($dom->createElement('pubDate', $pubDate));
+  }
+  else {
+    watchdog('mises_itunes_feed',
+      "Node %nid shows up in the itunes rss feed but does not have a publish date
+      (field_published_date) item",
+      array('%nid' => $node->nid),
+      WATCHDOG_NOTICE,
+      url("node/$node->nid", array('absolute' => TRUE)));
+  }
+
+  $item->appendChild($dom->createElement('itunes:duration', $duration));
+
+  // Use any "Topic" or "Austrian School" taxonomy terms associated with this node as its keywords.
+  // @todo: should these field be checked before evaluated?
+  $keywords = array();
+  if (!empty($wrapper->field_topics)) {
+    foreach ($wrapper->field_topics->value() as $index => $topic) {
+      $keywords[] = $topic->name;
+    }
+  }
+  if (!empty($wrapper->field_austrian_school)) {
+    foreach ($wrapper->field_austrian_school->value() as $index => $school) {
+      $keywords[] = $school->name;
+    }
+  }
+  // Sort the keywords into alphabetical order.
+  if (!empty($keywords)) {
+    sort($keywords);
+    $item->appendChild($dom->createElement('itunes:keywords', implode(', ', $keywords)));
+  }
+
+  $item->appendChild($dom->createElement('link', url('node/' . $node->nid, array('absolute' => TRUE))));
+
+  // @todo remove this? http://deimos.apple.com/rsrc/doc/iTunesUAdministrationGuide/#ManagingiTunesUCoursePages/chapter_11_section_6.html
+  $item->appendChild($dom->createElement('itunes:explicit', 'no'));
+  $channel->appendChild($item);
+}
+
+
+/**
+ * Implements hook_query_TAG_alter().
+ *
+ * Makes debugging EntityFieldQuery much easier.
+ *
+ * Example usage:
+ *   $q = new EntityFieldQuery;
+ *   $q->entityCondition('entity_type', 'node')
+ *     ->addTag('debug')
+ *     ->execute();
+ *
+ * @param QueryAlterableInterface $query
+ */
+function mises_itunes_feed_query_debug_alter(QueryAlterableInterface $query) {
+  if (!$query->hasTag('debug-semaphore')) {
+    $query->addTag('debug-semaphore');
+    dd($query);
+  }
+}

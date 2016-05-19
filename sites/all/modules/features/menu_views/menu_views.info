@@ -1,0 +1,13 @@
+name = Menu Views
+description = Views for special menu links
+core = 7.x
+package = Views
+version = 7.x-1.0
+project = menu_views
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = featured_timely_posts
+features[views_view][] = pre_recorded_topics
+features_exclude[dependencies][ctools] = ctools
+mtime = 1436557554

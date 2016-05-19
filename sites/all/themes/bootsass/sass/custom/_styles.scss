@@ -1,0 +1,636 @@
+/*
+* Core Custom Styles
+* 
+*/
+
+/*
+* OVERRIDE BOOTSTRAP
+*/
+
+/* LAYOUT */
+@media (max-width: $screen-xs - 1){ // adding mid-small breakpoint
+  .main-content, .content-bottom, .menu-footer, .giving-footer {
+    *[class*="col-"]{
+      float:none;
+      width:auto;
+    }   
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .container {
+    width: 100%;
+  }
+
+}
+@media (min-width: $screen-md) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: $screen-lg) {
+  .container {
+    width: 1160px;
+  }
+}
+
+small,
+.small  { font-size: 90%; }
+
+
+/* HEADER */
+
+
+// Override logo alignment
+.logo.navbar-btn {
+  margin: 0;
+  padding: $grid-gutter-width * 2 $grid-gutter-width $grid-gutter-width;
+
+  &.btn-sm {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &.btn-xs {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+// Form Checkbox and Radio -- mod needed because Drupal places checkbox outside label
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  margin-left: 0px;
+}
+// Forms
+.form-control {
+  @include box-shadow(inset 0 0 0 rgba(0,0,0,0));
+}
+// Button variant - new btn-white
+.btn-white {
+  @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
+}
+// Label
+label {
+  @extend h4.sub-heading;
+  margin-bottom: 0;
+}
+// Media
+body.media {
+  overflow-y: auto;
+}
+
+// Panels
+.panel {
+  margin-bottom: $grid-gutter-width;
+  &, .panel-heading, .panel-footer {
+    @include box-shadow(0 0 0 rgba(0,0,0,0));
+    border: 0 none;
+    border-radius: 0;
+  }
+  .panel-body {
+    word-break: break-word;
+  }
+  .sidebar .block:last-child &,
+  .sidebar &:last-child {
+    body.front & {
+      //margin-bottom: 0;
+    }
+  }    
+}
+// Pagination
+.pagination {
+  display: block;
+  clear: both;
+  border-radius: $pager-border-radius;
+  > li {
+    display: inline-block;
+    &, &:first-child, &:last-child {
+      > a,
+      > span {
+        padding: 0;
+        width: $font-size-base * 2;
+        height: $font-size-base * 2;
+        border-width: 0;
+        border-radius: $pager-border-radius;
+        line-height: $font-size-base * 2;
+      }
+    }
+    &.prev, &.next {
+      a {
+        @extend .glyphicon;
+        background-color: $gray;
+        &:before {
+          position: relative;
+          color: $white;
+        }
+      }
+      &:hover {
+        a {
+          background-color: $gray-dark;
+          color: $gray-dark;
+        }
+      }
+    }
+    &.prev {
+      a {
+        @extend .glyphicon-chevron-left;
+      }
+    }
+    &.next {
+      a {
+        @extend .glyphicon-chevron-right;
+      }
+    }
+  }
+}
+/* PAGER */
+.sidebar .pager {
+  border-radius: $pager-border-radius;
+  > li {
+    &.date-prev, &.date-next {
+      a {
+        @extend .glyphicon;
+        @extend .glyphicon-chevron-left;
+        position: relative;
+        padding: 0;
+        padding: 0;
+        width: $font-size-base * 1.25;
+        height: $font-size-base * 1.25;
+        border-radius: $pager-border-radius;
+        background-color: $white;
+        color: $white;
+        line-height: $font-size-base * 1.25;
+        &:before {
+          position: absolute;
+          left: 2px;
+          color: $brand-secondary;
+        }
+      }
+      &:hover {
+        a {
+          background-color: $gray-light;
+          color: $gray-light;
+        }
+      }
+    }
+    &.date-next {
+      a {
+        @extend .glyphicon-chevron-right;
+        left: 4px;
+      }
+    }
+  }
+}
+// OVERRIDE FOR CONTEXTUAL LINKS FOR ANON
+body.not-logged-in {
+  .contextual-links-wrapper {
+    display: none;
+  }
+}
+
+/*
+* CUSTOM MISES ELEMENTS
+*/
+
+/* MENU FOOTER */
+.menu-footer {
+  @include background-texture($brand-medium,'../images/menu-footer-texture.jpg');
+  padding: 10px 0 35px;
+  border-top: 1px solid $brand-dark;
+  
+  h2,
+  .block:first-child h2.block-title {
+    margin-top: $padding-large-vertical;
+    color: $brand-secondary-reverse;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  ul.menu {
+    @include content-columns(2);
+    li a {
+      display: inline;
+      padding: 0;
+      color: $gray-lighter;
+      font-size: $font-size-small;
+      &:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* FOOTER */
+.footer {
+  @include background-texture($gray-darker,'../images/footer-texture.jpg');
+  margin-top: 0;
+  padding: 5px 0 15px;
+  border-top: 7px solid $black;
+  color: $white;
+
+  .panel {
+    background: transparent;
+  }
+  h2,
+  .block:first-child h2.block-title { 
+    margin-top: $padding-large-vertical;
+    color: $brand-contrast;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+  .region-footer-left,
+  .region-footer-center {
+    ul.menu li a {
+        display: inline;
+        padding: 0;
+        color: $gray-lighter;
+        font-size: $font-size-small;
+      &:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+    }
+  }
+  .region-footer-right {
+    .panel {
+      padding: $padding-large-vertical 0 $padding-large-vertical;
+      border-bottom: 1px solid $gray;
+      line-height: $line-height-small;
+      h2 {
+        margin: 0 0 $padding-base-vertical * 1.5;
+        padding: 0  $padding-xs-horizontal $padding-base-vertical * 1.5;
+        border-bottom: 1px solid $gray;
+        color: $gray-lighter;
+        font-size: $font-size-h3;
+      }
+      p,address {
+        padding: 0  $padding-xs-horizontal;
+      }
+      .logo {
+        @include background-image('../images/footer-logo.png', 60px, 377px);
+        margin-bottom: -7px;
+        margin-left: -7px;
+        max-width: 100%;
+        background-position: 5px 0;
+        background-size: contain;
+      }
+      .motto {
+        margin-bottom: 0;
+        font-style: italic;
+        font-size: 18px;
+        font-family: $font-family-serif;
+        opacity: 0.6;
+      }
+      a {
+        color: $white;
+        &.subscribe {
+          color: $brand-contrast-light;
+          @media (max-width: $screen-xs) {
+            display: block;
+            text-align: right;
+          }
+        }
+        .glyphicon {
+          @include glyph-size($font-size-base * 2);
+          background: $brand-contrast;
+        }
+        &:hover .glyphicon {
+          background: $white;
+          color: $brand-contrast;
+        }
+      }
+    }
+  }
+  .social-media-menu {
+    div {
+      display: inline-block;
+      padding-right: $padding-xs-horizontal;
+      padding-bottom: $padding-large-vertical;
+      a {
+        display: inline-block;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        background-size: contain;
+        //text-indent: -9999em;
+        opacity: 0.7;
+        &:hover {
+          background-color: transparent;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .region-footer-bottom {
+    padding-top: $padding-large-vertical;
+  }
+}
+
+/* PRIMARY CONTENT BLOCKS */
+.main-content {
+  position: relative;
+  @media (min-width: $screen-xs) {
+    padding: $padding-large-horizontal $grid-gutter-width *1.5 $padding-large-horizontal * 1.5;
+  }
+  @media (max-width: $screen-xs) {
+    padding: $padding-large-horizontal $grid-gutter-width / 2 $padding-large-horizontal * 1.5;
+  }
+}
+#text-resizer {
+  .large {
+    font-size: $font-size-large;
+  }
+  .active {
+    @extend .btn-primary;
+  }
+}
+.body-content {
+  padding-bottom: $padding-large-horizontal;
+}
+// Library item and blogs decrease spacing between content and disclaimer
+.node-type-blog {
+  .body-content {
+    padding-bottom: 0;
+  }
+  .group-sharing {
+    margin-top: $padding-large-horizontal;
+  }
+}
+.node-type-library-item {
+  .body-content {
+    padding-bottom: 0;
+  }
+  .group-sharing {
+    margin-top: $padding-large-horizontal;
+  }
+}
+
+.node-library-item .views-field-field-source, .node-blog .views-field-field-source {
+  font-size: 13px;
+}
+
+
+
+.content-bottom,
+.bottom-blocks {
+  padding-top: $padding-large-horizontal;
+}
+.node-unpublished.view-mode-full {
+  background: #ffc0c0;
+  &:before {
+    position: absolute;
+    width: 100%;
+    color: $white;
+    content: "UNPUBLISHED";
+    text-align: center;
+    font-size: 6em;
+    opacity: 0.5;
+  }
+}
+/*
+* IMG
+*/
+.border-gray img {
+  border: 3px solid $gray-lighter;
+}
+
+/*
+* FONTS AND TYPOGRAPHY 
+*/
+.bold {
+  font-weight: 600;
+}
+.italic {
+  font-style: italic;
+}
+.indent1 {
+  padding-left: $grid-gutter-width;
+}
+.indent2 {
+  padding-left: $grid-gutter-width * 2;
+}
+.indent3 {
+  padding-left: $grid-gutter-width * 3;
+}
+h1, .h1 {
+  color: $brand-primary;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: $font-family-serif;
+}
+.page-header {
+  border-bottom: 0 none;
+}
+h2 {
+  &.page-title {
+    margin: 0 0 $padding-large-vertical;
+    color: $brand-secondary;
+    font-size: $font-size-h2;
+    font-family: $font-family-serif;
+  }
+  &.teaser-title {
+    color: $brand-primary;
+    font-size: ceil(($font-size-base * 1.46666667)); // @TODO: REVISIT THIS WHEN MORE STYLING IS DONE // ~22px
+    font-family: $font-family-serif;
+    @media (min-width: $screen-xs + 1) {
+      & {
+        margin-top: 0;
+      }
+    }
+  }
+}
+h3 {
+  color: $brand-contrast;
+  &.list-title {
+    margin-top: $padding-base-vertical;
+    font-size: $font-size-h3 * 1.25;
+    font-family: $font-family-serif;
+  }
+}
+h4 {
+  color: $brand-secondary;
+}
+h5 {
+  color: $brand-primary;
+}
+h3, h4 {
+  &.author {
+    margin-top: 0;
+    font-size: 14px;
+  }
+  &.sub-heading {
+    text-transform: uppercase;
+  }
+  &.sidebar-title {
+    margin-bottom: $padding-small-vertical;
+  }
+  &.primary {
+    color: $brand-primary;
+  }
+  &.secondary {
+    color: $brand-secondary;
+  }
+  &.contrast {
+    color: $brand-contrast;
+  }
+  .outset > & {
+    margin-top: 0;
+  }
+}
+h2, .h2, h3, .h3, h4, .h4, h5, .h5 { 
+  vertical-align: top;
+  p { // FIX FOR AUTHOR FULL NAME NESTED P
+    display: inline;
+  }
+}
+h5 {
+  margin-bottom: $padding-base-vertical / 2;
+}
+address {
+  margin: 0 0 ($line-height-computed / 2);
+  line-height: $line-height-small;
+}
+.read-more,
+.more-link {
+  text-transform: uppercase;
+  font-size: $font-size-small;
+  cursor: pointer;
+  a {
+    color: $gray;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+  }
+}
+.more-link {
+  @extend .text-right;
+  margin: 0 $padding-large-horizontal;
+  line-height: 20px;
+  span.glyphicon {
+    @include glyph-size(24px);
+  }
+  a:hover {
+    color: $brand-secondary;
+    span.glyphicon {
+      background-color: $brand-secondary;
+    }
+  }
+}
+a.external-link {
+  span.glyphicon {
+    @include glyph-size(24px);
+    margin-left: $padding-base-vertical;
+  }
+  &:hover {
+    color: $brand-secondary;
+    span.glyphicon {
+      background-color: $brand-secondary;
+    }
+  }
+}
+
+.author a {
+  color: inherit;
+}
+blockquote {
+  .body-content & {
+    @extend .clearfix;
+  }
+}
+
+/* VIDEO  RESPONSIVE TIP: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+.media-youtube-video,
+.file-video {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+.media-youtube-video iframe,
+.file-video video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/* SLIDESHOW 
+*  Override flexslide styles
+*/
+.flexslider {
+  @include box-shadow(none);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  .flex-direction-nav {
+    li {
+      background: transparent;
+    }
+    a {
+       text-shadow: none;
+       &:before {
+         font-size: 30px;
+       }
+    }    
+  }
+}
+#slideshow, #media, #image {
+  background-color: $gray-light;
+  margin-right: $grid-gutter-width;
+  margin-bottom: $padding-base-vertical;
+  width: 240px; 
+}
+.view-list {
+  clear: both;  
+}
+
+// CKEDITOR
+body.cke_editable {
+  background: $white none;
+}
+
+@media (max-width: $screen-sm) {
+	/* tommy removing breadcrumbs on mobile */
+	.easy-breadcrumb {
+	  display: none;
+	}
+}
+
+/* image source */
+.view-image-source {
+  .views-label {
+    font-weight: bold;
+  }
+  .field-content {
+  display: inline; 
+  }
+}
+
+.file.view-mode-wide_player .file {
+  a {
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 1.25;
+    padding: 6px 10px;
+    background-color: #38709e;
+    border-color: #38709e;
+    color: #fff;
+    background-image: none;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: normal;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    &:hover {
+      background-color: #2b5578;
+      border-color: #2b5578;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  img {
+    display: none;
+  }
+}

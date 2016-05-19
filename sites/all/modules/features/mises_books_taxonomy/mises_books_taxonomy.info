@@ -1,0 +1,11 @@
+name = Books
+description = Defines the Books taxonomy which is used to identify which book types belong to a Library Item.
+core = 7.x
+package = Taxonomy
+version = 7.x-1.0
+project = mises_books_taxonomy
+dependencies[] = features
+dependencies[] = taxonomy
+features[features_api][] = api:2
+features[taxonomy][] = books
+mtime = 1436557554

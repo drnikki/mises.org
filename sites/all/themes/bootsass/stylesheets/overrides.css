@@ -1,0 +1,31 @@
+.view-mode-teaser .teaser-title {
+    /* min-height: 50px; */
+    height: inherit;
+}
+
+.ellipsis_wrapper {
+  display: block;
+}
+
+.teaser-title {
+  display: block;
+}
+
+/* remove the following once page views is fixed */
+span.disqus-comment-count:before {
+  display: none;
+}
+
+span.disqus-comment-count {
+  margin-left: 5px;
+}
+
+.ga-counter-display {
+  display: none !important;
+}
+/* remove above once page views is fixed */
+
+/* disqus comments */
+.disqus-disabled .comment-title {
+  display: none;
+}

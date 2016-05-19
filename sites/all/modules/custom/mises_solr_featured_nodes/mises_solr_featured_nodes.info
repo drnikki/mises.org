@@ -1,0 +1,5 @@
+name = Mises Solr Featured Nodes
+description = Re-order Solr results set pushing any featured results in that set to the top.
+core = 7.x
+package = Mises Custom
+version = 7.x-1.0

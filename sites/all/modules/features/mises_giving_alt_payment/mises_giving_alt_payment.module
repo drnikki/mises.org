@@ -1,0 +1,20 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Giving Alternate Payment feature.
+ */
+
+include_once 'mises_giving_alt_payment.features.inc';
+
+/*
+* Implements hook_views_node_view
+*/
+
+function mises_giving_alt_payment_node_view($node, $view_mode) {
+    if ($node->type=="giving_page"){
+        if ($view_mode == 'full'){
+        	drupal_add_css(drupal_get_path('module', 'mises_giving_alt_payment') . '/css/mises-alt-payment.css'); // Add conditional css only on the project view page.
+           }
+         return $node;
+    }    
+}

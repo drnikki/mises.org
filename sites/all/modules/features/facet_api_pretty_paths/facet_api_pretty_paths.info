@@ -1,0 +1,14 @@
+name = Facet API Pretty Paths
+description = Configuration for SEO-friendly paths
+core = 7.x
+package = Search
+dependencies[] = ctools
+dependencies[] = facetapi_pretty_paths
+dependencies[] = features
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[user_permission][] = administer facetapi pretty paths
+features[variable][] = facetapi_pretty_paths_searcher_apachesolr@solr
+features[variable][] = facetapi_pretty_paths_searcher_apachesolr@solr_options
+mtime = 1436557554

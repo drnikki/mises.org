@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Institute Fellowship feature.
+ */
+
+include_once 'mises_institute_fellowship.features.inc';

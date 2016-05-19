@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Book Content feature.
+ */
+
+include_once 'mises_book_content.features.inc';

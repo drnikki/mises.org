@@ -1,0 +1,13 @@
+name = Austrian School
+description = Taxonomy terms for Austrian School
+core = 7.x
+package = Taxonomy
+version = 7.x-1.0
+project = austrian_school
+dependencies[] = features
+dependencies[] = taxonomy
+dependencies[] = uuid
+features[features_api][] = api:2
+features[taxonomy][] = the_austrian_school_of_economics
+mtime = 1436557554
+project path = sites/all/modules/custom

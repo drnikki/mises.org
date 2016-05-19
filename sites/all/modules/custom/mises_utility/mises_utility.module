@@ -1,0 +1,561 @@
+<?php
+
+/**
+ * @file mises_utility.module
+ * TODO: Collection of utility functions for the mises project.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function mises_utility_permission() {
+  return array(
+    'administer mises settings' => array(
+      'title' => t('Administer Mises Settings'),
+      'description' => t('Perform administration tasks for the mises project.'),
+    ),
+    'administer mises code' => array(
+      'title' => t('Administer Mises Code Settings'),
+      'description' => t('Perform administration tasks for the mises code.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function mises_utility_menu() {
+  $items['admin/mises'] = array(
+    'title' => 'Mises Settings',
+		'description' => t('Collection of editable settings for the mises project'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mises_utility_admin'),
+    'access arguments' => array('administer mises settings'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/mises/development'] = array(
+    'title' => 'Mises Code Settings',
+		'description' => t('Collection of editable settings for the mises code options'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mises_utility_code'),
+    'access arguments' => array('administer mises code'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+  $items['admin/mises/development/update-authors'] = array(
+    'title' => 'Mises Update Authors',
+		'description' => t('Collection of editable settings for the mises code options'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mises_utility_update_authors_form'),
+    'access arguments' => array('administer mises code'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+	$url = variable_get('mises_mailchimp_custom_url', 'subscribe/mailchimp');
+	$title = variable_get('mises_mailchimp_custom_url_title', 'Subscribe to mailchimp');
+  	$items[$url] = array(
+    'title' => $title,
+    'page callback' => 'mises_utility_mailchimp_page',
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+  return $items;
+}
+
+/**
+ * Implements hook_admin().
+ */
+function mises_utility_admin() {
+  $form = array();
+
+	$form['mises_utility'] = array(
+		'#type' => 'fieldset', 
+		'#title' => t('Mises Settings'), 
+		'#weight' => 5, 
+		'#collapsible' => TRUE, 
+		'#collapsed' => FALSE,
+	);
+	$form['mises_utility']['markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Ad Settings'),
+		'#markup' => '<p>The fields below will allow you to make adjustments to the ad settings.</p><p>Use <a href="/admin/config/flex-blocks" title="Flex Block Management">Flex Block Management</a> to administer position for Ad displays.</p>',
+	);
+
+  $form['mises_utility']['mises_utility_ad_header'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on header ad region'),
+    '#default_value' => variable_get('mises_utility_ad_header', 0),
+    '#description' => t("Turn on the header ad region."),
+  );
+
+  $disclaimer_note = variable_get('mises_utility_disclaimer_note', '');
+  $form['mises_utility']['mises_utility_disclaimer_note'] = array(
+    '#type' => 'text_format',
+    '#format' => 'simplified',
+    '#title' => t('Disclaimer Note text'),
+    '#default_value' => ($disclaimer_note['value'] ? $disclaimer_note['value'] : ''),
+    '#description' => t("Text to be shown as a disclaimer on specific content types."),
+  );
+
+  $comment_policy = variable_get('mises_utility_comment_policy', '');
+  $form['mises_utility']['mises_utility_comment_policy'] = array(
+    '#type' => 'text_format',
+    '#format' => 'simplified',
+    '#title' => t('Comment Policy Statement text'),
+    '#default_value' => ($comment_policy['value'] ? $comment_policy['value'] : ''),
+    '#description' => t("Text to be shown as the comment policy statement on specific content types."),
+  );
+
+	$form['mises_mailchimp'] = array(
+		'#type' => 'fieldset', 
+		'#title' => t('Mailchimp Settings'), 
+		'#weight' => 6, 
+		'#collapsible' => TRUE, 
+		'#collapsed' => FALSE,
+	);
+	$form['mises_mailchimp']['markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Mailchimp Settings'),
+		'#markup' => '<p>The fields below will allow you to make adjustments to the custom mailchimp form.</p>',
+	);
+
+  $form['mises_mailchimp']['mises_mailchimp_custom_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Page Url'),
+    '#default_value' => variable_get('mises_mailchimp_custom_url', 'subscribe/mailchimp'),
+    '#description' => t("Set the url to the mailchimp subscribe page. No leading slash. Ex: subscribe/mailchimp"),
+  );
+
+  $form['mises_mailchimp']['mises_mailchimp_custom_url_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Page Title'),
+    '#default_value' => variable_get('mises_mailchimp_custom_url_title', 'Subscribe to Mailchimp'),
+    '#description' => t("Set the url page title for the mailchimp subscribe page."),
+  );
+/*
+  $form['mises_mailchimp']['mises_mailchimp_custom_region'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Block Region'),
+    '#default_value' => variable_get('mises_mailchimp_custom_region', 'content'),
+    '#description' => t("Set the block region to place the code on the new page."),
+  );
+ */ 
+  $form['mises_mailchimp']['mises_mailchimp_custom_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Block Subject'),
+    '#default_value' => variable_get('mises_mailchimp_custom_subject', ''),
+    '#description' => t("Set the block title."),
+  );
+
+  $form['mises_mailchimp']['mises_mailchimp_custom_style'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Addtional Block Styles'),
+    '#default_value' => variable_get('mises_mailchimp_custom_style', ''),
+    '#description' => t("Set the block styles."),
+  );
+  
+  $form['mises_mailchimp']['mises_mailchimp_custom_content'] = array(
+    '#type' => 'textarea',
+    '#title' => t('PHP/HTML Code'),
+    '#default_value' => variable_get('mises_mailchimp_custom_content', ''),
+    '#description' => t("Set the block content."),
+  );
+  $form['mises_mailchimp']['mises_mailchimp_custom_image'] = array(
+    '#type' => 'managed_file',
+    '#name' => 'mises_mailchimp_custom_image',
+    '#title' => t('Description Image'),
+    '#size' => 40,
+    '#default_value' => variable_get('mises_mailchimp_custom_image', ''),
+    '#description' => t("Image should be less than 400 pixels wide and in JPG format."),
+    '#upload_location' => 'public://'
+
+  );
+  $form['mises_mailchimp']['mises_mailchimp_custom_description'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Description'),
+    '#default_value' => variable_get('mises_mailchimp_custom_description', ''),
+    '#description' => t("Configure the description below the signup form."),
+  );
+  /*
+  $form['mises_mailchimp']['mises_mailchimp_custom_description'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Description'),
+    '#default_value' => variable_get('mises_mailchimp_custom_description', ''),
+    '#format' => 'simplified',
+  );*/
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_code().
+ */
+function mises_utility_code() {
+  $form = array();
+
+	$form['mises_code'] = array(
+		'#type' => 'fieldset', 
+		'#title' => t('Mises Code Settings'), 
+		'#weight' => 5, 
+		'#collapsible' => TRUE, 
+		'#collapsed' => FALSE,
+	);
+	$form['mises_code']['markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Code Settings'),
+		'#markup' => 'The fields below will allow you to make adjustments to the code settings',
+	);
+
+  $form['mises_code']['mises_code_job_close_scheduler'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on job scheduler debug'),
+    '#default_value' => variable_get('mises_code_job_close_scheduler', 0),
+    '#description' => t("Turn on job scheduler debug."),
+  );
+
+  $form['mises_code']['mises_set_input_filter'] = array(
+    '#type'  => 'submit',
+    '#value' =>  t('Set missing input filters'),
+    '#submit' => array('mises_utility_set_input'),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * hook_node_presave
+ * 
+ */
+
+function mises_utility_node_presave($node){ 
+	if($node->type == 'job_posting_'){ // Only update job posting nodes
+		$node->scheduler['unpublish_on'] = $node->field_closing_date['und'][0]['value']; // Setting the unpublish date equal to the closing date
+		$node->unpublish_on = $node->field_closing_date['und'][0]['value']; // Setting the unpublish date equal to the closing date
+		$mises_debug = variable_get('mises_code_job_close_scheduler', 0);
+		if($mises_debug >= 1){watchdog('Job Posting', 'Job Posting node is <pre>'.print_r($node, TRUE).'</pre>');}
+	}
+} 
+
+/**
+ * hook_node_presave
+ * 
+ */
+
+function mises_utility_update_projects_alter(&$projects) {
+  foreach($projects as $key => $project) {
+    if($project['datestamp'] == 0) { // check for a timestamp from D.O.
+   $custom_module = $project['name']; // get the name of the module
+    unset($projects[$custom_module]); // remove the module from the list
+    }
+  }
+}
+
+/**
+ * Implements hook_info_alter
+ * Overrides default formatter for creative commons field
+ * 
+ */
+
+function mises_utility_field_info_alter(&$info){
+  $info['creative_commons']['default_formatter'] = 'creative_commons_large_image';
+}
+/**
+ * Implements hook_preprocess_page
+ * 
+ */
+function mises_utility_preprocess_page(&$variables) {
+  // Ensure that tags are stripped from head_title.
+  if (isset($variables['head_title'])) {
+    $variables['head_title'] = strip_tags(html_entity_decode($variables['head_title']));
+  }
+}
+
+/**
+ * Implements hook_preprocess_node
+ * Automatically disable event registration and the event date has passed
+ * 
+ */
+function mises_utility_preprocess_node(&$variables) {
+  if($variables['type'] == 'event') {
+
+    if (!empty($variables['field_event_date'][0]['value'])) {
+      $timestamp = $variables['field_event_date'][0]['value'];
+      $dtime = DateTime::createFromFormat("Y-m-d G:i:s", $timestamp);
+      $timestamp = $dtime->getTimestamp();
+    }
+
+    $current_date = time();
+    if ($current_date >= $timestamp && $variables['field_registration_type']['und'][0]['value'] != 'none') {
+      drupal_set_message('Registration is closed.');
+      $node = node_load($variables['nid']);
+      $node->field_registration_type['und'][0]['value'] = 'none';
+      node_save($node);
+      //drupal_set_message('Node Saved..');
+      header('Location: '.$_SERVER['REQUEST_URI']);
+    } else {
+      //drupal_set_message('Registration is open.');
+    }
+  }
+}
+
+/**
+ * Implements hook_page
+ * 
+ */
+
+function mises_utility_mailchimp_page() {
+		$block = module_invoke("mises_utility", "block_view", "mailchimp_custom");
+		//$page_block = module_invoke("mises_utility", "block_view", "mailchimp_page_description");
+		$block_style = variable_get('mises_mailchimp_custom_style', '');
+		$block['content'] = str_replace($block_style, "", $block['content']);
+		//$region = variable_get('mises_mailchimp_custom_region', 'content');
+		//drupal_add_region_content("content", theme("block", $block));
+    	return render($block['content']);
+  }
+
+/**
+ * Implements hook_block_info
+ * 
+ */
+function mises_utility_block_info() {    
+  $blocks['mailchimp_custom'] = array(
+    'info' => t('Mises Custom Mailchimp'),
+  );
+  $blocks['mailchimp_page_description'] = array(
+    'info' => t('Mises Custom Mailchimp Page Description'),
+  );
+  $blocks['mises_related_profiles'] = array(
+    'info' => t('Mises Related Profiles'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view
+ * 
+ */
+function mises_utility_block_view($delta = '') {
+  switch ($delta) {
+    case 'mailchimp_custom':
+        // Create your block content here
+		  $subject = variable_get('mises_mailchimp_custom_subject', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+		  $block_style = variable_get('mises_mailchimp_custom_style', '');
+		  $content = variable_get('mises_mailchimp_custom_content', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+      	$block['subject'] = $subject;
+      	$block['content'] = '<div class="newsletter-form">'.$block_style.' '.$content.'</div>';
+    break;
+    case 'mailchimp_page_description':
+      // Create your block content here
+      $subject = t('<none>');
+      //$block_style = variable_get('mises_mailchimp_custom_style', '');
+      $desc_image_var = variable_get('mises_mailchimp_custom_image');
+      //if($desc_image_var != 0) {
+      //  $desc_image = file_load()->uri;
+      //  $desc_image_url = file_create_url($desc_image);
+      //} else {
+        $desc_image_url = '/sites/default/files/styles/list_teaser/public/Subscribe_750x516.jpg';
+      //}
+      $desc_image_display = '<img class="pull-right" src="' . $desc_image_url . '">';
+      $desc_text = variable_get('mises_mailchimp_custom_description', 'Please define in <a href="/admin/mises">Mises Utility settings</a>');
+      $desc_text = check_markup($desc_text, 'filtered_html', '', FALSE);
+      $content =  $desc_image_display . $desc_text;
+      $block['subject'] = $subject;
+      $block['content'] = '<div class="newsletter-form-description">' . $content . '</div>';
+    break;
+    case 'mises_related_profiles':
+      // Custom related profiles block.
+      $path = current_path();
+      $url = explode('/', current_path());
+
+      if(isset($url[2]) && $url[2] != '') {
+        $query = new EntityFieldQuery();
+        $query
+          ->entityCondition('entity_type', 'node')
+          ->entityCondition('bundle', 'person_profile')
+          ->propertyCondition('status', 1, '=')
+          ->propertyCondition('title', "%". $url[2] ."%","LIKE");
+        $results =  $query->execute();
+
+        if (isset($results['node'])) {
+          $content = "";
+          foreach($results['node'] as $result) {
+            $author = node_load($result->nid);
+            $alias = drupal_get_path_alias('node/'.$author->nid);
+            $content .= "<a href='/". $alias ."'>" . $author->title . "</a> </br>";
+          }
+
+          $subject = t('Related Profiles');
+          $block['subject'] = $subject;
+          $block['content'] = '<div class="mises-related-profiles">' . $content . '</div>';
+        }
+      } else {
+        $block['subject'] = '';
+        $block['content'] = '';
+      }
+      break;
+  }
+  return $block;
+}
+
+/**
+ * @file ckeditor_custom.module
+ *
+ * Includes tweaks to ckeditor that can't be performed through config.
+ */
+
+/**
+ * Implements hook_wysiwyg_editor_settings_alter()
+ */
+function mises_utility_wysiwyg_editor_settings_alter(&$settings, $context) {
+
+  // The $context variable contains information about the wysiwyg profile we're using
+  // In this case we just need to check that the editor being used is ckeditor
+  if ($context['profile']->editor == 'ckeditor') {
+
+    // Specify the custom config file that defines our font styles
+    $settings['customConfig'] = base_path() . drupal_get_path('module', 'mises_utility') . '/ckeditor_custom_config.js';
+
+  }
+}
+
+/**
+ * Implements hook_ds_fields_info_alter to allow HTML in titles
+ * 
+ */
+function mises_utility_ds_fields_info_alter(&$fields, $entity_type) {
+  if ($entity_type == 'node') {
+   $fields['title']['function'] = 'mises_utility_custom_render_function';
+  }
+}
+function mises_utility_custom_render_function($field) {
+  $output = '';
+  $settings = isset($field['formatter_settings']) ? $field['formatter_settings'] : array();
+  $settings += $field['properties']['default'];
+  // Basic string.
+  if (isset($settings['link text'])) {
+    $output = t($settings['link text']);
+  }
+  elseif (isset($field['properties']['entity_render_key']) && isset($field['entity']->{$field['properties']['entity_render_key']})) {
+    if ($field['entity_type'] == 'user' && $field['properties']['entity_render_key'] == 'name') {
+      $output = format_username($field['entity']);
+    }
+    else {
+      $output = $field['entity']->{$field['properties']['entity_render_key']};
+    }
+  }
+
+  if (empty($output)) {
+    return;
+  }
+
+  $output = filter_xss($output, array('b','i','em', 'strong'));
+
+  // Link.
+  if ($settings['link']) {
+    if (isset($field['entity']->uri['path'])) {
+      $path = $field['entity']->uri['path'];
+    }
+    else {
+      $uri_info = entity_uri($field['entity_type'], $field['entity']);
+      $path = $uri_info['path'];
+    }
+    $output = l($output, $path, array('html' => TRUE));
+  }
+
+  // Wrapper and class.
+  if (!empty($settings['wrapper'])) {
+    $wrapper = check_plain($settings['wrapper']);
+    $class = (!empty($settings['class'])) ? ' class="' . check_plain($settings['class']) . '"' : '';
+    $output = '<' . $wrapper . $class . '>' . $output . '</' . $wrapper . '>';
+  }
+  return $output;
+}
+
+
+/**
+ * Implements mises_utility_set_input().
+ */
+function mises_utility_set_input() {
+  db_query("UPDATE {field_data_field_bibliography_footnote} SET field_bibliography_footnote_format = 'simplified' WHERE field_bibliography_footnote_format != 'simplified' AND bundle = 'library_item'");
+  db_query("UPDATE {field_data_field_citation} SET field_citation_format = 'simplified' WHERE field_citation_format != 'simplified' AND field_citation_format != 'full_html' AND bundle = 'library_item'");
+  db_query("UPDATE {field_data_field_teaser_text} SET field_teaser_text_format = 'simplified' WHERE field_teaser_text_format != 'simplified' AND field_teaser_text_format != 'full_html' AND bundle = 'library_item'");
+  db_query("UPDATE {field_data_field_body} SET field_body_format = 'simplified' WHERE field_body_format != 'simplified' AND field_body_format != 'full_html' AND bundle = 'library_item'");
+  db_query("UPDATE {field_data_body} SET body_format = 'simplified' WHERE body_format != 'simplified' AND body_format != 'full_html' AND bundle = 'library_item'");
+  drupal_set_message('Set missing input filters');
+}
+
+function mises_utility_url_inbound_alter(&$path, $original_path, $path_language) {
+  // Redirect odd url path to the correct path
+  if($path == 'media/2602/A-New-Currency-for-the-World') {
+    drupal_goto('/node/12371');
+  }
+}
+
+/**
+ * Implements mises_utility_update_authors() form callback
+ */
+function mises_utility_update_authors_form() {
+  $form = array();
+
+	$form['mises_update_authors_submit'] = array(
+		'#type' => 'submit', 
+		'#title' => t('Update all authors 1 to have authors 2'), 
+    '#value' => t('Run Update'),
+	);
+
+  return $form;
+}
+
+/**
+ * Implements mises_utility_update_authors() form submit handler
+ */
+function mises_utility_update_authors_form_submit() {
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'library_item')
+    ->fieldCondition('field_author_2', 'target_id', 'NULL', '!=');
+
+  $result = $query->execute();
+  //dpm($result);
+  $count = 0;
+  foreach ($result['node'] as $key => $value) {
+    $node = node_load($value->nid);
+    //dpm($node);
+    foreach ($node->field_author_1[LANGUAGE_NONE] as $k => $v) {
+      $authors = 0;
+      if ($v['target_id'] == $node->field_author_2[LANGUAGE_NONE][0]['target_id']) {
+      $authors++;
+      }
+    } 
+    
+    if ($authors == 0) {
+      $node->field_author_1[LANGUAGE_NONE][]['target_id'] = $node->field_author_2[LANGUAGE_NONE][0]['target_id'];
+      node_save($node);
+      $count++;
+    }
+    
+    
+  }
+  drupal_set_message('You have updated ' . $count . ' nodes');
+  
+  return $form;
+}
+
+
+
+function mises_utility_preprocess_html(&$variables) {
+
+  if (path_is_admin(current_path())) {
+    drupal_add_css(drupal_get_path('theme', 'bootsass') . '/stylesheets/mises_admin.css', array('weight' => CSS_THEME));
+  }
+
+  // Add conditional stylesheets for admin pages on admin theme.
+  if (arg(0)=="node" && arg(2)=="edit") {
+    // reference your own stylesheet    
+    drupal_add_css(drupal_get_path('module', 'mises_utility') . '/css/mises_utility.css', array('weight' => CSS_THEME));
+  }
+}

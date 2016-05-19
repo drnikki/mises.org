@@ -1,0 +1,14 @@
+name = Profile Listings
+description = Blocks for directory, faculty-staff, speakers-bureau
+core = 7.x
+package = Context
+version = 7.x-1.0
+project = profile_listings
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = menu
+dependencies[] = views
+features[context][] = directory
+features[ctools][] = context:context:3
+features[features_api][] = api:2
+mtime = 1436557554

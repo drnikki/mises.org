@@ -1,0 +1,16 @@
+name = Mises Versal
+description = Mises Versal Integration
+core = 7.x
+package = Mises
+version = 7.x-1.1
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = list
+dependencies[] = mises_course
+dependencies[] = options
+features[context][] = mises_versal
+features[ctools][] = context:context:3
+features[features_api][] = api:2
+features[field_base][] = field_versal_course
+features[field_instance][] = node-course-field_versal_course

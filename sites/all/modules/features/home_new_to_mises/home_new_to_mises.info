@@ -1,0 +1,11 @@
+name = Home: New to Mises
+core = 7.x
+package = Menus
+version = 7.x-1.0
+project = home_new_to_mises
+dependencies[] = features
+dependencies[] = menu
+dependencies[] = menu_html
+features[features_api][] = api:2
+features[menu_custom][] = menu-new-to-mises
+mtime = 1436557554

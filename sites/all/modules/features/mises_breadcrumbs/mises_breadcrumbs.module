@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Breadcrumbs feature.
+ */
+
+include_once 'mises_breadcrumbs.features.inc';

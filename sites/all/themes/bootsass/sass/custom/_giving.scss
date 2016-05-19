@@ -1,0 +1,457 @@
+/*
+* Main Site Custom Styles
+* 
+*/
+/* TYPOGRAPHY */
+.main-container, .giving-footer {
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 { 
+    font-weight: normal;
+    font-family: $font-family-serif;
+  }
+}
+h1, .h1 {
+  @media (min-width: $screen-sm) {
+    & {
+      font-size: $font-size-h1 * 1.25;
+    }
+  }
+}
+h2, .h2 {
+  @media (min-width: $screen-sm) {
+    & {
+      font-size: $font-size-h1;
+    }
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+}
+h3 {
+  font-size: $font-size-base * 1.333333333333333;
+}
+a {
+  color: $brand-contrast;
+  &:hover {
+    color: $brand-contrast-medium;
+  }
+  &.btn-giving, .btn-giving & {
+    @include button-image(#93b671,'../images/giving/giving-button.jpg', 40px, 225px);
+    padding: 0 $grid-gutter-width;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: $font-family-serif;
+    &:hover {
+      text-decoration: none;
+    }
+    .text-right & {
+      text-align: left;
+    }
+  }
+}
+/* BODY */
+body {
+  background: $white;
+  font-weight: 400;
+  font-size: $font-size-giving;
+}
+/* HEADER */
+.header {
+  position: relative;
+  z-index: 5;
+  background: $brand-contrast url('../images/giving/giving-header.jpg') center bottom repeat-x;
+}
+.container > .navbar-header {
+  position: relative;
+  z-index: 10;
+  @media (max-width: $grid-float-breakpoint) {
+    text-align: center;
+  }
+}
+.logo.navbar-btn {
+  display: inline-block;
+  max-width: 375px;
+  border-bottom: 7px solid $brand-primary;
+  background: $white;
+}
+#navbar {
+  &.navbar-static-top {
+    @include box-shadow(0 0 0);
+    position: relative;
+    z-index: 5;
+    border: 0;
+    border-width: 0;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-weight: 600;
+    font-size: 15px;
+    @media (min-width: $grid-float-breakpoint) {
+      padding-top: $grid-gutter-width * 2;
+      background: $brand-contrast;
+      background: rgba(0,0,0,0.1);
+      .navbar-collapse {
+        float: left;
+      }
+    }
+  }
+  .navbar-nav > li > a {
+    padding: 10px;
+  }
+}
+.navbar-collapse {
+  @include box-shadow(0 0 0);
+  border: 0;
+}
+.navbar-default .navbar-toggle {
+  border-color: $brand-contrast-light;
+  background: $brand-contrast-dark;
+  &:hover, &:focus {
+    background: $brand-secondary;
+    .icon-bar {
+      background: $white;
+    }
+  }
+ .icon-bar {
+  background: $brand-contrast-light;
+}
+  
+}
+// Soft transitions for all menu items
+ul.menu {
+  li {
+    a, span {
+      @include transition(all 0.2s ease);
+    }
+  }
+}
+span.glyphicon {
+  margin-right: 10px;
+  border-radius: 50%;
+  color: $white;
+}
+
+/* FEATURED */
+.featured {
+  background: $brand-contrast url('../images/giving/giving-bg-lg.jpg') center center no-repeat;
+  background-size: cover;
+  .container, .row {
+    .giving-front & {
+      @media (min-width: $screen-sm) {
+        min-height: 500px;
+      }
+      @media (min-width: $screen-md) {
+        min-height: 525px;
+      }
+    }
+  }
+  .row {
+    position: relative;
+  }
+  @media (min-width: $screen-sm) {
+    .col-sm-8 {
+      .giving-front & {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+    .col-sm-4 {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  
+  .panel {
+    margin-bottom: 0;
+  }
+  .view-flex-blocks-node-specific {
+    .panel {
+      padding: $grid-gutter-width;
+      background: $brand-secondary;
+      color: $white;
+    }
+  }
+}
+/* BANNER */
+.view-mode-simple_teaser {
+  position: relative;
+  min-height: 140px;
+  h1.banner {
+    margin: 0;
+    padding: $grid-gutter-width * 1.5 $grid-gutter-width * 2;
+    width: 100%;
+    background: $brand-secondary;
+    color: $white;
+    @media (min-width: $screen-md) {
+      & {
+        background: $brand-contrast-trans;
+        .giving-inner & {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+    .giving-front & {
+      padding: $grid-gutter-width * .75;
+      text-align: center;
+      @media (min-width: $screen-sm) {
+        & {
+          background: $brand-contrast-light;
+        }
+      }
+    }
+  }
+}
+/* FEATURED BLOCKS */
+#block-views-giving-feature-blocks-block {
+  @include clearfix;
+  padding: $padding-small-vertical 0 $padding-large-vertical;
+  background: $brand-contrast-trans;
+  color: $white;
+  text-align: center;
+  .views-row {
+    .content {
+      padding: 5px 10px 0;
+      margin-top: 30px;
+      @media (max-width: $screen-sm-max) {
+        padding: 5px 5px 0;
+      }
+    }
+
+    &.views-row-2 .content {
+      border-right: 1px solid $white;
+      border-left: 1px solid $white;
+    }
+
+    .image {
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      margin-left: -17px;
+
+      a {
+        @include box-shadow(rgba(0,0,0,0.25) 0 -1px 5px 0);
+        display: block;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background: none repeat scroll 0% 0% #FFF;
+        line-height: 1;
+        img {
+          @include center(both);
+        }
+      }
+    }
+    .title {
+      h3 {
+        margin: 3px 0 7px;
+        text-transform: uppercase;
+        @media (max-width: $screen-sm-max) {
+          font-size: 15px;
+        }
+      }
+    }
+    .body {
+      margin: 0 0 15px;
+      @media (max-width: $screen-sm-max) {
+        & {
+          display: none;
+        }
+      }
+    }
+    a {
+      color: #FFF;
+    }
+  }
+}
+/* GIVE TODAY BUTTON */
+.give-today-block {
+   h3.give {
+    margin: 0;
+    a {
+      @include transition(all 0.2s ease);
+      display: block;
+      padding: 0 20px;
+      height: 60px;
+      background: url(../images/giving/giving-arrow-green.png) calc(100% - 20px) center no-repeat;
+      text-align: left;
+      text-transform: uppercase;
+      font-size: 30px;
+      line-height: 60px;
+      @media (max-width: $screen-md){
+        padding: 0 15px;
+        background-position: calc(100% - 10px) center;
+      }
+      &:hover {
+        background-color: $brand-contrast;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }  
+}
+
+/* SUB-MENU */
+#block-menu-menu-giving-sub-menu {
+  .sidebar-right & {
+    margin-bottom: $grid-gutter-width;
+  }
+  ul.nav {
+    > li {
+      border-top: 1px solid $gray-light;
+      > a {
+        background: $brand-contrast-light;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 18px;
+        &:hover {
+          background: $brand-contrast;
+        }
+        span.glyphicon {
+          @include glyph-size(20px);
+          top: -2px;
+          background-color: $white;
+          color: $brand-contrast-light;
+        }
+      }
+      &.active a {
+        background: $brand-contrast;
+      }
+    }
+  }
+}
+/* SIDEBAR BLOCKS */
+.region-sidebar-second-top {
+  .view-giving-flex-blocks {
+    .panel {
+      margin-bottom: 0;
+      padding: $grid-gutter-width;
+      background: $brand-secondary;
+      color: $white;
+    }
+  }
+}
+.region-sidebar-second {
+  padding-top: $grid-gutter-width;
+}
+
+/* FOOTER */
+.giving-footer {
+  @include background-texture($brand-secondary,'../images/giving/giving-story-bg.jpg');
+  padding: 0 0 $grid-gutter-width * 1.5 0;
+}
+/* PRIMARY CONTENT BLOCKS */
+.main-container {
+  padding-bottom: $grid-gutter-width * 1.5;
+  h2:nth-of-type(2n-1) {
+    color: $brand-contrast;
+  }
+  h2:nth-of-type(2n) {
+    color: $brand-secondary;
+  }
+  > .container > .col-sm-8 {
+    padding-top: $grid-gutter-width;
+  }
+}
+.giving-bottom {
+  padding: $grid-gutter-width;
+}
+
+/* GIVING STORIES */
+// view bottom blocks
+.giving-footer {
+    position: relative;
+  h2.block-title {
+    margin-top: $grid-gutter-width * 2.5;
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: $font-size-h1;
+    font-family: $font-family-serif;
+  }
+}  
+.view-giving-stories {
+  &.bottom-blocks {
+    .view-header {
+      @include translate(-50%, -50%);
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+    .icon {
+      padding: $padding-large-vertical;
+      border: $padding-xs-horizontal solid $white;
+      border-radius: 50%;
+      background: $brand-primary;
+    }
+    .panel-body {
+      padding: $grid-gutter-width $grid-gutter-width * 2;
+      font-size: $font-size-small;
+    }
+    h3 {
+      margin-top: 0;
+      text-transform: uppercase;
+      font-size: ceil(($font-size-base * 1.46666667));
+      a {
+        color: $brand-contrast;
+      }
+    }
+    .panel-footer {
+      @include transition(all, 0.5s);
+      padding: $grid-gutter-width $grid-gutter-width * 2;
+      background: $brand-contrast-light;
+      text-transform: uppercase;
+      font-size: $font-size-large;
+      &:hover {
+        background: $brand-contrast;
+      }
+      a {
+        color: $white;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+/* MEMBERSHIP LEVELS AND  CAMPAIGNS/AREAS TO SUPPORT VIEWS */
+// depends on .giving-table class on view
+.giving-table {
+  margin: $grid-gutter-width 0;
+  .views-row {
+    clear: both;
+    padding: $grid-gutter-width;
+    border-top: #CCC 1px solid;
+    &:last-child {
+      margin-bottom: $grid-gutter-width;
+      border-bottom: #CCC 1px solid;
+    }
+    .title {
+      color: #216093;
+      h5 {
+        margin: 0;
+        font-size: 22px; //@todo: replace with variable
+      }
+      .cost {
+        white-space: nowrap;
+      }
+    }
+    .body {
+      line-height: 1.4;
+      p {
+        margin: 0;
+      }
+    }
+    .view-footer {
+      padding: 10px 20px 0px;
+    }
+  }  
+}
+/* PAGE ELEMENTS */
+.media-player {
+  clear: both;
+  padding: $grid-gutter-width 0;
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Social Media Configuration feature.
+ */
+
+include_once 'mises_social_media_configuration.features.inc';

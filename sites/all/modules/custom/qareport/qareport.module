@@ -1,0 +1,411 @@
+<?php
+
+/**
+ * @file qareport.module
+ */
+
+/**
+ * Implements hook_help().
+ *
+ * Displays help and module information.
+ *
+ * @param path
+ *   Which path of the site we're using to display help
+ * @param arg
+ *   Array that holds the current path as returned from arg() function
+ */
+function qareport_help($path, $arg) {
+  switch ($path) {
+    case "admin/help/qareport":
+      return '<p>' . t("Add addtional documentation here") . '</p>';
+      break;
+  }
+} 
+
+/**
+ * Implements hook_permission().
+ */
+function qareport_permission() {
+  return array(
+    'administer qa report settings' => array(
+      'title' => t('Administer QA Report Settings'),
+      'description' => t('Perform administration tasks for the QA Report project.'),
+    ),
+    'create qa report' => array(
+      'title' => t('Create QA Report'),
+      'description' => t('Create QA Report.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function qareport_menu() {
+  $items['admin/config/development/qa'] = array(
+    'title' => 'QA Report Settings',
+		'description' => t('Collection of editable settings for the QA Report'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('qareport_admin'),
+    'access arguments' => array('administer qa report settings'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/qa'] = array(
+    'title' => 'QA Report',
+		'description' => t('Create QA Report'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('qareport_create'),
+    'access arguments' => array('create qa report'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+  return $items;
+}
+
+/**
+ * Build settings form.
+ */
+function qareport_admin() {
+  $form = array();
+
+	$form['qareport'] = array(
+		'#type' => 'fieldset', 
+		'#title' => t('QA Report Settings'), 
+		'#weight' => 5, 
+		'#collapsible' => TRUE, 
+		'#collapsed' => FALSE,
+	);
+	$form['qareport']['markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Report Settings'),
+		'#markup' => '<p>The settings below will allow you to control what options users will have to create a QA Report.</p>',
+	);
+
+  	$form['qareport']['server_markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Server Settings'),
+	);
+	
+  $form['qareport']['qareport_server'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on QA Report Server Info'),
+    '#default_value' => variable_get('qareport_server', 1),
+    '#description' => t("Adds server information to the report."),
+  );
+  
+  	$form['qareport']['user_markup'] = array(
+		'#type' => 'item',
+		'#title' => t('User Settings'),
+	);
+	
+  $form['qareport']['qareport_user'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on QA Report User Info'),
+    '#default_value' => variable_get('qareport_user', 1),
+    '#description' => t("Adds user information to the report."),
+  );
+  
+  	$form['qareport']['block_markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Block Settings'),
+	);
+	
+  $form['qareport']['qareport_block'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on QA Report Block'),
+    '#default_value' => variable_get('qareport_block', 0),
+    '#description' => t("Turn on QA Report Block."),
+  );
+
+  	$form['qareport']['js_markup'] = array(
+		'#type' => 'item',
+		'#title' => t('JS Settings'),
+	);
+
+  $form['qareport']['qareport_js'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on QA Report JS'),
+    '#default_value' => variable_get('qareport_js', 1),
+    '#description' => t("Adds viewport sizes to the report."),
+  );
+
+	// Browscap Feature
+	if(!ini_get("browscap")) {
+		$browscap_disabled = TRUE;
+		$browscap_desc = 'To get advanced user browser information <a href="http://php.net/manual/en/misc.configuration.php#ini.browscap">enable browsecap</a> in your php.ini<p><strong>Note:</strong> In order for this to work, your <a href="http://php.net/manual/en/misc.configuration.php#ini.browscap" rel="nofollow"><code>browscap</code></a> configuration setting in php.ini must point to the correct location of the <code>browscap.ini</code> file on your system. <code>browscap.ini</code> is not bundled with PHP, but you may find	an up-to-date <a href="http://tempdownloads.browserscap.com/stream.php?PHP_BrowsCapINI" rel="nofollow">» <code>php_browscap.ini</code></a> file here. <br>While <code>browscap.ini</code> contains information on many browsers, it relies on user updates to keep the database current. The format of the 		file is fairly self-explanatory.</p>';
+	} else {
+		$browscap_disabled = FALSE;
+		$browscap_desc = '';
+	}
+	
+	$form['qareport']['browscap_markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Browscap Settings'),
+		'#markup' => $browscap_desc,
+	);
+
+  $form['qareport']['qareport_browscap'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on QA Report Browscap'),
+    '#default_value' => variable_get('qareport_browscap', 1),
+    '#description' => t("Adds browscap information to the report."),
+    	'#disabled' => $browscap_disabled,
+  );
+	// End Browscap Feature
+
+	$form['qareport']['watchdog_markup'] = array(
+		'#type' => 'item',
+		'#title' => t('Watchdog Settings'),
+	);
+
+  $form['qareport']['qareport_watchdog'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on QA Report Watchdog'),
+    '#default_value' => variable_get('qareport_watchdog', 1),
+    '#description' => t("Adds watchdog information to the report."),
+  );
+  
+  return system_settings_form($form);
+}
+
+/**
+ * Creates and displays QA Report
+ * 
+ */
+
+function qareport_create() {
+
+		$message = '<h1>Report Information:</h1> '; // Start Message
+		
+		// Start Server Info
+		$server_on = variable_get('qareport_server', 1);
+		if($server_on == 1) { // check for user setting
+			$today = date("F j, Y, g:i a"); 
+			$time = time(); 
+			$server_ip = $_SERVER['SERVER_ADDR']; // Get server ip (useful with load balancing
+			$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://'; // Get the current protcol
+			$refer = $_SERVER['HTTP_REFERER']; // Get refer url
+			$url_text = ($refer!='' ? $refer : 'QA Report Admin Page'); // Create Url Text
+			$url = '<a href="'.$refer.'">'. $url_text .'</a>'; // Create link to refer
+			$doc_root = $_SERVER["DOCUMENT_ROOT"];
+			$message .= '</br><h2>'.t('Server Information').':</h2> '; // Start Message
+			$message .= 
+				t('Server Url').' = '	. $url .
+				'</br>'.t('Server Date').' = '. $today .
+				'</br>'.t('Server Timestamp').' = '. $time .
+				'</br>'.t('Server IP').' = '. $server_ip .
+				'</br>'.t('Server Protocol').' = '. $protocol .
+				'</br>'.t('Site Doc Root ').' = '	. $doc_root .
+				'</br>'
+			;
+		}
+		// End Server Info
+
+		// Start Drupal Info
+		$cache = variable_get('cache', 0);
+		$cache_block = variable_get('block_cache', 0);
+		$cache_max = variable_get('page_cache_maximum_age', 0);
+		$cache_lifetime = variable_get('cache_lifetime', 0);
+		$cache_css = variable_get('preprocess_css', 0);
+		$cache_js = variable_get('preprocess_js', 0);
+		$cron = variable_get('cron_last', 0);
+
+		$message .= '</br><h2>'.t('Drupal Information').':</h2> '; // Start Message
+		$message .= 
+			t('Cache ').' = '	. $cache .
+			'</br>'.t('Cache Block').' = '. $cache_block .
+			'</br>'.t('Cache Lifetime').' = '. $cache_lifetime .
+			'</br>'.t('Cache Expire').' = '. $cache_max .
+			'</br>'.t('Cache CSS').' = '. $cache_css .
+			'</br>'.t('Cache JS').' = '. $cache_js .
+			'</br>'.t('Cron Last Run').' = '. $cron .
+			'</br>'
+		;
+		// End Drupal Info
+
+		// Start PHP Info
+		$php_version = phpversion();
+		$php_uname = php_uname();
+		$php_os = PHP_OS;
+		$display_errors = ini_get('display_errors');
+		$display_errors = ($display_errors!='' ? $display_errors : 'Not Set');
+		$register_globals = ini_get('register_globals');
+		$post_max_size = ini_get('post_max_size');
+		$upload_max_filesize = ini_get('upload_max_filesize');
+		$memory_limit = ini_get('memory_limit');
+		$max_execution_time = ini_get('max_execution_time');
+
+		$message .= '</br><h2>'.t('PHP Information').':</h2> '; // Start Message
+		$message .= 
+			t('PHP Version ').' = '	. $php_version .
+			'</br>'.t('PHP Uname ').' = '	. $php_uname .
+			'</br>'.t('PHP OS ').' = '	. $php_os .
+			'</br>'.t('Display Errors ').' = '	. $display_errors .
+			'</br>'.t('Register Globals').' = '. $register_globals .
+			'</br>'.t('Post Max Size').' = '. $post_max_size .
+			'</br>'.t('Upload Max File Size').' = '. $upload_max_filesize .
+			'</br>'.t('Memory Limit').' = '. $memory_limit .
+			'</br>'.t('Max Execution Time').' = '. $max_execution_time .
+			'</br>'
+		;		
+		// End PHP Info
+		
+		// Start User Info
+		$user_on = variable_get('qareport_user', 1);
+		if($user_on == 1) { // check for user setting
+			$user_agent = $_SERVER['HTTP_USER_AGENT']; // Get user agent info
+			global $user; // Provide user info for logged in user
+			$roles = $user->roles;
+			$user_roles = '<h2>'.t('User Roles').': </h2>';
+			foreach($roles as $rid=>$role) {
+				$user_roles .= $role.' (<a href="/admin/people/permissions/'.$rid.'" target="_blank">Manage Role Permissions</a>)</br>';
+			}
+			$user_ip = $_SERVER['REMOTE_ADDR']; // Get ip address for user
+			$message .= '</br><h2>'.t('User Information').':</h2> '; // Start Message
+			$message .= 
+				t('User IP').' = '. $user_ip .
+				'</br>'.t('User Name').' = '. $user->name .
+				'</br>'.t('User Mail').' = '. $user->mail .
+				'</br>'.t('User ID').' = '. $user->uid .
+				'</br>'.t('User Agent').' = '. $user_agent .
+				'</br></br> '. $user_roles .
+				''
+			;
+		}
+		// End User Info
+
+		// Start Browscap Info
+		$browscap_on = variable_get('qareport_browscap', 1);
+		if(ini_get("browscap") && $browscap_on == 1) { // check for browscap ini setting
+			$browser = get_browser();
+			$message .= 
+				'</br><h2>'.t('Browscap Info').':</h2>	'.t('Browscap Parent').': '	. $browser->parent .
+				'</br>'.t('Browscap Bits').': '	. $browser->browser_bits .
+				'</br>'.t('Browscap Platform').': '	. $browser->platform .
+				'</br>'.t('Browscap Platform Version').': '	. $browser->platform_version .
+				'</br>'.t('Browscap Platform Description').': '	. $browser->platform_description .
+				'</br>'.t('Browscap Platform Bits').': '	. $browser->platform_bits .
+				'</br>'.t('Browscap Platform Maker').': '	. $browser->platform_maker .
+				'</br>'.t('Browscap Device Name').': '	. $browser->device_name .
+				'</br>'.t('Browscap Platform Maker').': '	. $browser->device_maker .
+				'</br>'.t('Browscap Platform Code Name').': '	. $browser->device_code_name .
+				'</br>'.t('Browscap Platform Brand Name').': '	. $browser->device_brand_name .
+				'</br>'.t('Browscap Comment').': '	. $browser->comment .
+				'</br>'.t('Browscap Browser').': '	. $browser->browser .
+				'</br>'.t('Browscap Browser Type').': '	. $browser->browser_type .
+				'</br>'.t('Browscap Browser Maker').': '	. $browser->browser_maker .
+				'</br>'.t('Browscap Browser Version').': '	. $browser->version .
+				'</br>'.t('Browscap Browser Major Version').': '	. $browser->majorver .
+				'</br>'.t('Browscap Browser Frames').': '	. $browser->frames .
+				'</br>'.t('Browscap Browser iFrames').': '	. $browser->iframes .
+				'</br>'.t('Browscap Browser Tables').': '	. $browser->tables .
+				'</br>'.t('Browscap Cookies').': '	. $browser->cookies .
+				'</br>'.t('Browscap Javascript').': '	. $browser->javascript .
+				'</br>'.t('Browscap Java Applets').': '	. $browser->javaapplets .
+				'</br>'.t('Browscap CSS Version').': '	. $browser->cssversion .
+				'</br>'.t('Browscap Device Type').': '	. $browser->device_type .
+				'</br>'.t('Browscap Device Pointer').': '	. $browser->device_pointing_method .
+				'</br>'.t('Browscap Rendering Engine Name').': '	. $browser->renderingengine_name .
+				'</br>'.t('Browscap Rendering Engine Description').': '	. $browser->renderingengine_description .
+				'</br>'.t('Browscap Rendering Engine Maker').': '	. $browser->renderingengine_maker .
+				'</br>'
+			;
+		} else {
+			$message .= 'Browscap is disabled';
+		}
+		// End Browscap Info
+
+		// Start JS Info
+		$js_on = variable_get('qareport_js', 1);
+		if($js_on == 1) { // check for js setting
+			drupal_add_js(drupal_get_path('module', 'qareport') .'/qareport.js');
+			$viewport_height = ($_COOKIE['qareport_vp_height']!='' ? $_COOKIE['qareport_vp_height'] : 'Not Set').'px';
+		  $viewport_width = ($_COOKIE['qareport_vp_width']!='' ? $_COOKIE['qareport_vp_width'] : 'Not Set').'px';
+			$message .= '</br><h2>'.t('JS Information').':</h2> '; // Start Message
+			$message .= 
+				t('Viewport Height').': '	. $viewport_height .
+				'</br>'.t('Viewport Width').': '	. $viewport_width .
+				'</br>'
+			;
+		}
+		// End JS Info
+
+		// Start Watchdog Info
+		$watchdog_on = variable_get('qareport_watchdog', 1);
+		if($watchdog_on == 1) { // check for watchdog setting
+			
+			// Get watchdog logs for this page, in the last 60 seconds by this user
+			$nowtime = time();
+			$logtime = $nowtime - 60;
+			$query = db_select('watchdog', 'w');
+			$query->fields('w',array('wid','type','timestamp','message'))//SELECT the fields from node
+			->condition('uid', $user->uid,'=')
+			->condition('referer', $refer,'=')
+			->condition('type', 'QA Report','!=')
+			->condition('timestamp', $logtime,'>=')
+			->orderBy('wid', 'DESC');
+			$logs = $query->execute();
+
+			if (is_object($logs)) {
+				$num_of_logs = $logs->rowCount();
+		  } else {
+				$num_of_logs = '0';
+			}
+
+			$message .= '</br><h2>'.t('Related Watchdog Logs').':</h2> '; // Start Message
+			$message .= ''.t('Number of Logs').' '.$num_of_logs;
+			foreach($logs as $log) {
+				$log_link = $protocol.$_SERVER['SERVER_NAME'].'/admin/reports/event/'.$log->wid; // Create link to watchdog report
+				$log_message_text = t($log->message);
+				$message .= '</br><a href="'.$log_link.'" target="_blank">Type: '. $log->type .' - Message: '. $log_message_text .'</pre></a>'; // Add to log message
+			}
+			$message .='</br>';
+			watchdog('QA Report', $message); // Create watchdog entry
+
+			// Get watchdog link
+			$db_link = db_select('watchdog', 'wid')
+			->fields('wid')
+			->condition('type', 'QA Report','=')
+			->condition('uid', $user->uid,'=')
+			->orderBy('wid', 'DESC')
+			->range(0,1)
+			->execute()
+			->fetchAssoc();
+			$link = $protocol.$_SERVER['SERVER_NAME'].'/admin/reports/event/'.$db_link['wid']; // Create link to watchdog report
+			$instructions = '</br><h2>'.t('Share Link').'</h2>'.t('Use the link below to provide developers with useful information to debug your issue').'.'; // Give users some direction
+			$message .= $instructions.'</br><a href="'.$link.'" target="_blank">'.$link.'</a>'; // Create message to set	
+			// End watchdog link
+		
+		}
+		// End Watchdog Info
+
+		drupal_set_message($message, 'warning'); // Set message
+
+  }
+
+/**
+ * Implements hook_block_info
+ * 
+ */
+function qareport_block_info() {    
+  $blocks['qareport'] = array(
+    'info' => t('QA Report Block'),
+  );
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view
+ * 
+ */
+function qareport_block_view($delta = '') {
+  switch ($delta) {
+    case 'qareport':
+      // Create qa report block
+      	//$block['content'] = qareport_create();
+    break;
+  }
+  return $block;
+}

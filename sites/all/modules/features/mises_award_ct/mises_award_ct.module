@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Award feature.
+ */
+
+include_once 'mises_award_ct.features.inc';

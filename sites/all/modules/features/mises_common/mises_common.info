@@ -1,0 +1,15 @@
+name = mises_common
+description = Misc mises configuration, dependencies and 
+core = 7.x
+package = Mises
+dependencies[] = admin_menu
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = panelizer
+dependencies[] = panels
+dependencies[] = strongarm
+dependencies[] = taxonomy_manager
+dependencies[] = views
+dependencies[] = views_content
+features[features_api][] = api:2
+project path = sites/all/modules/custom

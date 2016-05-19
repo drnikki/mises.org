@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mises Solr Online Text Chapter feature.
+ */
+
+include_once 'mises_solr_online_text_chapter.features.inc';

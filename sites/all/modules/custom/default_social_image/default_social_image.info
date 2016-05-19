@@ -1,0 +1,4 @@
+name = Default Social Image
+description = Allows users to set the Default social image for an image on a node.
+core = 7.x
+dependencies[] = image

@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Code for the New Valley Media Performance Enhancements feature.
+ */
+
+include_once 'new_valley_media_performance_enhancements.features.inc';
+
+/**
+* Implements template_process_html().
+*/
+
+// Remove Query Strings from CSS filenames (CacheBuster)
+function new_valley_media_performance_enhancements_process_html(&$variables) {
+	//dpm($variables);
+  $variables['styles'] = preg_replace('/\.css\?.*"/','.css"', $variables['styles']);
+}

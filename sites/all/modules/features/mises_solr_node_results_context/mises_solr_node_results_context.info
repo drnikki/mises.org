@@ -1,0 +1,15 @@
+name = Solr Node Search Results Context
+description = Context for the Solr Node Search Results Page
+core = 7.x
+package = Context
+version = 7.x-1.8
+project = mises_solr_node_results_context
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = facetapi
+dependencies[] = mises_utility
+dependencies[] = views
+features[context][] = solr_node_search_results
+features[ctools][] = context:context:3
+features[features_api][] = api:2
+mtime = 1436557554
