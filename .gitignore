@@ -4,3 +4,4 @@ sites/*/settings*.php
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+sites/all/modules/custom/mises_blog_xml_import/miseseconomicsblog.wordpress.2014-09-19-cleaned.xml
