@@ -167,8 +167,6 @@ function epub_field_formatter_view($entity_type, $entity, $field, $instance, $la
         $element[$delta] = array(
           '#theme' => 'epub_formatter_toc',
           '#file' => (object)$item,
-          '#width' => $settings['width'],
-          '#height' => $settings['height'],
         );
       }
       break;

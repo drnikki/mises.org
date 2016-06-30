@@ -13,6 +13,15 @@ module_load_include('inc', 'google_analytics_counter', 'google_analytics_counter
 module_load_include('inc', 'google_analytics_counter', 'google_analytics_counter_auth');
 
 /**
+* Implement admin settings validate
+*/
+function google_analytics_counter_admin_validate($form, &$form_state) {
+  if ($form_state['values']['google_analytics_counter_advanced_date_checkbox'] == 1 && strtotime($form_state['values']['google_analytics_counter_fixed_start_date']) > time()) {
+    form_set_error('google_analytics_counter_fixed_start_date', t('Your date is in the future, please select a valid static date value in the GA fixed starting date field'));
+  }
+}
+
+/**
  * Implements hook_views_api().
  */
 function google_analytics_counter_views_api() {
@@ -115,7 +124,7 @@ function google_analytics_counter_menu() {
   $items['admin/config/system/google_analytics_counter/dashboard/reset'] = array(
     'title' => t('Reset module settings'),
     'description' => t('Reset all settings of this module. Sometimes useful if in trouble with OAuth authentication.'),
-    'page callback' => 'google_analytics_counter_reset',
+    'page callback' => 'google_analytics_counter_confirm_reset',
     'access arguments' => array('administer google analytics counter'),
     'type' => MENU_CALLBACK,
     'weight' => 9,
@@ -270,7 +279,7 @@ function google_analytics_counter_cron() {
   // Set a watchdog error if there is no Google Analytics profile enabled.
   // It's a weak test but better than none.
   if (variable_get('google_analytics_counter_profile_id') == '') {
-    watchdog(t('Google Analytics Counter'), t('No Google Analytics profile has been authenticated! Google Analytics Counter can not fetch any new data. Please '. l(t('authenticate here'), 'admin/config/system/google_analytics_counter/authentication') .'.'), NULL, WATCHDOG_ERROR);
+    watchdog('Google Analytics Counter', t('No Google Analytics profile has been authenticated! Google Analytics Counter can not fetch any new data. Please '. l(t('authenticate here'), 'admin/config/system/google_analytics_counter/authentication') .'.'), NULL, WATCHDOG_ERROR);
     return;
   }
 
@@ -378,6 +387,31 @@ function google_analytics_counter_details() {
   return $result;
 }
 
+/**
+ * Confirmation callback function for link admin/config/system/google_analytics_counter/dashboard/reset
+ *
+ */
+function google_analytics_counter_confirm_reset() {
+  // drupal_get_form is used to render the form into HTML code.
+  return drupal_get_form('google_analytics_counter_confirm_reset_form');
+}
+
+/**
+ * Configuration reset form
+ */
+function google_analytics_counter_confirm_reset_form($form_state) {
+  // Instead of building the form ourselves, we use confirm_form to automatically generate it.
+  $form = array();
+  return confirm_form($form, 'Are you sure that you wish to reset all configuration variables of module Google Analytics Counter to their default values?', 'admin/config/system/google_analytics_counter/dashboard', NULL, 'Yes', 'No');
+}
+
+/**
+ * Submit handler gets called when form is submitted, so code to be executed upon form submission goes here
+ */
+function google_analytics_counter_confirm_reset_form_submit($form, &$form_state) {
+  google_analytics_counter_reset();
+  drupal_goto('admin/config/system/google_analytics_counter/dashboard');
+}
 
 /**
  * Convert seconds to hours, minutes and seconds.
@@ -422,12 +456,6 @@ function google_analytics_counter_sec2hms($sec, $padHours = FALSE) {
  * Reset all module settings by deleting its variables.
  */
 function google_analytics_counter_reset(){
-  $query = db_select('variable', 'v')
-    ->fields('v', array('name'))
-    ->condition('name', db_like('google_analytics_counter') . '%', 'LIKE')
-    ->execute();
-  while ($variable = $query->fetchAssoc()) {
-    variable_del($variable['name']);
-  }
+  google_analytics_counter_revoke();
   drupal_goto('admin/config/system/google_analytics_counter/dashboard');
 }

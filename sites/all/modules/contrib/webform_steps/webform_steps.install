@@ -25,30 +25,35 @@ function webform_steps_update_7200() {
  * Migrate fieldset titles to pagebreaks and first-page variable.
  */
 function webform_steps_update_7201() {
-  /**
-   * webform_steps-7.x-1.x uses the name of the first fieldset on the page as
-   * label. If the page doesn't have a fieldset the name of it's preceding
-   * pagebreak is used. webform_steps-7.x-2.x doesn't use fieldsets so we have
-   * to migrate all labels.
-   */
-  $nids = db_query('SELECT nid FROM {webform}')->fetchCol();
+  // Enable the progressbar on all webforms.
+  $sql = <<<SQL
+INSERT INTO {webform_steps_w3_progressbar}
+  (nid, progressbar_bar, progressbar_pagebreak_labels, progressbar_label_first)
+SELECT nid, 1, 1, 'Start' FROM {webform}
+SQL;
+  db_query($sql);
 
+  // webform_steps-7.x-1.x uses the name of the first fieldset on the page as
+  // label. If the page doesn't have a fieldset the name of it's preceding
+  // pagebreak is used. webform_steps-7.x-2.x doesn't use fieldsets so we have
+  // to migrate all labels.
+  $sql = "SELECT DISTINCT nid FROM {webform_component} WHERE type='pagebreak'";
+  $nids = db_query($sql)->fetchCol();
   foreach ($nids as $nid) {
     $node = node_load($nid);
     $components = &$node->webform['components'];
     $breaks = array();
     $first_fieldset = array(1 => NULL);
-    $node->webform['progressbar_bar'] = 1;
-    $node->webform['progressbar_pagebreak_labels'] = 1;
 
     // Go through all components and find the first fieldset on each page.
     foreach ($components as $cid => &$component) {
       $p = $component['page_num'];
       if ($component['type'] == 'pagebreak') {
         $breaks[$p] =& $component;
-        $first_fieldsset[$p] = NULL;
+        $first_fieldset[$p] = NULL;
       }
       if ($component['type'] == 'fieldset' && !$first_fieldset[$p]) {
+        $first_fieldset[$p] = $component;
         if ($p == 1) {
           $node->webform['progressbar_label_first'] = $component['name'];
         }

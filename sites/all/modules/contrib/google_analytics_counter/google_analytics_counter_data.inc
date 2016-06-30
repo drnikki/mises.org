@@ -26,7 +26,7 @@ function google_analytics_counter_update_path_counts() {
   // Are we over the GA API limit?
   $maxdailyrequests = variable_get('google_analytics_counter_api_dayquota', 10000); // See http://code.google.com/apis/analytics/docs/gdata/gdataDeveloperGuide.html#quota
   if ($dayquota[1] > $maxdailyrequests) {
-    watchdog(t('Google Analytics Counter'), t('Google Analytics API quota of %maxdailyrequests requests has been reached. Will NOT fetch data from Google Analytics for the next %dayquota seconds. See <a href="/admin/config/system/google_analytics_counter">the Google Analytics Counter settings page</a> for more info.', array('%maxdailyrequests' => check_plain($maxdailyrequests), '%dayquota' => check_plain(($dayquota[0]+86400-REQUEST_TIME)))), NULL, WATCHDOG_ERROR);
+    watchdog('Google Analytics Counter', t('Google Analytics API quota of %maxdailyrequests requests has been reached. Will NOT fetch data from Google Analytics for the next %dayquota seconds. See <a href="/admin/config/system/google_analytics_counter">the Google Analytics Counter settings page</a> for more info.', array('%maxdailyrequests' => check_plain($maxdailyrequests), '%dayquota' => check_plain(($dayquota[0]+86400-REQUEST_TIME)))), NULL, WATCHDOG_ERROR);
     return;
   }
 
@@ -39,19 +39,25 @@ function google_analytics_counter_update_path_counts() {
   //dpm('START chunk '.$chunk);
   //dpm('START step '.$step);
   //dpm('START pointer '.$pointer);
+  if (variable_get('google_analytics_counter_advanced_date_checkbox') == 1) {
+    $start_date = variable_get('google_analytics_counter_fixed_start_date', '2005-01-01');
+  }else {
+    $start_date = variable_get('google_analytics_counter_variable_start_date', '2005-01-01');
+  }
 
   // The earliest valid start-date for Google Analytics is 2005-01-01.
   $request = array(
     'dimensions' => array('ga:pagePath'), // date would not be necessary for totals, but we also calculate stats of views per day, so we need it
     'metrics' => array('ga:pageviews'),
-    'start_date' => strtotime('2005-01-01'),
-      'end_date' => strtotime('tomorrow'), // Using 'tomorrow' to offset any timezone shift between the hosting and Google servers.
-      'start_index' => $pointer,
-      'max_results' => $chunk,
-      //'filters' => 'ga:pagePath==/node/3',
-      //'#start_date' => strtotime('2005-01-01'), // We want to retrieve all page views for this path. The earliest valid start-date for Google Analytics is 2005-01-01.
-      //'sort_metric' => array('ga:date'),
-      );
+    'start_date' => strtotime($start_date),
+    'end_date' => strtotime('tomorrow'), // Using 'tomorrow' to offset any timezone shift between the hosting and Google servers.
+    'start_index' => $pointer,
+    'max_results' => $chunk,
+    //'filters' => 'ga:pagePath==/node/3',
+    //'#start_date' => strtotime('2005-01-01'), // We want to retrieve all page views for this path. The earliest valid start-date for Google Analytics is 2005-01-01.
+    //'sort_metric' => array('ga:date'),
+  );
+  //dpm($start_date);
 
   $resultcount = FALSE;
   $cachehere = array(
@@ -67,7 +73,7 @@ function google_analytics_counter_update_path_counts() {
     variable_set('google_analytics_counter_dayquota', array($dayquota[0], ($dayquota[1]+1)));
 
     if (!empty($new_data->error)) { // If NULL then there is no error.
-      watchdog(t('Google Analytics Counter'), t('Problem fetching data from Google Analytics: %new_dataerror. Did you authenticate any Google Analytics profile? See <a href="/admin/config/system/google_analytics_counter/authentication">here</a>.', array('%new_dataerror' => $new_data->error)), NULL, WATCHDOG_ERROR);
+      watchdog('Google Analytics Counter', t('Problem fetching data from Google Analytics: %new_dataerror. Did you authenticate any Google Analytics profile? See <a href="/admin/config/system/google_analytics_counter/authentication">here</a>.', array('%new_dataerror' => $new_data->error)), NULL, WATCHDOG_ERROR);
       // Nothing to do; return.
       //return;
     }
@@ -79,8 +85,8 @@ function google_analytics_counter_update_path_counts() {
         db_merge('google_analytics_counter')
         ->key(array('pagepath_hash' => md5($val['pagePath'])))
         ->fields(array(
-          'pagepath' => check_plain($val['pagePath']), // Added check_plain; see https://www.drupal.org/node/2381703
-          'pageviews' => check_plain($val['pageviews']), // Added check_plain; see https://www.drupal.org/node/2381703
+          'pagepath' => check_plain(utf8_encode($val['pagePath'])), // check_plain: https://www.drupal.org/node/2381703 // utf8_encode: https://www.drupal.org/node/2382319
+          'pageviews' => check_plain($val['pageviews']), // check_plain: https://www.drupal.org/node/2381703
           ))
         ->execute();
 
@@ -103,7 +109,7 @@ function google_analytics_counter_update_path_counts() {
   $pointer += $chunk;
 
   //dpm('step: '.$step.' | '.$pointer . ' out of total ' .$resultcount);
-  watchdog(t('Google Analytics Counter'), t('Retrieved %sizeof items from Google Analytics data for paths %first-%second.', array('%sizeof' => sizeof(@$new_data->results->rows), '%first' => ($pointer-$chunk), '%second' => ($pointer-$chunk-1+sizeof(@$new_data->results->rows)))), NULL, WATCHDOG_INFO);
+  watchdog('Google Analytics Counter', t('Retrieved %sizeof items from Google Analytics data for paths %first-%second.', array('%sizeof' => sizeof(@$new_data->results->rows), '%first' => ($pointer-$chunk), '%second' => ($pointer-$chunk-1+sizeof(@$new_data->results->rows)))), NULL, WATCHDOG_INFO);
 
   // OK now increase or zero $step
   if ($pointer <= $resultcount) {
@@ -486,7 +492,7 @@ function google_analytics_counter_update_storage() {
   //dpm('END pointer: '.$pointer);
 
   //dpm('step: '.$step.' | '.$pointer . ' out of total ' .$resultcount);
-  watchdog(t('Google Analytics Counter'), t('Attempted updating %dbresults records in table '.$storage.' from Google Analytics data %first-%second.', array('%dbresults' => $dbresults->rowCount(), '%first' => ($pointer-$chunk+1), '%second' => ($pointer-$chunk+$dbresults->rowCount()))), NULL, WATCHDOG_INFO);
+  watchdog('Google Analytics Counter', t('Attempted updating %dbresults records in table '.$storage.' from Google Analytics data %first-%second.', array('%dbresults' => $dbresults->rowCount(), '%first' => ($pointer-$chunk+1), '%second' => ($pointer-$chunk+$dbresults->rowCount()))), NULL, WATCHDOG_INFO);
 
   // OK now increase or zero $step
   if ($pointer < $resultcount) {
