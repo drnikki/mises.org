@@ -54,6 +54,11 @@ function theme_track_da_files_file_link($variables) {
     $options['query']['id'] = $file->id;
   }
 
+  if (isset($file->force_download)) {
+    $options['query']['force'] = $file->force_download;
+  }
+
+
   $output = '<span class="file">' . $icon . ' ' . l($link_text, $url, $options) . '</span>';
   if ((isset($file->displays)) && ($file->displays > 0 && isset($track_da_files_file_field_links_show_enabled))) {
     $output .= '<span class="file-displayed-counter">' . format_plural($file->displays, 'displayed 1 time', 'displayed @count times') . '</span>';

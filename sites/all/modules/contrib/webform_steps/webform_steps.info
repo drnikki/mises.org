@@ -7,9 +7,9 @@ dependencies[] = webform
 
 scripts[] = webform_steps.js
 
-; Information added by Drupal.org packaging script on 2015-05-18
-version = "7.x-2.0-beta1"
+; Information added by Drupal.org packaging script on 2016-04-25
+version = "7.x-2.0"
 core = "7.x"
 project = "webform_steps"
-datestamp = "1431954722"
+datestamp = "1461603240"
 

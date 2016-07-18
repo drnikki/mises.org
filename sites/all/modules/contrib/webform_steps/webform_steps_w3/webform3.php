@@ -23,10 +23,10 @@ function webform_steps_w3_theme() {
  * Implements hook_theme_registry_alter().
  */
 function webform_steps_w3_theme_registry_alter(&$theme) {
-  $webform_path = '/webform/templates';
-  $theme_path = &$theme['webform_form']['path'];
-  if (!isset($theme_path) || substr($theme_path, -strlen($webform_path)) == $webform_path) {
-    $theme_path = drupal_get_path('module', 'webform_steps_w3') . '/templates';
+  $hook = &$theme['webform_form'];
+  if ($hook['theme path'] == drupal_get_path('module', 'webform')) {
+    $w3 = drupal_get_path('module', 'webform_steps_w3');
+    $hook['template'] = $w3 . '/templates/webform-form';
   }
 }
 
@@ -80,7 +80,7 @@ function webform_steps_w3_progressbar(&$form, &$form_state) {
 function webform_steps_w3_page_labels($node, $form_state = array()) {
   $page_count = 1;
   $page_labels = array();
-  $page_labels[0] = t($node->webform['progressbar_label_first']);
+  $page_labels[0] = $node->webform['progressbar_label_first'];
   foreach ($node->webform['components'] as $component) {
     if ($component['type'] == 'pagebreak') {
       $page_labels[$page_count] = $component['name'];
@@ -223,10 +223,12 @@ function webform_steps_w3_node_insert($node) {
     return;
   }
   $record = array_intersect_key($node->webform, webform_steps_w3_node_defaults() + array('nid' => TRUE));
-  db_merge('webform_steps_w3_progressbar')
-    ->key(array('nid' => $node->nid))
-    ->fields($record)
-    ->execute();
+  if ($record) {
+    db_merge('webform_steps_w3_progressbar')
+      ->key(array('nid' => $node->nid))
+      ->fields($record)
+      ->execute();
+  }
 }
 
 /**

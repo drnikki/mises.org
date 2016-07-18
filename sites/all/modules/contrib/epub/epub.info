@@ -8,9 +8,9 @@ dependencies[] = libraries
 
 files[] = includes/epub.field.inc
 
-; Information added by Drupal.org packaging script on 2014-06-13
-version = "7.x-1.2+2-dev"
+; Information added by Drupal.org packaging script on 2016-03-21
+version = "7.x-1.2+3-dev"
 core = "7.x"
 project = "epub"
-datestamp = "1402656829"
+datestamp = "1458551352"
 

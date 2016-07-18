@@ -253,17 +253,17 @@ function track_da_files_views_data() {
     'title' => t('Time'),
     'help' => t('Time'),
     'field' => array(
-      'handler' => 'views_handler_field_numeric',
+      'handler' => 'views_handler_field_date',
       'help' => t('Time'),
       'click sortable' => true,
     ),
     'filter' => array(
-      'handler' => 'views_handler_filter_numeric',
+      'handler' => 'views_handler_filter_date',
       'allow empty' => true,
       'help' => t('Filter on Time'),
     ),
     'argument' => array(
-      'handler' => 'views_handler_argument_numeric',
+      'handler' => 'views_handler_argument_date',
       'help' => t('Time'),
     ),
     'sort' => array(

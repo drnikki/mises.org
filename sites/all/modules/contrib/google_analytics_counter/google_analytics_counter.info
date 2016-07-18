@@ -8,9 +8,9 @@ files[] = google_analytics_counter_oauth2.lib.inc
 
 configure = admin/config/system/google_analytics_counter
 
-; Information added by Drupal.org packaging script on 2015-08-04
-version = "7.x-3.1"
+; Information added by Drupal.org packaging script on 2016-04-25
+version = "7.x-3.3"
 core = "7.x"
 project = "google_analytics_counter"
-datestamp = "1438727640"
+datestamp = "1461592873"
 
