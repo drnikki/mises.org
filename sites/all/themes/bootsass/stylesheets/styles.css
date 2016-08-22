@@ -2485,7 +2485,7 @@ body.mises-daily .navbar-inverse .navbar-nav > li > a.active.library, body.icon-
 .region-navigation .block { width: 258px; height: 50px; }
 @media (min-width: 769px) { .region-navigation .block.block-views { margin-top: -7px; }
   .region-navigation .block#block-search-form { position: absolute; top: -64px; right: 0; } }
-@media (max-width: 768px) { .region-navigation .block.block-views { display: none; } }
+@media (max-width: 767px) { .region-navigation .block.block-views { display: none; } }
 .region-navigation #block-search-form .form-control { border-right: 0 none; border-radius: 0; }
 .region-navigation #block-search-form button { padding: 6px 11px; border-radius: 0; }
 
@@ -2597,7 +2597,7 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .blog-home-block { background-color: #e4ebee; height: 100%; }
 .not-front .blog-home-block { border-top: 1px #81a957 solid; }
 .blog-home-block .view-header { background: #46763a url("../images/radio_tower_graphic.png") right bottom no-repeat; background: #46763a url("../images/radio_tower_graphic.png") right 11px bottom no-repeat; background-size: contain; border-top: 5px #46763a solid; border-bottom: 8px #81a957 solid; padding: 15px 14px 5px; }
-.blog-home-block h2 { font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; font-size: 28.0px; font-weight: 100; letter-spacing: 0.25px; margin: 0; color: #fff; }
+.blog-home-block h2 { font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; font-size: 28px; font-weight: 100; letter-spacing: 0.25px; margin: 0; color: #fff; }
 .blog-home-block h2 span { font-style: italic; text-transform: uppercase; white-space: nowrap; }
 .blog-home-block .view-content { padding: 12px 10px 8px; overflow: hidden; }
 @media (min-width: 768px) { .front .blog-home-block .view-content { height: -moz-calc(100% - 94px); height: calc(100% - 94px); }
