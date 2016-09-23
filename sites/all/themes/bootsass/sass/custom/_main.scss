@@ -26,6 +26,7 @@ body {
 
 .navbar-header {
   background: $white;
+  clear: both;
   @media (min-width: $grid-float-breakpoint) {
     float: none;
   }
@@ -80,7 +81,7 @@ body {
         right: 0;
       }
     }
-    @media (max-width: $screen-sm) {
+    @media (max-width: $screen-xs-max) {
      &.block-views {
         display: none;
       }

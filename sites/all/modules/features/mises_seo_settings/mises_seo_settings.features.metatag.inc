@@ -82,10 +82,6 @@ function mises_seo_settings_metatag_export_default() {
       'next' => array(
         'value' => '',
       ),
-      'revisit-after' => array(
-        'value' => '',
-        'period' => '',
-      ),
       'content-language' => array(
         'value' => '',
       ),
@@ -102,6 +98,19 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '',
       ),
       'refresh' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'pragma' => array(
+        'value' => '',
+      ),
+      'cache-control' => array(
+        'value' => '',
+      ),
+      'expires' => array(
         'value' => '',
       ),
       'dcterms.title' => array(
@@ -154,6 +163,9 @@ function mises_seo_settings_metatag_export_default() {
       ),
       'fb:app_id' => array(
         'value' => '571281026361960',
+      ),
+      'fb:pages' => array(
+        'value' => 36496893934,
       ),
       'og:site_name' => array(
         'value' => '[site:name]',
@@ -287,6 +299,9 @@ function mises_seo_settings_metatag_export_default() {
       'book:tag' => array(
         'value' => '',
       ),
+      'og:video:url' => array(
+        'value' => '',
+      ),
       'og:video:secure_url' => array(
         'value' => '',
       ),
@@ -347,10 +362,16 @@ function mises_seo_settings_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[site:slogan]',
       ),
+      'twitter:image' => array(
+        'value' => '',
+      ),
       'twitter:image:width' => array(
         'value' => '',
       ),
       'twitter:image:height' => array(
+        'value' => '',
+      ),
+      'twitter:image:alt' => array(
         'value' => '',
       ),
       'twitter:image0' => array(
@@ -420,12 +441,6 @@ function mises_seo_settings_metatag_export_default() {
         'value' => '',
       ),
       'twitter:data2' => array(
-        'value' => '',
-      ),
-      'twitter:image' => array(
-        'value' => '',
-      ),
-      'og:video:url' => array(
         'value' => '',
       ),
     ),
