@@ -21,7 +21,8 @@
 .view-homepage-hero {
   position: relative;
   padding: 5px;
-  background-color: #fff;
+    background-color: #fff;
+
   .views-slideshow-pager-fields {
     display: none;
   }
@@ -118,6 +119,15 @@
   &:hover {
     #views_slideshow_controls_text_homepage_hero-block {
       display: block;
+    }
+  }
+
+  .views-slideshow-cycle2-main-frame,
+  .views-slideshow-cycle2-main-frame-row {
+    height: auto;
+    width: 100%;
+    @media (min-width: $screen-sm-min) {
+      width: auto;
     }
   }
 }

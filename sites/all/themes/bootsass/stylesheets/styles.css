@@ -2586,6 +2586,8 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .view-homepage-hero #views_slideshow_controls_text_homepage_hero-block .views-slideshow-controls-text-next { right: 0; }
 .view-homepage-hero #views_slideshow_controls_text_homepage_hero-block .views-slideshow-controls-text-pause { display: none; }
 .view-homepage-hero:hover #views_slideshow_controls_text_homepage_hero-block { display: block; }
+.view-homepage-hero .views-slideshow-cycle2-main-frame, .view-homepage-hero .views-slideshow-cycle2-main-frame-row { height: auto; width: 100%; }
+@media (min-width: 768px) { .view-homepage-hero .views-slideshow-cycle2-main-frame, .view-homepage-hero .views-slideshow-cycle2-main-frame-row { width: auto; } }
 
 /* HOMEPAGE MISES WIRE */
 .front .region-featured-right { overflow: hidden; height: 360px; }
