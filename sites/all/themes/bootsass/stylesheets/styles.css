@@ -2471,7 +2471,7 @@ body.cke_editable { background: #fff none; }
 #top-bar { background: #00426b url("../images/top-bar.jpg") center center repeat; padding-top: 28px; height: 110px; }
 #top-bar img { max-height: 63px; }
 
-.navbar-header { background: #fff; }
+.navbar-header { background: #fff; clear: both; }
 @media (min-width: 768px) { .navbar-header { float: none; } }
 
 #navbar.navbar-static-top { border-width: 0 0 6px; text-transform: uppercase; font-weight: 400; font-size: 18px; }
