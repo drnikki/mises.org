@@ -74,6 +74,13 @@ function bootsass_preprocess_html(&$variables) {
     'preprocess' => FALSE
   ));
 
+  if (drupal_is_front_page()) {
+    drupal_add_js($theme_path . '/js/homepage_hero.js', array(
+      'group' => JS_THEME,
+      'preprocess' => FALSE
+    ));
+  }
+
   // Add the terms to the body classes based on terms.
   if ($node = menu_get_object()) {
     // Return an array of taxonomy term ID's.
