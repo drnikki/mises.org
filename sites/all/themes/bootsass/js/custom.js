@@ -184,8 +184,14 @@ var Drupal = Drupal || {};
         var h1 = $('h1.page-header').text();
         $('.search-label').each(function(i){
           var label = $(this).text();
-          if ((h1 == label) || (h1 == 'Mises Wire' && label == 'Blog') || (h1 == 'Mises Weekends' && label == 'Audio/Video')) {
+          if ((h1 == label) || (h1 == 'Mises Wire' /*&& label == 'Blog'*/) || (h1 == 'Mises Weekends' && label == 'Audio/Video')) {
             $(this).addClass('hidden');
+            if (h1 == 'Mises Wire') {
+              var targetDiv = $(this).parent('.group-date-author').children('.date');
+              $(this).html('Mises Wire');
+              $(this).insertAfter(targetDiv);
+              $(this).removeClass('hidden');
+            }
           }
         });
       };
@@ -289,14 +295,14 @@ var Drupal = Drupal || {};
         // adjust letter-spacing before and after trim due to mysterious issue
         $('.view-mode-teaser .teaser-title').css('letterSpacing', -2);
         try {
-          implementDotDotDot($('.view-mode-teaser .teaser-title'), 50);
+          //implementDotDotDot($('.view-mode-teaser .teaser-title'), 50);
           $('.view-mode-teaser .teaser-title').css('letterSpacing', 0);
         }
         catch(err) {
           $('.view-mode-teaser .teaser-title').css('letterSpacing', 0);
         }
 
-        implementDotDotDot($('.view-mode-teaser .body-content'), 70);
+        //implementDotDotDot($('.view-mode-teaser .body-content'), 70);
 
         //Smooth scrolling
         $(function() {

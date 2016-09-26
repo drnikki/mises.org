@@ -315,6 +315,7 @@
 }
 .page-taxonomy-term-147 {
   .landing-list {
+    /*
     span.author > span:before {
       display: inline-block;
       width: 24px;
@@ -322,7 +323,7 @@
       content: "\2022";
       font-weight: 600;
     }
-/*    .today {
+    .today {
       background-color: $gray-lighter;
       .node-teaser {
         padding: 0;
