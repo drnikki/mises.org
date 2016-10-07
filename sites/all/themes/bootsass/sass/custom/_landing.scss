@@ -695,6 +695,7 @@ body.mises-daily {
   }
   .view-blog,
   .landing-list {
+    /*
     span.author > span:before {
       display: inline-block;
       width: 24px;
@@ -702,6 +703,7 @@ body.mises-daily {
       content: "\2022";
       font-weight: 600;
     }
+    */
     .views-row-first {
       @media (min-width: 480px) {
         .panel-body {

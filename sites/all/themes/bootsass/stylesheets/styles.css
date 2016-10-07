@@ -2761,7 +2761,10 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .page-homepage #block-mises-utility-mailchimp-custom { margin-top: 20px; }
 .page-homepage .view-homepage-hero .overlay a { text-decoration: none; }
 .page-homepage .view-homepage-hero .overlay a:hover { text-decoration: none; }
-.page-homepage .view-blog span.author > span:before, .page-homepage .landing-list span.author > span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600; }
+.page-homepage .view-blog, .page-homepage .landing-list { /*
+span.author > span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600;
+}
+*/ }
 .page-homepage .view-blog .views-row-first, .page-homepage .landing-list .views-row-first { background-color: #e4ebee; }
 @media (min-width: 480px) { .page-homepage .view-blog .views-row-first .panel-body, .page-homepage .landing-list .views-row-first .panel-body { display: flex; }
   .page-homepage .view-blog .views-row-first .panel-body .group-left a, .page-homepage .landing-list .views-row-first .panel-body .group-left a { color: #fff; }
