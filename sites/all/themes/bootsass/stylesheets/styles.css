@@ -2633,8 +2633,17 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .landing-list h2.teaser-title { margin-top: 0; margin-bottom: 0; }
 .landing-list .view-footer span.glyphicon { width: 22px; height: 22px; text-align: center; font-size: 11px; line-height: 22px; }
 
-.page-taxonomy-term-147 .landing-list { /*    .today { background-color: $gray-lighter; .node-teaser { padding: 0; margin-top: $grid-gutter-width; &:after { display: none; }  } .group-right { &:before { display: block; content: "Today's Article"; } &:first-child { padding-left: $grid-gutter-width; } } .image { margin-top: 0; } .tags { margin-top: 0; padding: 10px; background-color: $brand-secondary; color: $white; a { color: $white; } } .group-right { padding: 20px 10px; } }*/ }
-.page-taxonomy-term-147 .landing-list span.author > span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600; }
+.page-taxonomy-term-147 .landing-list { /*
+span.author > span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600;
+}
+.today { background-color: $gray-lighter; .node-teaser { padding: 0; margin-top: $grid-gutter-width; &:after { display: none; }  } .group-right { &:before { display: block; content: "Today's Article"; } &:first-child { padding-left: $grid-gutter-width; }
+}
+.image { margin-top: 0;
+}
+.tags { margin-top: 0; padding: 10px; background-color: $brand-secondary; color: $white; a { color: $white; }
+}
+.group-right { padding: 20px 10px; }
+}*/ }
 
 /* LANDING PAGE */
 .node-landing-page.view-mode-full h2.teaser-title { margin-top: 6px; }
@@ -2752,7 +2761,10 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .page-homepage #block-mises-utility-mailchimp-custom { margin-top: 20px; }
 .page-homepage .view-homepage-hero .overlay a { text-decoration: none; }
 .page-homepage .view-homepage-hero .overlay a:hover { text-decoration: none; }
-.page-homepage .view-blog span.author > span:before, .page-homepage .landing-list span.author > span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600; }
+.page-homepage .view-blog, .page-homepage .landing-list { /*
+span.author > span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600;
+}
+*/ }
 .page-homepage .view-blog .views-row-first, .page-homepage .landing-list .views-row-first { background-color: #e4ebee; }
 @media (min-width: 480px) { .page-homepage .view-blog .views-row-first .panel-body, .page-homepage .landing-list .views-row-first .panel-body { display: flex; }
   .page-homepage .view-blog .views-row-first .panel-body .group-left a, .page-homepage .landing-list .views-row-first .panel-body .group-left a { color: #fff; }
@@ -3035,11 +3047,12 @@ ul.accordion li { list-style: none; }
 * DATE AUTHOR ON TEASERS AND NODES
 */
 .group-date-author span.type { color: #00426b; text-transform: uppercase; }
+.group-date-author span.type:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600; }
 .group-date-author span.date { color: #00426b; text-transform: uppercase; font-weight: 600; }
 .group-date-author span.author a { color: #00426b; }
 .group-date-author span.author div, .group-date-author span.author p { display: inline; color: #00426b; }
-.group-date-author > span:not(.hidden) + span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600; }
-.group-date-author > span:not(.hidden) + span span:before { display: none !important; content: "" !important; }
+.group-date-author > span:not(.hidden) a:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600; }
+.group-date-author > span:not(.hidden) a span:before { display: none !important; content: "" !important; }
 
 /*
 * DATE LOCATION ON TEASERS AND NODES
