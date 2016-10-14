@@ -108,6 +108,29 @@ function mises_utility_admin() {
     '#description' => t("Text to be shown as the comment policy statement on specific content types."),
   );
 
+  $form['mises_utility']['mises_utility_support_mises'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Support Mises Badge Image and URL'),
+  );
+
+  $form['mises_utility']['mises_utility_support_mises']['mises_utility_support_mises_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Support Mises Badge Image'),
+    '#name' => 'mises_utility_support_mises_image',
+    '#size' => 40,
+    '#default_value' => variable_get('mises_utility_support_mises_image', ''),
+    '#upload_location' => 'public://'
+  );
+
+  $form['mises_utility']['mises_utility_support_mises']['mises_utility_support_mises_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Support Mises Badge URL'),
+    '#name' => 'mises_utility_support_mises_url',
+    '#description' => t("The url the support badge image is going to link to."),
+    '#default_value' => variable_get('mises_utility_support_mises_url', ''),
+    '#size' => 40,
+  );
+
 	$form['mises_mailchimp'] = array(
 		'#type' => 'fieldset', 
 		'#title' => t('Mailchimp Settings'), 
@@ -185,7 +208,43 @@ function mises_utility_admin() {
     '#default_value' => variable_get('mises_mailchimp_custom_description', ''),
     '#format' => 'simplified',
   );*/
+
+  // Add custom submit handler
+  $form['#submit'][] = '_mises_utility_admin_form_submit';
+
   return system_settings_form($form);
+}
+
+function _mises_utility_admin_form_submit ($form, &$form_state) {
+  if (isset($form_state['values']['mises_utility_support_mises_image']) && $form_state['values']['mises_utility_support_mises_image'] > 0) {
+    $file = file_load($form_state['values']['mises_utility_support_mises_image']);
+
+    $file->status = FILE_STATUS_PERMANENT;
+
+    file_save($file);
+  }
+  else {
+    // Load the file via file.fid.
+    $file = file_load(variable_get('mises_utility_support_mises_image', ''));
+
+    if ($file->fid) {
+      // Delete the file and the usage record
+      file_delete($file, TRUE);
+    }
+  }
+}
+
+function _mises_utility_support_mises_value($element, $input = FALSE, $form_state) {
+  if ($input) {
+    dpm($input);
+    // Checkboxes lose their value when empty.
+    // If the display field is present make sure its unchecked value is saved.
+    $field = field_widget_field($element, $form_state);
+    dpm($field);
+    if (empty($input['display'])) {
+      $input['display'] = $field['settings']['display_field'] ? 0 : 1;
+    }
+  }
 }
 
 /**

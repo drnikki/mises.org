@@ -2555,6 +2555,8 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .view-profile-lists .profile-item { padding-bottom: 12px; }
 .view-profile-lists .faculty-staff-profile-title { line-height: 1em; }
 
+.support-mises-badge { display: block; margin: 1em auto; }
+
 /*
 * Custom Styles for Home and Landing Pages
 * 
