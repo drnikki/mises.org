@@ -291,7 +291,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 48,
       ),
       'print' => array(
         'label' => 'above',
@@ -640,7 +640,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 39,
       ),
       'print' => array(
         'label' => 'above',
@@ -680,7 +680,7 @@ function mises_blog_field_default_field_instances() {
       'module' => 'creative_commons',
       'settings' => array(),
       'type' => 'radios',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -719,7 +719,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 38,
       ),
       'print' => array(
         'label' => 'above',
@@ -761,7 +761,7 @@ function mises_blog_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -796,7 +796,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 46,
       ),
       'print' => array(
         'label' => 'above',
@@ -872,7 +872,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 44,
       ),
       'print' => array(
         'label' => 'above',
@@ -1086,7 +1086,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 47,
       ),
       'print' => array(
         'label' => 'above',
@@ -1186,7 +1186,7 @@ function mises_blog_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'print' => array(
         'label' => 'above',
@@ -1281,7 +1281,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 41,
       ),
       'print' => array(
         'label' => 'above',
@@ -1333,7 +1333,7 @@ function mises_blog_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1372,7 +1372,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 42,
       ),
       'print' => array(
         'label' => 'above',
@@ -1453,7 +1453,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 43,
       ),
       'print' => array(
         'label' => 'above',
@@ -1499,6 +1499,87 @@ function mises_blog_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-blog-field_show_support_mises_badge'.
+  $field_instances['node-blog-field_show_support_mises_badge'] = array(
+    'bundle' => 'blog',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
+        ),
+        'type' => 'list_default',
+        'weight' => 19,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_show_support_mises_badge',
+    'label' => 'Show Support Mises Badge',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-blog-field_teaser_text'.
   $field_instances['node-blog-field_teaser_text'] = array(
     'bundle' => 'blog',
@@ -1530,7 +1611,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 45,
       ),
       'print' => array(
         'label' => 'above',
@@ -1858,7 +1939,7 @@ function mises_blog_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 40,
       ),
       'print' => array(
         'label' => 'above',
@@ -1898,7 +1979,7 @@ function mises_blog_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -2021,6 +2102,7 @@ function mises_blog_field_default_field_instances() {
   t('Mises Published Date');
   t('Show Comment Policy');
   t('Show Disclaimer');
+  t('Show Support Mises Badge');
   t('Social Media Image');
   t('Teaser Text');
   t('Topics');

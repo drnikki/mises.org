@@ -296,7 +296,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '14',
+    'weight' => '15',
     'children' => array(
       0 => 'field_bibliography_footnote',
       1 => 'field_citation',
@@ -517,6 +517,7 @@ function mises_library_item_field_group_info() {
       5 => 'field_show_disclaimer',
       6 => 'field_show_comment_policy',
       7 => 'field_exclude_disqus_comment',
+      8 => 'field_show_support_mises_badge',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -541,7 +542,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '50',
+    'weight' => '53',
     'children' => array(
       0 => 'field_copyright_info',
       1 => 'print_link',

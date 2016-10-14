@@ -288,10 +288,33 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blog';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'custom_post_date' => array(
-      'weight' => '7',
+    'support_mises_badge' => array(
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+        'conditions' => array(
+          0 => array(
+            'condition' => 'hide_no_string',
+            'configuration' => array(
+              'target' => 'field_show_support_mises_badge',
+              'string' => '1',
+            ),
+          ),
+        ),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
+        ),
+      ),
     ),
     'body_with_media_embedded' => array(
       'weight' => '7',
@@ -328,7 +351,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'comment_policy' => array(
-      'weight' => '11',
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -360,8 +383,13 @@ function display_suite_shared_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'custom_post_date' => array(
+      'weight' => '7',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'disclaimer_note' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -394,7 +422,7 @@ function display_suite_shared_ds_field_settings_info() {
       'format' => 'default',
     ),
     'dynamic_field_1' => array(
-      'weight' => '12',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -414,7 +442,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'follow_mises_institute' => array(
-      'weight' => '10',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -445,7 +473,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'image_source' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -1847,10 +1875,33 @@ function display_suite_shared_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'library_item';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'custom_post_date' => array(
-      'weight' => '5',
+    'support_mises_badge' => array(
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+        'conditions' => array(
+          0 => array(
+            'condition' => 'hide_no_string',
+            'configuration' => array(
+              'target' => 'field_show_support_mises_badge',
+              'string' => '1',
+            ),
+          ),
+        ),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
+        ),
+      ),
     ),
     'body_with_media_embedded' => array(
       'weight' => '8',
@@ -1876,7 +1927,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'comment_policy' => array(
-      'weight' => '15',
+      'weight' => '16',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -1908,8 +1959,13 @@ function display_suite_shared_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'custom_post_date' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'disclaimer_note' => array(
-      'weight' => '11',
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -2003,7 +2059,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'follow_mises_institute' => array(
-      'weight' => '13',
+      'weight' => '14',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -2053,7 +2109,7 @@ function display_suite_shared_ds_field_settings_info() {
       ),
     ),
     'image_source' => array(
-      'weight' => '12',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -4400,6 +4456,44 @@ print \'<div class="panel-heading \' . $random_class . \'"><div class="panel-tit
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'support_mises_badge';
+  $ds_field->label = 'Support Mises Badge';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+$fid = variable_get(\'mises_utility_support_mises_image\', \'\');
+if (!empty($fid) && is_numeric($fid)) {
+  $file = file_load($fid);
+  $image = image_load($file->uri);
+  $content = array(
+    \'file\' => array(
+      //\'#theme\' => \'image_style\',
+      //\'#style_name\' => \'large\',
+      \'#theme\' => \'image\',
+      \'#path\' => $image->source,
+      \'#width\' => $image->info[\'width\'],
+      \'#height\' => $image->info[\'height\'],
+      \'#attributes\' => array(\'class\' => array(\'support-mises-badge\')),
+    ),
+  );
+  $img = render($content);
+  $url = variable_get(\'mises_utility_support_mises_url\', \'\');
+  print l($img, $url, array(\'absolute\' => true, \'html\' => true));
+}
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['support_mises_badge'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'tags_title';
   $ds_field->label = 'Tags title';
   $ds_field->field_type = 5;
@@ -4962,48 +5056,50 @@ function display_suite_shared_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'tags_title',
         1 => 'text_resizer',
-        2 => 'field_topics',
-        3 => 'custom_breadcrumb',
-        4 => 'title',
-        5 => 'field_austrian_school',
+        2 => 'custom_breadcrumb',
+        3 => 'field_topics',
+        4 => 'field_austrian_school',
+        5 => 'title',
         6 => 'group_image_wrapper',
         7 => 'group_tags',
         8 => 'field_image_collection',
-        9 => 'ga_page_counter',
-        10 => 'group_date_author',
-        11 => 'disqus_comment_count',
-        12 => 'body',
-        13 => 'body_with_media_embedded',
-        14 => 'custom_post_date',
-        15 => 'disclaimer_note',
-        16 => 'field_author_1',
-        17 => 'image_source',
-        18 => 'follow_mises_institute',
-        19 => 'comment_policy',
-        20 => 'dynamic_field_1',
+        9 => 'group_date_author',
+        10 => 'ga_page_counter',
+        11 => 'body',
+        12 => 'disqus_comment_count',
+        13 => 'custom_post_date',
+        14 => 'body_with_media_embedded',
+        15 => 'field_author_1',
+        16 => 'support_mises_badge',
+        17 => 'disclaimer_note',
+        18 => 'image_source',
+        19 => 'follow_mises_institute',
+        20 => 'comment_policy',
+        21 => 'dynamic_field_1',
       ),
       'ds_hidden' => array(
-        21 => 'field_media_collection',
+        22 => 'field_media_collection',
       ),
     ),
     'fields' => array(
       'tags_title' => 'ds_content',
       'text_resizer' => 'ds_content',
-      'field_topics' => 'ds_content',
       'custom_breadcrumb' => 'ds_content',
-      'title' => 'ds_content',
+      'field_topics' => 'ds_content',
       'field_austrian_school' => 'ds_content',
+      'title' => 'ds_content',
       'group_image_wrapper' => 'ds_content',
       'group_tags' => 'ds_content',
       'field_image_collection' => 'ds_content',
-      'ga_page_counter' => 'ds_content',
       'group_date_author' => 'ds_content',
-      'disqus_comment_count' => 'ds_content',
+      'ga_page_counter' => 'ds_content',
       'body' => 'ds_content',
-      'body_with_media_embedded' => 'ds_content',
+      'disqus_comment_count' => 'ds_content',
       'custom_post_date' => 'ds_content',
-      'disclaimer_note' => 'ds_content',
+      'body_with_media_embedded' => 'ds_content',
       'field_author_1' => 'ds_content',
+      'support_mises_badge' => 'ds_content',
+      'disclaimer_note' => 'ds_content',
       'image_source' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'comment_policy' => 'ds_content',
@@ -5087,18 +5183,18 @@ function display_suite_shared_ds_layout_settings_info() {
         3 => 'title',
         4 => 'group_tags',
         5 => 'group_date_author',
-        6 => 'field_teaser_text',
-        7 => 'dynamic_field_1',
+        6 => 'dynamic_field_1',
+        7 => 'field_teaser_text',
         8 => 'custom_post_date',
         9 => 'body',
-        11 => 'node_link',
+        10 => 'node_link',
         12 => 'field_author_1',
         13 => 'links',
         14 => 'field_topics',
         15 => 'field_austrian_school',
       ),
       'ds_hidden' => array(
-        10 => 'post_date',
+        11 => 'post_date',
       ),
     ),
     'fields' => array(
@@ -5108,12 +5204,12 @@ function display_suite_shared_ds_layout_settings_info() {
       'title' => 'right',
       'group_tags' => 'right',
       'group_date_author' => 'right',
-      'field_teaser_text' => 'right',
       'dynamic_field_1' => 'right',
+      'field_teaser_text' => 'right',
       'custom_post_date' => 'right',
       'body' => 'right',
-      'post_date' => 'ds_hidden',
       'node_link' => 'right',
+      'post_date' => 'ds_hidden',
       'field_author_1' => 'right',
       'links' => 'right',
       'field_topics' => 'right',
@@ -5985,79 +6081,81 @@ function display_suite_shared_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'text_resizer',
-        1 => 'custom_breadcrumb',
-        2 => 'dynamic_field_1',
-        3 => 'field_pdf',
-        4 => 'title',
-        5 => 'group_image_wrapper',
-        6 => 'field_mobi',
-        7 => 'group_tags',
-        8 => 'field_epub',
-        9 => 'field_image_collection',
-        10 => 'custom_post_date',
-        11 => 'field_kindle',
-        12 => 'group_date_author',
-        13 => 'ga_page_counter',
-        14 => 'field_audio_book',
-        15 => 'field_author_1',
-        16 => 'group_links',
-        17 => 'disqus_comment_count',
-        18 => 'field_subtitle',
+        1 => 'dynamic_field_1',
+        2 => 'custom_breadcrumb',
+        3 => 'title',
+        4 => 'field_pdf',
+        5 => 'field_mobi',
+        6 => 'group_image_wrapper',
+        7 => 'field_image_collection',
+        8 => 'group_tags',
+        9 => 'field_epub',
+        10 => 'group_date_author',
+        11 => 'custom_post_date',
+        12 => 'field_kindle',
+        13 => 'field_audio_book',
+        14 => 'ga_page_counter',
+        15 => 'group_links',
+        16 => 'field_author_1',
+        17 => 'field_subtitle',
+        18 => 'disqus_comment_count',
         19 => 'dynamic_field_2',
-        20 => 'tags_title',
+        20 => 'field_link_to_external_listing_',
         21 => 'body_with_media_embedded',
-        22 => 'field_link_to_external_listing_',
-        23 => 'field_topics',
-        24 => 'field_bibliography_footnote',
+        22 => 'tags_title',
+        23 => 'field_bibliography_footnote',
+        24 => 'field_topics',
         25 => 'body',
-        26 => 'field_document_attachment',
+        26 => 'support_mises_badge',
         27 => 'field_citation',
-        28 => 'disclaimer_note',
-        29 => 'field_austrian_school',
-        30 => 'image_source',
-        31 => 'follow_mises_institute',
-        32 => 'group_footnotes',
-        33 => 'comment_policy',
+        28 => 'field_austrian_school',
+        29 => 'field_document_attachment',
+        30 => 'disclaimer_note',
+        31 => 'image_source',
+        32 => 'follow_mises_institute',
+        33 => 'group_footnotes',
+        34 => 'comment_policy',
       ),
       'ds_hidden' => array(
-        34 => 'field_library_item_tree',
-        35 => 'field_level',
-        36 => 'field_media_collection',
-        37 => 'field_audience',
-        38 => 'field_online_text',
+        35 => 'field_library_item_tree',
+        36 => 'field_level',
+        37 => 'field_media_collection',
+        38 => 'field_audience',
+        39 => 'field_online_text',
       ),
     ),
     'fields' => array(
       'text_resizer' => 'ds_content',
-      'custom_breadcrumb' => 'ds_content',
       'dynamic_field_1' => 'ds_content',
-      'field_pdf' => 'ds_content',
+      'custom_breadcrumb' => 'ds_content',
       'title' => 'ds_content',
-      'group_image_wrapper' => 'ds_content',
+      'field_pdf' => 'ds_content',
       'field_mobi' => 'ds_content',
+      'group_image_wrapper' => 'ds_content',
+      'field_image_collection' => 'ds_content',
       'group_tags' => 'ds_content',
       'field_epub' => 'ds_content',
-      'field_image_collection' => 'ds_content',
+      'group_date_author' => 'ds_content',
       'custom_post_date' => 'ds_content',
       'field_kindle' => 'ds_content',
-      'group_date_author' => 'ds_content',
-      'ga_page_counter' => 'ds_content',
       'field_audio_book' => 'ds_content',
-      'field_author_1' => 'ds_content',
+      'ga_page_counter' => 'ds_content',
       'group_links' => 'ds_content',
-      'disqus_comment_count' => 'ds_content',
+      'field_author_1' => 'ds_content',
       'field_subtitle' => 'ds_content',
+      'disqus_comment_count' => 'ds_content',
       'dynamic_field_2' => 'ds_content',
-      'tags_title' => 'ds_content',
-      'body_with_media_embedded' => 'ds_content',
       'field_link_to_external_listing_' => 'ds_content',
-      'field_topics' => 'ds_content',
+      'body_with_media_embedded' => 'ds_content',
+      'tags_title' => 'ds_content',
       'field_bibliography_footnote' => 'ds_content',
+      'field_topics' => 'ds_content',
       'body' => 'ds_content',
-      'field_document_attachment' => 'ds_content',
+      'support_mises_badge' => 'ds_content',
       'field_citation' => 'ds_content',
-      'disclaimer_note' => 'ds_content',
       'field_austrian_school' => 'ds_content',
+      'field_document_attachment' => 'ds_content',
+      'disclaimer_note' => 'ds_content',
       'image_source' => 'ds_content',
       'follow_mises_institute' => 'ds_content',
       'group_footnotes' => 'ds_content',
@@ -6246,26 +6344,26 @@ function display_suite_shared_ds_layout_settings_info() {
     'regions' => array(
       'left' => array(
         0 => 'field_image_collection',
-        2 => 'ga_page_counter',
-        3 => 'disqus_comment_count',
+        1 => 'ga_page_counter',
+        5 => 'disqus_comment_count',
       ),
       'right' => array(
-        1 => 'field_topics',
-        4 => 'field_austrian_school',
-        5 => 'custom_post_date',
-        6 => 'field_pdf',
-        7 => 'title',
-        8 => 'top_term',
-        9 => 'field_author_1',
-        10 => 'group_tags',
+        2 => 'field_topics',
+        3 => 'field_austrian_school',
+        4 => 'custom_post_date',
+        6 => 'top_term',
+        7 => 'field_pdf',
+        8 => 'title',
+        9 => 'group_tags',
+        10 => 'field_author_1',
         11 => 'field_epub',
         12 => 'dynamic_field_1',
         13 => 'group_date_author',
         14 => 'field_audio_book',
         15 => 'field_teaser_text',
         16 => 'body',
-        17 => 'group_book_formats',
-        18 => 'field_link_to_external_listing_',
+        17 => 'field_link_to_external_listing_',
+        18 => 'group_book_formats',
         19 => 'node_link',
       ),
       'ds_hidden' => array(
@@ -6275,24 +6373,24 @@ function display_suite_shared_ds_layout_settings_info() {
     ),
     'fields' => array(
       'field_image_collection' => 'left',
-      'field_topics' => 'right',
       'ga_page_counter' => 'left',
-      'disqus_comment_count' => 'left',
+      'field_topics' => 'right',
       'field_austrian_school' => 'right',
       'custom_post_date' => 'right',
+      'disqus_comment_count' => 'left',
+      'top_term' => 'right',
       'field_pdf' => 'right',
       'title' => 'right',
-      'top_term' => 'right',
-      'field_author_1' => 'right',
       'group_tags' => 'right',
+      'field_author_1' => 'right',
       'field_epub' => 'right',
       'dynamic_field_1' => 'right',
       'group_date_author' => 'right',
       'field_audio_book' => 'right',
       'field_teaser_text' => 'right',
       'body' => 'right',
-      'group_book_formats' => 'right',
       'field_link_to_external_listing_' => 'right',
+      'group_book_formats' => 'right',
       'node_link' => 'right',
       'field_online_text' => 'ds_hidden',
       'online_book_chapter' => 'ds_hidden',

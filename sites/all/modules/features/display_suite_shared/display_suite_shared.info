@@ -89,6 +89,7 @@ features[ds_fields][] = print_body_with_embedded_media
 features[ds_fields][] = profile_author_articles
 features[ds_fields][] = profile_major_words
 features[ds_fields][] = random_term
+features[ds_fields][] = support_mises_badge
 features[ds_fields][] = tags_title
 features[ds_fields][] = text_resizer
 features[ds_fields][] = top_term
