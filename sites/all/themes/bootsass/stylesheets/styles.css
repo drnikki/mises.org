@@ -2781,6 +2781,8 @@ span.author > span:before { display: inline-block; width: 24px; padding-left: 10
 .page-homepage .view-blog .views-row-first .image, .page-homepage .landing-list .views-row-first .image { margin-top: 0; }
 .page-homepage .view-blog .ga-counter-display, .page-homepage .landing-list .ga-counter-display { margin-left: 5px; }
 
+.group-date-location .date-display-range { display: inline; }
+
 @media (max-width: 480px) { .node-teaser .panel-body .group-left { margin-bottom: 20px; } }
 .wire-btn { float: right; margin-top: 15px; }
 

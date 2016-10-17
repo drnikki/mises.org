@@ -768,6 +768,10 @@ body.mises-daily {
   }
 }
 
+.group-date-location .date-display-range {
+  display: inline;
+}
+
 @media (max-width: 480px) {
   .node-teaser .panel-body .group-left {
     margin-bottom: 20px;
