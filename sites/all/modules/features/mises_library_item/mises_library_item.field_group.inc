@@ -518,6 +518,7 @@ function mises_library_item_field_group_info() {
       6 => 'field_show_comment_policy',
       7 => 'field_exclude_disqus_comment',
       8 => 'field_show_support_mises_badge',
+      9 => 'field_hide_copyright',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
