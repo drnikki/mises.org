@@ -51,7 +51,6 @@ function mises_person_profile_views_default_views() {
   $handler->display->display_options['sorts']['field_published_date_value']['id'] = 'field_published_date_value';
   $handler->display->display_options['sorts']['field_published_date_value']['table'] = 'field_data_field_published_date';
   $handler->display->display_options['sorts']['field_published_date_value']['field'] = 'field_published_date_value';
-  $handler->display->display_options['sorts']['field_published_date_value']['relationship'] = 'field_author_1_target_id';
   $handler->display->display_options['sorts']['field_published_date_value']['order'] = 'DESC';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
