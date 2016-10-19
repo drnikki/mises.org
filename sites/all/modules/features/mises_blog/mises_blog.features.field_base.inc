@@ -10,13 +10,13 @@
 function mises_blog_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_show_comment_policy'.
-  $field_bases['field_show_comment_policy'] = array(
+  // Exported field_base: 'field_hide_copyright'.
+  $field_bases['field_hide_copyright'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_show_comment_policy',
+    'field_name' => 'field_hide_copyright',
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -35,13 +35,13 @@ function mises_blog_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_show_support_mises_badge'.
-  $field_bases['field_show_support_mises_badge'] = array(
+  // Exported field_base: 'field_show_comment_policy'.
+  $field_bases['field_show_comment_policy'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_show_support_mises_badge',
+    'field_name' => 'field_show_comment_policy',
     'indexes' => array(
       'value' => array(
         0 => 'value',
