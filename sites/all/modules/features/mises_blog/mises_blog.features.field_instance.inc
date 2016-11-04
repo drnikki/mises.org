@@ -612,7 +612,11 @@ function mises_blog_field_default_field_instances() {
   // Exported field_instance: 'node-blog-field_copyright_info'.
   $field_instances['node-blog-field_copyright_info'] = array(
     'bundle' => 'blog',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'licence' => 7,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(

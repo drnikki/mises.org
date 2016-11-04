@@ -1784,7 +1784,11 @@ Note that all tags must be manually selected.',
   // Exported field_instance: 'node-library_item-field_copyright_info'.
   $field_instances['node-library_item-field_copyright_info'] = array(
     'bundle' => 'library_item',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'licence' => 7,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
