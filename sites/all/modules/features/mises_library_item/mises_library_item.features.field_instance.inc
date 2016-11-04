@@ -5189,7 +5189,7 @@ Note that all tags must be manually selected.',
     'bundle' => 'library_item',
     'default_value' => array(
       0 => array(
-        'value' => 0,
+        'value' => 1,
       ),
     ),
     'deleted' => 0,
