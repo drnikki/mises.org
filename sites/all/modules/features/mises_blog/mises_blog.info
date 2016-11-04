@@ -39,6 +39,7 @@ features[ds_layout_settings][] = node|blog|print
 features[features_api][] = api:2
 features[field_base][] = field_hide_copyright
 features[field_base][] = field_show_comment_policy
+features[field_base][] = field_show_support_mises_badge
 features[field_base][] = field_wire_include_exclude
 features[field_group][] = group_addit_blog_information|node|blog|form
 features[field_group][] = group_blog_information|node|blog|form
