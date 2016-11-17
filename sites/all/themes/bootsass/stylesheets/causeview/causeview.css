@@ -8,6 +8,9 @@ input[type="text"],input[type="password"],textarea,input[type="number"],input[ty
   border-radius:3px;
   padding:7px 15px 7px;
   font-size:14px;
+
+  box-sizing: border-box;
+  width: 90%;
 }
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -39,12 +42,14 @@ select:focus {
         border-bottom: solid 1px #777;
         text-align: center;
 }
+/*
 .donorLocation {
    width:120px;
 }
 @media (max-width: 480px) {
-  table, td { display: block !important; box-model: border-box; }
+  table, td { display: block !important; box-sizing: border-box; }
   td { padding-left: 9px !important; text-align: left !important; width: 100% !important; }
   td.fullCol { padding-left: 18px !important; }
   td.fullCol .required { left: -10px !important; }
 }
+*/
