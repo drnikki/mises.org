@@ -1,0 +1,118 @@
+ creative_commons.module | 47 +++++++++++++++++++++++++++++++++++++++++------
+ 1 file changed, 41 insertions(+), 6 deletions(-)
+
+diff --git a/creative_commons.module b/creative_commons.module
+index 202e7ca..59f4710 100644
+--- a/creative_commons.module
++++ b/creative_commons.module
+@@ -17,7 +17,7 @@ define('CC_SMALL_IMAGE', '80x15.png');
+ define('CC_LARGE_IMAGE', '88x31.png');
+ define('CC_IMAGE_URI', '//i.creativecommons.org/l');
+ define('CC_LICENCE_URI', '//creativecommons.org/licences');
+-define('CC_DEFAULT_VERSION', '3.0');
++define('CC_DEFAULT_VERSION', '4.0');
+ define('CC_URL', 'cc_url');
+ 
+ /*********************************************************************************************
+@@ -61,6 +61,15 @@ function creative_commons_field_settings_form($field, $instance, $has_data){
+     '#options' => creative_commons_get_jurisdictions(),
+     '#description' => t("Please select which creative commons licence types are available for this field. If none are selected, all licence types will be available.")
+   );
++  $form['license_version'] = array(
++    '#type' => 'radios',
++    '#title' => t('License version'),
++    '#default_value' => (isset($settings['license_version']) ? $settings['license_version'] : CC_DEFAULT_VERSION),
++    '#options' => array(
++      '4.0' => t('4.0'),
++      '3.0' => t('3.0')
++    )
++  );
+   return $form;
+ }
+ 
+@@ -102,16 +111,21 @@ function creative_commons_field_formatter_info(){
+  */
+ function creative_commons_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display){
+   $element = array();
++
++  $settings = array(
++    'license_version' => $field['settings']['license_version']
++  );
++
+   foreach($items as $delta => $item){
+     switch($display['type']){
+       case 'creative_commons_small_image':
+-        $element[$delta] = creative_commons_display($item['licence'], $field['settings']['jurisdiction'], CC_SMALL_IMAGE);
++        $element[$delta] = creative_commons_display($item['licence'], $field['settings']['jurisdiction'], CC_SMALL_IMAGE, $settings);
+         break;
+       case 'creative_commons_large_image':
+-        $element[$delta] = creative_commons_display($item['licence'], $field['settings']['jurisdiction'], CC_LARGE_IMAGE);
++        $element[$delta] = creative_commons_display($item['licence'], $field['settings']['jurisdiction'], CC_LARGE_IMAGE, $settings);
+         break;
+       case 'creative_commons_url':
+-        $element[$delta] = creative_commons_display($item['licence'], $field['settings']['jurisdiction'], CC_URL);
++        $element[$delta] = creative_commons_display($item['licence'], $field['settings']['jurisdiction'], CC_URL, $settings);
+         break;
+     }
+   }
+@@ -121,13 +135,19 @@ function creative_commons_field_formatter_view($entity_type, $entity, $field, $i
+ /**
+  * Helper function to build the render array for the creative commons logo & link
+  */
+-function creative_commons_display($licence_type, $jurisdiction, $display_type){
++function creative_commons_display($licence_type, $jurisdiction, $display_type, $settings = array()) {
+   $path = drupal_get_path('module', 'creative_commons');
+   if($jurisdiction && strpos($jurisdiction, '_')){
+     list($jurisdiction, $version) = explode('_', $jurisdiction);
+     $version = substr($version, 0, 1) . '.' . substr($version, 1, 1);
+   }else{
+     $version = CC_DEFAULT_VERSION;
++    if (isset($settings['license_version'])) {
++      $version = $settings['license_version'];
++    }
++    else {
++      $version = CC_DEFAULT_VERSION;
++    }
+   }
+   switch($licence_type){
+     // These licence types are text only
+@@ -369,6 +389,15 @@ function creative_commons_block_configure($delta = ''){
+       '#default_value' => variable_get('creative_commons_block_licence_type', CC_BY),
+       '#options' => creative_commons_get_licence_types()
+     );
++    $form['creative_commons_block_license_version'] = array(
++      '#type' => 'radios',
++      '#title' => t('License version'),
++      '#default_value' => variable_get('creative_commons_block_license_version', CC_DEFAULT_VERSION),
++      '#options' => array(
++        '4.0' => t('4.0'),
++        '3.0' => t('3.0')
++      )
++    );
+     $form['creative_commons_block_jurisdiction'] = array(
+       '#type' => 'select',
+       '#title' => t('Jurisdiction'),
+@@ -394,6 +423,7 @@ function creative_commons_block_save($delta = '', $edit = array()){
+     variable_set('creative_commons_block_licence_type', $edit['creative_commons_block_licence_type']);
+     variable_set('creative_commons_block_jurisdiction', $edit['creative_commons_block_jurisdiction']);
+     variable_set('creative_commons_block_display_type', $edit['creative_commons_block_display_type']);
++    variable_set('creative_commons_block_license_version', $edit['creative_commons_block_license_version']);
+   }
+ }
+ 
+@@ -405,9 +435,14 @@ function creative_commons_block_view($delta = ''){
+   switch($delta){
+     case 'creative_commons':
+       $licence = variable_get('creative_commons_block_licence_type', CC_BY);
++
++      $settings = array(
++        'license_version' => variable_get('creative_commons_block_license_version', CC_DEFAULT_VERSION)
++      );
++
+       $block['content'] = array(
+         '#theme' => 'creative_commons_block',
+-        '#licence' => creative_commons_display($licence, variable_get('creative_commons_block_jurisdiction', ''), variable_get('creative_commons_block_display_type', CC_LARGE_IMAGE)),
++        '#licence' => creative_commons_display($licence, variable_get('creative_commons_block_jurisdiction', ''), variable_get('creative_commons_block_display_type', CC_LARGE_IMAGE), $settings),
+         '#text' => $licence == CC_NONE ? t('All rights reserved, except where otherwise stated.') : t('Except where otherwise noted, content on this site is licensed under a Creative Commons !licence Licence.', array(
+           '!licence' => creative_commons_get_licence_types($licence)
+         ))
