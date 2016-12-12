@@ -9,7 +9,7 @@ input[type="text"],input[type="password"],textarea,input[type="number"],input[ty
   padding:7px 15px 7px;
   font-size:14px;
 
-  box-sizing: border-box;
+  box-sizing: content-box;
   width: 90%;
 }
 input[type="text"]:focus,
