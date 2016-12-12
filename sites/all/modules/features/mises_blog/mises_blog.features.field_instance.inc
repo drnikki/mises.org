@@ -1156,7 +1156,7 @@ function mises_blog_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Mark this only if this is old blog content (i.e. NOT Mises Wire).  New content shouldn\'t be tagged.',
+    'description' => 'For marking blogs created prior Mises Wire.  New content should not be marked.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1224,7 +1224,7 @@ function mises_blog_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 14,
+      'weight' => 48,
     ),
   );
 
@@ -2268,13 +2268,13 @@ function mises_blog_field_default_field_instances() {
   t('Enter a number to indicate after which paragraph in the Body the Media player should appear. If left empty, the Media player will appear midway in the body. ');
   t('Exclude Disqus Comment');
   t('Featured');
+  t('For marking blogs created prior Mises Wire.  New content should not be marked.');
   t('Hide copyright');
   t('Image');
   t('Include or exclude from The Wire');
   t('Insert After');
   t('Is Old Blog Content?');
   t('Level');
-  t('Mark this only if this is old blog content (i.e. NOT Mises Wire).  New content shouldn\'t be tagged.');
   t('Media');
   t('Mises Published Date');
   t('Show Comment Policy');
