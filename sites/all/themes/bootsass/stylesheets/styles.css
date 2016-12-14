@@ -3061,11 +3061,14 @@ ul.accordion li { list-style: none; }
 /*
 * DATE LOCATION ON TEASERS AND NODES
 */
-.group-date-location span.location { padding-left: 10px; }
-.group-date-location span.location:before { display: inline-block; width: 14px; content: "\2022"; }
+.group-date-location span.location { display: block; padding-top: 5px; /*
+padding-left: 10px;
+&:before { display: inline-block; width: 14px; content: "\2022";
+}
+*/ }
 .group-date-location span.location a { color: #00426b; }
-.group-date-location span.type { padding-right: 5px; }
-.group-date-location span.type:after { display: inline-block; width: 14px; content: "\2022"; text-align: center; }
+.group-date-location span.date { padding-right: 5px; }
+.group-date-location span.date:after { display: inline-block; width: 14px; content: "\2022"; text-align: center; }
 .group-date-location span.reg-link { padding-left: 10px; }
 
 /*

@@ -105,17 +105,21 @@
 */
 .group-date-location {
   span.location {
+    display: block;
+    padding-top: 5px;
+    /*
     padding-left: 10px;
     &:before {
       display: inline-block;
       width: 14px;
       content: "\2022";
     }
+    */
     a {
       color: $brand-primary;
     }
   }
-  span.type {
+  span.date {
     padding-right: 5px;
     &:after {
       display: inline-block;
