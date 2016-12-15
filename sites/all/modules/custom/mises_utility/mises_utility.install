@@ -62,36 +62,3 @@ function mises_utility_update_7004() {
   }
 }
 
-
-/**
-* Check "old blog" flag for all blogs created prior 2016.08.01
-*/
-function mises_utility_update_7005() {
-  $type = 'blog';
-  $created_limit = '2015:08:01 00:00:00';
-  $created_limit_ts = strtotime($created_limit);
-  $query = db_select('node', 'n');
-  $query->leftJoin('field_data_field_is_old_blog_content', 'f', 'n.nid = f.entity_id');
-  $query
-    ->fields('n', array('nid'))
-    ->fields('n', array('created'))
-    ->condition('n.type', $type)
-    ->condition('n.created', $created_limit_ts, '<')
-    ->orderBy('n.created', 'DESC')
-    ->addTag('node_access');
-
-  $result = $query->execute();
-  $old_blog_nids = array();
-  foreach ($result as $record) {
-    $old_blog_nids[] = $record->nid;
-  }
-
-  // loading and using node_save to leverage it creating the table row for us, along with
-  // all needed dependencies
-  foreach($old_blog_nids as $nid) {
-    $node = node_load($nid);
-    $node_wrapper = entity_metadata_wrapper('node', $node);
-    $node_wrapper->field_is_old_blog_content->set(1);
-    $node_wrapper->save();
-  }
-}
