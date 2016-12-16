@@ -27,7 +27,8 @@ function mises_blog_update_cron() {
     ->fieldCondition('field_is_old_blog_content', 'value', '1', '=')
     ->propertyOrderBy('created', 'DESC');
   $old_nids_updated = $query->execute();
-  $old_nids_updated = array_keys($old_nids_updated['node']);
+  $old_nids_updated = $old_nids_updated['node'];
+  $old_nids_updated = array_keys($old_nids_updated);
 
   // Get old blog content that does not have field_is_old_blog_content set.
   $old_blogs_remaining = array_diff($old_blogs_nids, $old_nids_updated);
