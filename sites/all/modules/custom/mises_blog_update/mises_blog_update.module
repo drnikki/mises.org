@@ -1,0 +1,56 @@
+<?php
+
+include_once 'includes/mises_blog_update.queue.inc';
+
+/**
+ * Implements hook_cron().
+ */
+function mises_blog_update_cron() {
+
+  $created_limit = '2015:08:01 00:00:00';
+  $created_limit_ts = strtotime($created_limit);
+
+  // Get blog content older than 08/01/2015
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'blog')
+    ->propertyCondition('created', $created_limit_ts, '<')
+    ->propertyOrderBy('created', 'DESC');
+  $old_blogs = $query->execute();
+  $old_blogs_nids = array_keys($old_blogs['node']);
+
+  // Get blog content older than 08/01/2015 + field_is_old_blog_content set.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'blog')
+    ->propertyCondition('created', $created_limit_ts, '<')
+    ->fieldCondition('field_is_old_blog_content', 'value', '1', '=')
+    ->propertyOrderBy('created', 'DESC');
+  $old_nids_updated = $query->execute();
+  $old_nids_updated = array_keys($old_nids_updated['node']);
+
+  // Get old blog content that does not have field_is_old_blog_content set.
+  $old_blogs_remaining = array_diff($old_blogs_nids, $old_nids_updated);
+  $old_blogs_remaining = array_values($old_blogs_remaining);
+
+  // Get Drupal Queue
+  $queue = DrupalQueue::get('update_old_blog_nodes');
+
+  // Process non-updated blog content via queue
+  foreach ($old_blogs_remaining as $item) {
+    $queue->createItem($item);
+  }
+}
+
+/**
+ * Implements hook_cron_queue_info().
+ */
+function mises_blog_update_cron_queue_info() {
+
+  $queues['update_old_blog_nodes'] = array(
+    'worker callback' => 'update_old_blogs',
+    'time' => 15,
+  );
+
+  return $queues;
+}
