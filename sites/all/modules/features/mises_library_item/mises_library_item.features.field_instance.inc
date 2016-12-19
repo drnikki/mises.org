@@ -431,7 +431,7 @@ function mises_library_item_field_default_field_instances() {
           ),
         ),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -787,7 +787,7 @@ function mises_library_item_field_default_field_instances() {
           ),
         ),
         'type' => 'entityreference_entity_id',
-        'weight' => 23,
+        'weight' => 20,
       ),
       'print' => array(
         'label' => 'above',
@@ -838,7 +838,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 74,
+        'weight' => 65,
       ),
       'token' => array(
         'label' => 'above',
@@ -974,7 +974,7 @@ function mises_library_item_field_default_field_instances() {
           'text' => 'Audio',
         ),
         'type' => 'token_formatters_entity_reference',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -1446,7 +1446,7 @@ function mises_library_item_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 67,
+        'weight' => 58,
       ),
       'token' => array(
         'label' => 'above',
@@ -1551,7 +1551,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 56,
+        'weight' => 51,
       ),
       'print' => array(
         'label' => 'above',
@@ -1581,7 +1581,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 59,
+        'weight' => 50,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -1609,217 +1609,6 @@ Note that all tags must be manually selected.',
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 30,
-    ),
-  );
-
-  // Exported field_instance: 'node-library_item-field_causeview_form_reg_link'.
-  $field_instances['node-library_item-field_causeview_form_reg_link'] = array(
-    'bundle' => 'library_item',
-    'default_value' => array(
-      0 => array(
-        'vname' => 'mises_registration_helper|form_link_btn',
-        'vargs' => '[node:nid]',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'audio_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'block_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'block_teaser_term' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'viewfield',
-        'settings' => array(
-          'conditions' => array(),
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'viewfield_default',
-        'weight' => 76,
-      ),
-      'full' => array(
-        'label' => 'hidden',
-        'module' => 'viewfield',
-        'settings' => array(
-          'conditions' => array(
-            0 => array(
-              'condition' => 'hide_no_string',
-              'configuration' => array(
-                'string' => 'onsite',
-                'target' => 'field_registration_type',
-              ),
-            ),
-          ),
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'viewfield_default',
-        'weight' => 4,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'sidebar_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 44,
-      ),
-      'video_block_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_causeview_form_reg_link',
-    'label' => 'Causeview Form Reg Link',
-    'required' => 0,
-    'settings' => array(
-      'allowed_views' => array(
-        'areas_to_support' => 0,
-        'austrian_economists' => 0,
-        'author_articles' => 0,
-        'blog' => 0,
-        'book_content' => 0,
-        'book_content_backlink' => 0,
-        'content_date_test' => 0,
-        'content_type' => 0,
-        'daily_landing' => 0,
-        'entity_ref_filters' => 0,
-        'entityform_type_list' => 0,
-        'entityforms' => 0,
-        'featured_latest_content' => 0,
-        'files_management' => 0,
-        'filtered_landing_term_page' => 0,
-        'flex_blocks' => 0,
-        'flex_blocks_node_specific' => 0,
-        'flex_blocks_term_specific' => 0,
-        'giving_feature_blocks' => 0,
-        'giving_flex_blocks' => 0,
-        'giving_stories' => 0,
-        'homepage' => 0,
-        'homepage_hero' => 0,
-        'image_source' => 0,
-        'job_postings' => 0,
-        'library_items_menu' => 0,
-        'lipsom_content' => 0,
-        'list_node_page_titles' => 0,
-        'mailchimp' => 0,
-        'media_default' => 0,
-        'membership_levels' => 0,
-        'menu_footer_blocks' => 0,
-        'mises_calendar' => 0,
-        'mises_content_admin' => 0,
-        'mises_event_helper' => 0,
-        'mises_events' => 0,
-        'mises_itunes_rss_feeds' => 0,
-        'mises_library' => 0,
-        'mises_newsletter_subscribe' => 0,
-        'mises_registration_helper' => 'mises_registration_helper',
-        'mises_solr_authors' => 0,
-        'mises_solr_clicks_report' => 0,
-        'nodequeue_1' => 0,
-        'nodequeue_2' => 0,
-        'nodequeue_3' => 0,
-        'nodequeue_4' => 0,
-        'nodequeue_6' => 0,
-        'nodequeue_7' => 0,
-        'nodequeue_8' => 0,
-        'nodequeue_9' => 0,
-        'nodequeue_10' => 0,
-        'nodequeue_11' => 0,
-        'nodequeue_13' => 0,
-        'person_profile_major_works' => 0,
-        'person_profile_sig_contrib' => 0,
-        'photo_album' => 0,
-        'profile_blocks' => 0,
-        'profile_lists' => 0,
-        'profile_reference' => 0,
-        'related_blocks_node' => 0,
-        'rss_feed' => 0,
-        'social_media_displays' => 0,
-        'teaser_demo' => 0,
-        'term_description' => 0,
-        'term_entity_ref' => 0,
-        'term_landing' => 0,
-        'tmp_nvm_test' => 0,
-        'tweets' => 0,
-        'upcoming_courses' => 0,
-        'user_content' => 0,
-        'user_entityforms' => 0,
-        'webform_analysis' => 0,
-        'webform_results' => 0,
-        'webform_submissions' => 0,
-        'webform_webforms' => 0,
-        'weight' => 0,
-      ),
-      'force_default' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'viewfield',
-      'settings' => array(),
-      'type' => 'viewfield_select',
-      'weight' => 19,
     ),
   );
 
@@ -1923,7 +1712,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 68,
+        'weight' => 59,
       ),
       'token' => array(
         'label' => 'above',
@@ -2089,7 +1878,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 65,
+        'weight' => 56,
       ),
       'token' => array(
         'label' => 'above',
@@ -2117,7 +1906,7 @@ Note that all tags must be manually selected.',
       'module' => 'creative_commons',
       'settings' => array(),
       'type' => 'radios',
-      'weight' => 20,
+      'weight' => 19,
     ),
   );
 
@@ -2170,7 +1959,7 @@ Note that all tags must be manually selected.',
           'text' => 'Download [file:name]',
         ),
         'type' => 'file_download_link',
-        'weight' => 12,
+        'weight' => 11,
       ),
       'print' => array(
         'label' => 'above',
@@ -2222,7 +2011,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 76,
+        'weight' => 67,
       ),
       'token' => array(
         'label' => 'above',
@@ -2331,7 +2120,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 62,
+        'weight' => 57,
       ),
       'print' => array(
         'label' => 'above',
@@ -2367,7 +2156,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 73,
+        'weight' => 64,
       ),
       'token' => array(
         'label' => 'above',
@@ -2397,7 +2186,7 @@ Note that all tags must be manually selected.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 26,
+      'weight' => 25,
     ),
   );
 
@@ -2587,7 +2376,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 42,
       ),
       'print' => array(
         'label' => 'above',
@@ -2617,7 +2406,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 0,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -2641,7 +2430,7 @@ Note that all tags must be manually selected.',
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 25,
+      'weight' => 24,
     ),
   );
 
@@ -2680,7 +2469,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 63,
+        'weight' => 58,
       ),
       'print' => array(
         'label' => 'above',
@@ -2716,7 +2505,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 77,
+        'weight' => 68,
       ),
       'token' => array(
         'label' => 'above',
@@ -2783,7 +2572,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 57,
+        'weight' => 52,
       ),
       'print' => array(
         'label' => 'above',
@@ -2813,7 +2602,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 57,
+        'weight' => 48,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -2876,7 +2665,7 @@ Note that all tags must be manually selected.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 27,
+      'weight' => 26,
     ),
   );
 
@@ -2919,7 +2708,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 0,
       ),
       'print' => array(
         'label' => 'above',
@@ -2949,7 +2738,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 0,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -2973,7 +2762,7 @@ Note that all tags must be manually selected.',
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 21,
+      'weight' => 20,
     ),
   );
 
@@ -3012,7 +2801,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 67,
+        'weight' => 62,
       ),
       'print' => array(
         'label' => 'above',
@@ -3048,7 +2837,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 71,
+        'weight' => 62,
       ),
       'token' => array(
         'label' => 'above',
@@ -3344,7 +3133,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 54,
+        'weight' => 49,
       ),
       'print' => array(
         'label' => 'above',
@@ -3374,7 +3163,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 55,
+        'weight' => 46,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -3400,7 +3189,7 @@ Note that all tags must be manually selected.',
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 44,
+      'weight' => 43,
     ),
   );
 
@@ -3439,7 +3228,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 53,
+        'weight' => 48,
       ),
       'print' => array(
         'label' => 'above',
@@ -3469,7 +3258,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 56,
+        'weight' => 47,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -3534,7 +3323,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 55,
+        'weight' => 50,
       ),
       'print' => array(
         'label' => 'above',
@@ -3564,7 +3353,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 54,
+        'weight' => 45,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -3590,7 +3379,7 @@ Note that all tags must be manually selected.',
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 45,
+      'weight' => 44,
     ),
   );
 
@@ -3673,7 +3462,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 61,
+        'weight' => 52,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -3769,7 +3558,7 @@ Note that all tags must be manually selected.',
           ),
         ),
         'type' => 'entityreference_entity_id',
-        'weight' => 21,
+        'weight' => 18,
       ),
       'print' => array(
         'label' => 'above',
@@ -3820,7 +3609,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 66,
+        'weight' => 57,
       ),
       'token' => array(
         'label' => 'above',
@@ -3920,7 +3709,7 @@ Note that all tags must be manually selected.',
           ),
         ),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 20,
+        'weight' => 17,
       ),
       'print' => array(
         'label' => 'above',
@@ -3956,7 +3745,7 @@ Note that all tags must be manually selected.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 62,
+        'weight' => 53,
       ),
       'token' => array(
         'label' => 'above',
@@ -4218,7 +4007,7 @@ Note that all tags must be manually selected.',
           'view_mode' => 'wide_player',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 22,
+        'weight' => 19,
       ),
       'print' => array(
         'label' => 'above',
@@ -4270,7 +4059,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 64,
+        'weight' => 55,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -4553,7 +4342,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 58,
+        'weight' => 49,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -4650,7 +4439,7 @@ Note that all tags must be manually selected.',
           ),
         ),
         'type' => 'entityreference_label',
-        'weight' => 24,
+        'weight' => 21,
       ),
       'print' => array(
         'label' => 'above',
@@ -4761,7 +4550,7 @@ Note that all tags must be manually selected.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 66,
+        'weight' => 61,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -4797,7 +4586,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 69,
+        'weight' => 60,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -4882,7 +4671,7 @@ Note that all tags must be manually selected.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 65,
+        'weight' => 60,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -4918,7 +4707,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 70,
+        'weight' => 61,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -5127,7 +4916,7 @@ Note that all tags must be manually selected.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 60,
+        'weight' => 55,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -5163,7 +4952,7 @@ Note that all tags must be manually selected.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 72,
+        'weight' => 63,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -5206,416 +4995,6 @@ Note that all tags must be manually selected.',
     ),
   );
 
-  // Exported field_instance: 'node-library_item-field_registration_link'.
-  $field_instances['node-library_item-field_registration_link'] = array(
-    'bundle' => 'library_item',
-    'deleted' => 0,
-    'description' => '<h3>Content Creators:</h3>
-<ul><li>To add a Causeview form on this page, select "Add existing Causeview form," then start typing the title of the form. A list of matching forms will appear. Select the form you wish to use.</li>
-<li>To replace an existing Causeview form, first click the "Remove" button next to the title of the form below. Then add a new one as described above.</li>
-</ul>
-<h3>Senior Editors:</h3>
-<p>You have the option to use an existing Causeview forms or add a new one:</p>
-<ul><li>To use an existing Causeview form, follow the instructions for Content Creators above.</li>
-<li>To update an an existing Causeview form, click "Edit" next to the form title, then edit as needed.  <b>NOTE! Any changes you make in the Code Snippet field will apply to all uses of that form!</b></li>
-<li>To create a new Causeview form, select "Add new Causeview form." Fill in the title, enter the code snippet provided by Causeview, set status to "Published" and click "Create Causeview form."</li>
-</ul>
-<p> </p>',
-    'display' => array(
-      'audio_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'block_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'block_teaser_term' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => FALSE,
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 73,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(
-            0 => array(
-              'condition' => 'hide_no_string',
-              'configuration' => array(
-                'string' => 'onsite',
-                'target' => 'field_registration_type',
-              ),
-            ),
-          ),
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-          'links' => 0,
-          'view_mode' => 'full',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 14,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'sidebar_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 50,
-      ),
-      'video_block_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_registration_link',
-    'label' => 'Registration Form',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'inline_entity_form',
-      'settings' => array(
-        'fields' => array(),
-        'type_settings' => array(
-          'allow_clone' => 0,
-          'allow_existing' => 1,
-          'allow_new' => 1,
-          'delete_references' => 0,
-          'label_plural' => 'Causeview forms',
-          'label_singular' => 'Causeview form',
-          'match_operator' => 'CONTAINS',
-          'override_labels' => 1,
-        ),
-      ),
-      'type' => 'inline_entity_form',
-      'weight' => 17,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-library_item-field_registration_link_external'.
-  $field_instances['node-library_item-field_registration_link_external'] = array(
-    'bundle' => 'library_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'audio_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'block_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'block_teaser_term' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(
-          'conditions' => array(),
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'link_default',
-        'weight' => 75,
-      ),
-      'full' => array(
-        'label' => 'hidden',
-        'module' => 'link',
-        'settings' => array(
-          'conditions' => array(
-            0 => array(
-              'condition' => 'hide_no_string',
-              'configuration' => array(
-                'string' => 'offsite',
-                'target' => 'field_registration_type',
-              ),
-            ),
-          ),
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'link_default',
-        'weight' => 15,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'sidebar_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 45,
-      ),
-      'video_block_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_registration_link_external',
-    'label' => 'Registration Link (External)',
-    'required' => 0,
-    'settings' => array(
-      'absolute_url' => 1,
-      'attributes' => array(
-        'class' => '',
-        'configurable_class' => 0,
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => '_blank',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_label_use_field_label' => 0,
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 18,
-    ),
-  );
-
-  // Exported field_instance: 'node-library_item-field_registration_type'.
-  $field_instances['node-library_item-field_registration_type'] = array(
-    'bundle' => 'library_item',
-    'default_value' => array(
-      0 => array(
-        'value' => 'none',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Select how the user can register for this event. Based on the type selected, the appropriate field will appear.
-
-Select "No registration or past event" to hide the registration embed or link field.',
-    'display' => array(
-      'audio_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'block_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'block_teaser_term' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'list_default',
-        'weight' => 74,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 45,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'sidebar_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 49,
-      ),
-      'video_block_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_registration_type',
-    'label' => 'Registration Type',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 16,
-    ),
-  );
-
   // Exported field_instance: 'node-library_item-field_show_comment_policy'.
   $field_instances['node-library_item-field_show_comment_policy'] = array(
     'bundle' => 'library_item',
@@ -5655,7 +5034,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 50,
+        'weight' => 45,
       ),
       'print' => array(
         'label' => 'above',
@@ -5685,7 +5064,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 51,
+        'weight' => 41,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -5709,7 +5088,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 23,
+      'weight' => 22,
     ),
   );
 
@@ -5752,7 +5131,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 52,
+        'weight' => 47,
       ),
       'print' => array(
         'label' => 'above',
@@ -5782,7 +5161,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 60,
+        'weight' => 51,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -5806,7 +5185,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 22,
+      'weight' => 21,
     ),
   );
 
@@ -5850,7 +5229,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 43,
       ),
       'print' => array(
         'label' => 'above',
@@ -5880,7 +5259,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 0,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -5904,7 +5283,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 24,
+      'weight' => 23,
     ),
   );
 
@@ -5942,7 +5321,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 51,
+        'weight' => 46,
       ),
       'print' => array(
         'label' => 'above',
@@ -5972,7 +5351,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 53,
+        'weight' => 44,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -6074,7 +5453,7 @@ Select "No registration or past event" to hide the registration embed or link fi
           ),
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -6125,7 +5504,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 78,
+        'weight' => 69,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -6319,7 +5698,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 61,
+        'weight' => 56,
       ),
       'print' => array(
         'label' => 'above',
@@ -6587,7 +5966,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 64,
+        'weight' => 59,
       ),
       'print' => array(
         'label' => 'above',
@@ -6623,7 +6002,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 75,
+        'weight' => 66,
       ),
       'token' => array(
         'label' => 'above',
@@ -6859,7 +6238,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 59,
+        'weight' => 54,
       ),
       'print' => array(
         'label' => 'above',
@@ -6895,7 +6274,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 63,
+        'weight' => 54,
       ),
       'token' => array(
         'label' => 'above',
@@ -7055,25 +6434,10 @@ Select "No registration or past event" to hide the registration embed or link fi
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'mediafield',
-        'settings' => array(
-          'conditions' => array(),
-          'file_view_mode' => 'translation_label',
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'media',
-        'weight' => 5,
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -7112,14 +6476,13 @@ Select "No registration or past event" to hide the registration embed or link fi
           'document' => 'document',
           'ebook' => 0,
           'image' => 0,
-          'translations' => 0,
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
-          'upload' => 'upload',
+          'upload' => 0,
         ),
       ),
       'type' => 'media_generic',
@@ -7162,7 +6525,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 49,
+        'weight' => 44,
       ),
       'print' => array(
         'label' => 'above',
@@ -7192,7 +6555,7 @@ Select "No registration or past event" to hide the registration embed or link fi
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 52,
+        'weight' => 42,
       ),
       'video_block_teaser' => array(
         'label' => 'above',
@@ -7214,23 +6577,12 @@ Select "No registration or past event" to hide the registration embed or link fi
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 8,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('<h3>Content Creators:</h3>
-<ul><li>To add a Causeview form on this page, select "Add existing Causeview form," then start typing the title of the form. A list of matching forms will appear. Select the form you wish to use.</li>
-<li>To replace an existing Causeview form, first click the "Remove" button next to the title of the form below. Then add a new one as described above.</li>
-</ul>
-<h3>Senior Editors:</h3>
-<p>You have the option to use an existing Causeview forms or add a new one:</p>
-<ul><li>To use an existing Causeview form, follow the instructions for Content Creators above.</li>
-<li>To update an an existing Causeview form, click "Edit" next to the form title, then edit as needed.  <b>NOTE! Any changes you make in the Code Snippet field will apply to all uses of that form!</b></li>
-<li>To create a new Causeview form, select "Add new Causeview form." Fill in the title, enter the code snippet provided by Causeview, set status to "Published" and click "Create Causeview form."</li>
-</ul>
-<p> </p>');
   t('All transcripts for any media attached to this page should be entered in this field. This transcript is used in search indexing only and is not displayed on the site.');
   t('Audience');
   t('Austrian School');
@@ -7239,7 +6591,6 @@ Select "No registration or past event" to hide the registration embed or link fi
   t('Body');
   t('Book Type');
   t('Bookstore');
-  t('Causeview Form Reg Link');
   t('Citation');
   t('Copyright Info');
   t('Document Attachment');
@@ -7270,13 +6621,7 @@ Select "No registration or past event" to hide the registration embed or link fi
   t('Primary or Original Author');
   t('Published Date');
   t('Recommended if this Library Item has a related Library Item tagged under Audio/Video. Be sure to check "Audio" under Book Type above.');
-  t('Registration Form');
-  t('Registration Link (External)');
-  t('Registration Type');
   t('Related Audio Book');
-  t('Select how the user can register for this event. Based on the type selected, the appropriate field will appear.
-
-Select "No registration or past event" to hide the registration embed or link field.');
   t('Select the book type for this Library Item. This value is used for solr facets and filtered searches on landing pages. <br />
 Note that all tags must be manually selected.');
   t('Select whether this item will be used in featured blocks. Only one selection should be made to avoid duplicate blocks. The first "Featured" option is the default filter for the featured Library Item block, as well as other content types.');
