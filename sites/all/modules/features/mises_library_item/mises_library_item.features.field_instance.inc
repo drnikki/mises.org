@@ -871,7 +871,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -927,7 +927,7 @@ function mises_library_item_field_default_field_instances() {
           'text' => 'Listen to Audio Book',
         ),
         'type' => 'token_formatters_entity_reference',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'above',
@@ -1000,7 +1000,7 @@ function mises_library_item_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 35,
+      'weight' => 36,
     ),
   );
 
@@ -1170,7 +1170,7 @@ function mises_library_item_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -2299,6 +2299,13 @@ Note that all tags must be manually selected.',
     'label' => 'ePub',
     'required' => 0,
     'settings' => array(
+      'epsacrop' => array(
+        'styles' => array(
+          'list_teaser' => 0,
+          'slideshow' => 0,
+          'vertical_teaser' => 0,
+        ),
+      ),
       'file_extensions' => 'epub',
       'user_register_form' => FALSE,
     ),
@@ -2323,7 +2330,6 @@ Note that all tags must be manually selected.',
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'media_internet' => 0,
           'upload' => 'upload',
-          'youtube' => 0,
         ),
       ),
       'type' => 'media_generic',
@@ -2527,7 +2533,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -3636,7 +3642,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -3846,7 +3852,7 @@ Note that all tags must be manually selected.',
           ),
         ),
         'type' => 'link_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'print' => array(
         'label' => 'above',
@@ -3931,7 +3937,7 @@ Note that all tags must be manually selected.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 37,
+      'weight' => 38,
     ),
   );
 
@@ -4504,7 +4510,7 @@ Note that all tags must be manually selected.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 36,
+      'weight' => 37,
     ),
   );
 
@@ -6023,7 +6029,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -6193,7 +6199,7 @@ Note that all tags must be manually selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -6334,6 +6340,153 @@ Note that all tags must be manually selected.',
       ),
       'type' => 'text_textarea',
       'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-library_item-field_translations'.
+  $field_instances['node-library_item-field_translations'] = array(
+    'bundle' => 'library_item',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'audio_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'block_teaser_term' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
+        ),
+        'type' => 'media',
+        'weight' => 72,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'mediafield',
+        'settings' => array(
+          'conditions' => array(),
+          'file_view_mode' => 'default',
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
+        ),
+        'type' => 'media',
+        'weight' => 6,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sidebar_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'video_block_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_translations',
+    'label' => 'Translations',
+    'required' => 0,
+    'settings' => array(
+      'epsacrop' => array(
+        'styles' => array(
+          'list_teaser' => 0,
+          'slideshow' => 0,
+          'vertical_teaser' => 0,
+        ),
+      ),
+      'file_extensions' => 'pdf',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'ebook' => 0,
+          'image' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 35,
     ),
   );
 
@@ -6482,6 +6635,7 @@ Note that all tags must be manually selected.');
   t('Timely Content');
   t('Topics');
   t('Transcript');
+  t('Translations');
   t('Upload an image to be used for social media shares. Recommended size: 1200px X 1200px.');
   t('Use as Default Social Image');
   t('Volume');

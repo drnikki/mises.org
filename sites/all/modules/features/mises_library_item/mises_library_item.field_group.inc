@@ -92,6 +92,7 @@ function mises_library_item_field_group_info() {
       5 => 'field_pdf',
       6 => 'field_books',
       7 => 'field_audio_book',
+      8 => 'field_translations',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -271,7 +272,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = 'group_tagging';
   $field_group->data = array(
     'label' => 'Featured Tags',
-    'weight' => '16',
+    'weight' => '17',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -355,7 +356,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = 'group_tagging';
   $field_group->data = array(
     'label' => 'Journal Data',
-    'weight' => '15',
+    'weight' => '16',
     'children' => array(
       0 => 'field_journal_number',
       1 => 'field_journal_volume',
@@ -393,8 +394,9 @@ function mises_library_item_field_group_info() {
       3 => 'field_mobi',
       4 => 'field_pdf',
       5 => 'field_audio_book',
-      6 => 'dynamic_field_1',
-      7 => 'dynamic_field_2',
+      6 => 'field_translations',
+      7 => 'dynamic_field_1',
+      8 => 'dynamic_field_2',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -517,8 +519,8 @@ function mises_library_item_field_group_info() {
       5 => 'field_show_disclaimer',
       6 => 'field_show_comment_policy',
       7 => 'field_exclude_disqus_comment',
-      8 => 'field_show_support_mises_badge',
-      9 => 'field_hide_copyright',
+      8 => 'field_hide_copyright',
+      9 => 'field_show_support_mises_badge',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
