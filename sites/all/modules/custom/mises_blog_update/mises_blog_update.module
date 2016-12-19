@@ -1,0 +1,81 @@
+<?php
+
+include_once 'includes/mises_blog_update.queue.inc';
+
+/**
+ * Implements hook_cron().
+ */
+function mises_blog_update_cron() {
+
+  $created_limit = '2015:08:01 00:00:00';
+  $created_limit_ts = strtotime($created_limit);
+
+  // Get blog content older than 08/01/2015
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'blog')
+    ->propertyCondition('created', $created_limit_ts, '<')
+    ->propertyOrderBy('created', 'DESC');
+  $old_blogs = $query->execute();
+  $old_blogs_nids = array_keys($old_blogs['node']);
+
+  $first_update_node = array_shift(array_slice($old_blogs_nids, 0, 1));
+
+  // Get blog content older than 08/01/2015 + field_is_old_blog_content set.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'blog')
+    ->propertyCondition('created', $created_limit_ts, '<')
+    ->fieldCondition('field_is_old_blog_content', 'value', '1', '=')
+    ->propertyOrderBy('created', 'DESC');
+  $old_nids_updated = $query->execute();
+
+  if (empty($old_nids_updated)) {
+    // If we do not yet have an updated node.  Update the first item in the list.
+    $node = node_load($first_update_node);
+    $node_wrapper = entity_metadata_wrapper('node', $node);
+    $node_wrapper->field_is_old_blog_content->set(1);
+    $node_wrapper->save();
+
+    if (module_exists('dblog')) {
+      // Leave a message in the watchdog to let me know that the node was updated.
+      watchdog('Mises: Blog Update', 'Node: ' . $first_update_node . ' has been marked as Old content.  Remaining updates will be silent.');
+    }
+  }
+  else {
+    // Get old blog content that does not have field_is_old_blog_content set.
+    $old_nids_updated = $old_nids_updated['node'];
+    $old_nids_updated = array_keys($old_nids_updated);
+    $old_blogs_remaining = array_diff($old_blogs_nids, $old_nids_updated);
+    $old_blogs_remaining = array_values($old_blogs_remaining);
+
+    if (!empty($old_blogs_remaining)) {
+      // Get Drupal Queue
+      $queue = DrupalQueue::get('update_old_blog_nodes');
+
+      // Process non-updated blog content via queue
+      foreach ($old_blogs_remaining as $item) {
+        $queue->createItem($item);
+      }
+    }
+    elseif (empty($old_blogs_remaining)) {
+      if (module_exists('dblog')) {
+        // Leave a message in the watchdog to let me know that the node was updated.
+        watchdog('Mises: Blog Update', 'Disable the mises_blog_update module.');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_cron_queue_info().
+ */
+function mises_blog_update_cron_queue_info() {
+
+  $queues['update_old_blog_nodes'] = array(
+    'worker callback' => 'update_old_blogs',
+    'time' => 30,
+  );
+
+  return $queues;
+}

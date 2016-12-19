@@ -1,0 +1,4 @@
+name = Mises: Blog Update
+description = This module was created for the purpose of batch updating 12k blog nodes to set the field_is_old_blog_content field for content older than 08/01/2015.  Once it has has provided its purpose, it's recommended to disable, uninstall, and remove from the codebase.
+core = 7.x
+package = Mises
