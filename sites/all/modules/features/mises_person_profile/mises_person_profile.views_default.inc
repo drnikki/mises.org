@@ -47,6 +47,11 @@ function mises_person_profile_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Mises Published Date (field_mises_published_date) */
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['id'] = 'field_mises_published_date_value';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['table'] = 'field_data_field_mises_published_date';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['field'] = 'field_mises_published_date_value';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['order'] = 'DESC';
   /* Sort criterion: Content: Date Published (field_published_date) */
   $handler->display->display_options['sorts']['field_published_date_value']['id'] = 'field_published_date_value';
   $handler->display->display_options['sorts']['field_published_date_value']['table'] = 'field_data_field_published_date';
@@ -104,6 +109,14 @@ function mises_person_profile_views_default_views() {
     'solr_online_text_page' => 'solr_online_text_page',
     'person_profile' => 'person_profile',
     'social_media' => 'social_media',
+  );
+  /* Filter criterion: Content: Is Old Blog Content? (field_is_old_blog_content) */
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['id'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['table'] = 'field_data_field_is_old_blog_content';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['field'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['value'] = array(
+    1 => '1',
   );
 
   /* Display: Profile Articles */

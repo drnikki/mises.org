@@ -184,13 +184,18 @@ var Drupal = Drupal || {};
         var h1 = $('h1.page-header').text();
         $('.search-label').each(function(i){
           var label = $(this).text();
+          var labelParent = $(this).parents('.node-teaser');
           if ((h1 == label) || (/*h1 == 'Mises Wire' &&*/ label == 'Blog') || (h1 == 'Mises Weekends' && label == 'Audio/Video')) {
             $(this).addClass('hidden');
             if (/*h1 == 'Mises Wire' &&*/ label == 'Blog') {
-              var targetDiv = $(this).parent('.group-date-author').children('.date');
-              $(this).html('Mises Wire');
-              $(this).insertAfter(targetDiv);
-              $(this).removeClass('hidden');
+              if (typeof(labelParent)) {
+                if (labelParent.hasClass('mises-wire-blog')) {
+                  var targetDiv = $(this).parent('.group-date-author').children('.date');
+                  $(this).html('Mises Wire');
+                  $(this).insertAfter(targetDiv);
+                  $(this).removeClass('hidden');
+                }
+              }
             }
           }
         });

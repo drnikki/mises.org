@@ -65,6 +65,14 @@ function mises_blog_landing_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'blog' => 'blog',
   );
+  /* Filter criterion: Content: Is Old Blog Content? (field_is_old_blog_content) */
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['id'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['table'] = 'field_data_field_is_old_blog_content';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['field'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Landing Page */
   $handler = $view->new_display('page', 'Landing Page', 'page');
@@ -162,6 +170,15 @@ function mises_blog_landing_views_default_views() {
     'library_item' => 'library_item',
   );
   $handler->display->display_options['filters']['type_2']['group'] = 3;
+  /* Filter criterion: Content: Is Old Blog Content? (field_is_old_blog_content) */
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['id'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['table'] = 'field_data_field_is_old_blog_content';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['field'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['group'] = 1;
   $handler->display->display_options['path'] = 'wire';
 
   /* Display: Featured Block */
@@ -458,6 +475,14 @@ function mises_blog_landing_views_default_views() {
     'event' => 'event',
     'library_item' => 'library_item',
   );
+  /* Filter criterion: Content: Is Old Blog Content? (field_is_old_blog_content) */
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['id'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['table'] = 'field_data_field_is_old_blog_content';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['field'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: The Wire Page */
   $handler = $view->new_display('page', 'The Wire Page', 'page_1');
@@ -491,6 +516,14 @@ function mises_blog_landing_views_default_views() {
     'blog' => 'blog',
     'event' => 'event',
     'library_item' => 'library_item',
+  );
+  /* Filter criterion: Content: Is Old Blog Content? (field_is_old_blog_content) */
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['id'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['table'] = 'field_data_field_is_old_blog_content';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['field'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['value'] = array(
+    1 => '1',
   );
   $handler->display->display_options['path'] = 'the-wire';
 
@@ -612,6 +645,14 @@ function mises_blog_landing_views_default_views() {
     'library_item' => 'library_item',
   );
   $handler->display->display_options['filters']['type_2']['group'] = 3;
+  /* Filter criterion: Content: Is Old Blog Content? (field_is_old_blog_content) */
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['id'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['table'] = 'field_data_field_is_old_blog_content';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['field'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['value'] = array(
+    1 => '1',
+  );
   $handler->display->display_options['path'] = 'homepage';
   $export['blog'] = $view;
 

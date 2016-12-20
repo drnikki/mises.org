@@ -67,3 +67,11 @@ function bootsass_preprocess_field(&$variables) {
     }
   }
 }
+
+function bootsass_ds_pre_render_alter (&$layout_render_array, $context, &$vars) {
+  if ($vars['type'] == 'blog') {
+    if (empty($vars['field_is_old_blog_content']) || (isset($vars['field_is_old_blog_content'][LANGUAGE_NONE][0]['value']) && $vars['field_is_old_blog_content'][LANGUAGE_NONE][0]['value'] != 1)) {
+      $vars['classes_array'][] = 'mises-wire-blog';
+    }
+  }
+}
