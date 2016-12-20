@@ -1224,7 +1224,7 @@ function mises_blog_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 48,
+      'weight' => 13,
     ),
   );
 
@@ -1507,7 +1507,7 @@ function mises_blog_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 

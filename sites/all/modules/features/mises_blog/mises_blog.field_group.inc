@@ -67,8 +67,8 @@ function mises_blog_field_group_info() {
       9 => 'field_exclude_disqus_comment',
       10 => 'field_hide_copyright',
       11 => 'field_show_support_mises_badge',
-      12 => 'title',
-      13 => 'field_is_old_blog_content',
+      12 => 'field_is_old_blog_content',
+      13 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
