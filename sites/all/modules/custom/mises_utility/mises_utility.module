@@ -618,3 +618,15 @@ function mises_utility_preprocess_html(&$variables) {
     drupal_add_css(drupal_get_path('module', 'mises_utility') . '/css/mises_utility.css', array('weight' => CSS_THEME));
   }
 }
+
+/**
+ * @param $query
+ * Force the "AND" operator on the Solr search query
+ * Added by Will Jackson of Kanopi Studios on 01/04/17
+ * Teamwork Ticket: #10352002
+ */
+
+function mises_utility_apachesolr_query_alter($query) {
+  // Force an AND keyword search.
+  $query->replaceParam('mm', '100%');
+}
