@@ -30,6 +30,7 @@ function mises_landing_page_context_default_contexts() {
         '~resources-economist' => '~resources-economist',
         '~resources-students' => '~resources-students',
         '~about-mises*' => '~about-mises*',
+        '~mises-academy' => '~mises-academy',
       ),
     ),
   );
