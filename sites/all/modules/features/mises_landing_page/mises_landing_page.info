@@ -16,6 +16,7 @@ dependencies[] = mises_events
 dependencies[] = mises_flex_block
 dependencies[] = mises_job_posting
 dependencies[] = mises_pathauto
+dependencies[] = mises_seo_settings
 dependencies[] = mises_static_page
 dependencies[] = smart_trim
 dependencies[] = strongarm
