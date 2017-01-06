@@ -35,7 +35,7 @@ function mises_landing_page_field_default_field_bases() {
   // Exported field_base: 'field_featured_nodes'.
   $field_bases['field_featured_nodes'] = array(
     'active' => 1,
-    'cardinality' => 6,
+    'cardinality' => 9,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_featured_nodes',
