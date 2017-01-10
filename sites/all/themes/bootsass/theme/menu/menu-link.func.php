@@ -38,6 +38,11 @@ function bootsass_menu_link(array $variables) {
   if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
     $element['#attributes']['class'][] = 'active';
   }
+
+  if ($element['#localized_options']['html']) {
+    $element['#title'] = _bootsass_filter_xss($element['#title']);
+  }
+
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }

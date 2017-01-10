@@ -15,7 +15,7 @@ function bootsass_item_list($variables) {
   $output = '';
 
   if (isset($title)) {
-    $output .= '<h3>' . $title . '</h3>';
+    $output .= '<h3>' . check_plain($title) . '</h3>';
   }
 
   if (!empty($items)) {

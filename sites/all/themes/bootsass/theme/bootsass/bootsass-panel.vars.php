@@ -56,4 +56,10 @@ function bootsass_preprocess_bootsass_panel(&$variables) {
  */
 function bootsass_process_bootsass_panel(&$variables) {
   $variables['attributes'] = drupal_attributes($variables['attributes']);
+  if (!empty($variables['title'])) {
+    $variables['title'] = _bootsass_filter_xss(render($variables['title']));
+  }
+  if (!empty($variables['description'])) {
+    $variables['description'] = _bootsass_filter_xss(render($variables['description']));
+  }
 }

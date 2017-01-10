@@ -31,5 +31,5 @@ function bootsass_button($variables) {
   $element['#attributes']['class'][] = 'form-' . $element['#button_type'];
 
   // This line break adds inherent margin between multiple buttons.
-  return '<button' . drupal_attributes($element['#attributes']) . '>' . $label . "</button>\n";
+  return '<button' . drupal_attributes($element['#attributes']) . '>' . _bootsass_filter_xss($label) . "</button>\n";
 }

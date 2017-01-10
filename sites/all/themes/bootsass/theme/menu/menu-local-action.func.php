@@ -40,10 +40,14 @@ function bootsass_menu_local_action($variables) {
     }
     // Force HTML so we can add the icon rendering element.
     $options['html'] = TRUE;
-    $output .= l($icon . $link['title'], $link['href'], $options);
+    $title = _bootsass_filter_xss($link['title']);
+    //$output .= l($icon . $link['title'], $link['href'], $options);
+    $output .= l($icon . $title, $link['href'], $options);
   }
   else {
-    $output .= $icon . $link['title'];
+    $title = _bootsass_filter_xss($link['title']);
+    //$output .= $icon . $link['title'];
+    $output .= $icon . $title;
   }
   $output .= "</li>\n";
 
