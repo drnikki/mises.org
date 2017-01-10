@@ -2571,7 +2571,7 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .view-homepage-hero .views-slideshow-pager-fields { display: none; }
 .view-homepage-hero .featured-block { position: relative; }
 .view-homepage-hero .featured-block a { color: #fff; }
-.view-homepage-hero .featured-block .overlay { position: relative; left: -6px; padding: 10px 20px 10px 20px; width: -webkit-calc(100% + 6px); width: -moz-calc(100% + 6px); width: calc(100% + 6px); border-left: 6px solid #00426b; background: rgba(80, 129, 156, 0.8); color: #fff; }
+.view-homepage-hero .featured-block .overlay { display: none; position: relative; left: -6px; padding: 10px 20px 10px 20px; width: -webkit-calc(100% + 6px); width: -moz-calc(100% + 6px); width: calc(100% + 6px); border-left: 6px solid #00426b; background: rgba(80, 129, 156, 0.8); color: #fff; }
 @media (min-width: 992px) { .view-homepage-hero .featured-block .overlay { position: absolute; bottom: 12px; max-width: 90%; } }
 .view-homepage-hero .featured-block .overlay h3 { margin-top: 0; margin-bottom: 0; color: #fff; font-size: 25px; font-family: "crimson_text", Georgia, "Times New Roman", Times, serif; }
 .view-homepage-hero .featured-block .overlay p { color: #e4ebee; }

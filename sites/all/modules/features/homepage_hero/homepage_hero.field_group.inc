@@ -26,6 +26,7 @@ function homepage_hero_field_group_info() {
       0 => 'field_image',
       1 => 'field_teaser_text',
       2 => 'title',
+      3 => 'field_display_title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
