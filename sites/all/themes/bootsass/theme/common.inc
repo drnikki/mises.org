@@ -114,6 +114,50 @@ function bootsass_include($theme, $path) {
 }
 
 /**
+ * Filters HTML to prevent cross-site-scripting (XSS) vulnerabilities.
+ *
+ * Very similar to core's filter_xss(). It does, however, include the addition
+ * of the "span", "div" and "i" elements which are commonly used in Bootstrap.
+ *
+ * @param string $string
+ *   The string with raw HTML in it. It will be stripped of everything that can
+ *   cause an XSS attack.
+ * @param array $allowed_tags
+ *   An array of allowed tags.
+ *
+ * @return string
+ *   An XSS safe version of $string, or an empty string if $string is not
+ *   valid UTF-8.
+ *
+ * @see filter_xss()
+ */
+function _bootsass_filter_xss($string, array $allowed_tags = NULL) {
+  if (is_null($allowed_tags)) {
+    $allowed_tags = array(
+      // Inline elements.
+      'a',
+      'cite',
+      'em',
+      'i',
+      'span',
+      'strong',
+
+      // Block elements.
+      'blockquote',
+      'code',
+      'div',
+      'ul',
+      'ol',
+      'li',
+      'dl',
+      'dt',
+      'dd',
+    );
+  }
+  return filter_xss($string, $allowed_tags);
+}
+
+/**
  * Theme a Bootstrap Glyphicon.
  *
  * @param string $name

@@ -20,5 +20,9 @@ function bootsass_preprocess_block(&$variables) {
  */
 function bootsass_process_block(&$variables) {
   // Drupal 7 should use a $title variable instead of $block->subject.
-  $variables['title'] = $variables['block']->subject;
+  // Don't override an existing "title" variable, some modules may already it.
+  if (!isset($variables['title'])) {
+    $variables['title'] = $variables['block']->subject;
+  }
+  $variables['title'] = _bootsass_filter_xss($variables['title']);
 }

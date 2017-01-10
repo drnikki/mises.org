@@ -20,6 +20,11 @@ function bootsass_preprocess_bootsass_modal(&$variables) {
   $variables['attributes']['aria-hidden'] = 'true';
 
   $variables['heading'] = $variables['html_heading'] ? $variables['heading'] : check_plain($variables['heading']);
+  $variables['dialog_attributes']['class'][] = 'modal-dialog';
+
+  if (!empty($variables['size'])) {
+    $variables['dialog_attributes']['class'][] = drupal_html_class('modal-' . $variables['size']);
+  }
 }
 
 /**
@@ -27,6 +32,8 @@ function bootsass_preprocess_bootsass_modal(&$variables) {
  */
 function bootsass_process_bootsass_modal(&$variables) {
   $variables['attributes'] = drupal_attributes($variables['attributes']);
+  $variables['dialog_attributes'] = drupal_attributes($variables['dialog_attributes']);
+  $variables['heading'] = _bootsass_filter_xss(render($variables['heading']));
   $variables['body'] = render($variables['body']);
   $variables['footer'] = render($variables['footer']);
 }

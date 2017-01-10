@@ -23,6 +23,7 @@ function bootsass_menu_local_task($variables) {
     }
     $link['localized_options']['html'] = TRUE;
     $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
+    $link_text = _bootsass_filter_xss($link_text);
 
     $classes[] = 'active';
   }
