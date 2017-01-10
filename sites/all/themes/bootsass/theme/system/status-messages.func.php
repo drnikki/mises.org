@@ -42,7 +42,7 @@ function bootsass_status_messages($variables) {
     if (count($messages) > 1) {
       $output .= " <ul>\n";
       foreach ($messages as $message) {
-        $output .= '  <li>' . _bootsass_filter_xss($message) . "</li>\n";
+        $output .= '  <li>' . _bootstrap_filter_xss($message) . "</li>\n";
       }
       $output .= " </ul>\n";
     }
