@@ -89,17 +89,35 @@ function homepage_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Link */
+  /* Field: Field: Display Title */
+  $handler->display->display_options['fields']['field_display_title']['id'] = 'field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['table'] = 'field_data_field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['field'] = 'field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['label'] = '';
+  $handler->display->display_options['fields']['field_display_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_display_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_display_title']['alter']['text'] = '<h3>[field_display_title]</h3>';
+  $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_display_title']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_display_title']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Image Link */
   $handler->display->display_options['fields']['field_image_link']['id'] = 'field_image_link';
   $handler->display->display_options['fields']['field_image_link']['table'] = 'field_data_field_image_link';
   $handler->display->display_options['fields']['field_image_link']['field'] = 'field_image_link';
@@ -167,7 +185,7 @@ function homepage_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[field_image_link]">
 <div class="image img-responsive">[field_image]</div>
 <div class="overlay">
-<h3>[title]</h3>
+[field_display_title]
 [field_teaser_text]
 </div>
 </a>';
@@ -181,7 +199,7 @@ function homepage_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="image img-responsive">[field_image]</div>
 <div class="overlay">
-<h3>[title]</h3>
+[field_display_title]
 [field_teaser_text]
 </div>
 ';

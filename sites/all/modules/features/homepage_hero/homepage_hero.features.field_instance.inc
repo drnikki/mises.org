@@ -10,6 +10,98 @@
 function homepage_hero_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-homepage_hero-field_display_title'.
+  $field_instances['node-homepage_hero-field_display_title'] = array(
+    'bundle' => 'homepage_hero',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This is the title that will be displayed in the Homepage Hero box.  Leave empty for no title.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+          'linked_field' => array(
+            'advanced' => array(
+              'class' => '',
+              'rel' => '',
+              'target' => '',
+              'text' => '',
+              'title' => '',
+            ),
+            'destination' => '',
+            'linked' => 0,
+          ),
+        ),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_display_title',
+    'label' => 'Display Title',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'simplified' => 'simplified',
+          'straight_html' => 'straight_html',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simplified' => array(
+              'weight' => -7,
+            ),
+            'straight_html' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -4,
+    ),
+  );
+
   // Exported field_instance: 'node-homepage_hero-field_image'.
   $field_instances['node-homepage_hero-field_image'] = array(
     'bundle' => 'homepage_hero',
@@ -204,7 +296,7 @@ function homepage_hero_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_teaser_text',
     'label' => 'Teaser Text',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -214,6 +306,7 @@ function homepage_hero_field_default_field_instances() {
           'php_code' => 0,
           'plain_text' => 0,
           'simplified' => 'simplified',
+          'straight_html' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -237,6 +330,9 @@ function homepage_hero_field_default_field_instances() {
             'simplified' => array(
               'weight' => -7,
             ),
+            'straight_html' => array(
+              'weight' => 0,
+            ),
           ),
         ),
       ),
@@ -250,17 +346,19 @@ function homepage_hero_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => -1,
+      'weight' => -2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Display Title');
   t('Finished image will be displayed at 750px width by 360px height on large browsers.');
   t('If this hero block links to another page, add link URL here.');
   t('Image');
   t('Link');
   t('Teaser Text');
+  t('This is the title that will be displayed in the Homepage Hero box.  Leave empty for no title.');
 
   return $field_instances;
 }

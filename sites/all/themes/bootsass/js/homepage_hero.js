@@ -5,6 +5,13 @@
   Drupal.behaviors.homepageHero = {
     attach: function(context, settings) {
 
+      // show homepage hero overlay, only if there is a 
+      // title and/or teaser set
+      var overlay = $('.view-homepage-hero .overlay');
+      if ( $.trim( overlay.html() ).length ) {
+        overlay.show();
+      }
+
       moveHeroBlock();
       $(window).resize(function () {
         moveHeroBlock();
