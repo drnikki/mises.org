@@ -140,6 +140,7 @@
   > span {
     font-weight: bold;
     color: $brand-primary;
+    margin-right: 5px;
     text-transform: uppercase;
   }
   .format-item,
@@ -155,6 +156,11 @@
     display: none !important;
   }
   .format-item {
+    &:nth-of-type(1) {
+      > .file {
+        margin-left: -5px;
+      }
+    }
     + .format-item {
       &:before {
         content: " | ";

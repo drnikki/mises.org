@@ -124,7 +124,8 @@ function mises_library_item_field_group_info() {
       1 => 'field_link_to_external_listing_',
       2 => 'field_pdf',
       3 => 'field_audio_book',
-      4 => 'dynamic_field_1',
+      4 => 'field_translations',
+      5 => 'dynamic_field_1',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
