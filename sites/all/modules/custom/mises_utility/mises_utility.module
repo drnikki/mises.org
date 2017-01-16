@@ -236,11 +236,11 @@ function _mises_utility_admin_form_submit ($form, &$form_state) {
 
 function _mises_utility_support_mises_value($element, $input = FALSE, $form_state) {
   if ($input) {
-    dpm($input);
+    //dpm($input);
     // Checkboxes lose their value when empty.
     // If the display field is present make sure its unchecked value is saved.
     $field = field_widget_field($element, $form_state);
-    dpm($field);
+    //dpm($field);
     if (empty($input['display'])) {
       $input['display'] = $field['settings']['display_field'] ? 0 : 1;
     }
@@ -604,7 +604,18 @@ function mises_utility_update_authors_form_submit() {
   return $form;
 }
 
-
+/**
+  * Implements hook_form_alter().
+  */
+function mises_utility_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'blog_node_form') {
+    $lang = $form['language']['#value'];
+    $form['field_teaser_text'][$lang][0]['#wysiwyg'] = FALSE;
+  }
+  elseif ($form_id == 'library_item_node_form') {
+    drupal_add_js(drupal_get_path('module', 'mises_utility') . '/js/mises_utility.js', array('weight' => JS_DEFAULT));
+  }
+}
 
 function mises_utility_preprocess_html(&$variables) {
 

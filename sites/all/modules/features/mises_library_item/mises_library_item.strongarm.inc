@@ -138,16 +138,16 @@ function mises_library_item_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '6',
-        ),
-        'metatags' => array(
           'weight' => '9',
         ),
+        'metatags' => array(
+          'weight' => '13',
+        ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '12',
         ),
         'xmlsitemap' => array(
-          'weight' => '7',
+          'weight' => '10',
         ),
         'twitter' => array(
           'weight' => '1',
