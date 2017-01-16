@@ -273,7 +273,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = 'group_tagging';
   $field_group->data = array(
     'label' => 'Featured Tags',
-    'weight' => '17',
+    'weight' => '16',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -357,7 +357,7 @@ function mises_library_item_field_group_info() {
   $field_group->parent_name = 'group_tagging';
   $field_group->data = array(
     'label' => 'Journal Data',
-    'weight' => '16',
+    'weight' => '15',
     'children' => array(
       0 => 'field_journal_number',
       1 => 'field_journal_volume',
