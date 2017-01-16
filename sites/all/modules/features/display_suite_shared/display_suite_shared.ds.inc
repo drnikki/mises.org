@@ -2488,7 +2488,7 @@ function display_suite_shared_ds_field_settings_info() {
       'format' => 'default',
     ),
     'dynamic_field_1' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -2694,6 +2694,19 @@ function display_suite_shared_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_translations' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'format-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -6428,48 +6441,50 @@ function display_suite_shared_ds_layout_settings_info() {
       ),
       'right' => array(
         2 => 'field_topics',
-        3 => 'field_austrian_school',
-        4 => 'custom_post_date',
-        6 => 'top_term',
-        7 => 'field_pdf',
+        3 => 'custom_post_date',
+        4 => 'field_austrian_school',
+        6 => 'field_pdf',
+        7 => 'top_term',
         8 => 'title',
-        9 => 'group_tags',
-        10 => 'field_author_1',
+        9 => 'field_author_1',
+        10 => 'group_tags',
         11 => 'field_epub',
-        12 => 'dynamic_field_1',
-        13 => 'group_date_author',
-        14 => 'field_audio_book',
+        12 => 'group_date_author',
+        13 => 'field_translations',
+        14 => 'dynamic_field_1',
         15 => 'field_teaser_text',
-        16 => 'body',
-        17 => 'field_link_to_external_listing_',
+        16 => 'field_audio_book',
+        17 => 'body',
         18 => 'group_book_formats',
-        19 => 'node_link',
+        19 => 'field_link_to_external_listing_',
+        20 => 'node_link',
       ),
       'ds_hidden' => array(
-        20 => 'field_online_text',
-        21 => 'online_book_chapter',
+        21 => 'field_online_text',
+        22 => 'online_book_chapter',
       ),
     ),
     'fields' => array(
       'field_image_collection' => 'left',
       'ga_page_counter' => 'left',
       'field_topics' => 'right',
-      'field_austrian_school' => 'right',
       'custom_post_date' => 'right',
+      'field_austrian_school' => 'right',
       'disqus_comment_count' => 'left',
-      'top_term' => 'right',
       'field_pdf' => 'right',
+      'top_term' => 'right',
       'title' => 'right',
-      'group_tags' => 'right',
       'field_author_1' => 'right',
+      'group_tags' => 'right',
       'field_epub' => 'right',
-      'dynamic_field_1' => 'right',
       'group_date_author' => 'right',
-      'field_audio_book' => 'right',
+      'field_translations' => 'right',
+      'dynamic_field_1' => 'right',
       'field_teaser_text' => 'right',
+      'field_audio_book' => 'right',
       'body' => 'right',
-      'field_link_to_external_listing_' => 'right',
       'group_book_formats' => 'right',
+      'field_link_to_external_listing_' => 'right',
       'node_link' => 'right',
       'field_online_text' => 'ds_hidden',
       'online_book_chapter' => 'ds_hidden',
@@ -7348,6 +7363,15 @@ function display_suite_shared_ds_view_modes_info() {
     'file' => 'file',
   );
   $export['small_player'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'translation_label';
+  $ds_view_mode->label = 'Translation Label';
+  $ds_view_mode->entities = array(
+    'file' => 'file',
+  );
+  $export['translation_label'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
