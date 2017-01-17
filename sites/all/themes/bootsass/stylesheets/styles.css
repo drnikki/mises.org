@@ -3075,9 +3075,10 @@ padding-left: 10px;
 * BOOK FORMATS ON TEASERS
 */
 .book-formats { font-size: 14px; }
-.book-formats > span { font-weight: bold; color: #00426b; text-transform: uppercase; }
+.book-formats > span { font-weight: bold; color: #00426b; margin-right: 5px; text-transform: uppercase; }
 .book-formats .format-item, .book-formats .file, .book-formats .content, .book-formats p { display: inline; }
 .book-formats .element-invisible, .book-formats .contextual-links-wrapper, .book-formats .file-icon, .book-formats .file-size { display: none !important; }
+.book-formats .format-item:nth-of-type(1) > .file { margin-left: -5px; }
 .book-formats .format-item + .format-item:before { content: " | "; }
 .book-formats .format-item a { color: #788086; text-transform: uppercase; font-size: 13px; }
 .book-formats a.external-link span.glyphicon { background-color: #c8cdd0; width: 20px; height: 20px; text-align: center; font-size: 10px; line-height: 20px; }
