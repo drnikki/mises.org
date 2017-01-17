@@ -5603,7 +5603,7 @@ Select "No registration or past event" to hide the registration embed or link fi
     'entity_type' => 'node',
     'field_name' => 'field_registration_type',
     'label' => 'Registration Type',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
