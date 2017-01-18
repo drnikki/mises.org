@@ -2557,6 +2557,8 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 
 .support-mises-badge { display: block; margin: 1em auto; }
 
+.invisible-element { margin: -1px; padding: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip: rect(0, 0, 0, 0); position: absolute; }
+
 /*
 * Custom Styles for Home and Landing Pages
 * 
