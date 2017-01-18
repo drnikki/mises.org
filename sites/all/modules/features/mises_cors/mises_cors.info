@@ -1,0 +1,11 @@
+name = Mises Cors
+description = The default CORS configuration for Mises.org
+core = 7.x
+package = Mises
+version = 7.x-1.0
+dependencies[] = cors
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = cors_domains
