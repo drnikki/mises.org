@@ -615,6 +615,20 @@ function mises_utility_form_alter(&$form, &$form_state, $form_id) {
   elseif ($form_id == 'library_item_node_form') {
     drupal_add_js(drupal_get_path('module', 'mises_utility') . '/js/mises_utility.js', array('weight' => JS_DEFAULT));
   }
+  elseif ($form_id == 'contact_us_entityform_edit_form') {
+    // get display settings and hide fields accordingly
+    foreach ($form as $key => $element) {
+      if (strpos($key, 'field_') !== FALSE) {
+        $lang = $element['#language'];
+        $field = $element[$lang];
+        $instance_info = field_info_instance('entityform', $key, 'contact_us');
+        if ($instance_info['display']['default']['type'] === 'hidden') {
+          $element['#access'] = FALSE;
+          $form[$key][$lang]['#access'] = $element['#access'];
+        }
+      }
+    }
+  }
 }
 
 function mises_utility_preprocess_html(&$variables) {
