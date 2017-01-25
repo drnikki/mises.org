@@ -1,0 +1,10 @@
+name = Mises Wire Filter
+description = Mises Wire Filter - Custom filter to apply to the Wire section
+core = 7.x
+package = Mises Custom
+project = mises_wire_filter
+
+dependencies[] = views
+
+; Views Handlers
+files[] = views/mises_wire_filter_handler_filter_mises_wire.inc

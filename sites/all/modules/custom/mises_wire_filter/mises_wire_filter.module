@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file mises_wire_filter.module
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function mises_wire_filter_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'mises_wire_filter') . '/views',
+  );
+}
