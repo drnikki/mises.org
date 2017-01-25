@@ -20,6 +20,7 @@ function mises_blog_landing_context_default_contexts() {
     'views' => array(
       'values' => array(
         'blog:page' => 'blog:page',
+        'blog:page_3' => 'blog:page_3',
         'blog:page_bloggers' => 'blog:page_bloggers',
       ),
     ),
@@ -88,9 +89,6 @@ function mises_blog_landing_context_default_contexts() {
           'weight' => '-10',
         ),
       ),
-    ),
-    'menu' => array(
-      0 => 'menu-austrian-economics-sub-menu:blog',
     ),
     'theme_html' => array(
       'class' => 'section-blog',
