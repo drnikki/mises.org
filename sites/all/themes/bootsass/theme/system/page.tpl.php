@@ -210,7 +210,15 @@
     		    </div>
     		  <?php endif; ?>
           
-          <div class="shield"><div class="icon"></div></div>
+          <!--<div class="shield"><div class="icon"></div></div>-->
+          <?php if ($page['shield']): ?>
+            <div class="shield">
+              <?php print render($page['shield']); ?>
+              <?php if ($page['icon']): ?>
+                <?php print render($page['icon']); ?>
+              <?php endif; ?>
+            </div>
+          <?php endif; ?>
 
         </div>
       </section>

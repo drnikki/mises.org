@@ -108,3 +108,40 @@ function bootsass_date_display_range($variables) {
   // Add remaining message and return.
   return $output . $show_remaining_days;
 }
+
+
+  /*
+function bootsass_image ($variables) {
+  $attributes = $variables['attributes'];
+  //dpm('theme_image');
+  $attributes['src'] = file_create_url($variables['path']);
+  //dpm($attributes['src']);
+
+  foreach (array('width', 'height', 'alt', 'title') as $key) {
+
+    if (isset($variables[$key])) {
+      $attributes[$key] = $variables[$key];
+    }
+  }
+
+  return '<img' . drupal_attributes($attributes) . ' />';
+}
+
+
+function bootsass_preprocess_file_entity(&$variables) {
+  //dpm('file_entity');
+  if ($variables['type'] == 'image') {
+  //dpm('file_entity is image');
+
+    // Alt Text
+    if (!empty($variables['field_media_alt_text'])) {
+      $variables['content']['file']['#alt'] = $variables['field_media_alt_text']['und'][0]['safe_value'];
+    }
+
+    // Title
+    if (!empty($variables['field_media_title'])) {
+      $variables['content']['file']['#title'] = $variables['field_media_title']['und'][0]['safe_value'];
+    }
+  }
+}
+   */

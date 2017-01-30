@@ -141,12 +141,13 @@
   height: 360px; //starting height, subject to override
   }
   
-  .main-content div.shield > .icon {
-    background-image: url("../images/icons/icon-wire.png");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+  //.main-content div.shield > .icon {
+    //background-image: url("../images/icons/icon-wire.png");
+    //background-position: center center;
+    //background-size: cover;
+    //background-repeat: no-repeat;
+  //}
+
   .group-date-author {
     .date:before {
       content: "";
