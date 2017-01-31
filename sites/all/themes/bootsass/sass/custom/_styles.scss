@@ -246,6 +246,7 @@ body.not-logged-in {
         padding: 0;
         color: $gray-lighter;
         font-size: $font-size-small;
+      &:focus,
       &:hover {
         background: transparent;
         text-decoration: underline;

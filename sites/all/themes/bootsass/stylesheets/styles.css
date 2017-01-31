@@ -2328,7 +2328,7 @@ body.not-logged-in .contextual-links-wrapper { display: none; }
 .footer .panel { background: transparent; }
 .footer h2, .footer .block:first-child h2.block-title { margin-top: 16px; color: #729949; text-transform: uppercase; font-size: 15px; }
 .footer .region-footer-left ul.menu li a, .footer .region-footer-center ul.menu li a { display: inline; padding: 0; color: #e4ebee; font-size: 14px; }
-.footer .region-footer-left ul.menu li a:hover, .footer .region-footer-center ul.menu li a:hover { background: transparent; text-decoration: underline; }
+.footer .region-footer-left ul.menu li a:focus, .footer .region-footer-left ul.menu li a:hover, .footer .region-footer-center ul.menu li a:focus, .footer .region-footer-center ul.menu li a:hover { background: transparent; text-decoration: underline; }
 .footer .region-footer-right .panel { padding: 16px 0 16px; border-bottom: 1px solid #788086; line-height: 1.25; }
 .footer .region-footer-right .panel h2 { margin: 0 0 9px; padding: 0 5px 9px; border-bottom: 1px solid #788086; color: #e4ebee; font-size: 15px; }
 .footer .region-footer-right .panel p, .footer .region-footer-right .panel address { padding: 0 5px; }

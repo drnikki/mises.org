@@ -172,9 +172,8 @@
         <?php if (!empty($page['highlighted'])): ?>
           <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
         <?php endif; ?>
-        <div class="main-content">
+        <div class="main-content" id="main-content">
           <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-          <a id="main-content"></a>
           <?php print render($title_prefix); ?>
           <?php if (!empty($title)): ?>
             <h1 class="page-header"><?php print $title; ?></h1>
