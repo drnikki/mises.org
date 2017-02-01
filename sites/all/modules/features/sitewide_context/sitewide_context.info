@@ -9,6 +9,7 @@ dependencies[] = context_ui
 dependencies[] = ctools
 dependencies[] = easy_breadcrumb
 dependencies[] = footer_right
+dependencies[] = google_cse
 dependencies[] = menu
 dependencies[] = menu_footer_blocks
 dependencies[] = navbar_support_mises
