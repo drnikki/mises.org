@@ -15,6 +15,8 @@ function mises_google_custom_search_user_default_permissions() {
     'name' => 'search Google CSE',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'google_cse',
   );
