@@ -44,20 +44,12 @@
  * @ingroup themeable
  */
 ?>
-<div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-
-
-
-  <div class="content"<?php print $content_attributes; ?>>
-
+<div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>
+  <div class="content"<?php print $content_attributes; ?>
     <?php
-//    $str = 'ENTER YOUR KEYWORDS';
-//    $content = chop($str, $content);
     $content = str_replace("Enter your keywords", "", $content);
     $content = str_replace("Search", "GO", $content);
     print $content;
-
     ?>
-
   </div>
 </div>
