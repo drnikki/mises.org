@@ -2515,6 +2515,7 @@ body.audiovideo .main-content .shield .icon, body.icon-audiovideo .main-content 
 body.interviews .main-content .shield .icon, body.icon-interviews .main-content .shield .icon { background-image: url("../images/icons/icon-interview.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
 body.mises-view .main-content .shield .icon, body.icon-mises-view .main-content .shield .icon, body.mises-weekends .main-content .shield .icon, body.icon-mises-weekends .main-content .shield .icon { background-image: url("../images/icons/icon-view.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
 body.live-video .main-content .shield .icon, body.icon-live-video .main-content .shield .icon { background-image: url("../images/icons/icon-video.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
+body.library-item-term-landing.fedwatch .main-content .shield .icon { background-image: url("../images/icons/icon-fedwatch.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
 .main-content .body-content.normal { font-size: 15px; }
 .main-content .body-content.large { font-size: 18px; }
 
