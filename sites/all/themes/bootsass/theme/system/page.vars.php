@@ -123,7 +123,6 @@ function bootsass_preprocess_page(&$variables) {
   }
   // Add the terms to the body classes based on terms.
   elseif ($node = menu_get_object()) {
-    dpm('2');
     // Return an array of taxonomy term ID's.
     $libraryids = field_get_items('node', $node, 'field_library_item_tree');
     $audienceids = field_get_items('node', $node, 'field_audience');
