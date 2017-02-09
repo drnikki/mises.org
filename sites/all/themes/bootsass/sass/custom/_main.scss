@@ -189,6 +189,10 @@ body {
       body.icon-live-video & {
         @include icon-image('../images/icons/icon-video.png');
       }
+      body.icon-fedwatch &,
+      body.library-item-term-landing.fedwatch & {
+        @include icon-image('../images/icons/icon-fedwatch.png');
+      }
     }
   }
   // Add customizations for specific pages here
