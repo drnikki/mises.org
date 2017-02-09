@@ -5,12 +5,21 @@
   Drupal.behaviors.homepageHero = {
     attach: function(context, settings) {
 
-      // show homepage hero overlay, only if there is a 
-      // title and/or teaser set
+      /*
       var overlay = $('.view-homepage-hero .overlay');
       if ( $.trim( overlay.html() ).length ) {
         overlay.show();
       }
+      */
+
+      // show homepage hero overlay, only if
+      // not empty, go over each slide
+      heroBlock = $('#views_slideshow_cycle2_main_homepage_hero-block');
+      heroBlock.find('.overlay').each(function () {
+        if ($.trim($(this).html()).length) {
+          $(this).show();
+        }
+      });
 
       moveHeroBlock();
       $(window).resize(function () {
