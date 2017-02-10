@@ -1,7 +1,7 @@
 name = Sitewide Context
 core = 7.x
 package = Context
-version = 7.x-1.1
+version = 7.x-1.2
 project = sitewide_context
 dependencies[] = block
 dependencies[] = context
