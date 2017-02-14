@@ -134,17 +134,23 @@ function sitewide_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'google_cse-google_cse' => array(
+          'module' => 'google_cse',
+          'delta' => 'google_cse',
+          'region' => 'navigation',
+          'weight' => '-10',
+        ),
         'search-form' => array(
           'module' => 'search',
           'delta' => 'form',
           'region' => 'navigation',
-          'weight' => '-89',
+          'weight' => '-9',
         ),
         'views-flex_blocks-block_4' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_4',
           'region' => 'navigation',
-          'weight' => '-88',
+          'weight' => '-8',
         ),
         'views-flex_blocks-block_26' => array(
           'module' => 'views',
