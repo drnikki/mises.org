@@ -140,12 +140,6 @@ function sitewide_context_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-10',
         ),
-        'search-form' => array(
-          'module' => 'search',
-          'delta' => 'form',
-          'region' => 'navigation',
-          'weight' => '-9',
-        ),
         'views-flex_blocks-block_4' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_4',
