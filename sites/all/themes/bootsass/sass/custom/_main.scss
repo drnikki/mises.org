@@ -96,7 +96,7 @@ body {
       .form-type-textfield {
         background: #fff url(../images/icons/icon-search-field.png) right center no-repeat;
         height: auto;
-        max-width: 200px;
+        max-width: 208px;
       }
 
       .form-text {
@@ -108,6 +108,10 @@ body {
         background: transparent;
         border: 0;
         padding: 0;
+      }
+
+      .form-submit {
+        width: 50px;
       }
     }
 
