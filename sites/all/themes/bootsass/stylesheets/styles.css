@@ -2484,7 +2484,12 @@ body.mises-daily .navbar-inverse .navbar-nav > li > a.active.library, body.icon-
 .region-navigation { position: relative; }
 .region-navigation .block { width: 258px; height: 50px; }
 @media (min-width: 769px) { .region-navigation .block.block-views { margin-top: -7px; }
-  .region-navigation .block#block-search-form { position: absolute; top: -64px; right: 0; } }
+  .region-navigation .block#block-google-cse-google-cse { height: auto; margin: 5px 0 5px 5px; position: absolute; right: 0; top: -64px; } }
+.region-navigation .block#block-google-cse-google-cse div, .region-navigation .block#block-google-cse-google-cse input { display: block; float: left; }
+.region-navigation .block#block-google-cse-google-cse .form-type-textfield { background: #fff url(../images/icons/icon-search-field.png) right center no-repeat; height: auto; max-width: 208px; }
+.region-navigation .block#block-google-cse-google-cse .form-text { background-color: transparent !important; border-right: 0; padding-right: 32px; }
+.region-navigation .block#block-google-cse-google-cse .gsc-control-cse { background: transparent; border: 0; padding: 0; }
+.region-navigation .block#block-google-cse-google-cse .form-submit { width: 50px; }
 @media (max-width: 767px) { .region-navigation .block.block-views { display: none; } }
 .region-navigation #block-search-form .form-control { border-right: 0 none; border-radius: 0; }
 .region-navigation #block-search-form button { padding: 6px 11px; border-radius: 0; }
