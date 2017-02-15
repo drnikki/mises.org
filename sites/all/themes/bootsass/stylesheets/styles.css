@@ -2478,7 +2478,10 @@ body.cke_editable { background: #fff none; }
 @media (max-width: 768px) { #navbar.navbar-static-top { border-width: 0; } }
 
 .navbar-inverse .navbar-nav > li > a.active { background-color: #38709e; color: #fff; }
-body.mises-daily .navbar-inverse .navbar-nav > li > a.active.library, body.icon-mises-daily .navbar-inverse .navbar-nav > li > a.active.library { background-color: transparent; }
+body.fedwatch .navbar-inverse .navbar-nav > li > a.active.library, body.icon-fedwatch .navbar-inverse .navbar-nav > li > a.active.library, body.mises-daily .navbar-inverse .navbar-nav > li > a.active.library, body.icon-mises-daily .navbar-inverse .navbar-nav > li > a.active.library { background-color: transparent; }
+body.fedwatch .navbar-inverse .navbar-nav > li > a.active.library:hover, body.icon-fedwatch .navbar-inverse .navbar-nav > li > a.active.library:hover, body.mises-daily .navbar-inverse .navbar-nav > li > a.active.library:hover, body.icon-mises-daily .navbar-inverse .navbar-nav > li > a.active.library:hover { background-color: #38709e; }
+.navbar-inverse .navbar-nav > li.fedwatch-item a { background-color: #46763a; }
+.navbar-inverse .navbar-nav > li.fedwatch-item a:hover { background-color: #38709e; }
 
 @media (max-width: 768px) { .navbar-collapse ul.menu li { width: 50%; float: left; } }
 .region-navigation { position: relative; }
