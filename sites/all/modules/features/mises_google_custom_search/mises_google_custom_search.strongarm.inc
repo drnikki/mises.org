@@ -49,7 +49,7 @@ function mises_google_custom_search_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'google_cse_cx';
-  $strongarm->value = '011133836537534086754:n_itztbhl4m';
+  $strongarm->value = '008192686144554149800:nbk7x5ej3sk';
   $export['google_cse_cx'] = $strongarm;
 
   $strongarm = new stdClass();
