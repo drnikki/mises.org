@@ -608,12 +608,15 @@ function mises_utility_update_authors_form_submit() {
   * Implements hook_form_alter().
   */
 function mises_utility_form_alter(&$form, &$form_state, $form_id) {
+  $lang = $form['language']['#value'];
+  $disable_teaser_wysiwyg = FALSE;
+
   if ($form_id == 'blog_node_form') {
-    $lang = $form['language']['#value'];
-    $form['field_teaser_text'][$lang][0]['#wysiwyg'] = FALSE;
+    $disable_teaser_wysiwyg = TRUE;
   }
   elseif ($form_id == 'library_item_node_form') {
     drupal_add_js(drupal_get_path('module', 'mises_utility') . '/js/mises_utility.js', array('weight' => JS_DEFAULT));
+    $disable_teaser_wysiwyg = TRUE;
   }
   elseif ($form_id == 'contact_us_entityform_edit_form') {
     // get display settings and hide fields accordingly
@@ -628,6 +631,10 @@ function mises_utility_form_alter(&$form, &$form_state, $form_id) {
         }
       }
     }
+  }
+
+  if ($disable_teaser_wysiwyg) {
+    $form['field_teaser_text'][$lang][0]['#wysiwyg'] = FALSE;
   }
 }
 

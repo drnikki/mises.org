@@ -464,6 +464,7 @@ body.mises-daily {
       }
     }
   }
+  #edit-writer-wrapper,
   #edit-title-wrapper {
     @include clearfix;
     clear: both;
@@ -543,6 +544,130 @@ body.mises-daily {
   // Hiding buggy element.
   .views-widget-sort-order {
     display: none;
+  }
+}
+
+.wire-page-filtered {
+  #edit-writer-wrapper,
+  #edit-title-wrapper {
+    > label {
+      width: 150px;
+    }
+
+    .form-item {
+      a {
+        padding: 0 2px;
+      }
+    }
+  }
+
+  .views-exposed-widget,
+  .form-item-sort-by {
+    > label {
+      display: none;
+    }
+  }
+
+  .views-exposed-widget {
+    @media (max-width: 641px) {
+      clear: both;
+      float: none;
+      width: 100% !important;
+    }
+    &.views-widget-sort-by {
+      padding: 6px 0 0 10px;
+
+      &.show {
+        @media (max-width: 641px) {
+          padding-left: 0;
+          padding-right: 10px;
+          width: 100% !important;
+
+          a {
+            width: 100% !important;
+          }
+
+          .selectBox-label {
+            width: auto !important;
+          }
+        }
+      }
+    }
+  }
+
+  .filtered-submit {
+    display: none;
+
+    &.force-show {
+      @media (min-width: 642px) and (max-width: 767px), (min-width: 960px) {
+        display: block;
+      }
+    }
+
+    &.clone {
+      @media (max-width: 641px), (min-width: 768px) and (max-width: 959px) {
+        display: block;
+        clear: both;
+      }
+    }
+
+    @media (max-width: 641px) {
+      @include clearfix;
+
+      .views-exposed-widget {
+        clear: none;
+        float: left;
+        width: auto !important;
+      }
+    }
+  }
+
+  #edit-media-type-wrapper {
+    max-width: 350px;
+
+    @media (min-width: 642px) and (max-width: 970px) {
+      max-width: 235px;
+    }
+  }
+
+  #edit-topic-wrapper {
+    clear: left;
+    width: 200px;
+  }
+
+  #edit-austrian-school-wrapper {
+    width: 200px;
+  }
+
+  #edit-topic-wrapper,
+  #edit-austrian-school-wrapper,
+  #edit-media-type-wrapper {
+    @media (max-width: 641px) {
+      max-width: none;
+      width: 100% !important;
+      .form-type-select {
+        a {
+          width: 100% !important;
+        }
+
+        .selectBox-label {
+          width: auto !important;
+        }
+      }
+    }
+  }
+
+  .views-submit-button {
+    padding: 6px 10px 0 0;
+  }
+
+  .views-reset-button {
+    float: left;
+    padding: 6px 10px 0 0;
+  }
+
+  .view-content {
+    clear: both;
   }
 }
 .selectBox-dropdown {

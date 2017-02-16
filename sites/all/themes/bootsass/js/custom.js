@@ -169,6 +169,26 @@ var Drupal = Drupal || {};
         }
       };
       
+      // Wire filter fields manipulation
+      var wireFilters = function() {
+        var filtersWrapper = $('.filtered-submit');
+        var filtersWrapperCopy = filtersWrapper.clone();
+        var mediaTypeWrapper = $('#edit-media-type-wrapper');
+        var austrianWrapper = $('#edit-austrian-school-wrapper');
+        filtersWrapper.insertAfter(mediaTypeWrapper);
+        filtersWrapper.addClass('force-show');
+        filtersWrapperCopy.addClass('clone');
+        filtersWrapperCopy.insertAfter(austrianWrapper);
+
+        $(window).resize(function() {
+          //$('select:not(#edit-book-type):not(#edit-title):not(#edit-writer)').selectBox('refresh');
+        });
+      };
+
+      var colorBoxResponsive = function() {
+
+      };
+      
       // Daily today's article
       var dailyToday = function() {
         var date = new Date();
@@ -341,10 +361,14 @@ var Drupal = Drupal || {};
         
         journalsFilters();
         editJournalTrigger();
+        if ($('.wire-page-filtered').length) {
+          wireFilters();
+        }
 
 
-        $('select:not(#edit-book-type):not(#edit-title)').selectBox({
-            menuSpeed: 'fast'
+        $('select:not(#edit-book-type):not(#edit-title):not(#edit-writer)').selectBox({
+          mobile: true,
+          menuSpeed: 'fast'
         });
         
         hideFlexslider();
@@ -363,9 +387,13 @@ var Drupal = Drupal || {};
         booksFilters();
         journalsFilters();
         editJournalTrigger();
+        if ($('.wire-page-filtered').length) {
+          wireFilters();
+        }
         
-        $('select:not(#edit-book-type):not(#edit-title)').selectBox({
-            menuSpeed: 'fast'
+        $('select:not(#edit-book-type):not(#edit-title):not(#edit-writer)').selectBox({
+          mobile: true,
+          menuSpeed: 'fast'
         });
       });      
       
