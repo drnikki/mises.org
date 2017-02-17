@@ -45,14 +45,38 @@ body {
     }
   }
 }
-.navbar-inverse .navbar-nav > li > a.active {
-  background-color: $navbar-inverse-link-active-bg;
-  color: $navbar-inverse-link-active-color;
-  body.mises-daily &.library,
-  body.icon-mises-daily &.library {
-    background-color: transparent;
+.navbar-inverse {
+  .navbar-nav {
+    > li {
+      > a.active {
+        background-color: $navbar-inverse-link-active-bg;
+        color: $navbar-inverse-link-active-color;
+
+        body.fedwatch &.library,
+        body.icon-fedwatch &.library,
+        body.mises-daily &.library,
+        body.icon-mises-daily &.library {
+          background-color: transparent;
+
+          &:hover {
+            background-color: $navbar-inverse-link-active-bg;
+          }
+        }
+      }
+
+      &.fedwatch-item {
+        a {
+          background-color: #46763a;
+
+          &:hover {
+            background-color: $navbar-inverse-link-active-bg;
+          }
+        }
+      }
+    }
   }
 }
+
 @media (max-width: $screen-sm) {
  .navbar-collapse {
     ul.menu {
@@ -72,15 +96,49 @@ body {
       @extend .pull-right;
     }
     @media (min-width: $screen-sm + 1) {
-     &.block-views {
+      &.block-views {
         margin-top: -7px;
       }
-      &#block-search-form {
+
+      //&#block-search-form {
+      &#block-google-cse-google-cse {
+        height: auto;
+        margin: 5px 0 5px 5px;
         position: absolute;
-        top: -64px;
         right: 0;
+        top: -64px;
       }
     }
+
+    &#block-google-cse-google-cse {
+      div,
+      input {
+        display: block;
+        float: left;
+      }
+
+      .form-type-textfield {
+        background: #fff url(../images/icons/icon-search-field.png) right center no-repeat;
+        height: auto;
+        max-width: 208px;
+      }
+
+      .form-text {
+        background-color: transparent !important;
+        border-right: 0;
+        padding-right: 32px;
+      }
+      .gsc-control-cse {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .form-submit {
+        width: 50px;
+      }
+    }
+
     @media (max-width: $screen-xs-max) {
      &.block-views {
         display: none;
@@ -190,6 +248,10 @@ body {
       body.live-video &,
       body.icon-live-video & {
         //@include icon-image('../images/icons/icon-video.png');
+      }
+      body.icon-fedwatch &,
+      body.library-item-term-landing.fedwatch & {
+        @include icon-image('../images/icons/icon-fedwatch.png');
       }
     }
   }
