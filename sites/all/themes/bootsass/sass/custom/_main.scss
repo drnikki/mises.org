@@ -251,7 +251,7 @@ body {
       }
       body.icon-fedwatch &,
       body.library-item-term-landing.fedwatch & {
-        @include icon-image('../images/icons/icon-fedwatch.png');
+        //@include icon-image('../images/icons/icon-fedwatch.png');
       }
     }
   }

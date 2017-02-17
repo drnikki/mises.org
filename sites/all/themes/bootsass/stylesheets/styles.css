@@ -2511,7 +2511,6 @@ body.fedwatch .navbar-inverse .navbar-nav > li > a.active.library:hover, body.ic
 .main-content { border-top: 7px solid #38709e; background: #fff; }
 .main-content .shield { position: absolute; top: -7px; left: 33px; display: block; width: 66px; height: 74px; }
 .main-content .shield .icon { position: absolute; top: 6px; left: 6px; display: block; width: 55px; height: 55px; border-radius: 50%; content: ''; }
-body.icon-fedwatch .main-content .shield .icon, body.library-item-term-landing.fedwatch .main-content .shield .icon { background-image: url("../images/icons/icon-fedwatch.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
 .main-content .body-content.normal { font-size: 15px; }
 .main-content .body-content.large { font-size: 18px; }
 

@@ -115,6 +115,9 @@ function bootsass_preprocess_page(&$variables) {
     elseif (in_array($alias, array('books', 'jobs', 'profile'))) {
       $icon_suffix = 'audience';
     }
+    elseif ($alias == 'fedwatch') {
+      $icon_suffix = 'fedwatch';
+    }
   }
 
   // special cases
@@ -144,6 +147,10 @@ function bootsass_preprocess_page(&$variables) {
         if ($icon_set == false) {
           if ($term->tid == '541') {
             $icon_suffix = 'library';
+            $icon_set = true;
+          }
+          elseif ($term->name == 'FedWatch') {
+            $icon_suffix = 'fedwatch';
             $icon_set = true;
           }
           elseif ($term->tid == '185' || $term->tid == '434') {
