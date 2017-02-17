@@ -10,7 +10,7 @@ class mises_wire_handler_filter extends views_handler_filter {
   }
    */
   function admin_summary() { }
-  function operator_form() { }
+  function operator_form(&$form, &$form_state) { }
   function query() {
     $join_tables = array(
       // node > field_data_field_library_item_tree
