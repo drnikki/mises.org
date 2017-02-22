@@ -567,6 +567,9 @@ function mises_seo_settings_metatag_export_default() {
       'rights' => array(
         'value' => '[node:field_copyright_info]',
       ),
+      'image_src' => array(
+        'value' => '[node:field_social_media_image:social_media_1200_x_1200], [node:field-image-collection:0:field_image:social_media_1200_x_1200]',
+      ),
       'dcterms.title' => array(
         'value' => '[node:title]',
       ),
