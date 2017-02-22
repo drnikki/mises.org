@@ -531,7 +531,6 @@ function mises_blog_landing_views_default_views() {
   /* Display: The Wire Homepage */
   $handler = $view->new_display('page', 'The Wire Homepage', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Mises Wire';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -543,7 +542,7 @@ function mises_blog_landing_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/wire" alt="Continue to Mises Wire" title="Continue to Mises Wire" class="btn btn-default wire-btn" target="_self">Continue to Mises Wire</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/wire" alt="Read More at the Mises Wire" title="Read More at the Mises Wire" class="btn btn-default wire-btn" target="_self">Read More at the Mises Wire</a>';
   $handler->display->display_options['footer']['area']['format'] = 'simplified';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Library Item Type (field_library_item_tree) */
