@@ -1051,13 +1051,14 @@ function mises_blog_landing_views_default_views() {
   $handler->display->display_options['filters']['field_library_item_tree_tid']['table'] = 'field_data_field_library_item_tree';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['field'] = 'field_library_item_tree_tid';
   $handler->display->display_options['filters']['field_library_item_tree_tid']['value'] = array(
-    442 => '442',
     567 => '567',
-    589 => '589',
+    442 => '442',
     541 => '541',
+    602 => '602',
+    589 => '589',
+    156 => '156',
     147 => '147',
     434 => '434',
-    156 => '156',
     367 => '367',
   );
   $handler->display->display_options['filters']['field_library_item_tree_tid']['group'] = 1;
