@@ -798,6 +798,9 @@ function mises_seo_settings_metatag_export_default() {
       'description' => array(
         'value' => '[node:field_bio_summary]',
       ),
+      'image_src' => array(
+        'value' => '[node:field_social_media_image:social_media_1200_x_1200], [node:field-image-collection:0:field_image:social_media_1200_x_1200]',
+      ),
       'dcterms.creator' => array(
         'value' => '',
       ),
