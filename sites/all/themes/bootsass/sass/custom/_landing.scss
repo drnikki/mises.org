@@ -137,15 +137,15 @@
 .front {
 
   .region-featured-right {
-  overflow: hidden;
-  height: 360px; //starting height, subject to override
+    overflow: hidden;
+    height: 360px; //starting height, subject to override
   }
-  
+
   //.main-content div.shield > .icon {
-    //background-image: url("../images/icons/icon-wire.png");
-    //background-position: center center;
-    //background-size: cover;
-    //background-repeat: no-repeat;
+  //background-image: url("../images/icons/icon-wire.png");
+  //background-position: center center;
+  //background-size: cover;
+  //background-repeat: no-repeat;
   //}
 
   .group-date-author {
@@ -163,6 +163,51 @@
       content: "";
       width: 0;
       padding: 0;
+    }
+  }
+
+  // popular content block
+  .region-sidebar-second-top {
+    background: transparent;
+
+    .most-popular {
+      background: $white;
+      color: $text-color;
+      margin-top: 1em;
+      padding: 5px;
+
+      .panel-heading {
+        &:before {
+          @include icon-image('../images/icons/icon-topic.png');
+        }
+      }
+
+      .views-row-first {
+        background: transparent;
+      }
+
+      a {
+        color: $link-color;
+
+        &:hover {
+          color: $link-hover-color;
+          text-decoration: underline;
+        }
+      }
+
+      .authors {
+        a {
+          &:not(:last-child) {
+            &:after {
+              content: "\2022";
+              display: inline-block;
+              font-weight: 600;
+              padding: 6px;
+              width: 18px;
+            }
+          }
+        }
+      }
     }
   }
 }

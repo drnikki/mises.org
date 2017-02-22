@@ -33,11 +33,17 @@ function homepage_context_default_contexts() {
           'region' => 'sidebar_second_top',
           'weight' => '-10',
         ),
+        'views-blog-block_3' => array(
+          'module' => 'views',
+          'delta' => 'blog-block_3',
+          'region' => 'sidebar_second_top',
+          'weight' => '-9',
+        ),
         'views-flex_blocks-block_25' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_25',
           'region' => 'sidebar_second_top',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'views-flex_blocks-block_5' => array(
           'module' => 'views',
