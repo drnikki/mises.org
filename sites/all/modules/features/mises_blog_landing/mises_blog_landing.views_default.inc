@@ -253,6 +253,30 @@ function mises_blog_landing_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  /* Filter criterion: Content: Is Old Blog Content? (field_is_old_blog_content) */
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['id'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['table'] = 'field_data_field_is_old_blog_content';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['field'] = 'field_is_old_blog_content_value';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_is_old_blog_content_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Meet Our Bloggers */
   $handler = $view->new_display('block', 'Meet Our Bloggers', 'blogger');
@@ -1421,6 +1445,64 @@ function mises_blog_landing_views_default_views() {
     ),
   );
   $handler->display->display_options['path'] = 'wire';
+
+  /* Display: Homepage Popular Block */
+  $handler = $view->new_display('block', 'Homepage Popular Block', 'block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'blog panel border-contrast padding-lg most-popular';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'simple_teaser_with_author';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="panel-heading single"><div class="panel-title">Most Popular This Week</div></div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Analytics Page Hits: Hit Count */
+  $handler->display->display_options['sorts']['hit_count']['id'] = 'hit_count';
+  $handler->display->display_options['sorts']['hit_count']['table'] = 'mises_analytics_hits';
+  $handler->display->display_options['sorts']['hit_count']['field'] = 'hit_count';
+  $handler->display->display_options['sorts']['hit_count']['order'] = 'DESC';
+  /* Sort criterion: Content: Mises Published Date (field_mises_published_date) */
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['id'] = 'field_mises_published_date_value';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['table'] = 'field_data_field_mises_published_date';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['field'] = 'field_mises_published_date_value';
+  $handler->display->display_options['sorts']['field_mises_published_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'library_item' => 'library_item',
+  );
+  /* Filter criterion: Content: Mises Published Date (field_mises_published_date) */
+  $handler->display->display_options['filters']['field_mises_published_date_value']['id'] = 'field_mises_published_date_value';
+  $handler->display->display_options['filters']['field_mises_published_date_value']['table'] = 'field_data_field_mises_published_date';
+  $handler->display->display_options['filters']['field_mises_published_date_value']['field'] = 'field_mises_published_date_value';
+  $handler->display->display_options['filters']['field_mises_published_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_mises_published_date_value']['default_date'] = '-7 day';
   $export['blog'] = $view;
 
   return $export;

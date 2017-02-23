@@ -2594,6 +2594,13 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .front .group-date-author .date:before { content: ""; width: 0; padding: 0; }
 .front .group-date-location .search-label { display: none; }
 .front .group-date-location .date:before { content: ""; width: 0; padding: 0; }
+.front .region-sidebar-second-top { background: transparent; }
+.front .region-sidebar-second-top .most-popular { background: #fff; color: #494e54; margin-top: 1em; padding: 5px; }
+.front .region-sidebar-second-top .most-popular .panel-heading:before { background-image: url("../images/icons/icon-topic.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
+.front .region-sidebar-second-top .most-popular .views-row-first { background: transparent; }
+.front .region-sidebar-second-top .most-popular a { color: #38709e; }
+.front .region-sidebar-second-top .most-popular a:hover { color: #244866; text-decoration: underline; }
+.front .region-sidebar-second-top .most-popular .authors a:not(:last-child):after { content: "\2022"; display: inline-block; font-weight: 600; padding: 6px; width: 18px; }
 
 .blog-home-block { background-color: #e4ebee; height: 100%; }
 .not-front .blog-home-block { border-top: 1px #81a957 solid; }

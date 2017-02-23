@@ -588,6 +588,26 @@ function display_suite_shared_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|blog|simple_teaser_with_author';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'blog';
+  $ds_fieldsetting->view_mode = 'simple_teaser_with_author';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_author_1' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|blog|simple_teaser_with_author'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|blog|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'blog';
@@ -1865,11 +1885,6 @@ function display_suite_shared_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'field_copyright_info' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['node|library_item|default'] = $ds_fieldsetting;
 
@@ -2454,6 +2469,51 @@ function display_suite_shared_ds_field_settings_info() {
     ),
   );
   $export['node|library_item|simple_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|library_item|simple_teaser_with_author';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'library_item';
+  $ds_fieldsetting->view_mode = 'simple_teaser_with_author';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h5',
+        'class' => '',
+        'ft' => array(),
+        'conditions' => array(),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
+        ),
+      ),
+    ),
+    'field_author_1' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'authors',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|library_item|simple_teaser_with_author'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
