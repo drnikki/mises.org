@@ -74,12 +74,6 @@ function mises_generic_landing_page_context_default_contexts() {
           'region' => 'bottom_right',
           'weight' => '-10',
         ),
-        'custom_search_blocks-1' => array(
-          'module' => 'custom_search_blocks',
-          'delta' => '1',
-          'region' => 'sidebar_second_top',
-          'weight' => '-10',
-        ),
         'views-term_description-block' => array(
           'module' => 'views',
           'delta' => 'term_description-block',
