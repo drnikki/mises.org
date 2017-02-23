@@ -1342,23 +1342,8 @@ function mises_library_item_field_default_field_instances() {
       ),
       'simple_teaser_with_author' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'link' => 1,
-          'linked_field' => array(
-            'advanced' => array(
-              'class' => '',
-              'rel' => '',
-              'target' => '',
-              'text' => '',
-              'title' => '',
-            ),
-            'destination' => '',
-            'linked' => 0,
-          ),
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'single_term' => array(
@@ -6640,7 +6625,7 @@ Select "No registration or past event" to hide the registration embed or link fi
       ),
       'simple_teaser_with_author' => array(
         'label' => 'hidden',
-        'module' => 'smart_trim',
+        'module' => 'text',
         'settings' => array(
           'conditions' => array(),
           'linked_field' => array(
@@ -6654,19 +6639,8 @@ Select "No registration or past event" to hide the registration embed or link fi
             'destination' => '',
             'linked' => 0,
           ),
-          'more_link' => 0,
-          'more_text' => 'Read more',
-          'summary_handler' => 'full',
-          'trim_length' => 120,
-          'trim_link' => 0,
-          'trim_options' => array(
-            'text' => 'text',
-          ),
-          'trim_preserve_tags' => '<p><a><em>',
-          'trim_suffix' => '...',
-          'trim_type' => 'chars',
         ),
-        'type' => 'smart_trim_format',
+        'type' => 'text_default',
         'weight' => 1,
       ),
       'single_term' => array(
