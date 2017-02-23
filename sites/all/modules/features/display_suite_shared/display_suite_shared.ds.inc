@@ -7468,6 +7468,15 @@ function display_suite_shared_ds_view_modes_info() {
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'simple_teaser_with_author';
+  $ds_view_mode->label = 'Simple Teaser, with author';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['simple_teaser_with_author'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
   $ds_view_mode->view_mode = 'single_term';
   $ds_view_mode->label = 'Single Term';
   $ds_view_mode->entities = array(
