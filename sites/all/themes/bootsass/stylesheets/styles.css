@@ -2600,6 +2600,7 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 .front .region-sidebar-second-top .most-popular .views-row-first { background: transparent; }
 .front .region-sidebar-second-top .most-popular a { color: #38709e; }
 .front .region-sidebar-second-top .most-popular a:hover { color: #244866; text-decoration: underline; }
+.front .region-sidebar-second-top .most-popular .authors { line-height: 10px; }
 .front .region-sidebar-second-top .most-popular .authors a:not(:last-child):after { content: "\2022"; display: inline-block; font-weight: 600; padding: 6px; width: 18px; }
 
 .blog-home-block { background-color: #e4ebee; height: 100%; }
