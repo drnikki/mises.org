@@ -131,6 +131,9 @@ function mises_library_item_strongarm() {
       'audio_teaser' => array(
         'custom_settings' => TRUE,
       ),
+      'simple_teaser_with_author' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -159,6 +162,7 @@ function mises_library_item_strongarm() {
             'weight' => '1002',
             'visible' => FALSE,
           ),
+          'simple_teaser_with_author' => NULL,
         ),
       ),
     ),
