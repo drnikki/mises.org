@@ -2500,18 +2500,6 @@ function display_suite_shared_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_author_1' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'authors',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
   );
   $export['node|library_item|simple_teaser_with_author'] = $ds_fieldsetting;
 
@@ -6503,14 +6491,12 @@ function display_suite_shared_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_author_1',
-        2 => 'field_teaser_text',
-        3 => 'body',
+        1 => 'field_teaser_text',
+        2 => 'body',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'field_author_1' => 'ds_content',
       'field_teaser_text' => 'ds_content',
       'body' => 'ds_content',
     ),
