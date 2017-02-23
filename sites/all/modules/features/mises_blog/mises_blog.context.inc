@@ -97,7 +97,6 @@ function mises_blog_context_default_contexts() {
         ),
       ),
     ),
-    'menu' => 'blog',
   );
   $context->condition_mode = 0;
 
