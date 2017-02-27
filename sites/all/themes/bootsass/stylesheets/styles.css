@@ -2742,6 +2742,17 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .alpha_pagination:before, .alpha_pagination:after { content: " "; display: table; }
 .alpha_pagination:after { clear: both; }
 
+@media (max-width: 641px) { .view-filtered-landing-term-page #edit-topic-wrapper, .view-filtered-landing-term-page #edit-level-wrapper, .view-filtered-landing-term-page #edit-author-wrapper, .view-filtered-landing-term-page #edit-austrian-school-wrapper { width: 100% !important; }
+  .view-filtered-landing-term-page #edit-topic-wrapper .form-type-select a, .view-filtered-landing-term-page #edit-level-wrapper .form-type-select a, .view-filtered-landing-term-page #edit-author-wrapper .form-type-select a, .view-filtered-landing-term-page #edit-austrian-school-wrapper .form-type-select a { width: 100% !important; }
+  .view-filtered-landing-term-page #edit-topic-wrapper .form-type-select .selectBox-label, .view-filtered-landing-term-page #edit-level-wrapper .form-type-select .selectBox-label, .view-filtered-landing-term-page #edit-author-wrapper .form-type-select .selectBox-label, .view-filtered-landing-term-page #edit-austrian-school-wrapper .form-type-select .selectBox-label { width: auto !important; } }
+@media (max-width: 767px) { .view-filtered-landing-term-page #edit-topic-wrapper, .view-filtered-landing-term-page #edit-level-wrapper, .view-filtered-landing-term-page #edit-author-wrapper, .view-filtered-landing-term-page #edit-austrian-school-wrapper { max-width: none; } }
+@media (min-width: 642px) and (max-width: 1149px) { .view-filtered-landing-term-page #edit-topic-wrapper, .view-filtered-landing-term-page #edit-level-wrapper, .view-filtered-landing-term-page #edit-author-wrapper, .view-filtered-landing-term-page #edit-austrian-school-wrapper { width: 48%; } }
+.view-filtered-landing-term-page #edit-topic-wrapper .form-select, .view-filtered-landing-term-page #edit-level-wrapper .form-select, .view-filtered-landing-term-page #edit-author-wrapper .form-select, .view-filtered-landing-term-page #edit-austrian-school-wrapper .form-select { max-width: 100%; }
+@media (min-width: 642px) and (max-width: 1149px) { .view-filtered-landing-term-page #edit-topic-wrapper .form-select, .view-filtered-landing-term-page #edit-level-wrapper .form-select, .view-filtered-landing-term-page #edit-author-wrapper .form-select, .view-filtered-landing-term-page #edit-austrian-school-wrapper .form-select { width: 100% !important; } }
+@media (max-width: 1149px) { .view-filtered-landing-term-page #edit-level-wrapper > label, .view-filtered-landing-term-page #edit-austrian-school-wrapper > label { margin: -1px; padding: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip: rect(0, 0, 0, 0); position: absolute; } }
+@media (max-width: 641px) { .view-filtered-landing-term-page #edit-topic-wrapper > label { margin: -1px; padding: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip: rect(0, 0, 0, 0); position: absolute; } }
+@media (max-width: 1149px) { .view-filtered-landing-term-page .views-reset-button { float: left; margin-left: 10px; } }
+
 /* FILTERED BOOKS
 * used on Filtered Landing - Term Page view
 * Book Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_1
@@ -2752,7 +2763,7 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .filtered-books .views-exposed-widget#edit-book-type-wrapper:after { clear: both; }
 .filtered-books #edit-book-type-wrapper > label { visibility: visible; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links { text-align: right; }
-.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item { display: inline-block; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item { display: inline-block; margin-bottom: 5px; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a { border-color: #38709e; background-color: #38709e; color: #fff; padding: 1px 12px; font-size: 15px; line-height: 1.66667; border-radius: 0px; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:hover, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:focus { border-color: #2b5578; background-color: #2b5578; color: #fff; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:active, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.active { border-color: #46763a; background-color: #46763a; background-image: none; box-shadow: none; color: #fff; }
