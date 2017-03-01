@@ -2486,13 +2486,18 @@ body.fedwatch .navbar-inverse .navbar-nav > li > a.active.library:hover, body.ic
 @media (max-width: 768px) { .navbar-collapse ul.menu li { width: 50%; float: left; } }
 .region-navigation { position: relative; }
 .region-navigation .block { width: 258px; height: 50px; }
-@media (min-width: 769px) { .region-navigation .block.block-views { margin-top: -7px; }
-  .region-navigation .block#block-google-cse-google-cse { height: auto; margin: 5px 0 5px 5px; position: absolute; right: 0; top: -64px; } }
+@media (min-width: 769px) { .region-navigation .block.block-views { margin-top: -7px; } }
+.region-navigation .block#block-google-cse-google-cse { line-height: 1; }
 .region-navigation .block#block-google-cse-google-cse div, .region-navigation .block#block-google-cse-google-cse input { display: block; float: left; }
 .region-navigation .block#block-google-cse-google-cse .form-type-textfield { background: #fff url(../images/icons/icon-search-field.png) right center no-repeat; height: auto; max-width: 208px; }
 .region-navigation .block#block-google-cse-google-cse .form-text { background-color: transparent !important; border-right: 0; padding-right: 32px; }
 .region-navigation .block#block-google-cse-google-cse .gsc-control-cse { background: transparent; border: 0; padding: 0; }
 .region-navigation .block#block-google-cse-google-cse .form-submit { width: 50px; }
+.region-navigation .block#block-google-cse-google-cse noscript { margin: -1px; padding: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip: rect(0, 0, 0, 0); position: absolute; color: #fff; font-size: 10px; line-height: 14px; }
+.region-navigation .block#block-google-cse-google-cse noscript a { color: #fff; font-weight: bold; text-decoration: underline; }
+@media (min-width: 769px) { .region-navigation .block#block-google-cse-google-cse { height: auto; margin: 5px 0 5px 5px; position: absolute; right: 0; top: -64px; }
+  .region-navigation .block#block-google-cse-google-cse noscript { margin: -1px; padding: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip: rect(0, 0, 0, 0); position: absolute; color: #00426b; font-size: 10px; left: 0; line-height: 14px; position: absolute; top: -30px; }
+  .region-navigation .block#block-google-cse-google-cse noscript a { color: #00426b; font-weight: bold; text-decoration: underline; } }
 @media (max-width: 767px) { .region-navigation .block.block-views { display: none; } }
 .region-navigation #block-search-form .form-control { border-right: 0 none; border-radius: 0; }
 .region-navigation #block-search-form button { padding: 6px 11px; border-radius: 0; }
