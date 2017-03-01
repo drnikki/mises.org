@@ -27,12 +27,6 @@ function landing_page_daily_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'custom_search_blocks-2' => array(
-          'module' => 'custom_search_blocks',
-          'delta' => '2',
-          'region' => 'sidebar_second_top',
-          'weight' => '-12',
-        ),
         'views-flex_blocks-block_11' => array(
           'module' => 'views',
           'delta' => 'flex_blocks-block_11',

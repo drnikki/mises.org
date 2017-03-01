@@ -442,7 +442,7 @@ function mises_blog_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'link' => FALSE,
+          'link' => 1,
           'linked_field' => array(
             'advanced' => array(
               'class' => '',
@@ -2043,7 +2043,7 @@ function mises_blog_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'link' => FALSE,
+          'link' => 1,
           'linked_field' => array(
             'advanced' => array(
               'class' => '',

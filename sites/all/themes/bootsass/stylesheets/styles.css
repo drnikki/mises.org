@@ -2328,7 +2328,7 @@ body.not-logged-in .contextual-links-wrapper { display: none; }
 .footer .panel { background: transparent; }
 .footer h2, .footer .block:first-child h2.block-title { margin-top: 16px; color: #729949; text-transform: uppercase; font-size: 15px; }
 .footer .region-footer-left ul.menu li a, .footer .region-footer-center ul.menu li a { display: inline; padding: 0; color: #e4ebee; font-size: 14px; }
-.footer .region-footer-left ul.menu li a:hover, .footer .region-footer-center ul.menu li a:hover { background: transparent; text-decoration: underline; }
+.footer .region-footer-left ul.menu li a:focus, .footer .region-footer-left ul.menu li a:hover, .footer .region-footer-center ul.menu li a:focus, .footer .region-footer-center ul.menu li a:hover { background: transparent; text-decoration: underline; }
 .footer .region-footer-right .panel { padding: 16px 0 16px; border-bottom: 1px solid #788086; line-height: 1.25; }
 .footer .region-footer-right .panel h2 { margin: 0 0 9px; padding: 0 5px 9px; border-bottom: 1px solid #788086; color: #e4ebee; font-size: 15px; }
 .footer .region-footer-right .panel p, .footer .region-footer-right .panel address { padding: 0 5px; }
@@ -2509,21 +2509,8 @@ body.fedwatch .navbar-inverse .navbar-nav > li > a.active.library:hover, body.ic
 
 /* PRIMARY CONTENT BLOCKS */
 .main-content { border-top: 7px solid #38709e; background: #fff; }
-.main-content .shield { position: absolute; top: -7px; left: 33px; display: block; width: 66px; height: 74px; background-image: url("../images/icons/shield-bg.png"); }
-.main-content .shield .icon { position: absolute; top: 6px; left: 6px; display: block; width: 55px; height: 55px; border-radius: 50%; content: ''; background-image: url("../images/icons/icon-library.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.front .main-content .shield .icon, body.mises-daily .main-content .shield .icon, body.icon-mises-daily .main-content .shield .icon, body.audio-mises-daily .main-content .shield .icon, body.icon-audio-mises-daily .main-content .shield .icon { background-image: url("../images/icons/icon-daily.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.section-press-room .main-content .shield .icon { background-image: url("../images/icons/icon-press.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.section-events .main-content .shield .icon { background-image: url("../images/icons/icon-event.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.section-blog .main-content .shield .icon { background-image: url("../images/icons/icon-wire.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-.main-content .shield .icon body.section-books, body.books .main-content .shield .icon, body.icon-books .main-content .shield .icon { background-image: url("../images/icons/icon-books.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.section-courses .main-content .shield .icon { background-image: url("../images/icons/icon-online.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.section-jobs .main-content .shield .icon, body.section-profile .main-content .shield .icon { background-image: url("../images/icons/icon-audience.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.lectures .main-content .shield .icon, body.icon-lectures .main-content .shield .icon { background-image: url("../images/icons/icon-lecture.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.audiovideo .main-content .shield .icon, body.icon-audiovideo .main-content .shield .icon, body.icon-audio-video .main-content .shield .icon, body.audio-books .main-content .shield .icon, body.icon-audio-books .main-content .shield .icon { background-image: url("../images/icons/icon-audio.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.interviews .main-content .shield .icon, body.icon-interviews .main-content .shield .icon { background-image: url("../images/icons/icon-interview.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.mises-view .main-content .shield .icon, body.icon-mises-view .main-content .shield .icon, body.mises-weekends .main-content .shield .icon, body.icon-mises-weekends .main-content .shield .icon { background-image: url("../images/icons/icon-view.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.live-video .main-content .shield .icon, body.icon-live-video .main-content .shield .icon { background-image: url("../images/icons/icon-video.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
-body.icon-fedwatch .main-content .shield .icon, body.library-item-term-landing.fedwatch .main-content .shield .icon { background-image: url("../images/icons/icon-fedwatch.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
+.main-content .shield { position: absolute; top: -7px; left: 33px; display: block; width: 66px; height: 74px; }
+.main-content .shield .icon { position: absolute; top: 6px; left: 6px; display: block; width: 55px; height: 55px; border-radius: 50%; content: ''; }
 .main-content .body-content.normal { font-size: 15px; }
 .main-content .body-content.large { font-size: 18px; }
 
@@ -2604,10 +2591,17 @@ span.fake-blockquote { display: block; padding: 0 20px; }
 
 /* HOMEPAGE MISES WIRE */
 .front .region-featured-right { overflow: hidden; height: 360px; }
-.front .main-content div.shield > .icon { background-image: url("../images/icons/icon-wire.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
 .front .group-date-author .date:before { content: ""; width: 0; padding: 0; }
 .front .group-date-location .search-label { display: none; }
 .front .group-date-location .date:before { content: ""; width: 0; padding: 0; }
+.front .region-sidebar-second-top { background: transparent; }
+.front .region-sidebar-second-top .most-popular { background: #fff; color: #494e54; margin-top: 1em; padding: 5px; }
+.front .region-sidebar-second-top .most-popular .panel-heading:before { background-image: url("../images/icons/icon-topic.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; }
+.front .region-sidebar-second-top .most-popular .views-row-first { background: transparent; }
+.front .region-sidebar-second-top .most-popular a { color: #38709e; }
+.front .region-sidebar-second-top .most-popular a:hover { color: #244866; text-decoration: underline; }
+.front .region-sidebar-second-top .most-popular .authors { line-height: 10px; }
+.front .region-sidebar-second-top .most-popular .authors a:not(:last-child):after { content: "\2022"; display: inline-block; font-weight: 600; padding: 6px; width: 18px; }
 
 .blog-home-block { background-color: #e4ebee; height: 100%; }
 .not-front .blog-home-block { border-top: 1px #81a957 solid; }
@@ -2748,6 +2742,17 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .alpha_pagination:before, .alpha_pagination:after { content: " "; display: table; }
 .alpha_pagination:after { clear: both; }
 
+@media (max-width: 641px) { .view-filtered-landing-term-page #edit-topic-wrapper, .view-filtered-landing-term-page #edit-level-wrapper, .view-filtered-landing-term-page #edit-author-wrapper, .view-filtered-landing-term-page #edit-austrian-school-wrapper { width: 100% !important; }
+  .view-filtered-landing-term-page #edit-topic-wrapper .form-type-select a, .view-filtered-landing-term-page #edit-level-wrapper .form-type-select a, .view-filtered-landing-term-page #edit-author-wrapper .form-type-select a, .view-filtered-landing-term-page #edit-austrian-school-wrapper .form-type-select a { width: 100% !important; }
+  .view-filtered-landing-term-page #edit-topic-wrapper .form-type-select .selectBox-label, .view-filtered-landing-term-page #edit-level-wrapper .form-type-select .selectBox-label, .view-filtered-landing-term-page #edit-author-wrapper .form-type-select .selectBox-label, .view-filtered-landing-term-page #edit-austrian-school-wrapper .form-type-select .selectBox-label { width: auto !important; } }
+@media (max-width: 767px) { .view-filtered-landing-term-page #edit-topic-wrapper, .view-filtered-landing-term-page #edit-level-wrapper, .view-filtered-landing-term-page #edit-author-wrapper, .view-filtered-landing-term-page #edit-austrian-school-wrapper { max-width: none; } }
+@media (min-width: 642px) and (max-width: 1149px) { .view-filtered-landing-term-page #edit-topic-wrapper, .view-filtered-landing-term-page #edit-level-wrapper, .view-filtered-landing-term-page #edit-author-wrapper, .view-filtered-landing-term-page #edit-austrian-school-wrapper { width: 48%; } }
+.view-filtered-landing-term-page #edit-topic-wrapper .form-select, .view-filtered-landing-term-page #edit-level-wrapper .form-select, .view-filtered-landing-term-page #edit-author-wrapper .form-select, .view-filtered-landing-term-page #edit-austrian-school-wrapper .form-select { max-width: 100%; }
+@media (min-width: 642px) and (max-width: 1149px) { .view-filtered-landing-term-page #edit-topic-wrapper .form-select, .view-filtered-landing-term-page #edit-level-wrapper .form-select, .view-filtered-landing-term-page #edit-author-wrapper .form-select, .view-filtered-landing-term-page #edit-austrian-school-wrapper .form-select { width: 100% !important; } }
+@media (max-width: 1149px) { .view-filtered-landing-term-page #edit-level-wrapper > label, .view-filtered-landing-term-page #edit-austrian-school-wrapper > label { margin: -1px; padding: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip: rect(0, 0, 0, 0); position: absolute; } }
+@media (max-width: 641px) { .view-filtered-landing-term-page #edit-topic-wrapper > label { margin: -1px; padding: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip: rect(0, 0, 0, 0); position: absolute; } }
+@media (max-width: 1149px) { .view-filtered-landing-term-page .views-reset-button { float: left; margin-left: 10px; } }
+
 /* FILTERED BOOKS
 * used on Filtered Landing - Term Page view
 * Book Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_1
@@ -2758,7 +2763,7 @@ body.mises-daily #block-views-term-description-block { display: none; }
 .filtered-books .views-exposed-widget#edit-book-type-wrapper:after { clear: both; }
 .filtered-books #edit-book-type-wrapper > label { visibility: visible; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links { text-align: right; }
-.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item { display: inline-block; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item { display: inline-block; margin-bottom: 5px; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a { border-color: #38709e; background-color: #38709e; color: #fff; padding: 1px 12px; font-size: 15px; line-height: 1.66667; border-radius: 0px; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:hover, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:focus { border-color: #2b5578; background-color: #2b5578; color: #fff; }
 .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:active, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.active { border-color: #46763a; background-color: #46763a; background-image: none; box-shadow: none; color: #fff; }

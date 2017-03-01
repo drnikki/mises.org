@@ -189,67 +189,69 @@ body {
     display: block;
     width: 66px;
     height: 74px;
-    background-image: url('../images/icons/shield-bg.png');
+    //background-image: url('../images/icons/shield-bg.png');
+    .shield-bg {
+    }
     .icon {
       @include icon-block(55px,6px,6px);
-      @include icon-image('../images/icons/icon-library.png');
+      //@include icon-image('../images/icons/icon-library.png');
       // Library is default icon, custom shield icons based on path or taxonomy
       body.front &,
       body.mises-daily &,
       body.icon-mises-daily &,
       body.audio-mises-daily &,
       body.icon-audio-mises-daily & {
-        @include icon-image('../images/icons/icon-daily.png');
+        //@include icon-image('../images/icons/icon-daily.png');
       }
       body.section-press-room & {
-        @include icon-image('../images/icons/icon-press.png');
+        //@include icon-image('../images/icons/icon-press.png');
       }
       body.section-events & {
-        @include icon-image('../images/icons/icon-event.png');
+        //@include icon-image('../images/icons/icon-event.png');
       }
       body.section-blog & {
-        @include icon-image('../images/icons/icon-wire.png');
+        //@include icon-image('../images/icons/icon-wire.png');
       }
       body.section-books,
       body.books &,
       body.icon-books & {
-        @include icon-image('../images/icons/icon-books.png');
+        //@include icon-image('../images/icons/icon-books.png');
       }
       body.section-courses & {
-        @include icon-image('../images/icons/icon-online.png');
+        //@include icon-image('../images/icons/icon-online.png');
       }
       body.section-jobs &,
       body.section-profile & {
-        @include icon-image('../images/icons/icon-audience.png');
+        //@include icon-image('../images/icons/icon-audience.png');
       }
       body.lectures &,
       body.icon-lectures & {
-        @include icon-image('../images/icons/icon-lecture.png');
+        //@include icon-image('../images/icons/icon-lecture.png');
       }
       body.audiovideo &,
       body.icon-audiovideo &,
       body.icon-audio-video &,
       body.audio-books &,
       body.icon-audio-books & {
-        @include icon-image('../images/icons/icon-audio.png');
+        //@include icon-image('../images/icons/icon-audio.png');
       }
       body.interviews &,
       body.icon-interviews & {
-        @include icon-image('../images/icons/icon-interview.png');
+        //@include icon-image('../images/icons/icon-interview.png');
       }
       body.mises-view &,
       body.icon-mises-view &,
       body.mises-weekends &,
       body.icon-mises-weekends & {
-        @include icon-image('../images/icons/icon-view.png');
+        //@include icon-image('../images/icons/icon-view.png');
       }
       body.live-video &,
       body.icon-live-video & {
-        @include icon-image('../images/icons/icon-video.png');
+        //@include icon-image('../images/icons/icon-video.png');
       }
       body.icon-fedwatch &,
       body.library-item-term-landing.fedwatch & {
-        @include icon-image('../images/icons/icon-fedwatch.png');
+        //@include icon-image('../images/icons/icon-fedwatch.png');
       }
     }
   }
