@@ -210,7 +210,7 @@
     		  <?php endif; ?>
           
           <!--<div class="shield"><div class="icon"></div></div>-->
-          <?php if ($page['shield'] && !$is_front): ?>
+          <?php if (isset($page['shield']) && isset($page['icon']) && !$is_front): ?>
             <div class="shield">
               <?php print render($page['shield']); ?>
               <?php if ($page['icon']): ?>
