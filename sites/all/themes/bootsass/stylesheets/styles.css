@@ -2758,6 +2758,111 @@ body.mises-daily #block-views-term-description-block { display: none; }
 @media (max-width: 641px) { .view-filtered-landing-term-page #edit-topic-wrapper > label { margin: -1px; padding: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip: rect(0, 0, 0, 0); position: absolute; } }
 @media (max-width: 1149px) { .view-filtered-landing-term-page .views-reset-button { float: left; margin-left: 10px; } }
 
+/* FEDWATCH FILTERED */
+.page-taxonomy-term-602 .view-term-description .view-content img { max-width: 100%; }
+
+.fedwatch-page-filtered .views-exposed-widget > label, .fedwatch-page-filtered .form-item-sort-by > label { display: none; }
+.fedwatch-page-filtered .filtered-submit { display: none; float: left; }
+.fedwatch-page-filtered .filtered-submit.force-show { display: block; }
+@media (max-width: 641px) { .fedwatch-page-filtered .filtered-submit:before, .fedwatch-page-filtered .filtered-submit:after { content: " "; display: table; }
+  .fedwatch-page-filtered .filtered-submit:after { clear: both; }
+  .fedwatch-page-filtered .filtered-submit .views-exposed-widget { clear: none; float: left; width: auto !important; } }
+@media (max-width: 479px) { .fedwatch-page-filtered .views-exposed-widget { clear: both; float: none; width: 100% !important; } }
+.fedwatch-page-filtered .views-exposed-widget.views-widget-sort-by { float: left; padding: 6px 10px 0 0; }
+@media (max-width: 479px) { .fedwatch-page-filtered .views-exposed-widget.views-widget-sort-by.show { float: none; padding-left: 0; padding-right: 10px; width: 100% !important; }
+  .fedwatch-page-filtered .views-exposed-widget.views-widget-sort-by.show a { width: 100% !important; }
+  .fedwatch-page-filtered .views-exposed-widget.views-widget-sort-by.show .selectBox-label { width: auto !important; } }
+@media (min-width: 480px) and (max-width: 630px) { .fedwatch-page-filtered .views-exposed-widget.views-widget-sort-by.show { width: 45%; }
+  .fedwatch-page-filtered .views-exposed-widget.views-widget-sort-by.show a { width: 100% !important; } }
+@media (min-width: 630px) { .fedwatch-page-filtered .views-exposed-widget.views-widget-sort-by.show { width: auto; } }
+.fedwatch-page-filtered #edit-topic-wrapper { clear: left; }
+.fedwatch-page-filtered #edit-topic-wrapper, .fedwatch-page-filtered #edit-austrian-school-wrapper { width: 180px; }
+@media (max-width: 479px) { .fedwatch-page-filtered #edit-topic-wrapper, .fedwatch-page-filtered #edit-austrian-school-wrapper { max-width: none; width: 100% !important; }
+  .fedwatch-page-filtered #edit-topic-wrapper .form-type-select a, .fedwatch-page-filtered #edit-austrian-school-wrapper .form-type-select a { width: 100% !important; }
+  .fedwatch-page-filtered #edit-topic-wrapper .form-type-select .selectBox-label, .fedwatch-page-filtered #edit-austrian-school-wrapper .form-type-select .selectBox-label { width: auto !important; } }
+@media (min-width: 480px) { .fedwatch-page-filtered #edit-topic-wrapper, .fedwatch-page-filtered #edit-austrian-school-wrapper { width: 45% !important; } }
+@media (min-width: 630px) { .fedwatch-page-filtered #edit-topic-wrapper, .fedwatch-page-filtered #edit-austrian-school-wrapper { width: 150px !important; } }
+@media (min-width: 1100px) { .fedwatch-page-filtered #edit-topic-wrapper, .fedwatch-page-filtered #edit-austrian-school-wrapper { width: 180px !important; } }
+.fedwatch-page-filtered #edit-topic-wrapper .form-select, .fedwatch-page-filtered #edit-austrian-school-wrapper .form-select { max-width: 100%; }
+@media (min-width: 642px) and (max-width: 1149px) { .fedwatch-page-filtered #edit-topic-wrapper .form-select, .fedwatch-page-filtered #edit-austrian-school-wrapper .form-select { width: 100% !important; } }
+.fedwatch-page-filtered .views-submit-button { padding: 6px 10px 0 0; }
+.fedwatch-page-filtered .views-reset-button { float: left; padding: 6px 10px 0 0; margin: 0; }
+.fedwatch-page-filtered .view-content { clear: both; }
+
+/* FILTERED BOOKS
+* used on Filtered Landing - Term Page view
+* Book Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_1
+*/
+.filtered-books .views-exposed-widgets { clear: both; }
+.filtered-books .views-exposed-widget#edit-book-type-wrapper { float: left; padding: 0; }
+.filtered-books .views-exposed-widget#edit-book-type-wrapper:before, .filtered-books .views-exposed-widget#edit-book-type-wrapper:after { content: " "; display: table; }
+.filtered-books .views-exposed-widget#edit-book-type-wrapper:after { clear: both; }
+.filtered-books #edit-book-type-wrapper > label { visibility: visible; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links { text-align: right; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item { display: inline-block; margin-bottom: 5px; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a { border-color: #38709e; background-color: #38709e; color: #fff; padding: 1px 12px; font-size: 15px; line-height: 1.66667; border-radius: 0px; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:hover, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:focus { border-color: #2b5578; background-color: #2b5578; color: #fff; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:active, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.active { border-color: #46763a; background-color: #46763a; background-image: none; box-shadow: none; color: #fff; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.disabled, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.disabled:hover, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.disabled:focus, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.disabled:active, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.disabled.active, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a[disabled], .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a[disabled]:hover, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a[disabled]:focus, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a[disabled]:active, .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a[disabled].active, fieldset[disabled] .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a, fieldset[disabled] .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:hover, fieldset[disabled] .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:focus, fieldset[disabled] .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a:active, fieldset[disabled] .filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a.active { border-color: #38709e; background-color: #38709e; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a a { color: #fff; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a a:hover { color: #fff; text-decoration: none; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links .form-item a .badge { background-color: #fff; color: #38709e; }
+.filtered-books #edit-book-type-wrapper .bef-select-as-links > .form-item { float: right; }
+.filtered-books #edit-author-wrapper > label { visibility: visible; }
+
+/* FILTERED JOURNALS
+* used on Filtered Landing - Term Page view
+* Journals Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_2
+*/
+.filtered-journals .views-exposed-widget > label { display: none; }
+.filtered-journals .filter-triggers { padding: 10px 0 0 0; width: 56%; float: left; }
+.filtered-journals .filter-triggers a { border-color: #38709e; background-color: #38709e; color: #fff; padding: 1px 12px; font-size: 15px; line-height: 1.66667; border-radius: 0px; }
+.filtered-journals .filter-triggers a:hover, .filtered-journals .filter-triggers a:focus { border-color: #2b5578; background-color: #2b5578; color: #fff; }
+.filtered-journals .filter-triggers a:active, .filtered-journals .filter-triggers a.active { border-color: #46763a; background-color: #46763a; background-image: none; box-shadow: none; color: #fff; }
+.filtered-journals .filter-triggers a.disabled, .filtered-journals .filter-triggers a.disabled:hover, .filtered-journals .filter-triggers a.disabled:focus, .filtered-journals .filter-triggers a.disabled:active, .filtered-journals .filter-triggers a.disabled.active, .filtered-journals .filter-triggers a[disabled], .filtered-journals .filter-triggers a[disabled]:hover, .filtered-journals .filter-triggers a[disabled]:focus, .filtered-journals .filter-triggers a[disabled]:active, .filtered-journals .filter-triggers a[disabled].active, fieldset[disabled] .filtered-journals .filter-triggers a, fieldset[disabled] .filtered-journals .filter-triggers a:hover, fieldset[disabled] .filtered-journals .filter-triggers a:focus, fieldset[disabled] .filtered-journals .filter-triggers a:active, fieldset[disabled] .filtered-journals .filter-triggers a.active { border-color: #38709e; background-color: #38709e; }
+.filtered-journals .filter-triggers a a { color: #fff; }
+.filtered-journals .filter-triggers a a:hover { color: #fff; text-decoration: none; }
+.filtered-journals .filter-triggers a .badge { background-color: #fff; color: #38709e; }
+.filtered-journals #edit-journal-wrapper { padding: 10px 0 0 0; float: right; width: 44%; }
+.filtered-journals #edit-author-wrapper, .filtered-journals #edit-title-wrapper { clear: left; float: left; }
+.filtered-journals #edit-author-wrapper > label, .filtered-journals #edit-title-wrapper > label { display: none; }
+.filtered-journals #edit-author-wrapper, .filtered-journals #edit-topic-wrapper, .filtered-journals #edit-austrian-school-wrapper, .filtered-journals #edit-title-wrapper { width: -webkit-calc(34% - 5px); width: -moz-calc(34% - 5px); width: calc(34% - 5px); padding: 10px 10px 0 0; }
+.filtered-journals #edit-austrian-school-wrapper { padding-right: 0; }
+.filtered-journals #edit-vol-wrapper, .filtered-journals #edit-no-wrapper { width: -webkit-calc(16.5% - 5px); width: -moz-calc(16.5% - 5px); width: calc(16.5% - 5px); padding: 10px 10px 0 0; }
+.filtered-journals #edit-year-wrapper { width: -webkit-calc(14.5% - 5px); width: -moz-calc(14.5% - 5px); width: calc(14.5% - 5px); padding: 10px 10px 0 0; }
+.filtered-journals .views-submit-button { padding: 10px 0 0 0; }
+.filtered-journals .views-submit-button button { width: 64px; }
+.filtered-journals .views-reset-button { float: right; padding: 10px 0 0 0; }
+
+#selectBox-edit-journal li:nth-child(2), #selectBox-edit-journal li:nth-child(3), #selectBox-edit-journal li:nth-child(4) { display: none; }
+
+/* Mises Wire */
+.page-homepage #block-mises-utility-mailchimp-custom { margin-top: 20px; }
+.page-homepage .view-homepage-hero .overlay a { text-decoration: none; }
+.page-homepage .view-homepage-hero .overlay a:hover { text-decoration: none; }
+.page-homepage .view-blog, .page-homepage .landing-list { /*
+span.author > span:before { display: inline-block; width: 24px; padding-left: 10px; content: "\2022"; font-weight: 600;
+}
+*/ }
+.page-homepage .view-blog .views-row-first, .page-homepage .landing-list .views-row-first { background-color: #e4ebee; }
+@media (min-width: 480px) { .page-homepage .view-blog .views-row-first .panel-body, .page-homepage .landing-list .views-row-first .panel-body { display: flex; }
+  .page-homepage .view-blog .views-row-first .panel-body .group-left a, .page-homepage .landing-list .views-row-first .panel-body .group-left a { color: #fff; }
+  .page-homepage .view-blog .views-row-first .panel-body .group-right, .page-homepage .landing-list .views-row-first .panel-body .group-right { padding: 20px 10px; } }
+@media (max-width: 480px) { .page-homepage .view-blog .views-row-first .panel-body .group-left, .page-homepage .landing-list .views-row-first .panel-body .group-left { width: 100%; padding: 0 10px; margin: 0; margin-bottom: 20px; background-color: transparent; }
+  .page-homepage .view-blog .views-row-first .panel-body .group-left .ga-counter-display, .page-homepage .landing-list .views-row-first .panel-body .group-left .ga-counter-display { margin-left: 10px; }
+  .page-homepage .view-blog .views-row-first .panel-body .group-right > *, .page-homepage .landing-list .views-row-first .panel-body .group-right > * { margin-left: 10px; margin-right: 10px; }
+  .page-homepage .view-blog .views-row-first .panel-body a, .page-homepage .landing-list .views-row-first .panel-body a { color: #38709e; } }
+.page-homepage .view-blog .views-row-first .node-teaser, .page-homepage .landing-list .views-row-first .node-teaser { padding: 0; margin-top: 20px; }
+.page-homepage .view-blog .views-row-first .node-teaser:after, .page-homepage .landing-list .views-row-first .node-teaser:after { display: none; }
+.page-homepage .view-blog .views-row-first .group-left, .page-homepage .landing-list .views-row-first .group-left { align-items: stretch; background-color: #38709e; padding: 0; margin-left: 10px; width: 22%; margin-right: 10px; }
+.page-homepage .view-blog .views-row-first .image, .page-homepage .landing-list .views-row-first .image { margin-top: 0; }
+.page-homepage .view-blog .ga-counter-display, .page-homepage .landing-list .ga-counter-display { margin-left: 5px; }
+
+.group-date-location .date-display-range { display: inline; }
+
+@media (max-width: 480px) { .node-teaser .panel-body .group-left { margin-bottom: 20px; } }
+.wire-btn { float: right; margin-top: 15px; }
+
 /* FILTERED BOOKS
 * used on Filtered Landing - Term Page view
 * Book Filtered Term Landing: /admin/structure/views/view/filtered_landing_term_page/edit/page_1

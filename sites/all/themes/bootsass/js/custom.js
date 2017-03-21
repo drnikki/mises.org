@@ -169,6 +169,16 @@ var Drupal = Drupal || {};
         }
       };
       
+      // FedWatch filter fields manipulation
+      var fedWatchFilters = function(){
+        var filtersWrapper = $('.filtered-submit');
+        var austrianWrapper = $('#edit-austrian-school-wrapper');
+        var sortWrapper = $('.fedwatch-page-filtered').find('.views-widget-sort-by');
+        sortWrapper.insertAfter(austrianWrapper);
+        filtersWrapper.insertAfter(sortWrapper);
+        filtersWrapper.addClass('force-show');
+      };
+
       // Wire filter fields manipulation
       var wireFilters = function() {
         var filtersWrapper = $('.filtered-submit');
@@ -365,6 +375,9 @@ var Drupal = Drupal || {};
           wireFilters();
         }
 
+        if ($('.fedwatch-page-filtered').length) {
+          fedWatchFilters();
+        }
 
         $('select:not(#edit-book-type):not(#edit-title):not(#edit-writer)').selectBox({
           mobile: true,
@@ -390,6 +403,11 @@ var Drupal = Drupal || {};
         if ($('.wire-page-filtered').length) {
           wireFilters();
         }
+
+        if ($('.fedwatch-page-filtered').length) {
+          fedWatchFilters();
+        }
+
         
         $('select:not(#edit-book-type):not(#edit-title):not(#edit-writer)').selectBox({
           mobile: true,
